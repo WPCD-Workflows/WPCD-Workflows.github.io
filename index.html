@@ -33,7 +33,8 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="#"/> 
+    <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="#"/>
+        <link rel="next" title="Introduction to Code Development for integrated modelling" href="introduction.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,18 +83,13 @@
           
             
             
-                <!-- Local TOC -->
-                <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to EUROfusion Integrated Modelling workflows&#8217;s documentation!</a><ul>
-<li><a class="reference internal" href="#codes">Codes</a><ul>
-<li><a class="reference internal" href="#imasviz"><code class="docutils literal"><span class="pre">IMASViz</span></code></a></li>
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
 </ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-</div>
+
             
           
         </div>
@@ -140,27 +136,78 @@
 <h1>Welcome to EUROfusion Integrated Modelling workflows&#8217;s documentation!<a class="headerlink" href="#welcome-to-eurofusion-integrated-modelling-workflows-s-documentation" title="Permalink to this headline">¶</a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
-</div>
-<div class="section" id="codes">
-<h2>Codes<a class="headerlink" href="#codes" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="imasviz">
-<h3><a class="reference external" href="https://wpcd-workflows.github.io/IMASviz/index.html" title="(in IMASViz v)"><span class="xref doc">IMASViz</span></a><a class="headerlink" href="#imasviz" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#the-european-integrated-modelling-eu-im-approach">The European Integrated Modelling (EU-IM) approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#mission">Mission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#achievements">Achievements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#glossary">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#support">Support</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#getting-support-for-the-eu-im-platform-and-gateway">Getting support for the EU-IM platform and Gateway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#support-for-problems-related-to-the-eu-im-gateway">Support for problems related to the EU-IM Gateway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#support-for-problems-related-to-the-eu-im-platform-and-software">Support for problems related to the EU-IM Platform and Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#feature-requests-for-eu-im-software">Feature requests for EU-IM Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#links-to-related-external-projects">Links to related external projects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="infrastructure.html#universal-access-layer-ual">Universal Access Layer (UAL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="infrastructure.html#handling-cpos">Handling CPOs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="infrastructure.html#module-deallocate-stuctures">Module deallocate_stuctures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="infrastructure.html#module-copy-structures">Module copy_structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="infrastructure.html#module-euitm-copy">Module euitm_copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="infrastructure.html#module-is-set-structures">Module is_set_structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="infrastructure.html#module-size-of-structures">Module size_of_structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="infrastructure.html#module-write-structures">Module write_structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="infrastructure.html#module-read-structures">Module read_structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="infrastructure.html#module-diff-structures">Module diff_structures</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ets.html#ets-source-in-fortran">ETS source in FORTRAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ets.html#documentation-for-the-ets">Documentation for the ETS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ets.html#presentations-that-discuss-the-ets">Presentations that discuss the ETS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ets.html#ets-verification-validation">ETS Verification &amp; Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ets.html#other-ets-related-information">Other ETS related information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="codes.html#imasviz">IMASviz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codes.html#fc2k">FC2K</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#how-to-turn-a-c-code-into-a-kepler-actor">How to turn a C++ code into a Kepler actor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
 <li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
 <li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
 </div>
+</div>
 
 
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="introduction.html" class="btn btn-neutral float-right" title="Introduction to Code Development for integrated modelling" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
   
 
   <hr/>

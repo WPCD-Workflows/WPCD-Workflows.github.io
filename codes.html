@@ -1,0 +1,459 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Codes &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
+        <link rel="prev" title="Core Transport Simulator (ETS)" href="ets.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EUROfusion Integrated Modelling workflows
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#imasviz">IMASviz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fc2k">FC2K</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-turn-a-c-code-into-a-kepler-actor">How to turn a C++ code into a Kepler actor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adapt-your-c-function">Adapt your C++ function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-code-parameters">How to use code parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compile-your-function-as-a-library">Compile your function as a library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#full-example">Full example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-fill-the-fc2k-window">How to fill the FC2K window</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">EUROfusion Integrated Modelling workflows</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Codes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/codes.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="codes">
+<h1>Codes<a class="headerlink" href="#codes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="imasviz">
+<h2>IMASviz<a class="headerlink" href="#imasviz" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://wpcd-workflows.github.io/IMASviz/index.html" title="(in IMASViz v)"><span class="xref doc">IMASViz</span></a> code is used for IMAS visualisation.</p>
+</div>
+<div class="section" id="fc2k">
+<span id="isip-fc2k"></span><h2>FC2K<a class="headerlink" href="#fc2k" title="Permalink to this headline">¶</a></h2>
+<p>FC2K is a tool for wrapping a Fortran or C++ source code into a Kepler
+actor. Before using it, your physics code should be EU-IM-compliant (i.e.
+use CPOs as input/output).</p>
+<p>After running the EU-IMv1 script (to properly set up the environment
+variables), FC2K can be run simply by typing fc2k in the Linux command
+line.</p>
+<p><code class="docutils literal"><span class="pre">fc2k</span></code> was developed by ISIP in Java/Pytho. The program source is
+stored in the Gforge subversion repository fc2k. To check out a
+subversion working copy of the repository, storing it in subdirectory
+<em>fc2k</em>, do</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn co https://gforge6.eufus.eu/svn/fc2k</span>
+</pre></div>
+</div>
+<p>Executables etc are in $SWEU-IMDIR/ihm/fc2k/.</p>
+<p>There are a few tools for managing actors, in $EU-IMSCRIPTDIR/ (put it in
+your $PATH):</p>
+<ul>
+<li><p class="first">rmactor
+: remove an actor from your Kepler version ($KEPLER).</p>
+</li>
+<li><p class="first">extract_actor
+: export an actor from $KEPLER.</p>
+</li>
+<li><p class="first">import_actor</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>cd $KEPLER
+ant buildkarlib
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="section" id="how-to-turn-a-c-code-into-a-kepler-actor">
+<h3>How to turn a C++ code into a Kepler actor<a class="headerlink" href="#how-to-turn-a-c-code-into-a-kepler-actor" title="Permalink to this headline">¶</a></h3>
+<p>This document is based on material provided by Yann Frauel and describes
+how to make your C++ code EU-IM compliant and how to turn it into a Kepler
+actor.</p>
+<div class="section" id="adapt-your-c-function">
+<h4>Adapt your C++ function<a class="headerlink" href="#adapt-your-c-function" title="Permalink to this headline">¶</a></h4>
+<p>You must include the header file UALClasses.h:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#include &quot;UALClasses.h&quot;</span>
+</pre></div>
+</div>
+<p>The function arguments that are arrays or strings must be declared as
+pointers, as usual. All other arguments must be passed by reference
+(i.e. they must be declared with an ampersand):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">mycppfunction</span><span class="p">(</span><span class="n">double</span> <span class="o">*</span> <span class="n">vector</span><span class="p">,</span> <span class="n">char</span> <span class="o">*</span> <span class="n">string</span><span class="p">,</span> <span class="nb">int</span> <span class="o">&amp;</span> <span class="n">scalar</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The function arguments that are CPOs must be declared with types
+ItmNs::Itm::cpo_type or ItmNs::Itm::cpo_typeArray. The first form is for
+time-independent CPOs or a single slice of a time-dependent CPO. The
+latter is for a complete time-dependent CPO. Note that in all cases, the
+CPO is considered as a single object, not an array, so it must be passed
+by reference as mentioned above:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">mycppfunction</span><span class="p">(</span>
+<span class="n">ItmNs</span><span class="p">::</span><span class="n">Itm</span><span class="p">::</span><span class="n">limiter</span> <span class="o">&amp;</span> <span class="n">lim</span><span class="p">,</span>
+<span class="n">ItmNs</span><span class="p">::</span><span class="n">Itm</span><span class="p">::</span><span class="n">coreimpur</span> <span class="o">&amp;</span> <span class="n">cor</span><span class="p">,</span>
+<span class="n">ItmNs</span><span class="p">::</span><span class="n">Itm</span><span class="p">::</span><span class="n">ironmodelArray</span> <span class="o">&amp;</span> <span class="n">iron</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The syntax is identical for input and output arguments. For output CPOs,
+do not forget to use the usual methods to assign strings and allocate
+arrays:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">lim</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s2">&quot;test_limiter&quot;</span><span class="p">);</span>
+<span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">desc_iron</span><span class="o">.</span><span class="n">geom_iron</span><span class="o">.</span><span class="n">npoints</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Otherwise, the content of CPOs is accessed as usual:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">lim</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">desc_iron</span><span class="o">.</span><span class="n">geom_iron</span><span class="o">.</span><span class="n">npoints</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-use-code-parameters">
+<h4>How to use code parameters<a class="headerlink" href="#how-to-use-code-parameters" title="Permalink to this headline">¶</a></h4>
+<p>The code parameters are passed as the last argument with
+ItmNs::codeparam_t&amp; type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">mycppfunction</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">ItmNs</span><span class="p">::</span><span class="n">codeparam_t</span> <span class="o">&amp;</span> <span class="n">codeparam</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Each field of the param structure is a vector of 132-byte strings, not
+necessarily terminated by 0-character! (This does not follow C/C++
+standards and should be changed in the future.)</p>
+</div>
+<div class="section" id="compile-your-function-as-a-library">
+<h4>Compile your function as a library<a class="headerlink" href="#compile-your-function-as-a-library" title="Permalink to this headline">¶</a></h4>
+<p>You need to include the header directories for the UAL and Blitz:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>-I$(UAL)/include -I$(UAL)/lowlevel -I$(UAL)/cppinterface/ -I/afs/efda-
+itm.eu/gf/project/switm/blitz/blitz-0.9/include/
+</pre></div>
+</div>
+<p>Same for linking:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>-L$(UAL)/lib -lUALCPPInterface -lUALLowLevel -L/afs/efda-
+itm.eu/gf/project/switm/blitz/blitz-0.9/lib -lblitz
+</pre></div>
+</div>
+<p>Additionally, you must compile with the -fPIC option.</p>
+</div>
+<div class="section" id="full-example">
+<h4>Full example<a class="headerlink" href="#full-example" title="Permalink to this headline">¶</a></h4>
+<p>We want to generate an actor that has three different types of actors as
+inputs and three different types of actors as output. Additionally, we
+have an integer as input/output, a vector of doubles as output and a
+string as output. We also want to use code parameters. Content of
+mycppfunction.cpp:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#include &quot;UALClasses.h&quot;</span>
+
+<span class="n">typedef</span> <span class="n">struct</span> <span class="p">{</span>
+      <span class="n">char</span> <span class="o">**</span><span class="n">parameters</span><span class="p">;</span>
+      <span class="n">char</span> <span class="o">**</span><span class="n">default_param</span><span class="p">;</span>
+      <span class="n">char</span> <span class="o">**</span><span class="n">schema</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">param</span><span class="p">;</span>
+
+<span class="n">void</span> <span class="n">mycppfunction</span><span class="p">(</span>
+      <span class="n">ItmNs</span><span class="p">::</span><span class="n">Itm</span><span class="p">::</span><span class="n">summary</span>  <span class="n">SUM</span><span class="p">,</span>
+      <span class="n">EU</span><span class="o">-</span><span class="n">IMNS</span><span class="p">::</span><span class="n">EU</span><span class="o">-</span><span class="n">IM</span><span class="p">::</span><span class="n">ANTENNAS</span> <span class="o">&amp;</span> <span class="n">ANT</span><span class="p">,</span>
+      <span class="n">EU</span><span class="o">-</span><span class="n">IMNS</span><span class="p">::</span><span class="n">EU</span><span class="o">-</span><span class="n">IM</span><span class="p">::</span><span class="n">EQUILIBRIUMARRAY</span> <span class="o">&amp;</span> <span class="n">EQ</span><span class="p">,</span>
+      <span class="n">INT</span> <span class="o">&amp;</span> <span class="n">X</span><span class="p">,</span>
+      <span class="n">EU</span><span class="o">-</span><span class="n">IMNS</span><span class="p">::</span><span class="n">EU</span><span class="o">-</span><span class="n">IM</span><span class="p">::</span><span class="n">LIMITER</span> <span class="o">&amp;</span> <span class="n">LIM</span><span class="p">,</span>
+      <span class="n">EU</span><span class="o">-</span><span class="n">IMNS</span><span class="p">::</span><span class="n">EU</span><span class="o">-</span><span class="n">IM</span><span class="p">::</span><span class="n">COREIMPUR</span> <span class="o">&amp;</span> <span class="n">COR</span><span class="p">,</span>
+      <span class="n">EU</span><span class="o">-</span><span class="n">IMNS</span><span class="p">::</span><span class="n">EU</span><span class="o">-</span><span class="n">IM</span><span class="p">::</span><span class="n">IRONMODELARRAY</span> <span class="o">&amp;</span> <span class="n">IRON</span><span class="p">,</span>
+      <span class="n">DOUBLE</span> <span class="o">*</span> <span class="n">Y</span><span class="p">,</span>
+      <span class="n">CHAR</span> <span class="o">*</span> <span class="n">STR</span><span class="p">,</span>
+<span class="n">PARAM</span> <span class="o">&amp;</span> <span class="n">CODEPARAM</span><span class="p">)</span>
+<span class="p">{</span>
+
+      <span class="o">/*</span> <span class="n">DISPLAY</span> <span class="n">FIRST</span> <span class="n">LINE</span> <span class="n">OF</span> <span class="n">PARAMETERS</span> <span class="o">*/</span>
+      <span class="n">COUT</span> <span class="o">&amp;</span><span class="n">LT</span><span class="o">&lt;</span> <span class="n">codeparam</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">codeparam</span><span class="o">.</span><span class="n">default_param</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">codeparam</span><span class="o">.</span><span class="n">schema</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="o">/*</span> <span class="n">display</span> <span class="n">content</span> <span class="n">of</span> <span class="n">inputs</span> <span class="o">*/</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;x=&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="nb">sum</span><span class="o">.</span><span class="n">time</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="nb">sum</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ant</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">eq</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">k</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+           <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">eq</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">profiles_1d</span><span class="o">.</span><span class="n">psi</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&lt;&lt;</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
+           <span class="p">}</span>
+           <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="o">/*</span> <span class="n">fill</span> <span class="n">limiter</span> <span class="n">CPO</span> <span class="o">*/</span>
+      <span class="n">lim</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s2">&quot;test_limiter&quot;</span><span class="p">);</span>
+      <span class="n">lim</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">r</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>     <span class="o">//</span> <span class="n">allocate</span> <span class="n">vector</span>
+      <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">lim</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="o">/*</span> <span class="n">fill</span> <span class="n">coreimpur</span> <span class="n">CPO</span> <span class="o">*/</span>
+      <span class="n">cor</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s2">&quot;test_coreimpur&quot;</span><span class="p">);</span>
+      <span class="n">cor</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>          <span class="o">//</span> <span class="n">allocate</span> <span class="n">vector</span>
+      <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cor</span><span class="o">.</span><span class="n">flag</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">cor</span><span class="o">.</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">//</span> <span class="n">don</span><span class="s1">&#39;t forget to fill time for time-dependent CPOs</span>
+      <span class="o">/*</span> <span class="n">fill</span> <span class="n">ironmodel</span> <span class="n">CPO</span> <span class="o">*/</span>
+      <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>        <span class="o">//</span> <span class="n">allocate</span> <span class="n">slices</span>
+      <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">255</span><span class="p">];</span>
+            <span class="n">sprintf</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s2">&quot;test_ironmodel</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
+            <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="o">//</span> <span class="n">allocate</span> <span class="n">vector</span>
+            <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">desc_iron</span><span class="o">.</span><span class="n">geom_iron</span><span class="o">.</span><span class="n">npoints</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">desc_iron</span><span class="o">.</span><span class="n">geom_iron</span><span class="o">.</span><span class="n">npoints</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="n">j</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">time</span><span class="o">=</span><span class="n">j</span><span class="p">;</span>       <span class="o">//</span> <span class="n">fill</span> <span class="n">time</span> <span class="k">for</span> <span class="n">time</span><span class="o">-</span><span class="n">dependent</span> <span class="n">CPOs</span>
+      <span class="p">}</span>
+      <span class="o">/*</span> <span class="n">assign</span> <span class="n">value</span> <span class="n">to</span> <span class="n">non</span> <span class="n">CPO</span> <span class="n">outputs</span> <span class="o">*/</span>
+      <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">strcpy</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="s2">&quot;This is a test string&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Content of Makefile:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>CXXFLAGS=-g -fPIC -I$(UAL)/include -I$(UAL)/lowlevel -I$(UAL)/cppinterface/
+-I$SWEU-IMDIR/blitz/blitz-0.9/include/
+LDFLAGS=-L$(UAL)/lib -lUALCPPInterface -lUALLowLevel -L/afs/efda-
+itm.eu/gf/project/switm/blitz/blitz-0.9/lib -lblitz
+libmycppfunction.a: mycppfunction.o
+      ar -rvs libmycppfunction.a mycppfunction.o
+mycppfunction.o: mycppfunction.cpp
+clean:
+      rm mycppfunction.o libmycppfunction.a
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-fill-the-fc2k-window">
+<h4>How to fill the FC2K window<a class="headerlink" href="#how-to-fill-the-fc2k-window" title="Permalink to this headline">¶</a></h4>
+<p>First tab (Argument):</p>
+<ul class="simple">
+<li>set number of input and output arguments (combined)</li>
+<li>select type of arguments from drop-down menu</li>
+<li>tick if argument is a single time slice</li>
+<li>tick if argument is array (not for pointers)</li>
+<li>if necessary define size of arrays</li>
+<li>tick if argument is input argument</li>
+<li>tick if argument is output argument (multiple ticks possible)</li>
+</ul>
+<p>The fields Kepler, Ptolemy, and UAL are automatically filled with the
+values which you set by running the <code class="docutils literal"><span class="pre">EU-IMv1</span> <span class="pre">script</span></code>.</p>
+<p>Second tab (HasReturn):</p>
+<ul class="simple">
+<li>specify return parameters (type, array, size)</li>
+</ul>
+<p>Third tab (HasParameters):</p>
+<ul class="simple">
+<li>tick if subroutine uses code specific parameters</li>
+<li>specify (or browse for) XML code parameter input file</li>
+<li>specify (or browse for) XML default code parameter file</li>
+<li>specify (or browse for) W3C XML schema file (XSD)</li>
+</ul>
+<p>For information on code specific parameters, please see <a class="reference external" href="#itm_code_parameters">How to handle
+code specific parameters</a>.</p>
+<p>Fourth tab (Source):</p>
+<ul class="simple">
+<li>specify programming language of source code</li>
+<li>select appropriate compiler</li>
+<li>tick
+Parallel MPI
+if code module is using MPI</li>
+<li>tick
+Batch
+if code module shall be run in batch mode rather than interactively
+when running Kepler workflows</li>
+<li>specify (or browse for) library file containing the code module</li>
+<li>specify (or browse for) other libraries required by the code module</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="ets.html" class="btn btn-neutral" title="Core Transport Simulator (ETS)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, WPCD.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

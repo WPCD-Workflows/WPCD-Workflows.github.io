@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Core Transport Simulator (ETS) &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
+        <link rel="next" title="Codes" href="codes.html"/>
+        <link rel="prev" title="Infrastructure" href="infrastructure.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EUROfusion Integrated Modelling workflows
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Core Transport Simulator (ETS)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ets-source-in-fortran">ETS source in FORTRAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation-for-the-ets">Documentation for the ETS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#presentations-that-discuss-the-ets">Presentations that discuss the ETS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ets-verification-validation">ETS Verification &amp; Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-ets-related-information">Other ETS related information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">EUROfusion Integrated Modelling workflows</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Core Transport Simulator (ETS)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/ets.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="core-transport-simulator-ets">
+<h1>Core Transport Simulator (ETS)<a class="headerlink" href="#core-transport-simulator-ets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ets-source-in-fortran">
+<h2>ETS source in FORTRAN<a class="headerlink" href="#ets-source-in-fortran" title="Permalink to this headline">¶</a></h2>
+<p>You can checkout the FORTRAN ETS workflow from gforge <a class="reference external" href="https://gforge6.eufus.eu/gf/project/ets/">/ project
+ETS</a> following instructions
+from <a class="reference external" href="../imports/ETS_Documentation/ETS_User_Guide.pdf">ETS User
+Guide</a></p>
+<p>If you did not use ETS before, first you need to request access to the
+code via the <a class="reference external" href="https://gforge6.eufus.eu/">EFDA EU-IM Portal</a> by
+following the GForge tab, following the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/ets/">project
+ETS</a> and requesting access.</p>
+<p>Once you have access to the code, it can be checked out of SVN using</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn co https://gforge6.eufus.eu/svn/ets</span>
+</pre></div>
+</div>
+<p>to access the whole repository, or</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn co https://gforge6.eufus.eu/svn/ets/trunk/ETS</span>
+</pre></div>
+</div>
+<p>to access just the trunk version of the ETS.</p>
+<p>The <a class="reference external" href="https://gforge6.eufus.eu/gf/project/ets/">ETS project on Gforge</a>
+also includes:</p>
+<ul class="simple">
+<li>A wiki</li>
+<li>Some documentation</li>
+<li>Trackers</li>
+<li>News</li>
+<li>Mailing lists</li>
+<li>The SVN repository (web interface)</li>
+</ul>
+</div>
+<div class="section" id="documentation-for-the-ets">
+<h2>Documentation for the ETS<a class="headerlink" href="#documentation-for-the-ets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Current ETS Timeline
+(PDF)
+(MS Project)</li>
+<li>Description of the ETS</li>
+<li>Form of the standardize equations</li>
+<li>ETS User Guide</li>
+<li>ETS Status</li>
+<li>ETS Doxygen Documentation
+(PDF)
+(HTML)</li>
+<li>Pellets in ETS</li>
+</ul>
+</div>
+<div class="section" id="presentations-that-discuss-the-ets">
+<h2>Presentations that discuss the ETS<a class="headerlink" href="#presentations-that-discuss-the-ets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Presentation at ICNSP-2009 on the ETS</li>
+<li>Movie from the presentation showing the evolution of the flux
+surfaces</li>
+<li>Movie from the presentation showing the evolution of the plasma</li>
+</ul>
+</div>
+<div class="section" id="ets-verification-validation">
+<h2><a class="reference external" href="imp3_ets_vv.html">ETS Verification &amp; Validation</a><a class="headerlink" href="#ets-verification-validation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="other-ets-related-information">
+<h2>Other ETS related information<a class="headerlink" href="#other-ets-related-information" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Visualization of the repository activity (x264)</li>
+<li>Visualization of the repository activity (wmv2)</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="codes.html" class="btn btn-neutral float-right" title="Codes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="infrastructure.html" class="btn btn-neutral" title="Infrastructure" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, WPCD.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

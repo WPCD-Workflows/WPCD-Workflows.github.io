@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction to Code Development for integrated modelling &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
+        <link rel="next" title="Infrastructure" href="infrastructure.html"/>
+        <link rel="prev" title="Welcome to EUROfusion Integrated Modelling workflows’s documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EUROfusion Integrated Modelling workflows
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to Code Development for integrated modelling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-european-integrated-modelling-eu-im-approach">The European Integrated Modelling (EU-IM) approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mission">Mission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#achievements">Achievements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#glossary">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support">Support</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-support-for-the-eu-im-platform-and-gateway">Getting support for the EU-IM platform and Gateway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#support-for-problems-related-to-the-eu-im-gateway">Support for problems related to the EU-IM Gateway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#support-for-problems-related-to-the-eu-im-platform-and-software">Support for problems related to the EU-IM Platform and Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#feature-requests-for-eu-im-software">Feature requests for EU-IM Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#links-to-related-external-projects">Links to related external projects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">EUROfusion Integrated Modelling workflows</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Introduction to Code Development for integrated modelling</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/introduction.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-to-code-development-for-integrated-modelling">
+<span id="world-wpcd-structure"></span><h1>Introduction to Code Development for integrated modelling<a class="headerlink" href="#introduction-to-code-development-for-integrated-modelling" title="Permalink to this headline">¶</a></h1>
+<p>The EUROfusion Project on Code Development for Integrated Modelling (WP-CD)
+supports the achievement of the European Fusion Roadmap at Horizon 2020
+goals, via the development of existing modelling codes with a particular
+focus on integrated modelling. The primary objectives of WPCD are: 1.
+Provide a suite of codes that can be validated on existing machines and
+used for JT-60SA, ITER and DEMO predictions:</p>
+<ul class="simple">
+<li>build on the existing modelling codes developed by the EUROfusion
+Consortium members including the Integrated Modelling (EU-IM)
+infrastructure, toolset and codes developed under the former EFDA ITM
+Task Force,</li>
+<li>add new physics to the existing models</li>
+<li>couple codes into integrated workflows</li>
+<li>optimize codes.</li>
+</ul>
+<p>2. Specific ITER simulation work in support of ITER IO and F4E with
+specified deliverables. WPCD operates under a work plan aiming to provide
+in the long term a full suite of integrated simulation workflows,
+incorporating core-edge-SOL/PFC coupling, first-principles models and
+control elements. A central task is the development of the new modular
+European Transport Simulator, ETS, which is being deployed to JET modelling
+infrastructure for validation and application to experimental analysis. In
+addition to code and workflow development, rigorous code verification is
+also performed under WPCD, within the EU-IM framework; whereas validation
+of the released integrated modelling workflows against the experiments is
+performed under the rerelated Task Forces. <a class="reference external" href="https://users.euro-fusion.org/iterphysicswiki/index.php/Main_Page/">EUROfusion WPCD webpage</a>.
+The EU-IM Team includes both EUROfusion WPCD and WPISA CPT contributors,
+see <a class="reference external" href="http://www.euro-fusionscipub.org/eu-im/">EU-IM Team</a>. This list
+reproduces the status of members in 2015 and is possibly not exhaustive.</p>
+<div class="section" id="the-european-integrated-modelling-eu-im-approach">
+<span id="world-itm-approach"></span><h2>The European Integrated Modelling (EU-IM) approach<a class="headerlink" href="#the-european-integrated-modelling-eu-im-approach" title="Permalink to this headline">¶</a></h2>
+<p>The choice of Integrated Modelling made by the former EFDA ITM and
+pursued now under EUROfusion WPCD is unique and original: it entails the
+development of a comprehensive and completely generic tokamak simulator
+including both the physics and the machine, which can be applied for any
+fusion device. The simulation platform was designed to be fully modular,
+flexible, and independent of a programming language.The choice of
+modularity implies that each module contains a single physical model and
+that the communication between the modules is standardised: a set of common
+common rules (ontology) clearly specify the format of the data to be
+consistently exchanged between modules (data-structure). The complexity of
+coupling the codes together is therefore transferred to the definition of a
+generic data-structure (allowing to describe and exchange information
+concerning both physical quantities and technical objects, not assuming the
+origin of those), extensible to allow the integration of new physics, as
+well as more elaborate machine geometries and experimental data in the
+future. A central project is the development of the so-called <strong>European
+Transport Simulator (ETS)</strong> aimed to meet all the EU-IM requirements,
+namely modularity, flexibility and standardized interfaces. In terms of the
+physics, the ETS is designed to solve the standard set of one-dimensional
+time dependent equations which describe the evolution of the core plasma.
+The solver itself is designed with a modular approach enabling the
+separation of the physics from the numerics, thereby facilitating the
+testing/usage of the numerical schemes that best suit a particular physical
+simulation.</p>
+</div>
+<div class="section" id="mission">
+<span id="world-itm-mission"></span><h2>Mission<a class="headerlink" href="#mission" title="Permalink to this headline">¶</a></h2>
+<p>The EU-IM operated under EFDA from 2004 until 2013. The main mission of
+EU-IM was to provide a software infrastructure framework for EU
+integrated modelling activities as well as a validated suite of
+simulation codes for the modelling of present experiments, ITER and DEMO
+plasmas. The EU-IM operated until 2013 under a work programme
+formulated to support this goal, structuring the EU modelling effort
+around existing experiments and ITER scenario prediction while
+maintaining a long term strategic aim to provide a validated set of
+European modelling tools for ITER exploitation.</p>
+</div>
+<div class="section" id="achievements">
+<span id="world-itm-achievements"></span><h2>Achievements<a class="headerlink" href="#achievements" title="Permalink to this headline">¶</a></h2>
+<p>During the first phase of the EU-IM, surveys and cross-verification of the
+available European models and numerical codes were performed within the
+individual IMPs and the data-structure was extensively discussed and
+defined. Equilibrium, linear MHD stability, core transport and RF wave
+propagation, as well as the poloidal field systems and a few diagnostics
+were the first topics addressed. Data structures have been finalised for
+these and then expanded to address, among others, non-linear MHD, edge
+physics, turbulence and neutral beam propagation. In parallel to the
+development of the physics concepts, EU-IM developed the tools to
+manipulate the data structure and use it in fully flexible and modular
+simulation workflows. The EU-IM database contains machine descriptions from
+JET, Tore Supra, MAST, FTU, FAST, AUG, ITER as well as some experimental
+data from Tore Supra and JET. The EU-IM futher achieved the development of
+the first release version of a fully modular and versatile simulator, the
+ETS, with all the essential functionalities. The validation of the ETS
+simualtor started in 2010 against the state-of-the-art transport codes and
+ETS now starts to be used for the first physics applications. Next steps
+are the validation of the simulator for a complete discharge on existing
+experimental data with the available modules, the integration of more
+quantitative physics models (&#8220;ab-initio&#8221;) and the integration of the whole
+modelling of the device. Some posters that describe the EU-IM were presented
+at an ITM EXPO at the 2011 EPS fusion conference in Strasbourg.</p>
+</div>
+<div class="section" id="structure">
+<span id="world-itm-structure"></span><h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<p>The EFDA ITM was structured into four Integrated Modelling Projects
+(IMPs) focusing on the following physics areas:</p>
+<ul class="simple">
+<li><strong>IMP12</strong>
+plasma equilibrium and MHD</li>
+<li><strong>IMP3</strong>
+transport code and whole discharge evolution</li>
+<li><strong>IMP4</strong>
+transport and micro-instabilities</li>
+<li><strong>IMP5</strong>
+heating, current drive (H&amp;CD) and fast particles</li>
+</ul>
+<p>The &#8220;Infrastructure and Software Integration Project&#8221; (<strong>ISIP</strong>) was in
+charge of developing, maintaining and operating the code platform structure
+and implementing the EU-IM data-structure. A key function of ISIP was to
+provide infrastructure support to the IMPs. At present, under EUROfusion,
+this expertise and tasks are ensured by the <strong>Core Programming Team</strong> under
+the <strong>Infrastructure and Support Activities Work Package (WP-ISA CPT)</strong>.
+Two further projects ensured the link with the experimentalists and the
+provision of the experimental databases:</p>
+<ul class="simple">
+<li><strong>AMNS</strong>
+the &#8220;Atomic, Molecular, Nuclear Surface&#8221; Data</li>
+<li><strong>EDRG</strong>
+&#8220;Experimentalists and Diagnosticians Resource Group&#8221;</li>
+</ul>
+<p>The &#8220;ITER Scenario Modelling Working Group&#8221; (<strong>ISM</strong>) was established in
+2007 as part of EU-IM with the aim to assist in systematic predictive
+modelling of all ITER reference scenarios by using the major existing
+integrated modelling tools, whilst the EU-IM code platform was in
+development. ISM also supported the verification and validation of the ETS,
+which aims to become the main tool for EU modelling activity.</p>
+</div>
+<div class="section" id="contributors">
+<span id="world-itm-contributors"></span><h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
+<p>EU-IM contributors are defined in the Appendix of G.L. Falchetto et
+al., Nuclear Fusion 54,043018, 2014. This list reproduces the status of
+EU-IM members in 2012 and is not exhaustive. A grateful thank you to
+all those who contributed and promoted EU-IM since its beginnigs.</p>
+</div>
+<div class="section" id="glossary">
+<span id="itm-glossary"></span><h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
+<p>Collaborative Development Environment (CDE)
+A <strong>collaborative development
+environment (CDE)</strong> is an online meeting space where a software development
+project&#8217;s stakeholders can work together, no matter what timezone or region
+they are in, to discuss, document , and produce project deliverables. The name was coined by <a class="reference external" href="http://en.wikipedia.org/wiki/Grady_Booch">Grady Booch</a>.</p>
+<dl class="docutils">
+<dt>Consistent Physical Object (CPO)</dt>
+<dd>A Consistent Physical Object (CPO) is a
+physics based, hierarchical data structure employed by the EU-IM for a
+complete description of a physics area, e.g. equilibrium. All EU-IM code
+modules interact through the exchange of CPOs. The CPOs also form the
+basic block of data written to the EU-IM database.</dd>
+<dt>Content Management System (CMS)</dt>
+<dd><p class="first">A <strong>content management system (CMS)</strong> is
+the collection of procedures used to manage work flow in a collaborative
+environment. These procedures can be manual or computer-based. The
+procedures are designed to:</p>
+<ul class="simple">
+<li>Allow for a large number of people to contribute to and share stored
+data</li>
+<li>Control access to data, based on user roles. User roles define what
+information each user can view or edit</li>
+<li>Aid in easy storage and retrieval of data</li>
+<li>Reduce repetitive duplicate input</li>
+<li>Improve the ease of report writing</li>
+<li>Improve communication between usersq</li>
+</ul>
+<p class="last">In a CMS, data can be defined as nearly anything - documents, movies,
+pictures, phone numbers, scientific data, etc. CMSs are frequently used
+for storing, controlling, revising, semantically enriching, and
+publishing documentation.</p>
+</dd>
+<dt>FC2K</dt>
+<dd>FC2K is a tool for wrapping a Fortran or C++ source code into a Kepler
+actor. Before using it, your physics code should be EU-IM-compliant (i.e.
+use CPOs as input/output).</dd>
+<dt>Gforge</dt>
+<dd><a class="reference external" href="https://gforge6.eufus.eu">Gforge</a> hosts all projects (software and infrastructure) under the EU-IM.</dd>
+<dt>EU-IM Gateway</dt>
+<dd>The EU-IM Gateway is a compute cluster located at Portici (near
+Napoli in Italy). It is uses for development and fusion simulations in
+the EU-IM.</dd>
+<dt>EU-IM Portal</dt>
+<dd>The <a class="reference external" href="https://portal.eufus.eu/idp/login.php?sp=itm&amp;tok=TeqwPv9">EU-IM Portal</a> is the web
+portal for the EU-IM, i.e. it hosts the EU-IM web pages and projects
+under Gforge.</dd>
+<dt>Integrated Simulation Editor (ISE)</dt>
+<dd>The Integrated Simulation Editor ISE allows you to visualize and edit
+data from an EU-IM database entry. It also allows running a Kepler
+workflow based on the opened data entry.</dd>
+<dt>Universal Access Layer (UAL)</dt>
+<dd>The UAL (Universal Access Layer) is a multi-language library that
+allows exchanging Consistent Physical Objects (CPOs) between various
+modules, and to write to an EU-IM database.</dd>
+<dt>actor</dt>
+<dd>Actors take execution instructions from a director. In other words,
+actors specify what processing occurs while the director specifies
+when it occurs. In the EU-IM, actors are usually modules which
+contain physics codes like EQUAL or HELENA.</dd>
+<dt>calibration</dt>
+<dd>The process of adjusting numerical or physical modelling parameters
+in the computational model for the purpose of improving agreement
+with experimental data.</dd>
+<dt>data mapping</dt>
+<dd>An XML file containing all the mapping essentials for mapping from a
+local experimental database for a specific tokamak device to the EU-IM
+database. The mapping essentials include for instance the download
+method, local signal names, gains and offsets, time base, and
+eventual interpolation option to ensure that only one time base is
+set for each CPO that is built from multiple local signals. A java
+code (exp2ITM developed under ISIP), with the MD and DM files as
+inputs, is then run to connect to the local device database, retrieve
+the required experimental data and populate the EU-IM database instance
+for that shot/device and dataversion.</dd>
+<dt>director</dt>
+<dd>A director controls (or directs) the execution of a workflow, just as
+a film director oversees a cast and crew.</dd>
+<dt>error</dt>
+<dd>A recognisable deficiency in any phase or activity of modelling and
+simulation that is not due to lack of knowledge.</dd>
+<dt>kepler</dt>
+<dd>Kepler is a software application for the analysis and modeling of
+scientific data. Kepler simplifies the effort required to create
+executable models by using a visual representation of these
+processes. These representations, or &#8220;scientific workflows&#8221;, display
+the flow of data among discrete analysis and modeling components.</dd>
+<dt>machine description</dt>
+<dd>The machine description (MD) of a device basically builds on the set
+of engineering and diagnostic settings characterising a tokamak
+device. This includes, for instance, the vessel/limiter description,
+the PF coils and circuiting and lines of sight of diagnostics. In
+practice, all MD information is encapsulated in an XML file that
+emanates from the MD tagged datastructure schemas. An MD instance of
+a given device is then stored into the EU-IM database as shot 0 for
+that device database.</dd>
+<dt>model</dt>
+<dd><p class="first">A representation of a physical system or process intended to enhance
+our ability to understand, predict, or control its behaviour.</p>
+<ul class="last simple">
+<li>A <strong>conceptual model</strong>
+consists of the observations, mathematical modelling data, and
+mathematical (e.g., partial differential) equations that describe
+the physical system. It will also include initial and boundary
+conditions.</li>
+<li>The <strong>computational model</strong>
+is the computer program or code that implements the conceptual
+model. It includes the algorithms and iterative strategies.
+Parameters for the computational model include the number of grid
+points, algorithm inputs, and similar parameters, etc.</li>
+</ul>
+</dd>
+<dt>modelling</dt>
+<dd>The process of construction or modification of a model</dd>
+<dt>prediction</dt>
+<dd>Use of a model to foretell the state of a physical system under
+conditions for which the model has not been validated.</dd>
+<dt>simulation</dt>
+<dd>The exercise or use of a model.</dd>
+<dt>uncertainty</dt>
+<dd>A potential deficiency in any phase or activity of the modelling
+process that is due to the lack of knowledge.</dd>
+<dt>validation</dt>
+<dd>The process of determining the degree to which a model is an
+accurate representation of the real world form the perspective of the
+intended uses of the model.</dd>
+<dt>verification</dt>
+<dd>The process of determining that a model implementation
+accurately represents the developer&#8217;s conceptual description of the model
+and the solution to the model.</dd>
+</dl>
+</div>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getting-support-for-the-eu-im-platform-and-gateway">
+<h3>Getting support for the EU-IM platform and Gateway<a class="headerlink" href="#getting-support-for-the-eu-im-platform-and-gateway" title="Permalink to this headline">¶</a></h3>
+<p>The EU-IM provides several ways to get support when you run into problems.
+Which one to choose depends on the nature of your problem. This page
+tries to give an overview.</p>
+</div>
+<div class="section" id="support-for-problems-related-to-the-eu-im-gateway">
+<h3>Support for problems related to the EU-IM Gateway<a class="headerlink" href="#support-for-problems-related-to-the-eu-im-gateway" title="Permalink to this headline">¶</a></h3>
+<p>The official documentation of the ITM Gateway can be found at
+<a class="reference external" href="https://wiki.eufus.eu">https://wiki.eufus.eu</a>.</p>
+</div>
+<div class="section" id="support-for-problems-related-to-the-eu-im-platform-and-software">
+<h3>Support for problems related to the EU-IM Platform and Software<a class="headerlink" href="#support-for-problems-related-to-the-eu-im-platform-and-software" title="Permalink to this headline">¶</a></h3>
+<p>All ITM-specific software and the whole ITM platform is supported by the
+Core Programming Team (CPT). You can submit trouble tickets to them via
+the General Support Project in the GForge system. To get more effective
+help, have a look at the guidelines prepared here: <a class="reference external" href="http://portal.efda-itm.eu/twiki/bin/view/Main/HowToReportAnIssue">How to report an
+issue</a>.</p>
+<p>To directly submit a trouble ticket, go to: <a class="reference external" href="https://gforge6.eufus.eu/gf/project/generalsupport/tracker/?action=TrackerItemBrowse&amp;tracker_id=184">General Support Tracker
+(https://gforge6.eufus.eu/gf/project/generalsupport/tracker/)</a>.</p>
+<p>Use this support tracker if your problem falls in the following
+categories:</p>
+<ul class="simple">
+<li>Problems using the UAL, FC2K, HPC2K or similar tools</li>
+<li>Problems running Kepler or Kepler workflows</li>
+<li>Visualization tools: VisIt, Python</li>
+<li>Integrated Simulation Editor (ISE)</li>
+<li>Any software project that is hosted in GForge</li>
+<li>Any kind of scientific software</li>
+</ul>
+</div>
+<div class="section" id="feature-requests-for-eu-im-software">
+<h3>Feature requests for EU-IM Software<a class="headerlink" href="#feature-requests-for-eu-im-software" title="Permalink to this headline">¶</a></h3>
+<p>Feature requests for software developed within the ITM can be submitted
+to a separate tracker.</p>
+<p>To submit a feature request, please go to <a class="reference external" href="https://gforge6.eufus.eu/gf/project/generalsupport/tracker/?action=TrackerItemBrowse&amp;tracker_id=702">General Feature Request
+Tracker</a>.</p>
+<p>If you are unsure whether to file a bug report of feature request, have
+a look at these guidlines: <a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/HowToReportAnIssue">How to report an
+issue</a>.</p>
+</div>
+</div>
+<div class="section" id="links-to-related-external-projects">
+<span id="world-itm-external-links"></span><h2>Links to related external projects<a class="headerlink" href="#links-to-related-external-projects" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://www.euforia-project.eu/EUFORIA/">EUFORIA Project</a></li>
+<li><a class="reference external" href="http://www.mapper-project.eu/">MAPPER Project</a></li>
+<li><a class="reference external" href="https://www.efda-hlst.eu/">EFDA High Level Support Team (HLST)</a></li>
+<li><a class="reference external" href="https://solps-mdsplus.aug.ipp.mpg.de/GOTiT/">EFDA Goal Oriented Training in Theory (GOTiT)</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="infrastructure.html" class="btn btn-neutral float-right" title="Infrastructure" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to EUROfusion Integrated Modelling workflows’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, WPCD.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
