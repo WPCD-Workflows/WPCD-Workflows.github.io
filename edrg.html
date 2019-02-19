@@ -1,0 +1,584 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>EDRG &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
+        <link rel="next" title="AMNS" href="amns.html"/>
+        <link rel="prev" title="Codes" href="codes.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EUROfusion Integrated Modelling workflows
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">EDRG</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#scientific-rationale-and-main-objectives">Scientific Rationale and Main Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#machine-descriptions-and-data-mappings">Machine Descriptions and Data Mappings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#machine-descriptions">Machine Descriptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#background">Background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#md-content-on-dataversions">MD content on dataversions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tutorial-and-specific-information-on-some-cpos">Tutorial and specific information on some CPOs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data-mappings">Data Mappings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dm-content-on-dataversions">DM content on dataversions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tutorial-on-data-mappings">Tutorial on data mappings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#machine-description-database">Machine Description Database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#iter">ITER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jt60sa">JT60SA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jet">JET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ts">TS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aug">AUG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tcv">TCV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ftu">FTU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EUROfusion Integrated Modelling workflows</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>EDRG</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/edrg.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="edrg">
+<span id="edrg-public"></span><h1>EDRG<a class="headerlink" href="#edrg" title="Permalink to this headline">¶</a></h1>
+<p>EDRG (EXPERIMENTALISTS AND DIAGNOSTICIANS RESOURCE GROUP) is one of the
+two projects falling under the coordination of the Leadership of the EU
+Task Force for Integrated Tokamak Modelling (EU-IM) and is the privileged
+contact of the EU-IM with the experimentalists and diagnosticians
+community.</p>
+<div class="section" id="scientific-rationale-and-main-objectives">
+<h2>Scientific Rationale and Main Objectives<a class="headerlink" href="#scientific-rationale-and-main-objectives" title="Permalink to this headline">¶</a></h2>
+<p>The consolidation of the validated suite of simulation tools that the
+EU-IM aims to provide for ITER and existing experiments requires a strong
+interaction with the experimentalists and diagnosticians fusion
+community. The former are promoted by the Experimentalist and
+Diagnosticians Resource Group (EDRG).
+Acting as a contact point within the EU-IM towards the full range of
+experiments and some of the EFDA Topical Groups and Working Group
+initiatives, the EDRG group promotes the provision of a machine
+independent approach to modelling, to encompass realistic operational
+conditions and to facilitate
+verification
+and
+validation
+of the modelling codes.
+The groups action comprises</p>
+<p>1. Developing a comprehensive set of Machine descriptions and
+experimental data mappings to access experimental databases from
+european devices.</p>
+<p>2. The coordination of the overall plasma control activities to be
+carried within the EU-IM-TF and in liaison with other EFDA initiatives.</p>
+<p>3. The integration of synthetic diagnostic modules to assist
+Verification and Validation of EU-IM modules and virtual PCS.</p>
+</div>
+<div class="section" id="machine-descriptions-and-data-mappings">
+<span id="edrg-md-and-dm"></span><h2>Machine Descriptions and Data Mappings<a class="headerlink" href="#machine-descriptions-and-data-mappings" title="Permalink to this headline">¶</a></h2>
+<p>At the forefront of the EDRG activities, the consolidation of the
+machine descriptions and data mappings for the experimental data on the
+participating devices is of utmost importance.</p>
+<div class="section" id="machine-descriptions">
+<h3>Machine Descriptions<a class="headerlink" href="#machine-descriptions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="background">
+<h4>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h4>
+<p>The machine description (MD) of a device basically builds on the set of
+engineering and diagnostic settings characterising any device. This
+includes, for instance, the vessel/limiter description (for the moment
+in R-Z domain only), the PF coils and circuiting and lines of sight of
+diagnostics (an example for ITER is seen below evidencing the
+vessel+limiter+pfsystems and magdiad CPOs).
+In practice, all MD information is encapsulated in a XML file that
+emanates from the MD tagged datastructure schemas. A MD instance of a
+given device is then stored into the EU-IM db as shot 0 for that device
+database.
+At data structure version 4.09a, the list of CPOs with machine
+description tags is indicated in the Figure below</p>
+</div>
+<div class="section" id="md-content-on-dataversions">
+<h4>MD content on dataversions<a class="headerlink" href="#md-content-on-dataversions" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">4.07b</th>
+<th class="head">4.08a</th>
+<th class="head">4.08b</th>
+<th class="head">4.09a</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>antennas,
+interfdiag,
+ironmodel,
+limiter,
+magdiag,
+msediag,
+pfsystems,
+polardiag,
+toroidfield,
+vessel</td>
+<td>antennas,
+ecediag,
+interfdiag,
+ironmodel,
+limiter,
+magdiag,
+msediag,
+pfsystems,
+polardiag,
+reference,
+toroidfield,
+tsdiag, vessel</td>
+<td>antennas,
+ecediag,
+interfdiag,
+ironmodel,
+limiter,
+magdiag,
+msediag, nbi,
+pfsystems,
+polardiag,
+toroidfield,
+tsdiag, vessel</td>
+<td>antennas,
+ecediag,
+fusiondiag,
+interfdiag,
+ironmodel,
+langmuirdiag,
+limiter,
+magdiag,
+msediag, nbi,
+pfsystems,
+polardiag,
+toroidfield,
+tsdiag, vessel</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tutorial-and-specific-information-on-some-cpos">
+<h4>Tutorial and specific information on some CPOs<a class="headerlink" href="#tutorial-and-specific-information-on-some-cpos" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>A good introduction to the machine description concept is found in
+this
+User Guide
+.</li>
+<li>Up to data version 4.07c, the geometry of lines of sight used in some
+diagnostics (interfdiag and polardiag) was characterized by two
+angles (poloidal and toroidal). A caveat was found, leading to the
+adoption of a new set of angles as described in this
+report
+. The pivot points became 3 (previously 2) to encompass slightly
+different entry/exit positions for the reflected beams.</li>
+<li>From data version 4.09a, the limiter, nbi and antennas CPOs use
+arrays of structures data types. This enabled a more refined
+description of plasma facing components and the divertor region and
+both open and closed &#8216;tile&#8217; elements. Each NBI and antenna unit is
+also a dedicated structure.</li>
+<li>Detailed definitions are available for
+Flux loop position
+,
+PFconnections
+,
+Langmuir probes
+and
+Fusion CPO
+.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="data-mappings">
+<h3>Data Mappings<a class="headerlink" href="#data-mappings" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>Background<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>In regard to the experimental data from a particular shot/device set,
+the EU-IM had to develop its own tool to retrieve the data from the
+experimental databases and populate the corresponding EU-IM db entry since
+the latter rarely adopt the same datastructure ontology and different
+methods/implementation for the databases might exist on different
+devices. A XML file contains all the mapping essentials, e.g. download
+method, local signal names, gains and offsets, time base and eventual
+interpolation option to ensure that only one time base is set for each
+CPO
+that is built from multiple local signals. A java code (exp2EU-IM
+developed under ISIP), with the MD and DM files as inputs, is then run
+to connect to the local device database, retrieve the required
+experimental data and populate the EU-IM db instance for that shot/device
+and dataversion.
+At data structure version 4.09a, the list of CPOs with data mappings
+tags is indicated in the Figure below (experimental signals are colored
+in orange; mappings to other CPOs, e.g. equilibrium or coreprof have
+been set in order to assist the retrieval of simulated data from other
+databases, e.g. JSP, JSPC)</p>
+</div>
+<div class="section" id="dm-content-on-dataversions">
+<h4>DM content on dataversions<a class="headerlink" href="#dm-content-on-dataversions" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">4.07b</th>
+<th class="head">4.08a</th>
+<th class="head">4.08b</th>
+<th class="head">4.09a</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>antennas,
+interfdiag,
+ironmodel,
+magdiag,
+msediag,
+pfsystems,
+polardiag,
+toroidfield</td>
+<td>antennas,
+cxdiag,
+ecediag,
+interfdiag,
+ironmodel,
+magdiag,
+msediag, nbi,
+pfsystems,
+polardiag,
+toroidfield,
+tsdiag,
+coredelta,
+coreprof,
+coretransp,
+distribution,
+distsource,
+equilibrium,
+neoclassical,
+sawteeth,
+scenario, waves</td>
+<td>antennas,
+cxdiag,
+ecediag,
+interfdiag,
+ironmodel,
+magdiag,
+msediag, nbi,
+pfsystems,
+polardiag,
+toroidfield,
+tsdiag,
+coredelta,
+coreprof,
+coretransp,
+distribution,
+distsource,
+equilibrium,
+neoclassical,
+sawteeth,
+scenario,
+turbulence,
+waves</td>
+<td>antennas,
+cxdiag,
+ecediag,
+fusiondiag,
+interfdiag,
+ironmodel,
+langmuirdiag,
+magdiag,
+msediag, nbi,
+pfsystems,
+polardiag,
+toroidfield,
+tsdiag,
+coredelta,
+coreprof,
+coretransp,
+distribution,
+distsource,
+equilibrium,
+neoclassical,
+sawteeth,
+scenario,
+turbulence,
+waves</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tutorial-on-data-mappings">
+<h4>Tutorial on data mappings<a class="headerlink" href="#tutorial-on-data-mappings" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>A good starting point to understand the basics of the data mapping
+concept and how to fill it with the device dependent referecing of
+the experimental data is found in this
+User Guide
+.</li>
+<li>A description on the data mapping concept and processing by exp2EU-IM
+(with usage tips) is found in this
+presentation
+.</li>
+</ul>
+<p>For more updated information on the MD and DM activity please check the
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/md_and_dm/">md_and_dm project</a> in
+Gforge</p>
+</div>
+</div>
+</div>
+<div class="section" id="machine-description-database">
+<span id="machinedescriptiondatabase-documentation"></span><h2>Machine Description Database<a class="headerlink" href="#machine-description-database" title="Permalink to this headline">¶</a></h2>
+<p>UNDER CONSTRUCTION!</p>
+<div class="section" id="iter">
+<h3>ITER<a class="headerlink" href="#iter" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="jt60sa">
+<h3>JT60SA<a class="headerlink" href="#jt60sa" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="jet">
+<h3>JET<a class="headerlink" href="#jet" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ts">
+<h3>TS<a class="headerlink" href="#ts" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="aug">
+<h3>AUG<a class="headerlink" href="#aug" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="tcv">
+<h3>TCV<a class="headerlink" href="#tcv" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ftu">
+<h3>FTU<a class="headerlink" href="#ftu" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="amns.html" class="btn btn-neutral float-right" title="AMNS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="codes.html" class="btn btn-neutral" title="Codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, WPCD.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

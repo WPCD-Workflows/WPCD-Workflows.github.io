@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -43,6 +45,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -83,11 +86,19 @@
           
             
             
-                <ul>
+              
+            
+            
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
 </ul>
 
             
@@ -100,8 +111,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">EUROfusion Integrated Modelling workflows</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">EUROfusion Integrated Modelling workflows</a>
+        
       </nav>
 
 
@@ -110,23 +123,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
-      
-    <li>Welcome to EUROfusion Integrated Modelling workflows&#8217;s documentation!</li>
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Welcome to EUROfusion Integrated Modelling workflows&#8217;s documentation!</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -173,16 +203,292 @@
 <li class="toctree-l2"><a class="reference internal" href="ets.html#ets-source-in-fortran">ETS source in FORTRAN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ets.html#documentation-for-the-ets">Documentation for the ETS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ets.html#presentations-that-discuss-the-ets">Presentations that discuss the ETS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ets.html#ets-verification-validation">ETS Verification &amp; Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ets.html#ets-verification-validation">ETS Verification &amp; Validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ets.html#roadmap-for-the-ets-verification-and-benchmarking-procedure-based-on-g-pereverzev-s-proposal">Roadmap for the ETS verification and benchmarking procedure (based on G. Pereverzev&#8217;s proposal)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ets.html#part-i-cylindrical-geometry-consistency-check">Part I. Cylindrical geometry. Consistency check.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ets.html#results-obtained-in-2011-for-ual-version-4-08b">Results obtained in 2011 for UAL-version 4.08b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ets.html#results-obtained-in-2012-for-ual-version-4-09a">Results obtained in 2012 for UAL-version 4.09a</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="ets.html#other-ets-related-information">Other ETS related information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ets.html#ets-workflows-in-kepler">ETS workflows in KEPLER</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ets.html#ets-a-4-10b">ETS_A 4.10b</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ets.html#obtaining-the-ets">Obtaining the ETS</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#installing-the-ets">Installing the ETS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#ets-revisions">ETS revisions</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="ets.html#configuring-the-ets-run">Configuring the ETS run</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#workflow-parameters">Workflow parameters</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#general-parameters">General Parameters</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#space-resolution">Space resolution</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#time-resolution">Time resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#ion-impurity-and-neutral-composition">Ion, Impurity and Neutral Composition</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#equations-to-be-solved-and-boundary-conditions">Equations to be solved and boundary conditions</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#main-plasma">Main Plasma</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#impurity">Impurity</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#neutrals">Neutrals</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#input-profiles-interpolation">Input profiles interpolation</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#convergence-loop">Convergence loop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#equilibrium">Equilibrium</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#initialization-settings">Initialization Settings</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#run-settings">Run Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#transport">Transport</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#transport-models">Transport models</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#background-transport">Background transport</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#edge-transport-barrier">Edge transport barrier</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#total-transport-coefficients">Total transport coefficients</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#mhd">MHD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#sources-and-impurity">Sources and impurity</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#analytical-impurity-sources">Analytical &amp; Impurity sources</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#hcd-sources">HCD sources</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#power-control">Power control</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#total-power">Total power</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#instantaneous-events-actuators">Instantaneous events &amp; Actuators</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#pellet">Pellet</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#sawtooth">Sawtooth</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#actuators">Actuators</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#scenario-output">Scenario output</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#visualization">Visualization</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#multiple-tab-display">Multiple Tab Display</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#python-visualization-display">Python Visualization Display</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="ets.html#list-of-actors">List of Actors</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#equilibrium-actors">Equilibrium actors</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#core-transport-actors">Core transport actors</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#edge-transport-actors">Edge transport actors</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#heating-and-current-drive-actors">Heating and current drive actors</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#events-actors">Events actors</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#non-physics-actors">Non-physics actors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ets.html#ets-a-4-10a">ETS_A 4.10a</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ets.html#id3">Obtaining the ETS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ets.html#updating-the-ets">Updating the ETS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ets.html#executing-the-ets">Executing the ETS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ets.html#ets-a-4-10a-configuring">Configuring the ETS run</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#ets-a-4-10a-workflow-parameters">Workflow Parameters</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id6">General Parameters</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id7">Space resolution</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id8">Time resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#plasma-impurity-and-neutrals-composition">Plasma, Impurity and Neutrals Composition</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#ets-a-4-10a-equations">Equations to be solved and boundary conditions</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id10">Main plasma</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id11">Impurity</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id12">Neutrals</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id13">Input Profiles Interpolation</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#ets-a-4-10a-convergence">Convergence loop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#ets-a-4-10a-equilibrium">Equilibrium</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#starting-settings">Starting Settings</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id16">Run Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#ets-a-4-10a-transport">Transport</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#choice-of-transport-model">Choice of transport model</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#main-plasma-transport">Main plasma transport</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#impurity-transport">Impurity transport</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id18">Edge transport barrier</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id19">Total transport coefficients</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#ets-a-4-10a-mhd">MHD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#ets-a-4-10a-sources">Sources and impurity</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#imp3-sources">IMP3 sources</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#imp5hcd-sources">IMP5HCD sources</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id22">Power control</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id23">Total power</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#instantaneous-events">Instantaneous events</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id24">Pellet</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id25">MHD</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ets.html#visualization-during-the-run">Visualization during the run</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id26">Multiple Tab Display</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ets.html#id27">Python Visualization Display</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ets.html#ets-c">ETS_C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ets.html#ets-status">ETS Status</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edge.html#imp3-general-grid-description-and-grid-service-library">IMP3 General Grid Description and Grid Service Library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#resources">Resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#outdated-documentation">Outdated documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="edge.html#example-grids">Example grids</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="edge.html#example-grid-details">Example grid details</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="edge.html#example-grid-1-2d-structured-r-z-grid">Example Grid #1: 2d structured R,Z grid</a></li>
+<li class="toctree-l6"><a class="reference internal" href="edge.html#example-2-b2-grid">Example 2: B2 grid</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="edge.html#object-list-examples">Object list examples</a></li>
+<li class="toctree-l5"><a class="reference internal" href="edge.html#subgrid-examples">Subgrid examples</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="edge.html#grid-service-library">Grid service library</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="edge.html#using-the-grid-service-library">Using the grid service library</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="edge.html#setting-up-the-environment">Setting up the environment</a></li>
+<li class="toctree-l6"><a class="reference internal" href="edge.html#checking-out-and-testing-the-grid-service-library">Checking out and testing the grid service library</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="edge.html#example-applications-outdated">Example applications (outdated)</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="edge.html#plotting-3d-wall-geometry-with-visit-temporary-solution-not-required-any-more">Plotting 3d wall geometry with VisIt (temporary solution, not required any more)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="edge.html#using-ualconnector-to-visualize-cpos-using-the-general-grid-description">Using UALConnector to visualize CPOs using the general grid description</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="edge.html#imp3-general-grid-description-and-grid-service-library-tutorial">IMP3 General Grid Description and Grid Service Library - Tutorial</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="edge.html#setup-your-environment">Setup your environment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="edge.html#compile-run-examples">Compile &amp; run examples</a></li>
+<li class="toctree-l5"><a class="reference internal" href="edge.html#visualize">Visualize</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transport.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transport.html#particle-flux-as-an-example">Particle Flux as an Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transport.html#metric-coefficients">Metric Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transport.html#heat-fluxes">Heat Fluxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transport.html#ds-and-vs-from-turbulence-codes-to-transport-solvers">Ds and Vs from Turbulence Codes to Transport Solvers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transport.html#ambipolarity">Ambipolarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transport.html#statistical-character">Statistical Character</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="averages.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="averages.html#definition">Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="averages.html#differential-equation">Differential Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="averages.html#equivalence-to-past-time-convolution-integral">Equivalence to Past-Time Convolution Integral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="averages.html#notes">notes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="codes.html#imasviz">IMASviz</a></li>
 <li class="toctree-l2"><a class="reference internal" href="codes.html#fc2k">FC2K</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#how-to-turn-a-c-code-into-a-kepler-actor">How to turn a C++ code into a Kepler actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#how-to-turn-a-c-code-into-a-kepler-actor">How to turn a C++ code into a Kepler actor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#adapt-your-c-function">Adapt your C++ function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#how-to-use-code-parameters">How to use code parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#compile-your-function-as-a-library">Compile your function as a library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#full-example">Full example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#how-to-fill-the-fc2k-window">How to fill the FC2K window</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="codes.html#plasma-equilibrium-and-mhd-imp12-list-of-codes">Plasma equilibrium and MHD (IMP12) list of codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#free-boundary-equilibrium-codes">Free boundary equilibrium codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#fixed-boundary-equilibrium-codes">Fixed boundary equilibrium codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#linear-mhd-stability-codes">Linear MHD stability codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#equilibrium-codes-with-flow">Equilibrium codes with flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#d-equilibrium-codes">3D Equilibrium Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#sawtooth-crash-modules">Sawtooth Crash Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#elm-modules">ELM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#rwm-modules">RWM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#ntm-modules">NTM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#d-mhd-codes">3D MHD Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#error-field-modules">Error Field Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#id1">2D MHD Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#disruption-modules">Disruption Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#numerical-tools">Numerical Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="codes.html#heating-current-drive-h-cd-and-fast-particles-imp5-list-of-codes">Heating, current drive (H&amp;CD) and fast particles (IMP5) list of codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#electron-heating-codes">Electron heating codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#ec-wave-codes">EC wave codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#lh-wave-codes">LH wave codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#combined-ec-and-lh-wave-codes">Combined EC and LH wave codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#combined-electron-fokker-planck-codes">Combined electron Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#lh-coupling">LH coupling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#time-domain-wave-codes">Time domain wave codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#ion-heating-codes">Ion heating codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#wave-codes-for-ion-cyclotron-heating">Wave codes for ion cyclotron heating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#fokker-planck-codes-for-ion-cyclotron-heating">Fokker-Planck codes for ion cyclotron heating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#nbi-sources-for-fokker-planck-codes">NBI sources for Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#nuclear-sources-input-for-fokker-planck-codes">Nuclear sources (input for Fokker-Planck codes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#nbi-fokker-planck-codes">NBI Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#advanced-codes">Advanced codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#orbit-tracing-codes">Orbit tracing codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#fast-particle-codes">Fast particle codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#codes-for-fast-ion-mhd-interactions">Codes for fast ion-MHD interactions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#runaway-electrons">Runaway electrons</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edrg.html#scientific-rationale-and-main-objectives">Scientific Rationale and Main Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="edrg.html#machine-descriptions-and-data-mappings">Machine Descriptions and Data Mappings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="edrg.html#machine-descriptions">Machine Descriptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="edrg.html#background">Background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edrg.html#md-content-on-dataversions">MD content on dataversions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edrg.html#tutorial-and-specific-information-on-some-cpos">Tutorial and specific information on some CPOs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="edrg.html#data-mappings">Data Mappings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="edrg.html#id1">Background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edrg.html#dm-content-on-dataversions">DM content on dataversions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edrg.html#tutorial-on-data-mappings">Tutorial on data mappings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="edrg.html#machine-description-database">Machine Description Database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="edrg.html#iter">ITER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edrg.html#jt60sa">JT60SA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edrg.html#jet">JET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edrg.html#ts">TS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edrg.html#aug">AUG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edrg.html#tcv">TCV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edrg.html#ftu">FTU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="amns.html#scientific-rationale-and-main-objectives">Scientific Rationale and Main Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amns.html#eu-im-contact-person">EU-IM contact person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amns.html#amns-tasks">AMNS tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amns.html#private-amns-pages">Private AMNS pages</a></li>
 </ul>
 </li>
 </ul>
@@ -199,12 +505,15 @@
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="introduction.html" class="btn btn-neutral float-right" title="Introduction to Code Development for integrated modelling" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="introduction.html" class="btn btn-neutral float-right" title="Introduction to Code Development for integrated modelling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
@@ -239,7 +548,8 @@
             VERSION:'3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

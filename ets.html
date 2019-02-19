@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -34,7 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
-        <link rel="next" title="Codes" href="codes.html"/>
+        <link rel="next" title="Edge Transport Simulator" href="edge.html"/>
         <link rel="prev" title="Infrastructure" href="infrastructure.html"/> 
 
   
@@ -44,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -84,18 +87,50 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Core Transport Simulator (ETS)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#ets-source-in-fortran">ETS source in FORTRAN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation-for-the-ets">Documentation for the ETS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#presentations-that-discuss-the-ets">Presentations that discuss the ETS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ets-verification-validation">ETS Verification &amp; Validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#other-ets-related-information">Other ETS related information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ets-verification-validation">ETS Verification &amp; Validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#roadmap-for-the-ets-verification-and-benchmarking-procedure-based-on-g-pereverzev-s-proposal">Roadmap for the ETS verification and benchmarking procedure (based on G. Pereverzev&#8217;s proposal)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-i-cylindrical-geometry-consistency-check">Part I. Cylindrical geometry. Consistency check.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results-obtained-in-2011-for-ual-version-4-08b">Results obtained in 2011 for UAL-version 4.08b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results-obtained-in-2012-for-ual-version-4-09a">Results obtained in 2012 for UAL-version 4.09a</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#other-ets-related-information">Other ETS related information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ets-workflows-in-kepler">ETS workflows in KEPLER</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ets-a-4-10b">ETS_A 4.10b</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#obtaining-the-ets">Obtaining the ETS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-ets-run">Configuring the ETS run</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-of-actors">List of Actors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ets-a-4-10a">ETS_A 4.10a</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Obtaining the ETS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updating-the-ets">Updating the ETS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#executing-the-ets">Executing the ETS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ets-a-4-10a-configuring">Configuring the ETS run</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ets-c">ETS_C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ets-status">ETS Status</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
 </ul>
 
             
@@ -108,8 +143,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">EUROfusion Integrated Modelling workflows</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EUROfusion Integrated Modelling workflows</a>
+        
       </nav>
 
 
@@ -118,23 +155,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Core Transport Simulator (ETS)</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Core Transport Simulator (ETS)</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/ets.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/ets.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -164,28 +218,24 @@ ETS</a> and requesting access.</p>
 <p>The <a class="reference external" href="https://gforge6.eufus.eu/gf/project/ets/">ETS project on Gforge</a>
 also includes:</p>
 <ul class="simple">
-<li>A wiki</li>
-<li>Some documentation</li>
-<li>Trackers</li>
-<li>News</li>
-<li>Mailing lists</li>
-<li>The SVN repository (web interface)</li>
+<li><a class="reference external" href="https://gforge6.eufus.eu/gf/project/ets/wiki/">A wiki</a></li>
+<li><a class="reference external" href="https://gforge6.eufus.eu/gf/project/ets/docman/">Some documentation</a></li>
+<li><a class="reference external" href="https://gforge6.eufus.eu/gf/project/ets/tracker/">Trackers</a></li>
+<li><a class="reference external" href="https://gforge6.eufus.eu/gf/project/ets/news/">News</a></li>
+<li><a class="reference external" href="https://gforge6.eufus.eu/gf/project/ets/mailman/">Mailing lists</a></li>
+<li><a class="reference external" href="https://gforge6.eufus.eu/gf/project/ets/scmsvn/">The SVN repository (web interface)</a></li>
 </ul>
 </div>
 <div class="section" id="documentation-for-the-ets">
 <h2>Documentation for the ETS<a class="headerlink" href="#documentation-for-the-ets" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Current ETS Timeline
-(PDF)
-(MS Project)</li>
-<li>Description of the ETS</li>
-<li>Form of the standardize equations</li>
-<li>ETS User Guide</li>
-<li>ETS Status</li>
-<li>ETS Doxygen Documentation
-(PDF)
-(HTML)</li>
-<li>Pellets in ETS</li>
+<li>Current ETS Timeline (PDF)(MS Project)</li>
+<li><a class="reference external" href="https://portal.eufus.eu/documentation/ITM/imports/imp3/public/ETS_Documentation/ETS_TRANSPORT_EQUATIONS.pdf">Description of the ETS</a></li>
+<li><a class="reference external" href="https://portal.eufus.eu/documentation/ITM/imports/imp3/public/ETS_Documentation/STANDARDISED_EQUATION.pdf">Form of the standardize equations</a></li>
+<li><a class="reference external" href="https://portal.eufus.eu/documentation/ITM/imports/imp3/public/ETS_Documentation/ETS_User_Guide.pdf">ETS User Guide</a></li>
+<li><a class="reference external" href="https://portal.eufus.eu/documentation/ITM/imports/imp3/public/ETS_Documentation/ETS_Status.pdf">ETS Status</a></li>
+<li>ETS Doxygen Documentation (PDF)(HTML)</li>
+<li><a class="reference external" href="https://portal.eufus.eu/documentation/ITM/html/pellet.html">Pellets in ETS</a></li>
 </ul>
 </div>
 <div class="section" id="presentations-that-discuss-the-ets">
@@ -198,7 +248,185 @@ surfaces</li>
 </ul>
 </div>
 <div class="section" id="ets-verification-validation">
-<h2><a class="reference external" href="imp3_ets_vv.html">ETS Verification &amp; Validation</a><a class="headerlink" href="#ets-verification-validation" title="Permalink to this headline">¶</a></h2>
+<h2>ETS Verification &amp; Validation<a class="headerlink" href="#ets-verification-validation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="roadmap-for-the-ets-verification-and-benchmarking-procedure-based-on-g-pereverzev-s-proposal">
+<span id="imp3-ets-vv"></span><h3>Roadmap for the ETS verification and benchmarking procedure (based on G. Pereverzev&#8217;s proposal)<a class="headerlink" href="#roadmap-for-the-ets-verification-and-benchmarking-procedure-based-on-g-pereverzev-s-proposal" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Proposal for ETS verification and benchmarking procedure (PDF)</li>
+<li>ETS verification and benchmarking (ASTRA results) (PDF)</li>
+</ul>
+</div>
+<div class="section" id="part-i-cylindrical-geometry-consistency-check">
+<h3>Part I. Cylindrical geometry. Consistency check.<a class="headerlink" href="#part-i-cylindrical-geometry-consistency-check" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="results-obtained-in-2011-for-ual-version-4-08b">
+<h3>Results obtained in 2011 for UAL-version 4.08b<a class="headerlink" href="#results-obtained-in-2011-for-ual-version-4-08b" title="Permalink to this headline">¶</a></h3>
+<p>NOTE: For the particle diffusion coefficient D and pinch velocity v, the
+values below correspond in fact to the individual coefficients for each of
+the three transport models considered within ETS. For example, a v=1
+translates into an effective pinch velocity of 3 in the density transport
+equation and of 0+3/2+5/2=4 in the ion flux contributing to heat transport.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="21%" />
+<col width="11%" />
+<col width="10%" />
+<col width="23%" />
+<col width="27%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Case</th>
+<th class="head">Description</th>
+<th class="head">Subcase</th>
+<th class="head">Solver</th>
+<th class="head">Comments</th>
+<th class="head">Graphic output (PDF)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>I.1.1</td>
+<td>Constant
+densities and</td>
+<td>N/A</td>
+<td>3</td>
+<td>Convergence ok.
+Errors within
+machine precision</td>
+<td>I.1.1_s3</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>7</td>
+<td>Convergence ok.
+Errors within
+machine precision</td>
+<td>I.1.1_s7</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>10</td>
+<td>Convergence ok.
+Errors within
+machine precision</td>
+<td>I.1.1_s10</td>
+</tr>
+<tr class="row-odd"><td>I.1.2</td>
+<td>Interpretative
+time-dependent
+solution for
+densities</td>
+<td>N/A</td>
+<td>3</td>
+<td>Under analysis:
+no time evolution
+for the
+temperatures</td>
+<td>I.1.2_s3</td>
+</tr>
+<tr class="row-even"><td>I.1
+.3</td>
+<td>Conservation
+laws (particle
+and energy)
+with diffusion</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>This case was
+treated under
+I.1.5</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>I.1.4</td>
+<td>Conservation
+laws (particle
+and energy)
+with
+discontinuous
+diffusion
+coefficient</td>
+<td>N/A</td>
+<td>3</td>
+<td>Convergence ok</td>
+<td>I.1.4_s3</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>7</td>
+<td>Convergence ok</td>
+<td>I.1.4_s7</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>10</td>
+<td>Failed to initiate</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="results-obtained-in-2012-for-ual-version-4-09a">
+<h3>Results obtained in 2012 for UAL-version 4.09a<a class="headerlink" href="#results-obtained-in-2012-for-ual-version-4-09a" title="Permalink to this headline">¶</a></h3>
+<p>NOTE: Solver 4 is the one with the best performance. Solvers 3, 7 and 10
+are to be disregarded in the future.
+ALL solvers fail to converge (i.e. demanding more than 1000 iterations)
+for convection v &gt;= 1 m/s.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="26%" />
+<col width="14%" />
+<col width="5%" />
+<col width="29%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Cas
+e</th>
+<th class="head">Description</th>
+<th class="head">Subcase</th>
+<th class="head">S
+o
+l
+v
+e
+r</th>
+<th class="head">Comments</th>
+<th class="head">Graphic
+output
+(PDF)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>I.1
+.1</td>
+<td>Constant
+densities and
+temperatures</td>
+<td>N/A</td>
+<td>3</td>
+<td>Convergence ok.
+Errors within
+machine
+precision, except
+for the on-axis
+value</td>
+<td><a href="#id29"><span class="problematic" id="id30">`I.1.1_101p
+ts_1e-2s &lt;.
+./imports/E
+TS_VV/4.09a
+/I.1.1_s3-4
+-7-10_Np101
+_dt1e-2.pdf
+&gt;`__</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="section" id="other-ets-related-information">
 <h2>Other ETS related information<a class="headerlink" href="#other-ets-related-information" title="Permalink to this headline">¶</a></h2>
@@ -207,19 +435,2816 @@ surfaces</li>
 <li>Visualization of the repository activity (wmv2)</li>
 </ul>
 </div>
+<div class="section" id="ets-workflows-in-kepler">
+<span id="ets-in-kepler"></span><h2>ETS workflows in KEPLER<a class="headerlink" href="#ets-workflows-in-kepler" title="Permalink to this headline">¶</a></h2>
+<p>The ETS workflow is used for 1-D transport simulation of a tokamak core
+plasma.</p>
+<p><strong>ETS workflows in KEPLER</strong>:</p>
+<ul class="simple">
+<li>use actors and composite actors from other IMPs, thus for the most
+recent versions of them please check with relevant project</li>
+<li>complex, but clearly structured workflow, which offers user friendly
+interface for configuring the simulation</li>
+<li>allow for easy modifications (connecting new modules, or reconnecting
+parts of the workflow) through an easy graphical interface</li>
+<li>provide users with all updates through the version control system</li>
+<li>still in active development tool</li>
+</ul>
+<p>There are currently 2 workflows being developed within EU-IM-IMP3 project:</p>
+<ul class="simple">
+<li>ETS_A_4.10b Contact person: <a class="reference external" href="mailto:denis&#46;kalupin&#37;&#52;&#48;euro-fusion&#46;org?subject=ETS%20in%20KEPLER">Denis Kalupin</a> <em>(Skype:dkalupin)</em></li>
+<li>ETS_A_4.10a Contact person: <a class="reference external" href="mailto:denis&#46;kalupin&#37;&#52;&#48;euro-fusion&#46;org?subject=ETS%20in%20KEPLER">Denis Kalupin</a> <em>(Skype:dkalupin)</em></li>
+<li>ETS_C Contact person: <a class="reference external" href="mailto:vincent&#46;basiuk&#37;&#52;&#48;cea&#46;fr?subject=ETS%20in%20KEPLER">Vincent Basiuk</a>, <a class="reference external" href="mailto:vincent&#46;basiuk&#37;&#52;&#48;cea&#46;fr?subject=ETS%20in%20KEPLER">Philippe Huynh</a>  (Status)</li>
+</ul>
+<div class="section" id="ets-a-4-10b">
+<span id="id1"></span><h3>ETS_A 4.10b<a class="headerlink" href="#ets-a-4-10b" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="obtaining-the-ets">
+<span id="ets-a-4-10a-obtain"></span><h4>Obtaining the ETS<a class="headerlink" href="#obtaining-the-ets" title="Permalink to this headline">¶</a></h4>
+<p><em>Contact person:</em>
+<a class="reference external" href="mailto:denis&#46;kalupin&#37;&#52;&#48;euro-fusion&#46;org?subject=ETS%20in%20KEPLER">Denis Kalupin</a> <em>(Skype:
+dkalupin)</em></p>
+<div class="section" id="installing-the-ets">
+<h5>Installing the ETS<a class="headerlink" href="#installing-the-ets" title="Permalink to this headline">¶</a></h5>
+<p>The default ETS release is the tag4.10b10.3</p>
+<p><strong>Before installation make sure that:</strong></p>
+<ul class="simple">
+<li>you have your private data base for the version of the
+UAL
+required by the workflow</li>
+<li>you have the version of
+KEPLER
+required by the workflow installed. Quick start on kepler required
+for the ETS can be found
+here</li>
+<li>inside the window, where you will be downloading the ETS the source
+command:</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span><span class="nb">source</span> <span class="nv">$EU</span>-IMSCRIPTDIR/EU-IMv1 Kepler_Version Data_Base_Name UAL_Version
+</pre></div>
+</div>
+<p>is executed.</p>
+<p><strong>To install your local copy of the ETS workflow please do:</strong></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>svn co https://gforge6.eufus.eu/svn/keplerworkflows/tags/ets_4.10b10.3/ETS
+<span class="gp">&gt;</span><span class="nb">cd</span> ETS
+<span class="gp">&gt;</span>make import_ets
+</pre></div>
+</div>
+<p>Press the play button on the workflow.</p>
+<p><strong>The workflow shall run!</strong> If it
+does not, please use the <a class="reference external" href="mailto:denis&#46;kalupin&#37;&#52;&#48;euro-fusion&#46;org?subject=ETS%20in%20KEPLER">contact</a> from above.</p>
+<p><strong>Starting the workflow:</strong>
+If you have the workflow already installed, there are there are several
+ways tio execute it:</p>
+<ul class="simple">
+<li>For execution via kepler GUI:</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>kepler.sh workflow_path/workflow_name.xml
+</pre></div>
+</div>
+<ul class="simple">
+<li>For execution in none GUI mode:</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>kepler.sh -runwf -nogui -redirectgui <span class="nv">$EU</span>-IMHOME/some_dir_name workflow_path/workflow_name.xml
+</pre></div>
+</div>
+<ul>
+<li><p class="first">For execution in batch mode:
+it is essential to keep the workflow inside your $EU-IMWORK area</p>
+<p>it is essential to switch to scripts/R2.2 module</p>
+</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>module switch scripts/R2.2
+<span class="gp">&gt;</span>submit_batch_kepler.sh run_dircetory <span class="m">1</span> <span class="nv">$EU</span>-IMWORK/workflow_path/workflow_name.xml <span class="nv">$EU</span>-IMSCRIPTDIR/batch_submission/ParallelKepler.bsub
+</pre></div>
+</div>
+</div>
+<div class="section" id="ets-revisions">
+<h5>ETS revisions<a class="headerlink" href="#ets-revisions" title="Permalink to this headline">¶</a></h5>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="13%" />
+<col width="24%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Revision Name:</em></th>
+<th class="head"><em>UAL version:</em></th>
+<th class="head"><em>KEPLER:</em></th>
+<th class="head"><em>Short Sumary:</em></th>
+<th class="head"><em>Comments:</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>4.10b0.1</td>
+<td>4.10b8_R2.1.0.5</td>
+<td>any,
+up to
+4.10b3.5</td>
+<td>Contains:Fixed
+boundary
+equlibrium; Simple
+transport models;
+full HCD package;
+Impurity; Pellets;
+Sawtooth</td>
+<td>Test 4.10b release,
+restricted module
+choice, restricted
+physics
+capabilities, work
+around of coredelta</td>
+</tr>
+<tr class="row-odd"><td>4.10b8.1</td>
+<td>4.10b8_R2.1.0</td>
+<td>central
+instal
+lation
+4.10b3
+central
+is prefer
+red;local
+instal
+lation
+4.10b3.6
+or above</td>
+<td>Contains:Fixed
+boundary
+equlibrium; Simple
+transport models;
+full HCD package;
+Impurity; Pellets;
+Sawtooth; Scenario</td>
+<td>Test 4.10b release,
+restricted module
+choice, restricted
+physics
+capabilities, work
+around of
+coredelta, produces
+scenario output on
+request</td>
+</tr>
+<tr class="row-even"><td>4.10b10.1</td>
+<td>4.10b10</td>
+<td><p class="first">central</p>
+<p class="last">instal
+lation
+4.10b
+3_cent
+ral
+is
+prefer
+red;
+local
+instal
+lation
+4.10b
+3.6
+or
+above</p>
+</td>
+<td>MODIFICATIONS
+COMPATIBLE WITH
+4.10b10 DATA
+STRUCTURE</td>
+<td>UNDER CONSTRUCTION:
+release at the Code
+Camp in Prague</td>
+</tr>
+<tr class="row-odd"><td>4.10b10.2</td>
+<td>4.10b10_bran
+ches.R2.1.r1380</td>
+<td>centra
+l
+instal
+lation
+4.10b
+3_cent
+ral
+is
+prefer
+red;
+local
+instal
+lation
+4.10b
+3.6
+or
+above</td>
+<td>Added synchrotron
+radiation, some of
+neoclassical
+actors,reworked
+combiners</td>
+<td>UNDER CONSTRUCTION:
+release at the Code
+Camp in Prague</td>
+</tr>
+<tr class="row-even"><td>4.10b10.3</td>
+<td>4.10b1
+0_bran
+ches.
+R2.1.r
+1380</td>
+<td>centra
+l
+instal
+lation
+keple
+r_rc
+(2.4/R
+3.8/ke
+pler
+or
+more
+recent
+)
+is
+prefer
+red</td>
+<td>Added synchrotron
+radiation, some of
+neoclassical
+actors,reworked
+combiners</td>
+<td>compared to
+previous shall
+contain compeeted
+transport, new
+controller for
+pellet and sawteeth
+module</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="configuring-the-ets-run">
+<span id="ets-a-4-10b-run-config"></span><h4>Configuring the ETS run<a class="headerlink" href="#configuring-the-ets-run" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="workflow-parameters">
+<span id="ets-a-4-10b-workflow-parameters"></span><h5>Workflow parameters<a class="headerlink" href="#workflow-parameters" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="general-parameters">
+<h6>General Parameters<a class="headerlink" href="#general-parameters" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li>USER
+- your userid</li>
+<li>MACHINE
+- machine name (database name) for which comutations are done</li>
+<li>SHOT_IN
+- input shot number</li>
+<li>RUN_IN
+- input run number</li>
+<li>SHOT_OUT
+- output shot number</li>
+<li>RUN_OUT
+- output run number</li>
+<li>NUMERICAL_SOLVER
+- choice of the numerics solving transport equations (RECOMENDED
+SELECTION: 3 or 4)</li>
+</ul>
+</div>
+<div class="section" id="space-resolution">
+<h6>Space resolution<a class="headerlink" href="#space-resolution" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li>NRHO
+- number of radial points for transport equations</li>
+<li>NPSI
+- number of points for equilibrium 1-D arrays</li>
+<li>NEQ_DIM1
+- number of points for equilibrium 2-D arrays, first index</li>
+<li>NEQ_DIM2
+- number of points for equilibrium 2-D arrays, second index</li>
+<li>NEQ_MAX_NPOINTS
+- maximum number of points for equilibrium boundary</li>
+</ul>
+</div>
+<div class="section" id="time-resolution">
+<h6>Time resolution<a class="headerlink" href="#time-resolution" title="Permalink to this headline">¶</a></h6>
+<p><strong>Start and End time:</strong></p>
+<ul class="simple">
+<li>TBEGIN
+- Computations start time</li>
+<li>TEND
+- Computattions end time</li>
+</ul>
+<p><strong>Time step:</strong></p>
+<ul class="simple">
+<li>right click on the box
+BEFORE THE TIME EVOLUTION</li>
+<li>select
+Configure actor</li>
+<li>TAU
+:specify value of the time step in [s]</li>
+<li>TAU_OUT
+: specify value of the output time interval in [s]</li>
+<li>Commit</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ion-impurity-and-neutral-composition">
+<span id="ets-a-4-10b-composition"></span><h5>Ion, Impurity and Neutral Composition<a class="headerlink" href="#ion-impurity-and-neutral-composition" title="Permalink to this headline">¶</a></h5>
+<p>Before starting the run you need to define types of main ions, impurity
+(optional) and neutrals (optional) to be included in simulations.</p>
+<p>To define plasma composition:</p>
+<ul class="simple">
+<li>right click on the box
+BEFORE THE TIME EVOLUTION</li>
+<li>select <strong>Configure actor</strong></li>
+<li>choose one of modes for setting
+Run_compositions<ul>
+<li>from_input_CPO
+- will pick up the COMPOSITIONS structure of the COREPROF CPO
+saved to the input shot;</li>
+<li>configure_manually
+- will force the composition from the values specified below</li>
+</ul>
+</li>
+<li>specify values of atomic mass (AMN_ion), nuclear charge ( ZN_ion ) and
+charge ( Z_ion , from the first ion to the last [1:NION] , separated by
+commas</li>
+<li>(optional) specify values of atomic mass ( AMN_imp ), nuclear charge (
+ZN_imp ) and maximal ionization state ( max_Z_imp ) for impurity ions,
+from the first to the last [1:NIMP] , separated by commas</li>
+<li>(optional)for neutrals activate, by switchen them to <strong>ON</strong>, the types which
+shall be followed by neutral solver</li>
+<li>press <strong>Commit</strong></li>
+</ul>
+</div>
+<div class="section" id="equations-to-be-solved-and-boundary-conditions">
+<span id="ets-a-4-10b-equations"></span><h5>Equations to be solved and boundary conditions<a class="headerlink" href="#equations-to-be-solved-and-boundary-conditions" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="main-plasma">
+<h6>Main Plasma<a class="headerlink" href="#main-plasma" title="Permalink to this headline">¶</a></h6>
+<p>Before starting the run you need to select the type and value of the
+boundary conditions for all equations. Please note that the value should
+correspond to the type. All equations allow for following types of
+boundary conditions:</p>
+<ul class="simple">
+<li>OFF
+- equation is not solved, initial profiles will be kept for whole run</li>
+<li>value
+- edge value should be specified</li>
+<li>gradient
+- edge gradient should be specified</li>
+<li>scale_length
+- edge scale length should be specified</li>
+<li>generic
+- generic form:
+a1*y´ + a2*y = a3
+of the boundary condition is assumed, 3 coefficients (a1, a2, a3) should be provided</li>
+<li>value_from_input_CPO
+- equation is solved, edge value evolution will be red from input
+shot</li>
+<li>profile_from_input_CPO
+- equation is not solved, profile evolution will be red from input
+shot</li>
+</ul>
+<p>The particular equation will be activated if the boundary condition type
+for it is other than <em>OFF</em></p>
+<p>To set up boundary conditions:</p>
+<ul class="simple">
+<li>right click on the box BEFORE THE TIME EVOLUTION</li>
+<li>select <strong>Configure actor</strong></li>
+<li>select appropriate boundary condition for each equation</li>
+<li>specify values for boundary conditions corresponding to the type and
+to the ion component</li>
+<li><strong>Commit</strong></li>
+</ul>
+<p>The workflow will not allow the user all particle components
+(ions[1:NION]+electrons) to be run predictively. At least one of them shall
+be set to OFF (this component will be computed from quasi-neutrality
+condition).</p>
+<p>!!! If electron density is solved, all ions with ni_bnd_type=OFF will be
+computed from the quasineutrality condition and scaled proportional to
+specified <em>ni_bnd_value</em> or inversely proportional to their charge,
+<em>charge_proportional</em>. This is defined by option:
+<em>ni_from_quasineutrality</em>.</p>
+</div>
+<div class="section" id="impurity">
+<h6>Impurity<a class="headerlink" href="#impurity" title="Permalink to this headline">¶</a></h6>
+<p>You can set up the boundary conditions for impurity ions in a similar
+way as for main ions. !!! Note, that at the moment only types: <em>OFF</em>;
+<em>value</em> and <em>value_from_input_CPO</em> are accepter by impurity solver.</p>
+<p>To set up boundary conditions:</p>
+<ul class="simple">
+<li>right click on the box BEFORE THE TIME EVOLUTION</li>
+<li>select <strong>Configure actor</strong></li>
+<li>select appropriate boundary condition for each impurity species (
+OFF-equation is not solved)</li>
+<li>specify values for boundary density of each impurity component
+[1:MAX_Z_IMP], separated by commas</li>
+<li><strong>Commit</strong></li>
+</ul>
+<p>Interface for impurity boundary condition has additional option,
+<em>coronal_distribution</em>, that allow to preset the edge values or entire
+profiles of individual ionization states from coronal distribution. In tis
+case only single value is required to be specified for each impurity
+boundary value. The options are:</p>
+<ul class="simple">
+<li>OFF
+- the boundary values for impurity densities will be as they are
+specified above;</li>
+<li>boundary_conditions
+- the boundary densities will be renormalized with corona, using the
+first element from above as a total density</li>
+<li>boundary_conditions_and_profiles
+- the boundary densities and starting profiles will be renormalized
+with corona, using the first element from above as a total density</li>
+</ul>
+</div>
+<div class="section" id="neutrals">
+<h6>Neutrals<a class="headerlink" href="#neutrals" title="Permalink to this headline">¶</a></h6>
+<p>!!! AT THE MOMENT BOUNDARY CONDITIONS FOR NEUTRAL VELOCITIES ARE DISABLED,
+MIGHT BE ADDED ON REQUEST</p>
+<p>Note, that ALL values should be specified in the order: {<em>1, 2, 3 ...NION, 1, 2, 3, ...NIMP</em>}</p>
+<p>To set up boundary conditions:</p>
+<ul class="simple">
+<li>right click on the box BEFORE THE TIME EVOLUTION</li>
+<li>select <strong>Configure actor</strong></li>
+<li>select appropriate boundary condition for each neutral species (OFF-equation is not solved)</li>
+<li>specify values for boundary density and temperature of each neutral component
+[1, 2, 3 ...NION, 1, 2, 3, ...NIMP], separated by commas</li>
+<li><strong>Commit</strong></li>
+</ul>
+</div>
+<div class="section" id="input-profiles-interpolation">
+<h6>Input profiles interpolation<a class="headerlink" href="#input-profiles-interpolation" title="Permalink to this headline">¶</a></h6>
+<p>You are going to start the ETS run from some input shot, which might
+contain some conflicting rho grids saved to different CPOs. Thus there is a
+choice for the user to decide on the grid on which the starting profiles
+should be load by the worflow,</p>
+<p><em>Interpolation_of_input_profiles</em>.</p>
+<p>To define the interpolation grid select:</p>
+<ul class="simple">
+<li>on_RHO_TOR_grid
+- interpolate input profiles based on the grid specyfied in [m];</li>
+<li>on_RHO_TOR_NORM_grid
+- interpolate input profiles based on normalised rho grid [0:1]</li>
+</ul>
+</div>
+</div>
+<div class="section" id="convergence-loop">
+<span id="ets-a-4-10b-convergence"></span><h5>Convergence loop<a class="headerlink" href="#convergence-loop" title="Permalink to this headline">¶</a></h5>
+<p>ETS updates input from different physics actors in a sequence, which is
+finished by solving the transport equations. Ther are possible
+none-linear couplings between different parts of the system. These
+nonelinearities are trited by the ETS using iterations. The decision to
+step in time is made by the ETS based on the criteria that the maximum
+relative deviation of main plasma profiles is lower than some predefined
+tolerance. There is a number of settings and sitches in the ETS that are
+used by the iterative scheme. To edit them do:</p>
+<ul class="simple">
+<li>right click on the box CONVERGENCE LOOP</li>
+<li>select <strong>Configure actor</strong> to edit settings</li>
+<li>choose your settings</li>
+<li><strong>Commit</strong></li>
+</ul>
+<p>Switches in the field <em>FREQUENCY OF CALLING THE PHYSICS ACTORS</em> define
+how many times the the actors of a certain cathegory (equilibrium,
+transport, etc.) should be called in a single time step.
+By selecting <em>YES</em> all actors of this cathegory will be called every iteration
+By selecting <em>NO</em> all actors of this cathegory will be called only ones in
+a time step</p>
+<p>Switches and parameters in the field <em>CONTROL PARAMETERS</em> define how
+iterations are done</p>
+<ul class="simple">
+<li>Tolerance - defines the maximum relative error of profiles change compared to
+previous iteration. If it is achieved the time steping is done.</li>
+</ul>
+<p>For highly none-linear case the required precision can be achieved
+faster by the iterative scheme if only fraction of the new solution is
+mixed to the previous state.
+The following scheme is adopted by the ets to reduce none-linearities in profiles, transport coefficients and
+sources:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Y = (Amix * Y+) + ((1-Amix)*Y-)</span>
+</pre></div>
+</div>
+<p>where Amix is the mixing fraction You can activate the mixing of
+profiles, transport coefficient and sources by selecting the
+corresponding <em>Mixing_fraction_...</em> to be between [0:1]
+You also can activate the authomatic ajustment of this fraction by selecting:
+<em>Ajust_Mixing_for_...</em> to <em>YES</em></p>
+</div>
+<div class="section" id="equilibrium">
+<span id="ets-a-4-10b-equilibrium"></span><h5>Equilibrium<a class="headerlink" href="#equilibrium" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="initialization-settings">
+<h6>Initialization Settings<a class="headerlink" href="#initialization-settings" title="Permalink to this headline">¶</a></h6>
+<p>Before starting the run you need to set up your initial equlibrium.
+There are several options to do it: if your input shot contains the
+consistent equilibrium with all necessary parameters - you can start
+immediately from it; if your input shot contains the equilibrium but it
+is not consistent or some parameters are missing you can check it
+automatically; if your input equilibrium is corrupt or not present - you
+can define the starting equlinbrium by tree moment description. To
+select your starting equilibrium please do:</p>
+<ul class="simple">
+<li>right click on the box BEFORE THE TIME EVOLUTION</li>
+<li>select <strong>Configure actor</strong> to edit settings</li>
+<li>Select your settings or specify values</li>
+<li><strong>Commit</strong></li>
+</ul>
+<p>SETTINGS:</p>
+<ul class="simple">
+<li>Equilibrium_configuration
+- select
+configure_manually
+if you like to specify configuration below; select
+from_input_CPO
+if all quantities should be picked up from the input CPO</li>
+<li>R0_Machine_characteristic_radius
+- Characteristic radius of the machine, here B0 is measured [m]</li>
+<li>B0_Magnetic_field_at_R0
+- Magnetic field measured at the position R0 [T]</li>
+<li>RGEO_Major_Radius_of_LCMS_centre
+- R coordinate of the geometrical centre of the LCMS [m]</li>
+<li>ZGEO_Altitude_of_LCMS_centre
+- Z coordinate of the geometrical centre of the LCMS [m]</li>
+<li>Total_plasma_current_IP
+- plasma current within the LCMS [A]</li>
+<li>Minor_radius
+- minor radius of the LCMS [m]</li>
+<li>Elongation
+- elongation of the LCMS [-]</li>
+<li>Triangularity_upper
+- upper triangularity of the LCMS [-]</li>
+<li>Triangularity_lower
+- lower triangularity of the LCMS [-]</li>
+<li>Equilibrium code
+- select one of available equilibrium solvers to check the
+consistency between starting equilibrium and current profile; use
+INTERPRETATIVE
+if you trust your input data (in this case the check will be
+ignorred).</li>
+</ul>
+<p>Please note, that different equilibrium solvers might require slightly
+different input. Thus it is a user responsibility to check that the
+information inside input shot/run is enough to run selected equilibrium
+solver.</p>
+</div>
+<div class="section" id="run-settings">
+<h6>Run Settings<a class="headerlink" href="#run-settings" title="Permalink to this headline">¶</a></h6>
+<p>There are several equilibrium solvers connected to the ETS. You can
+select the one of them.Therefore please do:</p>
+<ul class="simple">
+<li>right click on the box CONVERGENCE LOOP</li>
+<li>select <strong>Open actor</strong></li>
+<li>right click on the box EQUILIBRIUM</li>
+<li>select <strong>Configure actor</strong> to edit settings</li>
+<li>choose your equilibrium solver</li>
+<li><strong>Commit</strong></li>
+</ul>
+<p><em>INTERPRETATIVE</em> means that the ETS will not update the equilibrium,
+instead it will be using the initial equilibrium.</p>
+<p>Please note, that it is better to select the same code as you used for
+pre-iterrations. Because outputs of different equilibrium solver are not
+necessary done with the same resolution. Therefore the routine saving
+the information to the data base might brake due to uncompatible sizes
+of some signals.</p>
+</div>
+</div>
+<div class="section" id="transport">
+<span id="ets-a-4-10b-transport"></span><h5>Transport<a class="headerlink" href="#transport" title="Permalink to this headline">¶</a></h5>
+<p>The settings for TRANSPORT can be done inside the CONVERGENCE LOOP
+composite actor. Therefore please do:</p>
+<ul class="simple">
+<li>right click on the box CONVERGENCE LOOP</li>
+<li>select <strong>Open actor</strong></li>
+<li>right click on the box TRANSPORT</li>
+<li>select <strong>Configure actor</strong> to edit settings</li>
+<li>choose your settings</li>
+<li>press <strong>Commit</strong></li>
+</ul>
+<div class="section" id="transport-models">
+<h6>Transport models<a class="headerlink" href="#transport-models" title="Permalink to this headline">¶</a></h6>
+<p>ETS constructs the total transport coefficients from the combination of
+Anomalous transport (model choice), Neoclassical transport (model
+choice), Database transport (transport coefficients be saved to the
+input shot) and Background transport (Transport coefficients defined
+through the GUI interface)</p>
+<p>D_tot = D_DB*M_DB + D_AN*M_AN + D_NC*M_NC + D_BG*M_BG</p>
+<p>You should choose from the list of evailable models in each cathegory or
+switch it <strong>OFF</strong></p>
+<p>Individual multipliers for all channels shall be specified on the lower
+level through the code parameters of Transport Combiner</p>
+<p>The list of available transport models can be found
+<a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/ets_status.html">here</a>.</p>
+</div>
+<div class="section" id="background-transport">
+<h6>Background transport<a class="headerlink" href="#background-transport" title="Permalink to this headline">¶</a></h6>
+<p>You can add the constant background level for each coefficient (ion and
+impurity coefficients are expected to be the strings of [1:NION] and
+[1:NIMP] elements respectively, separated by commas)</p>
+</div>
+<div class="section" id="edge-transport-barrier">
+<h6>Edge transport barrier<a class="headerlink" href="#edge-transport-barrier" title="Permalink to this headline">¶</a></h6>
+<p>In this section you can artificially supress the transport outside of
+specified <em>RHO_TOR_NORM_ETB</em>. Total transport coefficients for all
+transport channels (ne, ni, nz, Te, Ti,...) will be reduced to constant
+values specified below (ion and impurity coefficients are expected to be
+the strings [1:NION] and [1:NIMP] respectively)</p>
+</div>
+<div class="section" id="total-transport-coefficients">
+<h6>Total transport coefficients<a class="headerlink" href="#total-transport-coefficients" title="Permalink to this headline">¶</a></h6>
+<p>The fine tuning of of transport coefficients can be done through editing
+the XML code parameters of the <strong>transport combiner</strong> actor:</p>
+<ul class="simple">
+<li>In Outline browse for transportcombiner</li>
+<li>select <strong>Configure actor</strong></li>
+<li>click <strong>Edit Code Parameters</strong></li>
+<li><ul class="first">
+<li>If you select <strong>OFF</strong> contributions from all transport models to this channel will be
+nullified;</li>
+<li>If you select <strong>Multipliers_for_contributions_from</strong> the transport channel
+will be activated, and the total transport coefficient will be
+combined from active tranport models. You gust need to specify
+multiplier against each channel;</li>
+<li>For convective velocity there is an additional option
+<strong>V_over_D_ratio_for_contributions_from</strong>.
+With this option selected the combiner will ignore the
+convective components provided by transport models. The convective
+velocity will be determined from the diffusion coefficient by
+applying fixed V/D ratio (
+for inward pinch the values should be negative!
+).</li>
+</ul>
+</li>
+<li><strong>Save and exit</strong></li>
+<li><strong>Commit</strong></li>
+</ul>
+</div>
+</div>
+<div class="section" id="mhd">
+<span id="ets-a-4-10b-mhd"></span><h5>MHD<a class="headerlink" href="#mhd" title="Permalink to this headline">¶</a></h5>
+<p>The settings for MHD type of events can be done inside the CONVERGENCE
+LOOP composite actor. Therefore please do:</p>
+<ul class="simple">
+<li>right click on the box CONVERGENCE LOOP</li>
+<li>select <strong>Open actor</strong></li>
+<li>right click on the box MHD</li>
+<li>select <strong>Configure actor</strong> to edit settings</li>
+<li>choose your settings</li>
+<li><strong>Commit</strong></li>
+</ul>
+<p>At the moment ETS allows only for NTM to be activated. The sawtooth
+module is expected to be deployed before EU-IM Code Camp in Slovenia.</p>
+<p>User can ajust the following NTM settings:</p>
+<ul class="simple">
+<li>NTM – <strong>ON</strong> means that ETS will add the NTM driven transport to the total
+transport coefficient; <strong>OFF</strong> -ignored</li>
+<li>NTMTransportMultiplier – the transport contrinution from NTM will be multiplied with this
+value</li>
+<li>Onset_NTM_time - activation time for the NTM mode</li>
+<li>Onset_NTM_width - starting width of the mode</li>
+<li>m_NTM_poloidal_number</li>
+<li>n_NTM_toroidal_number</li>
+<li>NTM_phase</li>
+<li>NTM_frequency</li>
+</ul>
+</div>
+<div class="section" id="sources-and-impurity">
+<span id="ets-a-4-10b-sources"></span><h5>Sources and impurity<a class="headerlink" href="#sources-and-impurity" title="Permalink to this headline">¶</a></h5>
+<p>The settings for SOURCES AND IMPURITY can be done inside the CONVERGENCE
+LOOP composite actor. Therefore please do:</p>
+<ul class="simple">
+<li>right click on the box CONVERGENCE LOOP</li>
+<li>select <strong>Open actor</strong></li>
+<li>right click on the box SOURCES AND IMPURITY</li>
+<li>select <strong>Configure actor</strong> to edit settings</li>
+<li>choose your settings</li>
+<li><strong>Commit</strong></li>
+</ul>
+<div class="section" id="analytical-impurity-sources">
+<h6>Analytical &amp; Impurity sources<a class="headerlink" href="#analytical-impurity-sources" title="Permalink to this headline">¶</a></h6>
+<p>There is a number of sources developed by IMP3 project, which are actors
+or internal routines of the transport solver. You can activate them by
+selecting <strong>ON / OFF</strong> in front of corresponding source:</p>
+<ul class="simple">
+<li>Database Sources – <strong>ON</strong> - ETS will pick up the evolution of source profiles saved to your
+input shot/run; <strong>OFF</strong> -ignored</li>
+<li>Ohmic Heating – <strong>ON</strong> - ETS will compute Ohmic heating internaly; <strong>OFF</strong> -ignored</li>
+<li>Gaussian Sources – <strong>ON</strong> - ETS will add sources from the Gaussian source actor (you can
+configure heat and particle deposition profiles by editing the code
+parameters of the actor); <strong>OFF</strong> -ignored</li>
+<li>Neutral Sources – <strong>ON</strong> - Fluid neutrals will be solved according to the boundary conditions
+specified on ¨Before_time_evolution¨ composite actor interface; <strong>OFF</strong> -ignored</li>
+<li>Switch_IMPURITY – <strong>ON</strong> - Impurity density and radiative sources will be computed;
+<strong>OFF</strong> -ignored; <strong>INTERPRETATIVE</strong> – profiles of impurity density will be read from input shot/run</li>
+</ul>
+</div>
+<div class="section" id="hcd-sources">
+<h6>HCD sources<a class="headerlink" href="#hcd-sources" title="Permalink to this headline">¶</a></h6>
+<p>There is a number of sources developed by HCD project, that are
+incorporated by the ETS workflow.</p>
+<p>For the HCD sources please activate the type of heating source, by
+ticking the box in front of it, and select the code to simulate it.</p>
+<p>You also need to configure initial IMP5HCD settings. Therefore please:</p>
+<ul class="simple">
+<li>right click on the box BEFORE THE TIME EVOLUTION</li>
+<li>select <strong>Open Actor</strong></li>
+<li>right click on the box SETTINGS FOR HEATING AND CURRENT DRIVE</li>
+<li>select <strong>Configure actor</strong></li>
+<li>edit the stettings</li>
+<li><strong>Commit</strong></li>
+</ul>
+<p>The detailed information on initial IMP5HCD settings can be found
+<a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/imp5_imp5hcd.html">here</a>.
+Please note that settings for NBI are done independent for each PINI.
+Therefore, for NBI settings, please insert the values separated by
+commas. The number of the element in the array corresponds to the number
+of activated PINI. Maximum accepted number of PINIs = 16.</p>
+</div>
+<div class="section" id="power-control">
+<h6>Power control<a class="headerlink" href="#power-control" title="Permalink to this headline">¶</a></h6>
+<p>You also can activate the power control for the IMP5HCD sources.</p>
+<p>If the POWER_CONTROL is not <strong>OFF</strong>, there are two modes of
+operation: <strong>specific</strong> and <strong>frequency</strong></p>
+<p>For <strong>specific</strong> you should specify the time sequence separated by commas
+and the corresponding power sequence (where first power level
+corresponds to the first time, second to second and etc.). Linear
+interpolation will be done between the sequence points. For example: if
+you give the power <strong>sequence</strong> = 2e6,4e6,1e6 and <strong>times</strong> = 0.0, 0.7, 1.5 (s) the delivered power would be:</p>
+<p>For <strong>frequency</strong> you should specify the power levels sequence separated
+by commas, start and end time of the power control and the frequency of
+switching between these levels. For example: if you give the power
+<strong>sequence</strong> = 2e6,4e6,1e6 and <strong>frequency</strong> = 10 (Hz) <strong>tstart</strong> = 0.0 (s)
+<strong>tend</strong> = 1.5 (s) the delivered power would be:</p>
+</div>
+<div class="section" id="total-power">
+<h6>Total power<a class="headerlink" href="#total-power" title="Permalink to this headline">¶</a></h6>
+<p>Profiles of the total source for each channel are obtained from the the
+individual contributions (Data Base, Gaussian, Neutrals, Impurity and
+HCD) as a summ of all activated sources multiplied with coefficients
+specified on the interface of the composite actor.</p>
+<p>S_tot = S_DS*DSM + S_GS*GSM + S_Neu*NeuSM + S_IMP*IMPSM + S_HCD*HCDSM</p>
+<p>The fine tuning of of sources can be done through editing the XML code
+parameters of the source combiner actor:</p>
+<ul class="simple">
+<li>In the Outline browse for source combiner</li>
+<li>select <strong>Configure actor</strong></li>
+<li>click <strong>Edit Code Parameters</strong></li>
+<li>If you like the sources to the particular equation being activated -
+select <strong>from_input_CPOs</strong>, and then, put the multipliers against each
+contribution; if you select <strong>OFF</strong> contributions from all sources to
+this channel will be nullified.</li>
+<li>save and exit</li>
+<li><strong>Commit</strong></li>
+</ul>
+</div>
+</div>
+<div class="section" id="instantaneous-events-actuators">
+<h5>Instantaneous events &amp; Actuators<a class="headerlink" href="#instantaneous-events-actuators" title="Permalink to this headline">¶</a></h5>
+<p>At the moment, user can swith <strong>ON</strong> and <strong>OFF</strong> two types of events: PELLET
+and SAWTOOTH</p>
+<div class="section" id="pellet">
+<h6>Pellet<a class="headerlink" href="#pellet" title="Permalink to this headline">¶</a></h6>
+<p>At the top level of the workflow you can configure times for pellet
+injection</p>
+<ul class="simple">
+<li>right click on the box INSTANTANEOUS EVENTS &amp; ACTUATORS</li>
+<li>select <strong>Configure actor</strong> to edit settings</li>
+<li>Select Pellet_injection equal <strong>ON</strong> if you like to use pellet in your
+simulation</li>
+<li>Select mode of operation:<ul>
+<li>Times_for_pellets equals <strong>specific</strong> – pellets will be shut at exact times specified in array times_pellet</li>
+<li>Times_for_pellets equals <strong>frequency</strong> – pellets will be shut from
+tstart_pellet until tend_pellet with a frequency_pellet</li>
+</ul>
+</li>
+<li><strong>Commit</strong></li>
+</ul>
+<p>Parameters of individual pellet need to be configured through the
+code_parameters of the PELLET actor. To access it go to <strong>Outline</strong> on the
+right upper corner and open the following:</p>
+<ul class="simple">
+<li>right click on the actor PELLET</li>
+<li>select <strong>Configure actor</strong></li>
+<li>click <strong>Edit Code Parameters</strong></li>
+<li>edit parameters and click <strong>save and exit</strong></li>
+<li><strong>Commit</strong></li>
+</ul>
+<p>amn – atomic mass number: array of elements separated by space
+(1:nelements) [-]</p>
+<p>zn – nuclear charge: array of elements separated by space (1:nelements)
+[-]</p>
+<p>fraction – fraction of each element in the pellet, based on the number
+of atoms: array of elements separated by space (1:nelements) [-]</p>
+<p>rpell – radius of the pellet [m]</p>
+<p>vpell – velocity of the pellet [m/s]</p>
+<p>rcloud – radius of the pellet cloud [m], radial extension of the cloud =
+2*rp0</p>
+<p>lcloud – length of the pellet cloud along the field line [m]</p>
+<p>Tcloud – temperature of the pellet cloud [eV]</p>
+<p>Pellet path is specified by two points, for which R and Z coordinated
+should be specified</p>
+<p>R – R coordinates of the pivot and second points of the pellet path,
+separated by space [m]</p>
+<p>Z – Z coordinates of the pivot and second points of the pellet path,
+separated by space [m]</p>
+<p>Control switches allow to activate:</p>
+<ul class="simple">
+<li>drifts - YES - will activate radial displacement of deposition profile, same
+for all path points</li>
+<li>cooling - YES - will activate cooling of the other side of the plasma due to
+parallel heat transport (essential for large pellets, which might
+cross the same flux surface twice)</li>
+<li>JINTRAC - YES - will provide temperature reduction consistent with the model
+used in JETTO</li>
+</ul>
+</div>
+<div class="section" id="sawtooth">
+<h6>Sawtooth<a class="headerlink" href="#sawtooth" title="Permalink to this headline">¶</a></h6>
+<p>At the top level of the workflow you can switch ON/OFF possible MHD
+events</p>
+<ul class="simple">
+<li>right click on the box INSTANTANEOUS EVENTS &amp; ACTUATORS</li>
+<li>select <strong>Configure actor</strong> to edit settings</li>
+<li>Select SAWTOOTH <strong>ON</strong> if you like to use them in your simulation</li>
+<li><strong>Commit</strong></li>
+</ul>
+</div>
+<div class="section" id="actuators">
+<h6>Actuators<a class="headerlink" href="#actuators" title="Permalink to this headline">¶</a></h6>
+<p>At the top level of the workflow you can switch ON/OFF actuator for
+runaways</p>
+<ul class="simple">
+<li>right click on the box INSTANTANEOUS EVENTS &amp; ACTUATORS</li>
+<li>select <strong>Configure actor</strong> to edit settings</li>
+<li>Select actuator_runaways <strong>ON</strong> if you like to use them in your simulation</li>
+<li><strong>Commit</strong></li>
+</ul>
+</div>
+</div>
+<div class="section" id="scenario-output">
+<span id="ets-a-4-10b-scenario"></span><h5>Scenario output<a class="headerlink" href="#scenario-output" title="Permalink to this headline">¶</a></h5>
+<p>You can summarize the ETS run by activating the output to SCENARIO CPO
+(as post-processing of the run).</p>
+<p>To activate the SCENARIO output:</p>
+<ul class="simple">
+<li>right click on the box AFTER THE TIME EVOLUTION</li>
+<li>select <strong>Configure actor</strong></li>
+<li>select Generate_SCENARIO_output_from_ETS_run equal <strong>YES</strong></li>
+<li><strong>Commit</strong></li>
+</ul>
+</div>
+<div class="section" id="visualization">
+<span id="ets-a-4-10b-visualization"></span><h5>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h5>
+<p>There is a number tools visualizing the ETS run.</p>
+</div>
+<div class="section" id="multiple-tab-display">
+<h5>Multiple Tab Display<a class="headerlink" href="#multiple-tab-display" title="Permalink to this headline">¶</a></h5>
+<p>The display appeares automaticaly when the ETS workflow is launched. It
+displays diagnostic text messages from the workflow on following topics:</p>
+<ul class="simple">
+<li>Input data statement</li>
+<li>Iterations to check the initial convergence between EQUILIBRIUM and
+CURRENT</li>
+<li>Time evolution</li>
+<li>Convergence of iteratinos within the time step</li>
+<li>IMP5HCD settings</li>
+<li>Power used by IMP5HCD actors durung the run</li>
+</ul>
+<p>Also the error messages from execution of the workflow will be displayed
+here.</p>
+</div>
+<div class="section" id="python-visualization-display">
+<h5>Python Visualization Display<a class="headerlink" href="#python-visualization-display" title="Permalink to this headline">¶</a></h5>
+<p>Please note, if you plan to use python based vizualization <strong>nomatlab</strong>
+argument is essential by the opening of the workflow.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>kepler.sh nomatlab workflow_path/workflow_name.xml
+</pre></div>
+</div>
+<p>You can activate the graphical visualization of your run evolution:</p>
+<ul class="simple">
+<li>right click on the box Check Time &amp; Save Slice</li>
+<li>select <strong>Configure actor</strong></li>
+<li>select visualisation <strong>YES</strong> or <strong>NO</strong></li>
+<li><strong>Commit</strong></li>
+</ul>
+<p>Then evolution of main discharge parameters will be shown in this
+window:</p>
+</div>
+</div>
+<div class="section" id="list-of-actors">
+<span id="ets-a-4-10b-list-actors"></span><h4>List of Actors<a class="headerlink" href="#list-of-actors" title="Permalink to this headline">¶</a></h4>
+<p>UNDER DEVELOPMENT</p>
+<div class="section" id="equilibrium-actors">
+<span id="ets-a-4-10b-list-actors-equilibrium"></span><h5>Equilibrium actors<a class="headerlink" href="#equilibrium-actors" title="Permalink to this headline">¶</a></h5>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="22%" />
+<col width="25%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code name</th>
+<th class="head">Code Category</th>
+<th class="head">Contact persons</th>
+<th class="head">Short description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>chease</td>
+<td><dl class="first last docutils">
+<dt>Grad-Shafranov</dt>
+<dd>solver</dd>
+</dl>
+</td>
+<td>Olivier Sauter</td>
+<td>Chease is a fixed
+boundary Grad-Shafranov
+solver based on cubic
+hermitian finite
+elements see
+H. Lütjens, A.
+Bondeson, O. Sauter,
+Computer Physics
+Communications 97
+(1996) 219-260</td>
+</tr>
+<tr class="row-odd"><td>emeq</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>spider</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="core-transport-actors">
+<span id="ets-a-4-10b-list-actors-coretransport"></span><h5>Core transport actors<a class="headerlink" href="#core-transport-actors" title="Permalink to this headline">¶</a></h5>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="13%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code
+name</th>
+<th class="head">Code
+Categ
+ory</th>
+<th class="head">Contact
+persons</th>
+<th class="head">Short description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ETS</td>
+<td>Trans
+port
+solve
+r</td>
+<td>Denis
+Kalupin</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>BohmG
+B</td>
+<td>Bohm/
+gyro-
+Bohm
+trans
+port
+coeff
+icien
+ts</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>TCI/W
+eilan
+d</td>
+<td>Trans
+port
+coeff
+icien
+t
+from
+drift
+wave
+turbu
+lence</td>
+<td>Pär
+Strand</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>TCI/G
+LF23</td>
+<td>Trans
+port
+coeff
+icien
+t
+from
+drift
+wave
+turbu
+lence</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>TCI/R
+EU-IM</td>
+<td>Trans
+port
+coeff
+icien
+t
+from
+drift
+wave
+turbu
+lence</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>TCI/M
+MM
+(not
+yet
+in
+ETS)</td>
+<td>Trans
+port
+coeff
+icien
+t
+from
+drift
+wave
+turbu
+lence</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>TCI/E
+DWM
+(not
+yet
+in
+ETS)</td>
+<td>Trans
+port
+coeff
+icien
+t
+from
+drift
+wave
+turbu
+lence</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>nclas
+s
+(not
+yet
+in
+ETS)</td>
+<td>Neocl
+assic
+al
+trans
+port
+coeff
+icien
+ts</td>
+<td>Pär
+Strand</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>neos
+(not
+yet
+in
+ETS)</td>
+<td>Neocl
+assic
+al
+trans
+port
+coeff
+icien
+ts</td>
+<td>Olivier
+Sauter</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>neowe
+sz</td>
+<td>Neocl
+assic
+al
+trans
+port
+coeff
+icien
+ts</td>
+<td>Bruce
+Scott</td>
+<td>Neoclassical transport coefficients based
+on the expression in John Wesson&#8217;s book
+Tokamaks.</td>
+</tr>
+<tr class="row-even"><td>neoar
+tz</td>
+<td>Neocl
+assic
+al
+trans
+port
+coeff
+icien
+ts</td>
+<td>Bruce
+Scott</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>spitz
+er</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>ETBtr
+anspo
+rt</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>coron
+al</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>synch
+rotro
+nsour
+ces</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="edge-transport-actors">
+<span id="ets-a-4-10b-list-actors-edge"></span><h5>Edge transport actors<a class="headerlink" href="#edge-transport-actors" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="heating-and-current-drive-actors">
+<span id="ets-a-4-10b-list-actors-hcd"></span><h5>Heating and current drive actors<a class="headerlink" href="#heating-and-current-drive-actors" title="Permalink to this headline">¶</a></h5>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="13%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code
+name</th>
+<th class="head">Code
+Categ
+ory</th>
+<th class="head">Contact
+persons</th>
+<th class="head">Short description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>gray</td>
+<td>EC/wa
+ves</td>
+<td>Lorenzo
+Figini</td>
+<td>GRAY is a quasi-optical ray-tracing code
+for electron cyclotron heating &amp; current
+drive calculations in tokamaks.
+Code-parameter documentation can be found</td>
+</tr>
+<tr class="row-odd"><td>travis</td>
+<td>EC/wa
+ves</td>
+<td>Nikolai
+Marushc
+henko
+and
+Lorenzo
+Figini</td>
+<td>Travis is a ray-tracing code for electron
+cyclotron heating &amp; current drive
+calculations in tokamaks.</td>
+</tr>
+<tr class="row-even"><td><blockquote class="first">
+<div>Torr</div></blockquote>
+<p class="last">ay-FO
+M</p>
+</td>
+<td>EC/wa
+ves</td>
+<td>Egbert
+Westerh
+of</td>
+<td>Torray-FOM is a ray-tracing code for
+electron cyclotron heating &amp; current drive
+calculations in tokamaks.</td>
+</tr>
+<tr class="row-odd"><td>bbnbi</td>
+<td>NBI/s
+ource</td>
+<td>Otto
+Asunta</td>
+<td>Calculate the deposition rates of neutrals
+beam particles, i.e. the input source for
+Fokker-Planck solvers (not the heating and
+current drive). Note that the number of
+markers generated by BBNBI is described by
+the kepler variable number_nbi_markers_in.</td>
+</tr>
+<tr class="row-even"><td>nemo</td>
+<td>NBI/s
+ource</td>
+<td>Mireill
+e
+Schneid
+er</td>
+<td>Calculate the deposition rates of neutrals
+beam particles, i.e. the input source for
+Fokker-Planck solvers (not the heating and
+current drive). Code-parameter
+documentation can be found</td>
+</tr>
+<tr class="row-odd"><td><blockquote class="first">
+<div>nucl</div></blockquote>
+<p class="last">earsi
+m</p>
+</td>
+<td>nucle
+ar/so
+urce</td>
+<td>Thomas
+Johnson</td>
+<td>Simple code for nuclear sources from
+thermal/thermal reactions. Code-parameter
+documentation can be found</td>
+</tr>
+<tr class="row-even"><td><blockquote class="first">
+<div>nbis</div></blockquote>
+<p class="last">im</p>
+</td>
+<td>NBI,
+alpha
+s
+/</td>
+<td>Thomas
+Johnson</td>
+<td>Simple Fokker-Planck code calculating the
+collisional ion and electron heating from
+a particle source, either NBI or nuclear.
+Code-parameter documentation can be found</td>
+</tr>
+<tr class="row-odd"><td>risk</td>
+<td><blockquote class="first">
+<div>NBI
+Fokke</div></blockquote>
+<dl class="last docutils">
+<dt>r-Pla</dt>
+<dd>nck</dd>
+</dl>
+</td>
+<td>Mireill
+e
+Schneid
+er</td>
+<td>Bounce averaged steady-state Fokker-Planck
+solver calculating the collisional ion and
+electron heating from a particle source
+and the NBI current drive. Code-parameter
+documentation can be found</td>
+</tr>
+<tr class="row-even"><td>spot</td>
+<td>NBI,
+alpha
+s
+and
+ICRF
+Fokke
+r-Pla
+nck</td>
+<td>Mireill
+e
+Schneid
+er</td>
+<td>Monte Carlo solver for the Fokker-Planck
+equation. Traces guiding centre orbits in
+a steady state magnetic equilibrium under
+the influence of Coloumb collisions and
+interactions with ICRF waves (through the
+RFOF library). The code can also be used
+for NBI and alpha particle modelling as it
+can handle source terms from the
+distsource CPO.</td>
+</tr>
+<tr class="row-odd"><td><blockquote class="first">
+<div>asco</div></blockquote>
+<p class="last">t4ser
+ial</p>
+</td>
+<td>NBI,
+alpha
+s,
+ICRF
+/
+Fokke
+r-Pla
+nck</td>
+<td>Otto
+Asunta/
+Seppo
+Sipila</td>
+<td>Monte Carlo Fokker-Planck solver
+calculating the collisional ion and
+electron heating from a particle source
+and the NBI current drive.</td>
+</tr>
+<tr class="row-even"><td><blockquote class="first">
+<div>asco</div></blockquote>
+<p class="last">t4par
+allel</p>
+</td>
+<td><blockquote class="first">
+<div>NBI,
+alpha
+s,
+ICRF
+/</div></blockquote>
+<dl class="last docutils">
+<dt>Fokke</dt>
+<dd>r-Pla
+nck</dd>
+</dl>
+</td>
+<td>Otto
+Asunta/
+Seppo
+Sipila</td>
+<td>Monte Carlo Fokker-Planck solver
+calculating the collisional ion and
+electron heating from a particle source
+and the NBI current drive.</td>
+</tr>
+<tr class="row-odd"><td>Lion</td>
+<td>IC /
+waves</td>
+<td>Olivier
+Sauter
+and
+Laurent
+Villard</td>
+<td>Global ICRF wave solver. Code-parameter
+documentation can be found</td>
+</tr>
+<tr class="row-even"><td>Cyran
+o</td>
+<td>IC /
+waves</td>
+<td>Ernesto
+Lerche
+and
+Dirk
+Van
+Eester</td>
+<td>Global ICRF wave solver. Code-parameter
+documentation can be found</td>
+</tr>
+<tr class="row-odd"><td>Eve
+(not
+yet
+in
+ETS)</td>
+<td>IC /
+waves</td>
+<td>Remi
+Dumont</td>
+<td>Global ICRF wave solver</td>
+</tr>
+<tr class="row-even"><td>StixR
+eDist</td>
+<td>IC /
+waves</td>
+<td>Dirk
+Van
+Eester
+and
+Ernesto
+Lerche</td>
+<td>1d Fokker-Planck solver for ICRF heating.</td>
+</tr>
+<tr class="row-odd"><td>ICdep</td>
+<td>IC /
+waves</td>
+<td>Thomas
+Johnson</td>
+<td>Generates Waves-cpo with an IC wave field
+with Gaussian deposition profiles
+described by a combination of antenna-cpo
+input and through code parameters input.
+Code-parameter documentation can be found</td>
+</tr>
+<tr class="row-even"><td>ICco
+up</td>
+<td>IC /
+coupl
+ing</td>
+<td>Thomas
+Johnson</td>
+<td>Simple model for the coupling waves from
+ion cyclotron antennas to the plasma.
+Code-parameter documentation can be found</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="events-actors">
+<span id="ets-a-4-10b-list-actors-events"></span><h5>Events actors<a class="headerlink" href="#events-actors" title="Permalink to this headline">¶</a></h5>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="13%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code
+name</th>
+<th class="head">Code
+Categ
+ory</th>
+<th class="head">Contact
+persons</th>
+<th class="head">Short description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>pelle
+tacto
+r</td>
+<td>pelle
+t</td>
+<td>Denis
+Kalupin</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>pelle
+ttrig
+ger</td>
+<td>pelle
+t</td>
+<td>Denis
+Kalupin</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>sawcr
+ash_s
+lice</td>
+<td>sawte
+eth</td>
+<td>Olivier
+Sauter</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>sawcr
+it</td>
+<td>sawte
+eth</td>
+<td>Olivier
+Sauter</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>runa
+way_i
+ndica
+tor</td>
+<td>runaw
+ay</td>
+<td>Roland
+Lohner
+och
+Gergo
+Pokol</td>
+<td>Indicating the presence of runaway
+electrons: 1) Indicate, whether electric
+field is below the critical level, thus
+runaway generation is impossible. 2)
+Indicate, whether runaway electron growth
+rate exceeds a preset limit. This
+calculation takes only the Dreicer runaway
+generation method in account and assumes a
+velocity distribution close to Maxwellian,
+therefore this result should be considered
+with caution. The growth rate limit can be
+set via an input of the actor. Limit value
+is set to $$10^12$$ particle per second by
+default. (This growth rate generates a
+runaway current of approximately 1kA
+considering a 10 seconds long discharge.)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="non-physics-actors">
+<h5>Non-physics actors<a class="headerlink" href="#non-physics-actors" title="Permalink to this headline">¶</a></h5>
+<p>The ETS uses the following list of non-physics actors: addECant,
+addICant, backgroundtransport, calculateRHO, changeocc, changepsi,
+changeradii, checkconvergence, controlAMIX, coredelta2coreprof,
+correctcurrent, deltacombiner, emptydistribution, emptydistsource,
+emptywaves, eqinput, etsstart, fillcoreimpur, fillcoreneutrals,
+fillcoreprof, fillcoresource, fillcoretransp, fillequilibrium,
+fillneoclassic, filltoroidfield, gausiansources, geomfromcpo,
+hcd2coresource, ignoredelta, ignoreimpurity, ignoreneoclassic,
+ignoreneutrals, ignorepellet, ignoresources, ignoretransport, IMP4dv,
+IMP4imp, importimptransport, itmimpurity, itmneutrals,
+merger4distribution, merger4distsource, merger4waves, nbifiller,
+neoclassic2coresource, neoclassic2coretransp, parabolicprof,
+plasmacomposition, PowerFromArray, PowerModulation, profilesdatabase,
+readjustprof, sawupdate_slice, scaleprof, sourcecombiner,
+sourcedatabase, transportcombiner, transportdatabase, wallFiller and
+waves2sources.</p>
+</div>
+</div>
+</div>
+<div class="section" id="ets-a-4-10a">
+<span id="id2"></span><h3>ETS_A 4.10a<a class="headerlink" href="#ets-a-4-10a" title="Permalink to this headline">¶</a></h3>
+<p><strong>ETS_A workflow in KEPLER</strong>:</p>
+<ul class="simple">
+<li>uses as actors and composite actors from other IMPs, thus for the
+most recent versions of them please check with relevant project</li>
+<li>complex, but clearly structured workflow, which offers user friendly
+interface for configuring the simulation</li>
+<li><dl class="first docutils">
+<dt>allows for easy modifications (connecting new modules, or reconnecting</dt>
+<dd>the parts of the workflow) through the easy graphical interface</dd>
+</dl>
+</li>
+<li>provides users with all updates through the version control system</li>
+<li>still actively developing tool</li>
+</ul>
+<p>The list and status of available physics models for the ETS_A can be
+found
+<a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/ets_status.html">here</a>.</p>
+<p><strong>Contact person:</strong> <a class="reference external" href="mailto:denis&#46;kalupin&#37;&#52;&#48;euro-fusion&#46;org?subject=ETS%20in%20KEPLER">Denis Kalupin</a> (Skype:
+dkalupin)*</p>
+<div class="section" id="id3">
+<h4>Obtaining the ETS<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Copy the ETS workflow to your space:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>svn co https://gforge6.eufus.eu/svn/keplerworkflows/trunk/4.10a/imp3/ets <span class="nv">$EU</span>-IMSCRATCH/ETS_WORKFLOWS
+</pre></div>
+</div>
+<p>Compile ETS actors:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span><span class="nb">cd</span> <span class="nv">$EU</span>-IMSCRATCH/ETS_WORKFLOWS
+<span class="gp">&gt;</span>make import_ets
+</pre></div>
+</div>
+</div>
+<div class="section" id="updating-the-ets">
+<h4>Updating the ETS<a class="headerlink" href="#updating-the-ets" title="Permalink to this headline">¶</a></h4>
+<p>If you have already a copy of the ETS you do not need to check it out
+again!!!</p>
+<p>If you like to update everything (WORKFLOW + ACTORS + VISUALIZATION +
+INPUT DATA)</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span><span class="nb">cd</span> <span class="nv">$EU</span>-IMSCRATCH/ETS_WORKFLOWS
+<span class="gp">&gt;</span>svn update
+<span class="gp">&gt;</span>make import_ets
+</pre></div>
+</div>
+<p>To update ETS actors go inside your ETS_ACTORS:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span><span class="nb">cd</span> <span class="nv">$EU</span>-IMSCRATCH/ETS_WORKFLOWS
+<span class="gp">&gt;</span>svn update
+<span class="gp">&gt;</span>make import_actors
+</pre></div>
+</div>
+<p>To update the workflow go inside your ETS_WORKFLOWS:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span><span class="nb">cd</span> <span class="nv">$EU</span>-IMSCRATCH/ETS_WORKFLOWS
+<span class="gp">&gt;</span>svn update
+</pre></div>
+</div>
+<p>To update visualization scripts go inside your $KEPLER/kplots:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>svn update
+</pre></div>
+</div>
+<p>This is ALL you need to do for updates!</p>
+</div>
+<div class="section" id="executing-the-ets">
+<h4>Executing the ETS<a class="headerlink" href="#executing-the-ets" title="Permalink to this headline">¶</a></h4>
+<p>Open ETS workflow in Kepler:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>kepler.sh <span class="nv">$EU</span>-IMSCRATCH/ETS_WORKFLOWS/ETS_WORKFLOW.xml
+</pre></div>
+</div>
+<p>on the top of the workflow, change the parameter &#8220;user&#8221; to your user_ID.</p>
+<p>You can run the workflow!!!</p>
+</div>
+<div class="section" id="ets-a-4-10a-configuring">
+<span id="id4"></span><h4>Configuring the ETS run<a class="headerlink" href="#ets-a-4-10a-configuring" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="ets-a-4-10a-workflow-parameters">
+<span id="id5"></span><h5>Workflow Parameters<a class="headerlink" href="#ets-a-4-10a-workflow-parameters" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id6">
+<h6>General Parameters<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li>USER - your userid</li>
+<li>MACHINE - machine name (database name) for which comutations are done</li>
+<li>SHOT_IN - input shot number</li>
+<li>RUN_IN - input run number</li>
+<li>SHOT_OUT - output shot number</li>
+<li>RUN_OUT - output run number</li>
+<li>NUMERICAL_SOLVER - choice of the numerics solving transport equations
+(RECOMENDED SELECTION: 3 or 4)</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h6>Space resolution<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li>NRHO - number of radial points for transport equations</li>
+<li>NPSI - number of points for equilibrium 1-D arrays</li>
+<li>NEQ_DIM1 - number of points for equilibrium 2-D arrays, first index</li>
+<li>NEQ_DIM2 - number of points for equilibrium 2-D arrays, second index</li>
+<li>NEQ_MAX_NPOINTS - maximum number of points for equilibrium boundary</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h6>Time resolution<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h6>
+<p>Start and End time</p>
+<ul class="simple">
+<li>TBEGIN - Computations start time</li>
+<li>TEND - Computattions end time</li>
+</ul>
+<p>Time spep</p>
+<ul class="simple">
+<li>right click on the box ‘BEFORE THE TIME EVOLUTION’</li>
+<li>select ‘Configure actor’</li>
+<li>TAU:specify value of the time step in [s]</li>
+<li>TAU_OUT: specify value of the output time interval in [s]</li>
+<li>Commit</li>
+</ul>
+</div>
+</div>
+<div class="section" id="plasma-impurity-and-neutrals-composition">
+<span id="ets-a-4-10a-composition"></span><h5>Plasma, Impurity and Neutrals Composition<a class="headerlink" href="#plasma-impurity-and-neutrals-composition" title="Permalink to this headline">¶</a></h5>
+<p>Before starting the run you need to define types of main and impurity
+ions and types of neutrals to be included in simulations.</p>
+<p>To set up the composition:</p>
+<ul class="simple">
+<li>right click on the box ‘BEFORE THE TIME EVOLUTION’</li>
+<li>select ‘Configure actor’</li>
+<li>choose one of modes for setting &#8220;Run_compositions&#8221;
+&#8220;from_input_CPO&#8221; - will pick up the COMPOSITIONS structure of the
+COREPROF CPO from the input shot;
+&#8220;configure_manually&#8221; - will force the composition from the values
+specified below</li>
+<li>specify values of AMN_ion, ZN_ion and Z_ion for ions, from the first
+ion to the last [1:NION], separated by commas</li>
+<li>specify values of AMN_imp, ZN_imp and max_Z_imp for impurity ions,
+from the first to the last [1:NIMP], separated by commas</li>
+<li>choose the neutrals types, which should be switched &#8220;ON&#8221;</li>
+<li>Commit</li>
+</ul>
+</div>
+<div class="section" id="ets-a-4-10a-equations">
+<span id="id9"></span><h5>Equations to be solved and boundary conditions<a class="headerlink" href="#ets-a-4-10a-equations" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id10">
+<h6>Main plasma<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h6>
+<p>Before starting the run you need to select the type and value of the
+boundary conditions for all equations. Please note that the value should
+correspond to the type. All equations allow for following types of
+boundary conditions:</p>
+<ul class="simple">
+<li>OFF
+- equation is not solved, initial profiles will be kept for whole run</li>
+<li>value
+- edge value should be specified</li>
+<li>gradient
+- edge gradient should be specified</li>
+<li>scale_length
+- edge scale length should be specified</li>
+<li>generic
+- 3 coefficients (a1,a2,a3) should be provided: a1*y´ + a2*y = a3</li>
+<li>value_from_input_CPO
+- equation is solved, edge value evolution will be red from input
+shot</li>
+<li>profile_from_input_CPO
+- equation is not solved, profile evolution will be red from input
+shot</li>
+</ul>
+<p>The particular equation will be activated if the boundary condition type
+for it is other than <em>OFF</em>!</p>
+<p>To set up boundary conditions:</p>
+<ul class="simple">
+<li>right click on the box ‘BEFORE THE TIME EVOLUTION’</li>
+<li>select ‘Configure actor’</li>
+<li>select appropriate boundary condition for each equation</li>
+<li>specify values for boundary conditions corresponding to the type and
+to the ion component</li>
+<li>Commit</li>
+</ul>
+<p>!!! If electron density is solved, all ions with ni_bnd_type=OFF will be
+computed from the quasineutrality condition and scaled proportional to
+specified <em>ni_bnd_value</em> or inversely proportional to their charge
+<em>(charge_proportional)</em>. This is defined by option:
+<em>ni_from_quasineutrality</em>.</p>
+</div>
+<div class="section" id="id11">
+<h6>Impurity<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h6>
+<p>You can set up the boundary conditions for impurity ions in a similar
+way as for main ions. !!! Note, that at the moment only types: <em>OFF</em>;
+<em>value</em> and <em>value_from_input_CPO</em> are accepter by impurity solver.</p>
+<p>To set up boundary conditions:</p>
+<ul class="simple">
+<li>right click on the box ‘BEFORE THE TIME EVOLUTION’</li>
+<li>select ‘Configure actor’</li>
+<li>select appropriate boundary condition for each impurity species
+(OFF-equation is not solved)</li>
+<li>specify values for boundary density of each impurity component
+[1:MAX_Z_IMP], separated by commas</li>
+<li>Commit</li>
+</ul>
+<p>Interface for impurity boundary condition has additional option ,
+<em>coronal_distribution</em>, that allow to preset the edge values or entire
+profiles of individual ionization states from coronal distribution. In
+tis case only single value is required to be specified for each impurity
+boundary value. The options are:</p>
+<ul class="simple">
+<li>OFF
+- the boundary values for impurity densities will be as they are
+specified above;</li>
+<li>boundary_conditions
+- the boundary densities will be renormalized with corona, using the
+first element from above as a total density</li>
+<li>boundary_conditions_and_profiles
+- the boundary densities and starting profiles will be renormalized
+with corona, using the first element from above as a total density</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h6>Neutrals<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h6>
+<p>!!! AT THE MOMENT BOUNDARY CONDITIONS FOR NEUTRAL VELOCITIES ARE
+DISABLED, MIGHT BE ADDED ON REQUEST</p>
+<p>Note, that ALL values should be specified in the order: <em>{1, 2, 3
+...NION, 1, 2, 3, ...NIMP}</em></p>
+<p>To set up boundary conditions:</p>
+<ul class="simple">
+<li>right click on the box ‘BEFORE THE TIME EVOLUTION’</li>
+<li>select ‘Configure actor’</li>
+<li>select appropriate boundary condition for each neutral species
+(OFF-equation is not solved)</li>
+<li>specify values for boundary density and temperature of each neutral
+component [1, 2, 3 ...NION, 1, 2, 3, ...NIMP], separated by commas</li>
+<li>Commit</li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h6>Input Profiles Interpolation<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h6>
+<p>You are going to start the ETS run from some input shot, which might
+contain some conflicting rho grids. Thus there is a choice for the user
+to decide on the grid on which the starting profiles should be load by
+the worflow, <em>Interpolation_of_input_profiles</em>.</p>
+<p>To define the interpolation grid select:</p>
+<ul class="simple">
+<li>on_RHO_TOR_grid
+- interpolate input profiles based on the grid specyfied in [m];</li>
+<li>on_RHO_TOR_NORM_grid
+- interpolate input profiles based on normalised rho grid [0:1]</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ets-a-4-10a-convergence">
+<span id="id14"></span><h5>Convergence loop<a class="headerlink" href="#ets-a-4-10a-convergence" title="Permalink to this headline">¶</a></h5>
+<p>ETS updates input from different physics actors in a sequence, which is
+finished by solving the transport equations. Ther are possible none-linear
+couplings between different parts of the system. These nonelinearities are
+trited by the ETS using iterations. The decision to step in time is made by
+the ETS based on the criteria that the maximum relative deviation of main
+plasma profiles is lower than some predefined tolerance. There is a number
+of settings and sitches in the ETS that are used by the iterative scheme.
+To edit them do:</p>
+<ul class="simple">
+<li>right click on the box ‘CONVERGENCE LOOP’</li>
+<li>select ‘Configure actor’ to edit settings</li>
+<li>choose your settings</li>
+<li>Commit</li>
+</ul>
+<p>Switches in the field <em>FREQUENCY OF CALLING THE PHYSICS ACTORS</em> define how
+many times the the actors of a certain cathegory (equilibrium, transport,
+etc.) should be called in a single time step. By selecting <em>YES</em> all actors
+of this cathegory will be called every iteration By selecting <em>NO</em> all
+actors of this cathegory will be called only ones in a time step</p>
+<p>Switches and parameters in the field <em>CONTROL PARAMETERS</em> define how
+iterations are done</p>
+<ul class="simple">
+<li>Tolerance
+- defines the maximum relative error of profiles change compared to
+previous iteration. If it is achieved the time steping is done.</li>
+</ul>
+<p>For highly none-linear case the required precision can be achieved faster
+by the iterative scheme if only fraction of the new solution is mixed to
+the previous state. The following scheme is adopted by the ets to reduce
+none-linearities in profiles, transport coefficients and sources:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Y = (Amix * Y+) + ((1-Amix)*Y-)</span>
+</pre></div>
+</div>
+<p>where Amix is the mixing fraction You can activate the mixing of profiles,
+transport coefficient and sources by selecting the corresponding
+<em>Mixing_fraction_...</em> to be between [0:1] You also can activate the
+authomatic ajustment of this fraction by selecting: <em>Ajust_Mixing_for_...</em>
+to <em>YES</em></p>
+</div>
+<div class="section" id="ets-a-4-10a-equilibrium">
+<span id="id15"></span><h5>Equilibrium<a class="headerlink" href="#ets-a-4-10a-equilibrium" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="starting-settings">
+<h6>Starting Settings<a class="headerlink" href="#starting-settings" title="Permalink to this headline">¶</a></h6>
+<p>Before starting the run you need to set up your initial equlibrium. There
+are several options to do it: if your input shot contains the consistent
+equilibrium with all necessary parameters - you can start immediately from
+it; if your input shot contains the equilibrium but it is not consistent or
+some parameters are missing you can check it automatically; if your input
+equilibrium is corrupt or not present - you can define the starting
+equlinbrium by tree moment description. To select your starting equilibrium
+please do:</p>
+<ul class="simple">
+<li>right click on the box ‘BEFORE THE TIME EVOLUTION’</li>
+<li>select ‘Configure actor’ to edit settings</li>
+<li>Select your settings or specify values</li>
+<li>Commit</li>
+</ul>
+<p>SETTINGS:</p>
+<ul class="simple">
+<li>Equilibrium_configuration
+- select
+configure_manually
+if you like to specify configuration below; select
+from_input_CPO
+if all quantities should be picked up from the input CPO</li>
+<li>Major_Radius_of_geom_axis_RGEO
+- radius of the geometrical centre of the vessel [m]</li>
+<li>Altitude_of_geom_axis_ZGEO
+- altitude of the geometrical centre of the vessel [m]</li>
+<li>Major_Radius_of_LCMS_centre_R0
+- radius of the plasma centre [m]</li>
+<li>Altitude_of_LCMS_centre_Z0
+- altitude of the plasma centre [m]</li>
+<li>Magn_field_on_LCMS_centre_B0
+- vacume magnetic field at R0 [T]</li>
+<li>Total_plasma_current_IP
+- plasma current within the LCMS [A]</li>
+<li>Minor_radius
+- minor radius of the LCMS [m]</li>
+<li>Elongation
+- elongation of the LCMS [-]</li>
+<li>Triangularity_upper
+- upper triangularity of the LCMS [-]</li>
+<li>Triangularity_lower
+- lower triangularity of the LCMS [-]</li>
+<li>Equilibrium code
+- select one of available equilibrium solvers to check the
+consistency between starting equilibrium and current profile; use
+INTERPRETATIVE
+if you trust your input data (in this case the check will be
+ignorred).</li>
+</ul>
+<p>Please note, that different equilibrium solvers might require slightly
+different input. Thus it is a user responsibility to check that the
+information inside input shot/run is enough to run selected equilibrium
+solver.</p>
+</div>
+<div class="section" id="id16">
+<h6>Run Settings<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h6>
+<p>There are several equilibrium solvers connected to the ETS. You can
+select the one of them.Therefore please do:</p>
+<ul class="simple">
+<li>right click on the box ‘CONVERGENCE LOOP’</li>
+<li>select ‘Open actor’</li>
+<li>right click on the box ‘EQUILIBRIUM’</li>
+<li>select ‘Configure actor’ to edit settings</li>
+<li>choose your equilibrium solver</li>
+<li>Commit</li>
+</ul>
+<p><em>INTERPRETATIVE</em> means that the ETS will not update the equilibrium,
+instead it will be using the initial equilibrium.</p>
+<p>Please note, that it is better to select the same code as you used for
+pre-iterrations. Because outputs of different equilibrium solver are not
+necessary done with the same resolution. Therefore the routine saving
+the information to the data base might brake due to uncompatible sizes
+of some signals.</p>
+</div>
+</div>
+<div class="section" id="ets-a-4-10a-transport">
+<span id="id17"></span><h5>Transport<a class="headerlink" href="#ets-a-4-10a-transport" title="Permalink to this headline">¶</a></h5>
+<p>The settings for TRANSPORT can be done inside the CONVERGENCE LOOP
+composite actor. Therefore please do:</p>
+<ul class="simple">
+<li>right click on the box ‘CONVERGENCE LOOP’</li>
+<li>select ‘Open actor’</li>
+<li>right click on the box ‘TRANSPORT’</li>
+<li>select ‘Configure actor’ to edit settings</li>
+<li>choose your settings</li>
+<li>Commit</li>
+</ul>
+<div class="section" id="choice-of-transport-model">
+<h6>Choice of transport model<a class="headerlink" href="#choice-of-transport-model" title="Permalink to this headline">¶</a></h6>
+<p>ETS constructs the total transport coefficients from the combination of
+Anomalous transport (model choice), Neoclassical transport (model
+choice) and Database transport (transport coefficients be saved to the
+input shot)</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">D_tot = D_DB*M_DB + D_AN*M_AN + D_NC*M_NC</span>
+</pre></div>
+</div>
+<p>You should choose from the list of evailable models in each cathegory or
+switch it OFF</p>
+<p>The list of available transport models can be found
+<a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/ets_status.html">here</a>.</p>
+</div>
+<div class="section" id="main-plasma-transport">
+<h6>Main plasma transport<a class="headerlink" href="#main-plasma-transport" title="Permalink to this headline">¶</a></h6>
+<p>In this section you define how total transport coefficients for main
+ions should be constructed from contributions provided by different
+models. You need to provide the multipliers for Anomalous, Neoclassical
+and Database contributions, which will determine their weights in total
+transport coefficient.</p>
+<p>You also can add the constant background level for each coefficient (ion
+coefficients are expected to be the string {1:NION}, separated by
+commas)</p>
+</div>
+<div class="section" id="impurity-transport">
+<h6>Impurity transport<a class="headerlink" href="#impurity-transport" title="Permalink to this headline">¶</a></h6>
+<p>In this section you define how total transport coefficients for impurity
+ions should be constructed from contributions provided by different
+models. You need to provide the multipliers for Anomalous, Neoclassical
+and Database contributions, which will determine their weights in total
+transport coefficient.</p>
+<p>You also can add the constant background level for each coefficient
+(coefficients are expected to be the string {1:NIMP}, separated by
+commas)</p>
+<p>In addition, there is an option to import the Anomalous component of
+transport coefficient <em>from_first_ion</em> or <em>from_electrons</em> (the same
+anomalous contribution will be added to all impurity components, all
+ionization states)</p>
+</div>
+<div class="section" id="id18">
+<h6>Edge transport barrier<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h6>
+<p>In this section you can artificially supress the transport outside of
+specified <em>RHO_TOR_NORM_ETB</em>. Total transport coefficients for all
+transport channels (ne, ni, nz, Te, Ti,...) will be reduced to constant
+values specified below (ion and impurity coefficients are expected to be
+the strings {1:NION}) and {1:NIMP} respectively)</p>
+</div>
+<div class="section" id="id19">
+<h6>Total transport coefficients<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h6>
+<p>Profiles of the total transport coefficient for each channel are
+obtained from the the individual contributions (Data Base, Anomalous,
+Neoclassical and Background) as a summ of all activated transport models
+multiplied with coefficients specified on the interface of the composite
+actor.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">X_tot = X_DB*DBM + X_AN*ANM + X_NC*NCM + X_BG*BGM</span>
+</pre></div>
+</div>
+<p>!!! Note, that contributions to all transport equations will be
+multiplied with the same value. For example: if
+AnomalousTransportMultiplier=3.0, then contibutions from selected
+anomalous transport model to each transport equation will be multiplied
+with 3.0</p>
+<p>The fine tuning of of transport coefficients can be done through editing
+the XML code parameters of the transport combiner actor:</p>
+<ul class="simple">
+<li>right click on the box ‘TRANSPORT’</li>
+<li>select ‘Open actor’ to edit settings</li>
+<li>right click on the box ‘Transport Combiner’</li>
+<li>select ‘Open actor’ to edit settings</li>
+<li>right click on the box ‘transportcombiner’</li>
+<li>select ‘Configure actor’</li>
+<li>click ‘Edit Code Parameters’</li>
+<li>If you select <em>OFF</em> contributions from all transport models to this
+channel will be nullified; If you select <em>from_input_CPOs</em> the
+transport channel will be activated, and the total transport
+coefficient will be combined from active tranport models; For
+convective velocity there is an additional option
+<em>fixed_V_over_D_ratio</em>, by selecting this the combiner will ignore
+the convective components provided by transport nmodels. The
+convective velocity will be determined from the total diffusion
+coefficient by applying fixed V/D ratio (<em>for inward pinch the values
+should be negative!</em>). For all active channels you can adjust
+multipliers for combining contributions from different transport
+models (array of four space separated values is expected):<ul>
+<li>first position - Data Base transport coefficients;</li>
+<li>second position – Anomalous transport coefficients;</li>
+<li>third position – Neoclassical transport coefficients;</li>
+<li>fourth position – Background (constant level) transport
+coefficients;</li>
+</ul>
+</li>
+<li>save and exit</li>
+<li>Commit</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ets-a-4-10a-mhd">
+<span id="id20"></span><h5>MHD<a class="headerlink" href="#ets-a-4-10a-mhd" title="Permalink to this headline">¶</a></h5>
+<p>The settings for MHD type of events can be done inside the CONVERGENCE
+LOOP composite actor. Therefore please do:</p>
+<ul class="simple">
+<li>right click on the box ‘CONVERGENCE LOOP’</li>
+<li>select ‘Open actor’</li>
+<li>right click on the box ‘MHD’</li>
+<li>select ‘Configure actor’ to edit settings</li>
+<li>choose your settings</li>
+<li>Commit</li>
+</ul>
+<p>At the moment ETS allows only for NTM to be activated. The sawtooth
+module is expected to be deployed before EU-IM Code Camp in Slovenia.</p>
+<p>User can ajust the following NTM settings:</p>
+<ul class="simple">
+<li>NTM –
+ON
+means that ETS will add the NTM driven transport to the total
+transport coefficient;
+OFF-ignored</li>
+<li>NTMTransportMultiplier – the transport contrinution from NTM will be
+multiplied with this value</li>
+<li>Onset_NTM_time - activation time for the NTM mode</li>
+<li>Onset_NTM_width - starting width of the mode</li>
+<li>m_NTM_poloidal_number</li>
+<li>n_NTM_toroidal_number</li>
+<li>NTM_phase</li>
+<li>NTM_frequency</li>
+</ul>
+</div>
+<div class="section" id="ets-a-4-10a-sources">
+<span id="id21"></span><h5>Sources and impurity<a class="headerlink" href="#ets-a-4-10a-sources" title="Permalink to this headline">¶</a></h5>
+<p>The settings for SOURCES AND IMPURITY can be done inside the CONVERGENCE
+LOOP composite actor. Therefore please do:</p>
+<ul class="simple">
+<li>right click on the box ‘CONVERGENCE LOOP’</li>
+<li>select ‘Open actor’</li>
+<li>right click on the box ‘SOURCES AND IMPURITY’</li>
+<li>select ‘Configure actor’ to edit settings</li>
+<li>choose your settings</li>
+<li>Commit</li>
+</ul>
+<div class="section" id="imp3-sources">
+<h6>IMP3 sources<a class="headerlink" href="#imp3-sources" title="Permalink to this headline">¶</a></h6>
+<p>There is a number of sources developed by IMP3 project, which are actors
+or internal routines of the transport solver. You can activate them by
+selecting <em>ON / OFF</em> in front of corresponding source:</p>
+<ul class="simple">
+<li>Database Sources –
+ON
+- ETS will pick up the evolution of source profiles saved to your
+input shot/run;
+OFF -ignored</li>
+<li>Ohmic Heating –
+ON
+- ETS will compute Ohmic heating internaly;
+OFF-ignored</li>
+<li>Gaussian Sources –
+ON
+- ETS will add sources from the Gaussian source actor (you can
+configure heat and particle deposition profiles by editing the code
+parameters of the actor);
+OFF-ignored</li>
+<li>Neutral Sources–
+ON
+- Fluid neutrals will be solved according to the boundary conditions
+specified on ¨Before_time_evolution¨ composite actor interface;
+OFF -ignored</li>
+<li>Switch_IMPURITY–
+ON
+- Impurity density and radiative sources will be computed;
+OFF
+-ignored;
+INTERPRETATIVE
+– profiles of impurity density will be read from input shot/run</li>
+</ul>
+</div>
+<div class="section" id="imp5hcd-sources">
+<h6>IMP5HCD sources<a class="headerlink" href="#imp5hcd-sources" title="Permalink to this headline">¶</a></h6>
+<p>There is a number of sources developed by IMP5 project, that are
+incorporated by the ETS workflow.</p>
+<p>For the IMP5HCD sources please activate the type of heating source, by
+ticking the box in front of it, and select the code to simulate it.</p>
+<p>You also need to configure initial IMP5HCD settings. Therefore please:</p>
+<ul class="simple">
+<li>right click on the box ‘BEFORE THE TIME EVOLUTION’</li>
+<li>select ‘Open Actor’</li>
+<li>right click on the box ‘SETTINGS FOR HEATING AND CURRENT DRIVE’</li>
+<li>select ‘Configure actor’</li>
+<li>edit the stettings</li>
+<li>Commit</li>
+</ul>
+<p>The detailed information on initial IMP5HCD settings can be found
+<a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/imp5_imp5hcd.html">here</a>.
+Please note that settings for NBI are done independent for each PINI.
+Therefore, for NBI settings, please insert the values separated by
+commas. The number of the element in the array corresponds to the number
+of activated PINI. Maximum accepted number of PINIs = 16.</p>
+</div>
+<div class="section" id="id22">
+<h6>Power control<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h6>
+<p>You also can activate the power control for the IMP5HCD sources.</p>
+<p>If the POWER_CONTROL is not <em>OFF</em>, there are two modes of
+operation:<em>specific</em> and <em>frequency</em></p>
+<p>For <em>specific</em> you should specify the time sequence separated by commas
+and the corresponding power sequence (where first power level
+corresponds to the first time, second to second and etc.). Linear
+interpolation will be done between the sequence points. For example: if
+you give the power sequence = 2e6,4e6,1e6 and times = 0.0, 0.7, 1.5 (s)
+the delivered power would be:</p>
+<p>For <em>frequency</em> you should specify the power levels sequence separated
+by commas, start and end time of the power control and the frequency of
+switching between these levels. For example: if you give the power
+sequence = 2e6,4e6,1e6 and frequency = 10 (Hz) tstart =0.0 (s) tend =
+1.5 (s) the delivered power would be:</p>
+</div>
+<div class="section" id="id23">
+<h6>Total power<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h6>
+<p>Profiles of the total source for each channel are obtained from the the
+individual contributions (Data Base, Gaussian, Neutrals, Impurity and
+HCD) as a summ of all activated sources multiplied with coefficients
+specified on the interface of the composite actor.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">S_tot</span> <span class="o">=</span> <span class="n">S_DS</span><span class="o">*</span><span class="n">DSM</span> <span class="o">+</span> <span class="n">S_GS</span><span class="o">*</span><span class="n">GSM</span> <span class="o">+</span> <span class="n">S_Neu</span><span class="o">*</span><span class="n">NeuSM</span> <span class="o">+</span> <span class="n">S_IMP</span><span class="o">*</span><span class="n">IMPSM</span> <span class="o">+</span> <span class="n">S_HCD</span><span class="o">*</span><span class="n">HCDSM</span>
+</pre></div>
+</div>
+<p>!!! Note, that contributions to all transport equations will be
+multiplied with the same value. For example: if
+ImpuritySourceMultiplier=3.0, then contibutions from impurity to Se, Sz
+and Qe will be multiplied with 3.0</p>
+<p>The fine tuning of of sources can be done through editing the XML code
+parameters of the source combiner actor:</p>
+<ul>
+<li><p class="first">right click on the box ‘SOURCES and IMPURITY’</p>
+</li>
+<li><p class="first">select ‘Open actor’ to edit settings</p>
+</li>
+<li><p class="first">right click on the box ‘Source Combiner’</p>
+</li>
+<li><p class="first">select ‘Open actor’ to edit settings</p>
+</li>
+<li><p class="first">right click on the box ‘sourcecombiner’</p>
+</li>
+<li><p class="first">select ‘Configure actor’</p>
+</li>
+<li><p class="first">click ‘Edit Code Parameters’</p>
+</li>
+<li><p class="first">If you like the sources to the particular equation being activated -
+select <em>from_input_CPOs</em>; if you select <em>OFF</em> contributions from all
+sources to this channel will be nullified. For active channels you
+can adjust multipliers for combining contributions from different
+source modules (array of five space separated values is expected):</p>
+<ul class="simple">
+<li>first position - Data Base sources;</li>
+<li>second position – Gaussian sources;</li>
+<li>third position – HCD sources;</li>
+<li>fourth position – Neutral sources;</li>
+<li>fifth position – Impurity sources.</li>
+</ul>
+</li>
+<li><p class="first">save and exit</p>
+</li>
+<li><p class="first">Commit</p>
+<p>. _ETS_A_4.10a_inst_events:</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="instantaneous-events">
+<h5>Instantaneous events<a class="headerlink" href="#instantaneous-events" title="Permalink to this headline">¶</a></h5>
+<p>At the moment, user can swith ON and OFF two types of events: PELLET and
+SAWTOOTH</p>
+<div class="section" id="id24">
+<h6>Pellet<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h6>
+<p>At the top level of the workflow you can configure times for pellet
+injection</p>
+<ul class="simple">
+<li>right click on the box ‘INSTANTANEOUS EVENTS’</li>
+<li>select ‘Configure actor’ to edit settings</li>
+<li>Select Pellet_injection ‘ON’ if you like to use pellet in your
+simulation</li>
+<li>Select mode of operation: ‘specific’ - pellets will be shut at
+specific times, you also need to specify array ‘times_pellet’<ul>
+<li>‘specific’ - pellets will be shut at exact times specified in
+array ‘times_pellet’</li>
+<li>‘frequency’ – pellets will be shut from ‘tstart_pellet’ until
+‘tend_pellet’ with a ’frequency_pellet’</li>
+</ul>
+</li>
+<li>‘frequency’ – pellets will be shut from ‘tstart_pellet’ until
+‘tend_pellet’ with a ’frequency_pellet’</li>
+<li>Commit</li>
+</ul>
+<p>Parameters of individual pellet need to be configured through the
+icode_parameters of the PELLET actor. To access it go to &#8216;Outline&#8217; on
+the right upper corner and open the following:</p>
+<ul class="simple">
+<li>right click on the actor ‘PELLET’</li>
+<li>select ‘Configure actor’</li>
+<li>click ‘Edit Code Parameters’</li>
+<li>edit parameters and click ‘save and exit’</li>
+<li>Commit</li>
+</ul>
+<p><em>amn</em> – atomic mass number: array of elements separated by space
+(1:nelements) [-]</p>
+<p><em>zn</em> – nuclear charge: array of elements separated by space
+(1:nelements) [-]</p>
+<p><em>fraction</em> – fraction of each element in the pellet, based on the number
+of atoms: array of elements separated by space (1:nelements) [-]</p>
+<p><em>rpell</em> – radius of the pellet [m]</p>
+<p><em>vpell</em> – velocity of the pellet [m/s]</p>
+<p><em>rcloud</em> – radius of the pellet cloud [m], radial extension of the cloud
+= 2*rp0</p>
+<p><em>lcloud</em> – length of the pellet cloud along the field line [m]</p>
+<p><em>Tcloud</em> – temperature of the pellet cloud [eV]</p>
+<p>Pellet path is specified by two points, for which R and Z coordinated
+should be specified</p>
+<p><em>R</em> – R coordinates of the pivot and second points of the pellet path,
+separated by space [m]</p>
+<p><em>Z</em> – Z coordinates of the pivot and second points of the pellet path,
+separated by space [m]</p>
+<p>Control switches allow to activate:</p>
+<ul class="simple">
+<li>drifts
+- YES - will activate radial displacement of deposition profile, same
+for all path points</li>
+<li>cooling
+- YES - will activate cooling of the other side of the plasma due to
+parallel heat transport (essential for large pellets, which might
+cross the same flux surface twice)</li>
+<li>JINTRAC
+- YES - will provide temperature reduction consistent with the model
+used in JETTO</li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h6>MHD<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h6>
+<p>At the top level of the workflow you can switch ON/OFF possible MHD
+events</p>
+<ul class="simple">
+<li>right click on the box ‘INSTANTANEOUS EVENTS’</li>
+<li>select ‘Configure actor’ to edit settings</li>
+<li>Select SAWTOOTH ‘ON’ if you like to use them in your simulation</li>
+<li>Commit</li>
+</ul>
+</div>
+</div>
+<div class="section" id="visualization-during-the-run">
+<span id="ets-a-4-10a-visualization"></span><h5>Visualization during the run<a class="headerlink" href="#visualization-during-the-run" title="Permalink to this headline">¶</a></h5>
+<p>There is a number tools visualizing the ETS run.</p>
+<div class="section" id="id26">
+<h6>Multiple Tab Display<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h6>
+<p>The display appeares automaticaly when the ETS workflow is launched. It
+displays diagnostic text messages from the workflow on following topics:</p>
+<ul class="simple">
+<li>Input data statement</li>
+<li>Iterations to check the initial convergence between EQUILIBRIUM and
+CURRENT</li>
+<li>Time evolution</li>
+<li>Convergence of iteratinos within the time step</li>
+<li>IMP5HCD settings</li>
+<li>Power used by IMP5HCD actors durung the run</li>
+</ul>
+<p>Also the error messages from execution of the workflow will be displayed
+here.</p>
+</div>
+<div class="section" id="id27">
+<h6>Python Visualization Display<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h6>
+<p>You can activate the graphical visualization of your run evolution:</p>
+<ul class="simple">
+<li>right click on the box ‘Check Time &amp; Save Slice’</li>
+<li>select ‘Configure actor’</li>
+<li>select visualisation ‘YES’ or ‘NO’</li>
+<li>Commit</li>
+</ul>
+<p>Then evolution of main discharge parameters will be shown in this
+window:</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ets-c">
+<span id="ets-c-kepler"></span><h3>ETS_C<a class="headerlink" href="#ets-c" title="Permalink to this headline">¶</a></h3>
+<p>The ETS workflow (IMP3-ACT1) is used for 1-D transport simulation of a
+tokamak core plasma.</p>
+<p><strong>ETS workflow in KEPLER</strong>:</p>
+<ul class="simple">
+<li>uses as actors and composite actors from other IMPs, thus for the
+most recent versions of them please check with relevant project</li>
+<li>complex, but clearly structured workflow, which offers user friendly
+interface for configuring the simulation</li>
+<li><dl class="first docutils">
+<dt>allows for easy modifications (connecting new modules, or reconnecting</dt>
+<dd>the parts of the workflow) through the easy graphical interface</dd>
+</dl>
+</li>
+<li>provides users with all updates through the version control system</li>
+<li>still actively developing tool</li>
+</ul>
+<p>Contact persons: <a class="reference external" href="mailto:vincent&#46;basiuk&#37;&#52;&#48;cea&#46;fr?subject=ETS%20in%20KEPLER">Vincent Basiuk</a> ,
+<a class="reference external" href="mailto:philippe&#46;huynh&#37;&#52;&#48;cea&#46;fr?subject=ETS%20in%20KEPLER">Philippe Huynh</a></p>
+</div>
+<div class="section" id="ets-status">
+<span id="id28"></span><h3>ETS Status<a class="headerlink" href="#ets-status" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Package Name /
+Physics Module</em></th>
+<th class="head">ETS-A</th>
+<th class="head">ETS-C</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><em>EQILIBRIUM</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><em>fixed boundary:</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>BDSEQ</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>EMEQ</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>SPIDER</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>SPIDER_IMP12</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>CHEASE</td>
+<td>Ready for use</td>
+<td>validate</td>
+</tr>
+<tr class="row-odd"><td>HELENA</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>HELENA21</td>
+<td>&#160;</td>
+<td>work in 4.09a problem
+when it doesn&#8217;t find
+any equilibrium crash</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><em>free boundary:</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>CEDRES++</td>
+<td>In progress/tests are
+planned for Nov.2014</td>
+<td>validate (static
+mode, TBD evolution
+mode)</td>
+</tr>
+<tr class="row-even"><td>CREATE-NL</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>FIXFREE</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>EQFAST</td>
+<td>&#160;</td>
+<td>work in 4.09a</td>
+</tr>
+<tr class="row-odd"><td>FREEBIE</td>
+<td>&#160;</td>
+<td>validate</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><em>MHD</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>NTM</td>
+<td>Ready for use</td>
+<td>validate</td>
+</tr>
+<tr class="row-odd"><td>SAWTEETH</td>
+<td>Implemented/Tested/re
+lease
+date:Nov.2014</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Linear Stability
+Chain</td>
+<td>Stand alone
+tests/implementation
+in ETS and
+release:2015</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><em>TRANSPORT</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><em>analytical &amp;
+interpretative:</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>From DATA BASE
+(interpretative)</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Edge Transport
+Barried (analytical)</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><em>anomalous:</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>ETAIGB</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>BOHM-GYROBOHM</td>
+<td>Ready for use</td>
+<td>validate, + effect of
+rotation</td>
+</tr>
+<tr class="row-even"><td>GLF23</td>
+<td>Implemented/Tested/re
+lease
+date:Nov.2014</td>
+<td>to be tested (GLF23
+installed in previous
+gateway not
+validated)</td>
+</tr>
+<tr class="row-odd"><td>WEILAND</td>
+<td>Implemented/Tested/re
+lease
+date:Nov.2014</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>REU-IM</td>
+<td>Implemented/Tested/re
+lease
+date:Nov.2014</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>EWDM</td>
+<td>Implemented/Tested/re
+lease
+date:Nov.2014</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>TGLF</td>
+<td>In progress/Some
+initial tests</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>KIAUTO</td>
+<td>&#160;</td>
+<td>installed (transport
+model based on
+scaling law)</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><em>neoclassical:</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>NEOS</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>NEOWES</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>NEOART</td>
+<td>Ready for use
+(probably not
+suggested as being
+too oscilatory)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>NCLASS</td>
+<td>In progress</td>
+<td>validate with
+composition (to be
+upgrade with
+compositions</td>
+</tr>
+<tr class="row-even"><td>NCLASS/FORCEBALL</td>
+<td>&#160;</td>
+<td>installed (gives the
+radial electric
+field)</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><em>HEAT,PARTICLE
+SOURCES &amp; CURRENT
+DRIVE</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><em>analytical &amp;
+interpretative:</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>From DATA BASE
+(interpretative)</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Gaussian</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><em>impurity and
+particles:</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>IMPURITY</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>NEUTRALS</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>PELLET</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ZNEUTRES</td>
+<td>&#160;</td>
+<td>installed (simple
+module of CRONOS for
+neutral source terms)</td>
+</tr>
+<tr class="row-even"><td>ZRECYCLE</td>
+<td>&#160;</td>
+<td>edge boundary for
+electron density</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><em>ECRH</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>GRAY</td>
+<td>Ready for use</td>
+<td>Installed</td>
+</tr>
+<tr class="row-even"><td>TORAY-FOM</td>
+<td>&#160;</td>
+<td>In preparation</td>
+</tr>
+<tr class="row-odd"><td>TRAVIS</td>
+<td>Tested</td>
+<td>In preparation</td>
+</tr>
+<tr class="row-even"><td>TORBEAM</td>
+<td>&#160;</td>
+<td>In preparation</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><em>ICRH</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>TORIC</td>
+<td>In progress</td>
+<td>In preparation</td>
+</tr>
+<tr class="row-even"><td>ICDEP</td>
+<td>&#160;</td>
+<td>Installed</td>
+</tr>
+<tr class="row-odd"><td>FPSIM</td>
+<td>&#160;</td>
+<td>Installed</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><em>NBI</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>NEMO</td>
+<td>Ready for use</td>
+<td>Installed</td>
+</tr>
+<tr class="row-odd"><td>BBNBI</td>
+<td>Ready for use</td>
+<td>In preparation</td>
+</tr>
+<tr class="row-even"><td>NBISIM</td>
+<td>Ready for use</td>
+<td>Installed</td>
+</tr>
+<tr class="row-odd"><td>ASCOT</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>RISK</td>
+<td>Ready for use</td>
+<td>In preparation</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><em>LH</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><em>nuclear sources</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>nuclearsim</td>
+<td>Ready for use</td>
+<td>Installed</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><em>CONTROLS</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>NBI power control</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ECRH power control</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>ICRH power control</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Pellet frequency
+control</td>
+<td>Ready for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><em>COUPLING TO EDGE</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>SOLPS</td>
+<td>Tested at Fortran
+level</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><em>DOCUMENTATION and
+MANUALS</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Physics Description</td>
+<td>Description of the
+ETS</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Numerics Description</td>
+<td>Form of the
+standardize
+equations</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Manuals</td>
+<td><ul class="first last simple">
+<li>ETS workflows in
+KEPLER</li>
+<li>ETS source in
+Fortran</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
            </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="codes.html" class="btn btn-neutral float-right" title="Codes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="edge.html" class="btn btn-neutral float-right" title="Edge Transport Simulator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="infrastructure.html" class="btn btn-neutral" title="Infrastructure" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="infrastructure.html" class="btn btn-neutral" title="Infrastructure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -253,7 +3278,8 @@ surfaces</li>
             VERSION:'3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

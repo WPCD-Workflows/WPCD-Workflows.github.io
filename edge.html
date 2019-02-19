@@ -1,0 +1,751 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Edge Transport Simulator &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
+        <link rel="next" title="Turbulent Flux Quantities in Transport Models" href="transport.html"/>
+        <link rel="prev" title="Core Transport Simulator (ETS)" href="ets.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EUROfusion Integrated Modelling workflows
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Edge Transport Simulator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#imp3-general-grid-description-and-grid-service-library">IMP3 General Grid Description and Grid Service Library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#resources">Resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#outdated-documentation">Outdated documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-grids">Example grids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grid-service-library">Grid service library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#imp3-general-grid-description-and-grid-service-library-tutorial">IMP3 General Grid Description and Grid Service Library - Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EUROfusion Integrated Modelling workflows</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Edge Transport Simulator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/edge.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="edge-transport-simulator">
+<span id="imp3-edge"></span><h1>Edge Transport Simulator<a class="headerlink" href="#edge-transport-simulator" title="Permalink to this headline">¶</a></h1>
+<p>The goal of this work is to adopt the edge code like SOLPS-B2 to be used
+within the EU-IM platform.</p>
+<div class="section" id="imp3-general-grid-description-and-grid-service-library">
+<span id="imp3-grid"></span><h2>IMP3 General Grid Description and Grid Service Library<a class="headerlink" href="#imp3-general-grid-description-and-grid-service-library" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>GForge project page</li>
+<li>Linking to library:
+general
+,
+specific</li>
+<li>A tutorial talk.
+Note: some slides might be out of date, please refer to the
+documentation.</li>
+</ul>
+</div>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">4.09a
+Resources:
+<a class="reference external" href="https://gforge6.eufus.eu/svn/itmggd/branches/4.09a/">Sources</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/svn/itmggd/branches/4.09a/f90/src/examples/">Fortran
+Examples</a></p>
+<p>Documentation:</p>
+<ul class="simple">
+<li>Release v1.2:
+Fortran 90
+,
+Python
+,
+ualconnector
+,</li>
+</ul>
+</li>
+<li><p class="first">4.10a
+Resources:
+<a class="reference external" href="https://gforge6.eufus.eu/svn/itmggd/branches/4.10a/">Sources</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/svn/itmggd/branches/4.10a/f90/src/examples/">Fortran
+Examples</a></p>
+<p>Documentation:</p>
+<ul class="simple">
+<li>Release v1.2:
+Fortran 90
+,
+Python
+,
+ualconnector
+,</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="outdated-documentation">
+<h3>Outdated documentation<a class="headerlink" href="#outdated-documentation" title="Permalink to this headline">¶</a></h3>
+<p>This section collects information and documentation related to the
+general grid description.</p>
+<ul class="simple">
+<li>Some presentations:<ul>
+<li>A tutorial talk from 2011
+,</li>
+<li>General Meeting 2011:
+Short overview talk
+and
+detailed presentation</li>
+</ul>
+</li>
+<li>Instructions how to get a copy of the Grid Service Library</li>
+<li>Documentation for the EU-IM Grid Service Library:
+Fortran 90
+,
+Python</li>
+<li>A short manual for ualconnector and VisIt</li>
+</ul>
+<p>Some examples are included in the Grid Service Library distribution.</p>
+<div class="section" id="example-grids">
+<span id="imp3-gridexamples"></span><h4>Example grids<a class="headerlink" href="#example-grids" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="example-grid-details">
+<h5>Example grid details<a class="headerlink" href="#example-grid-details" title="Permalink to this headline">¶</a></h5>
+<p>This section describes a number of example grids and gives some examples
+for specific constructs (object lists, subgrids).</p>
+<div class="section" id="example-grid-1-2d-structured-r-z-grid">
+<h6>Example Grid #1: 2d structured R,Z grid<a class="headerlink" href="#example-grid-1-2d-structured-r-z-grid" title="Permalink to this headline">¶</a></h6>
+<p>Note: the grids shown here are used in the unit tests of the grid
+service library implementation, i.e. the automated testing framework.</p>
+<p>A 2d grid in (R,Z) constructed by combining two structured
+one-dimensional spaces. The spaces are defined as follows, they define
+nodes and edges as subobjects. The whole grid then looks like this
+(attention, slightly differing scales in R and Z): A couple of examples
+for object descriptor are given. Some explanations:</p>
+<p>((1,1) (4,2)) = a 2d object (2d cell or face), implicitly created by
+combining the 1d object (edge) no. 4 from space 1 and the 1d object no.
+2 from space 2. ((1,0) (2,4)) = a 1d object (edge), implicitly created
+by combining 1d object (edge) from space 1 with the 0d object (node) no.
+4 from space 2. ((0,0) (2,2)) = a 0d object (node), implicitly created
+by combining 0d objects (nodes) no. 2 from space 1 and no. 2 from space
+2.</p>
+<div class="section" id="object-classes">
+<h7>Object classes<a class="headerlink" href="#object-classes" title="Permalink to this headline">¶</a></h7>
+<p>This section shows the different object classes present in the grid. The
+implicit numbering of the objects in a class is obtained by iterating
+over all subobjects defining the objects, lowest space first.</p>
+<p>Object class (1,1): 2d cells/faces. They have the following implicit
+numbering:
+Object class (1,0): 1d edges, aligned along the R axis (&#8220;r-aligned&#8221;).
+They have the following implicit numbering:
+Object class (0,1): 1d edges, aligned along the Z axis (&#8220;z-aligned&#8221;).
+They have the following implicit numbering:
+Object class (0,0): 0d nodes. They have the following implicit
+numbering:</p>
+</div>
+</div>
+<div class="section" id="example-2-b2-grid">
+<h6>Example 2: B2 grid<a class="headerlink" href="#example-2-b2-grid" title="Permalink to this headline">¶</a></h6>
+</div>
+</div>
+<div class="section" id="object-list-examples">
+<h5>Object list examples<a class="headerlink" href="#object-list-examples" title="Permalink to this headline">¶</a></h5>
+<p>Some examples for object lists, to explain the concept and show the
+notation. All examples refer to the 2d structured R,Z example grid #1
+given above.
+Object descriptor A single object (= and object descriptor), for object
+with object class (1,1), object index (4,2).</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Explicit object lists An explicit object list is simply an enumeration
+of object descriptors. The ordering of the objects is given directly by
+their position in the list. Note that by definition, all objects in the
+list must be of the same class (An implementation of an explicit object
+list should enforce this. If you need lists of objects with differing
+class, have a look at subgrids).</p>
+<p>An explicit list of 2d cells (faces), listing the four corner cells of
+the grid in the order bottom-left, bottom-right, top-left, top-right:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span>
+  <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span>
+  <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)),</span>
+  <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Implicit object lists Implicit object lists use the implicit order of
+(sub)objects to form an efficient representation of (possibly large)
+sets of objects. They thus avoid explicit enumeration of individual
+objects as done in the explicit objects lists. The following examples
+demonstrate the implicit list notation. Note: the implicit list notation
+is used in the Python implementation of the grid service library in
+exactly the form given here.</p>
+<p>Selecting all indices An implicit object list of all r-aligned edges:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Object and subobject indices in the grid description start counting from
+1, i.e. object no. 1 is the first object. The index 0 is special and
+denotes an undefined index. In this notation, it denotes all possible
+indices.</p>
+<p>An implicit object list of the (z-aligned) boundary edges on the left
+boundary of the grid:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The first entry of the index tuple denotes the first node in the
+r-space, the second entry denotes all edges in the z space. The implicit
+list denotes a total of 4 1d edges. Their implicit numbering is again
+given by iterating over all defining objects, lowest space first. The
+list therefore expands to</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Selecting explicit lists of indices An implicit object list of the
+(z-aligned) right and left boundary edges:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The first entry of the index tuple denotes a list of nodes in the
+r-space, more specifically the first and the last (=6th) node. The
+second entry denotes again all edges in the z space. The implicit list
+then denotes a total of 8 1d edges in the following order:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Selecting ranges of indices An implicit object list of all 2d cells,
+except the cells on the left and right boundary.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The first entry of the index tuple denotes a range of edges in the
+r-space, more specifically the edges 2 to 4. The second entry of the
+index tuple denotes all four edges in the z-space. The implicit list
+then denotes a total of 12 2d cells in the following order:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>All implementations of the grid service library define the constant
+GRID_UNDEFINED=0 to specify an undefined index. Use of GRID_UNDEFINED
+instead of 0 is advised to increase the readability of the code. The
+following notations are therefore equivalent
+((1,0) (0,0)) = ((1,0) (GRID_UNDEFINED,GRID_UNDEFINED))
+((0,1) (1,0)) = ((0,1) (1,GRID_UNDEFINED))</p>
+</div>
+<div class="section" id="subgrid-examples">
+<h5>Subgrid examples<a class="headerlink" href="#subgrid-examples" title="Permalink to this headline">¶</a></h5>
+<p>A subgrid is an ordered list of grid objects of a common dimension. The
+difference to object lists is that they can contain objects of different
+object classes.</p>
+<p>The subgrid concept is central to storing data on grids. To store data,
+first a subgrid has to be defined. The objects in the grid have a fixed
+order, which then allows to unambiguously store the data associated with
+the objects in vectors.</p>
+<p>Technically, a subgrid is an ordered list of object lists, of which
+every individual list is either explicit or implicit. The ordering of
+the objects in the subgrid is then directly given by the ordering of the
+object lists and the ordering of the grid objects therein.</p>
+<p>Subgrid example The following subgrid consists of all boundary edges of
+the 2d R,Z example grid #1, given as four implicit object lists.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>((1,0) (0,1))    ! bottom edges
+((0,1) (6,0))    ! right edges
+((1,0) (0,5))    ! top edges
+((0,1) (1,0))    ! left edges
+</pre></div>
+</div>
+<p>Explicitly listing the objects in the order given by the subgrid gives:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>1:  ((1,0) (1,1))    ! bottom edges
+2:  ((1,0) (2,1))
+3:  ((1,0) (3,1))
+4:  ((1,0) (4,1))
+5:  ((1,0) (5,1))
+6:  ((0,1) (6,1))    ! right edges
+7:  ((0,1) (6,2))
+8:  ((0,1) (6,3))
+9:  ((0,1) (6,4))
+10: ((1,0) (1,5))    ! top edges
+11: ((1,0) (2,5))
+12: ((1,0) (3,5))
+13: ((1,0) (4,5))
+14: ((1,0) (5,5))
+15: ((0,1) (1,1))    ! left edges
+16: ((0,1) (1,2))
+17: ((0,1) (1,3))
+18: ((0,1) (1,4))
+</pre></div>
+</div>
+<p>The number at the beginning of each line is the <em>local index</em> of the
+object, where local means locally in the subgrid. Note that, again,
+counting starts at 1.</p>
+</div>
+</div>
+<div class="section" id="grid-service-library">
+<span id="imp3-gridservicelibrary"></span><h4>Grid service library<a class="headerlink" href="#grid-service-library" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="using-the-grid-service-library">
+<h5>Using the grid service library<a class="headerlink" href="#using-the-grid-service-library" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="setting-up-the-environment">
+<h6>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">¶</a></h6>
+<p>The grid service library requires the EU-IM data structure version 4.09a
+(or later). Before using it you have to make sure your environment is
+set up properly. The following section assumes you are using csh or tcsh
+on the Gateway.</p>
+<p>First, your environment variables have to be set up properly. To check
+them do</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>echo $TOKAMAKNAME
+</pre></div>
+</div>
+<p>It should return</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">test</span>
+</pre></div>
+</div>
+<p>Also do</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>echo $DATAVERSION
+</pre></div>
+</div>
+<p>It should return</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">4.09</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>(or some higher version number). If either of them returns something
+different, run</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>source $EU-IMSCRIPTDIR/EU-IMv1 kepler test 4.09a &gt; /dev/null
+</pre></div>
+</div>
+<p>and check the variables again.</p>
+<p>Second, you have to ensure your data tree is set up properly. Do</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>ls ~/public/itmdb/itm_trees/$TOKAMAKNAME/$DATAVERSION/mdsplus/0/
+</pre></div>
+</div>
+<p>If you get something like &#8220;No such file or directory&#8221;, you have to set
+up the tree first by running</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$EU-IMSCRIPTDIR/create_user_itm_dir $TOKAMAKNAME $DATAVERSION
+</pre></div>
+</div>
+<p>and then do the previous check again.</p>
+</div>
+<div class="section" id="checking-out-and-testing-the-grid-service-library">
+<h6>Checking out and testing the grid service library<a class="headerlink" href="#checking-out-and-testing-the-grid-service-library" title="Permalink to this headline">¶</a></h6>
+<p>To be able to get the code of the grid service library, you have to be a
+member of the EU-IM General Grid description (itmggd) project (you can
+apply for this <a class="reference external" href="https://gforge6.eufus.eu/gf/project/itmggd/">here</a>).</p>
+<p>Once you are a member, you can check out the code by</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gforge6</span><span class="o">.</span><span class="n">eufus</span><span class="o">.</span><span class="n">eu</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">itmggd</span> <span class="n">itm</span><span class="o">-</span><span class="n">grid</span>
+</pre></div>
+</div>
+<p>Then you can run the unit tests for the grid service library by</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">itm</span><span class="o">-</span><span class="n">grid</span>
+<span class="n">source</span> <span class="n">setup</span><span class="o">.</span><span class="n">csh</span>
+</pre></div>
+</div>
+<p>This will setup environment variables (especially OBJECTCODE) and
+aliases. Then do</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">testgrid</span> <span class="n">setup</span>
+</pre></div>
+</div>
+<p>This will set up the build system for the individual languages. It will
+also build and execute a Fortran program that writes a simple 2d example
+grid stored in an edge CPO into shot 1, run 1.</p>
+<p>To actually run the tests do</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">testgrid</span> <span class="nb">all</span>
+</pre></div>
+</div>
+<p>This will go through the implementations in the different languages
+(F90, Python, ...) and run unit tests for every on of them. If all goes
+well, it should end with the message</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Test</span> <span class="nb">all</span> <span class="n">implementations</span><span class="p">:</span> <span class="n">OK</span>
+</pre></div>
+</div>
+<p>If this is not the case, something is broken and must be fixed.</p>
+</div>
+</div>
+<div class="section" id="example-applications-outdated">
+<h5>Example applications (outdated)<a class="headerlink" href="#example-applications-outdated" title="Permalink to this headline">¶</a></h5>
+<p>Note: this is a bit outdated.
+Have a look here.</p>
+<div class="section" id="plotting-3d-wall-geometry-with-visit-temporary-solution-not-required-any-more">
+<h6>Plotting 3d wall geometry with VisIt (temporary solution, not required any more)<a class="headerlink" href="#plotting-3d-wall-geometry-with-visit-temporary-solution-not-required-any-more" title="Permalink to this headline">¶</a></h6>
+<p>This example plots a 3d wall representation stored in the edge CPO (in
+the future, this information will be stored in the wall CPO). The
+example data used here is generated by a preprocessing tool which is
+part of the ASCOT code.</p>
+<ol class="arabic">
+<li><p class="first">Check out the grid service library (See above. You don&#8217;t necessarily
+have to run the tests)</p>
+</li>
+<li><p class="first">Change to the python/ directory and setup the environment:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="p">;</span> <span class="n">source</span> <span class="n">setup</span><span class="o">.</span><span class="n">csh</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Edit the file itm/examples/write_xdmf.py to use the right shot number</p>
+</li>
+<li><p class="first">Run it (still in the python/ directory of the service library) with</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python26</span> <span class="n">itm</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">write_xdmf</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>This will create two files: wall.xmf and wall.h5</p>
+</li>
+<li><p class="first">Start visit with</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">visit23</span>
+</pre></div>
+</div>
+<p>and open the wall.xmf file. Then select Plot-&gt;Mesh-&gt;Triangle and
+click on the &#8220;Draw&#8221; button.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="using-ualconnector-to-visualize-cpos-using-the-general-grid-description">
+<h6>Using UALConnector to visualize CPOs using the general grid description<a class="headerlink" href="#using-ualconnector-to-visualize-cpos-using-the-general-grid-description" title="Permalink to this headline">¶</a></h6>
+<p>UALConnector allows you to bring data directly from the UAL into VisIt.</p>
+<ol class="arabic">
+<li><p class="first">Check out the grid service library (See above. You don&#8217;t necessarily
+have to run the tests)</p>
+</li>
+<li><p class="first">Run UALConnector. Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">9001</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">test</span> <span class="o">-</span><span class="n">v</span> <span class="mf">4.09</span><span class="n">a</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">15</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">test</span> <span class="o">-</span><span class="n">v</span> <span class="mf">4.09</span><span class="n">a</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">When finished, close VisIt and terminate the UALConnector by typing
+&#8216;quit&#8217;.</p>
+</li>
+</ol>
+<p>You don&#8217;t even have to check out the service library. UALConnector is
+made available at</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span>
+</pre></div>
+</div>
+<p>, i.e.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">9001</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">test</span> <span class="o">-</span><span class="n">v</span> <span class="mf">4.09</span><span class="n">a</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">15</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">test</span> <span class="o">-</span><span class="n">v</span> <span class="mf">4.09</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>g2dpc $</p>
+<p>`
+.. _imp3_grid_tutorial:</p>
+</div>
+</div>
+</div>
+<div class="section" id="imp3-general-grid-description-and-grid-service-library-tutorial">
+<h4>IMP3 General Grid Description and Grid Service Library - Tutorial<a class="headerlink" href="#imp3-general-grid-description-and-grid-service-library-tutorial" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="setup-your-environment">
+<h5>Setup your environment<a class="headerlink" href="#setup-your-environment" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-default"><div class="highlight"><pre><span></span>echo $DATAVERSION
+echo $TOKAMAKNAME
+</pre></div>
+</div>
+<p>should give &#8220;4.09a&#8221; and &#8220;test&#8221;. If not, run</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>source $EU-IMSCRIPTDIR/EU-IMv1 kepler test 4.09a &gt; /dev/null
+</pre></div>
+</div>
+<p>To copy the tutorial files:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span> <span class="o">~/</span><span class="n">public</span>
+</pre></div>
+</div>
+<p>Switch to the right version of the PGI compiler:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">unload</span> <span class="n">openmpi</span><span class="o">/</span><span class="mf">1.3</span><span class="o">.</span><span class="mi">2</span><span class="o">/</span><span class="n">pgi</span><span class="o">-</span><span class="mf">8.0</span> <span class="n">compilers</span><span class="o">/</span><span class="n">pgi</span><span class="o">/</span><span class="mf">8.0</span>
+<span class="n">module</span> <span class="n">load</span> <span class="n">compilers</span><span class="o">/</span><span class="n">pgi</span><span class="o">/</span><span class="mf">10.2</span> <span class="n">openmpi</span><span class="o">/</span><span class="mf">1.4</span><span class="o">.</span><span class="mi">3</span><span class="o">/</span><span class="n">pgi</span><span class="o">-</span><span class="mf">10.2</span>
+</pre></div>
+</div>
+<p>To set up the environment:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>cd $HOME/public/itm-grid/f90
+source setup.csh
+</pre></div>
+</div>
+</div>
+<div class="section" id="compile-run-examples">
+<h5>Compile &amp; run examples<a class="headerlink" href="#compile-run-examples" title="Permalink to this headline">¶</a></h5>
+<p>2d structured grid write example
+Source file is at:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">src</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">itm_grid_example1_2dstructured_servicelibrary</span><span class="o">.</span><span class="n">f90</span>
+</pre></div>
+</div>
+<p>Compile:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>make depend
+make $OBJECTCODE/itm_grid_example1_2dstructured_servicelibrary.exe
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$OBJECTCODE/itm_grid_example1_2dstructured_servicelibrary.exe
+</pre></div>
+</div>
+<p>2d structured grid read example
+Source file is at:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">src</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">itm_grid_example1_2dstructured_read</span><span class="o">.</span><span class="n">f90</span>
+</pre></div>
+</div>
+<p>Compile:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>make $OBJECTCODE/itm_grid_example1_2dstructured_read.exe
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$OBJECTCODE/itm_grid_example1_2dstructured_read.exe
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualize">
+<h5>Visualize<a class="headerlink" href="#visualize" title="Permalink to this headline">¶</a></h5>
+<p>To visualize the data written by the example program</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">9001</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span>
+</pre></div>
+</div>
+<p>To visualize a more complex dataset</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">17151</span><span class="p">,</span><span class="mi">899</span><span class="p">,</span><span class="mf">1000.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">aug</span>
+</pre></div>
+</div>
+<p>Combining data from two CPOs:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">17151</span><span class="p">,</span><span class="mi">898</span><span class="p">,</span><span class="mf">1000.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">s</span> <span class="mi">17151</span><span class="p">,</span><span class="mi">899</span><span class="p">,</span><span class="mf">1000.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">aug</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="transport.html" class="btn btn-neutral float-right" title="Turbulent Flux Quantities in Transport Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ets.html" class="btn btn-neutral" title="Core Transport Simulator (ETS)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, WPCD.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

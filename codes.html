@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -34,7 +36,8 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
-        <link rel="prev" title="Core Transport Simulator (ETS)" href="ets.html"/> 
+        <link rel="next" title="EDRG" href="edrg.html"/>
+        <link rel="prev" title="Running Exponential Average" href="averages.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -43,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -83,10 +87,16 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Codes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#imasviz">IMASviz</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fc2k">FC2K</a><ul>
@@ -100,8 +110,54 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#plasma-equilibrium-and-mhd-imp12-list-of-codes">Plasma equilibrium and MHD (IMP12) list of codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#free-boundary-equilibrium-codes">Free boundary equilibrium codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed-boundary-equilibrium-codes">Fixed boundary equilibrium codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linear-mhd-stability-codes">Linear MHD stability codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equilibrium-codes-with-flow">Equilibrium codes with flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#d-equilibrium-codes">3D Equilibrium Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sawtooth-crash-modules">Sawtooth Crash Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elm-modules">ELM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rwm-modules">RWM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ntm-modules">NTM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#d-mhd-codes">3D MHD Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-field-modules">Error Field Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2D MHD Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disruption-modules">Disruption Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numerical-tools">Numerical Tools</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#heating-current-drive-h-cd-and-fast-particles-imp5-list-of-codes">Heating, current drive (H&amp;CD) and fast particles (IMP5) list of codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#electron-heating-codes">Electron heating codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ec-wave-codes">EC wave codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lh-wave-codes">LH wave codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combined-ec-and-lh-wave-codes">Combined EC and LH wave codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combined-electron-fokker-planck-codes">Combined electron Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lh-coupling">LH coupling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#time-domain-wave-codes">Time domain wave codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ion-heating-codes">Ion heating codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#wave-codes-for-ion-cyclotron-heating">Wave codes for ion cyclotron heating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fokker-planck-codes-for-ion-cyclotron-heating">Fokker-Planck codes for ion cyclotron heating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nbi-sources-for-fokker-planck-codes">NBI sources for Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nuclear-sources-input-for-fokker-planck-codes">Nuclear sources (input for Fokker-Planck codes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nbi-fokker-planck-codes">NBI Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advanced-codes">Advanced codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#orbit-tracing-codes">Orbit tracing codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fast-particle-codes">Fast particle codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#codes-for-fast-ion-mhd-interactions">Codes for fast ion-MHD interactions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#runaway-electrons">Runaway electrons</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
 </ul>
 
             
@@ -114,8 +170,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">EUROfusion Integrated Modelling workflows</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EUROfusion Integrated Modelling workflows</a>
+        
       </nav>
 
 
@@ -124,23 +182,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Codes</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Codes</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/codes.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/codes.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -387,17 +462,324 @@ when running Kepler workflows</li>
 </div>
 </div>
 </div>
+<div class="section" id="plasma-equilibrium-and-mhd-imp12-list-of-codes">
+<span id="imp12-listcodes"></span><h2>Plasma equilibrium and MHD (IMP12) list of codes<a class="headerlink" href="#plasma-equilibrium-and-mhd-imp12-list-of-codes" title="Permalink to this headline">¶</a></h2>
+<p>The following list lists the codes and modules which are part of EU-IM-TF
+tasks and their responsible officers. A link takes you to the status
+page for each code.</p>
+<p>A number of IMP12 codes have projects on
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/">gforge</a>.</p>
+<p>Update the code status
+<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM">here</a>.</p>
+<div class="section" id="free-boundary-equilibrium-codes">
+<h3>Free boundary equilibrium codes<a class="headerlink" href="#free-boundary-equilibrium-codes" title="Permalink to this headline">¶</a></h3>
+<p>CEDRES++, S. Brémond, CEA (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=CEDRES%2B%2B&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/cedres/">gforge</a> )</p>
+<p>CLISTE, P. Mc Carthy, DCU (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=CLISTE&amp;SUBMIT=Submit+Query">code
+status</a>
+)</p>
+<p>CREATE-NL, M. Mattei, ENEA Frascati (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=CREATE_NL&amp;SUBMIT=Submit+Query">code
+status</a>
+)</p>
+<p>EFIT++, L. Appel, CCFE (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=EFIT%2B%2B&amp;SUBMIT=Submit+Query">code
+status</a>
+)</p>
+<p>EQUAL, W. Zwingmann, EC (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=EQUAL&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/equal/">gforge</a>,
+<a class="reference external" href="#imp12_equalslice_actor">actor</a> )</p>
+<p>EQUINOX, B. Faugeras, CEA (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=equinox&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/equinox/">gforge</a> )</p>
+<p>FIXFREE, E. Giovannozzi, ENEA Frascati (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=FixFree&amp;SUBMIT=Submit+Query">code
+status</a>
+)</p>
+</div>
+<div class="section" id="fixed-boundary-equilibrium-codes">
+<h3>Fixed boundary equilibrium codes<a class="headerlink" href="#fixed-boundary-equilibrium-codes" title="Permalink to this headline">¶</a></h3>
+<p>CAXE, S. Medvedev, EPFL (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=CAXE&amp;SUBMIT=Submit+Query">code
+status</a>
+)</p>
+<p>CHEASE, O. Sauter, EPFL (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=CHEASE&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/chease/">gforge</a> )</p>
+<p>HELENA, C. Konz, IPP (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=HELENA&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="#imp12_helena_actor">actor</a> )</p>
+</div>
+<div class="section" id="linear-mhd-stability-codes">
+<h3>Linear MHD stability codes<a class="headerlink" href="#linear-mhd-stability-codes" title="Permalink to this headline">¶</a></h3>
+<p>KINX, S. Medvedev, EPFL (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=KINX&amp;SUBMIT=Submit+Query">code
+status</a>
+)</p>
+<p>ILSA, C. Konz, IPP (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=ILSA&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="#imp12_ilsa_actor">actor</a> )</p>
+<p>MARS, G. Vlad, ENEA Frascati (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=MARS&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/marsgw/">gforge</a> )</p>
+<p>MARS-F, D. Yadykin, Chalmers (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=MARS-F&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/marsf/">gforge</a> )</p>
+</div>
+<div class="section" id="equilibrium-codes-with-flow">
+<h3>Equilibrium codes with flow<a class="headerlink" href="#equilibrium-codes-with-flow" title="Permalink to this headline">¶</a></h3>
+<p>FLOW, R. Paccagnella, ENEA RFX (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=FLOW&amp;SUBMIT=Submit+Query">code
+status</a>
+)</p>
+</div>
+<div class="section" id="d-equilibrium-codes">
+<h3>3D Equilibrium Codes<a class="headerlink" href="#d-equilibrium-codes" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="sawtooth-crash-modules">
+<h3>Sawtooth Crash Modules<a class="headerlink" href="#sawtooth-crash-modules" title="Permalink to this headline">¶</a></h3>
+<p>SAWTEETH, O. Sauter, CRPP (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=SAWTEETH&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/sawteeth/">gforge</a> )</p>
+</div>
+<div class="section" id="elm-modules">
+<h3>ELM Modules<a class="headerlink" href="#elm-modules" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="rwm-modules">
+<h3>RWM Modules<a class="headerlink" href="#rwm-modules" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ntm-modules">
+<h3>NTM Modules<a class="headerlink" href="#ntm-modules" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="d-mhd-codes">
+<h3>3D MHD Codes<a class="headerlink" href="#d-mhd-codes" title="Permalink to this headline">¶</a></h3>
+<p>JOREK, G. Huysmans, CEA (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=JOREK&amp;SUBMIT=Submit+Query">code
+status</a>
+)</p>
+</div>
+<div class="section" id="error-field-modules">
+<h3>Error Field Modules<a class="headerlink" href="#error-field-modules" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id1">
+<h3>2D MHD Codes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="disruption-modules">
+<h3>Disruption Modules<a class="headerlink" href="#disruption-modules" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="numerical-tools">
+<h3>Numerical Tools<a class="headerlink" href="#numerical-tools" title="Permalink to this headline">¶</a></h3>
+<p>PROGEN, C. Konz, IPP (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=PROGEN&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="#imp12_progen_actor">actor</a> )</p>
+<p>JALPHA, C. Konz, IPP (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=JALPHA&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="#imp12_jalpha_actor">actor</a> )</p>
+</div>
+</div>
+<div class="section" id="heating-current-drive-h-cd-and-fast-particles-imp5-list-of-codes">
+<span id="imp5-listcodes"></span><h2>Heating, current drive (H&amp;CD) and fast particles (IMP5) list of codes<a class="headerlink" href="#heating-current-drive-h-cd-and-fast-particles-imp5-list-of-codes" title="Permalink to this headline">¶</a></h2>
+<p>The following list lists the codes and modules which are part of EU-IM-TF
+tasks and their responsible officers.</p>
+<p>A number of IMP5 codes have projects on
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/?action=ProjectTroveBrowse&amp;_trove_category_id=312">gforge</a>.</p>
+<p>Update the code status
+<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM">here</a>.</p>
+<div class="section" id="electron-heating-codes">
+<span id="imp5-listcodes-electron-heating-codes"></span><h3>Electron heating codes<a class="headerlink" href="#electron-heating-codes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ec-wave-codes">
+<span id="imp5-listcodes-ec-wave-codes"></span><h4>EC wave codes<a class="headerlink" href="#ec-wave-codes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>TORAY-FOM, E. Westerhof, FOM (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=TORAY-FOM&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="imp5_code_parameter_documentation_torayfom.html">codeparam</a>)</li>
+<li>TORBEAM, E. Poli, IPP-Garching (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=TORBEAM&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>GRAY, L. Figini, ENEA-CNR (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=GRAY&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/gray/">gforge</a>,
+<a class="reference external" href="imp5_code_parameter_documentation_gray.html">codeparam</a>)</li>
+<li>TRAVIS, N. B. Marushchenko, IPP-Greifswald (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=TRAVIS&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/gray/">gforge</a>)</li>
+</ul>
+</div>
+<div class="section" id="lh-wave-codes">
+<span id="imp5-listcodes-lh-wave-codes"></span><h4>LH wave codes<a class="headerlink" href="#lh-wave-codes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>RAYLH, A. Cardinali, EURATOM-ENEA (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=RAYLH&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+</ul>
+</div>
+<div class="section" id="combined-ec-and-lh-wave-codes">
+<span id="imp5-listcodes-ec-lh-wave-codes"></span><h4>Combined EC and LH wave codes<a class="headerlink" href="#combined-ec-and-lh-wave-codes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>C3PO, Y. Peysson, CEA (Cadarache) (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=C3PO&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+</ul>
+</div>
+<div class="section" id="combined-electron-fokker-planck-codes">
+<span id="imp5-listcodes-electron-fokker-planck"></span><h4>Combined electron Fokker-Planck codes<a class="headerlink" href="#combined-electron-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>RELAX, E. Westerhof, FOM (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=RELAX&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>LUKE, Y. Peysson (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=LUKE&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/luke/">gforge</a>)</li>
+</ul>
+</div>
+<div class="section" id="lh-coupling">
+<span id="imp5-listcodes-lh-coupling"></span><h4>LH coupling<a class="headerlink" href="#lh-coupling" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>ALOHA, J. Hillairet, CEA (Cadarache) (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=C3PO&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/aloha/">gforge</a>)</li>
+</ul>
+</div>
+<div class="section" id="time-domain-wave-codes">
+<span id="imp5-listcodes-time-domain-wave"></span><h4>Time domain wave codes<a class="headerlink" href="#time-domain-wave-codes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>FWTOR, C. Tsironis, Hellenic Association (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=FWTOR&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/spot/">gforge</a>)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ion-heating-codes">
+<span id="imp5-listcodes-ion-heating-codes"></span><h3>Ion heating codes<a class="headerlink" href="#ion-heating-codes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="wave-codes-for-ion-cyclotron-heating">
+<span id="imp5-listcodes-ic-wave-codes"></span><h4>Wave codes for ion cyclotron heating<a class="headerlink" href="#wave-codes-for-ion-cyclotron-heating" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>TORIC, R. Bilato, IPP-Garching (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=TORIC&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/toric/">gforge</a>)</li>
+<li>EVE, R. Dumont, CEA (Cadarache) (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=EVE&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/eve/">gforge</a>)</li>
+<li>LION, O. Sauter, CRPP</li>
+<li>Cyrano, E. Lerche, ERM/KMS</li>
+<li>ICCOUP, T. Johnson, VR
+(<a class="reference external" href="https://gforge6.eufus.eu/gf/project/fpsim/">gforge</a>)</li>
+</ul>
+</div>
+<div class="section" id="fokker-planck-codes-for-ion-cyclotron-heating">
+<span id="imp5-listcodes-ic-fokker-planck"></span><h4>Fokker-Planck codes for ion cyclotron heating<a class="headerlink" href="#fokker-planck-codes-for-ion-cyclotron-heating" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>FPSIM, L.-G. Eriksson, EC (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=fpsim&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/fpsim/">gforge</a>)</li>
+<li>SSFPQL, R. Bilato, IPP-Garching (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=SSFPQL&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>RFOF, T. Johnson, VR
+(<a class="reference external" href="https://gforge6.eufus.eu/gf/project/rfof/">gforge</a>,
+<a class="reference external" href="https://portal.eufus.eu/documentation/EU-IM/doxygen/imp5/rfof/docs/">documentation</a>,
+<a class="reference external" href="imp5_code_parameter_documentation_rfof.html">codeparam</a>)</li>
+<li>Stix_Redist, E. Lerche and D. Van Eester
+(<a class="reference external" href="https://gforge6.eufus.eu/gf/project/stixredist/">gforge</a>,
+<a class="reference external" href="imp5_code_parameter_documentation_stix_redist.html">codeparam</a>)</li>
+<li>Stix_Disp, E. Lerche and D. Van Eester
+(<a class="reference external" href="https://gforge6.eufus.eu/gf/project/stixredist/">gforge</a>)</li>
+</ul>
+</div>
+<div class="section" id="nbi-sources-for-fokker-planck-codes">
+<span id="imp5-listcodes-nbi-sources"></span><h4>NBI sources for Fokker-Planck codes<a class="headerlink" href="#nbi-sources-for-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>BBNBI (Beamlet-based NBI module of ASCOT), O. Asunta, TEKES (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=BBNBI&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/bbnbi/">gforge</a>)</li>
+<li>NEMO, M. Schneider, CEA (Cadarache) (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=NEMO&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/nemo/">gforge</a>,</li>
+<li>SNBI (OAW NBI source), K. Schöpf, OAW (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=SNBI&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+</ul>
+</div>
+<div class="section" id="nuclear-sources-input-for-fokker-planck-codes">
+<span id="imp5-listcodes-nuclear-sources"></span><h4>Nuclear sources (input for Fokker-Planck codes)<a class="headerlink" href="#nuclear-sources-input-for-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Nuclearsim, T.Johnson, VR
+(<a class="reference external" href="https://gforge6.eufus.eu/gf/project/nbisim/">gforge</a>,
+<a class="reference external" href="imp5_code_parameter_documentation_nuclearsim.html">codeparam</a>)</li>
+</ul>
+</div>
+<div class="section" id="nbi-fokker-planck-codes">
+<span id="imp5-listcodes-nbi-fokker-planck"></span><h4>NBI Fokker-Planck codes<a class="headerlink" href="#nbi-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>RISK, M. Schneider, CEA (Cadarache) (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=RISK&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/risk/">gforge</a>)</li>
+<li>NBISIM, T. Johnson, VR</li>
+<li>FIDIT, K. Schöpf, OAW (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=FIDIT&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+</ul>
+</div>
+<div class="section" id="advanced-codes">
+<span id="imp5-listcodes-advanced-fokker-planck"></span><h4>Advanced codes<a class="headerlink" href="#advanced-codes" title="Permalink to this headline">¶</a></h4>
+<p>(The following codes include either the synergy between IC and NBI
+heating, or include both wave field and Fokker-Planck solver)</p>
+<ul class="simple">
+<li>ASCOT, S. Sipila, TEKES (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=ASCOT&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/ascot/">gforge</a>,
+<a class="reference external" href="imp5_code_parameter_documentation_ascot.html">codeparam</a>)</li>
+<li>SPOT, M. Schneider, CEA (Cadarache) (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=spot&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/spot/">gforge</a>)</li>
+<li>SELFO-light, T. Hellsten, VR (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=SELFO-light&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/selfolight/">gforge</a>)</li>
+</ul>
+</div>
+<div class="section" id="orbit-tracing-codes">
+<span id="imp5-listcodes-orbit-codes"></span><h4>Orbit tracing codes<a class="headerlink" href="#orbit-tracing-codes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>SOFI, S. Sipila, TEKES (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=SOFI&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/sofi/">gforge</a>)</li>
+<li>OAW Orbit Following Monte Carlo, K. Schöpf, OAW (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=ÖAWOrbitFollowingMonteCarlo&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="fast-particle-codes">
+<h3>Fast particle codes<a class="headerlink" href="#fast-particle-codes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="codes-for-fast-ion-mhd-interactions">
+<span id="imp5-listcodes-fast-ions-mhd"></span><h4>Codes for fast ion-MHD interactions<a class="headerlink" href="#codes-for-fast-ion-mhd-interactions" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>LIGKA, P. Lauber, IPP-Garching (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=LIGKA&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>MARS, G. Vlad, ENEA-Frascati (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=MARS&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/marsgw/">gforge</a>)</li>
+<li>HYMAGYC, G. Vlad, ENEA-Frascati (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=HYMAGYC&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>HMGC, C. Di Troia, ENEA-Frascati (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=HMGC&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>LEMAN, W.A. Cooper, EPFL-CRPP (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=LEMAN&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+</ul>
+</div>
+<div class="section" id="runaway-electrons">
+<span id="imp5-listcodes-runaways"></span><h4>Runaway electrons<a class="headerlink" href="#runaway-electrons" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>ARENA, G. Pokol and G. Csepany (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=ARENA&amp;SUBMIT=Submit+Query">code
+status</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/gf/project/arena/">gforge</a>)</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
            </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="edrg.html" class="btn btn-neutral float-right" title="EDRG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="ets.html" class="btn btn-neutral" title="Core Transport Simulator (ETS)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="averages.html" class="btn btn-neutral" title="Running Exponential Average" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -431,7 +813,8 @@ when running Kepler workflows</li>
             VERSION:'3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
