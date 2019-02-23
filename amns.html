@@ -240,12 +240,12 @@ password is needed.</p>
 codes need data for Atomic, Molecular, Nuclear or Surface processes. The
 calling sequence is described in more detail below, but the basic idea
 is: (1) initialize the package; (2) request data for a particular
-reaction by initializing a &#8220;table&#8221; for that reaction; (3) (repeatedly)
+reaction by initializing a “table” for that reaction; (3) (repeatedly)
 requesting data for that reaction as a fuction of plasma or other
 parameters; (4) finishing with the table; and (5) finishing with the
 AMNS library.</p>
-<p>The actual AMNS data is provided by CPOs stored under the &#8220;amns&#8221; tokamak
-and will first be searched for in the user&#8217;s database, and if not found
+<p>The actual AMNS data is provided by CPOs stored under the “amns” tokamak
+and will first be searched for in the user’s database, and if not found
 there, the system will default to obtaining the data from the public
 AMNS database. Multiple versions of the AMNS data are possible: in 4.09a
 and 4.09b this was done via a mysql database; in 4.10a and later this is
@@ -280,12 +280,12 @@ project</a>.</p>
 <p>This section discusses the user interface to the AMNS subsystem.</p>
 <p>The AMNS library is made available via a module - available versions can
 be found by executing</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">module avail amns</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module avail amns</span>
 </pre></div>
 </div>
-<p>The include and library locations are specified via the &#8220;pkg-config&#8221;
+<p>The include and library locations are specified via the “pkg-config”
 system. To display the available package names do</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">pkg-config --list-all | grep amns</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pkg-config --list-all | grep amns</span>
 </pre></div>
 </div>
 <p>Doxygen information about the user interface can be found
@@ -343,7 +343,7 @@ the call to EU-IM_AMNS_SETUP_TABLE are</p>
 <li>ZE2: Effective Square Charge (ycd)</li>
 <li>EIP: Effective Ionisation Potential (ecd)</li>
 <li>some nuclear reactions</li>
-<li>...</li>
+<li>…</li>
 </ol>
 <p>The actual reactions are listed in the AMNS section.</p>
 </div>
@@ -360,7 +360,7 @@ EU-IM_AMNS_QUERY_TABLE are</p>
 <li>source: source (origin) of the data</li>
 <li>no_of_reactants: number of tractants involved</li>
 <li>index: Not sure what this is</li>
-<li>filled: whether the data table has been filled (&#8220;Filled&#8221; or &#8220;Empty&#8221;)</li>
+<li>filled: whether the data table has been filled (“Filled” or “Empty”)</li>
 <li>reaction_type: reaction type</li>
 <li>reactants: nuclear charges of reactants</li>
 <li>version: information about the version</li>
@@ -396,7 +396,7 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 <ol class="arabic simple">
 <li>EU-IM_AMNS_SETUP, initialization call for the AMNS package</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_SETUP(handle, version, error_status)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_SETUP(handle, version, error_status)</span>
 <span class="go">  optional version, error_status</span>
 <span class="go">  type(amns_handle_type), intent(out) :: handle</span>
 <span class="go">  type(amns_version_type), intent(in) :: version</span>
@@ -406,7 +406,7 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 <ol class="arabic simple" start="2">
 <li>EU-IM_AMNS_QUERY, query routine for the AMNS package</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_QUERY(handle,query,answer,error_status)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_QUERY(handle,query,answer,error_status)</span>
 <span class="go">  optional error_status</span>
 <span class="go">  type(amns_handle_type), intent(in) :: handle</span>
 <span class="go">  type(amns_query_type), intent(in) :: query</span>
@@ -417,7 +417,7 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 <ol class="arabic simple" start="3">
 <li>EU-IM_AMNS_SET, set a parameter for the AMNS package</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_SET(handle,set,error_status)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_SET(handle,set,error_status)</span>
 <span class="go">  optional error_status</span>
 <span class="go">  type(amns_handle_type), intent(in) :: handle</span>
 <span class="go">  type(amns_set_type), intent(in) :: set</span>
@@ -427,7 +427,7 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 <ol class="arabic simple" start="4">
 <li>EU-IM_AMNS_FINISH, finalization call for the AMNS package</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_FINISH(handle, error_status)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_FINISH(handle, error_status)</span>
 <span class="go">  optional error_status</span>
 <span class="go">  type(amns_handle_type), intent(inout) :: handle</span>
 <span class="go">  type(amns_error_type), intent(out) :: error_status</span>
@@ -436,7 +436,7 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 <ol class="arabic simple" start="5">
 <li>EU-IM_AMNS_SETUP_TABLE, initialization call for a particular reaction</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_SETUP_TABLE(handle, reaction_type, reactant, handle_rx, error_status)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_SETUP_TABLE(handle, reaction_type, reactant, handle_rx, error_status)</span>
 <span class="go">  optional error_status</span>
 <span class="go">  type(amns_handle_type), intent(in) :: handle</span>
 <span class="go">  type(amns_reaction_type), intent(in) :: reaction_type</span>
@@ -447,7 +447,7 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 </div>
 <ol class="arabic" start="6">
 <li><p class="first">EU-IM_AMNS_QUERY_TABLE, query routine for a particular reaction</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">qsubroutine EU-IM_AMNS_QUERY_TABLE(handle_rx,query,answer,error_status)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">qsubroutine EU-IM_AMNS_QUERY_TABLE(handle_rx,query,answer,error_status)</span>
 <span class="go">optional error_status type(amns_handle_rx_type), intent(in) ::</span>
 <span class="go">handle_rx type(amns_query_type), intent(in) :: query</span>
 <span class="go">type(amns_answer_type), intent(out) :: answer</span>
@@ -458,7 +458,7 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 <li><p class="first">EU-IM_AMNS_SET_TABLE, set a parameter for a particular reaction</p>
 </li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_SET_TABLE(handle_rx,set,error_status)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_SET_TABLE(handle_rx,set,error_status)</span>
 <span class="go">  optional error_status</span>
 <span class="go">  type(amns_handle_rx_type), intent(in) :: handle_rx</span>
 <span class="go">  type(amns_set_type), intent(in) :: set</span>
@@ -468,7 +468,7 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 <ol class="arabic simple" start="8">
 <li>EU-IM_AMNS_FINISH_TABLE, finalization call for a particular reaction</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_FINISH_TABLE(handle_rx, error_status)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">subroutine EU-IM_AMNS_FINISH_TABLE(handle_rx, error_status)</span>
 <span class="go">  optional error_status</span>
 <span class="go">  type(amns_handle_rx_type), intent(inout) :: handle_rx</span>
 <span class="go">  type(amns_error_type), intent(out) :: error_status</span>
@@ -478,7 +478,7 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 <li>EU-IM_AMNS_RX, get the rates associated with the input args for a
 particular reaction</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">interface EU-IM_AMNS_RX</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">interface EU-IM_AMNS_RX</span>
 <span class="go">  module procedure EU-IM_AMNS_RX_1, EU-IM_AMNS_RX_2, EU-IM_AMNS_RX_3</span>
 <span class="go">end interface</span>
 
@@ -509,7 +509,7 @@ particular reaction</li>
 <span id="amns-user-interface-example-f"></span><h5>AMNS User Interface Example (Fortran)<a class="headerlink" href="#amns-user-interface-example-fortran" title="Permalink to this headline">¶</a></h5>
 <p>An example of the use of the code can be found in the (<a class="reference external" href="https://gforge6.eufus.eu/svn/amnsproto/tags/examples/fortran/">fortran minimal
 example</a>):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">program minimal</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">program minimal</span>
 <span class="go">  use itm_types</span>
 <span class="go">  use amns_types</span>
 <span class="go">  use amns_module</span>
@@ -542,7 +542,7 @@ example</a>):</p>
 <div class="section" id="amns-user-interface-example-fortran-makefile">
 <span id="amns-user-interface-makefile-f"></span><h5>AMNS User Interface Example Fortran Makefile<a class="headerlink" href="#amns-user-interface-example-fortran-makefile" title="Permalink to this headline">¶</a></h5>
 <p>An example Makefile demonstrating the use of the AMNS routines:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obj/minimal: src/minimal.f90</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">obj/minimal: src/minimal.f90</span>
 <span class="go">        ifort -g -o $@ $&lt; ${shell eval-pkg-config --cflags --libs \</span>
 <span class="go">      amns-amd64_intel_12 itmtypes-amd64_intel_12 ual-amd64_intel_12}</span>
 </pre></div>
@@ -566,32 +566,32 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 <ol class="arabic simple">
 <li>EU-IM_AMNS_SETUP, initialization call for the AMNS package</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_SETUP(void **handle_out, amns_error_type *error_status);</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_SETUP(void **handle_out, amns_error_type *error_status);</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li>EU-IM_AMNS_QUERY, query routine for the AMNS package</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_QUERY(void *handle_in, amns_query_type *query,</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_QUERY(void *handle_in, amns_query_type *query,</span>
 <span class="go">                      amns_answer_type *answer, amns_error_type *error_status)</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>EU-IM_AMNS_SET, set a parameter for the AMNS package</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_SET(void *handle_in, amns_set_type *set, amns_error_type *error_status);</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_SET(void *handle_in, amns_set_type *set, amns_error_type *error_status);</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
 <li>EU-IM_AMNS_FINISH, finalization call for the AMNS package</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_FINISH(void **handle_inout, amns_error_type *error_status);</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_FINISH(void **handle_inout, amns_error_type *error_status);</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
 <li>EU-IM_AMNS_SETUP_TABLE, initialization call for a particular reaction</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_SETUP_TABLE(void *handle_in, amns_reaction_type *reaction_type,</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_SETUP_TABLE(void *handle_in, amns_reaction_type *reaction_type,</span>
 <span class="go">                            void *reactant_handle_in, void **handle_rx_out,</span>
 <span class="go">                            amns_error_type *error_status);</span>
 </pre></div>
@@ -599,28 +599,28 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 <ol class="arabic simple" start="6">
 <li>EU-IM_AMNS_QUERY_TABLE, query routine for a particular reaction</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_QUERY_TABLE(void *handle_rx_in, amns_query_type *query,</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_QUERY_TABLE(void *handle_rx_in, amns_query_type *query,</span>
 <span class="go">                            amns_answer_type *answer, amns_error_type *error_status);</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="7">
 <li>EU-IM_AMNS_SET_TABLE, set a parameter for a particular reaction</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_SET_TABLE(void *handle_rx_in, amns_set_type *set,</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_SET_TABLE(void *handle_rx_in, amns_set_type *set,</span>
 <span class="go">                          amns_error_type *error_status);</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="8">
 <li>EU-IM_AMNS_FINISH_TABLE, finalization call for a particular reaction</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_FINISH_TABLE(void **handle_rx_inout, amns_error_type *error_status);</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_FINISH_TABLE(void **handle_rx_inout, amns_error_type *error_status);</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="9">
 <li>EU-IM_AMNS_RX, get the rates associated with the input args for a
 particular reaction</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_RX_0_A(void *handle_rx_in, double *out,</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_RX_0_A(void *handle_rx_in, double *out,</span>
 <span class="go">                       double arg1, amns_error_type *error_status);</span>
 <span class="go">void EU-IM_AMNS_C_RX_0_B(void *handle_rx_in, double *out,</span>
 <span class="go">                       double arg1, double arg2, amns_error_type *error_status);</span>
@@ -652,7 +652,7 @@ particular reaction</li>
 </pre></div>
 </div>
 <p>In addition, service routines are provided for dealing with reactants:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_SETUP_REACTANTS(void **reactants_handle_out, char string_in[reaction_length],</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void EU-IM_AMNS_C_SETUP_REACTANTS(void **reactants_handle_out, char string_in[reaction_length],</span>
 <span class="go">                                int index_in, int n_react</span>
 <span class="go">ants);</span>
 <span class="go">void EU-IM_AMNS_C_SET_REACTANT(void *reactants_handle_in, int reactant_index, amns_reactant_type *reactant_in);</span>
@@ -665,7 +665,7 @@ particular reaction</li>
 <span id="id4"></span><h4>AMNS User Interface Example (C)<a class="headerlink" href="#amns-user-interface-example-c" title="Permalink to this headline">¶</a></h4>
 <p>An example of the use of the code can be found in the (<a class="reference external" href="https://gforge6.eufus.eu/svn/amnsproto/tags/examples/c/">c minimal
 example</a>):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>include <span class="s2">&quot;amns_interface.h&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>include <span class="s2">&quot;amns_interface.h&quot;</span>
 
 <span class="go">int main(int argc, char *argv[])</span>
 <span class="go">{</span>
@@ -705,7 +705,7 @@ example</a>):</p>
 <div class="section" id="amns-user-interface-example-c-makefile">
 <span id="amns-user-interface-makefile-c"></span><h4>AMNS User Interface Example C Makefile<a class="headerlink" href="#amns-user-interface-example-c-makefile" title="Permalink to this headline">¶</a></h4>
 <p>An example Makefile demonstrating the use of the AMNS routines:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obj/minimal: src/minimal.c</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">obj/minimal: src/minimal.c</span>
 <span class="go">        gcc -g -o $@ $&lt; ${shell eval-pkg-config --cflags --libs\</span>
 <span class="go">          amns-ifort itmconstants ual-amd64_intel_12}</span>
 </pre></div>
@@ -752,7 +752,7 @@ the <a class="reference external" href="https://gforge6.eufus.eu/gf/project/amns
 <span id="id5"></span><h4>AMNS User Interface Example (Python)<a class="headerlink" href="#amns-user-interface-example-python" title="Permalink to this headline">¶</a></h4>
 <p>An example of the use of the code can be found in the (<a class="reference external" href="https://gforge6.eufus.eu/svn/amnsproto/tags/examples/python/">python minimal
 example</a>):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>! /usr/bin/env python
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>! /usr/bin/env python
 <span class="gp">#</span> -*- coding: utf-8 -*-
 <span class="go">import amns</span>
 <span class="go">import numpy as np</span>
@@ -848,7 +848,8 @@ makes use of arrays-of-structures (not available earlier)</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

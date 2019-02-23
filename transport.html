@@ -194,8 +194,8 @@ constitute a mean field approximation to the 3-D conservation laws. For
 the fundamentals encountered in transport modelling see R Hazeltine and
 J Meiss, Plasma Confinement (Addison-Wesley, 1992) chapter 8. For the
 special properties of transport driven by small-scale pressure driven
-ExB microturbulence see B Scott, &#8220;The character of transport caused by
-ExB drift turbulence,&#8221; Phys Plasmas 10 (2003) 963-976.</p>
+ExB microturbulence see B Scott, “The character of transport caused by
+ExB drift turbulence,” Phys Plasmas 10 (2003) 963-976.</p>
 <p>For ambipolarity we follow the rules for dynamical alignment, which
 follows the physics of how electron fluctuations determine the ExB
 velocity fluctuations, which then advect all species. Magnetic flutter
@@ -203,8 +203,8 @@ nonlinearities act independently of this, but in our modelling they are
 used solely for heat fluxes since the averaged particle transport due to
 magnetic flutter and the current cancels, leaving the parallel ion
 velocity which we neglect for this purpose. The reference for dynamical
-alignment is B Scott, &#8220;Dynamical alignment in three species tokamak edge
-turbulence,&#8221; Phys Plasmas 12 (2005) 082305.</p>
+alignment is B Scott, “Dynamical alignment in three species tokamak edge
+turbulence,” Phys Plasmas 12 (2005) 082305.</p>
 <p>Note: there are now auxiliary actors provided for this purpose: IMP4DV,
 which does the D/V conversion and enforces ambipolarity assuming absence
 of impurities, and IMP4imp, which subsequently enforces ambipolarity for
@@ -219,30 +219,30 @@ described on the <a class="reference external" href="#imp4_aux_actors">auxiliary
 <h2>Particle Flux as an Example<a class="headerlink" href="#particle-flux-as-an-example" title="Permalink to this headline">¶</a></h2>
 <p>The mean field equation governing particle balance is the transport
 equation for electrons,</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[{\partial \over \partial t} \langle n \rangle + \langle \vec \nabla \cdot \widetilde n \vec {\widetilde v}_E \rangle = S\]</div>
 <p>in which the tilde symbol over the n and v denotes fluctuating quantities
 and we neglect all transport processes except ExB eddy diffusion. The ExB
 velocity is given by</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\vec v_E = {c \over B^2} \vec B \times \vec \nabla \phi\]</div>
 <p>where \( \phi \) is the electrostatic potential.</p>
 <p>The angle brackets denote the flux surface average, and we will use the
 property that the flux surface average of a divergence of a vector is
 the volume derivative of the flux surface average of a contravariant
 volume component of the vector, in this case</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\langle \vec \nabla \cdot \vec \Gamma \rangle = {\partial \over \partial V} \langle \Gamma^V \rangle\]</div>
 <p>where \( \Gamma \) is the particle flux whose flux-surface averaged volume component is</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\langle \Gamma^V \rangle = \langle \widetilde n \widetilde v_E^V \rangle\]</div>
 <p>This is converted to expression in terms of the radial coordinate \(
 \rho \) using the fact that both \( V \) and \( \rho \) are flux
 quantities whose gradients are parallel to each other. We have</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[{\partial \over \partial V} = {1 \over V'_\rho}{\partial \over \partial \rho}\qquad \Gamma^\rho = {1\over V'_\rho}\Gamma^V \qquad V'_\rho = {\partial V \over\partial \rho} \qquad g^{VV} = (V'_\rho)^2 g^{\rho\rho}\]</div>
 <p>so we can write the transport equation as</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[{\partial n \over \partial t}+{1 \over V'_\rho}{\partial \over \partial \rho}V'_\rho \langle \Gamma^\rho \rangle = S,\]</div>
 <p>where we have replaced \( \langle n \rangle \) with \( n \) following the assumptions of the 1-D version of mean field transport theory.</p>
 <p>With all quantities now expressed in terms of flux quantities, we are
@@ -257,7 +257,7 @@ convention both of these are done solely via \( g^{ \rho \rho} \) for
 convenience, also reflecting that the effective velocity is actually
 marking off-diagonal diffusive elements. Our convention for this follows
 the ETS code and is given by</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\langle \Gamma^\rho \rangle = \langle g^{\rho \rho} \rangle \left( n V_{{\rm eff}} - D_{{\rm eff}}{\partial n\over \partial \rho} \right)\]</div>
 <p>So despite the special spatial distribution of any particular transport
 process (ie, the underlying instability or nonlinear free energy access),
@@ -283,17 +283,17 @@ into account in any transport modelling and benchmarking.</p>
 <div class="section" id="heat-fluxes">
 <h2>Heat Fluxes<a class="headerlink" href="#heat-fluxes" title="Permalink to this headline">¶</a></h2>
 <p>The heat flux is treated in a similar way, with transport equation</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[{3 \over 2}{\partial p_e \over \partial t} +{1 \over V'_\rho}{\partial \over \partial \rho} V'_\rho \langle q_e^\rho \rangle = Q_e + \sum_{{\rm ions}}T_{ei},\]</div>
 <p>for electrons, with \( T_{ei} \) giving the species transfer and \( Q_e
 \) the source. For ExB transport the heat flux has a advective (also
 called convective) and a conductive piece given by</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[q_E = q_E{}_{{\rm cond}} + (3/2) T \Gamma_E\]</div>
 <p>which appears with a 3/2 due to the Poynting cancellation. For
 magnetic flutter transport the advective piece appears with the usual
 factor,</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[q_m = q_m{}_{{\rm cond}} + (5/2) T \Gamma_m\]</div>
 <p>Here the forms are given for each species and \( E \) and \( m \) refer
 to the ExB eddy and magnetic flutter channels, respectively. For reasons
@@ -301,18 +301,18 @@ given below we are neglecting the magnetic flutter piece \( \Gamma_m \)
 for the time being, and then the flutter piece merely adds to the heat
 diffusivity.</p>
 <p>The forms of these due to the fluctuations are then</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\langle q^\rho \rangle = (3/2) \langle \widetilde p \widetilde v_E^\rho \rangle + \langle \widetilde q_\parallel \widetilde b^\rho \rangle\]</div>
 <p>which breaks into advective and conductive pieces according to linearisation
 of the pressure fluctuations</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\langle q_{{\rm cond}}^\rho\rangle = (3/2) n \langle \widetilde T \widetilde v_E^\rho\rangle + \langle \widetilde q_\parallel \widetilde b^\rho\rangle \qquad\qquad \langle q_{{\rm adv}}^\rho \rangle = (3/2)T \Gamma = (3/2)T\langle\widetilde n \widetilde v_E^\rho \rangle\]</div>
 <p>hence the density fluctuation piece is accounted for by the particle flux.
 Neglect of the magnetic flutter advective piece (and particle flux) is the
 same as neglect of the \( {\widetilde u_\parallel} {\widetilde b^ \rho} \) nonlinearity (in the delivery of the results, not in the turbulence
 computations themselves).</p>
 <p>The total conductive flux is then represented by</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\langle q_{{\rm cond}}^\rho \rangle = \langle g^{\rho \rho} \rangle \left( nTY_{{\rm eff}} - n \chi_{{\rm eff}}{\partial T \over \partial \rho} \right)\]</div>
 <p>with \( \chi \) and \( Y \) giving the heat diffusion and frictional
 slip pieces for each species, respectively (these are in diff_eff and
@@ -328,7 +328,7 @@ long as parallel sound transit within the flux surface remains fast
 compared to the local transport time. This breaks down anyway in the
 edge, so the fact that the volume is a problematic coordinate and the
 flux surface average is a problematic operation on open field lines
-doesn&#8217;t enter.</p>
+doesn’t enter.</p>
 </div>
 <div class="section" id="ds-and-vs-from-turbulence-codes-to-transport-solvers">
 <h2>Ds and Vs from Turbulence Codes to Transport Solvers<a class="headerlink" href="#ds-and-vs-from-turbulence-codes-to-transport-solvers" title="Permalink to this headline">¶</a></h2>
@@ -343,7 +343,7 @@ set of rules to provide this.</p>
 <p>Considering the particle and heat transport fluxes for a given species,
 we convert the gradient in to a logarithmic derivative and express the
 flux in terms of a specific flux, which has units of velocity,</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\begin{split}F &amp;= {1 \over n} \langle g^{\rho\rho}\rangle^{-1} \langle \Gamma^\rho \rangle= V_{{\rm eff}} - D_{{\rm eff}}{\partial \log n \over \partial \rho}
 \\G &amp;= {1 \over nT} \langle g^{\rho \rho} \rangle^{-1} \langle q^\rho_{{\rm cond}}\rangle = Y_{{\rm eff}} - \chi_{{\rm eff}}{\partial \log T \over \partial \rho}\end{split}\]</div>
 <p>wherein the conductive part of the heat flux (without the \( 3 \Gamma / 2 \) enters.</p>
@@ -374,10 +374,10 @@ the specific heat flux will be the larger, and hence the familiar
 situation is that of a D and V for the particle flux but a D (the chi)
 only for the conductive heat flux.</p>
 <p>The full algorithm starting with the specific fluxes appears as</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\begin{split}L_n^{-1} = \max \left( {1 \over R}, \left \vert {\partial \log n \over \partial \rho} \right \vert \right) \qquad \qquad L_T^{-1} = \max \left( {1 \over R},\left \vert {\partial \log T \over \partial \rho} \right \vert \right) \\ \\ D' =\left \vert F \right \vert L_n \qquad \qquad \chi' = \left \vert G \right \vert L_T \\ \\ D = \max \left( D', {1\over 5} \chi' \right) \qquad \qquad \chi = \max\left ( \chi', {1 \over 5} D' \right) \\ \\ V = \left( F + D {\partial \log n \over \partial \rho} \right) \qquad \qquad Y = \left( G + \chi {\partial \log T \over \partial \rho} \right)\end{split}\]</div>
 <p>and all four elements are set. Note that the channels are done in parallel
-except for the Prandtl correction, in which the Max&#8217;s are taken
+except for the Prandtl correction, in which the Max’s are taken
 sequentially. For the provisional diffusivities, absolute values are used
 to ensure positive values which are needed by transport solvers.</p>
 <p>Note how in the end the actual gradients are used. If the gradients are
@@ -386,7 +386,7 @@ correction is not invoked, then both channels are diagonal. In any case
 the full relation is used to get the effective velocities (V and Y) so
 having set the rules to handle the arbitrariness of the diffusivities (D
 and chi) to guarantee reasonable diagonal dominance in a transport
-solver, the D&#8217;s and V&#8217;s agree with the fluxes themselves.</p>
+solver, the D’s and V’s agree with the fluxes themselves.</p>
 <p>If there are more than two specific fluxes per species to consider, then
 we treat each scale length separately as above and use N-way maxima in
 the Prandtl correction for the N channels.</p>
@@ -407,9 +407,9 @@ controls the electrostatic fluctuations, then (2) the resulting ExB
 velocity advects all species equally. So we correct the particle fluxes
 by assuming the electrons determine the D according to the above
 procedure and then (1) the fluctuations in the flux-inducing part of the
-spectrum for the logarithmic densities are the same, and (2) the D&#8217;s are
-the same. Then the V&#8217;s are solved for again, by taking</p>
-<div class="math">
+spectrum for the logarithmic densities are the same, and (2) the D’s are
+the same. Then the V’s are solved for again, by taking</p>
+<div class="math notranslate nohighlight">
 \[D_z = D_e = D \qquad \qquad V_z = V_e + D {\partial \log b_z \over \partial \rho} \qquad \qquad b_z = n_z/n_e\]</div>
 <p>This is better than the transport modelling convention but will give them
 the same information in a different way, and they will compute ambipolar
@@ -420,7 +420,7 @@ particle fluxes (radial transport of charge is zero).</p>
 <p>Turbulence has a statistical character, so convergence to a mean is not
 monotonic and when within one std dev of the mean there is no further
 convergence. The diffusivity for ExB turbulence is comparable to</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[D_E = \left. \langle (\widetilde v_E)^2 \rangle \right / \langle (\varpi)^2 \rangle^{1/2} \qquad \qquad \varpi_E = {c \over B} \nabla_\perp^2 \widetilde \phi\]</div>
 <p>where \( \varpi_E \) is the ExB vorticity fluctuation, and these angle
 brackets denote the ensemble average. To get an ensemble average over a
@@ -486,7 +486,8 @@ averages.</a></p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

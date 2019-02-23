@@ -195,36 +195,36 @@ programs. Regular KEPLER users do not need to know anything about the
 UAL. KEPLER manages transparently the UAL calls, which are embedded in
 the physics code wrappers. No UAL calls should be made inside physics
 modules. Prior using the UAL, the environment must be configured. It is
-recommended to use the <code class="docutils literal"><span class="pre">EU-IMv1</span></code> script for this, which simultanesouly
+recommended to use the <code class="docutils literal notranslate"><span class="pre">EU-IMv1</span></code> script for this, which simultanesouly
 sets i) the database environment (to the private database of the user)
 ii) the UAL libraries environment iii) the Kepler environment.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/EU-IMv1 KEPLERFOLDER</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/EU-IMv1 KEPLERFOLDER</span>
 <span class="go">MACHINENAME DATAVERSION</span>
 </pre></div>
 </div>
 <p>e.g.:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/EU-IMv1 kepler tore_supra 4.08a</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/EU-IMv1 kepler tore_supra 4.08a</span>
 </pre></div>
 </div>
 <p>This scripts does not prevent you from using databases from other users
-or the public one, you must then use the UAL function <code class="docutils literal"><span class="pre">euitm_open_env</span></code>
+or the public one, you must then use the UAL function <code class="docutils literal notranslate"><span class="pre">euitm_open_env</span></code>
 in your program to do so. The EU-IMv1 script uses the two following
 scripts: to set the database environment variables (mandatory prior UAL
 usage), use:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/set_itm_data_env USERNAME</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/set_itm_data_env USERNAME</span>
 <span class="go"> MACHINENAME DATAVERSION</span>
 </pre></div>
 </div>
 <p>e.g.:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/set_itm_data_env myname jet 4.08a</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/set_itm_data_env myname jet 4.08a</span>
 </pre></div>
 </div>
 <p>Then to set the path to the right UAL libraries, use:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/set_itm_env DATAVERSION</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/set_itm_env DATAVERSION</span>
 </pre></div>
 </div>
 <p>e.g.:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/set_itm_env 4.08a</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/set_itm_env 4.08a</span>
 </pre></div>
 </div>
 <p>UAL libraries are installed in /afs.eufus.eu/isip/project/switm/ual.
@@ -232,7 +232,7 @@ The source code is stored in a subversion repository in
 /afs/edfa-itm.eu/isip/project/portal/gforge/storage/svnroot/ual. To
 check out a subversion working copy of the repository, storing it in
 subdirectory <em>ual</em>, do</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn co https://gforge6.eufus.eu/svn/ual</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn co https://gforge6.eufus.eu/svn/ual</span>
 </pre></div>
 </div>
 </div>
@@ -248,23 +248,23 @@ available or not practical, e.g. in U.S. - EFDA collaborations.</p>
 <p>This Fortran90 module allows you to deallocate in a very simple way any
 EU-IM data structure which is defined in euitm_schemas.f90.
 Add the following use statement to your code:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">deallocate_structures</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">deallocate_structures</span>
 </pre></div>
 </div>
 <p>The Fortran syntax for deallocating a cpo is then:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">deallocate_cpo</span><span class="p">(</span><span class="n">cpo</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">deallocate_cpo</span><span class="p">(</span><span class="n">cpo</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>where cpo is a single time slice or a pointer array of a CPO (or other
 EU-IM data structure). With</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_deallocate_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_deallocate_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>you can set a verbosity level for the deallocate routines. verbosity = 0
 produces no output, whereas verbosity &gt; 0 produces verbose output. The
 module deallocate_structures.f90 is hosted by the Gforge project itmshared.
 Check it out with</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
 </pre></div>
 </div>
 <p>Two static libraries
@@ -280,32 +280,32 @@ EU-IM Gateway
 <p>This Fortran90 module allows you to copy in a very simple way any EU-IM
 data structure which is defined in euitm_schemas.f90.
 Add the following use statement to your code:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_deallocate_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_deallocate_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>you can set a verbosity level for the deallocate routines. verbosity = 0
 produces no output, whereas verbosity &gt; 0 produces verbose output. The
 module deallocate_structures.f90 is hosted by the Gforge project itmshared.
 Check it out with</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">copy_structures</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">copy_structures</span>
 </pre></div>
 </div>
 <p>The Fortran syntax for copying a cpo is then:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">copy_cpo</span><span class="p">(</span><span class="n">cpo_source</span><span class="p">,</span> <span class="n">cpo_target</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">copy_cpo</span><span class="p">(</span><span class="n">cpo_source</span><span class="p">,</span> <span class="n">cpo_target</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>where cpo_source and cpo_target are single time slices or arrays of a CPO
 (or other EU-IM data structure) of the same derived type, real scalars, or
 real arrays (1D - 7D). The allocation of the elements of the target
 structure is done automatically. With</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_copy_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_copy_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>you can set a verbosity level for the copy routines. verbosity = 0 produces
 no output, whereas verbosity &gt; 0 produces verbose output. The module
 copy_structures.f90 is hosted by the Gforge project itmshared . Check it
 out with</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
 </pre></div>
 </div>
 <p>Two static libraries libcopy_pgi.a and libcopy_g95.a have been prebuilt on
@@ -317,11 +317,11 @@ the EU-IM Gateway .</p>
 data structure which is defined in euitm_schemas.f90 including entire
 trim traces.
 Add the following use statement to your code:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">euitm_copy</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">euitm_copy</span>
 </pre></div>
 </div>
 <p>The Fortran syntax for copying a cpo via assignment is then:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="n">cpo_target</span> <span class="o">=</span> <span class="n">cpo_source</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">cpo_target</span> <span class="o">=</span> <span class="n">cpo_source</span>
 </pre></div>
 </div>
 <p>where cpo_source and cpo_target are single time slices or arrays of a
@@ -332,18 +332,18 @@ The program files are hosted by the Gforge project
 itmshared
 .
 Check them out with</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/perlcopy target_dir</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/perlcopy target_dir</span>
 </pre></div>
 </div>
 <p>To build the Fortran90 module, run</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">creacopy.pl</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">creacopy.pl</span>
 </pre></div>
 </div>
 <p>It takes euitm_schemas.f90 from the directory
 $UAL/fortraninterface/
 .
 Or supply the file from a given directory</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">creacopy.pl $MYDIR/euitm_schemas.f90</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">creacopy.pl $MYDIR/euitm_schemas.f90</span>
 </pre></div>
 </div>
 </div>
@@ -353,23 +353,23 @@ Or supply the file from a given directory</p>
 including entire CPOs have been set. The subroutines in
 is_set_structures.f90
 write out the name of each element in the data structure together with
-&#8216;T&#8217;
+‘T’
 if it has been set or
-&#8216;F&#8217;
+‘F’
 if not.
 Add the following use statement to your code:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">is_set_structures</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">is_set_structures</span>
 </pre></div>
 </div>
 <p>The Fortran syntax for checking a cpo is then:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">is_set_cpo</span><span class="p">(</span><span class="n">cpo</span><span class="p">,</span> <span class="s2">&quot;name of cpo&quot;</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">is_set_cpo</span><span class="p">(</span><span class="n">cpo</span><span class="p">,</span> <span class="s2">&quot;name of cpo&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>where cpo is a single time slice or an array of a CPO (or other EU-IM data
-structure) and &#8220;name of cpo&#8221; is a string containing the name of the CPO.
+structure) and “name of cpo” is a string containing the name of the CPO.
 The module is_set_structures.f90 is hosted by the Gforge project itmshared
 . Check it out with</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">checkout</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gforge6</span><span class="p">.</span><span class="n">eufus</span><span class="p">.</span><span class="n">eu</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">itmshared</span><span class="o">/</span><span class="n">branches</span><span class="o">/</span><span class="n">tools</span> <span class="n">target_dir</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">checkout</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gforge6</span><span class="p">.</span><span class="n">eufus</span><span class="p">.</span><span class="n">eu</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">itmshared</span><span class="o">/</span><span class="n">branches</span><span class="o">/</span><span class="n">tools</span> <span class="n">target_dir</span>
 </pre></div>
 </div>
 <p>Two static libraries libis_set_pgi.a and libis_set_g95.a have been prebuilt
@@ -394,25 +394,25 @@ zero with a call to
 set_size_of_verbosity
 . In all cases, sums are carried out over all levels.
 Add the following use statement to your code:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">size_of_structures</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">size_of_structures</span>
 </pre></div>
 </div>
 <p>The Fortran syntax for calculating the size of a cpo is then:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">size_of_cpo</span><span class="p">(</span><span class="n">cpo</span><span class="p">,</span> <span class="n">total_size</span><span class="p">,</span> <span class="n">human_readable</span><span class="p">,</span> <span class="s2">&quot;name of cpo&quot;</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">size_of_cpo</span><span class="p">(</span><span class="n">cpo</span><span class="p">,</span> <span class="n">total_size</span><span class="p">,</span> <span class="n">human_readable</span><span class="p">,</span> <span class="s2">&quot;name of cpo&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>where cpo is a single time slice or an array of a CPO (or other EU-IM data
-structure) and &#8220;name of cpo&#8221; is a string containing the name of the CPO.
+structure) and “name of cpo” is a string containing the name of the CPO.
 total_size is an integer and should be set to zero before the call.
 human_readable is a flag (true =&gt; human friendly format).
 Set the verbosity with:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_size_of_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_size_of_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>verbosity = 0 =&gt; no output of empty fields
 verbosity &gt; 0 =&gt; full output
 Set the maximum depth with:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_size_of_maxlevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_size_of_maxlevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>with level being an integer.
@@ -424,7 +424,7 @@ project
 itmshared
 .
 Check it out with</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
 </pre></div>
 </div>
 <p>Two static libraries libsize_of_pgi.a and libsize_of_g95.a have been
@@ -435,27 +435,27 @@ prebuilt on the EU-IM Gateway.</p>
 <p>This Fortran90 module can be used to write EU-IM data structures including
 entire CPOs to disk.
 The corresponding file is opened with</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">open_write_file</span><span class="p">(</span><span class="n">unit_no</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">open_write_file</span><span class="p">(</span><span class="n">unit_no</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>where unit_no is the file handle (integer) and file_name a string with
 the file name (possibly including the path).
 The file is closed with</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">close_write_file</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">close_write_file</span>
 </pre></div>
 </div>
 <p>Add the following use statement to your code:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">write_structures</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">write_structures</span>
 </pre></div>
 </div>
 <p>The Fortran syntax for writing a cpo to disk is then:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">write_cpo</span><span class="p">(</span><span class="n">cpo</span><span class="p">,</span> <span class="s2">&quot;name of cpo&quot;</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">write_cpo</span><span class="p">(</span><span class="n">cpo</span><span class="p">,</span> <span class="s2">&quot;name of cpo&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>where cpo is a single time slice or an array of a CPO (or other EU-IM data
-structure) and &#8220;name of cpo&#8221; is a string containing the name of the CPO.
+structure) and “name of cpo” is a string containing the name of the CPO.
 With</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_write_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_write_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>you can set a verbosity level for the write routines. verbosity = 0
@@ -468,7 +468,7 @@ project
 itmshared
 .
 Check it out with</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
 </pre></div>
 </div>
 <p>Two static libraries libwrite_pgi.a and libwrite_g95.a have been prebuilt
@@ -479,30 +479,30 @@ on the EU-IM Gateway .</p>
 <p>This Fortran90 module can be used to read EU-IM data structures including
 entire CPOs from disk.
 The corresponding file is opened with</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">open_read_file</span><span class="p">(</span><span class="n">unit_no</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">open_read_file</span><span class="p">(</span><span class="n">unit_no</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>where unit_no is the file handle (integer) and file_name a string with
 the file name (possibly including the path).
 The file is closed with</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">close_read_file</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">close_read_file</span>
 </pre></div>
 </div>
 <p>Add the following use statement to your code:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">read_structures</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">read_structures</span>
 </pre></div>
 </div>
 <p>The Fortran syntax for reading a cpo from disk is then:</p>
 <blockquote>
-<div>call read_cpo(cpo, &#8220;name of cpo&#8221;)</div></blockquote>
+<div>call read_cpo(cpo, “name of cpo”)</div></blockquote>
 <p>where cpo is a single time slice or an array of a CPO (or other EU-IM data
-structure) and &#8220;name of cpo&#8221; is a string containing the name of the CPO.
+structure) and “name of cpo” is a string containing the name of the CPO.
 The module automatically deallocates any fields already allocated in cpo
 and allocates all required fields automatically. It is absolutely
-essential that &#8220;name of cpo&#8221; is identical with the one chosen when the
+essential that “name of cpo” is identical with the one chosen when the
 cpo was written.
 With</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_read_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_read_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>you can set a verbosity level for the read routines. verbosity = 0
@@ -515,7 +515,7 @@ project
 itmshared
 .
 Check it out with</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
 </pre></div>
 </div>
 <p>Two static libraries
@@ -537,19 +537,19 @@ for the analysis and evalutation of the differences between the two
 CPOs. A call to diff_cpo simply writes out the result of this user
 defined function.
 Add the following use statements to your code:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">diff_structures</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">diff_structures</span>
 <span class="k">use </span><span class="n">error_analysis</span>
 </pre></div>
 </div>
 <p>The Fortran syntax for calculating the differences between two cpos is
 then:</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">diff_cpo</span><span class="p">(</span><span class="n">reference_cpo</span><span class="p">,</span> <span class="n">test_cpo</span><span class="p">,</span> <span class="n">name_root</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">diff_cpo</span><span class="p">(</span><span class="n">reference_cpo</span><span class="p">,</span> <span class="n">test_cpo</span><span class="p">,</span> <span class="n">name_root</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>where reference_cpo is the reference CPO or other EU-IM data structure and
 test_cpo is the test CPO or other EU-IM data structure.
 name_root is a string which defines the root of the field names to be
-displayed, e.g. &#8216;equilibrium&#8217;.
+displayed, e.g. ‘equilibrium’.
 func is a function argument to the subroutine diff_cpo. It can be any
 user defined function with the following constraints:</p>
 <ul class="simple">
@@ -566,14 +566,14 @@ because of Fortran90/95 limitations. The actual error analysis is
 carried out inside the overloaded functions. Two fields of these
 functions are intent(inout) variables:</li>
 </ul>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span>   <span class="n">diff_counter</span> <span class="p">:</span> <span class="n">to</span> <span class="nb">count </span><span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">difference</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span>   <span class="n">diff_counter</span> <span class="p">:</span> <span class="n">to</span> <span class="nb">count </span><span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">difference</span>
    <span class="n">error_level</span>  <span class="p">:</span> <span class="n">to</span> <span class="n">allow</span> <span class="n">for</span> <span class="n">sums</span> <span class="nb">or </span><span class="n">averages</span> <span class="n">over</span> <span class="n">entire</span> <span class="n">CPOs</span> <span class="p">(</span><span class="n">see</span> <span class="n">examples</span><span class="p">)</span>
 
 <span class="n">These</span> <span class="n">two</span> <span class="n">variables</span> <span class="n">are</span> <span class="k">private </span><span class="n">to</span> <span class="n">the</span> <span class="n">error_analysis</span> <span class="k">module</span><span class="p">.</span>
 <span class="n">To</span> <span class="nb">access </span><span class="n">them</span> <span class="n">please</span> <span class="k">use </span><span class="n">the</span> <span class="n">functions</span>
 </pre></div>
 </div>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span>     <span class="n">get_diff_counter</span><span class="p">()</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span>     <span class="n">get_diff_counter</span><span class="p">()</span>
 
 <span class="nb">and</span>
 
@@ -593,7 +593,7 @@ functions are intent(inout) variables:</li>
 </pre></div>
 </div>
 <p>With</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_diff_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">set_diff_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>you can set a verbosity level for the diff routines. verbosity = 0 produces
@@ -604,7 +604,7 @@ code development. It clearly demonstrates the use of the diff_structures
 module. The module diff_structures.f90 and the auxiliary file
 error_analysis.f90 and check_equilibrium.f90 are hosted by the Gforge
 project itmshared . Check them out with</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/branches/tools target_dir</span>
 </pre></div>
 </div>
 <p>Two static libraries libdiff_pgi.a and libdiff_g95.a have been prebuilt on
@@ -667,7 +667,8 @@ the EU-IM Gateway .</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

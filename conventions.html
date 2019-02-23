@@ -239,7 +239,7 @@ system in a toroidal geometry with the following coordinates:</p>
 </ul>
 <p>Remaining consistent with ITER, the EU-IM-TF has chosen to adopt the
 right-handed system</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[(R, \phi, Z)\]</div>
 <p>i.e. R is to the right, Z is upwards, and \( \phi \) points into the plane
 on the right-hand side of the torus (i.e. mathematically positive). Looking
@@ -264,17 +264,17 @@ it is divergence free. If the field is also axisymmetric then MHD
 equilibrium demands these are functions of each other. In the EU-IM-TF the
 relevant quantities are \(F_{{\rm dia}}\) and \( \Psi \) and the
 representation is</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[{\bf B} = F_{{\rm dia}} \nabla \phi +(2\pi)^{-1} \nabla \Psi \times \nabla \phi\]</div>
 <p>where the factor of \(2 \pi \) is to have \( \Psi \) one and the same with
 the poloidal flux in Webers (see below).</p>
-<p>The current given by Ampere&#8217;s law is</p>
-<div class="math">
+<p>The current given by Ampere’s law is</p>
+<div class="math notranslate nohighlight">
 \[\mu_0 {\bf J} = \nabla F_{{\rm dia}} \times \nabla \phi - (2\pi)^{-1}(R^2 \nabla \cdot R^{-2} \nabla \Psi) \nabla \phi\]</div>
 <p>The respective covariant toroidal components are useful forms:</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[B_\phi =F_{{\rm dia}} \qquad \qquad \mu_0 J_\phi = - (2\pi)^{-1}(R^2 \nabla\cdot R^{-2} \nabla \Psi)\]</div>
-<p>where the latter is often expressed in terms of the &#8220;delta-star&#8221; operator,
+<p>where the latter is often expressed in terms of the “delta-star” operator,
 \( \Delta^* = R^2 \nabla \cdot R^{-2} \nabla \). These are not the
 toroidal field and current but the toroidal field and current multiplied by
 \( R \) respectively. The total plasma current \( I_p \) is the integral of \( J_{\phi} / R \) over the poloidal cross section (usually, but not always, over the closed flux surface region only).</p>
@@ -284,7 +284,7 @@ toroidal field and current but the toroidal field and current multiplied by
 <p>The toroidal flux \( \Phi \) is the integral of \( B_{\phi} / R \) over
 the region enclosed by the flux surface. Due to axisymmetry it is also a
 volume integral</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\Phi = \oint d^3V (2 \pi R^2)^{-1} F_{{\rm dia}}\]</div>
 <p>All volume integrals are understood as integration over the region enclosed
 by the flux surface. They are therefore flux quantities (pure functions of
@@ -300,12 +300,12 @@ are often used equivalently in the literature.</p>
 <div class="section" id="safety-factor">
 <span id="itm-conventions-safety-factor"></span><h3>Safety Factor<a class="headerlink" href="#safety-factor" title="Permalink to this headline">¶</a></h3>
 <p>The magnetic pitch parameter is defined in terms of the flux components:</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[q\equiv d \Phi d \Psi\]</div>
 <p>which is a flux quantity. This definition is the same as saying the
 magnetic pitch is given as the number of toroidal cycle a magnetic field
 line traverses per unit poloidal cycle. It is also called the local safety
-factor for MHD stability reasons (here, &#8220;local&#8221; means local to a given flux
+factor for MHD stability reasons (here, “local” means local to a given flux
 surface). Equivalent relations often seen depend on the definition of
 coordinates. These are given for straight field line coordinates, below.</p>
 </div>
@@ -382,11 +382,11 @@ above) is number 13, while the ITER convention is 11.</p>
 <span id="itm-conventions-cocos-conversions"></span><h4>Equilibrium COCOS transformation library and actor<a class="headerlink" href="#equilibrium-cocos-transformation-library-and-actor" title="Permalink to this headline">¶</a></h4>
 <p>A Fortran library has been developed for transforming the equilibrium
 cpo between different COCOS. The source is found in</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://gforge6.eufus.eu/svn/numerical_tools/tags/COCOStransform_v1_1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">https://gforge6.eufus.eu/svn/numerical_tools/tags/COCOStransform_v1_1</span>
 </pre></div>
 </div>
 <p>and the actor is</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://gforge6.eufus.eu/svn/kepleractors/tags/4.09a/imp12/COCOStransformequil.tar</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">https://gforge6.eufus.eu/svn/kepleractors/tags/4.09a/imp12/COCOStransformequil.tar</span>
 </pre></div>
 </div>
 <p>(also available from: ~sauter/public/ACTORS/4.09a)</p>
@@ -416,13 +416,13 @@ volume derivative of a volume integral (alternatively one starts with the
 latter property and then proves the former, as the above Ciemat reference
 does). The flux surface average of a scalar and divergence of a vector are
 given by</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\langle G \rangle = \frac {\partial} {\partial V} \oint d^3V G \qquad \qquad \langle \nabla \cdot {\bf G} \rangle = \frac {\partial} {\partial V} \langle {\bf G}\cdot\nabla V \rangle\]</div>
 <p>where \( {\bf G} \cdot \nabla V \) is the contravariant volume
 component of the vector \( {\bf G} \). It follows that the flux surface
 average is an angle average weighted by the volume element \( \sqrt{g}
 \)</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\langle G \rangle = \oint d \phi \oint d \theta \sqrt{g} G \left / \oint d \phi \oint d \theta \sqrt{g} \right.\]</div>
 <p>for any choice of toroidal and poloidal angle as well as radial
 coordinates, where \( g \) is the determinant of the covariant metric
@@ -433,14 +433,14 @@ axisymmetric quantity so the integration is actually over both angles.</p>
 <div class="section" id="the-toroidal-flux-radius-as-the-radial-coordinate">
 <span id="itm-conventions-toroidal-flux-radius-as-the-radial-coordinate"></span><h3>The Toroidal Flux Radius as the Radial Coordinate<a class="headerlink" href="#the-toroidal-flux-radius-as-the-radial-coordinate" title="Permalink to this headline">¶</a></h3>
 <p>The EU-IM-TF has decided to use the toroidal flux radius \( \rho_{{ \rm tor}} \) defined by</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\Phi = \pi B_0 \rho_{{ \rm tor}}^2\]</div>
 <p>where \( B_0 \) is the reference (vacuum) magnetic field value. Note that
 \( \rho_{{ \rm tor}} \) is a positive quantity which has units of
 meters. For several applications the volume radius \( \rho_{{ \rm vol}}
 \) is also used. It is a normalised radius going from 0 to 1 and is
 defined as</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[V = V_{{\rm LCFS}} \rho_{{ \rm vol}}^2\]</div>
 <p>where LCFS refers to the last closed flux surface. Both should be defined
 in the equilibrium CPO (as well as \( { \tt volume} \equiv V \) itself).</p>
@@ -452,27 +452,27 @@ considering them so. The toroidal current given in Amperes depends on some
 convention applied to \( J_{\phi} \) given above, which is not a flux
 quantity. The EU-IM-TF has decided on this definition of the toroidal
 current as a flux quantity:</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[{\tt jphi} \equiv \langle J^ \phi \rangle / \langle 1/R \rangle\]</div>
 <p>This uses the contravariant toroidal component of \( \bf J \) which is a
 pure divergence</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[J^\phi = {\bf J} \cdot \nabla \phi = J_ \phi / R^2 = - \nabla \cdot (2 \pi \mu_0 R^2)^{-1} \nabla \Psi\]</div>
 <p>Hence the flux surface average invokes the often-used quantity \( \langle
 g^{\rho \rho}/R^2 \rangle \) in the form</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\langle J^\phi \rangle = - (2 \pi \mu_0)^{-1} \frac{1}{V'_\rho} \frac{ \partial}{ \partial \rho} V'_\rho \langle g^{ \rho \rho} / R^2 \rangle \frac{ \partial\Psi}{ \partial \rho}\]</div>
-<p>Here,  \(V&#8217;_\rho \equiv \partial V / \partial \rho_{{\rm tor}}\)
+<p>Here,  \(V’_\rho \equiv \partial V / \partial \rho_{{\rm tor}}\)
 explicitly using the toroidal flux radius as the radial coordinate.</p>
 <p>The parallel current is different from this due to the finiteness of the
 poloidal current and magnetic field. Generally the correction is \(O( \epsilon^2 / q^2) \) which is usually a few percent (but not in a
 spherical tokamak). Using the representations for \( \bf B \) and \( \bf J \) given above we find</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[{\bf J} \cdot{ \bf B} =-(2 \pi \mu_0)^{-1}\,F_{{ \rm dia}}^2 \nabla \cdot \frac{1}{F_{{\rm dia}} R^2} \nabla \Psi\]</div>
 <p>Since \( F_{{\rm dia}} \) is a flux quantity the flux surface average
 behaves as for \( {\tt jphi} \) and we use a factor of \( B_0 \) to
 provide the correct units, yielding</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[{\tt jparallel} \equiv -(2 \pi \mu_0 B_0)^{-1} \frac{F_{{ \rm dia}}^2}{V'_\rho} \frac{ \partial}{ \partial \rho} \frac{V'_\rho}{F_{{\rm dia}}} \langle g^{\rho\rho}/R^2 \rangle \frac{\partial\Psi}{\partial\rho}\]</div>
 <p>This form has been chosen due to the natural use of the flux surface
 average \( \langle{\bf J} \cdot{ \bf B} \rangle \) in neoclassical theory
@@ -485,41 +485,41 @@ reference above).</p>
 systems to represent the closed flux surface region. To guarantee
 consistency with the definition of the poloidal flux and the magnetic field
 representation given above, a standard definition of the coordinate volume
-element follows. This is the same sense as the usage of the term &#8220;Jacobian&#8221;
+element follows. This is the same sense as the usage of the term “Jacobian”
 in the CPOs (note many papers use the inverse volume element as the
-&#8220;Jacobian&#8221; by contrast). Here, &#8220;straight field line coordinates&#8221; refers to
+“Jacobian” by contrast). Here, “straight field line coordinates” refers to
 the use of the right-handed coordinate system \(( \Psi, \theta, \zeta) \)
 with the poloidal flux \( \Psi \), the straight field line angle \(
 \theta \), and the toroidal angle \( \zeta = - \phi \). Therefore,
 \( \theta \) has the same orientation as the poloidal angle \( \theta
 \) in toroidal coordinates, while the toroidal angle \( \zeta \) is in
 the opposite direction of \( \phi \). This is standard usage generally
-in terms of &#8220;flux coordinates&#8221; (see Hazeltine and Meiss, above).</p>
+in terms of “flux coordinates” (see Hazeltine and Meiss, above).</p>
 <p>Note here that while the toroidal angle is the geometric one in the
 orientation sense of flux coordinates, the poloidal angle is not
 geometric. This results from the demand that the field lines be straight
 in the coordinate plane \(( \theta, \zeta) \). The definition of this
 property is given by the specification of the ratio of contravariant
 components of the magnetic field as a flux quantity, which is one and
-the same with the pitch parameter (&#8220;local safety factor&#8221;):</p>
-<div class="math">
+the same with the pitch parameter (“local safety factor”):</p>
+<div class="math notranslate nohighlight">
 \[q = q(\Psi) = - B^ \zeta / B^\theta = B^\phi / B^\theta\]</div>
 <p>where the minus sign appears by consistency with the primary definition in
 terms of the flux components as given above. This represents a magnetic
 differential equation for the poloidal angle:</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[B^ \theta = B^ \phi / q  = F_{{\rm dia}}/qR^2\]</div>
-<p>Due to the choice of &#8220;natural&#8221; coordinates (with \( \Psi \), not \( \rho_{{\rm tor}} \)) this relation is close to the definition of the volume element \( \sqrt{g} \) and, equivalently, the Jacobian \( J \)</p>
-<div class="math">
+<p>Due to the choice of “natural” coordinates (with \( \Psi \), not \( \rho_{{\rm tor}} \)) this relation is close to the definition of the volume element \( \sqrt{g} \) and, equivalently, the Jacobian \( J \)</p>
+<div class="math notranslate nohighlight">
 \[J \equiv \sqrt{g} \qquad \qquad J^{-1} = {\bf \nabla} \Psi \cdot {\bf \nabla} \theta \times {\bf \nabla} \zeta = {\bf \nabla} \Psi \times {\bf \nabla} \phi \cdot {\bf \nabla}\theta\]</div>
 <p>Note the ordering of \( {\bf \nabla} \Psi \) and \( {\bf \nabla} \phi \).</p>
 <p>The components of the magnetic field are then</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\begin{split}B^{\theta} &amp;= {\bf B} \cdot {\bf \nabla} \theta = (2\pi)^{-1} {\bf \nabla} \Psi \times {\bf \nabla} \phi \cdot {\bf \nabla} \theta = (2\pi J)^{-1} \\
 B^{\zeta} &amp;= {\bf B} \cdot {\bf \nabla} \zeta = - B_\phi/R^{2} = - F_{{\rm dia}}/R^{2}\\
 B^{\Psi} &amp;= {\bf B} \cdot {\bf \nabla} \Psi = 0\end{split}\]</div>
-<p>With these relations the following relationship between the Jacobian and pitch parameter (&#8220;local safety factor&#8221;) holds</p>
-<div class="math">
+<p>With these relations the following relationship between the Jacobian and pitch parameter (“local safety factor”) holds</p>
+<div class="math notranslate nohighlight">
 \[J = (2\pi)^{-1}q R^{2}/F_{{\rm dia}}\]</div>
 <p>This is the quantity labelled \( {\tt jacobian} \) in the equilibrium
 CPO.</p>
@@ -529,17 +529,17 @@ CPO.</p>
 <p>Out of the many definitions of plasma betas, the EU-IM has agreed to
 adhere to the following definitions: Following Wesson (p. 116), the
 poloidal beta is defined as an integral over the poloidal cross section</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\beta_{\rm p} = \frac{2 \mu_{0}} {B_{ \rm a}^{2}} \frac{ \int_{A} p \rm{d}S}{ \int_{A} \rm{d}S}\]</div>
 <p>where \( A = A (\Psi) \) is the poloidal cross section enclosed by the
 flux surface \( \Psi \), \( B_{rm a} = \frac{ \mu_{0} I}{l} \) is
 the flux surface averaged poloidal magnetic field, \( I = I( \Psi ) \) the toroidal plasma current inside the flux surface \( \Psi \) and \( l = \oint \rm{d} l \) the length of the poloidal perimeter of flux surface \( \Psi \). This definition yields a one-dimensional profile \( \beta_{\rm p} = \beta_{\rm p} ( \Psi ) \) stored in profiles_1d%beta_pol in the equilibrium CPO. The overall poloidal beta \( \beta_{rm p} (\Psi = \Psi_{\rm bd}) \) is stored in global_param%beta_pol.</p>
 <p>The toroidal beta is defined as</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\beta_{\rm tor} = \frac{2 \mu_{0}}{B_{0}^{2}} \frac {\int_{\Omega} p \rm{d}V}{\int_{\Omega} \rm{d}V}\]</div>
 <p>with \( B_{0} \) the vacuum magnetic field as stored in global_param%toroid_field%b0. The integral is carried out over the entire plasma volume and the result stored in global_param%beta_tor.</p>
 <p>The normalized plasma beta is defined as</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\beta_{\rm N} = 100 \frac{a B_{0}}{10^{-6}I_{\rm p}} \beta_{\rm tor}\]</div>
 <p>with \( I_{\rm p} \) the total plasma current (following Y.-S. Na et al.,
 PPCF 44 (2002), 1285) and a is the minor radius. It is stored in
@@ -550,18 +550,18 @@ global_param%beta_normal.</p>
 <p>The definition of the internal inductance follows J.A. Romero et al., NF 50
 (2010), 115002. The magnetic energy contained inside the flux surface \(
 \Psi \) is</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[W_{\rm mag} = \frac{1}{2 \mu_{0}} \int_{\Omega} B_{\rm p}^{2} \rm{d}V\]</div>
 <p>where \( B_{\rm p} \) is the poloidal component of the magnetic field. The (unnormalized) internal inductance is then defined as</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[L_{\rm i} = \frac{2 W_{\rm mag}}{I^{2}}\]</div>
 <p>where \( I = I(\Psi) \) is the toroidal plasma current enclosed by the
 flux surface \( \Psi \). The normalized internal inductance, as
 stored in profiles_1d%li is defined as</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[l_{\rm i} = \frac{2 L_{\rm i}}{\mu_{0} \bar{R}}\]</div>
 <p>with the surface averaged major radius</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[bar{R} = \frac{\int_{A} R \rm{d} S}{\int_{A} \rm{d}S} = \frac{V(\Psi)}{2 \pi A(\Psi)}\]</div>
 <p>The overall internal inductance \(l_{\rm i} (\Psi = \Psi_{\rm bd}) \) is stored in global_param%li.</p>
 </div>
@@ -570,7 +570,7 @@ stored in profiles_1d%li is defined as</p>
 <p>The following entries in the equilibrium CPO are defined along the
 poloidal dimension (as dim2 in the case of a flux surface equilibrium,
 i.e. radial coordinate psi in dim1 and poloidal angle in dim2):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">coord_sys%jacobian(:,:)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">coord_sys%jacobian(:,:)</span>
 <span class="go">coord_sys%g_11(:,:)</span>
 <span class="go">coord_sys%g_12(:,:)</span>
 <span class="go">coord_sys%g_13(:,:)</span>
@@ -612,11 +612,11 @@ is hosted by the project
 itmshared
 .
 To check out the relevant files please do</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/trunk/src/itm_types target_dir</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/trunk/src/itm_types target_dir</span>
 </pre></div>
 </div>
 <p>For Fortran90, the following standard types have been defined</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">INTEGER,  PARAMETER :: EU-IM_I1 = SELECTED_INT_KIND (2)        ! Integer*1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">INTEGER,  PARAMETER :: EU-IM_I1 = SELECTED_INT_KIND (2)        ! Integer*1</span>
 <span class="go">INTEGER,  PARAMETER :: EU-IM_I2 = SELECTED_INT_KIND (4)        ! Integer*2</span>
 <span class="go">INTEGER,  PARAMETER :: EU-IM_I4 = SELECTED_INT_KIND (9)        ! Integer*4</span>
 <span class="go">INTEGER,  PARAMETER :: EU-IM_I8 = SELECTED_INT_KIND (18)       ! Integer*8</span>
@@ -626,15 +626,15 @@ To check out the relevant files please do</p>
 </div>
 <p>To implement these types in your code, please add the following line to
 your modules</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">use itm_types</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">use itm_types</span>
 </pre></div>
 </div>
 <p>Compiled versions of the module can be found in</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmtypes/lib/<span class="nv">$OBJECTCODE</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmtypes/lib/<span class="nv">$OBJECTCODE</span>
 </pre></div>
 </div>
 <p>where the following values of OBJECTCODE are supported</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">amd64_g95_0.92</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">amd64_g95_0.92</span>
 <span class="go">amd64_gfortran_4.7</span>
 <span class="go">amd64_intel_12</span>
 <span class="go">amd64_pgi_10</span>
@@ -651,29 +651,29 @@ NIST recommendations . It is recommended that these constant be used
 throughout all EU-IM modules. The Fortran90 module defining the
 standardized physical constants itm_constants.f90 is hosted by the project
 itmshared . To check out the relevant files please do</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/trunk/src/itm_constants target_dir</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/trunk/src/itm_constants target_dir</span>
 </pre></div>
 </div>
 <p>Compiled versions of the module can be found in</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/<span class="nv">$OBJECTCODE</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/<span class="nv">$OBJECTCODE</span>
 </pre></div>
 </div>
 <p>where the following values of OBJECTCODE are supported</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">amd64_g95_0.92</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">amd64_g95_0.92</span>
 <span class="go">amd64_gfortran_4.7</span>
 <span class="go">amd64_intel_12</span>
 <span class="go">amd64_pgi_10</span>
 </pre></div>
 </div>
-<p>The C equivalent (&#8220;itm_constants.h&#8221;) can be found in</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/include/
+<p>The C equivalent (“itm_constants.h”) can be found in</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/include/
 </pre></div>
 </div>
 <p>and the Python in</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/python2.6/
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/python2.6/
 </pre></div>
 </div>
-<p>A Java version is available but has not yet been released &#8212; contact ISIP
+<p>A Java version is available but has not yet been released — contact ISIP
 if you are interested.
 ( More information about the EU-IM libraries .)
 Thefollowing constants are available: itm_constants.xml All constants are
@@ -691,7 +691,7 @@ scalars, however, unique values for floats and integers had to be defined
 to identify empty fields. These values identify invalid data base entries
 and can be tested through comparison. The values for invalid data base
 entries in Fortran90 are defined below:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">INTEGER,  PARAMETER :: itm_int_invalid = -999999999</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">INTEGER,  PARAMETER :: itm_int_invalid = -999999999</span>
 <span class="go">REAL(R8), PARAMETER :: itm_r8_invalid = -9.0D40</span>
 </pre></div>
 </div>
@@ -699,14 +699,14 @@ entries in Fortran90 are defined below:</p>
 affected fields such that no accidental confusion with real values may
 occur. The Fortran90 module defining these values itm_types.f90 is hosted
 by the project itmshared . To check out the relevant files please do</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/trunk/src/itm_types target_dir</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/trunk/src/itm_types target_dir</span>
 </pre></div>
 </div>
 <p>The module also includes three functions of type boolean itm_is_valid_int4
 , itm_is_valid_int8 , and itm_is_valid_real8 which are overloaded under the
 interface itm_is_valid to check whether a data base entry has been filled.
 Example:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">if (itm_is_valid(equilibrium%global_param%i_plasma)) then</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">if (itm_is_valid(equilibrium%global_param%i_plasma)) then</span>
 <span class="go">  write(*, *) &#39;Plasma current Ip = &#39;, equilibrium%global_param%i_plasma</span>
 <span class="go">end if</span>
 </pre></div>
@@ -734,25 +734,25 @@ following specifies the conventions of the allowed enumerated datatypes.</p>
 <li>wave_identifier.xml</li>
 </ul>
 <p>Compiled versions of the modules can be found in</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/<span class="nv">$OBJECTCODE</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/<span class="nv">$OBJECTCODE</span>
 </pre></div>
 </div>
 <p>where the following values of OBJECTCODE are supported</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">amd64_g95_0.92</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">amd64_g95_0.92</span>
 <span class="go">amd64_gfortran_4.7</span>
 <span class="go">amd64_intel_12</span>
 <span class="go">amd64_pgi_10</span>
 </pre></div>
 </div>
 <p>The C equivalent can be found in</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/include/
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/include/
 </pre></div>
 </div>
 <p>and the Python in</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/python2.6/
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/python2.6/
 </pre></div>
 </div>
-<p>A Java version is available but has not yet been released &#8212; contact the
+<p>A Java version is available but has not yet been released — contact the
 CPT if you are interested.
 ( More information about the EU-IM libraries .)</p>
 <div class="section" id="example-how-to-fill-coresource-values-sourceid">
@@ -762,7 +762,7 @@ is recomended to use the parameters and functions built into the fortran
 modules associated with each such datatype. These modules are available as
 part of the UAL package. As an examples we may include the
 coresource_identifier:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">use coresource_identifier, only: fusion, get_type_name, get_type_description__ind</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">use coresource_identifier, only: fusion, get_type_name, get_type_description__ind</span>
 </pre></div>
 </div>
 <p>Here the value of the integer-parameter fusion is the Flag for fusion
@@ -772,7 +772,7 @@ Id=get_type_name(Flag) and the Description using the function
 Description=get_type_description__ind(Flag). These function are available
 for every datatype.</p>
 <p>Below you have an example of how to use these functions:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">program coresource_example use euitm_schemas, only: type_coresource use</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">program coresource_example use euitm_schemas, only: type_coresource use</span>
 <span class="go">  coresource_identifier, only: fusion, get_type_name,</span>
 <span class="go">  get_type_description__ind use write_structures, only: open_write_file,</span>
 <span class="go">  write_cpo, close_write_file use deallocate_structures, only:</span>
@@ -807,7 +807,7 @@ for every datatype.</p>
 </div>
 <p>This example program, and similar examples for other enumerated
 datatypes, are available in:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://gforge6.eufus.eu/svn/itmshared/trunk/src/itm_constants/examples</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">https://gforge6.eufus.eu/svn/itmshared/trunk/src/itm_constants/examples</span>
 </pre></div>
 </div>
 </div>
@@ -867,12 +867,12 @@ Values</th>
 <tr class="row-even"><td>1</td>
 <td>rectangular</td>
 <td>Regular grid in \((R,
-Z) \).&#8217;EFIT-like grid&#8217;</td>
+Z) \).’EFIT-like grid’</td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>inverse</td>
 <td>Regular grid in \((\Psi,
-\theta)\).&#8217;flux surface grid&#8217;.</td>
+\theta)\).’flux surface grid’.</td>
 </tr>
 <tr class="row-even"><td>3</td>
 <td>irregular</td>
@@ -963,7 +963,7 @@ parameters inside KEPLER.</p>
 <div class="line">updated the various fields below</div>
 <div class="line">(e.g. the CPOs) may be describe at</div>
 <div class="line">different time points. In such</div>
-<div class="line">workflows the this &#8220;time&#8221;-field</div>
+<div class="line">workflows the this “time”-field</div>
 <div class="line">describe the time at the end of the</div>
 <div class="line">present time step. Units: (s)</div>
 </div>
@@ -1269,7 +1269,7 @@ parameters inside KEPLER.</p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>pf_system...</td>
+<tr class="row-even"><td>pf_system…</td>
 <td>/</td>
 <td>/</td>
 </tr>
@@ -1411,7 +1411,8 @@ parameters inside KEPLER.</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
