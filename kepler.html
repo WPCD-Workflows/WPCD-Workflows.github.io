@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Kepler &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
+        <link rel="next" title="EDRG" href="edrg.html"/>
+        <link rel="prev" title="Conventions" href="conventions.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EUROfusion Integrated Modelling workflows
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Kepler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-kepler-basics">Introduction to Kepler - basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-kepler-with-serpens-add-on">Installing Kepler with Serpens add-on</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#kepler-imas-actors">Kepler IMAS actors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#imas-kepler-based-configuration">IMAS Kepler based configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-kepler-using-imas-environment">Running Kepler using IMAS environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-environment">Setting up environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#backing-up-old-files">Backing up old files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-place-to-store-your-personal-installations-of-kepler">Creating place to store your personal installations of Kepler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-kepler-default-release">Running Kepler (default release)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EUROfusion Integrated Modelling workflows</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Kepler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/kepler.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="kepler">
+<span id="id1"></span><h1>Kepler<a class="headerlink" href="#kepler" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-to-kepler-basics">
+<h2>Introduction to Kepler - basics<a class="headerlink" href="#introduction-to-kepler-basics" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://kepler-project.org/">Kepler</a> is a workflow engine and design
+platform for analyzing and modeling scientific data. Kepler provides a
+graphical interface and a library of pre-defined components to enable users
+to construct scientific workflows which can undertake a wide range of
+functionality. It is primarily designed to access, analyse, and visualise
+scientific data but can be used to construct whole programs or run
+pre-existing simulation codes.</p>
+<p>Kepler builds upon the mature Ptolemy II framework, developed at the
+University of California, Berkeley. Kepler itself is developed and
+maintained by the cross-project Kepler collaboration.</p>
+<p>The main components in a Kepler workflow are actors, which are used in a
+design (inherited from Ptolemy II) that separates workflow components
+(&#8220;actors&#8221;) from workflow orchestration (&#8220;directors&#8221;), making components
+more easily reusable. Workflows can work at very levels of granularity,
+from low-level workflows (that explicitly move data around or start and
+monitor remote jobs, for example) to high-level workflows that interlink
+complex steps/actors. Actors can be reused to construct more complex
+actors enabling complex functionality to be encapsulated in easy to use
+packages. A wide range of actors are available for use and reuse.</p>
+<div class="section" id="installing-kepler-with-serpens-add-on">
+<h3>Installing Kepler with Serpens add-on<a class="headerlink" href="#installing-kepler-with-serpens-add-on" title="Permalink to this headline">¶</a></h3>
+<p>You can download Kepler from the following page <a class="reference external" href="https://kepler-project.org/users/downloads">https://kepler-project.org/users/downloads</a></p>
+<p>In order to install Kepler and Serpens related workflows you have to do
+following:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
+<span class="go">wget http://scilla.man.poznan.pl/euforia/install/serpens-demo-workflows.zip -O serpens-demo-workflows.zip</span>
+<span class="go">unzip serpens-demo-workflows.zip</span>
+</pre></div>
+</div>
+<p>Now you can start Kepler application and proceed to tutorial examples that can be find at the following page <a class="reference external" href="http://scilla.man.poznan.pl/confluence/display/euforia/01.+Introduction+to+Kepler+-+basics">http://scilla.man.poznan.pl/confluence/display/euforia/01.+Introduction+to+Kepler+-+basics</a></p>
+</div>
+</div>
+<div class="section" id="kepler-imas-actors">
+<h2>Kepler IMAS actors<a class="headerlink" href="#kepler-imas-actors" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Imas actor</strong></th>
+<th class="head"><strong>Deacription</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>UALSliceCollector</td>
+<td><div class="first last line-block">
+<div class="line">Store one slice from input IDS into
+different run. This way, it is possible</div>
+<div class="line">to collect intermediate results during
+workflow execution.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>UALPython</td>
+<td><div class="first last line-block">
+<div class="line">Allows to run external Python process and
+pass input/output data between workflow</div>
+<div class="line">and process itself. This actor is, most
+commonly, used for data visualization.</div>
+<div class="line">User can pass Python script directly to
+the actor.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>UALMuxParam</td>
+<td><div class="first last line-block">
+<div class="line">Provides similar behavior to
+ualmux/UALMux, however, this actors has</div>
+<div class="line">two additional ports:</div>
+<div class="line-block">
+<div class="line">- fieldDescription - contains name of
+the filed that will be modified</div>
+<div class="line">- fieldValue - contains new value of
+the field</div>
+</div>
+<div class="line">Main difference between ualmux/
+ualmuxparam
+actors lays in it&#8217;s ability to be used
+in</div>
+<div class="line">a loop that modify different field
+inside IDS.</div>
+<div class="line">You can simply provide different field
+name
+for different loop&#8217;s step.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>UALMux</td>
+<td><div class="first last line-block">
+<div class="line">Provides a method for putting data inside
+IDS inputs</div>
+<div class="line-block">
+<div class="line">- inputIds/inputCpo - cpo we are going
+to modify</div>
+<div class="line">- inTime - time index at which data are
+supposed to be updated</div>
+<div class="line">- name of the field is specified as port
+name</div>
+<div class="line">- new value of the field is passed as
+value sent to the port</div>
+</div>
+<div class="line">outputs:</div>
+<div class="line-block">
+<div class="line">- outputIds/outputCpo - modified IDS</div>
+<div class="line">- outTime - actual time index (depend
+on approximation mode)</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>UALInit</td>
+<td><div class="first last line-block">
+<div class="line">Initializes input pulse file, creates
+run work and provides ID S description</div>
+<div class="line">for other actors
+inputs:</div>
+<div class="line-block">
+<div class="line">- user - name of the user for input
+data file (e.g. g2michal)</div>
+<div class="line">- machine - name of the machine for
+input data file (e.g. test/jet)</div>
+<div class="line">- shot - shot number</div>
+<div class="line">- run - run number</div>
+<div class="line">- runwork - temporary run number
+(place where output will be stored)</div>
+</div>
+<div class="line">outputs:</div>
+<div class="line-block">
+<div class="line">- error - description of error in case
+there are problems while accessing
+input data</div>
+<div class="line">- all IDSess requested by user (each
+IDS is specified as output port
+name)</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>UALDemux</td>
+<td><div class="first last line-block">
+<div class="line">Allows to read data from given IDS -
+name of the field is specified as</div>
+<div class="line">output port.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>UALCollector</td>
+<td><div class="first last line-block">
+<div class="line">Stores input IDSess inside new run.
+This way, it is possible to copy data</div>
+<div class="line">into different shot/run rather than
+inside run work.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>UALClose</td>
+<td><div class="first last line-block">
+<div class="line">Closes run work based on description
+passed via input IDS.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>SetBreakpoint</td>
+<td><div class="first last line-block">
+<div class="line">This actor allows to enforce &#8220;debug&#8221;
+mode for IMAS based actors. It sets</div>
+<div class="line">global parameter &#8220;ITM_DEBUG&#8221; to either
+true or false. In case true is a value</div>
+<div class="line">of &#8220;ITM_DEBUG&#8221; all FC2K generated actors
+will start in debug mode.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>RecordSet</td>
+<td><div class="first last line-block">
+<div class="line">Sets values inside record (take a look
+for short tutorial: RecordGet/RecordSet)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>RecordGet</td>
+<td><div class="first last line-block">
+<div class="line">Gets values from the record (take a
+look here for short tutorial:</div>
+<div class="line">RecordGet/RecordSet)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>IDSOccurence</td>
+<td><div class="first last line-block">
+<div class="line">Provides a method to create duplicate
+of IDS with new occurrence number.</div>
+<div class="line">This way, it is possible to store data
+before they get modified by user code.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>IDSFlush</td>
+<td><div class="first last line-block">
+<div class="line">Flushes data from workflow. Data from
+memory cache are stored inside database</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>IDSDiscard</td>
+<td><div class="first last line-block">
+<div class="line">Discards data inside workflow. Data will
+be re-read into memory cache.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>IDSContentStd</td>
+<td><div class="first last line-block">
+<div class="line">Displays IDS data on console (better
+for huge data sets)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>IDSContent</td>
+<td>Displays IDS data</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="imas-kepler-based-configuration">
+<h2>IMAS Kepler based configuration<a class="headerlink" href="#imas-kepler-based-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="running-kepler-using-imas-environment">
+<h3>Running Kepler using IMAS environment<a class="headerlink" href="#running-kepler-using-imas-environment" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="setting-up-environment">
+<h4>Setting up environment<a class="headerlink" href="#setting-up-environment" title="Permalink to this headline">¶</a></h4>
+<p>Please do not forget to set JAVA memory settings:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">export _JAVA_OPTIONS=&quot;-Xss20m -Xms8g -Xmx8g&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="backing-up-old-files">
+<h4>Backing up old files<a class="headerlink" href="#backing-up-old-files" title="Permalink to this headline">¶</a></h4>
+<p>Before first configuration of Kepler, make sure to backup your old data files</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
+<span class="go">mv .kepler .kepler~</span>
+<span class="go">mv KeplerData KeplerData~</span>
+<span class="go">mv .ptolemyII .ptolemyII~</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-place-to-store-your-personal-installations-of-kepler">
+<h4>Creating place to store your personal installations of Kepler<a class="headerlink" href="#creating-place-to-store-your-personal-installations-of-kepler" title="Permalink to this headline">¶</a></h4>
+<p>IMAS based installations are stored inside <strong>$HOME/kepler</strong> directory.</p>
+<p>Before proceeding further, make sure to create <strong>kepler</strong> directory</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> create directory inside <span class="nv">$HOME</span>
+<span class="go">cd ~</span>
+<span class="go">mkdir kepler</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-kepler-default-release">
+<h4>Running Kepler (default release)<a class="headerlink" href="#running-kepler-default-release" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>In order to start Kepler you have use helper scripts that will install and configure your personal copy of Kepler</dt>
+<dd><ul class="first last">
+<li><p class="first">load IMAS module</p>
+<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">module </span><span class="n">load</span> <span class="n">imas</span>
+<span class="k">module </span><span class="n">load</span> <span class="n">kepler</span>
+<span class="cp"># NOTE! It might be that you don&#39;t have Kepler copy inside your $HOME</span>
+<span class="cp"># in that case you need to install it kepler_install_light</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Start Kepler</p>
+<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="cp"># run alias that will execute Kepler</span>
+<span class="n">kepler</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="edrg.html" class="btn btn-neutral float-right" title="EDRG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="conventions.html" class="btn btn-neutral" title="Conventions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, WPCD.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

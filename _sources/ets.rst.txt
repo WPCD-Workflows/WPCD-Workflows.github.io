@@ -89,45 +89,175 @@ the three transport models considered within ETS. For example, a v=1
 translates into an effective pinch velocity of 3 in the density transport
 equation and of 0+3/2+5/2=4 in the ion flux contributing to heat transport.
 
-.. Continue table
+.. Fix PDF links in table
    
-+------+-----------------+---------+--------+-------------------+----------------------+
-| Case | Description     | Subcase | Solver | Comments          | Graphic output (PDF) |
-+======+=================+=========+========+===================+======================+
-| I.1.1| Constant        | N/A     |   3    | Convergence ok.   |      I.1.1_s3        |
-|      | densities and   |         |        | Errors within     |                      |
-|      |                 |         |        | machine precision |                      |
-+------+-----------------+---------+--------+-------------------+----------------------+
-|      |                 |         |   7    | Convergence ok.   |      I.1.1_s7        |
-|      |                 |         |        | Errors within     |                      |
-|      |                 |         |        | machine precision |                      |
-+------+-----------------+---------+--------+-------------------+----------------------+
-|      |                 |         |   10   | Convergence ok.   |      I.1.1_s10       |
-|      |                 |         |        | Errors within     |                      |
-|      |                 |         |        | machine precision |                      |
-+------+-----------------+---------+--------+-------------------+----------------------+
-| I.1.2| Interpretative  | N/A     |   3    | Under analysis:   |      I.1.2_s3        |
-|      | time-dependent  |         |        | no time evolution |                      |
-|      | solution for    |         |        | for the           |                      |
-|      | densities       |         |        | temperatures      |                      |
-+------+-----------------+---------+--------+-------------------+----------------------+
-| I.1  | Conservation    | N/A     |   N/A  | This case was     |         N/A          |
-| .3   | laws (particle  |         |        | treated under     |                      |
-|      | and energy)     |         |        | I.1.5             |                      |
-|      | with diffusion  |         |        |                   |                      |
-+------+-----------------+---------+--------+-------------------+----------------------+
-| I.1.4| Conservation    | N/A     |   3    | Convergence ok    |       I.1.4_s3       |
-|      | laws (particle  |         |        |                   |                      |
-|      | and energy)     |         |        |                   |                      |
-|      | with            |         |        |                   |                      |
-|      | discontinuous   |         |        |                   |                      |
-|      | diffusion       |         |        |                   |                      |
-|      | coefficient     |         |        |                   |                      |
-+------+-----------------+---------+--------+-------------------+----------------------+
-|      |                 |         |   7    |  Convergence ok   | I.1.4_s7             |
-+------+-----------------+---------+--------+-------------------+----------------------+
-|      |                 |         |   10   | Failed to initiate|                      |
-+------+-----------------+---------+--------+-------------------+----------------------+
++------+-----------------+----------+--------+-----------------------+---------------------------+
+| Case | Description     | Subcase  | Solver | Comments              | Graphic output (PDF)      |
++======+=================+==========+========+=======================+===========================+
+| I.1.1| |               | N/A      |   3    | | Convergence ok.     |      I.1.1_s3             |
+|      | |               |          |        | | Errors within       |                           |
+|      | |               |          |        | | machine precision   |                           |
+|      | |               |          +--------+-----------------------+---------------------------+
+|      | | Constant      |          |   7    | | Convergence ok.     |      I.1.1_s7             |
+|      | | densities and |          |        | | Errors within       |                           |
+|      | | temperatures  |          |        | | machine precision   |                           |
+|      | |               |          +--------+-----------------------+---------------------------+
+|      | |               |          |   10   | | Convergence ok.     |      I.1.1_s10            |
+|      | |               |          |        | | Errors within       |                           |
+|      | |               |          |        | | machine precision   |                           |
++------+-----------------+----------+--------+-----------------------+---------------------------+
+| I.1.2| | Interpretative| N/A      |   3    | | Under analysis:     |      I.1.2_s3             |
+|      | | time-dependent|          |        | | no time evolution   |                           |
+|      | | solution for  |          |        | | for the             |                           |
+|      | | densities     |          |        | | temperatures        |                           |
++------+-----------------+----------+--------+-----------------------+---------------------------+
+| I.1.3| | Conservation  | N/A      |  N/A   | | This case was       |      N/A                  |
+|      | | laws(particle |          |        | | treated under       |                           |
+|      | | and energy)   |          |        | | I.1.5               |                           |
+|      | | with diffusion|          |        | |                     |                           |
++------+-----------------+----------+--------+-----------------------+---------------------------+
+| I.1.4| | Conservation  | N/A      |   3    | | Convergence ok.     |      I.1.4_s3             |
+|      | | laws(particle |          |        | |                     |                           |
+|      | | and energy)   |          |        | |                     |                           |
+|      | | with          |          +--------+-----------------------+---------------------------+
+|      | | discontinuous |          |   7    | | Convergence ok.     |      I.1.4_s7             |
+|      | | diffusion     |          |        | |                     |                           |
+|      | | coefficient   |          |        | |                     |                           |
+|      | |               |          +--------+-----------------------+---------------------------+
+|      | |               |          |   10   | | Failed to initiate  |                           |
+|      | |               |          |        | |                     |                           |
+|      | |               |          |        | |                     |                           |
++------+-----------------+----------+--------+-----------------------+---------------------------+
+| I.1.5| | Conservation  | D=0.1    |   3    | | Convergence in      | | I.1.5_s3_101pts_1e-3s   |
+|      | | laws(particle | and v=0  |        | | density reached;    | | I.1.5_s3_51pts_1e-3s    |
+|      | | and energy)   |          |        | | asymptotic          | | I.1.5_s3_101pts_1e-2s   |
+|      | | with          |          +--------+ | solution (for       +---------------------------+
+|      | | diffusion     |          |   7    | | density) reached;   | | I.1.5_s7_101pts_1e-3s   |
+|      | | and           |          |        | | convergence in      | | I.1.5_s7_51pts_1e-3s    |
+|      | | convection    |          |        | | temperature never   | | I.1.5_s7_101pts_1e-2s   |
+|      | |               |          +--------+ | fully reached       +---------------------------+
+|      | |               |          |   10   | |                     |                           |
+|      | |               +----------+--------+-----------------------+---------------------------+
+|      | |               | I.1.5.a  |   3    | | Solvers 3 and 7:    | | I.1.5.a_s3_101pts_1e-3s |
+|      | |               | D=0.1    |        | | Convergence in      | | I.1.5.a_s3_51pts_1e-3s  |
+|      | |               | and v=0.1|        | | temperature reached;| | I.1.5.a_s3_101pts_1e-2s |
+|      | |               |          +--------+ | convergence in      +---------------------------+
+|      | |               |          |   7    | | density reached;    | | I.1.5.a_s7_101pts_1e-3s |
+|      | |               |          +--------+ | asymptotic solution +---------------------------+
+|      | |               |          |        | | never reached (after|                           | 
+|      | |               |          |        | | 50s and 100s).      |                           | 
+|      | |               |          |   10   | | Solver 10: does not |                           |
+|      | |               |          |        | | converge (number of |                           |
+|      | |               |          |        | | iterations exceeds  |                           |
+|      | |               |          |        | | 1000).              |                           |
+|      | |               +----------+--------+-----------------------+---------------------------+
+|      | |               | I.1.5.b  |   3    | | No convergence for  | | I.1.5.b_s3_101pts_1e-3s |
+|      | |               | D=0.1    |        | | density and         | | I.1.5.b_s3_51pts_1e-3s  |
+|      | |               | and v=0.3|        | | temperature (worse  | | I.1.5.b_s3_101pts_1e-2s |
+|      | |               |          |        | | for density);       |                           |
+|      | |               |          |        | | deviation from      |                           |
+|      | |               |          |        | | asymptotic solution |                           |
+|      | |               |          |        | | increases with time.|                           | 
+|      | |               |          |        | | Errors are similar  |                           | 
+|      | |               |          |        | | for solvers 3 and 7;|                           |
+|      | |               |          |        | | the latter reduces  |                           |
+|      | |               |          |        | | the energy error    |                           |
+|      | |               |          |        | | with time, at short |                           |
+|      | |               |          |        | | time-steps.         |                           |
+|      | |               |          |        | | Increasing number of|                           |
+|      | |               |          |        | | points reduces      |                           |
+|      | |               |          |        | | deviation from      |                           |
+|      | |               |          |        | | asymptotic solution |                           |
+|      | |               |          |        | | (tested for         |                           |
+|      | |               |          |        | | solver 3)           |                           |
+|      | |               |          +--------+-----------------------+---------------------------+
+|      | |               |          |   7    | | Neither solver      | | I.1.5.b_s7_101pts_1e-3s |
+|      | |               |          |        | | yields zero steady- | | I.1.5.b_s7_51pts_1e-3s  |
+|      | |               |          |        | | state particle- and | | I.1.5.b_s7_101pts_1e-2s |
+|      | |               |          |        | | energy- flux.       |                           |
+|      | |               |          |        | | The on-axis behavior|                           |
+|      | |               |          |        | | of Te is different  |                           |
+|      | |               |          |        | | for solvers 3 and 7.|                           |
+|      | |               |          |        | | Convergence proceeds|                           |
+|      | |               |          |        | | through decreasing  |                           |
+|      | |               |          |        | | (solver 3 and solver|                           |
+|      | |               |          |        | | 7 at long time-     |                           |
+|      | |               |          |        | | steps) and          |                           |
+|      | |               |          |        | | increasing (solver 7|                           |
+|      | |               |          |        | | at short time-steps)|                           |
+|      | |               |          |        | | fluxes near the wall|                           |
+|      | |               |          +--------+-----------------------+---------------------------+
+|      | |               |          |   10   | | Failed to initiate  |                           |
+|      | |               +----------+--------+-----------------------+---------------------------+
+|      | |               | I.1.5.c  |   3    | | Solvers 3 and 7:    | | I.1.5.c_s3_101pts_1e-3s |
+|      | |               | D=0.1    |        | | For v>1 the number  | | I.1.5.c_s3_51pts_1e-3s  |
+|      | |               | and v=1.0|        | | of iterations       | | I.1.5.c_s3_101pts_1e-2s |
+|      | |               |          +--------+ | exceeds the max     +---------------------------+
+|      | |               |          |   7    | | value of 1000,      | | I.1.5.c_s7_101pts_1e-3s |
+|      | |               |          |        | | apparently because  | | I.1.5.c_s7_101pts_1e-2s |
+|      | |               |          +--------+ | ETS doesn't conserve+---------------------------+
+|      | |               |          |  10    | | the number of       | |                         |
+|      | |               |          |        | | particles. The      | |                         |
+|      | |               |          |        | |  situation is       | |                         |
+|      | |               |          |        | | mitigated (not      | |                         |
+|      | |               |          |        | | solved) by          | |                         |
+|      | |               |          |        | | increasing Np and   | |                         |
+|      | |               |          |        | | decreasing dt.      | |                         |
+|      | |               |          |        | | Solver 10 fails to  | |                         |
+|      | |               |          |        | | initiate.           | |                         |
+|      | |               +----------+--------+-----------------------+---------------------------+
+|      | |               | I.1.5.d  |   3    | |                     | | I.1.5.d_s3_501pts_1e-3s |
+|      | |               | D=0.1    |        | |                     | | I.1.5.d_s3_501pts_1e-4s |
+|      | |               | and v=2.0+--------+-----------------------+---------------------------+
+|      | |               |          |   7    | |                     |                           |
+|      | |               |          +--------+-----------------------+---------------------------+
+|      | |               |          |   10   | | Failed to initiate  |                           |
+|      | |               +----------+--------+-----------------------+---------------------------+
+|      | |               | I.1.5.h  |   3    | | Solvers 3 and 7:    | | I.1.5.h_s3_101pts_1e-3s |
+|      | |               | D=0.1    |        | | Convergence in      | | I.1.5.h_s3_51pts_1e-3s  |
+|      | |               | and      |        | | density and         | | I.1.5.h_s3_101pts_1e-2s |
+|      | |               | v=-0.1   +--------+ | temperature reached;+---------------------------+
+|      | |               |          |   7    | | asymptotic solution | | I.1.5.h_s7_101pts_1e-3s |
+|      | |               |          |        | | (for density) almost| | I.1.5.h_s7_101pts_1e-2s |
+|      | |               |          +--------+ | always reached;     +---------------------------+
+|      | |               |          |   10   | | Solver 10: fails to |                           |
+|      | |               |          |        | | converge (number of |                           |
+|      | |               |          |        | | iterations exceeds  |                           |
+|      | |               |          |        | | 1000).              |                           |
+|      | |               +----------+--------+-----------------------+---------------------------+
+|      | |               | I.1.5.i  |   3    | | Convergence in      | | I.1.5.i_s3_101pts_1e-3s |
+|      | |               | D=0.1    |        | | density reached;    | | I.1.5.i_s3_51pts_1e-3s  |
+|      | |               | and      |        | | convergence in      | | I.1.5.i_s3_101pts_1e-2s |
+|      | |               | v=-0.3   +--------+ | temperature never   +---------------------------+
+|      | |               |          |   7    | | fully reached;      | | I.1.5.i_s7_101pts_1e-3s |
+|      | |               |          |        | | asymptotic solution | | I.1.5.i_s7_51pts_1e-3s  |
+|      | |               |          +--------+ | never fully reached +---------------------------+
+|      | |               |          |   10   | |                     |                           |
+|      | |               |          |        | |                     |                           |
+|      | |               |          |        | |                     |                           |
+|      | |               |          |        | |                     |                           |
+|      | |               +----------+--------+-----------------------+---------------------------+
+|      | |               | I.1.5.j  |   3    | | Solvers 3, 7 and 10:| | I.1.5.j_s3_101pts_1e-3s |
+|      | |               | D=0.1    |        | | fail to converge    | | I.1.5.j_s3_51pts_1e-3s  |
+|      | |               | and      |        | | (number of          | | I.1.5.j_s3_101pts_1e-2s |
+|      | |               | v=-1.0   +--------+ | iterations exceeds  +---------------------------+
+|      | |               |          |   7    | | 1000) long          | | I.1.5.j_s7_101pts_1e-3s |
+|      | |               |          |        | | before the total    | | I.1.5.j_s7_101pts_1e-2s |
+|      | |               |          +--------+ | execution time      +---------------------------+
+|      | |               |          |   10   | | of 4s (at best they | | I.1.5.j_s10_101pts_1e-3s|
+|      | |               |          |        | | go until 1.8s)      | | I.1.5.j_s10_51pts_1e-3s |
+|      | |               |          |        | |                     |                           |
+|      | |               |          |        | |                     |                           |
+|      | |               +----------+--------+-----------------------+---------------------------+
+|      | |               | I.1.5.k  |   3    | | No convergence for  | | I.1.5.d_s3_501pts_1e-3s |
+|      | |               | D=0.1    +--------+ | both density and    +---------------------------+
+|      | |               | and      |   7    | | temperature (worse  |                           |
+|      | |               | v=-2.0   +--------+ | for density);       +---------------------------+
+|      | |               |          |   10   | | deviation from      |                           |
+|      | |               |          |        | | asymptotic solution |                           |
+|      | |               |          |        | | increases with time |                           |
+|      | |               |          |        | | deviation from      |                           |
++------+-----------------+----------+--------+-----------------------+---------------------------+
 
 ==============================================
 Results obtained in 2012 for UAL-version 4.09a
@@ -138,25 +268,264 @@ are to be disregarded in the future.
 ALL solvers fail to converge (i.e. demanding more than 1000 iterations)
 for convection v >= 1 m/s.
 
-.. Continue table
+.. Fix PDF links in table
    
-+-----+-----------------+---------+---+-------------------+-------------+
-| Cas | Description     | Subcase | S | Comments          | Graphic     |
-| e   |                 |         | o |                   | output      |
-|     |                 |         | l |                   | (PDF)       |
-|     |                 |         | v |                   |             |
-|     |                 |         | e |                   |             |
-|     |                 |         | r |                   |             |
-+=====+=================+=========+===+===================+=============+
-| I.1 | Constant        | N/A     | 3 | Convergence ok.   | `I.1.1_101p |
-| .1  | densities and   |         |   | Errors within     | ts_1e-2s <. |
-|     | temperatures    |         |   | machine           | ./imports/E |
-|     |                 |         |   | precision, except | TS_VV/4.09a |
-|     |                 |         |   | for the on-axis   | /I.1.1_s3-4 |
-|     |                 |         |   | value             | -7-10_Np101 |
-|     |                 |         |   |                   | _dt1e-2.pdf |
-|     |                 |         |   |                   | >`__        |
-+-----+-----------------+---------+---+-------------------+-------------+
++------+-----------------+------------------------+--------+------------------------+---------------------------+
+| Case | Description     | Subcase                | Solver | Comments               | Graphic output (PDF)      |
++======+=================+========================+========+========================+===========================+
+| I.1.1| | Constant      | N/A                    |   3    | | Convergence ok.      |     I.1.1_101pts_1e-2s    |
+|      | | densities and |                        |        | | Errors within        |                           |
+|      | | temperatures  |                        |        | | machine precision,   |                           |
+|      | |               |                        |        | | except for the       |                           |
+|      | |               |                        |        | | on-axis value        |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   4    | | Convergence ok.      |                           |
+|      | |               |                        |        | | Errors within        |                           |
+|      | |               |                        |        | | machine precision,   |                           |
+|      | |               |                        |        | | except for the       |                           |
+|      | |               |                        |        | | on-axis value        |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   7    | | NANs found           |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   10   | | Convergence ok.      |                           |
+|      | |               |                        |        | | Errors within        |                           |
+|      | |               |                        |        | | machine precision    |                           |
++------+-----------------+------------------------+--------+------------------------+---------------------------+
+| I.1.2| | Interpretative| | No external sources; |   4    | | No time evolution    |      I.1.2_101pts_1e-2s   |
+|      | | time-dependent| | no internal sources; |        | | for the pressure in  |                           |
+|      | | solution for  | | Te = Ti @ t=0        |        | | the absence of all   |                           |
+|      | | densities     | | (no plasma collision |        | | sources              |                           |
+|      | | (D=0 and v=0) | | source)              |        | |                      |                           |
+|      | |               +------------------------+--------+------------------------+---------------------------+
+|      | |               | | I.1.2.a              |   4    | | Time evolution for   |      I.1.2.a_101pts_1e-2s |
+|      | |               | | No external sources; |        | | the pressure due to  |                           |
+|      | |               | | internal (convection)|        | | internal sources     |                           |
+|      | |               | | sources limited to   |        | |                      |                           |
+|      | |               | | 10%;                 |        | |                      |                           |
+|      | |               | | Te = Ti @ t=0 (no    |        | |                      |                           |
+|      | |               | | plasma collision     |        | |                      |                           |
+|      | |               | | source)              |        | |                      |                           |
+|      | |               +------------------------+--------+------------------------+---------------------------+
+|      | |               | | I.1.2.b              |   4    | | Pressure evolves to  |      I.1.2.b_101pts_1e-2s |
+|      | |               | | No external sources; |        | | constant values with |                           |
+|      | |               | | no internal sources; |        | | time, due to e-i     |                           |
+|      | |               | | Te != Ti @ t=0       |        | | energy exchange      |                           |
+|      | |               | | plasma collision     |        | |                      |                           |
+|      | |               | | source)              |        | |                      |                           |
++------+-----------------+------------------------+--------+------------------------+---------------------------+
+| I.1.3| | Conservation  | N/A                    |  N/A   | | This case was        |      N/A                  |
+|      | | laws(particle |                        |        | | treated under        |                           |
+|      | | and energy)   |                        |        | | I.1.5                |                           |
+|      | | with diffusion|                        |        | |                      |                           |
++------+-----------------+------------------------+--------+------------------------+---------------------------+
+| I.1.4| | Conservation  | N/A                    |   3    | | Convergence obtained;|      I.1.4_101pts_1e-2s   |
+|      | | laws(particle |                        |        | | asymptotic solution  |                           |
+|      | | and energy)   |                        |        | | (for density)        |                           |
+|      | | with          |                        |        | | reached.             |                           |
+|      | | discontinuous |                        +--------+------------------------+                           |
+|      | | diffusion     |                        |   4    | | Convergence obtained;|                           |
+|      | | coefficient   |                        |        | | asymptotic solution  |                           |
+|      | |               |                        |        | | (for density)        |                           |
+|      | |               |                        |        | | reached.             |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   7    | | Convergence obtained,|                           |
+|      | |               |                        |        | | with a problem on the|                           |
+|      | |               |                        |        | | axis.                |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   10   | | Convergence obtained,|                           |
+|      | |               |                        |        | | but for a very       |                           |
+|      | |               |                        |        | | different asymptotic |                           |
+|      | |               |                        |        | | solution (for        |                           |
+|      | |               |                        |        | | density).            |                           |
++------+-----------------+------------------------+--------+------------------------+---------------------------+
+| I.1.5| | Conservation  | D=0.1 and v=0          |   3    | | Convergence obtained;| | I.1.5_101pts_1e-3s      |
+|      | | laws(particle |                        |        | | asymptotic solution  | | I.1.5_51pts_1e-3s       |
+|      | | and energy)   |                        |        | | (for density)        | | I.1.5_101pts_1e-2s      |
+|      | | with          |                        |        | | reached; conservation|                           |
+|      | | diffusion     |                        |        | | laws poorly          |                           |
+|      | | and           |                        |        | | satisfied.           |                           |
+|      | | convection    |                        +--------+------------------------+                           |
+|      | | (D in m2/s;   |                        |   4    | | Convergence obtained;|                           |
+|      | | v in m/2)     |                        |        | | asymptotic solution  |                           |
+|      | |               |                        |        | | (for density)        |                           |
+|      | |               |                        |        | | reached.             |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   7    | | Convergence obtained,|                           |
+|      | |               |                        |        | | with a poor          |                           |
+|      | |               |                        |        | | prediction of the    |                           |
+|      | |               |                        |        | | asymptotic (density) |                           |
+|      | |               |                        |        | | solution and with a  |                           |
+|      | |               |                        |        | | problem on the axis. |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   10   | | Failed to converge   |                           |
+|      | |               |                        |        | | (the number of       |                           |
+|      | |               |                        |        | | iterations exceeds   |                           |
+|      | |               |                        |        | | the max value of     |                           |
+|      | |               |                        |        | | 1000).               |                           |
+|      | |               +------------------------+--------+------------------------+---------------------------+
+|      | |               | I.1.5.a                |   3    | | Convergence obtained;| | I.1.5.a_101pts_1e-3s    |
+|      | |               | D=0.1 and v=0.1        |        | | asymptotic solution  | | I.1.5.a_51pts_1e-3s     |
+|      | |               |                        |        | | (for density)        | | I.1.5.a_101pts_1e-2s    |
+|      | |               |                        |        | | reached; conservation|                           |
+|      | |               |                        |        | | laws poorly          |                           |
+|      | |               |                        |        | | satisfied.           |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   4    | | Convergence obtained;|                           |
+|      | |               |                        |        | | asymptotic solution  |                           |
+|      | |               |                        |        | | (for density)        |                           |
+|      | |               |                        |        | | reached.             |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   7    | | Convergence obtained |                           |
+|      | |               |                        |        | | for 101 points only, |                           |
+|      | |               |                        |        | | with a poor          |                           |
+|      | |               |                        |        | | prediction of the    |                           |
+|      | |               |                        |        | | asymptotic (density) |                           |
+|      | |               |                        |        | | solution and with a  |                           |
+|      | |               |                        |        | | problem on the axis; |                           |
+|      | |               |                        |        | | conservation laws    |                           |
+|      | |               |                        |        | | poorly satisfied.    |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   10   | | Convergence obtained,|                           | 
+|      | |               |                        |        | | but for a very       |                           | 
+|      | |               |                        |        | | different asymptotic |                           |
+|      | |               |                        |        | | solution (for        |                           |
+|      | |               |                        |        | | density);            |                           |
+|      | |               |                        |        | | conservation laws not|                           |
+|      | |               |                        |        | | satisfied.           |                           |
+|      | |               +------------------------+--------+------------------------+---------------------------+
+|      | |               | I.1.5.b                |   3    | | Convergence obtained;| | I.1.5.b_s3_101pts_1e-3s |
+|      | |               | D=0.1 and v=0.3        |        | | asymptotic solution  | | I.1.5.b_s3_51pts_1e-3s  |
+|      | |               |                        |        | | (for density)        | | I.1.5.b_s3_101pts_1e-2s |
+|      | |               |                        |        | | reached; conservation|                           |
+|      | |               |                        |        | | laws poorly          |                           |
+|      | |               |                        |        | | satisfied.           |                           |
+|      | |               |                        +--------+------------------------+                           | 
+|      | |               |                        |   4    | | Convergence obtained;|                           | 
+|      | |               |                        |        | | asymptotic solution  |                           |
+|      | |               |                        |        | | (for density)        |                           |
+|      | |               |                        |        | | reached.             |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   7    | | Convergence obtained |                           |
+|      | |               |                        |        | | for 1e-2s points     |                           |
+|      | |               |                        |        | | only, with a poor    |                           |
+|      | |               |                        |        | | prediction of the    |                           |
+|      | |               |                        |        | | asymptotic (density) |                           |
+|      | |               |                        |        | | solution and with a  |                           |
+|      | |               |                        |        | | problem on the axis; |                           |
+|      | |               |                        |        | | conservation laws    |                           |
+|      | |               |                        |        | | poorly satisfied.    |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   10   | | Convergence obtained,|                           |
+|      | |               |                        |        | | but for a very       |                           |
+|      | |               |                        |        | | different asymptotic |                           |
+|      | |               |                        |        | | solution (for        |                           |
+|      | |               |                        |        | | density);            |                           |
+|      | |               |                        |        | | conservation laws not|                           |
+|      | |               |                        |        | | satisfied.           |                           |
+|      | |               +------------------------+--------+------------------------+---------------------------+
+|      | |               | I.1.5.c                |   3    | | Failed to converge   | | I.1.5.c_101pts_1e-3s    |
+|      | |               | D=0.1 and v=1.0        |        | | (the number of       | | I.1.5.c_51pts_1e-3s     |
+|      | |               |                        |        | | iterations exceeds   | | I.1.5.c_101pts_1e-2s    |
+|      | |               |                        |        | | the max value of     |                           |
+|      | |               |                        |        | | 1000).               |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   4    | | Failed to converge   |                           |
+|      | |               |                        |        | | (the number of       |                           |
+|      | |               |                        |        | | iterations exceeds   |                           |
+|      | |               |                        |        | | the max value of     |                           |
+|      | |               |                        |        | | satisfied.           |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   7    | | Failed to converge   |                           |
+|      | |               |                        |        | | (the number of       |                           |
+|      | |               |                        |        | | iterations exceeds   |                           |
+|      | |               |                        |        | | the max value of     |                           |
+|      | |               |                        |        | | satisfied.           |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   10   | | Failed to converge   |                           |
+|      | |               |                        |        | | (the number of       |                           |
+|      | |               |                        |        | | iterations exceeds   |                           |
+|      | |               |                        |        | | the max value of     |                           |
+|      | |               |                        |        | | satisfied.           |                           |
+|      | |               +------------------------+--------+------------------------+---------------------------+
+|      | |               | I.1.5.h                |   3    | | Convergence obtained;| | I.1.5.h_101pts_1e-3s    |
+|      | |               | D=0.1 and v=-0.1       |        | | asymptotic solution  | | I.1.5.h_51pts_1e-3s     |
+|      | |               |                        |        | | (for density)        | | I.1.5.h_101pts_1e-2s    |
+|      | |               |                        |        | | reached.             |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   4    | | Convergence obtained;|                           |
+|      | |               |                        |        | | asymptotic solution  |                           |
+|      | |               |                        |        | | (for density)        |                           |
+|      | |               |                        |        | | reached.             |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   7    | | Convergence obtained,|                           |
+|      | |               |                        |        | | with a poor          |                           |
+|      | |               |                        |        | | prediction of the    |                           |
+|      | |               |                        |        | | asymptotic (density) |                           |
+|      | |               |                        |        | | solution and with a  |                           |
+|      | |               |                        |        | | problem on the axis; |                           |
+|      | |               |                        |        | | conservation laws    |                           |
+|      | |               |                        |        | | poorly satisfied.    |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   10   | | Convergence obtained,|                           |
+|      | |               |                        |        | | but for a very       |                           |
+|      | |               |                        |        | | different asymptotic |                           |
+|      | |               |                        |        | | solution (for        |                           |
+|      | |               |                        |        | | density);            |                           |
+|      | |               |                        |        | | conservation laws not|                           |
+|      | |               |                        |        | | satisfied.           |                           |
+|      | |               +------------------------+--------+------------------------+---------------------------+
+|      | |               | I.1.5.i                |   3    | | Convergence obtained;| | I.1.5.i_101pts_1e-3s    |
+|      | |               | D=0.1 and v=-0.3       |        | | asymptotic solution  | | I.1.5.i_51pts_1e-3s     |
+|      | |               |                        |        | | (for density)        | | I.1.5.i_101pts_1e-2s    |
+|      | |               |                        |        | | reached.             |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   4    | | Convergence obtained;|                           |
+|      | |               |                        |        | | asymptotic solution  |                           |
+|      | |               |                        |        | | (for density)        |                           |
+|      | |               |                        |        | | reached.             |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   7    | | Convergence obtained |                           |
+|      | |               |                        |        | | for 1e-2s only,      |                           |
+|      | |               |                        |        | | with a poor          |                           |
+|      | |               |                        |        | | prediction of the    |                           |
+|      | |               |                        |        | | asymptotic (density) |                           |
+|      | |               |                        |        | | solution and with a  |                           |
+|      | |               |                        |        | | problem on the axis; |                           |
+|      | |               |                        |        | | conservation laws    |                           |
+|      | |               |                        |        | | poorly satisfied.    |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   10   | | Convergence obtained |                           |
+|      | |               |                        |        | | for 1e-3s only, but  |                           |
+|      | |               |                        |        | | for a very different |                           |
+|      | |               |                        |        | | asymptotic solution  |                           |
+|      | |               |                        |        | | (for density);       |                           |
+|      | |               |                        |        | | conservation laws    |                           |
+|      | |               |                        |        | | not satisfied.       |                           |
+|      | |               +------------------------+--------+------------------------+---------------------------+
+|      | |               | I.1.5.j                |   3    | | Failed to converge   | | I.1.5.j_101pts_1e-3s    |
+|      | |               | D=0.1 and v=-1.0       |        | | (the number of       | | I.1.5.j_51pts_1e-3s     |
+|      | |               |                        |        | | iterations exceeds   | | I.1.5.j_101pts_1e-2s    |
+|      | |               |                        |        | | the max value of     |                           |
+|      | |               |                        |        | | 1000).               |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   4    | | Failed to converge   |                           |
+|      | |               |                        |        | | (the number of       |                           |
+|      | |               |                        |        | | iterations exceeds   |                           |
+|      | |               |                        |        | | the max value of     |                           |
+|      | |               |                        |        | | satisfied.           |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   7    | | Failed to converge   |                           |
+|      | |               |                        |        | | (the number of       |                           |
+|      | |               |                        |        | | iterations exceeds   |                           |
+|      | |               |                        |        | | the max value of     |                           |
+|      | |               |                        |        | | satisfied.           |                           |
+|      | |               |                        +--------+------------------------+                           |
+|      | |               |                        |   10   | | Failed to converge   |                           |
+|      | |               |                        |        | | (the number of       |                           |
+|      | |               |                        |        | | iterations exceeds   |                           |
+|      | |               |                        |        | | the max value of     |                           |
+|      | |               |                        |        | | satisfied.           |                           |
++------+-----------------+------------------------+--------+------------------------+---------------------------+
 
 *****************************
 Other ETS related information
@@ -239,7 +608,8 @@ is executed.
 
 Press the play button on the workflow.
 
-.. Picture
+.. figure:: images/ets_1.png
+   :align: center
 
 **The workflow shall run!** If it
 does not, please use the `contact <mailto:denis.kalupin@euro-fusion.org?subject=ETS%20in%20KEPLER>`__ from above.
@@ -276,82 +646,44 @@ ways tio execute it:
 ETS revisions
 -------------
 
-+-----------------+-----------------+-----------+---------------------+---------------------+
-| *Revision Name:*| *UAL version:*  | *KEPLER:* | *Short Sumary:*     | *Comments:*         |
-+=================+=================+===========+=====================+=====================+
-|   4.10b0.1      | 4.10b8_R2.1.0.5 | any,      | Contains:Fixed      | Test 4.10b release, |
-|                 |                 | up to     | boundary            | restricted module   |
-|                 |                 | 4.10b3.5  | equlibrium; Simple  | choice, restricted  |
-|                 |                 |           | transport models;   | physics             |
-|                 |                 |           | full HCD package;   | capabilities, work  |
-|                 |                 |           | Impurity; Pellets;  | around of coredelta |
-|                 |                 |           | Sawtooth            |                     |
-+-----------------+-----------------+-----------+---------------------+---------------------+
-| 4.10b8.1        | 4.10b8_R2.1.0   | central   | Contains:Fixed      | Test 4.10b release, |
-|                 |                 | instal    | boundary            | restricted module   |
-|                 |                 | lation    | equlibrium; Simple  | choice, restricted  |
-|                 |                 | 4.10b3    | transport models;   | physics             |
-|                 |                 | central   | full HCD package;   | capabilities, work  |
-|                 |                 | is prefer | Impurity; Pellets;  | around of           |
-|                 |                 | red;local | Sawtooth; Scenario  | coredelta, produces |
-|                 |                 | instal    |                     | scenario output on  |
-|                 |                 | lation    |                     | request             |
-|                 |                 | 4.10b3.6  |                     |                     | 
-|                 |                 | or above  |                     |                     |
-+-----------------+-----------------+-----------+---------------------+---------------------+
-| 4.10b10.1       | 4.10b10         | central   | MODIFICATIONS       | UNDER CONSTRUCTION: |
-|                 |                 |           | COMPATIBLE WITH     | release at the Code |
-|                 |                 | instal    | 4.10b10 DATA        | Camp in Prague      |
-|                 |                 | lation    | STRUCTURE           |                     |
-|                 |                 | 4.10b     |                     |                     |
-|                 |                 | 3_cent    |                     |                     |
-|                 |                 | ral       |                     |                     |
-|                 |                 | is        |                     |                     |
-|                 |                 | prefer    |                     |                     |
-|                 |                 | red;      |                     |                     |
-|                 |                 | local     |                     |                     |
-|                 |                 | instal    |                     |                     |
-|                 |                 | lation    |                     |                     |
-|                 |                 | 4.10b     |                     |                     |
-|                 |                 | 3.6       |                     |                     |
-|                 |                 | or        |                     |                     |
-|                 |                 | above     |                     |                     |
-+-----------------+-----------------+-----------+---------------------+---------------------+
-| 4.10b10.2       | 4.10b10_bran    | centra    | Added synchrotron   | UNDER CONSTRUCTION: |
-|                 | ches.R2.1.r1380 | l         | radiation, some of  | release at the Code |
-|                 |                 | instal    | neoclassical        | Camp in Prague      |
-|                 |                 | lation    | actors,reworked     |                     |
-|                 |                 | 4.10b     | combiners           |                     |
-|                 |                 | 3_cent    |                     |                     |
-|                 |                 | ral       |                     |                     |
-|                 |                 | is        |                     |                     |
-|                 |                 | prefer    |                     |                     |
-|                 |                 | red;      |                     |                     |
-|                 |                 | local     |                     |                     |
-|                 |                 | instal    |                     |                     |
-|                 |                 | lation    |                     |                     |
-|                 |                 | 4.10b     |                     |                     |
-|                 |                 | 3.6       |                     |                     | 
-|                 |                 | or        |                     |                     |
-|                 |                 | above     |                     |                     |
-+-----------------+-----------------+-----------+---------------------+---------------------+
-| 4.10b10.3       | 4.10b1          | centra    | Added synchrotron   | compared to         |
-|                 | 0_bran          | l         | radiation, some of  | previous shall      |
-|                 | ches.           | instal    | neoclassical        | contain compeeted   |
-|                 | R2.1.r          | lation    | actors,reworked     | transport, new      |
-|                 | 1380            | keple     | combiners           | controller for      |
-|                 |                 | r_rc      |                     | pellet and sawteeth |
-|                 |                 | (2.4/R    |                     | module              |
-|                 |                 | 3.8/ke    |                     |                     |
-|                 |                 | pler      |                     |                     |
-|                 |                 | or        |                     |                     |
-|                 |                 | more      |                     |                     |
-|                 |                 | recent    |                     |                     |
-|                 |                 | )         |                     |                     |
-|                 |                 | is        |                     |                     |
-|                 |                 | prefer    |                     |                     |
-|                 |                 | red       |                     |                     |
-+-----------------+-----------------+-----------+---------------------+---------------------+
++-----------------+-------------------+-----------------------+-----------------------+------------------------+
+| *Revision Name:*| *UAL version:*    | *KEPLER:*             | *Short Sumary:*       | *Comments:*            |
++=================+===================+=======================+=======================+========================+
+| 4.10b0.1        | 4.10b8_R2.1.0     | | any, up to          | | Contains:Fixed      | | Test 4.10b release,  |
+|                 |                   | | 4.10b3.5            | | boundary equlibrium;| | restricted module    |
+|                 |                   | |                     | | Simple transport    | | choice, restricted   |
+|                 |                   | |                     | | models; full HCD    | | physics capabilities,|
+|                 |                   | |                     | | package; Impurity;  | | work around of       |
+|                 |                   | |                     | | Pellets; Sawtooth   | | coredelta            |
++-----------------+-------------------+-----------------------+-----------------------+------------------------+
+| 4.10b8.1        | 4.10b8_R2.1.0     | | central installation| | Contains:Fixed      | | Test 4.10b release,  |
+|                 |                   | | 4.10b3_central is   | | boundary equlibrium;| | restricted module    |
+|                 |                   | | preferred; local    | | Simple transport    | | choice, restricted   |
+|                 |                   | | installation        | | models; full HCD    | | physics capabilities,|
+|                 |                   | | 4.10b3.6 or above   | | package; Impurity;  | | work around of       |
+|                 |                   | |                     | | Pellets; Sawtooth   | | coredelta,  produces |
+|                 |                   | |                     | |                     | | scenario output on   |
+|                 |                   | |                     | |                     | | request              |
++-----------------+-------------------+-----------------------+-----------------------+------------------------+
+| 4.10b10.1       | 4.10b10           | | central installation| | MODIFICATIONS       | | UNDER CONSTRUCTION:  |
+|                 |                   | | 4.10b3_central is   | | COMPATIBLE WITH     | | release at the       |
+|                 |                   | | preferred; local    | | 4.10b10             | | Code Camp in Prague  |
+|                 |                   | | installation        | | DATA STRUCTURE      | |                      |
+|                 |                   | | 4.10b3.6 or above   | |                     | |                      |
++-----------------+-------------------+-----------------------+-----------------------+------------------------+
+| 4.10b10.2       | | 4.10b10_branches| | central installation| | Added synchrotron   | | UNDER CONSTRUCTION:  |
+|                 | | R2.1.r1380      | | 4.10b3_central is   | | radiation, some of  | | release at the       |
+|                 |                   | | preferred; local    | | neoclassical actors,| | Code Camp in Prague  |
+|                 |                   | | installation        | | reworked combiners  | |                      |
+|                 |                   | | 4.10b3.6 or above   | |                     | |                      |
++-----------------+-------------------+-----------------------+-----------------------+------------------------+
+| 4.10b10.3       | | 4.10b10_branches| | central installation| | Added synchrotron   | | compared to previous |
+|                 | | R2.1.r1380      | | kepler_rc           | | radiation, some of  | | shall contain        |
+|                 |                   | | (2.4/R3.8/kepler    | | neoclassical actors,| | compeeted transport, |
+|                 |                   | | or more recent)     | | reworked combiners  | | new controller for   |
+|                 |                   | | is preferred        | |                     | | pellet and sawteeth  |
+|                 |                   | |                     | |                     | | module               |
++-----------------+-------------------+-----------------------+-----------------------+------------------------+
 
 .. _ETS_A_4.10b_run_config:
 
@@ -406,7 +738,8 @@ Time resolution
 -  TEND
    - Computattions end time
 
-.. Picture
+.. figure:: images/ets_config1.png
+   :align: center
 
    
 **Time step:**
@@ -421,7 +754,8 @@ Time resolution
    : specify value of the output time interval in [s]
 -  Commit
 
-.. Picture
+.. figure:: images/ets_settings1.png
+   :align: center
 
 .. _ETS_A_4.10b_composition:
 
@@ -455,8 +789,9 @@ To define plasma composition:
    shall be followed by neutral solver
 -  press **Commit**
 
-.. Picture
-
+.. figure:: images/ets_plasma_composition.png
+   :align: center
+           
 .. _ETS_A_4.10b_equations:
 
 Equations to be solved and boundary conditions
@@ -492,7 +827,9 @@ boundary conditions:
 The particular equation will be activated if the boundary condition type
 for it is other than *OFF*
 
-.. Picture
+.. figure:: images/ets_run_settings3.png
+   :align: center
+           
 
 To set up boundary conditions:
 
@@ -531,7 +868,8 @@ To set up boundary conditions:
    [1:MAX_Z_IMP], separated by commas
 -  **Commit**
 
-.. Picture
+.. figure:: images/ets_run_settings4.png
+   :align: center
 
 Interface for impurity boundary condition has additional option,
 *coronal_distribution*, that allow to preset the edge values or entire
@@ -566,7 +904,8 @@ To set up boundary conditions:
    [1, 2, 3 ...NION, 1, 2, 3, ...NIMP], separated by commas
 - **Commit**
 
-.. Picture
+.. figure:: images/ets_run_settings5.png
+   :align: center
 
 Input profiles interpolation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -585,8 +924,9 @@ To define the interpolation grid select:
 -  on_RHO_TOR_NORM_grid
    - interpolate input profiles based on normalised rho grid [0:1]
 
-.. Picture
-   
+.. figure:: images/ets_run_settings6.png
+   :align: center
+           
 .. _ETS_A_4.10b_convergence:
 
 Convergence loop
@@ -606,7 +946,8 @@ used by the iterative scheme. To edit them do:
 -  choose your settings
 -  **Commit**
 
-.. Picture
+.. figure:: images/ets_convergence1.png
+   :align: center
 
 Switches in the field *FREQUENCY OF CALLING THE PHYSICS ACTORS* define
 how many times the the actors of a certain cathegory (equilibrium,
@@ -659,6 +1000,10 @@ select your starting equilibrium please do:
 -  Select your settings or specify values
 -  **Commit**
 
+.. figure:: images/ets_before_time.png
+   :align: center
+
+
 SETTINGS:
 
 -  Equilibrium_configuration
@@ -692,7 +1037,8 @@ SETTINGS:
    if you trust your input data (in this case the check will be
    ignorred).
 
-.. Picture
+.. figure:: images/ets_run_settings7.png
+   :align: center
    
 Please note, that different equilibrium solvers might require slightly
 different input. Thus it is a user responsibility to check that the
@@ -712,7 +1058,8 @@ select the one of them.Therefore please do:
 -  choose your equilibrium solver
 -  **Commit**
 
-.. Picture
+.. figure:: images/ets_convergence_loop_config.png
+   :align: center
 
 *INTERPRETATIVE* means that the ETS will not update the equilibrium,
 instead it will be using the initial equilibrium.
@@ -723,7 +1070,8 @@ necessary done with the same resolution. Therefore the routine saving
 the information to the data base might brake due to uncompatible sizes
 of some signals.
 
-.. Picture
+.. figure:: images/ets_equilibrium1.png
+   :align: center
 
 .. _ETS_A_4.10b_transport:
 
@@ -740,6 +1088,9 @@ composite actor. Therefore please do:
 -  choose your settings
 -  press **Commit**
 
+.. figure:: images/ets_transport1.png
+   :align: center
+   
 Transport models
 ~~~~~~~~~~~~~~~~
 
@@ -760,8 +1111,9 @@ level through the code parameters of Transport Combiner
 The list of available transport models can be found
 `here <https://www.eufus.eu/documentation/EU-IM/html/ets_status.html>`__.
 
-.. Picture
-
+.. figure:: images/ets_transport2.png
+   :align: center
+           
 Background transport
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -769,7 +1121,9 @@ You can add the constant background level for each coefficient (ion and
 impurity coefficients are expected to be the strings of [1:NION] and
 [1:NIMP] elements respectively, separated by commas)
 
-.. Picture
+.. figure:: images/ets_transport3.png
+   :align: center
+
 
 Edge transport barrier
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -780,7 +1134,8 @@ transport channels (ne, ni, nz, Te, Ti,...) will be reduced to constant
 values specified below (ion and impurity coefficients are expected to be
 the strings [1:NION] and [1:NIMP] respectively)
 
-.. Picture
+.. figure:: images/ets_transport4.png
+   :align: center
 
 Total transport coefficients
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -811,7 +1166,9 @@ the XML code parameters of the **transport combiner** actor:
 -  **Save and exit**
 -  **Commit**
 
-.. Picture
+.. figure:: images/ets_transport_combiner.png
+   :align: center
+   
 .. _ETS_A_4.10b_mhd:
 
 MHD
@@ -827,7 +1184,8 @@ LOOP composite actor. Therefore please do:
 -  choose your settings
 -  **Commit**
 
-.. Picture   
+.. figure:: images/ets_mhd.png
+   :align: center
 
 At the moment ETS allows only for NTM to be activated. The sawtooth
 module is expected to be deployed before EU-IM Code Camp in Slovenia.
@@ -845,8 +1203,9 @@ User can ajust the following NTM settings:
 -  NTM_phase
 -  NTM_frequency
 
-.. Picture
-
+.. figure:: images/ets_mhd2.png
+   :align: center
+           
 .. _ETS_A_4.10b_sources:
 
 Sources and impurity
@@ -861,6 +1220,9 @@ LOOP composite actor. Therefore please do:
 -  select **Configure actor** to edit settings
 -  choose your settings
 -  **Commit**
+
+.. figure:: images/ets_source1.png
+   :align: center
 
 Analytical & Impurity sources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -880,7 +1242,8 @@ selecting **ON / OFF** in front of corresponding source:
 -  Switch_IMPURITY – **ON** - Impurity density and radiative sources will be computed;
    **OFF** -ignored; **INTERPRETATIVE** – profiles of impurity density will be read from input shot/run
 
-.. Picture
+.. figure:: images/ets_sources2.png
+   :align: center
 
 HCD sources
 ~~~~~~~~~~~
@@ -891,7 +1254,9 @@ incorporated by the ETS workflow.
 For the HCD sources please activate the type of heating source, by
 ticking the box in front of it, and select the code to simulate it.
 
-.. Picture
+.. figure:: images/ets_sources3.png
+   :align: center
+
 
 You also need to configure initial IMP5HCD settings. Therefore please:
 
@@ -902,7 +1267,8 @@ You also need to configure initial IMP5HCD settings. Therefore please:
 -  edit the stettings
 -  **Commit**
 
-.. Picture   
+.. figure:: images/ets_sources4.png
+   :align: center
 
 The detailed information on initial IMP5HCD settings can be found
 `here <https://www.eufus.eu/documentation/EU-IM/html/imp5_imp5hcd.html>`__.
@@ -911,14 +1277,16 @@ Therefore, for NBI settings, please insert the values separated by
 commas. The number of the element in the array corresponds to the number
 of activated PINI. Maximum accepted number of PINIs = 16.
 
-.. Picture
+.. figure:: images/ets_sources5.png
+   :align: center
 
 Power control
 ~~~~~~~~~~~~~
 
 You also can activate the power control for the IMP5HCD sources.
 
-.. Picture
+.. figure:: images/ets_sources6.png
+   :align: center
 
 If the POWER_CONTROL is not **OFF**, there are two modes of
 operation: **specific** and **frequency**
@@ -929,7 +1297,8 @@ corresponds to the first time, second to second and etc.). Linear
 interpolation will be done between the sequence points. For example: if
 you give the power **sequence** = 2e6,4e6,1e6 and **times** = 0.0, 0.7, 1.5 (s) the delivered power would be:
 
-.. Picture
+.. figure:: images/ets_sources7.png
+   :align: center
 
 For **frequency** you should specify the power levels sequence separated
 by commas, start and end time of the power control and the frequency of
@@ -937,7 +1306,8 @@ switching between these levels. For example: if you give the power
 **sequence** = 2e6,4e6,1e6 and **frequency** = 10 (Hz) **tstart** = 0.0 (s)
 **tend** = 1.5 (s) the delivered power would be:
 
-.. Picture
+.. figure:: images/ets_sources8.png
+   :align: center
 
 Total power
 ~~~~~~~~~~~
@@ -962,9 +1332,10 @@ parameters of the source combiner actor:
 -  save and exit
 - **Commit**
 
-.. Picture
+.. figure:: images/ets_sources9.png
+   :align: center
 
-   .. _ETS_A_4.10b_inst_events:
+.. _ETS_A_4.10b_inst_events:
 
 Instantaneous events & Actuators
 --------------------------------
@@ -990,13 +1361,15 @@ injection
 
 -  **Commit**
 
-.. Picture
+.. figure:: images/ets_instantaneous_events1.png
+   :align: center
 
 Parameters of individual pellet need to be configured through the
 code_parameters of the PELLET actor. To access it go to **Outline** on the
 right upper corner and open the following:
 
-.. Picture
+.. figure:: images/ets_instantaneous_events2.png
+   :align: center
 
 -  right click on the actor PELLET
 -  select **Configure actor**
@@ -1004,7 +1377,8 @@ right upper corner and open the following:
 -  edit parameters and click **save and exit**
 -  **Commit**
 
-.. Picture
+.. figure:: images/ets_instantaneous_events3.png
+   :align: center
    
 amn – atomic mass number: array of elements separated by space
 (1:nelements) [-]
@@ -1081,8 +1455,10 @@ To activate the SCENARIO output:
 -  select **Configure actor**
 -  select Generate_SCENARIO_output_from_ETS_run equal **YES**
 -  **Commit**
+   
+.. figure:: images/ets_scenario.png
+   :align: center
 
-.. Picture
    
 .. _ETS_A_4.10b_visualization:
 
@@ -1108,7 +1484,8 @@ displays diagnostic text messages from the workflow on following topics:
 Also the error messages from execution of the workflow will be displayed
 here.
 
-.. Picture
+.. figure:: images/ets_visual1.png
+   :align: center
 
 Python Visualization Display
 ----------------------------
@@ -1127,12 +1504,14 @@ You can activate the graphical visualization of your run evolution:
 -  select visualisation **YES** or **NO**
 -  **Commit**
 
-.. Picture   
+.. figure:: images/ets_visual2.png
+   :align: center
    
 Then evolution of main discharge parameters will be shown in this
 window:
 
-.. Picture
+.. figure:: images/ets_visual3.png
+   :align: center
 
 .. _ETS_A_4.10b_list_actors:
 
@@ -1146,155 +1525,88 @@ UNDER DEVELOPMENT
 Equilibrium actors
 ------------------
 
-+------------+---------------+-----------------+------------------------+
-| Code name  | Code Category | Contact persons | Short description      |
-+============+===============+=================+========================+
-|  chease    | Grad-Shafranov| Olivier Sauter  | Chease is a fixed      |  
-|            |   solver      |                 | boundary Grad-Shafranov| 
-|            |               |                 | solver based on cubic  | 
-|            |               |                 | hermitian finite       | 
-|            |               |                 | elements see           | 
-|            |               |                 | H. Lütjens, A.         | 
-|            |               |                 | Bondeson, O. Sauter,   | 
-|            |               |                 | Computer Physics       | 
-|            |               |                 | Communications 97      | 
-|            |               |                 | (1996) 219-260         | 
-+------------+---------------+-----------------+------------------------+
-| emeq       | -             | -               |                        |
-+------------+---------------+-----------------+------------------------+
-| spider     | -             | -               |                        |
-+------------+---------------+-----------------+------------------------+
++------------+-----------------+-----------------+--------------------------+
+| Code name  | Code Category   | Contact persons | Short description        |
++============+=================+=================+==========================+
+|  chease    | | Grad-Shafranov| Olivier Sauter  | | Chease is a fixed      |  
+|            | | solver        |                 | | boundary Grad-Shafranov| 
+|            |                 |                 | | solver based on cubic  | 
+|            |                 |                 | | hermitian finite       | 
+|            |                 |                 | | elements see           | 
+|            |                 |                 | | H. Lütjens, A.         | 
+|            |                 |                 | | Bondeson, O. Sauter,   | 
+|            |                 |                 | | Computer Physics       | 
+|            |                 |                 | | Communications 97      | 
+|            |                 |                 | | (1996) 219-260         | 
++------------+-----------------+-----------------+--------------------------+
+| emeq       | /               | /               |                          |
++------------+-----------------+-----------------+--------------------------+
+| spider     | /               | /               |                          |
++------------+-----------------+-----------------+--------------------------+
 
 .. _ETS_A_4.10b_list_actors_CoreTransport:
 
 Core transport actors
 ---------------------
 
-+-------+-------+---------+--------------------------------------------+
-| Code  | Code  | Contact | Short description                          |
-| name  | Categ | persons |                                            |
-|       | ory   |         |                                            |
-+=======+=======+=========+============================================+
-| ETS   | Trans | Denis   |                                            |
-|       | port  | Kalupin |                                            |
-|       | solve |         |                                            |
-|       | r     |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| BohmG | Bohm/ | -       |                                            |
-| B     | gyro- |         |                                            |
-|       | Bohm  |         |                                            |
-|       | trans |         |                                            |
-|       | port  |         |                                            |
-|       | coeff |         |                                            |
-|       | icien |         |                                            |
-|       | ts    |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| TCI/W | Trans | Pär     |                                            |
-| eilan | port  | Strand  |                                            |
-| d     | coeff |         |                                            |
-|       | icien |         |                                            |
-|       | t     |         |                                            |
-|       | from  |         |                                            |
-|       | drift |         |                                            |
-|       | wave  |         |                                            |
-|       | turbu |         |                                            |
-|       | lence |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| TCI/G | Trans | -       |                                            |
-| LF23  | port  |         |                                            |
-|       | coeff |         |                                            |
-|       | icien |         |                                            |
-|       | t     |         |                                            |
-|       | from  |         |                                            |
-|       | drift |         |                                            |
-|       | wave  |         |                                            |
-|       | turbu |         |                                            |
-|       | lence |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| TCI/R | Trans | -       |                                            |
-| EU-IM | port  |         |                                            |
-|       | coeff |         |                                            |
-|       | icien |         |                                            |
-|       | t     |         |                                            |
-|       | from  |         |                                            |
-|       | drift |         |                                            |
-|       | wave  |         |                                            |
-|       | turbu |         |                                            |
-|       | lence |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| TCI/M | Trans | -       |                                            |
-| MM    | port  |         |                                            |
-| (not  | coeff |         |                                            |
-| yet   | icien |         |                                            |
-| in    | t     |         |                                            |
-| ETS)  | from  |         |                                            |
-|       | drift |         |                                            |
-|       | wave  |         |                                            |
-|       | turbu |         |                                            |
-|       | lence |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| TCI/E | Trans | -       |                                            |
-| DWM   | port  |         |                                            |
-| (not  | coeff |         |                                            |
-| yet   | icien |         |                                            |
-| in    | t     |         |                                            |
-| ETS)  | from  |         |                                            |
-|       | drift |         |                                            |
-|       | wave  |         |                                            |
-|       | turbu |         |                                            |
-|       | lence |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| nclas | Neocl | Pär     |                                            |
-| s     | assic | Strand  |                                            |
-| (not  | al    |         |                                            |
-| yet   | trans |         |                                            |
-| in    | port  |         |                                            |
-| ETS)  | coeff |         |                                            |
-|       | icien |         |                                            |
-|       | ts    |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| neos  | Neocl | Olivier |                                            |
-| (not  | assic | Sauter  |                                            |
-| yet   | al    |         |                                            |
-| in    | trans |         |                                            |
-| ETS)  | port  |         |                                            |
-|       | coeff |         |                                            |
-|       | icien |         |                                            |
-|       | ts    |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| neowe | Neocl | Bruce   | Neoclassical transport coefficients based  |
-| sz    | assic | Scott   | on the expression in John Wesson's book    |
-|       | al    |         | Tokamaks.                                  |
-|       | trans |         |                                            |
-|       | port  |         |                                            |
-|       | coeff |         |                                            |
-|       | icien |         |                                            |
-|       | ts    |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| neoar | Neocl | Bruce   |                                            |
-| tz    | assic | Scott   |                                            |
-|       | al    |         |                                            |
-|       | trans |         |                                            |
-|       | port  |         |                                            |
-|       | coeff |         |                                            |
-|       | icien |         |                                            |
-|       | ts    |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| spitz |       |         |                                            |
-| er    |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| ETBtr |       |         |                                            |
-| anspo |       |         |                                            |
-| rt    |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| coron |       |         |                                            |
-| al    |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| synch |       |         |                                            |
-| rotro |       |         |                                            |
-| nsour |       |         |                                            |
-| ces   |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
++--------------------+-------------------+-----------------+--------------------------+
+| Code name          | Code Category     | Contact persons | Short description        |
++====================+===================+=================+==========================+
+| ETS                | Transport solver  | Denis Kalupin   |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| BohmGB             | | Bohm/gyro-Bohm  | /               |                          |
+|                    | | transport       |                 |                          |
+|                    | | coefficients    |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| TCI/Weiland        | | Transport       | Pär Strand      |                          |
+|                    | | coefficient from|                 |                          |
+|                    | | coefficients    |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| TCI/GLF23          | | Transport       | /               |                          |
+|                    | | coefficient from|                 |                          |
+|                    | | drift wave      |                 |                          |
+|                    | | turbulence      |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| TCI/RITM           | | Transport       | /               |                          |
+|                    | | coefficient from|                 |                          |
+|                    | | drift wave      |                 |                          |
+|                    | | turbulence      |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| | TCI/MMM          | | Transport       | /               |                          |
+| | (not yet         | | coefficient from|                 |                          |
+| | in ETS)          | | drift wave      |                 |                          |
+|                    | | turbulence      |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| | TCI/EDWM         | | Transport       | /               |                          |
+| | (not yet         | | coefficient from|                 |                          |
+| | in ETS)          | | drift wave      |                 |                          |
+|                    | | turbulence      |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| | nclass           | | Neoclassical    | Pär Strand      |                          |
+| | (not yet         | | transport       |                 |                          |
+| | in ETS)          | | coefficients    |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| | neos             | | Neoclassical    | Olivier Sauter  |                          |
+| | (not yet         | | transport       |                 |                          |
+| | in ETS)          | | coefficients    |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| neowesz            | | Neoclassical    | Bruce Scott     | | Neoclassical transport |
+|                    | | transport       |                 | | coefficients based on  |
+|                    | | coefficients    |                 | | the expression in John |
+|                    |                   |                 | | Wesson's book Tokamaks.|
++--------------------+-------------------+-----------------+--------------------------+
+| neoartz            | | Neoclassical    | Bruce Scott     |                          |
+|                    | | transport       |                 |                          |
+|                    | | coefficients    |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| spitzer            |                   |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| ETBtransport       |                   |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| coronal            |                   |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
+| synchrotronsources |                   |                 |                          |
++--------------------+-------------------+-----------------+--------------------------+
 
 .. _ETS_A_4.10b_list_actors_Edge:
 
@@ -1308,124 +1620,105 @@ Heating and current drive actors
 
 .. Table
 
-+-------+-------+---------+--------------------------------------------+
-| Code  | Code  | Contact | Short description                          |
-| name  | Categ | persons |                                            |
-|       | ory   |         |                                            |
-+=======+=======+=========+============================================+
-|  gray | EC/wa | Lorenzo | GRAY is a quasi-optical ray-tracing code   |
-|       | ves   | Figini  | for electron cyclotron heating & current   |
-|       |       |         | drive calculations in tokamaks.            |
-|       |       |         | Code-parameter documentation can be found  |
-|       |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| travis| EC/wa | Nikolai | Travis is a ray-tracing code for electron  |
-|       | ves   | Marushc | cyclotron heating & current drive          |
-|       |       | henko   | calculations in tokamaks.                  |
-|       |       | and     |                                            |
-|       |       | Lorenzo |                                            |
-|       |       | Figini  |                                            |
-|       |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-|  Torr | EC/wa | Egbert  | Torray-FOM is a ray-tracing code for       |
-| ay-FO | ves   | Westerh | electron cyclotron heating & current drive |
-| M     |       | of      | calculations in tokamaks.                  |
-+-------+-------+---------+--------------------------------------------+
-| bbnbi | NBI/s | Otto    | Calculate the deposition rates of neutrals |
-|       | ource | Asunta  | beam particles, i.e. the input source for  |
-|       |       |         | Fokker-Planck solvers (not the heating and |
-|       |       |         | current drive). Note that the number of    |
-|       |       |         | markers generated by BBNBI is described by |
-|       |       |         | the kepler variable number_nbi_markers_in. |
-|       |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-|  nemo | NBI/s | Mireill | Calculate the deposition rates of neutrals |
-|       | ource | e       | beam particles, i.e. the input source for  |
-|       |       | Schneid | Fokker-Planck solvers (not the heating and |
-|       |       | er      | current drive). Code-parameter             |
-|       |       |         | documentation can be found                 |
-|       |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-|  nucl | nucle | Thomas  | Simple code for nuclear sources from       |
-| earsi | ar/so | Johnson | thermal/thermal reactions. Code-parameter  |
-| m     | urce  |         | documentation can be found                 |
-+-------+-------+---------+--------------------------------------------+
-|  nbis | NBI,  | Thomas  | Simple Fokker-Planck code calculating the  |
-| im    | alpha | Johnson | collisional ion and electron heating from  |
-|       | s     |         | a particle source, either NBI or nuclear.  |
-|       | /     |         | Code-parameter documentation can be found  |
-+-------+-------+---------+--------------------------------------------+
-| risk  | NBI   | Mireill | Bounce averaged steady-state Fokker-Planck |
-|       | Fokke | e       | solver calculating the collisional ion and |
-|       |r-Pla  | Schneid | electron heating from a particle source    |
-|       | nck   | er      | and the NBI current drive. Code-parameter  |
-|       |       |         | documentation can be found                 |
-|       |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| spot  | NBI,  | Mireill | Monte Carlo solver for the Fokker-Planck   |
-|       | alpha | e       | equation. Traces guiding centre orbits in  |
-|       | s     | Schneid | a steady state magnetic equilibrium under  |
-|       | and   | er      | the influence of Coloumb collisions and    |
-|       | ICRF  |         | interactions with ICRF waves (through the  |
-|       | Fokke |         | RFOF library). The code can also be used   |
-|       | r-Pla |         | for NBI and alpha particle modelling as it |
-|       | nck   |         | can handle source terms from the           |
-|       |       |         | distsource CPO.                            |
-+-------+-------+---------+--------------------------------------------+
-|  asco | NBI,  | Otto    | Monte Carlo Fokker-Planck solver           |
-| t4ser | alpha | Asunta/ | calculating the collisional ion and        |
-| ial   | s,    | Seppo   | electron heating from a particle source    |
-|       | ICRF  | Sipila  | and the NBI current drive.                 |
-|       | /     |         |                                            |
-|       | Fokke |         |                                            |
-|       | r-Pla |         |                                            |
-|       | nck   |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-|  asco | NBI,  | Otto    | Monte Carlo Fokker-Planck solver           |
-| t4par | alpha | Asunta/ | calculating the collisional ion and        |
-| allel | s,    | Seppo   | electron heating from a particle source    |
-|       | ICRF  | Sipila  | and the NBI current drive.                 |
-|       | /     |         |                                            |
-|       |Fokke  |         |                                            |
-|       | r-Pla |         |                                            |
-|       | nck   |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| Lion  | IC /  | Olivier | Global ICRF wave solver. Code-parameter    |
-|       | waves | Sauter  | documentation can be found                 |
-|       |       | and     |                                            |
-|       |       | Laurent |                                            |
-|       |       | Villard |                                            |
-+-------+-------+---------+--------------------------------------------+
-| Cyran | IC /  | Ernesto | Global ICRF wave solver. Code-parameter    |
-| o     | waves | Lerche  | documentation can be found                 |
-|       |       | and     |                                            |
-|       |       | Dirk    |                                            |
-|       |       | Van     |                                            |
-|       |       | Eester  |                                            |
-+-------+-------+---------+--------------------------------------------+
-| Eve   | IC /  | Remi    | Global ICRF wave solver                    |
-| (not  | waves | Dumont  |                                            |
-| yet   |       |         |                                            |
-| in    |       |         |                                            |
-| ETS)  |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| StixR | IC /  | Dirk    | 1d Fokker-Planck solver for ICRF heating.  |
-| eDist | waves | Van     |                                            |
-|       |       | Eester  |                                            |
-|       |       | and     |                                            |
-|       |       | Ernesto |                                            |
-|       |       | Lerche  |                                            |
-+-------+-------+---------+--------------------------------------------+
-| ICdep | IC /  | Thomas  | Generates Waves-cpo with an IC wave field  |
-|       | waves | Johnson | with Gaussian deposition profiles          |
-|       |       |         | described by a combination of antenna-cpo  |
-|       |       |         | input and through code parameters input.   |
-|       |       |         | Code-parameter documentation can be found  |
-+-------+-------+---------+--------------------------------------------+
-| ICco  | IC /  | Thomas  | Simple model for the coupling waves from   |
-| up    | coupl | Johnson | ion cyclotron antennas to the plasma.      |
-|       | ing   |         | Code-parameter documentation can be found  |
-+-------+-------+---------+--------------------------------------------+
++---------------+-----------------+-----------------+----------------------------------------------+
+| Code name     | Code Category   | Contact persons | Short description                            |
++===============+=================+=================+==============================================+
+|  gray         | EC/waves        | Lorenzo Figini  | | GRAY is a quasi-optical ray-tracing code   |
+|               |                 |                 | | for electron cyclotron heating & current   |
+|               |                 |                 | | drive calculations in tokamaks.            |
+|               |                 |                 | | Code-parameter documentation can be found  |
+|               |                 |                 |                                              |
++---------------+-----------------+-----------------+----------------------------------------------+
+| travis        | EC/waves        | | Nikolai       | | Travis is a ray-tracing code for electron  |
+|               |                 | | Marushchenko  | | cyclotron heating & current drive          |
+|               |                 | | and           | | calculations in tokamaks.                  |
+|               |                 | | Lorenzo       |                                              |
+|               |                 | | Figini        |                                              |
++---------------+-----------------+-----------------+----------------------------------------------+
+| Torray-FOM    | EC/waves        | Egbert Westerhof| | Torray-FOM is a ray-tracing code for       |
+|               |                 |                 | | electron cyclotron heating & current       |
+|               |                 |                 | | drive calculations in tokamaks.            |
++---------------+-----------------+-----------------+----------------------------------------------+
+| bbnbi         | NBI/source      | Otto Asunta     | | Calculate the deposition rates of neutrals |
+|               |                 |                 | | beam particles, i.e. the input source for  |
+|               |                 |                 | | Fokker-Planck solvers (not the heating and |
+|               |                 |                 | | current drive). Note that the number of    |
+|               |                 |                 | | markers generated by BBNBI is described by |
+|               |                 |                 | | the kepler variable number_nbi_markers_in. |
+|               |                 |                 |                                              |
++---------------+-----------------+-----------------+----------------------------------------------+
+| nemo          | NBI/source      | | Mireille      | | Calculate the deposition rates of neutrals |
+|               |                 | | Schneider     | | beam particles, i.e. the input source for  |
+|               |                 |                 | | Fokker-Planck solvers (not the heating and |
+|               |                 |                 | | current drive). Code-parameter             |
+|               |                 |                 | | documentation can be found                 |
+|               |                 |                 |                                              |
++---------------+-----------------+-----------------+----------------------------------------------+
+| nuclearsim    | nuclear/source  | Thomas Johnson  | | Simple code for nuclear sources from       |
+|               |                 |                 | | thermal/thermal reactions. Code-parameter  |
+|               |                 |                 | | documentation can be found                 |
++---------------+-----------------+-----------------+----------------------------------------------+
+| nbisim        | | NBI, alphas/  | Thomas Johnson  | | Simple Fokker-Planck code calculating the  |
+|               | | Fokker-Planck |                 | | collisional ion and electron heating from  |
+|               |                 |                 | | a particle source, either NBI or nuclear.  |
+|               |                 |                 | | Code-parameter documentation can be found  |
++---------------+-----------------+-----------------+----------------------------------------------+
+| risk          | | NBI Fokker-   | | Mireille      | | Bounce averaged steady-state Fokker-Planck |
+|               | | Planck        | | Schneider     | | solver calculating the collisional ion and |
+|               |                 |                 | | electron heating from a particle source    |
+|               |                 |                 | | and the NBI current drive. Code-parameter  |
+|               |                 |                 | | documentation can be found                 |
++---------------+-----------------+-----------------+----------------------------------------------+
+| spot          | | NBI, alphas   | | Mireille      | | Monte Carlo solver for the Fokker-Planck   |
+|               | | and           | | Schneider     | | equation. Traces guiding centre orbits in  |
+|               | | ICRF Fokker   |                 | | a steady state magnetic equilibrium under  |
+|               | | -Planck       |                 | | the influence of Coloumb collisions and    |
+|               |                 |                 | | interactions with ICRF waves (through the  |
+|               |                 |                 | | RFOF library). The code can also be used   |
+|               |                 |                 | | for NBI and alpha particle modelling as it |
+|               |                 |                 | | can handle source terms from the           |
+|               |                 |                 | | distsource CPO.                            |
++---------------+-----------------+-----------------+----------------------------------------------+
+| ascot4serial  | | NBI, alphas,  | | Otto          | | Monte Carlo Fokker-Planck solver           |
+|               | | ICRF/         | | Asunta/       | | calculating the collisional ion and        |
+|               | | Fokker-Planck | | Seppo         | | electron heating from a particle source    |
+|               |                 | | Sipila        | | and the NBI current drive.                 |
++---------------+-----------------+-----------------+----------------------------------------------+
+| ascot4parallel| | NBI, alphas,  | | Otto          | | Monte Carlo Fokker-Planck solver           |
+|               | | ICRF/         | | Asunta/       | | calculating the collisional ion and        |
+|               | | Fokker-Planck | | Seppo         | | electron heating from a particle source    |
+|               |                 | | Sipila        | | and the NBI current drive.                 |
++---------------+-----------------+-----------------+----------------------------------------------+
+| Lion          | IC / waves      | | Olivier Sauter| | Global ICRF wave solver. Code-parameter    |
+|               |                 | | and           | | documentation can be found                 |
+|               |                 | | Laurent       |                                              |
+|               |                 | | Villard       |                                              |
++---------------+-----------------+-----------------+----------------------------------------------+
+| Cyrano        | IC / waves      | | Ernesto Lerche| | Global ICRF wave solver. Code-parameter    |
+|               |                 | | and           | | documentation can be found                 |
+|               |                 | | Dirk          |                                              |
+|               |                 | | Van Eester    |                                              |
++---------------+-----------------+-----------------+----------------------------------------------+
+| | Eve         | IC / waves      | Remi Dumont     | | Global ICRF wave solver                    |
+| | (not yet in |                 |                 |                                              |
+| | ETS)        |                 |                 |                                              |
++---------------+-----------------+-----------------+----------------------------------------------+
+| StixReDist    | IC / waves      | | Dirk          | | 1d Fokker-Planck solver for ICRF heating.  |
+|               |                 | | Van Eester    |                                              |
+|               |                 | | and           |                                              |
+|               |                 | | Ernesto       |                                              |
+|               |                 | | Lerche        |                                              |
++---------------+-----------------+-----------------+----------------------------------------------+
+| ICdep         | IC / waves      | Thomas Johnson  | | Generates Waves-cpo with an IC wave field  |
+|               |                 |                 | | with Gaussian deposition profiles          |
+|               |                 |                 | | described by a combination of antenna-cpo  |
+|               |                 |                 | | input and through code parameters input.   |
+|               |                 |                 | | Code-parameter documentation can be found  |
++---------------+-----------------+-----------------+----------------------------------------------+
+| ICcoup        | IC / coupling   | Thomas Johnson  | | Simple model for the coupling waves from   |
+|               |                 |                 | | ion cyclotron antennas to the plasma.      |
+|               |                 |                 | | Code-parameter documentation can be found  |
++---------------+-----------------+-----------------+----------------------------------------------+
 
 .. _ETS_A_4.10b_list_actors_events:
 
@@ -1434,47 +1727,36 @@ Events actors
 
 .. Table
 
-+-------+-------+---------+--------------------------------------------+
-| Code  | Code  | Contact | Short description                          |
-| name  | Categ | persons |                                            |
-|       | ory   |         |                                            |
-+=======+=======+=========+============================================+
-| pelle | pelle | Denis   |                                            |
-| tacto | t     | Kalupin |                                            |
-| r     |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| pelle | pelle | Denis   |                                            |
-| ttrig | t     | Kalupin |                                            |
-| ger   |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| sawcr | sawte | Olivier |                                            |
-| ash_s | eth   | Sauter  |                                            |
-| lice  |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
-| sawcr | sawte | Olivier |                                            |
-| it    | eth   | Sauter  |                                            |
-+-------+-------+---------+--------------------------------------------+
-| runa  | runaw | Roland  | Indicating the presence of runaway         |
-| way_i | ay    | Lohner  | electrons: 1) Indicate, whether electric   |
-| ndica |       | och     | field is below the critical level, thus    |
-| tor   |       | Gergo   | runaway generation is impossible. 2)       |
-|       |       | Pokol   | Indicate, whether runaway electron growth  |
-|       |       |         | rate exceeds a preset limit. This          |
-|       |       |         | calculation takes only the Dreicer runaway |
-|       |       |         | generation method in account and assumes a |
-|       |       |         | velocity distribution close to Maxwellian, |
-|       |       |         | therefore this result should be considered |
-|       |       |         | with caution. The growth rate limit can be |
-|       |       |         | set via an input of the actor. Limit value |
-|       |       |         | is set to $$10^12$$ particle per second by |
-|       |       |         | default. (This growth rate generates a     |
-|       |       |         | runaway current of approximately 1kA       |
-|       |       |         | considering a 10 seconds long discharge.)  |
-|       |       |         |                                            |
-|       |       |         |                                            |
-|       |       |         |                                            |
-|       |       |         |                                            |
-+-------+-------+---------+--------------------------------------------+
++--------------------+-------------------+-----------------+-----------------------------------------------+
+| Code name          | Code Category     | Contact persons | Short description                             |
++====================+===================+=================+===============================================+
+| pelletactor        | pellet            | Denis Kalupin   |                                               |
++--------------------+-------------------+-----------------+-----------------------------------------------+
+| pellettrigger      | pellet            | Denis Kalupin   |                                               |
++--------------------+-------------------+-----------------+-----------------------------------------------+
+| sawcrash_slice     | sawteeth          | Olivier Sauter  |                                               |
++--------------------+-------------------+-----------------+-----------------------------------------------+
+| sawcrit            | sawteeth          | Olivier Sauter  |                                               |
++--------------------+-------------------+-----------------+-----------------------------------------------+
+| runaway_indicator  | runaway           | Roland Lohneroch| | Indicating the presence of runaway          |
+|                    |                   | Gergo Pokol     | | electrons:                                  |
+|                    |                   |                 | | 1) Indicate, whether electric field is      |
+|                    |                   |                 | | below the critical level, thus runaway      |
+|                    |                   |                 | | generation is impossible.                   |
+|                    |                   |                 | | 2) Indicate, whether runaway electron       |
+|                    |                   |                 | | growth rate exceeds a preset limit. This    |
+|                    |                   |                 | | calculation takes only the Dreicer runaway  |
+|                    |                   |                 | | generation method in account and assumes a  |
+|                    |                   |                 | | velocity distribution close to Maxwellian,  |
+|                    |                   |                 | | therefore this result should be considered  |
+|                    |                   |                 | | with caution. The growth rate limit can be  |
+|                    |                   |                 | | set via an input of the actor. Limit value  |
+|                    |                   |                 | | is set to \\( 10^{12} \\) particle per      |
+|                    |                   |                 |   second by default.                          |
+|                    |                   |                 | | (This growth rate generates a runaway       |
+|                    |                   |                 | | current of approximately 1kA considering a  |
+|                    |                   |                 | | 10 seconds long discharge.)                 | 
++--------------------+-------------------+-----------------+-----------------------------------------------+
 
 
 Non-physics actors
@@ -1522,7 +1804,8 @@ found
 **Contact person:** `Denis Kalupin <mailto:denis.kalupin@euro-fusion.org?subject=ETS%20in%20KEPLER>`__ (Skype:
 dkalupin)*
 
-.. Picture
+.. figure:: images/ets_top_a.png
+   :align: center
 
 Obtaining the ETS
 =================
@@ -1581,7 +1864,8 @@ This is ALL you need to do for updates!
 Executing the ETS
 =================
 
-.. Picture
+.. figure:: images/ets_start_a.png
+   :align: center
 
 Open ETS workflow in Kepler:
 
@@ -1632,7 +1916,8 @@ Start and End time
 -  TBEGIN - Computations start time
 -  TEND - Computattions end time
 
-.. Picture
+.. figure:: images/ets_config1_a.png
+   :align: center
 
 Time spep
 
@@ -1642,7 +1927,8 @@ Time spep
 -  TAU_OUT: specify value of the output time interval in [s]
 -  Commit
 
-.. Picture
+.. figure:: images/ets_run_settings1_a.png
+   :align: center
    
 .. _ETS_A_4.10a_composition:
 
@@ -1668,7 +1954,8 @@ To set up the composition:
 -  choose the neutrals types, which should be switched "ON"
 -  Commit
 
-.. Picture
+.. figure:: images/ets_run_settings2_a.png
+   :align: center
 
 .. _ETS_A_4.10a_equations:
 
@@ -1703,7 +1990,8 @@ boundary conditions:
 The particular equation will be activated if the boundary condition type
 for it is other than *OFF*!
 
-.. Picture
+.. figure:: images/ets_run_boundary_a.png
+   :align: center 
 
 To set up boundary conditions:
 
@@ -1736,8 +2024,10 @@ To set up boundary conditions:
 -  specify values for boundary density of each impurity component
    [1:MAX_Z_IMP], separated by commas
 -  Commit
+   
+.. figure:: images/ets_run_boundary2_a.png
+   :align: center 
 
-.. Picture
    
 Interface for impurity boundary condition has additional option ,
 *coronal_distribution*, that allow to preset the edge values or entire
@@ -1774,7 +2064,8 @@ To set up boundary conditions:
    component [1, 2, 3 ...NION, 1, 2, 3, ...NIMP], separated by commas
 -  Commit
 
-.. Picture
+.. figure:: images/ets_run_boundary3_a.png
+   :align: center 
 
 Input Profiles Interpolation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1791,7 +2082,8 @@ To define the interpolation grid select:
 -  on_RHO_TOR_NORM_grid
    - interpolate input profiles based on normalised rho grid [0:1]
 
-.. Picture
+.. figure:: images/ets_run_boundary5_a.png
+   :align: center 
 
 .. _ETS_A_4.10a_convergence:
 
@@ -1812,7 +2104,8 @@ To edit them do:
 -  choose your settings
 -  Commit
 
-.. Picture
+.. figure:: images/ets_convergence1_a.png
+   :align: center 
    
 Switches in the field *FREQUENCY OF CALLING THE PHYSICS ACTORS* define how
 many times the the actors of a certain cathegory (equilibrium, transport,
@@ -1863,9 +2156,10 @@ please do:
 -  select ‘Configure actor’ to edit settings
 -  Select your settings or specify values
 -  Commit
-
-.. Picture
-
+   
+.. figure:: images/ets_eq_a.png
+   :align: center 
+   
 SETTINGS:
 
 -  Equilibrium_configuration
@@ -1901,7 +2195,8 @@ SETTINGS:
    if you trust your input data (in this case the check will be
    ignorred).
 
-.. Picture
+.. figure:: images/ets_eq2_a.png
+   :align: center 
 
 Please note, that different equilibrium solvers might require slightly
 different input. Thus it is a user responsibility to check that the
@@ -1921,7 +2216,8 @@ select the one of them.Therefore please do:
 -  choose your equilibrium solver
 -  Commit
 
-.. Picture
+.. figure:: images/ets_eq3_a.png
+   :align: center 
    
 *INTERPRETATIVE* means that the ETS will not update the equilibrium,
 instead it will be using the initial equilibrium.
@@ -1932,7 +2228,8 @@ necessary done with the same resolution. Therefore the routine saving
 the information to the data base might brake due to uncompatible sizes
 of some signals.
 
-.. Picture
+.. figure:: images/ets_eq4_a.png
+   :align: center
 
 .. _ETS_A_4.10a_transport:
 
@@ -1948,7 +2245,11 @@ composite actor. Therefore please do:
 -  select ‘Configure actor’ to edit settings
 -  choose your settings
 -  Commit
+   
+.. figure:: images/ets_transport1_a.png
+   :align: center
 
+   
 Choice of transport model
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1967,6 +2268,9 @@ switch it OFF
 The list of available transport models can be found
 `here <https://www.eufus.eu/documentation/EU-IM/html/ets_status.html>`__.
 
+.. figure:: images/ets_transport2_a.png
+   :align: center
+
 Main plasma transport
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1979,6 +2283,9 @@ transport coefficient.
 You also can add the constant background level for each coefficient (ion
 coefficients are expected to be the string {1:NION}, separated by
 commas)
+
+.. figure:: images/ets_transport3_a.png
+   :align: center
 
 Impurity transport
 ~~~~~~~~~~~~~~~~~~
@@ -1998,6 +2305,9 @@ transport coefficient *from_first_ion* or *from_electrons* (the same
 anomalous contribution will be added to all impurity components, all
 ionization states)
 
+.. figure:: images/ets_transport4_a.png
+   :align: center
+
 Edge transport barrier
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2006,6 +2316,9 @@ specified *RHO_TOR_NORM_ETB*. Total transport coefficients for all
 transport channels (ne, ni, nz, Te, Ti,...) will be reduced to constant
 values specified below (ion and impurity coefficients are expected to be
 the strings {1:NION}) and {1:NIMP} respectively)
+
+.. figure:: images/ets_transport5_a.png
+   :align: center
 
 Total transport coefficients
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2057,8 +2370,11 @@ the XML code parameters of the transport combiner actor:
 
 -  save and exit
 -  Commit
-
-   .. _ETS_A_4.10a_mhd:
+   
+.. figure:: images/ets_transport5_a.png
+   :align: center
+   
+.. _ETS_A_4.10a_mhd:
 
 MHD
 ---
@@ -2073,8 +2389,10 @@ LOOP composite actor. Therefore please do:
 -  choose your settings
 -  Commit
 
-At the moment ETS allows only for NTM to be activated. The sawtooth
-module is expected to be deployed before EU-IM Code Camp in Slovenia.
+.. figure:: images/ets_mhd_a.png
+   :align: center
+
+At the moment ETS allows only for NTM to be activated. 
 
 User can ajust the following NTM settings:
 
@@ -2092,7 +2410,10 @@ User can ajust the following NTM settings:
 -  NTM_phase
 -  NTM_frequency
 
-   .. _ETS_A_4.10a_sources:
+.. figure:: images/ets_mhd2_a.png
+   :align: center   
+
+.. _ETS_A_4.10a_sources:
 
 Sources and impurity
 --------------------
@@ -2106,6 +2427,10 @@ LOOP composite actor. Therefore please do:
 -  select ‘Configure actor’ to edit settings
 -  choose your settings
 -  Commit
+   
+.. figure:: images/ets_sources1_a.png
+   :align: center
+
 
 IMP3 sources
 ~~~~~~~~~~~~
@@ -2141,6 +2466,10 @@ selecting *ON / OFF* in front of corresponding source:
    -ignored;
    INTERPRETATIVE
    – profiles of impurity density will be read from input shot/run
+   
+.. figure:: images/ets_sources2_a.png
+   :align: center
+   
 
 IMP5HCD sources
 ~~~~~~~~~~~~~~~
@@ -2151,6 +2480,9 @@ incorporated by the ETS workflow.
 For the IMP5HCD sources please activate the type of heating source, by
 ticking the box in front of it, and select the code to simulate it.
 
+.. figure:: images/ets_sources3_a.png
+   :align: center
+
 You also need to configure initial IMP5HCD settings. Therefore please:
 
 -  right click on the box ‘BEFORE THE TIME EVOLUTION’
@@ -2159,7 +2491,10 @@ You also need to configure initial IMP5HCD settings. Therefore please:
 -  select ‘Configure actor’
 -  edit the stettings
 -  Commit
-
+   
+.. figure:: images/ets_sources4_a.png
+   :align: center
+ 
 The detailed information on initial IMP5HCD settings can be found
 `here <https://www.eufus.eu/documentation/EU-IM/html/imp5_imp5hcd.html>`__.
 Please note that settings for NBI are done independent for each PINI.
@@ -2167,10 +2502,16 @@ Therefore, for NBI settings, please insert the values separated by
 commas. The number of the element in the array corresponds to the number
 of activated PINI. Maximum accepted number of PINIs = 16.
 
+.. figure:: images/ets_sources5_a.png
+   :align: center
+
 Power control
 ~~~~~~~~~~~~~
 
 You also can activate the power control for the IMP5HCD sources.
+
+.. figure:: images/ets_sources6_a.png
+   :align: center
 
 If the POWER_CONTROL is not *OFF*, there are two modes of
 operation:\ *specific* and *frequency*
@@ -2182,11 +2523,17 @@ interpolation will be done between the sequence points. For example: if
 you give the power sequence = 2e6,4e6,1e6 and times = 0.0, 0.7, 1.5 (s)
 the delivered power would be:
 
+.. figure:: images/ets_sources7_a.png
+   :align: center
+
 For *frequency* you should specify the power levels sequence separated
 by commas, start and end time of the power control and the frequency of
 switching between these levels. For example: if you give the power
 sequence = 2e6,4e6,1e6 and frequency = 10 (Hz) tstart =0.0 (s) tend =
 1.5 (s) the delivered power would be:
+
+.. figure:: images/ets_sources8_a.png
+   :align: center
 
 Total power
 ~~~~~~~~~~~
@@ -2229,8 +2576,11 @@ parameters of the source combiner actor:
 
 -  save and exit
 -  Commit
+   
+.. figure:: images/ets_sources9_a.png
+   :align: center
 
-   . _ETS_A_4.10a_inst_events:
+.. _ETS_A_4.10a_inst_events:
 
 Instantaneous events
 --------------------
@@ -2260,15 +2610,24 @@ injection
    ‘tend_pellet’ with a ’frequency_pellet’
 -  Commit
 
+.. figure:: images/eps_instantaneous_events_a.png
+   :align: center
+
 Parameters of individual pellet need to be configured through the
 icode_parameters of the PELLET actor. To access it go to 'Outline' on
 the right upper corner and open the following:
+
+.. figure:: images/eps_instantaneous_events2_a.png
+   :align: center
 
 -  right click on the actor ‘PELLET’
 -  select ‘Configure actor’
 -  click ‘Edit Code Parameters’
 -  edit parameters and click ‘save and exit’
 -  Commit
+
+.. figure:: images/eps_instantaneous_events3_a.png
+   :align: center
 
 *amn* – atomic mass number: array of elements separated by space
 (1:nelements) [-]
@@ -2323,7 +2682,7 @@ events
 -  Select SAWTOOTH ‘ON’ if you like to use them in your simulation
 -  Commit
 
-   .. _ETS_A_4.10a_visualization:
+.. _ETS_A_4.10a_visualization:
 
 Visualization during the run
 ----------------------------
@@ -2347,6 +2706,9 @@ displays diagnostic text messages from the workflow on following topics:
 Also the error messages from execution of the workflow will be displayed
 here.
 
+.. figure:: images/ets_visual1_a.png
+   :align: center
+
 Python Visualization Display
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2357,10 +2719,14 @@ You can activate the graphical visualization of your run evolution:
 -  select visualisation ‘YES’ or ‘NO’
 -  Commit
 
+.. figure:: images/ets_visual2_a.png
+   :align: center
+
 Then evolution of main discharge parameters will be shown in this
 window:
 
-
+.. figure:: images/ets_visual3_a.png
+   :align: center
 
 .. _ETS_C_KEPLER:
 
@@ -2385,7 +2751,8 @@ tokamak core plasma.
 Contact persons: `Vincent Basiuk <mailto:vincent.basiuk@cea.fr?subject=ETS%20in%20KEPLER>`__ ,
 `Philippe Huynh <mailto:philippe.huynh@cea.fr?subject=ETS%20in%20KEPLER>`__
 
-.. Picture
+.. figure:: images/ets_c.png
+   :align: center
 
 .. _ets_status:
 
@@ -2394,241 +2761,241 @@ Contact persons: `Vincent Basiuk <mailto:vincent.basiuk@cea.fr?subject=ETS%20in%
 ETS Status
 ==========
 
-+-----------------------+-----------------------+-----------------------+
-| *Package Name /       |       ETS-A           |       ETS-C           |
-| Physics Module*       |                       |                       |
-+=======================+=======================+=======================+
-| *EQILIBRIUM*          |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *fixed boundary:*     |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| BDSEQ                 | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| EMEQ                  | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| SPIDER                | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| SPIDER_IMP12          | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| CHEASE                | Ready for use         | validate              |
-+-----------------------+-----------------------+-----------------------+
-| HELENA                | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| HELENA21              |                       | work in 4.09a problem |
-|                       |                       | when it doesn't find  |
-|                       |                       | any equilibrium crash |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *free boundary:*      |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| CEDRES++              | In progress/tests are | validate (static      |
-|                       | planned for Nov.2014  | mode, TBD evolution   |
-|                       |                       | mode)                 |
-+-----------------------+-----------------------+-----------------------+
-| CREATE-NL             |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| FIXFREE               |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| EQFAST                |                       | work in 4.09a         |
-+-----------------------+-----------------------+-----------------------+
-| FREEBIE               |                       | validate              |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *MHD*                 |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| NTM                   | Ready for use         | validate              |
-+-----------------------+-----------------------+-----------------------+
-| SAWTEETH              | Implemented/Tested/re |                       |
-|                       | lease                 |                       |
-|                       | date:Nov.2014         |                       |
-+-----------------------+-----------------------+-----------------------+
-| Linear Stability      | Stand alone           |                       |
-| Chain                 | tests/implementation  |                       |
-|                       | in ETS and            |                       |
-|                       | release:2015          |                       |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *TRANSPORT*           |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *analytical &         |                       |                       |
-| interpretative:*      |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| From DATA BASE        | Ready for use         |                       |
-| (interpretative)      |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| Edge Transport        | Ready for use         |                       |
-| Barried (analytical)  |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *anomalous:*          |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| ETAIGB                | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| BOHM-GYROBOHM         | Ready for use         | validate, + effect of |
-|                       |                       | rotation              |
-+-----------------------+-----------------------+-----------------------+
-| GLF23                 | Implemented/Tested/re | to be tested (GLF23   |
-|                       | lease                 | installed in previous |
-|                       | date:Nov.2014         | gateway not           |
-|                       |                       | validated)            |
-+-----------------------+-----------------------+-----------------------+
-| WEILAND               | Implemented/Tested/re |                       |
-|                       | lease                 |                       |
-|                       | date:Nov.2014         |                       |
-+-----------------------+-----------------------+-----------------------+
-| REU-IM                | Implemented/Tested/re |                       |
-|                       | lease                 |                       |
-|                       | date:Nov.2014         |                       |
-+-----------------------+-----------------------+-----------------------+
-| EWDM                  | Implemented/Tested/re |                       |
-|                       | lease                 |                       |
-|                       | date:Nov.2014         |                       |
-+-----------------------+-----------------------+-----------------------+
-| TGLF                  | In progress/Some      |                       |
-|                       | initial tests         |                       |
-+-----------------------+-----------------------+-----------------------+
-| KIAUTO                |                       | installed (transport  |
-|                       |                       | model based on        |
-|                       |                       | scaling law)          |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *neoclassical:*       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| NEOS                  | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| NEOWES                | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| NEOART                | Ready for use         |                       |
-|                       | (probably not         |                       |
-|                       | suggested as being    |                       |
-|                       | too oscilatory)       |                       |
-+-----------------------+-----------------------+-----------------------+
-| NCLASS                | In progress           | validate with         |
-|                       |                       | composition (to be    |
-|                       |                       | upgrade with          |
-|                       |                       | compositions          |
-+-----------------------+-----------------------+-----------------------+
-| NCLASS/FORCEBALL      |                       | installed (gives the  |
-|                       |                       | radial electric       |
-|                       |                       | field)                |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *HEAT,PARTICLE        |                       |                       |
-| SOURCES & CURRENT     |                       |                       |
-| DRIVE*                |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *analytical &         |                       |                       |
-| interpretative:*      |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| From DATA BASE        | Ready for use         |                       |
-| (interpretative)      |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| Gaussian              | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *impurity and         |                       |                       |
-| particles:*           |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| IMPURITY              | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| NEUTRALS              | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| PELLET                | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| ZNEUTRES              |                       | installed (simple     |
-|                       |                       | module of CRONOS for  |
-|                       |                       | neutral source terms) |
-+-----------------------+-----------------------+-----------------------+
-| ZRECYCLE              |                       | edge boundary for     |
-|                       |                       | electron density      |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *ECRH*                |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| GRAY                  | Ready for use         | Installed             |
-+-----------------------+-----------------------+-----------------------+
-| TORAY-FOM             |                       | In preparation        |
-+-----------------------+-----------------------+-----------------------+
-| TRAVIS                | Tested                | In preparation        |
-+-----------------------+-----------------------+-----------------------+
-| TORBEAM               |                       | In preparation        |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *ICRH*                |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| TORIC                 | In progress           | In preparation        |
-+-----------------------+-----------------------+-----------------------+
-| ICDEP                 |                       | Installed             |
-+-----------------------+-----------------------+-----------------------+
-| FPSIM                 |                       | Installed             |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *NBI*                 |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| NEMO                  | Ready for use         | Installed             |
-+-----------------------+-----------------------+-----------------------+
-| BBNBI                 | Ready for use         | In preparation        |
-+-----------------------+-----------------------+-----------------------+
-| NBISIM                | Ready for use         | Installed             |
-+-----------------------+-----------------------+-----------------------+
-| ASCOT                 | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| RISK                  | Ready for use         | In preparation        |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *LH*                  |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *nuclear sources*     |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| nuclearsim            | Ready for use         | Installed             |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *CONTROLS*            |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| NBI power control     | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| ECRH power control    | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| ICRH power control    | Ready for use         |                       |
-+-----------------------+-----------------------+-----------------------+
-| Pellet frequency      | Ready for use         |                       |
-| control               |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *COUPLING TO EDGE*    |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| SOLPS                 | Tested at Fortran     |                       |
-|                       | level                 |                       |
-+-----------------------+-----------------------+-----------------------+
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| *DOCUMENTATION and    |                       |                       |
-| MANUALS*              |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| Physics Description   | Description of the    |                       |
-|                       | ETS                   |                       |
-+-----------------------+-----------------------+-----------------------+
-| Numerics Description  | Form of the           |                       |
-|                       | standardize           |                       |
-|                       | equations             |                       |
-+-----------------------+-----------------------+-----------------------+
-| Manuals               | -  ETS workflows in   |                       |
-|                       |    KEPLER             |                       |
-|                       | -  ETS source in      |                       |
-|                       |    Fortran            |                       |
-+-----------------------+-----------------------+-----------------------+
++-----------------------+-----------------------+------------------------+
+| | *Package Name* /    |       ETS-A           |       ETS-C            |
+| | *Physics Module*    |                       |                        |
++=======================+=======================+========================+
+| *EQUILIBRIUM*         |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *fixed boundary:*     |                       |                        |
++-----------------------+-----------------------+------------------------+
+| BDSEQ                 | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| EMEQ                  | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| SPIDER                | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| SPIDER_IMP12          | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| CHEASE                | Ready for use         | validate               |
++-----------------------+-----------------------+------------------------+
+| HELENA                | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| HELENA21              |                       | | work in 4.09a problem|
+|                       |                       | | when it doesn't find |
+|                       |                       | | any equilibrium crash|
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *free boundary:*      |                       |                        |
++-----------------------+-----------------------+------------------------+
+| CEDRES++              | | In progress/tests   | | validate (static     |
+|                       | | are planned for     | | mode, TBD evolution  |
+|                       | | Nov.2014            | | mode)                |
++-----------------------+-----------------------+------------------------+
+| CREATE-NL             |                       |                        |
++-----------------------+-----------------------+------------------------+
+| FIXFREE               |                       |                        |
++-----------------------+-----------------------+------------------------+
+| EQFAST                |                       | work in 4.09a          |
++-----------------------+-----------------------+------------------------+
+| FREEBIE               |                       | validate               |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *MHD*                 |                       |                        |
++-----------------------+-----------------------+------------------------+
+| NTM                   | Ready for use         | validate               |
++-----------------------+-----------------------+------------------------+
+| SAWTEETH              | | Implemented/Tested/ |                        |
+|                       | | release             |                        |
+|                       | | date:Nov.2014       |                        |
++-----------------------+-----------------------+------------------------+
+| | Linear Stability    | | Stand alone         |                        |
+| | Chain               | | tests/implementation|                        |
+|                       | | in ETS and          |                        |
+|                       | | release:2015        |                        |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *TRANSPORT*           |                       |                        |
++-----------------------+-----------------------+------------------------+
+| | *analytical &*      |                       |                        |
+| | *interpretative:*   |                       |                        |
++-----------------------+-----------------------+------------------------+
+| | From DATA BASE      | Ready for use         |                        |
+| | (interpretative)    |                       |                        |
++-----------------------+-----------------------+------------------------+
+| | Edge Transport      | Ready for use         |                        |
+| | Barried (analytical)|                       |                        |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *anomalous:*          |                       |                        |
++-----------------------+-----------------------+------------------------+
+| ETAIGB                | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| BOHM-GYROBOHM         | Ready for use         | | validate, + effect of|
+|                       |                       | | rotation             |
++-----------------------+-----------------------+------------------------+
+| GLF23                 | | Implemented/Tested/ | | to be tested (GLF23  |
+|                       | | release             | | installed in previous|
+|                       | | date:Nov.2014       | | gateway not          |
+|                       |                       | | validated)           |
++-----------------------+-----------------------+------------------------+
+| WEILAND               | | Implemented/Tested/ |                        |
+|                       | | release             |                        |
+|                       | | date:Nov.2014       |                        |
++-----------------------+-----------------------+------------------------+
+| REU-IM                | | Implemented/Tested/ |                        |
+|                       | | release             |                        |
+|                       | | date:Nov.2014       |                        |
++-----------------------+-----------------------+------------------------+
+| EWDM                  | | Implemented/Tested/ |                        |
+|                       | | release             |                        |
+|                       | | date:Nov.2014       |                        |
++-----------------------+-----------------------+------------------------+
+| TGLF                  | | In progress/Some    |                        |
+|                       | | initial tests       |                        |
++-----------------------+-----------------------+------------------------+
+| KIAUTO                |                       | | installed (transport |
+|                       |                       | | model based on       |
+|                       |                       | | scaling law)         |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *neoclassical:*       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| NEOS                  | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| NEOWES                | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| NEOART                | | Ready for use       |                        |
+|                       | | (probably not       |                        |
+|                       | | suggested as being  |                        |
+|                       | | too oscilatory)     |                        |
++-----------------------+-----------------------+------------------------+
+| NCLASS                | In progress           | | validate with        |
+|                       |                       | | composition (to be   |
+|                       |                       | | upgrade with         |
+|                       |                       | | compositions         |
++-----------------------+-----------------------+------------------------+
+| NCLASS/FORCEBALL      |                       | | installed (gives the |
+|                       |                       | | radial electric      |
+|                       |                       | | field)               |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| | *HEAT,PARTICLE*     |                       |                        |
+| | *SOURCES & CURRENT* |                       |                        |
+| | *DRIVE*             |                       |                        |
++-----------------------+-----------------------+------------------------+
+| | *analytical &*      |                       |                        |
+| | *interpretative:*   |                       |                        |
++-----------------------+-----------------------+------------------------+
+| | From DATA BASE      | Ready for use         |                        |
+| | (interpretative)    |                       |                        |
++-----------------------+-----------------------+------------------------+
+| Gaussian              | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| | *impurity and*      |                       |                        |
+| | *particles:*        |                       |                        |
++-----------------------+-----------------------+------------------------+
+| IMPURITY              | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| NEUTRALS              | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| PELLET                | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| ZNEUTRES              |                       | | installed (simple    |
+|                       |                       | | module of CRONOS for |
+|                       |                       | | neutral source terms)|
++-----------------------+-----------------------+------------------------+
+| ZRECYCLE              |                       | | edge boundary for    |
+|                       |                       | | electron density     |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *ECRH*                |                       |                        |
++-----------------------+-----------------------+------------------------+
+| GRAY                  | Ready for use         | Installed              |
++-----------------------+-----------------------+------------------------+
+| TORAY-FOM             |                       | In preparation         |
++-----------------------+-----------------------+------------------------+
+| TRAVIS                | Tested                | In preparation         |
++-----------------------+-----------------------+------------------------+
+| TORBEAM               |                       | In preparation         |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *ICRH*                |                       |                        |
++-----------------------+-----------------------+------------------------+
+| TORIC                 | In progress           | In preparation         |
++-----------------------+-----------------------+------------------------+
+| ICDEP                 |                       | Installed              |
++-----------------------+-----------------------+------------------------+
+| FPSIM                 |                       | Installed              |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *NBI*                 |                       |                        |
++-----------------------+-----------------------+------------------------+
+| NEMO                  | Ready for use         | Installed              |
++-----------------------+-----------------------+------------------------+
+| BBNBI                 | Ready for use         | In preparation         |
++-----------------------+-----------------------+------------------------+
+| NBISIM                | Ready for use         | Installed              |
++-----------------------+-----------------------+------------------------+
+| ASCOT                 | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| RISK                  | Ready for use         | In preparation         |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *LH*                  |                       |                        |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *nuclear sources*     |                       |                        |
++-----------------------+-----------------------+------------------------+
+| nuclearsim            | Ready for use         | Installed              |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *CONTROLS*            |                       |                        |
++-----------------------+-----------------------+------------------------+
+| NBI power control     | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| ECRH power control    | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| ICRH power control    | Ready for use         |                        |
++-----------------------+-----------------------+------------------------+
+| | Pellet frequency    | Ready for use         |                        |
+| | control             |                       |                        |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| *COUPLING TO EDGE*    |                       |                        |
++-----------------------+-----------------------+------------------------+
+| SOLPS                 | | Tested at Fortran   |                        |
+|                       | | level               |                        |
++-----------------------+-----------------------+------------------------+
+|                       |                       |                        |
++-----------------------+-----------------------+------------------------+
+| | *DOCUMENTATION and* |                       |                        |
+| | *MANUALS*           |                       |                        |
++-----------------------+-----------------------+------------------------+
+| Physics Description   | | Description of the  |                        |
+|                       | | ETS                 |                        |
++-----------------------+-----------------------+------------------------+
+| Numerics Description  | | Form of the         |                        |
+|                       | | standardize         |                        |
+|                       | | equations           |                        |
++-----------------------+-----------------------+------------------------+
+| Manuals               | | -  ETS workflows in |                        |
+|                       | |    KEPLER           |                        |
+|                       | | -  ETS source in    |                        |
+|                       | |    Fortran          |                        |
++-----------------------+-----------------------+------------------------+

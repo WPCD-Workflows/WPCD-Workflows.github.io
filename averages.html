@@ -95,6 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Running Exponential Average</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
@@ -105,6 +106,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
 </ul>
@@ -174,27 +177,27 @@
 <span id="imp4-averages"></span><h1>Running Exponential Average<a class="headerlink" href="#running-exponential-average" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>In conventional transport modelling, turbulent fluxes are modelled in
-terms of processes which are diffusive in the local relaxation sense,
-with the average flux given by a diffusion coefficient and an effective
-pinch velocity. The equations are of dominantly parabolic character,
-which means in practice that an iterate will move monotonically towards
-the solution in parameter space.</p>
-<p>This is not the case for turbulence. Convergence is statistical, which
-is something different than a diffusive relaxation. If turbulence is
-stationary, it is meant only that the mean of a distribution of iterates
-is stationary, not the iterates themselves. The standard deviation can
-be significant, of order unity compared to the mean, of any distribution
-of iterates.</p>
+<p>In conventional transport modelling, turbulent fluxes are modelled in terms
+of processes which are diffusive in the local relaxation sense, with the
+average flux given by a diffusion coefficient and an effective pinch
+velocity. The equations are of dominantly parabolic character, which means
+in practice that an iterate will move monotonically towards the solution in
+parameter space.</p>
+<p>This is not the case for turbulence. Convergence is statistical, which is
+something different than a diffusive relaxation. If turbulence is
+stationary, it is meant only that the mean of a distribution of iterates is
+stationary, not the iterates themselves. The standard deviation can be
+significant, of order unity compared to the mean, of any distribution of
+iterates.</p>
 <p>This makes for a noisy signal if the output of a turbulence code is used
 for transport coefficients in a workflow. A sound way to overcome the
 attendant problems is to use a moving average. Even an average over a
-moving window can be as noisy as the original signal, however. What
-works better is a weighted average over recent past values. A method to
-get this is called a running exponential average, which is essentially
-the same thing as a convolution integral over an exponential memory
-decay times the past signal. It turns out to be very easy to obtain this
-without saving past values.</p>
+moving window can be as noisy as the original signal, however. What works
+better is a weighted average over recent past values. A method to get this
+is called a running exponential average, which is essentially the same
+thing as a convolution integral over an exponential memory decay times the
+past signal. It turns out to be very easy to obtain this without saving
+past values.</p>
 <p>The original reference for the following is S W Roberts, &#8220;Control Chart
 Tests Based on Geometric Moving Averages,&#8221; Technometrics 1 (1959)
 239-250, cited by all the good WWW resources, including the Wikipedia
@@ -202,15 +205,14 @@ page on Moving Averages and the NIST Statistical Handbook online.</p>
 </div>
 <div class="section" id="definition">
 <h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
-<p>Consider a process \( p(vec u) \) which is a functional of dependent
-variables \( \vec u. \) Measure \( p \) at discrete time intervals
+<p>Consider a process \( p ( \vec u ) \) which is a functional of dependent
+variables \( \vec u \). Measure \( p \) at discrete time intervals
 \( t_n, \) with values \( p_n=p(t_n) \) and interval length \(
-\tau=t_n-t_{n-1}. \) The moving exponential average \( A_n=A(p_n) \)
-on the \( nhbox{-th} \) interval is defined as \( A_n = \epsilon
-p_n + (1-epsilon)A_{n-1} \qquad \qquad \hbox{with}qquad
-\epsilon=alphatau \) in which the small parameter \( \epsilon \)
-is given in terms of the interval \( \tau \) and an inverse time
-constant \( \alpha. \)</p>
+\tau=t_n-t_{n-1} \). The moving exponential average \( A_n=A(p_n) \)
+on the \( n \hbox{-th} \) interval is defined as</p>
+<div class="math" id="equation-averages:0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-averages:0" title="Permalink to this equation">¶</a></span>\[A_n = \epsilon p_n + (1-\epsilon)A_{n-1} \qquad \qquad \hbox{with} \qquad \epsilon=\alpha \tau\]</div>
+<p>in which the small parameter \( \epsilon \) is given in terms of the interval \( \tau \) and an inverse time constant \( \alpha. \)</p>
 <p>In the first instance \( p \) is measured there is no \( A \) so the
 first value of \( A \) is simply set to \( p \) since it can be
 assumed that the initial state for \( p \) has persisted for infinite
@@ -219,75 +221,64 @@ previous time up to the initial time point.</p>
 <div class="section" id="differential-equation">
 <h2>Differential Equation<a class="headerlink" href="#differential-equation" title="Permalink to this headline">¶</a></h2>
 <p>The equivalent differential equation is found by forming the relevant
-finite difference, \( A_n - A_{n-1} = \epsilon (p_n - A_{n-1}) \)
-which we can also cast as \( (1-epsilon)(A_n - A_{n-1}) = \epsilon
-(p_n - A_n) \) Taking the limit \( \tauto 0 \) is the same as
-taking \( \epsilonto 0 \) so both of these expressions become
-equivalent to \( {partial Aoverpartial t} = \alpha(p-A) \) whose
-solution is given below.</p>
+finite difference,</p>
+<div class="math" id="equation-averages:1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-averages:1" title="Permalink to this equation">¶</a></span>\[A_n - A_{n-1} = \epsilon (p_n - A_{n-1})\]</div>
+<p>which we can also cast as</p>
+<div class="math" id="equation-averages:2">
+<span class="eqno">(3)<a class="headerlink" href="#equation-averages:2" title="Permalink to this equation">¶</a></span>\[(1-\epsilon)(A_n - A_{n-1}) = \epsilon (p_n - A_n)\]</div>
+<p>Taking the limit \( \tau \to 0 \) is the same as taking \( \epsilon \to 0 \) so both of these expressions become equivalent to</p>
+<div class="math" id="equation-averages:3">
+<span class="eqno">(4)<a class="headerlink" href="#equation-averages:3" title="Permalink to this equation">¶</a></span>\[{\partial A \over \partial t} = \alpha(p-A)\]</div>
+<p>whose solution is given below.</p>
 </div>
 <div class="section" id="equivalence-to-past-time-convolution-integral">
 <h2>Equivalence to Past-Time Convolution Integral<a class="headerlink" href="#equivalence-to-past-time-convolution-integral" title="Permalink to this headline">¶</a></h2>
 <p>The solution of the above differential equation is given by the method
-of undetermined coefficients, \( {partial Aoverpartial t} +
-\alpha, A = \alpha, p \\ e^{-alpha t}{partial \overpartial
-t}left(e^{alpha t}Aright) = \alpha, p \\ {partial \overpartial
-t}left(e^{alpha t}Aright) = \alpha, p,e^{alpha t} \) We may
-integrate this over all past time, to find \( A(t) =
-\int_{-infty}^talpha,dt&#8217;,p(t&#8217;),e^{-alpha(t-t&#8217;)} \) This is a
-convolution integral over the kernel \( e^{-alpha(t-t&#8217;)} \) and the
-signal \( p(t&#8217;). \) The time constant \( \alpha^{-1} \) is just the
-memory decay time, while if \( p \) is constant then the integral
-yields unity times \( p. \) This is the same as the normalisation with
-the \( (1-epsilon) \) factor in the average formula above, which is
-needed since the interval is of finite size.</p>
-<p>Hence the running exponential average is operationally the same as a
-memory decay integral over past time. The elegant feature is the need to
-keep only the current value of \( A, \) as it already contains all
-that is needed of the past time evolution of \( p. \)</p>
+of undetermined coefficients,</p>
+<div class="math" id="equation-averages:4">
+<span class="eqno">(5)<a class="headerlink" href="#equation-averages:4" title="Permalink to this equation">¶</a></span>\[\begin{split}{\partial A \over \partial t} +\alpha A = \alpha p \\ \\ e^{-\alpha t}{\partial \over \partial t} \left( e^{ \alpha t} A \right) = \alpha p \\ \\ {\partial \over \partial t} \left( e^{\alpha t} A \right) = \alpha p e^{\alpha t}\end{split}\]</div>
+<p>We may integrate this over all past time, to find</p>
+<div class="math" id="equation-averages:5">
+<span class="eqno">(6)<a class="headerlink" href="#equation-averages:5" title="Permalink to this equation">¶</a></span>\[A(t) = \int_{-\infty}^t \alpha dt' p(t') e^{-\alpha (t-t') }\]</div>
+<p>This is a convolution integral over the kernel \( e^{-\alpha(t-t&#8217;)} \)
+and the signal \( p(t&#8217;) \). The time constant \( \alpha^{-1} \) is
+just the memory decay time, while if \( p \) is constant then the
+integral yields unity times \( p \). This is the same as the
+normalisation with the \( (1-\epsilon) \) factor in the average formula
+above, which is needed since the interval is of finite size.</p>
+<p>Hence the running exponential average is operationally the same as a memory
+decay integral over past time. The elegant feature is the need to keep only
+the current value of \( A \), as it already contains all that is needed
+of the past time evolution of \( p \).</p>
 </div>
 <div class="section" id="notes">
 <h2>notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <p>Some properties of the running exponential average and how to choose its
 main time-memory parameter:</p>
 <ul class="simple">
-<li>The
-\( (1-epsilon) \)
-factor is needed for normalisation</li>
-<li>if
-\( p=hbox{constant} \)
-then
-\( A=p \)
-for all
-\( t \)<ul>
-<li>the integral with
-\( \alpha,dt&#8217; \)
-yields unity</li>
-<li>the
-\( \epsilon \)
-and
-\( (1-epsilon) \)
-factors add to unity</li>
-<li>therefore set the first value of
-\( A \)
-to the first value of
-\( p \)</li>
+<li>The \( (1-\epsilon) \) factor is needed for normalisation</li>
+<li>if \( p=\hbox{constant} \) then \( A=p \) for all \( t \)</li>
 </ul>
-</li>
-<li>in choosing the memory decay time
-\( \alpha^{-1} \dots \)<ul>
-<li>one should have
-\( \alphatau_{{rm cor}}ll 1 \)</li>
-<li>best results are for
-\( \alphatau_{{rm sat}}sim 1 \)</li>
-<li>some trial/error required; edge turbulence likes
-\( \alpha^{-1}=200 <a href="#id1"><span class="problematic" id="id2">L_</span></a>perp/c_s \)</li>
+<blockquote>
+<div><ul class="simple">
+<li>the integral with \( \alpha dt&#8217; \) yields unity</li>
+<li>the \( \epsilon \) and \( (1-\epsilon) \) factors add to unity</li>
+<li>therefore set the first value of \( A \) to the first value of \( p      \)</li>
 </ul>
-</li>
+</div></blockquote>
+<ul class="simple">
+<li>in choosing the memory decay time \( \alpha^{-1} \dots \)</li>
 </ul>
-<p>In these expressions \( \tau_{{rm cor}} \) and \( \tau_{{rm sat}}
-\) are the correlation and saturation times of the turbulence,
-respectively.</p>
+<blockquote>
+<div><ul class="simple">
+<li>one should have \( \alpha \tau_{cor} \ll 1 \)</li>
+<li>best results are for \( \alpha \tau_{sat} \sim 1 \)</li>
+<li>some trial/error required; edge turbulence likes \( \alpha^{-1}=200 L_ \parallel / c_s \)</li>
+</ul>
+</div></blockquote>
+<p>In these expressions \( \tau_{{cor}} \) and \( \tau_{{sat}} \) are
+the correlation and saturation times of the turbulence, respectively.</p>
 </div>
 </div>
 

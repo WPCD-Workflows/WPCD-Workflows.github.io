@@ -126,9 +126,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
 </ul>
@@ -269,11 +272,11 @@ equation and of 0+3/2+5/2=4 in the ion flux contributing to heat transport.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="7%" />
-<col width="21%" />
+<col width="19%" />
 <col width="11%" />
-<col width="10%" />
-<col width="23%" />
-<col width="27%" />
+<col width="9%" />
+<col width="25%" />
+<col width="30%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Case</th>
@@ -285,85 +288,616 @@ equation and of 0+3/2+5/2=4 in the ion flux contributing to heat transport.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>I.1.1</td>
-<td>Constant
-densities and</td>
-<td>N/A</td>
+<tr class="row-even"><td rowspan="3">I.1.1</td>
+<td rowspan="3"><div class="first last line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line">Constant</div>
+<div class="line">densities and</div>
+<div class="line">temperatures</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td rowspan="3">N/A</td>
 <td>3</td>
-<td>Convergence ok.
-Errors within
-machine precision</td>
+<td><div class="first last line-block">
+<div class="line">Convergence ok.</div>
+<div class="line">Errors within</div>
+<div class="line">machine precision</div>
+</div>
+</td>
 <td>I.1.1_s3</td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>7</td>
-<td>Convergence ok.
-Errors within
-machine precision</td>
+<tr class="row-odd"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">Convergence ok.</div>
+<div class="line">Errors within</div>
+<div class="line">machine precision</div>
+</div>
+</td>
 <td>I.1.1_s7</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>10</td>
-<td>Convergence ok.
-Errors within
-machine precision</td>
+<tr class="row-even"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Convergence ok.</div>
+<div class="line">Errors within</div>
+<div class="line">machine precision</div>
+</div>
+</td>
 <td>I.1.1_s10</td>
 </tr>
 <tr class="row-odd"><td>I.1.2</td>
-<td>Interpretative
-time-dependent
-solution for
-densities</td>
+<td><div class="first last line-block">
+<div class="line">Interpretative</div>
+<div class="line">time-dependent</div>
+<div class="line">solution for</div>
+<div class="line">densities</div>
+</div>
+</td>
 <td>N/A</td>
 <td>3</td>
-<td>Under analysis:
-no time evolution
-for the
-temperatures</td>
+<td><div class="first last line-block">
+<div class="line">Under analysis:</div>
+<div class="line">no time evolution</div>
+<div class="line">for the</div>
+<div class="line">temperatures</div>
+</div>
+</td>
 <td>I.1.2_s3</td>
 </tr>
-<tr class="row-even"><td>I.1
-.3</td>
-<td>Conservation
-laws (particle
-and energy)
-with diffusion</td>
+<tr class="row-even"><td>I.1.3</td>
+<td><div class="first last line-block">
+<div class="line">Conservation</div>
+<div class="line">laws(particle</div>
+<div class="line">and energy)</div>
+<div class="line">with diffusion</div>
+</div>
+</td>
 <td>N/A</td>
 <td>N/A</td>
-<td>This case was
-treated under
-I.1.5</td>
+<td><div class="first last line-block">
+<div class="line">This case was</div>
+<div class="line">treated under</div>
+<div class="line">I.1.5</div>
+<div class="line"><br /></div>
+</div>
+</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>I.1.4</td>
-<td>Conservation
-laws (particle
-and energy)
-with
-discontinuous
-diffusion
-coefficient</td>
-<td>N/A</td>
+<tr class="row-odd"><td rowspan="3">I.1.4</td>
+<td rowspan="3"><div class="first last line-block">
+<div class="line">Conservation</div>
+<div class="line">laws(particle</div>
+<div class="line">and energy)</div>
+<div class="line">with</div>
+<div class="line">discontinuous</div>
+<div class="line">diffusion</div>
+<div class="line">coefficient</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td rowspan="3">N/A</td>
 <td>3</td>
-<td>Convergence ok</td>
+<td><div class="first last line-block">
+<div class="line">Convergence ok.</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
 <td>I.1.4_s3</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>7</td>
-<td>Convergence ok</td>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">Convergence ok.</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
 <td>I.1.4_s7</td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Failed to initiate</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
 <td>&#160;</td>
+</tr>
+<tr class="row-even"><td rowspan="27">I.1.5</td>
+<td rowspan="27"><div class="first last line-block">
+<div class="line">Conservation</div>
+<div class="line">laws(particle</div>
+<div class="line">and energy)</div>
+<div class="line">with</div>
+<div class="line">diffusion</div>
+<div class="line">and</div>
+<div class="line">convection</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td rowspan="3">D=0.1
+and v=0</td>
+<td>3</td>
+<td rowspan="3"><div class="first last line-block">
+<div class="line">Convergence in</div>
+<div class="line">density reached;</div>
+<div class="line">asymptotic</div>
+<div class="line">solution (for</div>
+<div class="line">density) reached;</div>
+<div class="line">convergence in</div>
+<div class="line">temperature never</div>
+<div class="line">fully reached</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5_s3_101pts_1e-3s</div>
+<div class="line">I.1.5_s3_51pts_1e-3s</div>
+<div class="line">I.1.5_s3_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5_s7_101pts_1e-3s</div>
+<div class="line">I.1.5_s7_51pts_1e-3s</div>
+<div class="line">I.1.5_s7_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>10</td>
 <td>&#160;</td>
-<td>10</td>
-<td>Failed to initiate</td>
+</tr>
+<tr class="row-odd"><td rowspan="3">I.1.5.a
+D=0.1
+and v=0.1</td>
+<td>3</td>
+<td rowspan="3"><div class="first last line-block">
+<div class="line">Solvers 3 and 7:</div>
+<div class="line">Convergence in</div>
+<div class="line">temperature reached;</div>
+<div class="line">convergence in</div>
+<div class="line">density reached;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">never reached (after</div>
+<div class="line">50s and 100s).</div>
+<div class="line">Solver 10: does not</div>
+<div class="line">converge (number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">1000).</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.a_s3_101pts_1e-3s</div>
+<div class="line">I.1.5.a_s3_51pts_1e-3s</div>
+<div class="line">I.1.5.a_s3_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.a_s7_101pts_1e-3s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td rowspan="3">I.1.5.b
+D=0.1
+and v=0.3</td>
+<td>3</td>
+<td><div class="first last line-block">
+<div class="line">No convergence for</div>
+<div class="line">density and</div>
+<div class="line">temperature (worse</div>
+<div class="line">for density);</div>
+<div class="line">deviation from</div>
+<div class="line">asymptotic solution</div>
+<div class="line">increases with time.</div>
+<div class="line">Errors are similar</div>
+<div class="line">for solvers 3 and 7;</div>
+<div class="line">the latter reduces</div>
+<div class="line">the energy error</div>
+<div class="line">with time, at short</div>
+<div class="line">time-steps.</div>
+<div class="line">Increasing number of</div>
+<div class="line">points reduces</div>
+<div class="line">deviation from</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(tested for</div>
+<div class="line">solver 3)</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.b_s3_101pts_1e-3s</div>
+<div class="line">I.1.5.b_s3_51pts_1e-3s</div>
+<div class="line">I.1.5.b_s3_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">Neither solver</div>
+<div class="line">yields zero steady-</div>
+<div class="line">state particle- and</div>
+<div class="line">energy- flux.</div>
+<div class="line">The on-axis behavior</div>
+<div class="line">of Te is different</div>
+<div class="line">for solvers 3 and 7.</div>
+<div class="line">Convergence proceeds</div>
+<div class="line">through decreasing</div>
+<div class="line">(solver 3 and solver</div>
+<div class="line">7 at long time-</div>
+<div class="line">steps) and</div>
+<div class="line">increasing (solver 7</div>
+<div class="line">at short time-steps)</div>
+<div class="line">fluxes near the wall</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.b_s7_101pts_1e-3s</div>
+<div class="line">I.1.5.b_s7_51pts_1e-3s</div>
+<div class="line">I.1.5.b_s7_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Failed to initiate</div>
+</div>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td rowspan="3">I.1.5.c
+D=0.1
+and v=1.0</td>
+<td>3</td>
+<td rowspan="3"><div class="first last line-block">
+<div class="line">Solvers 3 and 7:</div>
+<div class="line">For v&gt;1 the number</div>
+<div class="line">of iterations</div>
+<div class="line">exceeds the max</div>
+<div class="line">value of 1000,</div>
+<div class="line">apparently because</div>
+<div class="line">ETS doesn&#8217;t conserve</div>
+<div class="line">the number of</div>
+<div class="line">particles. The</div>
+<div class="line-block">
+<div class="line">situation is</div>
+</div>
+<div class="line">mitigated (not</div>
+<div class="line">solved) by</div>
+<div class="line">increasing Np and</div>
+<div class="line">decreasing dt.</div>
+<div class="line">Solver 10 fails to</div>
+<div class="line">initiate.</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.c_s3_101pts_1e-3s</div>
+<div class="line">I.1.5.c_s3_51pts_1e-3s</div>
+<div class="line">I.1.5.c_s3_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.c_s7_101pts_1e-3s</div>
+<div class="line">I.1.5.c_s7_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="3">I.1.5.d
+D=0.1
+and v=2.0</td>
+<td>3</td>
+<td><div class="first last line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.d_s3_501pts_1e-3s</div>
+<div class="line">I.1.5.d_s3_501pts_1e-4s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Failed to initiate</div>
+</div>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td rowspan="3">I.1.5.h
+D=0.1
+and
+v=-0.1</td>
+<td>3</td>
+<td rowspan="3"><div class="first last line-block">
+<div class="line">Solvers 3 and 7:</div>
+<div class="line">Convergence in</div>
+<div class="line">density and</div>
+<div class="line">temperature reached;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density) almost</div>
+<div class="line">always reached;</div>
+<div class="line">Solver 10: fails to</div>
+<div class="line">converge (number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">1000).</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.h_s3_101pts_1e-3s</div>
+<div class="line">I.1.5.h_s3_51pts_1e-3s</div>
+<div class="line">I.1.5.h_s3_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.h_s7_101pts_1e-3s</div>
+<div class="line">I.1.5.h_s7_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td rowspan="3">I.1.5.i
+D=0.1
+and
+v=-0.3</td>
+<td>3</td>
+<td rowspan="3"><div class="first last line-block">
+<div class="line">Convergence in</div>
+<div class="line">density reached;</div>
+<div class="line">convergence in</div>
+<div class="line">temperature never</div>
+<div class="line">fully reached;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">never fully reached</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.i_s3_101pts_1e-3s</div>
+<div class="line">I.1.5.i_s3_51pts_1e-3s</div>
+<div class="line">I.1.5.i_s3_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.i_s7_101pts_1e-3s</div>
+<div class="line">I.1.5.i_s7_51pts_1e-3s</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td rowspan="3">I.1.5.j
+D=0.1
+and
+v=-1.0</td>
+<td>3</td>
+<td rowspan="3"><div class="first last line-block">
+<div class="line">Solvers 3, 7 and 10:</div>
+<div class="line">fail to converge</div>
+<div class="line">(number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">1000) long</div>
+<div class="line">before the total</div>
+<div class="line">execution time</div>
+<div class="line">of 4s (at best they</div>
+<div class="line">go until 1.8s)</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.j_s3_101pts_1e-3s</div>
+<div class="line">I.1.5.j_s3_51pts_1e-3s</div>
+<div class="line">I.1.5.j_s3_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.j_s7_101pts_1e-3s</div>
+<div class="line">I.1.5.j_s7_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.j_s10_101pts_1e-3s</div>
+<div class="line">I.1.5.j_s10_51pts_1e-3s</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="3">I.1.5.k
+D=0.1
+and
+v=-2.0</td>
+<td>3</td>
+<td rowspan="3"><div class="first last line-block">
+<div class="line">No convergence for</div>
+<div class="line">both density and</div>
+<div class="line">temperature (worse</div>
+<div class="line">for density);</div>
+<div class="line">deviation from</div>
+<div class="line">asymptotic solution</div>
+<div class="line">increases with time</div>
+<div class="line">deviation from</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">I.1.5.d_s3_501pts_1e-3s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>10</td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -377,52 +911,795 @@ ALL solvers fail to converge (i.e. demanding more than 1000 iterations)
 for convection v &gt;= 1 m/s.</p>
 <table border="1" class="docutils">
 <colgroup>
+<col width="6%" />
+<col width="16%" />
+<col width="23%" />
 <col width="8%" />
-<col width="26%" />
-<col width="14%" />
-<col width="5%" />
-<col width="29%" />
-<col width="20%" />
+<col width="23%" />
+<col width="25%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Cas
-e</th>
+<tr class="row-odd"><th class="head">Case</th>
 <th class="head">Description</th>
 <th class="head">Subcase</th>
-<th class="head">S
-o
-l
-v
-e
-r</th>
+<th class="head">Solver</th>
 <th class="head">Comments</th>
-<th class="head">Graphic
-output
-(PDF)</th>
+<th class="head">Graphic output (PDF)</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>I.1
-.1</td>
-<td>Constant
-densities and
-temperatures</td>
-<td>N/A</td>
+<tr class="row-even"><td rowspan="4">I.1.1</td>
+<td rowspan="4"><div class="first last line-block">
+<div class="line">Constant</div>
+<div class="line">densities and</div>
+<div class="line">temperatures</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td rowspan="4">N/A</td>
 <td>3</td>
-<td>Convergence ok.
-Errors within
-machine
-precision, except
-for the on-axis
-value</td>
-<td><a href="#id29"><span class="problematic" id="id30">`I.1.1_101p
-ts_1e-2s &lt;.
-./imports/E
-TS_VV/4.09a
-/I.1.1_s3-4
--7-10_Np101
-_dt1e-2.pdf
-&gt;`__</span></a></td>
+<td><div class="first last line-block">
+<div class="line">Convergence ok.</div>
+<div class="line">Errors within</div>
+<div class="line">machine precision,</div>
+<div class="line">except for the</div>
+<div class="line">on-axis value</div>
+</div>
+</td>
+<td rowspan="4">I.1.1_101pts_1e-2s</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td><div class="first last line-block">
+<div class="line">Convergence ok.</div>
+<div class="line">Errors within</div>
+<div class="line">machine precision,</div>
+<div class="line">except for the</div>
+<div class="line">on-axis value</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">NANs found</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Convergence ok.</div>
+<div class="line">Errors within</div>
+<div class="line">machine precision</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="3">I.1.2</td>
+<td rowspan="3"><div class="first last line-block">
+<div class="line">Interpretative</div>
+<div class="line">time-dependent</div>
+<div class="line">solution for</div>
+<div class="line">densities</div>
+<div class="line">(D=0 and v=0)</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">No external sources;</div>
+<div class="line">no internal sources;</div>
+<div class="line">Te = Ti &#64; t=0</div>
+<div class="line">(no plasma collision</div>
+<div class="line">source)</div>
+</div>
+</td>
+<td>4</td>
+<td><div class="first last line-block">
+<div class="line">No time evolution</div>
+<div class="line">for the pressure in</div>
+<div class="line">the absence of all</div>
+<div class="line">sources</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td>I.1.2_101pts_1e-2s</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">I.1.2.a</div>
+<div class="line">No external sources;</div>
+<div class="line">internal (convection)</div>
+<div class="line">sources limited to</div>
+<div class="line">10%;</div>
+<div class="line">Te = Ti &#64; t=0 (no</div>
+<div class="line">plasma collision</div>
+<div class="line">source)</div>
+</div>
+</td>
+<td>4</td>
+<td><div class="first last line-block">
+<div class="line">Time evolution for</div>
+<div class="line">the pressure due to</div>
+<div class="line">internal sources</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td>I.1.2.a_101pts_1e-2s</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">I.1.2.b</div>
+<div class="line">No external sources;</div>
+<div class="line">no internal sources;</div>
+<div class="line">Te != Ti &#64; t=0</div>
+<div class="line">plasma collision</div>
+<div class="line">source)</div>
+</div>
+</td>
+<td>4</td>
+<td><div class="first last line-block">
+<div class="line">Pressure evolves to</div>
+<div class="line">constant values with</div>
+<div class="line">time, due to e-i</div>
+<div class="line">energy exchange</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td>I.1.2.b_101pts_1e-2s</td>
+</tr>
+<tr class="row-odd"><td>I.1.3</td>
+<td><div class="first last line-block">
+<div class="line">Conservation</div>
+<div class="line">laws(particle</div>
+<div class="line">and energy)</div>
+<div class="line">with diffusion</div>
+</div>
+</td>
+<td>N/A</td>
+<td>N/A</td>
+<td><div class="first last line-block">
+<div class="line">This case was</div>
+<div class="line">treated under</div>
+<div class="line">I.1.5</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td rowspan="4">I.1.4</td>
+<td rowspan="4"><div class="first last line-block">
+<div class="line">Conservation</div>
+<div class="line">laws(particle</div>
+<div class="line">and energy)</div>
+<div class="line">with</div>
+<div class="line">discontinuous</div>
+<div class="line">diffusion</div>
+<div class="line">coefficient</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td rowspan="4">N/A</td>
+<td>3</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached.</div>
+</div>
+</td>
+<td rowspan="4">I.1.4_101pts_1e-2s</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained,</div>
+<div class="line">with a problem on the</div>
+<div class="line">axis.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained,</div>
+<div class="line">but for a very</div>
+<div class="line">different asymptotic</div>
+<div class="line">solution (for</div>
+<div class="line">density).</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="28">I.1.5</td>
+<td rowspan="28"><div class="first last line-block">
+<div class="line">Conservation</div>
+<div class="line">laws(particle</div>
+<div class="line">and energy)</div>
+<div class="line">with</div>
+<div class="line">diffusion</div>
+<div class="line">and</div>
+<div class="line">convection</div>
+<div class="line">(D in m2/s;</div>
+<div class="line">v in m/2)</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td rowspan="4">D=0.1 and v=0</td>
+<td>3</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached; conservation</div>
+<div class="line">laws poorly</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
+<td rowspan="4"><div class="first last line-block">
+<div class="line">I.1.5_101pts_1e-3s</div>
+<div class="line">I.1.5_51pts_1e-3s</div>
+<div class="line">I.1.5_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained,</div>
+<div class="line">with a poor</div>
+<div class="line">prediction of the</div>
+<div class="line">asymptotic (density)</div>
+<div class="line">solution and with a</div>
+<div class="line">problem on the axis.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Failed to converge</div>
+<div class="line">(the number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">the max value of</div>
+<div class="line">1000).</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="4">I.1.5.a
+D=0.1 and v=0.1</td>
+<td>3</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached; conservation</div>
+<div class="line">laws poorly</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
+<td rowspan="4"><div class="first last line-block">
+<div class="line">I.1.5.a_101pts_1e-3s</div>
+<div class="line">I.1.5.a_51pts_1e-3s</div>
+<div class="line">I.1.5.a_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained</div>
+<div class="line">for 101 points only,</div>
+<div class="line">with a poor</div>
+<div class="line">prediction of the</div>
+<div class="line">asymptotic (density)</div>
+<div class="line">solution and with a</div>
+<div class="line">problem on the axis;</div>
+<div class="line">conservation laws</div>
+<div class="line">poorly satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained,</div>
+<div class="line">but for a very</div>
+<div class="line">different asymptotic</div>
+<div class="line">solution (for</div>
+<div class="line">density);</div>
+<div class="line">conservation laws not</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="4">I.1.5.b
+D=0.1 and v=0.3</td>
+<td>3</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached; conservation</div>
+<div class="line">laws poorly</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
+<td rowspan="4"><div class="first last line-block">
+<div class="line">I.1.5.b_s3_101pts_1e-3s</div>
+<div class="line">I.1.5.b_s3_51pts_1e-3s</div>
+<div class="line">I.1.5.b_s3_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained</div>
+<div class="line">for 1e-2s points</div>
+<div class="line">only, with a poor</div>
+<div class="line">prediction of the</div>
+<div class="line">asymptotic (density)</div>
+<div class="line">solution and with a</div>
+<div class="line">problem on the axis;</div>
+<div class="line">conservation laws</div>
+<div class="line">poorly satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained,</div>
+<div class="line">but for a very</div>
+<div class="line">different asymptotic</div>
+<div class="line">solution (for</div>
+<div class="line">density);</div>
+<div class="line">conservation laws not</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="4">I.1.5.c
+D=0.1 and v=1.0</td>
+<td>3</td>
+<td><div class="first last line-block">
+<div class="line">Failed to converge</div>
+<div class="line">(the number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">the max value of</div>
+<div class="line">1000).</div>
+</div>
+</td>
+<td rowspan="4"><div class="first last line-block">
+<div class="line">I.1.5.c_101pts_1e-3s</div>
+<div class="line">I.1.5.c_51pts_1e-3s</div>
+<div class="line">I.1.5.c_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td><div class="first last line-block">
+<div class="line">Failed to converge</div>
+<div class="line">(the number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">the max value of</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">Failed to converge</div>
+<div class="line">(the number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">the max value of</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Failed to converge</div>
+<div class="line">(the number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">the max value of</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="4">I.1.5.h
+D=0.1 and v=-0.1</td>
+<td>3</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached.</div>
+</div>
+</td>
+<td rowspan="4"><div class="first last line-block">
+<div class="line">I.1.5.h_101pts_1e-3s</div>
+<div class="line">I.1.5.h_51pts_1e-3s</div>
+<div class="line">I.1.5.h_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained,</div>
+<div class="line">with a poor</div>
+<div class="line">prediction of the</div>
+<div class="line">asymptotic (density)</div>
+<div class="line">solution and with a</div>
+<div class="line">problem on the axis;</div>
+<div class="line">conservation laws</div>
+<div class="line">poorly satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained,</div>
+<div class="line">but for a very</div>
+<div class="line">different asymptotic</div>
+<div class="line">solution (for</div>
+<div class="line">density);</div>
+<div class="line">conservation laws not</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="4">I.1.5.i
+D=0.1 and v=-0.3</td>
+<td>3</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached.</div>
+</div>
+</td>
+<td rowspan="4"><div class="first last line-block">
+<div class="line">I.1.5.i_101pts_1e-3s</div>
+<div class="line">I.1.5.i_51pts_1e-3s</div>
+<div class="line">I.1.5.i_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained;</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density)</div>
+<div class="line">reached.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained</div>
+<div class="line">for 1e-2s only,</div>
+<div class="line">with a poor</div>
+<div class="line">prediction of the</div>
+<div class="line">asymptotic (density)</div>
+<div class="line">solution and with a</div>
+<div class="line">problem on the axis;</div>
+<div class="line">conservation laws</div>
+<div class="line">poorly satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Convergence obtained</div>
+<div class="line">for 1e-3s only, but</div>
+<div class="line">for a very different</div>
+<div class="line">asymptotic solution</div>
+<div class="line">(for density);</div>
+<div class="line">conservation laws</div>
+<div class="line">not satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="4">I.1.5.j
+D=0.1 and v=-1.0</td>
+<td>3</td>
+<td><div class="first last line-block">
+<div class="line">Failed to converge</div>
+<div class="line">(the number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">the max value of</div>
+<div class="line">1000).</div>
+</div>
+</td>
+<td rowspan="4"><div class="first last line-block">
+<div class="line">I.1.5.j_101pts_1e-3s</div>
+<div class="line">I.1.5.j_51pts_1e-3s</div>
+<div class="line">I.1.5.j_101pts_1e-2s</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td><div class="first last line-block">
+<div class="line">Failed to converge</div>
+<div class="line">(the number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">the max value of</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><div class="first last line-block">
+<div class="line">Failed to converge</div>
+<div class="line">(the number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">the max value of</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td><div class="first last line-block">
+<div class="line">Failed to converge</div>
+<div class="line">(the number of</div>
+<div class="line">iterations exceeds</div>
+<div class="line">the max value of</div>
+<div class="line">satisfied.</div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -490,6 +1767,9 @@ command:</li>
 </pre></div>
 </div>
 <p>Press the play button on the workflow.</p>
+<div class="figure align-center">
+<img alt="_images/ets_1.png" src="_images/ets_1.png" />
+</div>
 <p><strong>The workflow shall run!</strong> If it
 does not, please use the <a class="reference external" href="mailto:denis&#46;kalupin&#37;&#52;&#48;euro-fusion&#46;org?subject=ETS%20in%20KEPLER">contact</a> from above.</p>
 <p><strong>Starting the workflow:</strong>
@@ -522,11 +1802,11 @@ it is essential to keep the workflow inside your $EU-IMWORK area</p>
 <h5>ETS revisions<a class="headerlink" href="#ets-revisions" title="Permalink to this headline">¶</a></h5>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="13%" />
-<col width="24%" />
-<col width="24%" />
+<col width="16%" />
+<col width="18%" />
+<col width="22%" />
+<col width="22%" />
+<col width="23%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head"><em>Revision Name:</em></th>
@@ -538,144 +1818,162 @@ it is essential to keep the workflow inside your $EU-IMWORK area</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>4.10b0.1</td>
-<td>4.10b8_R2.1.0.5</td>
-<td>any,
-up to
-4.10b3.5</td>
-<td>Contains:Fixed
-boundary
-equlibrium; Simple
-transport models;
-full HCD package;
-Impurity; Pellets;
-Sawtooth</td>
-<td>Test 4.10b release,
-restricted module
-choice, restricted
-physics
-capabilities, work
-around of coredelta</td>
+<td>4.10b8_R2.1.0</td>
+<td><div class="first last line-block">
+<div class="line">any, up to</div>
+<div class="line">4.10b3.5</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Contains:Fixed</div>
+<div class="line">boundary equlibrium;</div>
+<div class="line">Simple transport</div>
+<div class="line">models; full HCD</div>
+<div class="line">package; Impurity;</div>
+<div class="line">Pellets; Sawtooth</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Test 4.10b release,</div>
+<div class="line">restricted module</div>
+<div class="line">choice, restricted</div>
+<div class="line">physics capabilities,</div>
+<div class="line">work around of</div>
+<div class="line">coredelta</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>4.10b8.1</td>
 <td>4.10b8_R2.1.0</td>
-<td>central
-instal
-lation
-4.10b3
-central
-is prefer
-red;local
-instal
-lation
-4.10b3.6
-or above</td>
-<td>Contains:Fixed
-boundary
-equlibrium; Simple
-transport models;
-full HCD package;
-Impurity; Pellets;
-Sawtooth; Scenario</td>
-<td>Test 4.10b release,
-restricted module
-choice, restricted
-physics
-capabilities, work
-around of
-coredelta, produces
-scenario output on
-request</td>
+<td><div class="first last line-block">
+<div class="line">central installation</div>
+<div class="line">4.10b3_central is</div>
+<div class="line">preferred; local</div>
+<div class="line">installation</div>
+<div class="line">4.10b3.6 or above</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Contains:Fixed</div>
+<div class="line">boundary equlibrium;</div>
+<div class="line">Simple transport</div>
+<div class="line">models; full HCD</div>
+<div class="line">package; Impurity;</div>
+<div class="line">Pellets; Sawtooth</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Test 4.10b release,</div>
+<div class="line">restricted module</div>
+<div class="line">choice, restricted</div>
+<div class="line">physics capabilities,</div>
+<div class="line">work around of</div>
+<div class="line">coredelta,  produces</div>
+<div class="line">scenario output on</div>
+<div class="line">request</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>4.10b10.1</td>
 <td>4.10b10</td>
-<td><p class="first">central</p>
-<p class="last">instal
-lation
-4.10b
-3_cent
-ral
-is
-prefer
-red;
-local
-instal
-lation
-4.10b
-3.6
-or
-above</p>
+<td><div class="first last line-block">
+<div class="line">central installation</div>
+<div class="line">4.10b3_central is</div>
+<div class="line">preferred; local</div>
+<div class="line">installation</div>
+<div class="line">4.10b3.6 or above</div>
+</div>
 </td>
-<td>MODIFICATIONS
-COMPATIBLE WITH
-4.10b10 DATA
-STRUCTURE</td>
-<td>UNDER CONSTRUCTION:
-release at the Code
-Camp in Prague</td>
+<td><div class="first last line-block">
+<div class="line">MODIFICATIONS</div>
+<div class="line">COMPATIBLE WITH</div>
+<div class="line">4.10b10</div>
+<div class="line">DATA STRUCTURE</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">UNDER CONSTRUCTION:</div>
+<div class="line">release at the</div>
+<div class="line">Code Camp in Prague</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>4.10b10.2</td>
-<td>4.10b10_bran
-ches.R2.1.r1380</td>
-<td>centra
-l
-instal
-lation
-4.10b
-3_cent
-ral
-is
-prefer
-red;
-local
-instal
-lation
-4.10b
-3.6
-or
-above</td>
-<td>Added synchrotron
-radiation, some of
-neoclassical
-actors,reworked
-combiners</td>
-<td>UNDER CONSTRUCTION:
-release at the Code
-Camp in Prague</td>
+<td><div class="first last line-block">
+<div class="line">4.10b10_branches</div>
+<div class="line">R2.1.r1380</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">central installation</div>
+<div class="line">4.10b3_central is</div>
+<div class="line">preferred; local</div>
+<div class="line">installation</div>
+<div class="line">4.10b3.6 or above</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Added synchrotron</div>
+<div class="line">radiation, some of</div>
+<div class="line">neoclassical actors,</div>
+<div class="line">reworked combiners</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">UNDER CONSTRUCTION:</div>
+<div class="line">release at the</div>
+<div class="line">Code Camp in Prague</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>4.10b10.3</td>
-<td>4.10b1
-0_bran
-ches.
-R2.1.r
-1380</td>
-<td>centra
-l
-instal
-lation
-keple
-r_rc
-(2.4/R
-3.8/ke
-pler
-or
-more
-recent
-)
-is
-prefer
-red</td>
-<td>Added synchrotron
-radiation, some of
-neoclassical
-actors,reworked
-combiners</td>
-<td>compared to
-previous shall
-contain compeeted
-transport, new
-controller for
-pellet and sawteeth
-module</td>
+<td><div class="first last line-block">
+<div class="line">4.10b10_branches</div>
+<div class="line">R2.1.r1380</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">central installation</div>
+<div class="line">kepler_rc</div>
+<div class="line">(2.4/R3.8/kepler</div>
+<div class="line">or more recent)</div>
+<div class="line">is preferred</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Added synchrotron</div>
+<div class="line">radiation, some of</div>
+<div class="line">neoclassical actors,</div>
+<div class="line">reworked combiners</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">compared to previous</div>
+<div class="line">shall contain</div>
+<div class="line">compeeted transport,</div>
+<div class="line">new controller for</div>
+<div class="line">pellet and sawteeth</div>
+<div class="line">module</div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -729,6 +2027,9 @@ SELECTION: 3 or 4)</li>
 <li>TEND
 - Computattions end time</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_config1.png" src="_images/ets_config1.png" />
+</div>
 <p><strong>Time step:</strong></p>
 <ul class="simple">
 <li>right click on the box
@@ -741,6 +2042,9 @@ Configure actor</li>
 : specify value of the output time interval in [s]</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_settings1.png" src="_images/ets_settings1.png" />
+</div>
 </div>
 </div>
 <div class="section" id="ion-impurity-and-neutral-composition">
@@ -771,6 +2075,9 @@ from the first to the last [1:NIMP] , separated by commas</li>
 shall be followed by neutral solver</li>
 <li>press <strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_plasma_composition.png" src="_images/ets_plasma_composition.png" />
+</div>
 </div>
 <div class="section" id="equations-to-be-solved-and-boundary-conditions">
 <span id="ets-a-4-10b-equations"></span><h5>Equations to be solved and boundary conditions<a class="headerlink" href="#equations-to-be-solved-and-boundary-conditions" title="Permalink to this headline">¶</a></h5>
@@ -802,6 +2109,9 @@ shot</li>
 </ul>
 <p>The particular equation will be activated if the boundary condition type
 for it is other than <em>OFF</em></p>
+<div class="figure align-center">
+<img alt="_images/ets_run_settings3.png" src="_images/ets_run_settings3.png" />
+</div>
 <p>To set up boundary conditions:</p>
 <ul class="simple">
 <li>right click on the box BEFORE THE TIME EVOLUTION</li>
@@ -836,6 +2146,9 @@ OFF-equation is not solved)</li>
 [1:MAX_Z_IMP], separated by commas</li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_run_settings4.png" src="_images/ets_run_settings4.png" />
+</div>
 <p>Interface for impurity boundary condition has additional option,
 <em>coronal_distribution</em>, that allow to preset the edge values or entire
 profiles of individual ionization states from coronal distribution. In tis
@@ -867,6 +2180,9 @@ MIGHT BE ADDED ON REQUEST</p>
 [1, 2, 3 ...NION, 1, 2, 3, ...NIMP], separated by commas</li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_run_settings5.png" src="_images/ets_run_settings5.png" />
+</div>
 </div>
 <div class="section" id="input-profiles-interpolation">
 <h6>Input profiles interpolation<a class="headerlink" href="#input-profiles-interpolation" title="Permalink to this headline">¶</a></h6>
@@ -882,6 +2198,9 @@ should be load by the worflow,</p>
 <li>on_RHO_TOR_NORM_grid
 - interpolate input profiles based on normalised rho grid [0:1]</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_run_settings6.png" src="_images/ets_run_settings6.png" />
+</div>
 </div>
 </div>
 <div class="section" id="convergence-loop">
@@ -900,6 +2219,9 @@ used by the iterative scheme. To edit them do:</p>
 <li>choose your settings</li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_convergence1.png" src="_images/ets_convergence1.png" />
+</div>
 <p>Switches in the field <em>FREQUENCY OF CALLING THE PHYSICS ACTORS</em> define
 how many times the the actors of a certain cathegory (equilibrium,
 transport, etc.) should be called in a single time step.
@@ -944,6 +2266,9 @@ select your starting equilibrium please do:</p>
 <li>Select your settings or specify values</li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_before_time.png" src="_images/ets_before_time.png" />
+</div>
 <p>SETTINGS:</p>
 <ul class="simple">
 <li>Equilibrium_configuration
@@ -977,6 +2302,9 @@ INTERPRETATIVE
 if you trust your input data (in this case the check will be
 ignorred).</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_run_settings7.png" src="_images/ets_run_settings7.png" />
+</div>
 <p>Please note, that different equilibrium solvers might require slightly
 different input. Thus it is a user responsibility to check that the
 information inside input shot/run is enough to run selected equilibrium
@@ -994,6 +2322,9 @@ select the one of them.Therefore please do:</p>
 <li>choose your equilibrium solver</li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_convergence_loop_config.png" src="_images/ets_convergence_loop_config.png" />
+</div>
 <p><em>INTERPRETATIVE</em> means that the ETS will not update the equilibrium,
 instead it will be using the initial equilibrium.</p>
 <p>Please note, that it is better to select the same code as you used for
@@ -1001,6 +2332,9 @@ pre-iterrations. Because outputs of different equilibrium solver are not
 necessary done with the same resolution. Therefore the routine saving
 the information to the data base might brake due to uncompatible sizes
 of some signals.</p>
+<div class="figure align-center">
+<img alt="_images/ets_equilibrium1.png" src="_images/ets_equilibrium1.png" />
+</div>
 </div>
 </div>
 <div class="section" id="transport">
@@ -1015,6 +2349,9 @@ composite actor. Therefore please do:</p>
 <li>choose your settings</li>
 <li>press <strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_transport1.png" src="_images/ets_transport1.png" />
+</div>
 <div class="section" id="transport-models">
 <h6>Transport models<a class="headerlink" href="#transport-models" title="Permalink to this headline">¶</a></h6>
 <p>ETS constructs the total transport coefficients from the combination of
@@ -1029,12 +2366,18 @@ switch it <strong>OFF</strong></p>
 level through the code parameters of Transport Combiner</p>
 <p>The list of available transport models can be found
 <a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/ets_status.html">here</a>.</p>
+<div class="figure align-center">
+<img alt="_images/ets_transport2.png" src="_images/ets_transport2.png" />
+</div>
 </div>
 <div class="section" id="background-transport">
 <h6>Background transport<a class="headerlink" href="#background-transport" title="Permalink to this headline">¶</a></h6>
 <p>You can add the constant background level for each coefficient (ion and
 impurity coefficients are expected to be the strings of [1:NION] and
 [1:NIMP] elements respectively, separated by commas)</p>
+<div class="figure align-center">
+<img alt="_images/ets_transport3.png" src="_images/ets_transport3.png" />
+</div>
 </div>
 <div class="section" id="edge-transport-barrier">
 <h6>Edge transport barrier<a class="headerlink" href="#edge-transport-barrier" title="Permalink to this headline">¶</a></h6>
@@ -1043,6 +2386,9 @@ specified <em>RHO_TOR_NORM_ETB</em>. Total transport coefficients for all
 transport channels (ne, ni, nz, Te, Ti,...) will be reduced to constant
 values specified below (ion and impurity coefficients are expected to be
 the strings [1:NION] and [1:NIMP] respectively)</p>
+<div class="figure align-center">
+<img alt="_images/ets_transport4.png" src="_images/ets_transport4.png" />
+</div>
 </div>
 <div class="section" id="total-transport-coefficients">
 <h6>Total transport coefficients<a class="headerlink" href="#total-transport-coefficients" title="Permalink to this headline">¶</a></h6>
@@ -1072,6 +2418,9 @@ for inward pinch the values should be negative!
 <li><strong>Save and exit</strong></li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_transport_combiner.png" src="_images/ets_transport_combiner.png" />
+</div>
 </div>
 </div>
 <div class="section" id="mhd">
@@ -1086,6 +2435,9 @@ LOOP composite actor. Therefore please do:</p>
 <li>choose your settings</li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_mhd.png" src="_images/ets_mhd.png" />
+</div>
 <p>At the moment ETS allows only for NTM to be activated. The sawtooth
 module is expected to be deployed before EU-IM Code Camp in Slovenia.</p>
 <p>User can ajust the following NTM settings:</p>
@@ -1101,6 +2453,9 @@ value</li>
 <li>NTM_phase</li>
 <li>NTM_frequency</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_mhd2.png" src="_images/ets_mhd2.png" />
+</div>
 </div>
 <div class="section" id="sources-and-impurity">
 <span id="ets-a-4-10b-sources"></span><h5>Sources and impurity<a class="headerlink" href="#sources-and-impurity" title="Permalink to this headline">¶</a></h5>
@@ -1114,6 +2469,9 @@ LOOP composite actor. Therefore please do:</p>
 <li>choose your settings</li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_source1.png" src="_images/ets_source1.png" />
+</div>
 <div class="section" id="analytical-impurity-sources">
 <h6>Analytical &amp; Impurity sources<a class="headerlink" href="#analytical-impurity-sources" title="Permalink to this headline">¶</a></h6>
 <p>There is a number of sources developed by IMP3 project, which are actors
@@ -1131,6 +2489,9 @@ specified on ¨Before_time_evolution¨ composite actor interface; <strong>OFF</s
 <li>Switch_IMPURITY – <strong>ON</strong> - Impurity density and radiative sources will be computed;
 <strong>OFF</strong> -ignored; <strong>INTERPRETATIVE</strong> – profiles of impurity density will be read from input shot/run</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_sources2.png" src="_images/ets_sources2.png" />
+</div>
 </div>
 <div class="section" id="hcd-sources">
 <h6>HCD sources<a class="headerlink" href="#hcd-sources" title="Permalink to this headline">¶</a></h6>
@@ -1138,6 +2499,9 @@ specified on ¨Before_time_evolution¨ composite actor interface; <strong>OFF</s
 incorporated by the ETS workflow.</p>
 <p>For the HCD sources please activate the type of heating source, by
 ticking the box in front of it, and select the code to simulate it.</p>
+<div class="figure align-center">
+<img alt="_images/ets_sources3.png" src="_images/ets_sources3.png" />
+</div>
 <p>You also need to configure initial IMP5HCD settings. Therefore please:</p>
 <ul class="simple">
 <li>right click on the box BEFORE THE TIME EVOLUTION</li>
@@ -1147,16 +2511,25 @@ ticking the box in front of it, and select the code to simulate it.</p>
 <li>edit the stettings</li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_sources4.png" src="_images/ets_sources4.png" />
+</div>
 <p>The detailed information on initial IMP5HCD settings can be found
 <a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/imp5_imp5hcd.html">here</a>.
 Please note that settings for NBI are done independent for each PINI.
 Therefore, for NBI settings, please insert the values separated by
 commas. The number of the element in the array corresponds to the number
 of activated PINI. Maximum accepted number of PINIs = 16.</p>
+<div class="figure align-center">
+<img alt="_images/ets_sources5.png" src="_images/ets_sources5.png" />
+</div>
 </div>
 <div class="section" id="power-control">
 <h6>Power control<a class="headerlink" href="#power-control" title="Permalink to this headline">¶</a></h6>
 <p>You also can activate the power control for the IMP5HCD sources.</p>
+<div class="figure align-center">
+<img alt="_images/ets_sources6.png" src="_images/ets_sources6.png" />
+</div>
 <p>If the POWER_CONTROL is not <strong>OFF</strong>, there are two modes of
 operation: <strong>specific</strong> and <strong>frequency</strong></p>
 <p>For <strong>specific</strong> you should specify the time sequence separated by commas
@@ -1164,11 +2537,17 @@ and the corresponding power sequence (where first power level
 corresponds to the first time, second to second and etc.). Linear
 interpolation will be done between the sequence points. For example: if
 you give the power <strong>sequence</strong> = 2e6,4e6,1e6 and <strong>times</strong> = 0.0, 0.7, 1.5 (s) the delivered power would be:</p>
+<div class="figure align-center">
+<img alt="_images/ets_sources7.png" src="_images/ets_sources7.png" />
+</div>
 <p>For <strong>frequency</strong> you should specify the power levels sequence separated
 by commas, start and end time of the power control and the frequency of
 switching between these levels. For example: if you give the power
 <strong>sequence</strong> = 2e6,4e6,1e6 and <strong>frequency</strong> = 10 (Hz) <strong>tstart</strong> = 0.0 (s)
 <strong>tend</strong> = 1.5 (s) the delivered power would be:</p>
+<div class="figure align-center">
+<img alt="_images/ets_sources8.png" src="_images/ets_sources8.png" />
+</div>
 </div>
 <div class="section" id="total-power">
 <h6>Total power<a class="headerlink" href="#total-power" title="Permalink to this headline">¶</a></h6>
@@ -1190,10 +2569,13 @@ this channel will be nullified.</li>
 <li>save and exit</li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_sources9.png" src="_images/ets_sources9.png" />
+</div>
 </div>
 </div>
 <div class="section" id="instantaneous-events-actuators">
-<h5>Instantaneous events &amp; Actuators<a class="headerlink" href="#instantaneous-events-actuators" title="Permalink to this headline">¶</a></h5>
+<span id="ets-a-4-10b-inst-events"></span><h5>Instantaneous events &amp; Actuators<a class="headerlink" href="#instantaneous-events-actuators" title="Permalink to this headline">¶</a></h5>
 <p>At the moment, user can swith <strong>ON</strong> and <strong>OFF</strong> two types of events: PELLET
 and SAWTOOTH</p>
 <div class="section" id="pellet">
@@ -1213,9 +2595,15 @@ tstart_pellet until tend_pellet with a frequency_pellet</li>
 </li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_instantaneous_events1.png" src="_images/ets_instantaneous_events1.png" />
+</div>
 <p>Parameters of individual pellet need to be configured through the
 code_parameters of the PELLET actor. To access it go to <strong>Outline</strong> on the
 right upper corner and open the following:</p>
+<div class="figure align-center">
+<img alt="_images/ets_instantaneous_events2.png" src="_images/ets_instantaneous_events2.png" />
+</div>
 <ul class="simple">
 <li>right click on the actor PELLET</li>
 <li>select <strong>Configure actor</strong></li>
@@ -1223,6 +2611,9 @@ right upper corner and open the following:</p>
 <li>edit parameters and click <strong>save and exit</strong></li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_instantaneous_events3.png" src="_images/ets_instantaneous_events3.png" />
+</div>
 <p>amn – atomic mass number: array of elements separated by space
 (1:nelements) [-]</p>
 <p>zn – nuclear charge: array of elements separated by space (1:nelements)
@@ -1286,6 +2677,9 @@ runaways</p>
 <li>select Generate_SCENARIO_output_from_ETS_run equal <strong>YES</strong></li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_scenario.png" src="_images/ets_scenario.png" />
+</div>
 </div>
 <div class="section" id="visualization">
 <span id="ets-a-4-10b-visualization"></span><h5>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h5>
@@ -1306,6 +2700,9 @@ CURRENT</li>
 </ul>
 <p>Also the error messages from execution of the workflow will be displayed
 here.</p>
+<div class="figure align-center">
+<img alt="_images/ets_visual1.png" src="_images/ets_visual1.png" />
+</div>
 </div>
 <div class="section" id="python-visualization-display">
 <h5>Python Visualization Display<a class="headerlink" href="#python-visualization-display" title="Permalink to this headline">¶</a></h5>
@@ -1321,8 +2718,14 @@ argument is essential by the opening of the workflow.</p>
 <li>select visualisation <strong>YES</strong> or <strong>NO</strong></li>
 <li><strong>Commit</strong></li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_visual2.png" src="_images/ets_visual2.png" />
+</div>
 <p>Then evolution of main discharge parameters will be shown in this
 window:</p>
+<div class="figure align-center">
+<img alt="_images/ets_visual3.png" src="_images/ets_visual3.png" />
+</div>
 </div>
 </div>
 <div class="section" id="list-of-actors">
@@ -1332,10 +2735,10 @@ window:</p>
 <span id="ets-a-4-10b-list-actors-equilibrium"></span><h5>Equilibrium actors<a class="headerlink" href="#equilibrium-actors" title="Permalink to this headline">¶</a></h5>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="22%" />
-<col width="25%" />
-<col width="35%" />
+<col width="17%" />
+<col width="24%" />
+<col width="24%" />
+<col width="36%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Code name</th>
@@ -1346,43 +2749,34 @@ window:</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>chease</td>
-<td><dl class="first last docutils">
-<dt>Grad-Shafranov</dt>
-<dd>solver</dd>
-</dl>
+<td><div class="first last line-block">
+<div class="line">Grad-Shafranov</div>
+<div class="line">solver</div>
+</div>
 </td>
 <td>Olivier Sauter</td>
-<td>Chease is a fixed
-boundary Grad-Shafranov
-solver based on cubic
-hermitian finite
-elements see
-H. Lütjens, A.
-Bondeson, O. Sauter,
-Computer Physics
-Communications 97
-(1996) 219-260</td>
+<td><div class="first last line-block">
+<div class="line">Chease is a fixed</div>
+<div class="line">boundary Grad-Shafranov</div>
+<div class="line">solver based on cubic</div>
+<div class="line">hermitian finite</div>
+<div class="line">elements see</div>
+<div class="line">H. Lütjens, A.</div>
+<div class="line">Bondeson, O. Sauter,</div>
+<div class="line">Computer Physics</div>
+<div class="line">Communications 97</div>
+<div class="line">(1996) 219-260</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>emeq</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
-</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
-</td>
+<td>/</td>
+<td>/</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>spider</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
-</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
-</td>
+<td>/</td>
+<td>/</td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -1392,233 +2786,170 @@ Communications 97
 <span id="ets-a-4-10b-list-actors-coretransport"></span><h5>Core transport actors<a class="headerlink" href="#core-transport-actors" title="Permalink to this headline">¶</a></h5>
 <table border="1" class="docutils">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="13%" />
-<col width="66%" />
+<col width="24%" />
+<col width="23%" />
+<col width="21%" />
+<col width="32%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Code
-name</th>
-<th class="head">Code
-Categ
-ory</th>
-<th class="head">Contact
-persons</th>
+<tr class="row-odd"><th class="head">Code name</th>
+<th class="head">Code Category</th>
+<th class="head">Contact persons</th>
 <th class="head">Short description</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ETS</td>
-<td>Trans
-port
-solve
-r</td>
-<td>Denis
-Kalupin</td>
+<td>Transport solver</td>
+<td>Denis Kalupin</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>BohmG
-B</td>
-<td>Bohm/
-gyro-
-Bohm
-trans
-port
-coeff
-icien
-ts</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
+<tr class="row-odd"><td>BohmGB</td>
+<td><div class="first last line-block">
+<div class="line">Bohm/gyro-Bohm</div>
+<div class="line">transport</div>
+<div class="line">coefficients</div>
+</div>
 </td>
+<td>/</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>TCI/W
-eilan
-d</td>
-<td>Trans
-port
-coeff
-icien
-t
-from
-drift
-wave
-turbu
-lence</td>
-<td>Pär
-Strand</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td>TCI/G
-LF23</td>
-<td>Trans
-port
-coeff
-icien
-t
-from
-drift
-wave
-turbu
-lence</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
+<tr class="row-even"><td>TCI/Weiland</td>
+<td><div class="first last line-block">
+<div class="line">Transport</div>
+<div class="line">coefficient from</div>
+<div class="line">coefficients</div>
+</div>
 </td>
+<td>Pär Strand</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>TCI/R
-EU-IM</td>
-<td>Trans
-port
-coeff
-icien
-t
-from
-drift
-wave
-turbu
-lence</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
+<tr class="row-odd"><td>TCI/GLF23</td>
+<td><div class="first last line-block">
+<div class="line">Transport</div>
+<div class="line">coefficient from</div>
+<div class="line">drift wave</div>
+<div class="line">turbulence</div>
+</div>
 </td>
+<td>/</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>TCI/M
-MM
-(not
-yet
-in
-ETS)</td>
-<td>Trans
-port
-coeff
-icien
-t
-from
-drift
-wave
-turbu
-lence</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
+<tr class="row-even"><td>TCI/RITM</td>
+<td><div class="first last line-block">
+<div class="line">Transport</div>
+<div class="line">coefficient from</div>
+<div class="line">drift wave</div>
+<div class="line">turbulence</div>
+</div>
 </td>
+<td>/</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>TCI/E
-DWM
-(not
-yet
-in
-ETS)</td>
-<td>Trans
-port
-coeff
-icien
-t
-from
-drift
-wave
-turbu
-lence</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">TCI/MMM</div>
+<div class="line">(not yet</div>
+<div class="line">in ETS)</div>
+</div>
 </td>
+<td><div class="first last line-block">
+<div class="line">Transport</div>
+<div class="line">coefficient from</div>
+<div class="line">drift wave</div>
+<div class="line">turbulence</div>
+</div>
+</td>
+<td>/</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>nclas
-s
-(not
-yet
-in
-ETS)</td>
-<td>Neocl
-assic
-al
-trans
-port
-coeff
-icien
-ts</td>
-<td>Pär
-Strand</td>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">TCI/EDWM</div>
+<div class="line">(not yet</div>
+<div class="line">in ETS)</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Transport</div>
+<div class="line">coefficient from</div>
+<div class="line">drift wave</div>
+<div class="line">turbulence</div>
+</div>
+</td>
+<td>/</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>neos
-(not
-yet
-in
-ETS)</td>
-<td>Neocl
-assic
-al
-trans
-port
-coeff
-icien
-ts</td>
-<td>Olivier
-Sauter</td>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">nclass</div>
+<div class="line">(not yet</div>
+<div class="line">in ETS)</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Neoclassical</div>
+<div class="line">transport</div>
+<div class="line">coefficients</div>
+</div>
+</td>
+<td>Pär Strand</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>neowe
-sz</td>
-<td>Neocl
-assic
-al
-trans
-port
-coeff
-icien
-ts</td>
-<td>Bruce
-Scott</td>
-<td>Neoclassical transport coefficients based
-on the expression in John Wesson&#8217;s book
-Tokamaks.</td>
-</tr>
-<tr class="row-even"><td>neoar
-tz</td>
-<td>Neocl
-assic
-al
-trans
-port
-coeff
-icien
-ts</td>
-<td>Bruce
-Scott</td>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">neos</div>
+<div class="line">(not yet</div>
+<div class="line">in ETS)</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Neoclassical</div>
+<div class="line">transport</div>
+<div class="line">coefficients</div>
+</div>
+</td>
+<td>Olivier Sauter</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>spitz
-er</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-odd"><td>neowesz</td>
+<td><div class="first last line-block">
+<div class="line">Neoclassical</div>
+<div class="line">transport</div>
+<div class="line">coefficients</div>
+</div>
+</td>
+<td>Bruce Scott</td>
+<td><div class="first last line-block">
+<div class="line">Neoclassical transport</div>
+<div class="line">coefficients based on</div>
+<div class="line">the expression in John</div>
+<div class="line">Wesson&#8217;s book Tokamaks.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>neoartz</td>
+<td><div class="first last line-block">
+<div class="line">Neoclassical</div>
+<div class="line">transport</div>
+<div class="line">coefficients</div>
+</div>
+</td>
+<td>Bruce Scott</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>ETBtr
-anspo
-rt</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td>coron
-al</td>
+<tr class="row-odd"><td>spitzer</td>
 <td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>synch
-rotro
-nsour
-ces</td>
+<tr class="row-even"><td>ETBtransport</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>coronal</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>synchrotronsources</td>
 <td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1633,272 +2964,280 @@ ces</td>
 <span id="ets-a-4-10b-list-actors-hcd"></span><h5>Heating and current drive actors<a class="headerlink" href="#heating-and-current-drive-actors" title="Permalink to this headline">¶</a></h5>
 <table border="1" class="docutils">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="13%" />
-<col width="66%" />
+<col width="16%" />
+<col width="18%" />
+<col width="18%" />
+<col width="48%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Code
-name</th>
-<th class="head">Code
-Categ
-ory</th>
-<th class="head">Contact
-persons</th>
+<tr class="row-odd"><th class="head">Code name</th>
+<th class="head">Code Category</th>
+<th class="head">Contact persons</th>
 <th class="head">Short description</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>gray</td>
-<td>EC/wa
-ves</td>
-<td>Lorenzo
-Figini</td>
-<td>GRAY is a quasi-optical ray-tracing code
-for electron cyclotron heating &amp; current
-drive calculations in tokamaks.
-Code-parameter documentation can be found</td>
+<td>EC/waves</td>
+<td>Lorenzo Figini</td>
+<td><div class="first last line-block">
+<div class="line">GRAY is a quasi-optical ray-tracing code</div>
+<div class="line">for electron cyclotron heating &amp; current</div>
+<div class="line">drive calculations in tokamaks.</div>
+<div class="line">Code-parameter documentation can be found</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>travis</td>
-<td>EC/wa
-ves</td>
-<td>Nikolai
-Marushc
-henko
-and
-Lorenzo
-Figini</td>
-<td>Travis is a ray-tracing code for electron
-cyclotron heating &amp; current drive
-calculations in tokamaks.</td>
-</tr>
-<tr class="row-even"><td><blockquote class="first">
-<div>Torr</div></blockquote>
-<p class="last">ay-FO
-M</p>
+<td>EC/waves</td>
+<td><div class="first last line-block">
+<div class="line">Nikolai</div>
+<div class="line">Marushchenko</div>
+<div class="line">and</div>
+<div class="line">Lorenzo</div>
+<div class="line">Figini</div>
+</div>
 </td>
-<td>EC/wa
-ves</td>
-<td>Egbert
-Westerh
-of</td>
-<td>Torray-FOM is a ray-tracing code for
-electron cyclotron heating &amp; current drive
-calculations in tokamaks.</td>
+<td><div class="first last line-block">
+<div class="line">Travis is a ray-tracing code for electron</div>
+<div class="line">cyclotron heating &amp; current drive</div>
+<div class="line">calculations in tokamaks.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Torray-FOM</td>
+<td>EC/waves</td>
+<td>Egbert Westerhof</td>
+<td><div class="first last line-block">
+<div class="line">Torray-FOM is a ray-tracing code for</div>
+<div class="line">electron cyclotron heating &amp; current</div>
+<div class="line">drive calculations in tokamaks.</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>bbnbi</td>
-<td>NBI/s
-ource</td>
-<td>Otto
-Asunta</td>
-<td>Calculate the deposition rates of neutrals
-beam particles, i.e. the input source for
-Fokker-Planck solvers (not the heating and
-current drive). Note that the number of
-markers generated by BBNBI is described by
-the kepler variable number_nbi_markers_in.</td>
+<td>NBI/source</td>
+<td>Otto Asunta</td>
+<td><div class="first last line-block">
+<div class="line">Calculate the deposition rates of neutrals</div>
+<div class="line">beam particles, i.e. the input source for</div>
+<div class="line">Fokker-Planck solvers (not the heating and</div>
+<div class="line">current drive). Note that the number of</div>
+<div class="line">markers generated by BBNBI is described by</div>
+<div class="line">the kepler variable number_nbi_markers_in.</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>nemo</td>
-<td>NBI/s
-ource</td>
-<td>Mireill
-e
-Schneid
-er</td>
-<td>Calculate the deposition rates of neutrals
-beam particles, i.e. the input source for
-Fokker-Planck solvers (not the heating and
-current drive). Code-parameter
-documentation can be found</td>
-</tr>
-<tr class="row-odd"><td><blockquote class="first">
-<div>nucl</div></blockquote>
-<p class="last">earsi
-m</p>
+<td>NBI/source</td>
+<td><div class="first last line-block">
+<div class="line">Mireille</div>
+<div class="line">Schneider</div>
+</div>
 </td>
-<td>nucle
-ar/so
-urce</td>
-<td>Thomas
-Johnson</td>
-<td>Simple code for nuclear sources from
-thermal/thermal reactions. Code-parameter
-documentation can be found</td>
-</tr>
-<tr class="row-even"><td><blockquote class="first">
-<div>nbis</div></blockquote>
-<p class="last">im</p>
+<td><div class="first last line-block">
+<div class="line">Calculate the deposition rates of neutrals</div>
+<div class="line">beam particles, i.e. the input source for</div>
+<div class="line">Fokker-Planck solvers (not the heating and</div>
+<div class="line">current drive). Code-parameter</div>
+<div class="line">documentation can be found</div>
+</div>
 </td>
-<td>NBI,
-alpha
-s
-/</td>
-<td>Thomas
-Johnson</td>
-<td>Simple Fokker-Planck code calculating the
-collisional ion and electron heating from
-a particle source, either NBI or nuclear.
-Code-parameter documentation can be found</td>
+</tr>
+<tr class="row-odd"><td>nuclearsim</td>
+<td>nuclear/source</td>
+<td>Thomas Johnson</td>
+<td><div class="first last line-block">
+<div class="line">Simple code for nuclear sources from</div>
+<div class="line">thermal/thermal reactions. Code-parameter</div>
+<div class="line">documentation can be found</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>nbisim</td>
+<td><div class="first last line-block">
+<div class="line">NBI, alphas/</div>
+<div class="line">Fokker-Planck</div>
+</div>
+</td>
+<td>Thomas Johnson</td>
+<td><div class="first last line-block">
+<div class="line">Simple Fokker-Planck code calculating the</div>
+<div class="line">collisional ion and electron heating from</div>
+<div class="line">a particle source, either NBI or nuclear.</div>
+<div class="line">Code-parameter documentation can be found</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>risk</td>
-<td><blockquote class="first">
-<div>NBI
-Fokke</div></blockquote>
-<dl class="last docutils">
-<dt>r-Pla</dt>
-<dd>nck</dd>
-</dl>
+<td><div class="first last line-block">
+<div class="line">NBI Fokker-</div>
+<div class="line">Planck</div>
+</div>
 </td>
-<td>Mireill
-e
-Schneid
-er</td>
-<td>Bounce averaged steady-state Fokker-Planck
-solver calculating the collisional ion and
-electron heating from a particle source
-and the NBI current drive. Code-parameter
-documentation can be found</td>
+<td><div class="first last line-block">
+<div class="line">Mireille</div>
+<div class="line">Schneider</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Bounce averaged steady-state Fokker-Planck</div>
+<div class="line">solver calculating the collisional ion and</div>
+<div class="line">electron heating from a particle source</div>
+<div class="line">and the NBI current drive. Code-parameter</div>
+<div class="line">documentation can be found</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>spot</td>
-<td>NBI,
-alpha
-s
-and
-ICRF
-Fokke
-r-Pla
-nck</td>
-<td>Mireill
-e
-Schneid
-er</td>
-<td>Monte Carlo solver for the Fokker-Planck
-equation. Traces guiding centre orbits in
-a steady state magnetic equilibrium under
-the influence of Coloumb collisions and
-interactions with ICRF waves (through the
-RFOF library). The code can also be used
-for NBI and alpha particle modelling as it
-can handle source terms from the
-distsource CPO.</td>
+<td><div class="first last line-block">
+<div class="line">NBI, alphas</div>
+<div class="line">and</div>
+<div class="line">ICRF Fokker</div>
+<div class="line">-Planck</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Mireille</div>
+<div class="line">Schneider</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Monte Carlo solver for the Fokker-Planck</div>
+<div class="line">equation. Traces guiding centre orbits in</div>
+<div class="line">a steady state magnetic equilibrium under</div>
+<div class="line">the influence of Coloumb collisions and</div>
+<div class="line">interactions with ICRF waves (through the</div>
+<div class="line">RFOF library). The code can also be used</div>
+<div class="line">for NBI and alpha particle modelling as it</div>
+<div class="line">can handle source terms from the</div>
+<div class="line">distsource CPO.</div>
+</div>
+</td>
 </tr>
-<tr class="row-odd"><td><blockquote class="first">
-<div>asco</div></blockquote>
-<p class="last">t4ser
-ial</p>
+<tr class="row-odd"><td>ascot4serial</td>
+<td><div class="first last line-block">
+<div class="line">NBI, alphas,</div>
+<div class="line">ICRF/</div>
+<div class="line">Fokker-Planck</div>
+</div>
 </td>
-<td>NBI,
-alpha
-s,
-ICRF
-/
-Fokke
-r-Pla
-nck</td>
-<td>Otto
-Asunta/
-Seppo
-Sipila</td>
-<td>Monte Carlo Fokker-Planck solver
-calculating the collisional ion and
-electron heating from a particle source
-and the NBI current drive.</td>
+<td><div class="first last line-block">
+<div class="line">Otto</div>
+<div class="line">Asunta/</div>
+<div class="line">Seppo</div>
+<div class="line">Sipila</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Monte Carlo Fokker-Planck solver</div>
+<div class="line">calculating the collisional ion and</div>
+<div class="line">electron heating from a particle source</div>
+<div class="line">and the NBI current drive.</div>
+</div>
+</td>
 </tr>
-<tr class="row-even"><td><blockquote class="first">
-<div>asco</div></blockquote>
-<p class="last">t4par
-allel</p>
+<tr class="row-even"><td>ascot4parallel</td>
+<td><div class="first last line-block">
+<div class="line">NBI, alphas,</div>
+<div class="line">ICRF/</div>
+<div class="line">Fokker-Planck</div>
+</div>
 </td>
-<td><blockquote class="first">
-<div>NBI,
-alpha
-s,
-ICRF
-/</div></blockquote>
-<dl class="last docutils">
-<dt>Fokke</dt>
-<dd>r-Pla
-nck</dd>
-</dl>
+<td><div class="first last line-block">
+<div class="line">Otto</div>
+<div class="line">Asunta/</div>
+<div class="line">Seppo</div>
+<div class="line">Sipila</div>
+</div>
 </td>
-<td>Otto
-Asunta/
-Seppo
-Sipila</td>
-<td>Monte Carlo Fokker-Planck solver
-calculating the collisional ion and
-electron heating from a particle source
-and the NBI current drive.</td>
+<td><div class="first last line-block">
+<div class="line">Monte Carlo Fokker-Planck solver</div>
+<div class="line">calculating the collisional ion and</div>
+<div class="line">electron heating from a particle source</div>
+<div class="line">and the NBI current drive.</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>Lion</td>
-<td>IC /
-waves</td>
-<td>Olivier
-Sauter
-and
-Laurent
-Villard</td>
-<td>Global ICRF wave solver. Code-parameter
-documentation can be found</td>
+<td>IC / waves</td>
+<td><div class="first last line-block">
+<div class="line">Olivier Sauter</div>
+<div class="line">and</div>
+<div class="line">Laurent</div>
+<div class="line">Villard</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Global ICRF wave solver. Code-parameter</div>
+<div class="line">documentation can be found</div>
+</div>
+</td>
 </tr>
-<tr class="row-even"><td>Cyran
-o</td>
-<td>IC /
-waves</td>
-<td>Ernesto
-Lerche
-and
-Dirk
-Van
-Eester</td>
-<td>Global ICRF wave solver. Code-parameter
-documentation can be found</td>
+<tr class="row-even"><td>Cyrano</td>
+<td>IC / waves</td>
+<td><div class="first last line-block">
+<div class="line">Ernesto Lerche</div>
+<div class="line">and</div>
+<div class="line">Dirk</div>
+<div class="line">Van Eester</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Global ICRF wave solver. Code-parameter</div>
+<div class="line">documentation can be found</div>
+</div>
+</td>
 </tr>
-<tr class="row-odd"><td>Eve
-(not
-yet
-in
-ETS)</td>
-<td>IC /
-waves</td>
-<td>Remi
-Dumont</td>
-<td>Global ICRF wave solver</td>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Eve</div>
+<div class="line">(not yet in</div>
+<div class="line">ETS)</div>
+</div>
+</td>
+<td>IC / waves</td>
+<td>Remi Dumont</td>
+<td><div class="first last line-block">
+<div class="line">Global ICRF wave solver</div>
+</div>
+</td>
 </tr>
-<tr class="row-even"><td>StixR
-eDist</td>
-<td>IC /
-waves</td>
-<td>Dirk
-Van
-Eester
-and
-Ernesto
-Lerche</td>
-<td>1d Fokker-Planck solver for ICRF heating.</td>
+<tr class="row-even"><td>StixReDist</td>
+<td>IC / waves</td>
+<td><div class="first last line-block">
+<div class="line">Dirk</div>
+<div class="line">Van Eester</div>
+<div class="line">and</div>
+<div class="line">Ernesto</div>
+<div class="line">Lerche</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">1d Fokker-Planck solver for ICRF heating.</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>ICdep</td>
-<td>IC /
-waves</td>
-<td>Thomas
-Johnson</td>
-<td>Generates Waves-cpo with an IC wave field
-with Gaussian deposition profiles
-described by a combination of antenna-cpo
-input and through code parameters input.
-Code-parameter documentation can be found</td>
+<td>IC / waves</td>
+<td>Thomas Johnson</td>
+<td><div class="first last line-block">
+<div class="line">Generates Waves-cpo with an IC wave field</div>
+<div class="line">with Gaussian deposition profiles</div>
+<div class="line">described by a combination of antenna-cpo</div>
+<div class="line">input and through code parameters input.</div>
+<div class="line">Code-parameter documentation can be found</div>
+</div>
+</td>
 </tr>
-<tr class="row-even"><td>ICco
-up</td>
-<td>IC /
-coupl
-ing</td>
-<td>Thomas
-Johnson</td>
-<td>Simple model for the coupling waves from
-ion cyclotron antennas to the plasma.
-Code-parameter documentation can be found</td>
+<tr class="row-even"><td>ICcoup</td>
+<td>IC / coupling</td>
+<td>Thomas Johnson</td>
+<td><div class="first last line-block">
+<div class="line">Simple model for the coupling waves from</div>
+<div class="line">ion cyclotron antennas to the plasma.</div>
+<div class="line">Code-parameter documentation can be found</div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1907,85 +3246,64 @@ Code-parameter documentation can be found</td>
 <span id="ets-a-4-10b-list-actors-events"></span><h5>Events actors<a class="headerlink" href="#events-actors" title="Permalink to this headline">¶</a></h5>
 <table border="1" class="docutils">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="13%" />
-<col width="66%" />
+<col width="19%" />
+<col width="18%" />
+<col width="17%" />
+<col width="46%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Code
-name</th>
-<th class="head">Code
-Categ
-ory</th>
-<th class="head">Contact
-persons</th>
+<tr class="row-odd"><th class="head">Code name</th>
+<th class="head">Code Category</th>
+<th class="head">Contact persons</th>
 <th class="head">Short description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>pelle
-tacto
-r</td>
-<td>pelle
-t</td>
-<td>Denis
-Kalupin</td>
+<tr class="row-even"><td>pelletactor</td>
+<td>pellet</td>
+<td>Denis Kalupin</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>pelle
-ttrig
-ger</td>
-<td>pelle
-t</td>
-<td>Denis
-Kalupin</td>
+<tr class="row-odd"><td>pellettrigger</td>
+<td>pellet</td>
+<td>Denis Kalupin</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>sawcr
-ash_s
-lice</td>
-<td>sawte
-eth</td>
-<td>Olivier
-Sauter</td>
+<tr class="row-even"><td>sawcrash_slice</td>
+<td>sawteeth</td>
+<td>Olivier Sauter</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>sawcr
-it</td>
-<td>sawte
-eth</td>
-<td>Olivier
-Sauter</td>
+<tr class="row-odd"><td>sawcrit</td>
+<td>sawteeth</td>
+<td>Olivier Sauter</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>runa
-way_i
-ndica
-tor</td>
-<td>runaw
-ay</td>
-<td>Roland
-Lohner
-och
-Gergo
-Pokol</td>
-<td>Indicating the presence of runaway
-electrons: 1) Indicate, whether electric
-field is below the critical level, thus
-runaway generation is impossible. 2)
-Indicate, whether runaway electron growth
-rate exceeds a preset limit. This
-calculation takes only the Dreicer runaway
-generation method in account and assumes a
-velocity distribution close to Maxwellian,
-therefore this result should be considered
-with caution. The growth rate limit can be
-set via an input of the actor. Limit value
-is set to $$10^12$$ particle per second by
-default. (This growth rate generates a
-runaway current of approximately 1kA
-considering a 10 seconds long discharge.)</td>
+<tr class="row-even"><td>runaway_indicator</td>
+<td>runaway</td>
+<td>Roland Lohneroch
+Gergo Pokol</td>
+<td><div class="first last line-block">
+<div class="line">Indicating the presence of runaway</div>
+<div class="line">electrons:</div>
+<div class="line">1) Indicate, whether electric field is</div>
+<div class="line">below the critical level, thus runaway</div>
+<div class="line">generation is impossible.</div>
+<div class="line">2) Indicate, whether runaway electron</div>
+<div class="line">growth rate exceeds a preset limit. This</div>
+<div class="line">calculation takes only the Dreicer runaway</div>
+<div class="line">generation method in account and assumes a</div>
+<div class="line">velocity distribution close to Maxwellian,</div>
+<div class="line">therefore this result should be considered</div>
+<div class="line">with caution. The growth rate limit can be</div>
+<div class="line">set via an input of the actor. Limit value</div>
+<div class="line">is set to \( 10^{12} \) particle per
+second by default.</div>
+<div class="line">(This growth rate generates a runaway</div>
+<div class="line">current of approximately 1kA considering a</div>
+<div class="line">10 seconds long discharge.)</div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2032,6 +3350,9 @@ found
 <a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/ets_status.html">here</a>.</p>
 <p><strong>Contact person:</strong> <a class="reference external" href="mailto:denis&#46;kalupin&#37;&#52;&#48;euro-fusion&#46;org?subject=ETS%20in%20KEPLER">Denis Kalupin</a> (Skype:
 dkalupin)*</p>
+<div class="figure align-center">
+<img alt="_images/ets_top_a.png" src="_images/ets_top_a.png" />
+</div>
 <div class="section" id="id3">
 <h4>Obtaining the ETS<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>Copy the ETS workflow to your space:</p>
@@ -2074,6 +3395,9 @@ INPUT DATA)</p>
 </div>
 <div class="section" id="executing-the-ets">
 <h4>Executing the ETS<a class="headerlink" href="#executing-the-ets" title="Permalink to this headline">¶</a></h4>
+<div class="figure align-center">
+<img alt="_images/ets_start_a.png" src="_images/ets_start_a.png" />
+</div>
 <p>Open ETS workflow in Kepler:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>kepler.sh <span class="nv">$EU</span>-IMSCRATCH/ETS_WORKFLOWS/ETS_WORKFLOW.xml
 </pre></div>
@@ -2115,6 +3439,9 @@ INPUT DATA)</p>
 <li>TBEGIN - Computations start time</li>
 <li>TEND - Computattions end time</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_config1_a.png" src="_images/ets_config1_a.png" />
+</div>
 <p>Time spep</p>
 <ul class="simple">
 <li>right click on the box ‘BEFORE THE TIME EVOLUTION’</li>
@@ -2123,6 +3450,9 @@ INPUT DATA)</p>
 <li>TAU_OUT: specify value of the output time interval in [s]</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_run_settings1_a.png" src="_images/ets_run_settings1_a.png" />
+</div>
 </div>
 </div>
 <div class="section" id="plasma-impurity-and-neutrals-composition">
@@ -2145,6 +3475,9 @@ from the first to the last [1:NIMP], separated by commas</li>
 <li>choose the neutrals types, which should be switched &#8220;ON&#8221;</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_run_settings2_a.png" src="_images/ets_run_settings2_a.png" />
+</div>
 </div>
 <div class="section" id="ets-a-4-10a-equations">
 <span id="id9"></span><h5>Equations to be solved and boundary conditions<a class="headerlink" href="#ets-a-4-10a-equations" title="Permalink to this headline">¶</a></h5>
@@ -2174,6 +3507,9 @@ shot</li>
 </ul>
 <p>The particular equation will be activated if the boundary condition type
 for it is other than <em>OFF</em>!</p>
+<div class="figure align-center">
+<img alt="_images/ets_run_boundary_a.png" src="_images/ets_run_boundary_a.png" />
+</div>
 <p>To set up boundary conditions:</p>
 <ul class="simple">
 <li>right click on the box ‘BEFORE THE TIME EVOLUTION’</li>
@@ -2204,6 +3540,9 @@ way as for main ions. !!! Note, that at the moment only types: <em>OFF</em>;
 [1:MAX_Z_IMP], separated by commas</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_run_boundary2_a.png" src="_images/ets_run_boundary2_a.png" />
+</div>
 <p>Interface for impurity boundary condition has additional option ,
 <em>coronal_distribution</em>, that allow to preset the edge values or entire
 profiles of individual ionization states from coronal distribution. In
@@ -2237,6 +3576,9 @@ DISABLED, MIGHT BE ADDED ON REQUEST</p>
 component [1, 2, 3 ...NION, 1, 2, 3, ...NIMP], separated by commas</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_run_boundary3_a.png" src="_images/ets_run_boundary3_a.png" />
+</div>
 </div>
 <div class="section" id="id13">
 <h6>Input Profiles Interpolation<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h6>
@@ -2251,6 +3593,9 @@ the worflow, <em>Interpolation_of_input_profiles</em>.</p>
 <li>on_RHO_TOR_NORM_grid
 - interpolate input profiles based on normalised rho grid [0:1]</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_run_boundary5_a.png" src="_images/ets_run_boundary5_a.png" />
+</div>
 </div>
 </div>
 <div class="section" id="ets-a-4-10a-convergence">
@@ -2269,6 +3614,9 @@ To edit them do:</p>
 <li>choose your settings</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_convergence1_a.png" src="_images/ets_convergence1_a.png" />
+</div>
 <p>Switches in the field <em>FREQUENCY OF CALLING THE PHYSICS ACTORS</em> define how
 many times the the actors of a certain cathegory (equilibrium, transport,
 etc.) should be called in a single time step. By selecting <em>YES</em> all actors
@@ -2312,6 +3660,9 @@ please do:</p>
 <li>Select your settings or specify values</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_eq_a.png" src="_images/ets_eq_a.png" />
+</div>
 <p>SETTINGS:</p>
 <ul class="simple">
 <li>Equilibrium_configuration
@@ -2347,6 +3698,9 @@ INTERPRETATIVE
 if you trust your input data (in this case the check will be
 ignorred).</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_eq2_a.png" src="_images/ets_eq2_a.png" />
+</div>
 <p>Please note, that different equilibrium solvers might require slightly
 different input. Thus it is a user responsibility to check that the
 information inside input shot/run is enough to run selected equilibrium
@@ -2364,6 +3718,9 @@ select the one of them.Therefore please do:</p>
 <li>choose your equilibrium solver</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_eq3_a.png" src="_images/ets_eq3_a.png" />
+</div>
 <p><em>INTERPRETATIVE</em> means that the ETS will not update the equilibrium,
 instead it will be using the initial equilibrium.</p>
 <p>Please note, that it is better to select the same code as you used for
@@ -2371,6 +3728,9 @@ pre-iterrations. Because outputs of different equilibrium solver are not
 necessary done with the same resolution. Therefore the routine saving
 the information to the data base might brake due to uncompatible sizes
 of some signals.</p>
+<div class="figure align-center">
+<img alt="_images/ets_eq4_a.png" src="_images/ets_eq4_a.png" />
+</div>
 </div>
 </div>
 <div class="section" id="ets-a-4-10a-transport">
@@ -2385,6 +3745,9 @@ composite actor. Therefore please do:</p>
 <li>choose your settings</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_transport1_a.png" src="_images/ets_transport1_a.png" />
+</div>
 <div class="section" id="choice-of-transport-model">
 <h6>Choice of transport model<a class="headerlink" href="#choice-of-transport-model" title="Permalink to this headline">¶</a></h6>
 <p>ETS constructs the total transport coefficients from the combination of
@@ -2398,6 +3761,9 @@ input shot)</p>
 switch it OFF</p>
 <p>The list of available transport models can be found
 <a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/ets_status.html">here</a>.</p>
+<div class="figure align-center">
+<img alt="_images/ets_transport2_a.png" src="_images/ets_transport2_a.png" />
+</div>
 </div>
 <div class="section" id="main-plasma-transport">
 <h6>Main plasma transport<a class="headerlink" href="#main-plasma-transport" title="Permalink to this headline">¶</a></h6>
@@ -2409,6 +3775,9 @@ transport coefficient.</p>
 <p>You also can add the constant background level for each coefficient (ion
 coefficients are expected to be the string {1:NION}, separated by
 commas)</p>
+<div class="figure align-center">
+<img alt="_images/ets_transport3_a.png" src="_images/ets_transport3_a.png" />
+</div>
 </div>
 <div class="section" id="impurity-transport">
 <h6>Impurity transport<a class="headerlink" href="#impurity-transport" title="Permalink to this headline">¶</a></h6>
@@ -2424,6 +3793,9 @@ commas)</p>
 transport coefficient <em>from_first_ion</em> or <em>from_electrons</em> (the same
 anomalous contribution will be added to all impurity components, all
 ionization states)</p>
+<div class="figure align-center">
+<img alt="_images/ets_transport4_a.png" src="_images/ets_transport4_a.png" />
+</div>
 </div>
 <div class="section" id="id18">
 <h6>Edge transport barrier<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h6>
@@ -2432,6 +3804,9 @@ specified <em>RHO_TOR_NORM_ETB</em>. Total transport coefficients for all
 transport channels (ne, ni, nz, Te, Ti,...) will be reduced to constant
 values specified below (ion and impurity coefficients are expected to be
 the strings {1:NION}) and {1:NIMP} respectively)</p>
+<div class="figure align-center">
+<img alt="_images/ets_transport5_a.png" src="_images/ets_transport5_a.png" />
+</div>
 </div>
 <div class="section" id="id19">
 <h6>Total transport coefficients<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h6>
@@ -2480,6 +3855,9 @@ coefficients;</li>
 <li>save and exit</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_transport5_a.png" src="_images/ets_transport5_a.png" />
+</div>
 </div>
 </div>
 <div class="section" id="ets-a-4-10a-mhd">
@@ -2494,8 +3872,10 @@ LOOP composite actor. Therefore please do:</p>
 <li>choose your settings</li>
 <li>Commit</li>
 </ul>
-<p>At the moment ETS allows only for NTM to be activated. The sawtooth
-module is expected to be deployed before EU-IM Code Camp in Slovenia.</p>
+<div class="figure align-center">
+<img alt="_images/ets_mhd_a.png" src="_images/ets_mhd_a.png" />
+</div>
+<p>At the moment ETS allows only for NTM to be activated.</p>
 <p>User can ajust the following NTM settings:</p>
 <ul class="simple">
 <li>NTM –
@@ -2512,6 +3892,9 @@ multiplied with this value</li>
 <li>NTM_phase</li>
 <li>NTM_frequency</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_mhd2_a.png" src="_images/ets_mhd2_a.png" />
+</div>
 </div>
 <div class="section" id="ets-a-4-10a-sources">
 <span id="id21"></span><h5>Sources and impurity<a class="headerlink" href="#ets-a-4-10a-sources" title="Permalink to this headline">¶</a></h5>
@@ -2525,6 +3908,9 @@ LOOP composite actor. Therefore please do:</p>
 <li>choose your settings</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_sources1_a.png" src="_images/ets_sources1_a.png" />
+</div>
 <div class="section" id="imp3-sources">
 <h6>IMP3 sources<a class="headerlink" href="#imp3-sources" title="Permalink to this headline">¶</a></h6>
 <p>There is a number of sources developed by IMP3 project, which are actors
@@ -2559,6 +3945,9 @@ OFF
 INTERPRETATIVE
 – profiles of impurity density will be read from input shot/run</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_sources2_a.png" src="_images/ets_sources2_a.png" />
+</div>
 </div>
 <div class="section" id="imp5hcd-sources">
 <h6>IMP5HCD sources<a class="headerlink" href="#imp5hcd-sources" title="Permalink to this headline">¶</a></h6>
@@ -2566,6 +3955,9 @@ INTERPRETATIVE
 incorporated by the ETS workflow.</p>
 <p>For the IMP5HCD sources please activate the type of heating source, by
 ticking the box in front of it, and select the code to simulate it.</p>
+<div class="figure align-center">
+<img alt="_images/ets_sources3_a.png" src="_images/ets_sources3_a.png" />
+</div>
 <p>You also need to configure initial IMP5HCD settings. Therefore please:</p>
 <ul class="simple">
 <li>right click on the box ‘BEFORE THE TIME EVOLUTION’</li>
@@ -2575,16 +3967,25 @@ ticking the box in front of it, and select the code to simulate it.</p>
 <li>edit the stettings</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_sources4_a.png" src="_images/ets_sources4_a.png" />
+</div>
 <p>The detailed information on initial IMP5HCD settings can be found
 <a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/imp5_imp5hcd.html">here</a>.
 Please note that settings for NBI are done independent for each PINI.
 Therefore, for NBI settings, please insert the values separated by
 commas. The number of the element in the array corresponds to the number
 of activated PINI. Maximum accepted number of PINIs = 16.</p>
+<div class="figure align-center">
+<img alt="_images/ets_sources5_a.png" src="_images/ets_sources5_a.png" />
+</div>
 </div>
 <div class="section" id="id22">
 <h6>Power control<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h6>
 <p>You also can activate the power control for the IMP5HCD sources.</p>
+<div class="figure align-center">
+<img alt="_images/ets_sources6_a.png" src="_images/ets_sources6_a.png" />
+</div>
 <p>If the POWER_CONTROL is not <em>OFF</em>, there are two modes of
 operation:<em>specific</em> and <em>frequency</em></p>
 <p>For <em>specific</em> you should specify the time sequence separated by commas
@@ -2593,11 +3994,17 @@ corresponds to the first time, second to second and etc.). Linear
 interpolation will be done between the sequence points. For example: if
 you give the power sequence = 2e6,4e6,1e6 and times = 0.0, 0.7, 1.5 (s)
 the delivered power would be:</p>
+<div class="figure align-center">
+<img alt="_images/ets_sources7_a.png" src="_images/ets_sources7_a.png" />
+</div>
 <p>For <em>frequency</em> you should specify the power levels sequence separated
 by commas, start and end time of the power control and the frequency of
 switching between these levels. For example: if you give the power
 sequence = 2e6,4e6,1e6 and frequency = 10 (Hz) tstart =0.0 (s) tend =
 1.5 (s) the delivered power would be:</p>
+<div class="figure align-center">
+<img alt="_images/ets_sources8_a.png" src="_images/ets_sources8_a.png" />
+</div>
 </div>
 <div class="section" id="id23">
 <h6>Total power<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h6>
@@ -2614,27 +4021,19 @@ ImpuritySourceMultiplier=3.0, then contibutions from impurity to Se, Sz
 and Qe will be multiplied with 3.0</p>
 <p>The fine tuning of of sources can be done through editing the XML code
 parameters of the source combiner actor:</p>
-<ul>
-<li><p class="first">right click on the box ‘SOURCES and IMPURITY’</p>
-</li>
-<li><p class="first">select ‘Open actor’ to edit settings</p>
-</li>
-<li><p class="first">right click on the box ‘Source Combiner’</p>
-</li>
-<li><p class="first">select ‘Open actor’ to edit settings</p>
-</li>
-<li><p class="first">right click on the box ‘sourcecombiner’</p>
-</li>
-<li><p class="first">select ‘Configure actor’</p>
-</li>
-<li><p class="first">click ‘Edit Code Parameters’</p>
-</li>
-<li><p class="first">If you like the sources to the particular equation being activated -
+<ul class="simple">
+<li>right click on the box ‘SOURCES and IMPURITY’</li>
+<li>select ‘Open actor’ to edit settings</li>
+<li>right click on the box ‘Source Combiner’</li>
+<li>select ‘Open actor’ to edit settings</li>
+<li>right click on the box ‘sourcecombiner’</li>
+<li>select ‘Configure actor’</li>
+<li>click ‘Edit Code Parameters’</li>
+<li>If you like the sources to the particular equation being activated -
 select <em>from_input_CPOs</em>; if you select <em>OFF</em> contributions from all
 sources to this channel will be nullified. For active channels you
 can adjust multipliers for combining contributions from different
-source modules (array of five space separated values is expected):</p>
-<ul class="simple">
+source modules (array of five space separated values is expected):<ul>
 <li>first position - Data Base sources;</li>
 <li>second position – Gaussian sources;</li>
 <li>third position – HCD sources;</li>
@@ -2642,16 +4041,16 @@ source modules (array of five space separated values is expected):</p>
 <li>fifth position – Impurity sources.</li>
 </ul>
 </li>
-<li><p class="first">save and exit</p>
-</li>
-<li><p class="first">Commit</p>
-<p>. _ETS_A_4.10a_inst_events:</p>
-</li>
+<li>save and exit</li>
+<li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_sources9_a.png" src="_images/ets_sources9_a.png" />
+</div>
 </div>
 </div>
 <div class="section" id="instantaneous-events">
-<h5>Instantaneous events<a class="headerlink" href="#instantaneous-events" title="Permalink to this headline">¶</a></h5>
+<span id="ets-a-4-10a-inst-events"></span><h5>Instantaneous events<a class="headerlink" href="#instantaneous-events" title="Permalink to this headline">¶</a></h5>
 <p>At the moment, user can swith ON and OFF two types of events: PELLET and
 SAWTOOTH</p>
 <div class="section" id="id24">
@@ -2675,9 +4074,15 @@ array ‘times_pellet’</li>
 ‘tend_pellet’ with a ’frequency_pellet’</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/eps_instantaneous_events_a.png" src="_images/eps_instantaneous_events_a.png" />
+</div>
 <p>Parameters of individual pellet need to be configured through the
 icode_parameters of the PELLET actor. To access it go to &#8216;Outline&#8217; on
 the right upper corner and open the following:</p>
+<div class="figure align-center">
+<img alt="_images/eps_instantaneous_events2_a.png" src="_images/eps_instantaneous_events2_a.png" />
+</div>
 <ul class="simple">
 <li>right click on the actor ‘PELLET’</li>
 <li>select ‘Configure actor’</li>
@@ -2685,6 +4090,9 @@ the right upper corner and open the following:</p>
 <li>edit parameters and click ‘save and exit’</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/eps_instantaneous_events3_a.png" src="_images/eps_instantaneous_events3_a.png" />
+</div>
 <p><em>amn</em> – atomic mass number: array of elements separated by space
 (1:nelements) [-]</p>
 <p><em>zn</em> – nuclear charge: array of elements separated by space
@@ -2747,6 +4155,9 @@ CURRENT</li>
 </ul>
 <p>Also the error messages from execution of the workflow will be displayed
 here.</p>
+<div class="figure align-center">
+<img alt="_images/ets_visual1_a.png" src="_images/ets_visual1_a.png" />
+</div>
 </div>
 <div class="section" id="id27">
 <h6>Python Visualization Display<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h6>
@@ -2757,8 +4168,14 @@ here.</p>
 <li>select visualisation ‘YES’ or ‘NO’</li>
 <li>Commit</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/ets_visual2_a.png" src="_images/ets_visual2_a.png" />
+</div>
 <p>Then evolution of main discharge parameters will be shown in this
 window:</p>
+<div class="figure align-center">
+<img alt="_images/ets_visual3_a.png" src="_images/ets_visual3_a.png" />
+</div>
 </div>
 </div>
 </div>
@@ -2783,6 +4200,9 @@ interface for configuring the simulation</li>
 </ul>
 <p>Contact persons: <a class="reference external" href="mailto:vincent&#46;basiuk&#37;&#52;&#48;cea&#46;fr?subject=ETS%20in%20KEPLER">Vincent Basiuk</a> ,
 <a class="reference external" href="mailto:philippe&#46;huynh&#37;&#52;&#48;cea&#46;fr?subject=ETS%20in%20KEPLER">Philippe Huynh</a></p>
+<div class="figure align-center">
+<img alt="_images/ets_c.png" src="_images/ets_c.png" />
+</div>
 </div>
 <div class="section" id="ets-status">
 <span id="id28"></span><h3>ETS Status<a class="headerlink" href="#ets-status" title="Permalink to this headline">¶</a></h3>
@@ -2790,17 +4210,20 @@ interface for configuring the simulation</li>
 <colgroup>
 <col width="33%" />
 <col width="33%" />
-<col width="33%" />
+<col width="34%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head"><em>Package Name /
-Physics Module</em></th>
+<tr class="row-odd"><th class="head"><div class="first last line-block">
+<div class="line"><em>Package Name</em> /</div>
+<div class="line"><em>Physics Module</em></div>
+</div>
+</th>
 <th class="head">ETS-A</th>
 <th class="head">ETS-C</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><em>EQILIBRIUM</em></td>
+<tr class="row-even"><td><em>EQUILIBRIUM</em></td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
@@ -2834,9 +4257,12 @@ Physics Module</em></th>
 </tr>
 <tr class="row-even"><td>HELENA21</td>
 <td>&#160;</td>
-<td>work in 4.09a problem
-when it doesn&#8217;t find
-any equilibrium crash</td>
+<td><div class="first last line-block">
+<div class="line">work in 4.09a problem</div>
+<div class="line">when it doesn&#8217;t find</div>
+<div class="line">any equilibrium crash</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
 <td>&#160;</td>
@@ -2847,11 +4273,18 @@ any equilibrium crash</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>CEDRES++</td>
-<td>In progress/tests are
-planned for Nov.2014</td>
-<td>validate (static
-mode, TBD evolution
-mode)</td>
+<td><div class="first last line-block">
+<div class="line">In progress/tests</div>
+<div class="line">are planned for</div>
+<div class="line">Nov.2014</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">validate (static</div>
+<div class="line">mode, TBD evolution</div>
+<div class="line">mode)</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>CREATE-NL</td>
 <td>&#160;</td>
@@ -2882,17 +4315,26 @@ mode)</td>
 <td>validate</td>
 </tr>
 <tr class="row-odd"><td>SAWTEETH</td>
-<td>Implemented/Tested/re
-lease
-date:Nov.2014</td>
+<td><div class="first last line-block">
+<div class="line">Implemented/Tested/</div>
+<div class="line">release</div>
+<div class="line">date:Nov.2014</div>
+</div>
+</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>Linear Stability
-Chain</td>
-<td>Stand alone
-tests/implementation
-in ETS and
-release:2015</td>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Linear Stability</div>
+<div class="line">Chain</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Stand alone</div>
+<div class="line">tests/implementation</div>
+<div class="line">in ETS and</div>
+<div class="line">release:2015</div>
+</div>
+</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
@@ -2903,18 +4345,27 @@ release:2015</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><em>analytical &amp;
-interpretative:</em></td>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><em>analytical &amp;</em></div>
+<div class="line"><em>interpretative:</em></div>
+</div>
+</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>From DATA BASE
-(interpretative)</td>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">From DATA BASE</div>
+<div class="line">(interpretative)</div>
+</div>
+</td>
 <td>Ready for use</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>Edge Transport
-Barried (analytical)</td>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Edge Transport</div>
+<div class="line">Barried (analytical)</div>
+</div>
+</td>
 <td>Ready for use</td>
 <td>&#160;</td>
 </tr>
@@ -2932,46 +4383,70 @@ Barried (analytical)</td>
 </tr>
 <tr class="row-odd"><td>BOHM-GYROBOHM</td>
 <td>Ready for use</td>
-<td>validate, + effect of
-rotation</td>
+<td><div class="first last line-block">
+<div class="line">validate, + effect of</div>
+<div class="line">rotation</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>GLF23</td>
-<td>Implemented/Tested/re
-lease
-date:Nov.2014</td>
-<td>to be tested (GLF23
-installed in previous
-gateway not
-validated)</td>
+<td><div class="first last line-block">
+<div class="line">Implemented/Tested/</div>
+<div class="line">release</div>
+<div class="line">date:Nov.2014</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">to be tested (GLF23</div>
+<div class="line">installed in previous</div>
+<div class="line">gateway not</div>
+<div class="line">validated)</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>WEILAND</td>
-<td>Implemented/Tested/re
-lease
-date:Nov.2014</td>
+<td><div class="first last line-block">
+<div class="line">Implemented/Tested/</div>
+<div class="line">release</div>
+<div class="line">date:Nov.2014</div>
+</div>
+</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>REU-IM</td>
-<td>Implemented/Tested/re
-lease
-date:Nov.2014</td>
+<td><div class="first last line-block">
+<div class="line">Implemented/Tested/</div>
+<div class="line">release</div>
+<div class="line">date:Nov.2014</div>
+</div>
+</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>EWDM</td>
-<td>Implemented/Tested/re
-lease
-date:Nov.2014</td>
+<td><div class="first last line-block">
+<div class="line">Implemented/Tested/</div>
+<div class="line">release</div>
+<div class="line">date:Nov.2014</div>
+</div>
+</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>TGLF</td>
-<td>In progress/Some
-initial tests</td>
+<td><div class="first last line-block">
+<div class="line">In progress/Some</div>
+<div class="line">initial tests</div>
+</div>
+</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>KIAUTO</td>
 <td>&#160;</td>
-<td>installed (transport
-model based on
-scaling law)</td>
+<td><div class="first last line-block">
+<div class="line">installed (transport</div>
+<div class="line">model based on</div>
+<div class="line">scaling law)</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>&#160;</td>
 <td>&#160;</td>
@@ -2990,42 +4465,60 @@ scaling law)</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>NEOART</td>
-<td>Ready for use
-(probably not
-suggested as being
-too oscilatory)</td>
+<td><div class="first last line-block">
+<div class="line">Ready for use</div>
+<div class="line">(probably not</div>
+<div class="line">suggested as being</div>
+<div class="line">too oscilatory)</div>
+</div>
+</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>NCLASS</td>
 <td>In progress</td>
-<td>validate with
-composition (to be
-upgrade with
-compositions</td>
+<td><div class="first last line-block">
+<div class="line">validate with</div>
+<div class="line">composition (to be</div>
+<div class="line">upgrade with</div>
+<div class="line">compositions</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>NCLASS/FORCEBALL</td>
 <td>&#160;</td>
-<td>installed (gives the
-radial electric
-field)</td>
+<td><div class="first last line-block">
+<div class="line">installed (gives the</div>
+<div class="line">radial electric</div>
+<div class="line">field)</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><em>HEAT,PARTICLE
-SOURCES &amp; CURRENT
-DRIVE</em></td>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><em>HEAT,PARTICLE</em></div>
+<div class="line"><em>SOURCES &amp; CURRENT</em></div>
+<div class="line"><em>DRIVE</em></div>
+</div>
+</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><em>analytical &amp;
-interpretative:</em></td>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><em>analytical &amp;</em></div>
+<div class="line"><em>interpretative:</em></div>
+</div>
+</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>From DATA BASE
-(interpretative)</td>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">From DATA BASE</div>
+<div class="line">(interpretative)</div>
+</div>
+</td>
 <td>Ready for use</td>
 <td>&#160;</td>
 </tr>
@@ -3037,8 +4530,11 @@ interpretative:</em></td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><em>impurity and
-particles:</em></td>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><em>impurity and</em></div>
+<div class="line"><em>particles:</em></div>
+</div>
+</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
@@ -3056,14 +4552,20 @@ particles:</em></td>
 </tr>
 <tr class="row-odd"><td>ZNEUTRES</td>
 <td>&#160;</td>
-<td>installed (simple
-module of CRONOS for
-neutral source terms)</td>
+<td><div class="first last line-block">
+<div class="line">installed (simple</div>
+<div class="line">module of CRONOS for</div>
+<div class="line">neutral source terms)</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>ZRECYCLE</td>
 <td>&#160;</td>
-<td>edge boundary for
-electron density</td>
+<td><div class="first last line-block">
+<div class="line">edge boundary for</div>
+<div class="line">electron density</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
 <td>&#160;</td>
@@ -3177,8 +4679,11 @@ electron density</td>
 <td>Ready for use</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>Pellet frequency
-control</td>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Pellet frequency</div>
+<div class="line">control</div>
+</div>
+</td>
 <td>Ready for use</td>
 <td>&#160;</td>
 </tr>
@@ -3191,37 +4696,53 @@ control</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>SOLPS</td>
-<td>Tested at Fortran
-level</td>
+<td><div class="first last line-block">
+<div class="line">Tested at Fortran</div>
+<div class="line">level</div>
+</div>
+</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><em>DOCUMENTATION and
-MANUALS</em></td>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><em>DOCUMENTATION and</em></div>
+<div class="line"><em>MANUALS</em></div>
+</div>
+</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>Physics Description</td>
-<td>Description of the
-ETS</td>
+<td><div class="first last line-block">
+<div class="line">Description of the</div>
+<div class="line">ETS</div>
+</div>
+</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>Numerics Description</td>
-<td>Form of the
-standardize
-equations</td>
+<td><div class="first last line-block">
+<div class="line">Form of the</div>
+<div class="line">standardize</div>
+<div class="line">equations</div>
+</div>
+</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>Manuals</td>
-<td><ul class="first last simple">
-<li>ETS workflows in
-KEPLER</li>
-<li>ETS source in
-Fortran</li>
-</ul>
+<td><div class="first last line-block">
+<div class="line">-  ETS workflows in</div>
+<div class="line-block">
+<div class="line">KEPLER</div>
+</div>
+<div class="line">-  ETS source in</div>
+<div class="line-block">
+<div class="line">Fortran</div>
+</div>
+</div>
 </td>
 <td>&#160;</td>
 </tr>

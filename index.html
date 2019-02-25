@@ -94,9 +94,12 @@
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
 </ul>
@@ -378,6 +381,31 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="es.html#workflow-rationale">Workflow rationale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="es.html#workflow-organization-design">Workflow organization &amp; design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="es.html#initialization">Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="es.html#fixedbndcode">FixedBndCode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="es.html#redefining-the-plasma-boundary-cutoff">Redefining the plasma boundary (Cutoff)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="es.html#calculation-of-equilibrium-fixbndequil">Calculation of Equilibrium (Fixbndequil)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="es.html#visualization-visual">Visualization (Visual)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="es.html#stabcode">StabCode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="es.html#finalize">Finalize</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="es.html#actors-involved">Actors involved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="es.html#installing-the-workflow">Installing the workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="es.html#setting-up-workflow-and-actor-parameters">Setting up Workflow and Actor parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="es.html#setting-workflow-parameters">Setting workflow parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="es.html#setting-actor-parameters">Setting actor parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="es.html#test-cases-and-self-oriented-training">Test cases and self-oriented training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="es.html#news-and-recent-activity">News and Recent activity</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="transport.html#overview">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transport.html#particle-flux-as-an-example">Particle Flux as an Example</a></li>
@@ -453,6 +481,67 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="codes.html#transport-list-of-codes-imp3">Transport list of codes (IMP3)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#standard-machine-names">Standard Machine Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#physics-conventions">Physics Conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#coordinate-system">Coordinate System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#representation-of-the-magnetic-field-and-current">Representation of the Magnetic Field and Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#poloidal-and-toroidal-fluxes">Poloidal and Toroidal Fluxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#safety-factor">Safety Factor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#signs">Signs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#cocos-toroidal-coordinate-conventions">COCOS - toroidal coordinate conventions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conventions.html#determining-the-cocos-number">Determining the COCOS number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conventions.html#equilibrium-cocos-transformation-library-and-actor">Equilibrium COCOS transformation library and actor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#the-flux-surface-average">The Flux Surface Average</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#the-toroidal-flux-radius-as-the-radial-coordinate">The Toroidal Flux Radius as the Radial Coordinate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#toroidal-and-parallel-current">Toroidal and Parallel Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#straight-field-line-coordinates">Straight Field Line Coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#plasma-betas">Plasma Betas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#internal-inductance">Internal Inductance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#poloidal-angle-dimension-in-equilibrium-cpo">Poloidal Angle Dimension in Equilibrium CPO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#numerical-and-computational-conventions">Numerical and computational conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#standardized-variable-types">Standardized Variable Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#standardized-physical-constants">Standardized Physical Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#invalid-data-base-entries">Invalid Data Base Entries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#enumerated-datatypes-identifiers">Enumerated datatypes/Identifiers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conventions.html#example-how-to-fill-coresource-values-sourceid">Example: How to fill coresource/values/sourceid</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#grid-types-in-equilibrium-cpo">Grid Types in Equilibrium CPO</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conventions.html#grid-type-identifier">Grid Type Identifier</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="conventions.html#poloidal-angle-identifier">Poloidal Angle Identifier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#standardized-eu-eu-im-plasma-bundle">Standardized EU-EU-IM Plasma Bundle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kepler.html#introduction-to-kepler-basics">Introduction to Kepler - basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kepler.html#installing-kepler-with-serpens-add-on">Installing Kepler with Serpens add-on</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kepler.html#kepler-imas-actors">Kepler IMAS actors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kepler.html#imas-kepler-based-configuration">IMAS Kepler based configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kepler.html#running-kepler-using-imas-environment">Running Kepler using IMAS environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kepler.html#setting-up-environment">Setting up environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kepler.html#backing-up-old-files">Backing up old files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kepler.html#creating-place-to-store-your-personal-installations-of-kepler">Creating place to store your personal installations of Kepler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kepler.html#running-kepler-default-release">Running Kepler (default release)</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a><ul>
@@ -472,16 +561,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="edrg.html#machine-description-database">Machine Description Database</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="edrg.html#iter">ITER</a></li>
-<li class="toctree-l3"><a class="reference internal" href="edrg.html#jt60sa">JT60SA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="edrg.html#jet">JET</a></li>
-<li class="toctree-l3"><a class="reference internal" href="edrg.html#ts">TS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="edrg.html#aug">AUG</a></li>
-<li class="toctree-l3"><a class="reference internal" href="edrg.html#tcv">TCV</a></li>
-<li class="toctree-l3"><a class="reference internal" href="edrg.html#ftu">FTU</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a><ul>
@@ -489,6 +568,34 @@
 <li class="toctree-l2"><a class="reference internal" href="amns.html#eu-im-contact-person">EU-IM contact person</a></li>
 <li class="toctree-l2"><a class="reference internal" href="amns.html#amns-tasks">AMNS tasks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="amns.html#private-amns-pages">Private AMNS pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amns.html#amns-documentation">AMNS Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="amns.html#amns-user-interface">AMNS User Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-structures">AMNS User Interface Data Structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-reactions">AMNS User Interface Data Reactions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-queries">AMNS User Interface Data Queries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-setting-options">AMNS User Interface Data Setting Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#fortran-amns-user-interface">FORTRAN AMNS User Interface</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="amns.html#amns-user-interface-fortran-calls">AMNS User Interface: Fortran Calls</a></li>
+<li class="toctree-l5"><a class="reference internal" href="amns.html#amns-user-interface-example-fortran">AMNS User Interface Example (Fortran)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="amns.html#amns-user-interface-example-fortran-makefile">AMNS User Interface Example Fortran Makefile</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="amns.html#c-amns-user-interface">C AMNS User Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-c-calls">AMNS User Interface: C Calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-example-c">AMNS User Interface Example (C)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-example-c-makefile">AMNS User Interface Example C Makefile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="amns.html#python-amns-user-interface">Python AMNS User Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-python-calls">AMNS User Interface: Python Calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-example-python">AMNS User Interface Example (Python)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="amns.html#amns-cpo">AMNS CPO</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

@@ -36,7 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
-        <link rel="next" title="Turbulent Flux Quantities in Transport Models" href="transport.html"/>
+        <link rel="next" title="Equilibrium and MHD Stability workflow (EQSTABIL)" href="es.html"/>
         <link rel="prev" title="Core Transport Simulator (ETS)" href="ets.html"/> 
 
   
@@ -108,9 +108,12 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
 </ul>
@@ -266,9 +269,16 @@ for specific constructs (object lists, subgrids).</p>
 service library implementation, i.e. the automated testing framework.</p>
 <p>A 2d grid in (R,Z) constructed by combining two structured
 one-dimensional spaces. The spaces are defined as follows, they define
-nodes and edges as subobjects. The whole grid then looks like this
-(attention, slightly differing scales in R and Z): A couple of examples
-for object descriptor are given. Some explanations:</p>
+nodes and edges as subobjects.</p>
+<div class="figure align-center">
+<img alt="_images/edge_1.png" src="_images/edge_1.png" />
+</div>
+<p>The whole grid then looks like this (attention, slightly differing scales
+in R and Z):</p>
+<div class="figure align-center">
+<img alt="_images/edge_2.png" src="_images/edge_2.png" />
+</div>
+<p>A couple of examples for object descriptor are given. Some explanations:</p>
 <p>((1,1) (4,2)) = a 2d object (2d cell or face), implicitly created by
 combining the 1d object (edge) no. 4 from space 1 and the 1d object no.
 2 from space 2. ((1,0) (2,4)) = a 1d object (edge), implicitly created
@@ -282,13 +292,25 @@ by combining 0d objects (nodes) no. 2 from space 1 and no. 2 from space
 implicit numbering of the objects in a class is obtained by iterating
 over all subobjects defining the objects, lowest space first.</p>
 <p>Object class (1,1): 2d cells/faces. They have the following implicit
-numbering:
-Object class (1,0): 1d edges, aligned along the R axis (&#8220;r-aligned&#8221;).
-They have the following implicit numbering:
-Object class (0,1): 1d edges, aligned along the Z axis (&#8220;z-aligned&#8221;).
-They have the following implicit numbering:
-Object class (0,0): 0d nodes. They have the following implicit
 numbering:</p>
+<div class="figure align-center">
+<img alt="_images/edge_3.png" src="_images/edge_3.png" />
+</div>
+<p>Object class (1,0): 1d edges, aligned along the R axis (&#8220;r-aligned&#8221;).
+They have the following implicit numbering:</p>
+<div class="figure align-center">
+<img alt="_images/edge_4.png" src="_images/edge_4.png" />
+</div>
+<p>Object class (0,1): 1d edges, aligned along the Z axis (&#8220;z-aligned&#8221;).
+They have the following implicit numbering:</p>
+<div class="figure align-center">
+<img alt="_images/edge_5.png" src="_images/edge_5.png" />
+</div>
+<p>Object class (0,0): 0d nodes. They have the following implicit
+numbering:</p>
+<div class="figure align-center">
+<img alt="_images/edge_6.png" src="_images/edge_6.png" />
+</div>
 </div>
 </div>
 <div class="section" id="example-2-b2-grid">
@@ -302,7 +324,7 @@ notation. All examples refer to the 2d structured R,Z example grid #1
 given above.
 Object descriptor A single object (= and object descriptor), for object
 with object class (1,1), object index (4,2).</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">((1,1) (4,2))</span>
 </pre></div>
 </div>
 <p>Explicit object lists An explicit object list is simply an enumeration
@@ -313,10 +335,10 @@ list should enforce this. If you need lists of objects with differing
 class, have a look at subgrids).</p>
 <p>An explicit list of 2d cells (faces), listing the four corner cells of
 the grid in the order bottom-left, bottom-right, top-left, top-right:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span>
-  <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span>
-  <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)),</span>
-  <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="p">)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(((1,1) (1,1)),</span>
+<span class="go">((1,1) (5,1)),</span>
+<span class="go">((1,1) (1,4)),</span>
+<span class="go">((1,1) (5,4)))</span>
 </pre></div>
 </div>
 <p>Implicit object lists Implicit object lists use the implicit order of
@@ -327,7 +349,7 @@ demonstrate the implicit list notation. Note: the implicit list notation
 is used in the Python implementation of the grid service library in
 exactly the form given here.</p>
 <p>Selecting all indices An implicit object list of all r-aligned edges:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">((1,0) (0,0))</span>
 </pre></div>
 </div>
 <p>Object and subobject indices in the grid description start counting from
@@ -336,7 +358,7 @@ denotes an undefined index. In this notation, it denotes all possible
 indices.</p>
 <p>An implicit object list of the (z-aligned) boundary edges on the left
 boundary of the grid:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">((0,1) (1,0))</span>
 </pre></div>
 </div>
 <p>The first entry of the index tuple denotes the first node in the
@@ -344,52 +366,52 @@ r-space, the second entry denotes all edges in the z space. The implicit
 list denotes a total of 4 1d edges. Their implicit numbering is again
 given by iterating over all defining objects, lowest space first. The
 list therefore expands to</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">((0,1) (1,1))</span>
+<span class="go">((0,1) (1,2))</span>
+<span class="go">((0,1) (1,3))</span>
+<span class="go">((0,1) (1,4))</span>
 </pre></div>
 </div>
 <p>Selecting explicit lists of indices An implicit object list of the
 (z-aligned) right and left boundary edges:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span><span class="mi">0</span><span class="p">))</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">((0,1) ([1,6],0))</span>
 </pre></div>
 </div>
 <p>The first entry of the index tuple denotes a list of nodes in the
 r-space, more specifically the first and the last (=6th) node. The
 second entry denotes again all edges in the z space. The implicit list
 then denotes a total of 8 1d edges in the following order:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">((0,1) (1,1))</span>
+<span class="go">((0,1) (6,1))</span>
+<span class="go">((0,1) (1,2))</span>
+<span class="go">((0,1) (6,2))</span>
+<span class="go">((0,1) (1,3))</span>
+<span class="go">((0,1) (6,3))</span>
+<span class="go">((0,1) (1,4))</span>
+<span class="go">((0,1) (6,4))</span>
 </pre></div>
 </div>
 <p>Selecting ranges of indices An implicit object list of all 2d cells,
 except the cells on the left and right boundary.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="mi">0</span><span class="p">))</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">((1,1) ((2,4),0))</span>
 </pre></div>
 </div>
 <p>The first entry of the index tuple denotes a range of edges in the
 r-space, more specifically the edges 2 to 4. The second entry of the
 index tuple denotes all four edges in the z-space. The implicit list
 then denotes a total of 12 2d cells in the following order:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">((1,1) (2,1))</span>
+<span class="go">((1,1) (3,1))</span>
+<span class="go">((1,1) (4,1))</span>
+<span class="go">((1,1) (2,2))</span>
+<span class="go">((1,1) (3,2))</span>
+<span class="go">((1,1) (4,2))</span>
+<span class="go">((1,1) (2,3))</span>
+<span class="go">((1,1) (3,3))</span>
+<span class="go">((1,1) (4,3))</span>
+<span class="go">((1,1) (2,4))</span>
+<span class="go">((1,1) (3,4))</span>
+<span class="go">((1,1) (4,4))</span>
 </pre></div>
 </div>
 <p>All implementations of the grid service library define the constant
@@ -414,31 +436,31 @@ the objects in the subgrid is then directly given by the ordering of the
 object lists and the ordering of the grid objects therein.</p>
 <p>Subgrid example The following subgrid consists of all boundary edges of
 the 2d R,Z example grid #1, given as four implicit object lists.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>((1,0) (0,1))    ! bottom edges
-((0,1) (6,0))    ! right edges
-((1,0) (0,5))    ! top edges
-((0,1) (1,0))    ! left edges
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">((1,0) (0,1))    ! bottom edges</span>
+<span class="go">((0,1) (6,0))    ! right edges</span>
+<span class="go">((1,0) (0,5))    ! top edges</span>
+<span class="go">((0,1) (1,0))    ! left edges</span>
 </pre></div>
 </div>
 <p>Explicitly listing the objects in the order given by the subgrid gives:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>1:  ((1,0) (1,1))    ! bottom edges
-2:  ((1,0) (2,1))
-3:  ((1,0) (3,1))
-4:  ((1,0) (4,1))
-5:  ((1,0) (5,1))
-6:  ((0,1) (6,1))    ! right edges
-7:  ((0,1) (6,2))
-8:  ((0,1) (6,3))
-9:  ((0,1) (6,4))
-10: ((1,0) (1,5))    ! top edges
-11: ((1,0) (2,5))
-12: ((1,0) (3,5))
-13: ((1,0) (4,5))
-14: ((1,0) (5,5))
-15: ((0,1) (1,1))    ! left edges
-16: ((0,1) (1,2))
-17: ((0,1) (1,3))
-18: ((0,1) (1,4))
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">1:  ((1,0) (1,1))    ! bottom edges</span>
+<span class="go">2:  ((1,0) (2,1))</span>
+<span class="go">3:  ((1,0) (3,1))</span>
+<span class="go">4:  ((1,0) (4,1))</span>
+<span class="go">5:  ((1,0) (5,1))</span>
+<span class="go">6:  ((0,1) (6,1))    ! right edges</span>
+<span class="go">7:  ((0,1) (6,2))</span>
+<span class="go">8:  ((0,1) (6,3))</span>
+<span class="go">9:  ((0,1) (6,4))</span>
+<span class="go">10: ((1,0) (1,5))    ! top edges</span>
+<span class="go">11: ((1,0) (2,5))</span>
+<span class="go">12: ((1,0) (3,5))</span>
+<span class="go">13: ((1,0) (4,5))</span>
+<span class="go">14: ((1,0) (5,5))</span>
+<span class="go">15: ((0,1) (1,1))    ! left edges</span>
+<span class="go">16: ((0,1) (1,2))</span>
+<span class="go">17: ((0,1) (1,3))</span>
+<span class="go">18: ((0,1) (1,4))</span>
 </pre></div>
 </div>
 <p>The number at the beginning of each line is the <em>local index</em> of the
@@ -458,34 +480,34 @@ set up properly. The following section assumes you are using csh or tcsh
 on the Gateway.</p>
 <p>First, your environment variables have to be set up properly. To check
 them do</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>echo $TOKAMAKNAME
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">echo $TOKAMAKNAME</span>
 </pre></div>
 </div>
 <p>It should return</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">test</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">test</span>
 </pre></div>
 </div>
 <p>Also do</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>echo $DATAVERSION
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">echo $DATAVERSION</span>
 </pre></div>
 </div>
 <p>It should return</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">4.09</span><span class="n">a</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">4.09a</span>
 </pre></div>
 </div>
 <p>(or some higher version number). If either of them returns something
 different, run</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>source $EU-IMSCRIPTDIR/EU-IMv1 kepler test 4.09a &gt; /dev/null
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/EU-IMv1 kepler test 4.09a &gt; /dev/null</span>
 </pre></div>
 </div>
 <p>and check the variables again.</p>
 <p>Second, you have to ensure your data tree is set up properly. Do</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>ls ~/public/itmdb/itm_trees/$TOKAMAKNAME/$DATAVERSION/mdsplus/0/
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ls ~/public/itmdb/itm_trees/$TOKAMAKNAME/$DATAVERSION/mdsplus/0/</span>
 </pre></div>
 </div>
 <p>If you get something like &#8220;No such file or directory&#8221;, you have to set
 up the tree first by running</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$EU-IMSCRIPTDIR/create_user_itm_dir $TOKAMAKNAME $DATAVERSION
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMSCRIPTDIR/create_user_itm_dir <span class="nv">$TOKAMAKNAME</span> <span class="nv">$DATAVERSION</span>
 </pre></div>
 </div>
 <p>and then do the previous check again.</p>
@@ -496,30 +518,30 @@ up the tree first by running</p>
 member of the EU-IM General Grid description (itmggd) project (you can
 apply for this <a class="reference external" href="https://gforge6.eufus.eu/gf/project/itmggd/">here</a>).</p>
 <p>Once you are a member, you can check out the code by</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gforge6</span><span class="o">.</span><span class="n">eufus</span><span class="o">.</span><span class="n">eu</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">itmggd</span> <span class="n">itm</span><span class="o">-</span><span class="n">grid</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">svn co https://gforge6.eufus.eu/svn/itmggd itm-grid</span>
 </pre></div>
 </div>
 <p>Then you can run the unit tests for the grid service library by</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">itm</span><span class="o">-</span><span class="n">grid</span>
-<span class="n">source</span> <span class="n">setup</span><span class="o">.</span><span class="n">csh</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd itm-grid</span>
+<span class="go">source setup.csh</span>
 </pre></div>
 </div>
 <p>This will setup environment variables (especially OBJECTCODE) and
 aliases. Then do</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">testgrid</span> <span class="n">setup</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">testgrid setup</span>
 </pre></div>
 </div>
 <p>This will set up the build system for the individual languages. It will
 also build and execute a Fortran program that writes a simple 2d example
 grid stored in an edge CPO into shot 1, run 1.</p>
 <p>To actually run the tests do</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">testgrid</span> <span class="nb">all</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">testgrid all</span>
 </pre></div>
 </div>
 <p>This will go through the implementations in the different languages
 (F90, Python, ...) and run unit tests for every on of them. If all goes
 well, it should end with the message</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Test</span> <span class="nb">all</span> <span class="n">implementations</span><span class="p">:</span> <span class="n">OK</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Test all implementations: OK</span>
 </pre></div>
 </div>
 <p>If this is not the case, something is broken and must be fixed.</p>
@@ -535,93 +557,90 @@ Have a look here.</p>
 the future, this information will be stored in the wall CPO). The
 example data used here is generated by a preprocessing tool which is
 part of the ASCOT code.</p>
-<ol class="arabic">
-<li><p class="first">Check out the grid service library (See above. You don&#8217;t necessarily
-have to run the tests)</p>
-</li>
-<li><p class="first">Change to the python/ directory and setup the environment:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="p">;</span> <span class="n">source</span> <span class="n">setup</span><span class="o">.</span><span class="n">csh</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Edit the file itm/examples/write_xdmf.py to use the right shot number</p>
-</li>
-<li><p class="first">Run it (still in the python/ directory of the service library) with</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python26</span> <span class="n">itm</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">write_xdmf</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-<p>This will create two files: wall.xmf and wall.h5</p>
-</li>
-<li><p class="first">Start visit with</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">visit23</span>
-</pre></div>
-</div>
-<p>and open the wall.xmf file. Then select Plot-&gt;Mesh-&gt;Triangle and
-click on the &#8220;Draw&#8221; button.</p>
-</li>
+<ol class="arabic simple">
+<li>Check out the grid service library (See above. You don&#8217;t necessarily
+have to run the tests)</li>
+<li>Change to the python/ directory and setup the environment:</li>
 </ol>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd itm-grid/python/; source setup.csh</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Edit the file itm/examples/write_xdmf.py to use the right shot number</li>
+<li>Run it (still in the python/ directory of the service library) with</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">   python26 itm/examples/write_xdmf.py</span>
+
+<span class="go">This will create two files: wall.xmf and wall.h5</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>Start visit with</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">   visit23</span>
+
+<span class="go">and open the wall.xmf file. Then select Plot-&gt;Mesh-&gt;Triangle and</span>
+<span class="go">click on the &quot;Draw&quot; button.</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="using-ualconnector-to-visualize-cpos-using-the-general-grid-description">
 <h6>Using UALConnector to visualize CPOs using the general grid description<a class="headerlink" href="#using-ualconnector-to-visualize-cpos-using-the-general-grid-description" title="Permalink to this headline">¶</a></h6>
 <p>UALConnector allows you to bring data directly from the UAL into VisIt.</p>
-<ol class="arabic">
-<li><p class="first">Check out the grid service library (See above. You don&#8217;t necessarily
-have to run the tests)</p>
-</li>
-<li><p class="first">Run UALConnector. Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">9001</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">test</span> <span class="o">-</span><span class="n">v</span> <span class="mf">4.09</span><span class="n">a</span>
+<ol class="arabic simple">
+<li>Check out the grid service library (See above. You don&#8217;t necessarily
+have to run the tests)</li>
+<li>Run UALConnector. Examples:</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">./itm-grid/ualconnector -s 9001,1,1.0 -c edge -u klingshi -t test -v 4.09a</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">15</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">test</span> <span class="o">-</span><span class="n">v</span> <span class="mf">4.09</span><span class="n">a</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">./itm-grid/ualconnector -s 15,1,1.0 -c edge -u klingshi -t test -v 4.09a</span>
 </pre></div>
 </div>
-</li>
-<li><p class="first">When finished, close VisIt and terminate the UALConnector by typing
-&#8216;quit&#8217;.</p>
-</li>
+<ol class="arabic simple" start="3">
+<li>When finished, close VisIt and terminate the UALConnector by typing
+&#8216;quit&#8217;.</li>
 </ol>
 <p>You don&#8217;t even have to check out the service library. UALConnector is
 made available at</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector</span>
 </pre></div>
 </div>
 <p>, i.e.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">9001</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">test</span> <span class="o">-</span><span class="n">v</span> <span class="mf">4.09</span><span class="n">a</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector -s 9001,1,1.0 -c edge -u klingshi -t test -v 4.09a</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">15</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">test</span> <span class="o">-</span><span class="n">v</span> <span class="mf">4.09</span><span class="n">a</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector -s 15,1,1.0 -c edge -u klingshi -t test -v 4.09a</span>
 </pre></div>
 </div>
-<p>g2dpc $</p>
-<p>`
-.. _imp3_grid_tutorial:</p>
 </div>
 </div>
 </div>
 <div class="section" id="imp3-general-grid-description-and-grid-service-library-tutorial">
-<h4>IMP3 General Grid Description and Grid Service Library - Tutorial<a class="headerlink" href="#imp3-general-grid-description-and-grid-service-library-tutorial" title="Permalink to this headline">¶</a></h4>
+<span id="imp3-grid-tutorial"></span><h4>IMP3 General Grid Description and Grid Service Library - Tutorial<a class="headerlink" href="#imp3-general-grid-description-and-grid-service-library-tutorial" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="setup-your-environment">
 <h5>Setup your environment<a class="headerlink" href="#setup-your-environment" title="Permalink to this headline">¶</a></h5>
-<div class="highlight-default"><div class="highlight"><pre><span></span>echo $DATAVERSION
-echo $TOKAMAKNAME
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">echo $DATAVERSION</span>
+<span class="go">echo $TOKAMAKNAME</span>
 </pre></div>
 </div>
 <p>should give &#8220;4.09a&#8221; and &#8220;test&#8221;. If not, run</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>source $EU-IMSCRIPTDIR/EU-IMv1 kepler test 4.09a &gt; /dev/null
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/EU-IMv1 kepler test 4.09a &gt; /dev/null</span>
 </pre></div>
 </div>
 <p>To copy the tutorial files:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span> <span class="o">~/</span><span class="n">public</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cp -r ~klingshi/bin/itm-grid ~/public</span>
 </pre></div>
 </div>
 <p>Switch to the right version of the PGI compiler:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">unload</span> <span class="n">openmpi</span><span class="o">/</span><span class="mf">1.3</span><span class="o">.</span><span class="mi">2</span><span class="o">/</span><span class="n">pgi</span><span class="o">-</span><span class="mf">8.0</span> <span class="n">compilers</span><span class="o">/</span><span class="n">pgi</span><span class="o">/</span><span class="mf">8.0</span>
-<span class="n">module</span> <span class="n">load</span> <span class="n">compilers</span><span class="o">/</span><span class="n">pgi</span><span class="o">/</span><span class="mf">10.2</span> <span class="n">openmpi</span><span class="o">/</span><span class="mf">1.4</span><span class="o">.</span><span class="mi">3</span><span class="o">/</span><span class="n">pgi</span><span class="o">-</span><span class="mf">10.2</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">module unload openmpi/1.3.2/pgi-8.0 compilers/pgi/8.0</span>
+<span class="go">module load compilers/pgi/10.2 openmpi/1.4.3/pgi-10.2</span>
 </pre></div>
 </div>
 <p>To set up the environment:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>cd $HOME/public/itm-grid/f90
-source setup.csh
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd $HOME/public/itm-grid/f90</span>
+<span class="go">source setup.csh</span>
 </pre></div>
 </div>
 </div>
@@ -629,44 +648,44 @@ source setup.csh
 <h5>Compile &amp; run examples<a class="headerlink" href="#compile-run-examples" title="Permalink to this headline">¶</a></h5>
 <p>2d structured grid write example
 Source file is at:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">src</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">itm_grid_example1_2dstructured_servicelibrary</span><span class="o">.</span><span class="n">f90</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">src/examples/itm_grid_example1_2dstructured_servicelibrary.f90</span>
 </pre></div>
 </div>
 <p>Compile:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>make depend
-make $OBJECTCODE/itm_grid_example1_2dstructured_servicelibrary.exe
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">make depend</span>
+<span class="go">make $OBJECTCODE/itm_grid_example1_2dstructured_servicelibrary.exe</span>
 </pre></div>
 </div>
 <p>Run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$OBJECTCODE/itm_grid_example1_2dstructured_servicelibrary.exe
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>OBJECTCODE/itm_grid_example1_2dstructured_servicelibrary.exe
 </pre></div>
 </div>
 <p>2d structured grid read example
 Source file is at:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">src</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">itm_grid_example1_2dstructured_read</span><span class="o">.</span><span class="n">f90</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">src/examples/itm_grid_example1_2dstructured_read.f90</span>
 </pre></div>
 </div>
 <p>Compile:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>make $OBJECTCODE/itm_grid_example1_2dstructured_read.exe
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">make $OBJECTCODE/itm_grid_example1_2dstructured_read.exe</span>
 </pre></div>
 </div>
 <p>Run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$OBJECTCODE/itm_grid_example1_2dstructured_read.exe
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>OBJECTCODE/itm_grid_example1_2dstructured_read.exe
 </pre></div>
 </div>
 </div>
 <div class="section" id="visualize">
 <h5>Visualize<a class="headerlink" href="#visualize" title="Permalink to this headline">¶</a></h5>
 <p>To visualize the data written by the example program</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">9001</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector -s 9001,1,0.0 -c edge</span>
 </pre></div>
 </div>
 <p>To visualize a more complex dataset</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">17151</span><span class="p">,</span><span class="mi">899</span><span class="p">,</span><span class="mf">1000.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">aug</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector -s 17151,899,1000.0 -c edge -u klingshi -t aug</span>
 </pre></div>
 </div>
 <p>Combining data from two CPOs:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">klingshi</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">itm</span><span class="o">-</span><span class="n">grid</span><span class="o">/</span><span class="n">ualconnector</span> <span class="o">-</span><span class="n">s</span> <span class="mi">17151</span><span class="p">,</span><span class="mi">898</span><span class="p">,</span><span class="mf">1000.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">s</span> <span class="mi">17151</span><span class="p">,</span><span class="mi">899</span><span class="p">,</span><span class="mf">1000.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">edge</span> <span class="o">-</span><span class="n">u</span> <span class="n">klingshi</span> <span class="o">-</span><span class="n">t</span> <span class="n">aug</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector -s 17151,898,1000.0 -c edge -s 17151,899,1000.0 -c edge -u klingshi -t aug</span>
 </pre></div>
 </div>
 </div>
@@ -685,7 +704,7 @@ Source file is at:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="transport.html" class="btn btn-neutral float-right" title="Turbulent Flux Quantities in Transport Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="es.html" class="btn btn-neutral float-right" title="Equilibrium and MHD Stability workflow (EQSTABIL)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="ets.html" class="btn btn-neutral" title="Core Transport Simulator (ETS)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

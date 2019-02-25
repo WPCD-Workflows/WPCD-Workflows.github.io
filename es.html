@@ -1,0 +1,785 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Equilibrium and MHD Stability workflow (EQSTABIL) &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
+        <link rel="next" title="Turbulent Flux Quantities in Transport Models" href="transport.html"/>
+        <link rel="prev" title="Edge Transport Simulator" href="edge.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EUROfusion Integrated Modelling workflows
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Equilibrium and MHD Stability workflow (EQSTABIL)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-rationale">Workflow rationale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-organization-design">Workflow organization &amp; design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initialization">Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixedbndcode">FixedBndCode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#redefining-the-plasma-boundary-cutoff">Redefining the plasma boundary (Cutoff)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calculation-of-equilibrium-fixbndequil">Calculation of Equilibrium (Fixbndequil)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#visualization-visual">Visualization (Visual)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#stabcode">StabCode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finalize">Finalize</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#actors-involved">Actors involved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-workflow">Installing the workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-workflow-and-actor-parameters">Setting up Workflow and Actor parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setting-workflow-parameters">Setting workflow parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-actor-parameters">Setting actor parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-cases-and-self-oriented-training">Test cases and self-oriented training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#news-and-recent-activity">News and Recent activity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EUROfusion Integrated Modelling workflows</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Equilibrium and MHD Stability workflow (EQSTABIL)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/es.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="equilibrium-and-mhd-stability-workflow-eqstabil">
+<span id="eqstabil"></span><h1>Equilibrium and MHD Stability workflow (EQSTABIL)<a class="headerlink" href="#equilibrium-and-mhd-stability-workflow-eqstabil" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="workflow-rationale">
+<h2>Workflow rationale<a class="headerlink" href="#workflow-rationale" title="Permalink to this headline">¶</a></h2>
+<p>The EQSTABIL workflow is a Kepler workflow aimed at performing linear
+MHD stability analysis of tokamak plasma equilibria for a single or
+multiple toroidal mode numbers when executed. The high resolution
+equilibrium actors consider axisymmetric toroidal static plasmas with
+isotropic pressure and the linear MHD stability models stem from single
+fluid ideal/resistive MHD with compressibility.</p>
+<p>The workflow is meant for straightforward stability calculations of any
+plasma scenario, reading from a pre-existent WPCD database shot/run/time
+entry. Therefore,</p>
+<ul class="simple">
+<li>It does not read from experimental databases storing locally
+processed plasma equilibrium e.g. PPFs (JET) or shotfiles (AUG).
+These can be fetched using <a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/Exp2ITM">exp2itm</a> (ask the workflow
+developer for assistance).</li>
+<li>It is not meant for parametric studies in a single workflow execution
+e.g. process several time slices or scan over resistive wall position
+or number of poloidal harmonics. Dedicated runs for such cases are
+necessary, storing each run on a dedicated output shot/run_out
+database entry. The workflow may be subject to upgrades/revisions to
+accomodate new features that facilitate/enhance user experience so
+stay tuned for News and Recent activity.</li>
+</ul>
+</div>
+<div class="section" id="workflow-organization-design">
+<h2>Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline">¶</a></h2>
+<p>The top level layout of the workflow is shown below.</p>
+<div class="figure align-center">
+<img alt="_images/equstabil_1.png" src="_images/equstabil_1.png" />
+</div>
+<p>The workflow is organised in four sequential steps :</p>
+<div class="section" id="initialization">
+<h3>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h3>
+<p>Composite actor used to initialize the workflow. It reads from the ITM
+database that is specified by local variables (user, device, shot,
+run_in) and for the closest time sample to local variable <em>time</em> .
+If the user reads the input data from some other user database, the
+output data will however be written on his/her own database with shot/run_out id.</p>
+<p>-&gt; The workflow local variable <em>device</em> <strong>must</strong> be the same as the
+environment variable TOKAMAKNAME. In case the two do not match the
+workflow stops execution. The user must close the workflow, ITMv1 with
+the correct device name and run the workflow.</p>
+<p>-&gt; Validity checks (void/not void) are made on the input equilibrium and
+coreprof CPOs (MARSGW actor can use coreprof for density profile). If
+the equilibrium CPO is not considered valid the workflow stops. If the
+coreprof CPO is not considered valid, the workflow continues to run but
+the user can still have the option to stop it before executing the
+chosen MHD code.</p>
+<p>At the exit of the Composite actor, a Plasma_reference bundle (list of
+Kepler variables, mimicking the <a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/ETS">ETS</a> bundle) is returned. This
+facilitates the future coupling of the workflow to the <a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/ETS">ETS</a>.</p>
+</div>
+<div class="section" id="fixedbndcode">
+<h3>FixedBndCode<a class="headerlink" href="#fixedbndcode" title="Permalink to this headline">¶</a></h3>
+<p>Composite actor that prepares/calculates the equilibrium to be passed
+later to the MHD stability codes. This composite actor is composed of 3
+main steps:</p>
+<div class="figure align-center">
+<img alt="_images/equstabil_2.png" src="_images/equstabil_2.png" />
+</div>
+<div class="section" id="redefining-the-plasma-boundary-cutoff">
+<h4>Redefining the plasma boundary (Cutoff)<a class="headerlink" href="#redefining-the-plasma-boundary-cutoff" title="Permalink to this headline">¶</a></h4>
+<p>This is deemed necessary when the input equilibrium
+(reconstructed/predictive equilibrium) as a separatrix as plasma boundary
+since at this moment none of the flux coordinates based equilibrium codes
+handles/returns plasmas with a separatrix.</p>
+<p>If the input equilibrium does not contain a Psi(R,Z) equilibrium mapping
+the cut-off is not possible and thus the workflow execution will be
+stopped.</p>
+<p>Redefining the plasma boundary is done by setting cut_eq: yes and places
+the new plasma boundary at a flux surface corresponding to cut_off (in
+percentage) of the input boundary flux.</p>
+<p>The plasma profiles are also cut-off accordingly. An equilibrium bundle
+exits the actor containing occurrence=1 for the cut-off input equilibrium
+and occurrence=2 for the original equilibrium. If cut_off:no then both
+occurrences contain the original equilibrium.</p>
+<p>A plot of the original + cut_off equilibrium summary is shown. Closing the
+plot window leads to the second stage.</p>
+</div>
+<div class="section" id="calculation-of-equilibrium-fixbndequil">
+<h4>Calculation of Equilibrium (Fixbndequil)<a class="headerlink" href="#calculation-of-equilibrium-fixbndequil" title="Permalink to this headline">¶</a></h4>
+<p>Calculation of the high resolution equilibrium with 3 possible codes
+(CAXE, CHEASE, HELENA). The cut-off equilibrium (or original one) is
+passed to the equilibrium codes. The output HR equilibrium is added to
+the equilibrium bundle such that in the end one has occurrence=0 for the
+HR, occurrence=1 for the cut-off input equilibrium (or the original if
+not cut_off is requested) and occurrence=2 for the original
+equilibrium.</p>
+</div>
+<div class="section" id="visualization-visual">
+<h4>Visualization (Visual)<a class="headerlink" href="#visualization-visual" title="Permalink to this headline">¶</a></h4>
+<p>Visualization part. This part plots the (R,Z) flux map of the HR
+equilibrium and the most relevant profiles. The figures are saved
+automatically on closing the windows at the <em>path</em> indicated in the top
+level accordingly Kepler variable.</p>
+</div>
+</div>
+<div class="section" id="stabcode">
+<h3>StabCode<a class="headerlink" href="#stabcode" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="_images/equstabil_3.png" src="_images/equstabil_3.png" />
+</div>
+<p>Composite actor for the MHD stability calculation using 4 possible linear
+MHD stability codes (ILSA, KINX, MARS, MARS-F). After execution of the
+stability code is completed, plotting of the radial component of the
+displacement vector eigenfunction in the plasma domain is shown (real and
+imaginary parts). In case multiple toroidal mode numbers are set (ILSA or
+KINX), one plot window per each toroidal eigenmode is returned. A Copy in
+EPS format of each window is stored on the path defined by Kepler variable
+<em>path</em></p>
+<p>The Multiple Tab display window will also display the output flag of the
+code execution i.e. if the output is valid and the result can be used or
+not. The plasma bundle, on exit, is updated with the MHD cpo from the
+stability code.</p>
+</div>
+<div class="section" id="finalize">
+<h3>Finalize<a class="headerlink" href="#finalize" title="Permalink to this headline">¶</a></h3>
+<p>Composite actor to wrap up the final plasma bundle, with the equilibrium
+CPO containing 3 occurrences and one occurrence of the MHD CPO.</p>
+<p>N.B. Only a single time slice of equilibrium and MHD CPOs is written, the
+remaining plasma bundle CPOs are written &#8220;as is&#8221; (whatever time slices).</p>
+</div>
+</div>
+<div class="section" id="actors-involved">
+<h2>Actors involved<a class="headerlink" href="#actors-involved" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="32%" />
+<col width="35%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Location</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>Check_Device</td>
+<td>INITIALIZATION</td>
+<td><div class="first last line-block">
+<div class="line">Checks if the
+<em>device</em> Kepler</div>
+<div class="line">variable coincides
+with the environment</div>
+<div class="line">variable TOKAMAKNAME.
+If not the run stops.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>SELECT_TIME_CORE/EQ</td>
+<td>INITIALIZATION</td>
+<td><div class="first last line-block">
+<div class="line">Selects time slice of
+CPOs matching/closest</div>
+<div class="line">to the requested time
+in <em>time</em> Kepler
+variable</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Check Coreprof/Equil
+Time and Flag</td>
+<td>INITIALIZATION</td>
+<td><div class="first last line-block">
+<div class="line">Checks the
+output_flag of the</div>
+<div class="line">input CPOs to know if
+they are valid and</div>
+<div class="line">prints the actual
+time stamp retrived</div>
+<div class="line">from both CPOs (if
+time = -1 and</div>
+<div class="line">output_flag is
+negative then the CPO</div>
+<div class="line">is not valid). If the
+equilibrium is</div>
+<div class="line">considered invalid a
+message in displayed</div>
+<div class="line">on the Multi Tab
+Display window and</div>
+<div class="line">workflow execution is
+stopped. If the</div>
+<div class="line">coreprof is
+considered invalid a</div>
+<div class="line">message is displayed
+on the Multi Tab</div>
+<div class="line">Display window but
+the workflow will</div>
+<div class="line">continue since some
+of the MHD codes</div>
+<div class="line">handle plasma density
+internally as code</div>
+<div class="line">parameter and their
+execution is not
+affected.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Cutoff</td>
+<td>FixedBndCode</td>
+<td><div class="first line-block">
+<div class="line">Performs the
+cut-off of the input</div>
+<div class="line">equilibrium if
+requested and</div>
+<div class="line">provided the input
+CPO has a poloidal</div>
+<div class="line">flux (Psi) mapping
+i.e. Psi(R,Z). If not</div>
+<div class="line">present then workflow
+execution stops and a</div>
+<div class="line">message is displayed
+on the Multi Tab</div>
+<div class="line">Display window. A
+plot with the</div>
+<div class="line">original (in blue)
+and cut equilibrium</div>
+<div class="line">(in green) is shown
+when cut_off: yes</div>
+<div class="line">A plot with
+just the original (in</div>
+<div class="line">blue) equilibrium is
+shown when
+cut_off : no</div>
+</div>
+<div class="last line-block">
+<div class="line"><strong>NOTE</strong>: A
+useful trick to STOP</div>
+<div class="line">the workflow
+execution*-&gt; when a</div>
+<div class="line">Python plot window is
+shown, Press the STOP</div>
+<div class="line">button on the Kepler
+GUI before closing</div>
+<div class="line">the plot window. This
+ensures workflow</div>
+<div class="line">execution is stopped
+since Kepler is</div>
+<div class="line">waiting for Python
+process to
+proceed.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Fixbndequil</td>
+<td>FixedBndCode</td>
+<td><div class="first last line-block">
+<div class="line">Selects from a pool
+of 3 equilibrium</div>
+<div class="line">codes the one to
+launch according to</div>
+<div class="line">the value of the
+Kepler variable
+<em>eqcode</em></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Caxe</td>
+<td>FixedBndCode</td>
+<td><div class="first last line-block">
+<div class="line">The CAXE code.</div>
+<div class="line">It can operate
+jointly with KINX
+only.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Chease</td>
+<td>FixedBndCode</td>
+<td><div class="first last line-block">
+<div class="line">The CHEASE code.</div>
+<div class="line">It can operate
+jointly with ILSA,
+MARS</div>
+<div class="line">and MARS-F</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Helena</td>
+<td>FixedBndCode</td>
+<td><div class="first last line-block">
+<div class="line">The HELENA code.</div>
+<div class="line">It can operate
+jointly with ILSA,
+MARS</div>
+<div class="line">and MARS-F</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Visual</td>
+<td>FixedBndCode</td>
+<td><div class="first last line-block">
+<div class="line">Visualize the
+resulting equilibrium.</div>
+<div class="line">A Copy in EPS format
+is stored on the path</div>
+<div class="line">defined by Kepler
+variable %BLUE%path</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Ilsa</td>
+<td>StabCode</td>
+<td><div class="first last line-block">
+<div class="line">The ILSA code suite.</div>
+<div class="line">At the moment only
+the MISHKA1 kernel</div>
+<div class="line">(ideal incompressible
+MHD) is active</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Kinx</td>
+<td>StabCode</td>
+<td>The KINX code.</td>
+</tr>
+<tr class="row-odd"><td>Marsgw</td>
+<td>StabCode</td>
+<td>The MARS code</td>
+</tr>
+<tr class="row-even"><td>Marsf</td>
+<td>StabCode</td>
+<td>The MARS-F code</td>
+</tr>
+<tr class="row-odd"><td>PLOT_EIGENFUNCTION</td>
+<td>StabCode</td>
+<td><div class="first last line-block">
+<div class="line">Visualize the real
+and imaginary</div>
+<div class="line">eigenfunction
+components. In case</div>
+<div class="line">multiple toroidal
+mode numbers are set</div>
+<div class="line">(ILSA or KINX), one
+plot window per each</div>
+<div class="line">toroidal eigenmode is
+returned. A Copy in</div>
+<div class="line">EPS format of each
+window is stored on</div>
+<div class="line">the path defined by
+Kepler variable <em>path</em></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="installing-the-workflow">
+<h2>Installing the workflow<a class="headerlink" href="#installing-the-workflow" title="Permalink to this headline">¶</a></h2>
+<p>The following links detail all required information to get a local
+installation of the workflow on the Gateway</p>
+<p><a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/EQSTABIL_install_410a3">4.10a3</a></p>
+<p><a class="reference external" href="https://portal.eufus.eu/twiki/bin/edit/Main/EQSTABIL_install_410b10?topicparent=Main.KeplerWorkflow_EQSTABIL;nowysiwyg=0">4.10b8 (work in progress)</a></p>
+</div>
+<div class="section" id="setting-up-workflow-and-actor-parameters">
+<h2>Setting up Workflow and Actor parameters<a class="headerlink" href="#setting-up-workflow-and-actor-parameters" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setting-workflow-parameters">
+<h3>Setting workflow parameters<a class="headerlink" href="#setting-workflow-parameters" title="Permalink to this headline">¶</a></h3>
+<p>The workflow has basic settings in order to work.</p>
+<ul class="simple">
+<li><strong>shot</strong> : the shot number on the user database (or from another user)
+where to read the reference equilibrium from (shot/run_in pair)</li>
+<li><strong>run_in</strong> : the run number where the reference equilibrium is
+(shot/run_in pair)</li>
+<li><strong>run_work</strong> : placeholder run for the temporary Kepler CPOs</li>
+<li><strong>run_out</strong> : run number where the final results of the run will be
+stored (user running the workflow/shot/run_out). Since the input
+equilibrium can be a reconstruction that goes beyond the separatrix, 3
+occurrences of the equilibrium are saved (original eq., cut equilibrium
+inside separatrix and corresponding high resolution equilibrium).</li>
+<li><strong>user</strong> : username. Reading from someone else database is possible but
+the run_out will naturally be written to personal database only.</li>
+<li><strong>device</strong> : device database where the input reference data is. MUST BE
+the same as env variable TOKAMAKNAME</li>
+<li><strong>time</strong> : time slice (in equilibrium CPO) to be analysed in case the
+input shot/run_in contains many time slices.</li>
+<li><strong>path</strong> : temporary folder where to dump the plots generated. Also used
+to store output files (used by HELENA/ILSA only)</li>
+<li><strong>cut_eq</strong> :<ul>
+<li>yes : cut the input equilibrium (necessary if high resolution
+equilibrium code cannot handle separatrix plasma equilibria)</li>
+<li>no : input equilibrium is used &#8220;as is&#8221;.</li>
+</ul>
+</li>
+<li><strong>cut_off</strong> : float ]0,1], specifies the percentage of the separatrix
+flux that will define the poloidal flux of the new plasma boundary.</li>
+<li><strong>eqcode</strong> : chease/caxe/helena. The equilibrium code to be used</li>
+<li><strong>stabcode</strong> : ilsa/kinx/marsgw/marsf. The MHD stability code to be used</li>
+</ul>
+<p>The user can always prevent the workflow from proceeding to the
+calculation of the high resolution equilibrium after the cut-off stage
+by Pressing the STOP button in Kepler GUI before closing the plot window
+with the summary of the equilibrium.</p>
+</div>
+<div class="section" id="setting-actor-parameters">
+<h3>Setting actor parameters<a class="headerlink" href="#setting-actor-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Actor parameters are set on the actors themselves (not passed by the
+workflow). To access the actors codeparam the easiest route is to :</p>
+<ol class="arabic simple">
+<li>Click on &#8220;Outline&#8221; Tab (below the &#8220;Pause&#8221; button)</li>
+<li>Type the name of the actor and press &#8220;Search&#8221; (or Enter)</li>
+<li>On the final item in the chain of the actor composite, right click and press &#8220;Configure&#8221;. A pop-up panel appears</li>
+<li>Click on &#8220;Edit Code Parameters&#8221; and a new window appears</li>
+<li>Edit the code parameters and Press &#8220;Save &amp; Exit&#8221;</li>
+<li>Press &#8220;Commit&#8221; and setting is completed</li>
+</ol>
+</div>
+</div>
+<div class="section" id="test-cases-and-self-oriented-training">
+<h2>Test cases and self-oriented training<a class="headerlink" href="#test-cases-and-self-oriented-training" title="Permalink to this headline">¶</a></h2>
+<p>Several test cases are available for testing, corresponding to different
+applications/examples. The itmdb files are found on the software release
+folder under <em>/tutorial</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="24%" />
+<col width="26%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Case</th>
+<th class="head">Path</th>
+<th class="head">Original source</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>/tutorial/case1</td>
+<td><div class="first last line-block">
+<div class="line">gvlad/test/180/</div>
+<div class="line">300</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Test equilibrium
+of elongated
+JET-like</div>
+<div class="line">plasma, unstable
+to internal n=1
+mode</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>/tutorial/case2</td>
+<td>diy/test/1/2</td>
+<td><div class="first last line-block">
+<div class="line">Test equilibrium
+of circular
+plasma,</div>
+<div class="line">unstable to
+global n=1 mode</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>/tutorial/case3</td>
+<td><div class="first last line-block">
+<div class="line">rcoelho/aug/291</div>
+<div class="line">00/5</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">AUG equilibrium
+without
+separatrix,</div>
+<div class="line">unstable to
+internal/global
+n=1 mode</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>/tutorial/case4</td>
+<td><div class="first last line-block">
+<div class="line">rcoelho/jet/778</div>
+<div class="line">77/2</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">JET equilibrium
+without
+separatrix,</div>
+<div class="line">unstable to
+internal n=1
+mode</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>/tutorial/case5</td>
+<td><div class="first last line-block">
+<div class="line">rcoelho/aug/291</div>
+<div class="line">00/4</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Same equilibrium
+of Case 3 but
+from full</div>
+<div class="line">(R,Z) CLISTE
+reconstruction.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="%ATTACHURL%/Tutorial_EQSTABIL.pdf">Guided Tutorial on EQSTABIL</a></p>
+</div>
+<div class="section" id="news-and-recent-activity">
+<h2>News and Recent activity<a class="headerlink" href="#news-and-recent-activity" title="Permalink to this headline">¶</a></h2>
+<p><em>under construction</em></p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="transport.html" class="btn btn-neutral float-right" title="Turbulent Flux Quantities in Transport Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="edge.html" class="btn btn-neutral" title="Edge Transport Simulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, WPCD.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

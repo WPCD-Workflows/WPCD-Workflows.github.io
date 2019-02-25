@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
         <link rel="next" title="AMNS" href="amns.html"/>
-        <link rel="prev" title="Codes" href="codes.html"/> 
+        <link rel="prev" title="Kepler" href="kepler.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -95,9 +95,12 @@
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">EDRG</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#scientific-rationale-and-main-objectives">Scientific Rationale and Main Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#machine-descriptions-and-data-mappings">Machine Descriptions and Data Mappings</a><ul>
@@ -113,16 +116,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#tutorial-on-data-mappings">Tutorial on data mappings</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#machine-description-database">Machine Description Database</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#iter">ITER</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jt60sa">JT60SA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jet">JET</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ts">TS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aug">AUG</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tcv">TCV</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ftu">FTU</a></li>
 </ul>
 </li>
 </ul>
@@ -237,13 +230,19 @@ engineering and diagnostic settings characterising any device. This
 includes, for instance, the vessel/limiter description (for the moment
 in R-Z domain only), the PF coils and circuiting and lines of sight of
 diagnostics (an example for ITER is seen below evidencing the
-vessel+limiter+pfsystems and magdiad CPOs).
-In practice, all MD information is encapsulated in a XML file that
+vessel+limiter+pfsystems and magdiad CPOs).</p>
+<div class="figure align-center">
+<img alt="_images/edrg_1.png" src="_images/edrg_1.png" />
+</div>
+<p>In practice, all MD information is encapsulated in a XML file that
 emanates from the MD tagged datastructure schemas. A MD instance of a
 given device is then stored into the EU-IM db as shot 0 for that device
 database.
 At data structure version 4.09a, the list of CPOs with machine
 description tags is indicated in the Figure below</p>
+<div class="figure align-center">
+<img alt="_images/edrg_2.png" src="_images/edrg_2.png" />
+</div>
 </div>
 <div class="section" id="md-content-on-dataversions">
 <h4>MD content on dataversions<a class="headerlink" href="#md-content-on-dataversions" title="Permalink to this headline">¶</a></h4>
@@ -262,52 +261,66 @@ description tags is indicated in the Figure below</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>antennas,
-interfdiag,
-ironmodel,
-limiter,
-magdiag,
-msediag,
-pfsystems,
-polardiag,
-toroidfield,
-vessel</td>
-<td>antennas,
-ecediag,
-interfdiag,
-ironmodel,
-limiter,
-magdiag,
-msediag,
-pfsystems,
-polardiag,
-reference,
-toroidfield,
-tsdiag, vessel</td>
-<td>antennas,
-ecediag,
-interfdiag,
-ironmodel,
-limiter,
-magdiag,
-msediag, nbi,
-pfsystems,
-polardiag,
-toroidfield,
-tsdiag, vessel</td>
-<td>antennas,
-ecediag,
-fusiondiag,
-interfdiag,
-ironmodel,
-langmuirdiag,
-limiter,
-magdiag,
-msediag, nbi,
-pfsystems,
-polardiag,
-toroidfield,
-tsdiag, vessel</td>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">antennas,
+interfdiag,</div>
+<div class="line">ironmodel,
+limiter,</div>
+<div class="line">magdiag,
+msediag,</div>
+<div class="line">pfsystems,
+polardiag,</div>
+<div class="line">toroidfield,
+vessel</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">antennas,
+ecediag,</div>
+<div class="line">interfdiag,
+ironmodel,</div>
+<div class="line">limiter,
+magdiag,</div>
+<div class="line">msediag,
+pfsystems,</div>
+<div class="line">polardiag,
+reference,</div>
+<div class="line">toroidfield,
+tsdiag,</div>
+<div class="line">vessel</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">antennas,
+ecediag,</div>
+<div class="line">interfdiag,
+ironmodel,</div>
+<div class="line">limiter,
+magdiag,</div>
+<div class="line">msediag, nbi,
+pfsystems,</div>
+<div class="line">polardiag,
+toroidfield,</div>
+<div class="line">tsdiag,
+vessel</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">antennas,
+ecediag,</div>
+<div class="line">fusiondiag,
+interfdiag,</div>
+<div class="line">ironmodel,
+langmuirdiag,</div>
+<div class="line">limiter,
+magdiag,</div>
+<div class="line">msediag, nbi,
+pfsystems,</div>
+<div class="line">polardiag,
+toroidfield,</div>
+<div class="line">tsdiag, vessel</div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -366,6 +379,9 @@ tags is indicated in the Figure below (experimental signals are colored
 in orange; mappings to other CPOs, e.g. equilibrium or coreprof have
 been set in order to assist the retrieval of simulated data from other
 databases, e.g. JSP, JSPC)</p>
+<div class="figure align-center">
+<img alt="_images/edrg_3.png" src="_images/edrg_3.png" />
+</div>
 </div>
 <div class="section" id="dm-content-on-dataversions">
 <h4>DM content on dataversions<a class="headerlink" href="#dm-content-on-dataversions" title="Permalink to this headline">¶</a></h4>
@@ -384,80 +400,93 @@ databases, e.g. JSP, JSPC)</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>antennas,
-interfdiag,
-ironmodel,
-magdiag,
-msediag,
-pfsystems,
-polardiag,
-toroidfield</td>
-<td>antennas,
-cxdiag,
-ecediag,
-interfdiag,
-ironmodel,
-magdiag,
-msediag, nbi,
-pfsystems,
-polardiag,
-toroidfield,
-tsdiag,
-coredelta,
-coreprof,
-coretransp,
-distribution,
-distsource,
-equilibrium,
-neoclassical,
-sawteeth,
-scenario, waves</td>
-<td>antennas,
-cxdiag,
-ecediag,
-interfdiag,
-ironmodel,
-magdiag,
-msediag, nbi,
-pfsystems,
-polardiag,
-toroidfield,
-tsdiag,
-coredelta,
-coreprof,
-coretransp,
-distribution,
-distsource,
-equilibrium,
-neoclassical,
-sawteeth,
-scenario,
-turbulence,
-waves</td>
-<td>antennas,
-cxdiag,
-ecediag,
-fusiondiag,
-interfdiag,
-ironmodel,
-langmuirdiag,
-magdiag,
-msediag, nbi,
-pfsystems,
-polardiag,
-toroidfield,
-tsdiag,
-coredelta,
-coreprof,
-coretransp,
-distribution,
-distsource,
-equilibrium,
-neoclassical,
-sawteeth,
-scenario,
-turbulence,
-waves</td>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">antennas,
+interfdiag,</div>
+<div class="line">ironmodel,
+magdiag,</div>
+<div class="line">msediag,
+pfsystems,</div>
+<div class="line">polardiag,
+toroidfield</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">antennas,
+cxdiag,</div>
+<div class="line">ecediag,
+interfdiag,</div>
+<div class="line">ironmodel,
+magdiag,</div>
+<div class="line">msediag, nbi,
+pfsystems,</div>
+<div class="line">polardiag,
+toroidfield,</div>
+<div class="line">tsdiag,
+coredelta,</div>
+<div class="line">coreprof,
+coretransp,</div>
+<div class="line">distribution,
+distsource,</div>
+<div class="line">equilibrium,
+neoclassical,</div>
+<div class="line">sawteeth,
+scenario,</div>
+<div class="line">waves</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">antennas,
+cxdiag,</div>
+<div class="line">ecediag,
+interfdiag,</div>
+<div class="line">ironmodel,
+magdiag,</div>
+<div class="line">msediag, nbi,
+pfsystems,</div>
+<div class="line">polardiag,
+toroidfield,</div>
+<div class="line">tsdiag,
+coredelta,</div>
+<div class="line">coreprof,
+coretransp,</div>
+<div class="line">distribution,
+distsource,</div>
+<div class="line">equilibrium,
+neoclassical,</div>
+<div class="line">sawteeth,
+scenario,</div>
+<div class="line">turbulence,
+waves</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">antennas,
+cxdiag,</div>
+<div class="line">ecediag,
+fusiondiag,</div>
+<div class="line">interfdiag,
+ironmodel,</div>
+<div class="line">langmuirdiag,
+magdiag,</div>
+<div class="line">msediag, nbi,
+pfsystems,</div>
+<div class="line">polardiag,
+toroidfield,</div>
+<div class="line">tsdiag,
+coredelta,</div>
+<div class="line">coreprof,
+coretransp,</div>
+<div class="line">distribution,
+distsource,</div>
+<div class="line">equilibrium,
+neoclassical,</div>
+<div class="line">sawteeth,
+scenario,</div>
+<div class="line">turbulence,
+waves</div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -478,32 +507,7 @@ presentation
 <p>For more updated information on the MD and DM activity please check the
 <a class="reference external" href="https://gforge6.eufus.eu/gf/project/md_and_dm/">md_and_dm project</a> in
 Gforge</p>
-</div>
-</div>
-</div>
-<div class="section" id="machine-description-database">
-<span id="machinedescriptiondatabase-documentation"></span><h2>Machine Description Database<a class="headerlink" href="#machine-description-database" title="Permalink to this headline">¶</a></h2>
-<p>UNDER CONSTRUCTION!</p>
-<div class="section" id="iter">
-<h3>ITER<a class="headerlink" href="#iter" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="jt60sa">
-<h3>JT60SA<a class="headerlink" href="#jt60sa" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="jet">
-<h3>JET<a class="headerlink" href="#jet" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="ts">
-<h3>TS<a class="headerlink" href="#ts" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="aug">
-<h3>AUG<a class="headerlink" href="#aug" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="tcv">
-<h3>TCV<a class="headerlink" href="#tcv" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="ftu">
-<h3>FTU<a class="headerlink" href="#ftu" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="machinedescriptiondatabase-documentation"></span></div>
 </div>
 </div>
 </div>
@@ -521,7 +525,7 @@ Gforge</p>
         <a href="amns.html" class="btn btn-neutral float-right" title="AMNS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="codes.html" class="btn btn-neutral" title="Codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="kepler.html" class="btn btn-neutral" title="Kepler" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

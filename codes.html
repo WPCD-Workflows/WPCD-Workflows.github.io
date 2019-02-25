@@ -36,7 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
-        <link rel="next" title="EDRG" href="edrg.html"/>
+        <link rel="next" title="Conventions" href="conventions.html"/>
         <link rel="prev" title="Running Exponential Average" href="averages.html"/> 
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Codes</a><ul>
@@ -154,8 +155,11 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#transport-list-of-codes-imp3">Transport list of codes (IMP3)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
 </ul>
@@ -267,13 +271,13 @@ actor.</p>
 <div class="section" id="adapt-your-c-function">
 <h4>Adapt your C++ function<a class="headerlink" href="#adapt-your-c-function" title="Permalink to this headline">¶</a></h4>
 <p>You must include the header file UALClasses.h:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#include &quot;UALClasses.h&quot;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>include <span class="s2">&quot;UALClasses.h&quot;</span>
 </pre></div>
 </div>
 <p>The function arguments that are arrays or strings must be declared as
 pointers, as usual. All other arguments must be passed by reference
 (i.e. they must be declared with an ampersand):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">mycppfunction</span><span class="p">(</span><span class="n">double</span> <span class="o">*</span> <span class="n">vector</span><span class="p">,</span> <span class="n">char</span> <span class="o">*</span> <span class="n">string</span><span class="p">,</span> <span class="nb">int</span> <span class="o">&amp;</span> <span class="n">scalar</span><span class="p">)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void mycppfunction(double * vector, char * string, int &amp; scalar)</span>
 </pre></div>
 </div>
 <p>The function arguments that are CPOs must be declared with types
@@ -282,23 +286,23 @@ time-independent CPOs or a single slice of a time-dependent CPO. The
 latter is for a complete time-dependent CPO. Note that in all cases, the
 CPO is considered as a single object, not an array, so it must be passed
 by reference as mentioned above:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">mycppfunction</span><span class="p">(</span>
-<span class="n">ItmNs</span><span class="p">::</span><span class="n">Itm</span><span class="p">::</span><span class="n">limiter</span> <span class="o">&amp;</span> <span class="n">lim</span><span class="p">,</span>
-<span class="n">ItmNs</span><span class="p">::</span><span class="n">Itm</span><span class="p">::</span><span class="n">coreimpur</span> <span class="o">&amp;</span> <span class="n">cor</span><span class="p">,</span>
-<span class="n">ItmNs</span><span class="p">::</span><span class="n">Itm</span><span class="p">::</span><span class="n">ironmodelArray</span> <span class="o">&amp;</span> <span class="n">iron</span><span class="p">)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void mycppfunction(</span>
+<span class="go">ItmNs::Itm::limiter &amp; lim,</span>
+<span class="go">ItmNs::Itm::coreimpur &amp; cor,</span>
+<span class="go">ItmNs::Itm::ironmodelArray &amp; iron)</span>
 </pre></div>
 </div>
 <p>The syntax is identical for input and output arguments. For output CPOs,
 do not forget to use the usual methods to assign strings and allocate
 arrays:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">lim</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s2">&quot;test_limiter&quot;</span><span class="p">);</span>
-<span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">desc_iron</span><span class="o">.</span><span class="n">geom_iron</span><span class="o">.</span><span class="n">npoints</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">lim.datainfo.dataprovider.assign(&quot;test_limiter&quot;);</span>
+<span class="go">iron.array.resize(3);</span>
+<span class="go">iron.array(j).desc_iron.geom_iron.npoints.resize(3);</span>
 </pre></div>
 </div>
 <p>Otherwise, the content of CPOs is accessed as usual:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">lim</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">desc_iron</span><span class="o">.</span><span class="n">geom_iron</span><span class="o">.</span><span class="n">npoints</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cout &lt;&lt; lim.datainfo.dataprovider &lt;&lt; endl;</span>
+<span class="go">cout &lt;&lt; iron.array(j).desc_iron.geom_iron.npoints(i);</span>
 </pre></div>
 </div>
 </div>
@@ -306,7 +310,7 @@ arrays:</p>
 <h4>How to use code parameters<a class="headerlink" href="#how-to-use-code-parameters" title="Permalink to this headline">¶</a></h4>
 <p>The code parameters are passed as the last argument with
 ItmNs::codeparam_t&amp; type:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">mycppfunction</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">ItmNs</span><span class="p">::</span><span class="n">codeparam_t</span> <span class="o">&amp;</span> <span class="n">codeparam</span><span class="p">)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void mycppfunction(..., ItmNs::codeparam_t &amp; codeparam)</span>
 </pre></div>
 </div>
 <p>Each field of the param structure is a vector of 132-byte strings, not
@@ -316,13 +320,13 @@ standards and should be changed in the future.)</p>
 <div class="section" id="compile-your-function-as-a-library">
 <h4>Compile your function as a library<a class="headerlink" href="#compile-your-function-as-a-library" title="Permalink to this headline">¶</a></h4>
 <p>You need to include the header directories for the UAL and Blitz:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>-I$(UAL)/include -I$(UAL)/lowlevel -I$(UAL)/cppinterface/ -I/afs/efda-
-itm.eu/gf/project/switm/blitz/blitz-0.9/include/
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">-I$(UAL)/include -I$(UAL)/lowlevel -I$(UAL)/cppinterface/ -I/afs/efda-</span>
+<span class="go">itm.eu/gf/project/switm/blitz/blitz-0.9/include/</span>
 </pre></div>
 </div>
 <p>Same for linking:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>-L$(UAL)/lib -lUALCPPInterface -lUALLowLevel -L/afs/efda-
-itm.eu/gf/project/switm/blitz/blitz-0.9/lib -lblitz
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">-L$(UAL)/lib -lUALCPPInterface -lUALLowLevel -L/afs/efda-</span>
+<span class="go">itm.eu/gf/project/switm/blitz/blitz-0.9/lib -lblitz</span>
 </pre></div>
 </div>
 <p>Additionally, you must compile with the -fPIC option.</p>
@@ -334,87 +338,87 @@ inputs and three different types of actors as output. Additionally, we
 have an integer as input/output, a vector of doubles as output and a
 string as output. We also want to use code parameters. Content of
 mycppfunction.cpp:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#include &quot;UALClasses.h&quot;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>include <span class="s2">&quot;UALClasses.h&quot;</span>
 
-<span class="n">typedef</span> <span class="n">struct</span> <span class="p">{</span>
-      <span class="n">char</span> <span class="o">**</span><span class="n">parameters</span><span class="p">;</span>
-      <span class="n">char</span> <span class="o">**</span><span class="n">default_param</span><span class="p">;</span>
-      <span class="n">char</span> <span class="o">**</span><span class="n">schema</span><span class="p">;</span>
-<span class="p">}</span> <span class="n">param</span><span class="p">;</span>
+<span class="go">typedef struct {</span>
+<span class="go">      char **parameters;</span>
+<span class="go">      char **default_param;</span>
+<span class="go">      char **schema;</span>
+<span class="go">} param;</span>
 
-<span class="n">void</span> <span class="n">mycppfunction</span><span class="p">(</span>
-      <span class="n">ItmNs</span><span class="p">::</span><span class="n">Itm</span><span class="p">::</span><span class="n">summary</span>  <span class="n">SUM</span><span class="p">,</span>
-      <span class="n">EU</span><span class="o">-</span><span class="n">IMNS</span><span class="p">::</span><span class="n">EU</span><span class="o">-</span><span class="n">IM</span><span class="p">::</span><span class="n">ANTENNAS</span> <span class="o">&amp;</span> <span class="n">ANT</span><span class="p">,</span>
-      <span class="n">EU</span><span class="o">-</span><span class="n">IMNS</span><span class="p">::</span><span class="n">EU</span><span class="o">-</span><span class="n">IM</span><span class="p">::</span><span class="n">EQUILIBRIUMARRAY</span> <span class="o">&amp;</span> <span class="n">EQ</span><span class="p">,</span>
-      <span class="n">INT</span> <span class="o">&amp;</span> <span class="n">X</span><span class="p">,</span>
-      <span class="n">EU</span><span class="o">-</span><span class="n">IMNS</span><span class="p">::</span><span class="n">EU</span><span class="o">-</span><span class="n">IM</span><span class="p">::</span><span class="n">LIMITER</span> <span class="o">&amp;</span> <span class="n">LIM</span><span class="p">,</span>
-      <span class="n">EU</span><span class="o">-</span><span class="n">IMNS</span><span class="p">::</span><span class="n">EU</span><span class="o">-</span><span class="n">IM</span><span class="p">::</span><span class="n">COREIMPUR</span> <span class="o">&amp;</span> <span class="n">COR</span><span class="p">,</span>
-      <span class="n">EU</span><span class="o">-</span><span class="n">IMNS</span><span class="p">::</span><span class="n">EU</span><span class="o">-</span><span class="n">IM</span><span class="p">::</span><span class="n">IRONMODELARRAY</span> <span class="o">&amp;</span> <span class="n">IRON</span><span class="p">,</span>
-      <span class="n">DOUBLE</span> <span class="o">*</span> <span class="n">Y</span><span class="p">,</span>
-      <span class="n">CHAR</span> <span class="o">*</span> <span class="n">STR</span><span class="p">,</span>
-<span class="n">PARAM</span> <span class="o">&amp;</span> <span class="n">CODEPARAM</span><span class="p">)</span>
-<span class="p">{</span>
+<span class="go">void mycppfunction(</span>
+<span class="go">      ItmNs::Itm::summary  SUM,</span>
+<span class="go">      EU-IMNS::EU-IM::ANTENNAS &amp; ANT,</span>
+<span class="go">      EU-IMNS::EU-IM::EQUILIBRIUMARRAY &amp; EQ,</span>
+<span class="go">      INT &amp; X,</span>
+<span class="go">      EU-IMNS::EU-IM::LIMITER &amp; LIM,</span>
+<span class="go">      EU-IMNS::EU-IM::COREIMPUR &amp; COR,</span>
+<span class="go">      EU-IMNS::EU-IM::IRONMODELARRAY &amp; IRON,</span>
+<span class="go">      DOUBLE * Y,</span>
+<span class="go">      CHAR * STR,</span>
+<span class="go">PARAM &amp; CODEPARAM)</span>
+<span class="go">{</span>
 
-      <span class="o">/*</span> <span class="n">DISPLAY</span> <span class="n">FIRST</span> <span class="n">LINE</span> <span class="n">OF</span> <span class="n">PARAMETERS</span> <span class="o">*/</span>
-      <span class="n">COUT</span> <span class="o">&amp;</span><span class="n">LT</span><span class="o">&lt;</span> <span class="n">codeparam</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">codeparam</span><span class="o">.</span><span class="n">default_param</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">codeparam</span><span class="o">.</span><span class="n">schema</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-      <span class="o">/*</span> <span class="n">display</span> <span class="n">content</span> <span class="n">of</span> <span class="n">inputs</span> <span class="o">*/</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;x=&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="nb">sum</span><span class="o">.</span><span class="n">time</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="nb">sum</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ant</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">eq</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-      <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">k</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-           <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">eq</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">profiles_1d</span><span class="o">.</span><span class="n">psi</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&lt;&lt;</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
-           <span class="p">}</span>
-           <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="o">/*</span> <span class="n">fill</span> <span class="n">limiter</span> <span class="n">CPO</span> <span class="o">*/</span>
-      <span class="n">lim</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s2">&quot;test_limiter&quot;</span><span class="p">);</span>
-      <span class="n">lim</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">r</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>     <span class="o">//</span> <span class="n">allocate</span> <span class="n">vector</span>
-      <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">lim</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-      <span class="p">}</span>
-      <span class="o">/*</span> <span class="n">fill</span> <span class="n">coreimpur</span> <span class="n">CPO</span> <span class="o">*/</span>
-      <span class="n">cor</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s2">&quot;test_coreimpur&quot;</span><span class="p">);</span>
-      <span class="n">cor</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>          <span class="o">//</span> <span class="n">allocate</span> <span class="n">vector</span>
-      <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">cor</span><span class="o">.</span><span class="n">flag</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="n">cor</span><span class="o">.</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">//</span> <span class="n">don</span><span class="s1">&#39;t forget to fill time for time-dependent CPOs</span>
-      <span class="o">/*</span> <span class="n">fill</span> <span class="n">ironmodel</span> <span class="n">CPO</span> <span class="o">*/</span>
-      <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>        <span class="o">//</span> <span class="n">allocate</span> <span class="n">slices</span>
-      <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">255</span><span class="p">];</span>
-            <span class="n">sprintf</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s2">&quot;test_ironmodel</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
-            <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">datainfo</span><span class="o">.</span><span class="n">dataprovider</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="o">//</span> <span class="n">allocate</span> <span class="n">vector</span>
-            <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">desc_iron</span><span class="o">.</span><span class="n">geom_iron</span><span class="o">.</span><span class="n">npoints</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-            <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                  <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">desc_iron</span><span class="o">.</span><span class="n">geom_iron</span><span class="o">.</span><span class="n">npoints</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="n">j</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="n">iron</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">time</span><span class="o">=</span><span class="n">j</span><span class="p">;</span>       <span class="o">//</span> <span class="n">fill</span> <span class="n">time</span> <span class="k">for</span> <span class="n">time</span><span class="o">-</span><span class="n">dependent</span> <span class="n">CPOs</span>
-      <span class="p">}</span>
-      <span class="o">/*</span> <span class="n">assign</span> <span class="n">value</span> <span class="n">to</span> <span class="n">non</span> <span class="n">CPO</span> <span class="n">outputs</span> <span class="o">*/</span>
-      <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
-      <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="n">strcpy</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="s2">&quot;This is a test string&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="go">      /* DISPLAY FIRST LINE OF PARAMETERS */</span>
+<span class="go">      COUT &amp;LT&lt; codeparam.parameters[0] &lt;&lt; endl;</span>
+<span class="go">      cout &lt;&lt; codeparam.default_param[0] &lt;&lt; endl;</span>
+<span class="go">      cout &lt;&lt; codeparam.schema[0] &lt;&lt; endl;</span>
+<span class="go">      /* display content of inputs */</span>
+<span class="go">      cout &lt;&lt; &quot;x=&quot; &lt;&lt; x &lt;&lt; endl;</span>
+<span class="go">      cout &lt;&lt; sum.time &lt;&lt; endl;</span>
+<span class="go">      cout &lt;&lt; sum.datainfo.dataprovider &lt;&lt; endl;</span>
+<span class="go">      cout &lt;&lt; ant.datainfo.dataprovider &lt;&lt; endl;</span>
+<span class="go">      cout &lt;&lt; eq.array(0).datainfo.dataprovider &lt;&lt; endl;</span>
+<span class="go">      for (int k=0; k&lt;3; k++) {</span>
+<span class="go">           for (int i=0; i&lt;4; i++) {</span>
+<span class="go">                 cout &lt;&lt; eq.array(k).profiles_1d.psi(i)&lt;&lt; &quot; &quot;;</span>
+<span class="go">           }</span>
+<span class="go">           cout &lt;&lt; endl;</span>
+<span class="go">      }</span>
+<span class="go">      /* fill limiter CPO */</span>
+<span class="go">      lim.datainfo.dataprovider.assign(&quot;test_limiter&quot;);</span>
+<span class="go">      lim.position.r.resize(5);     // allocate vector</span>
+<span class="go">      for (int i=0; i&lt;5; i++) {</span>
+<span class="go">            lim.position.r(i)=(i+1);</span>
+<span class="go">      }</span>
+<span class="go">      /* fill coreimpur CPO */</span>
+<span class="go">      cor.datainfo.dataprovider.assign(&quot;test_coreimpur&quot;);</span>
+<span class="go">      cor.flag.resize(3);          // allocate vector</span>
+<span class="go">      for (int i=0; i&lt;3; i++) {</span>
+<span class="go">            cor.flag(i)=(i+1)*10;</span>
+<span class="go">      }</span>
+<span class="go">      cor.time=0; // don&#39;t forget to fill time for time-dependent CPOs</span>
+<span class="go">      /* fill ironmodel CPO */</span>
+<span class="go">      iron.array.resize(3);        // allocate slices</span>
+<span class="go">      for (int j=0; j&lt;3; j++) {</span>
+<span class="go">            char s[255];</span>
+<span class="go">            sprintf(s,&quot;test_ironmodel%d&quot;,j);</span>
+<span class="go">            iron.array(j).datainfo.dataprovider.assign(s); // allocate vector</span>
+<span class="go">            iron.array(j).desc_iron.geom_iron.npoints.resize(3);</span>
+<span class="go">            for (int i=0; i&lt;3; i++) {</span>
+<span class="go">                  iron.array(j).desc_iron.geom_iron.npoints(i)=j*i;</span>
+<span class="go">            }</span>
+<span class="go">            iron.array(j).time=j;       // fill time for time-dependent CPOs</span>
+<span class="go">      }</span>
+<span class="go">      /* assign value to non CPO outputs */</span>
+<span class="go">      x=5;</span>
+<span class="go">      for (int i=0; i&lt;10; i++) {</span>
+<span class="go">            y[i]=i;</span>
+<span class="go">      }</span>
+<span class="go">      strcpy(str,&quot;This is a test string&quot;);</span>
+<span class="go">}</span>
 </pre></div>
 </div>
 <p>Content of Makefile:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>CXXFLAGS=-g -fPIC -I$(UAL)/include -I$(UAL)/lowlevel -I$(UAL)/cppinterface/
--I$SWEU-IMDIR/blitz/blitz-0.9/include/
-LDFLAGS=-L$(UAL)/lib -lUALCPPInterface -lUALLowLevel -L/afs/efda-
-itm.eu/gf/project/switm/blitz/blitz-0.9/lib -lblitz
-libmycppfunction.a: mycppfunction.o
-      ar -rvs libmycppfunction.a mycppfunction.o
-mycppfunction.o: mycppfunction.cpp
-clean:
-      rm mycppfunction.o libmycppfunction.a
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">CXXFLAGS=-g -fPIC -I$(UAL)/include -I$(UAL)/lowlevel -I$(UAL)/cppinterface/</span>
+<span class="go">-I$SWEU-IMDIR/blitz/blitz-0.9/include/</span>
+<span class="go">LDFLAGS=-L$(UAL)/lib -lUALCPPInterface -lUALLowLevel -L/afs/efda-</span>
+<span class="go">itm.eu/gf/project/switm/blitz/blitz-0.9/lib -lblitz</span>
+<span class="go">libmycppfunction.a: mycppfunction.o</span>
+<span class="go">      ar -rvs libmycppfunction.a mycppfunction.o</span>
+<span class="go">mycppfunction.o: mycppfunction.cpp</span>
+<span class="go">clean:</span>
+<span class="go">      rm mycppfunction.o libmycppfunction.a</span>
 </pre></div>
 </div>
 </div>
@@ -432,10 +436,16 @@ clean:
 </ul>
 <p>The fields Kepler, Ptolemy, and UAL are automatically filled with the
 values which you set by running the <code class="docutils literal"><span class="pre">EU-IMv1</span> <span class="pre">script</span></code>.</p>
+<div class="figure align-center">
+<img alt="_images/codes_1.png" src="_images/codes_1.png" />
+</div>
 <p>Second tab (HasReturn):</p>
 <ul class="simple">
 <li>specify return parameters (type, array, size)</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/codes_2.png" src="_images/codes_2.png" />
+</div>
 <p>Third tab (HasParameters):</p>
 <ul class="simple">
 <li>tick if subroutine uses code specific parameters</li>
@@ -445,6 +455,9 @@ values which you set by running the <code class="docutils literal"><span class="
 </ul>
 <p>For information on code specific parameters, please see <a class="reference external" href="#itm_code_parameters">How to handle
 code specific parameters</a>.</p>
+<div class="figure align-center">
+<img alt="_images/codes_3.png" src="_images/codes_3.png" />
+</div>
 <p>Fourth tab (Source):</p>
 <ul class="simple">
 <li>specify programming language of source code</li>
@@ -459,6 +472,9 @@ when running Kepler workflows</li>
 <li>specify (or browse for) library file containing the code module</li>
 <li>specify (or browse for) other libraries required by the code module</li>
 </ul>
+<div class="figure align-center">
+<img alt="_images/codes_4.png" src="_images/codes_4.png" />
+</div>
 </div>
 </div>
 </div>
@@ -764,6 +780,35 @@ status</a>,
 </div>
 </div>
 </div>
+<div class="section" id="transport-list-of-codes-imp3">
+<h2>Transport list of codes (IMP3)<a class="headerlink" href="#transport-list-of-codes-imp3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>ASPOEL, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=ASPOEL&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>BIT1, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=BIT1&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>CARRE, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=CARRE&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>COS, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=COS&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>EIRENE, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=EIRENE&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>EIRENE2, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=EIRENE2&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>EMC3-EIRENE, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=EMC3-EIRENE&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>ERO, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=ERO&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>ETS, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=ETS&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>METIS4EU-IM, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=METIS4EU-IM&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>SOLPS, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=SOLPS&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+<li>SOLPS6, , (<a class="reference external" href="http://solps-mdsplus.aug.ipp.mpg.de:8080/EU-IM/specific_code_report?specific_codename=SOLPS6&amp;SUBMIT=Submit+Query">code
+status</a>)</li>
+</ul>
+</div>
 </div>
 
 
@@ -776,7 +821,7 @@ status</a>,
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="edrg.html" class="btn btn-neutral float-right" title="EDRG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conventions.html" class="btn btn-neutral float-right" title="Conventions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="averages.html" class="btn btn-neutral" title="Running Exponential Average" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
