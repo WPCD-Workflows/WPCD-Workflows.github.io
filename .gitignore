@@ -1,3 +1,5 @@
 latex
 doctrees
 .buildinfo
+*.md5
+*.md5-stamp
