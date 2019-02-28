@@ -110,6 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Additional resources</a></li>
 </ul>
 
             
@@ -198,8 +199,8 @@ is called a running exponential average, which is essentially the same
 thing as a convolution integral over an exponential memory decay times the
 past signal. It turns out to be very easy to obtain this without saving
 past values.</p>
-<p>The original reference for the following is S W Roberts, “Control Chart
-Tests Based on Geometric Moving Averages,” Technometrics 1 (1959)
+<p>The original reference for the following is S W Roberts, &#8220;Control Chart
+Tests Based on Geometric Moving Averages,&#8221; Technometrics 1 (1959)
 239-250, cited by all the good WWW resources, including the Wikipedia
 page on Moving Averages and the NIST Statistical Handbook online.</p>
 </div>
@@ -210,7 +211,7 @@ variables \( \vec u \). Measure \( p \) at discrete time intervals
 \( t_n, \) with values \( p_n=p(t_n) \) and interval length \(
 \tau=t_n-t_{n-1} \). The moving exponential average \( A_n=A(p_n) \)
 on the \( n \hbox{-th} \) interval is defined as</p>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[A_n = \epsilon p_n + (1-\epsilon)A_{n-1} \qquad \qquad \hbox{with} \qquad \epsilon=\alpha \tau\]</div>
 <p>in which the small parameter \( \epsilon \) is given in terms of the interval \( \tau \) and an inverse time constant \( \alpha. \)</p>
 <p>In the first instance \( p \) is measured there is no \( A \) so the
@@ -222,13 +223,13 @@ previous time up to the initial time point.</p>
 <h2>Differential Equation<a class="headerlink" href="#differential-equation" title="Permalink to this headline">¶</a></h2>
 <p>The equivalent differential equation is found by forming the relevant
 finite difference,</p>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[A_n - A_{n-1} = \epsilon (p_n - A_{n-1})\]</div>
 <p>which we can also cast as</p>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[(1-\epsilon)(A_n - A_{n-1}) = \epsilon (p_n - A_n)\]</div>
 <p>Taking the limit \( \tau \to 0 \) is the same as taking \( \epsilon \to 0 \) so both of these expressions become equivalent to</p>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[{\partial A \over \partial t} = \alpha(p-A)\]</div>
 <p>whose solution is given below.</p>
 </div>
@@ -236,13 +237,13 @@ finite difference,</p>
 <h2>Equivalence to Past-Time Convolution Integral<a class="headerlink" href="#equivalence-to-past-time-convolution-integral" title="Permalink to this headline">¶</a></h2>
 <p>The solution of the above differential equation is given by the method
 of undetermined coefficients,</p>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[\begin{split}{\partial A \over \partial t} +\alpha A = \alpha p \\ \\ e^{-\alpha t}{\partial \over \partial t} \left( e^{ \alpha t} A \right) = \alpha p \\ \\ {\partial \over \partial t} \left( e^{\alpha t} A \right) = \alpha p e^{\alpha t}\end{split}\]</div>
 <p>We may integrate this over all past time, to find</p>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[A(t) = \int_{-\infty}^t \alpha dt' p(t') e^{-\alpha (t-t') }\]</div>
-<p>This is a convolution integral over the kernel \( e^{-\alpha(t-t’)} \)
-and the signal \( p(t’) \). The time constant \( \alpha^{-1} \) is
+<p>This is a convolution integral over the kernel \( e^{-\alpha(t-t&#8217;)} \)
+and the signal \( p(t&#8217;) \). The time constant \( \alpha^{-1} \) is
 just the memory decay time, while if \( p \) is constant then the
 integral yields unity times \( p \). This is the same as the
 normalisation with the \( (1-\epsilon) \) factor in the average formula
@@ -262,7 +263,7 @@ main time-memory parameter:</p>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>the integral with \( \alpha dt’ \) yields unity</li>
+<li>the integral with \( \alpha dt&#8217; \) yields unity</li>
 <li>the \( \epsilon \) and \( (1-\epsilon) \) factors add to unity</li>
 <li>therefore set the first value of \( A \) to the first value of \( p      \)</li>
 </ul>
@@ -336,8 +337,7 @@ the correlation and saturation times of the turbulence, respectively.</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

@@ -120,6 +120,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="edrg.html">EDRG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Additional resources</a></li>
 </ul>
 
             
@@ -199,7 +200,7 @@ University of California, Berkeley. Kepler itself is developed and
 maintained by the cross-project Kepler collaboration.</p>
 <p>The main components in a Kepler workflow are actors, which are used in a
 design (inherited from Ptolemy II) that separates workflow components
-(“actors”) from workflow orchestration (“directors”), making components
+(&#8220;actors&#8221;) from workflow orchestration (&#8220;directors&#8221;), making components
 more easily reusable. Workflows can work at very levels of granularity,
 from low-level workflows (that explicitly move data around or start and
 monitor remote jobs, for example) to high-level workflows that interlink
@@ -211,7 +212,7 @@ packages. A wide range of actors are available for use and reuse.</p>
 <p>You can download Kepler from the following page <a class="reference external" href="https://kepler-project.org/users/downloads">https://kepler-project.org/users/downloads</a></p>
 <p>In order to install Kepler and Serpens related workflows you have to do
 following:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
 <span class="go">wget http://scilla.man.poznan.pl/euforia/install/serpens-demo-workflows.zip -O serpens-demo-workflows.zip</span>
 <span class="go">unzip serpens-demo-workflows.zip</span>
 </pre></div>
@@ -265,13 +266,13 @@ the field</div>
 </div>
 <div class="line">Main difference between ualmux/
 ualmuxparam
-actors lays in it’s ability to be used
+actors lays in it&#8217;s ability to be used
 in</div>
 <div class="line">a loop that modify different field
 inside IDS.</div>
 <div class="line">You can simply provide different field
 name
-for different loop’s step.</div>
+for different loop&#8217;s step.</div>
 </div>
 </td>
 </tr>
@@ -352,11 +353,11 @@ passed via input IDS.</div>
 </tr>
 <tr class="row-even"><td>SetBreakpoint</td>
 <td><div class="first last line-block">
-<div class="line">This actor allows to enforce “debug”
+<div class="line">This actor allows to enforce &#8220;debug&#8221;
 mode for IMAS based actors. It sets</div>
-<div class="line">global parameter “ITM_DEBUG” to either
+<div class="line">global parameter &#8220;ITM_DEBUG&#8221; to either
 true or false. In case true is a value</div>
-<div class="line">of “ITM_DEBUG” all FC2K generated actors
+<div class="line">of &#8220;ITM_DEBUG&#8221; all FC2K generated actors
 will start in debug mode.</div>
 </div>
 </td>
@@ -407,7 +408,10 @@ for huge data sets)</div>
 </td>
 </tr>
 <tr class="row-odd"><td>IDSContent</td>
-<td>Displays IDS data</td>
+<td><div class="first last line-block">
+<div class="line">Displays IDS data</div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -419,14 +423,14 @@ for huge data sets)</div>
 <div class="section" id="setting-up-environment">
 <h4>Setting up environment<a class="headerlink" href="#setting-up-environment" title="Permalink to this headline">¶</a></h4>
 <p>Please do not forget to set JAVA memory settings:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export _JAVA_OPTIONS=&quot;-Xss20m -Xms8g -Xmx8g&quot;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">export _JAVA_OPTIONS=&quot;-Xss20m -Xms8g -Xmx8g&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="backing-up-old-files">
 <h4>Backing up old files<a class="headerlink" href="#backing-up-old-files" title="Permalink to this headline">¶</a></h4>
 <p>Before first configuration of Kepler, make sure to backup your old data files</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
 <span class="go">mv .kepler .kepler~</span>
 <span class="go">mv KeplerData KeplerData~</span>
 <span class="go">mv .ptolemyII .ptolemyII~</span>
@@ -437,7 +441,7 @@ for huge data sets)</div>
 <h4>Creating place to store your personal installations of Kepler<a class="headerlink" href="#creating-place-to-store-your-personal-installations-of-kepler" title="Permalink to this headline">¶</a></h4>
 <p>IMAS based installations are stored inside <strong>$HOME/kepler</strong> directory.</p>
 <p>Before proceeding further, make sure to create <strong>kepler</strong> directory</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> create directory inside <span class="nv">$HOME</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> create directory inside <span class="nv">$HOME</span>
 <span class="go">cd ~</span>
 <span class="go">mkdir kepler</span>
 </pre></div>
@@ -449,7 +453,7 @@ for huge data sets)</div>
 <dt>In order to start Kepler you have use helper scripts that will install and configure your personal copy of Kepler</dt>
 <dd><ul class="first last">
 <li><p class="first">load IMAS module</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">module </span><span class="n">load</span> <span class="n">imas</span>
+<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">module </span><span class="n">load</span> <span class="n">imas</span>
 <span class="k">module </span><span class="n">load</span> <span class="n">kepler</span>
 <span class="cp"># NOTE! It might be that you don&#39;t have Kepler copy inside your $HOME</span>
 <span class="cp"># in that case you need to install it kepler_install_light</span>
@@ -457,7 +461,7 @@ for huge data sets)</div>
 </div>
 </li>
 <li><p class="first">Start Kepler</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="cp"># run alias that will execute Kepler</span>
+<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="cp"># run alias that will execute Kepler</span>
 <span class="n">kepler</span>
 </pre></div>
 </div>
@@ -524,8 +528,7 @@ for huge data sets)</div>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
