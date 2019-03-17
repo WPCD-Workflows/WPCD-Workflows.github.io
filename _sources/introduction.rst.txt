@@ -1,41 +1,60 @@
 .. _world_wpcd_structure:
 
-=========================================================
-Introduction to Code Development for integrated modelling
-=========================================================
+================================================================================
+Introduction to the EUROfusion Project Code Development for integrated modelling
+================================================================================
 
 The EUROfusion Project on Code Development for Integrated Modelling (WP-CD)
 supports the achievement of the European Fusion Roadmap at Horizon 2020
 goals, via the development of existing modelling codes with a particular
-focus on integrated modelling. The primary objectives of WPCD are: 1.
-Provide a suite of codes that can be validated on existing machines and
-used for JT-60SA, ITER and DEMO predictions:
+focus on integrated modelling. The primary objectives of WPCD are: 
 
--  build on the existing modelling codes developed by the EUROfusion
-   Consortium members including the Integrated Modelling (EU-IM)
-   infrastructure, toolset and codes developed under the former EFDA ITM
-   Task Force,
--  add new physics to the existing models
--  couple codes into integrated workflows
--  optimize codes.
+1. Provide a suite of codes that can be validated on existing Tokamaks and
+   used for JT-60SA, ITER and DEMO predictions:
+
+   -  build on the existing modelling codes developed by the EUROfusion
+      Consortium members including the Integrated Modelling (EU-IM)
+      infrastructure, toolset and codes developed under the former EFDA ITM
+      Task Force,
+   -  add new physics to the existing models
+   -  couple codes into integrated workflows
+   -  optimize codes.
 
 2. Specific ITER simulation work in support of ITER IO and F4E with
-specified deliverables. WPCD operates under a work plan aiming to provide
-in the long term a full suite of integrated simulation workflows,
-incorporating core-edge-SOL/PFC coupling, first-principles models and
-control elements. A central task is the development of the new modular
-European Transport Simulator, ETS, which is being deployed to JET modelling
-infrastructure for validation and application to experimental analysis. In
-addition to code and workflow development, rigorous code verification is
+   specified deliverables.
+
+WPCD operates under a work plan aiming to provide in the long term a full
+suite of integrated simulation workflows, incorporating core-edge-SOL/PFC
+coupling, first-principles models and control elements. A central task is
+the development of the modular European Transport Simulator, ETS, which is
+being deployed to JET and MST modelling infrastructures for validation and
+application to experimental analysis.
+
+In addition to code and workflow development, rigorous code verification is
 also performed under WPCD, within the EU-IM framework; whereas validation
 of the released integrated modelling workflows against the experiments is
-performed under the rerelated Task Forces. `EUROfusion WPCD webpage
-<https://users.euro-fusion.org/iterphysicswiki/index.php/Main_Page/>`__.
-The EU-IM Team includes both EUROfusion WPCD and WPISA CPT contributors,
-see `EU-IM Team <http://www.euro-fusionscipub.org/eu-im/>`__. This list
-reproduces the status of members in 2015 and is possibly not exhaustive.
+performed under WPJET1 and WPMST1.
 
-.. _world_itm_approach:
+The Work Package run as a project and managed by a project leader (M.
+Romanelli, UKAEA, michele.romanelli@ukaea.uk)
+
+In 2019 the structure of the project has been reviewed and changed.
+
+The project is now organised into three coordinated areas or subprojects
+reflecting the present priorities: Enabling Workflow Exploitation, Workflow
+Development, Workflow adaptation to IMAS. The Enabling Workflow
+Exploitation Area (EWE) will coordinate the development of pre-processing
+tools for the routine use of ETS and the equilibrium-MHD-stability workflow
+in EUROfusion facilities, the development of visualization tools, synthetic
+diagnostics and the provision of training to users. The Workflow
+Development Area or subproject will coordinate the continuous development
+of existing and new workflows in IMAS addressing specific modelling needs
+of the other EUROfusion work packages. The Workflow adaptation to IMAS Area
+will operate in strong collaboration with ITER IO and will ensure the
+complete adaptation of existing workflows to IMAS using the most updated
+Data Dictionary.
+
+.. _world_wpcd_structure:
 
 The European Integrated Modelling (EU-IM) approach
 ==================================================
@@ -110,44 +129,6 @@ at an ITM EXPO at the 2011 EPS fusion conference in Strasbourg.
 
 .. _world_itm_structure:
 
-Structure
-=========
-
-The EFDA ITM was structured into four Integrated Modelling Projects
-(IMPs) focusing on the following physics areas:
-
--  **IMP12**
-   plasma equilibrium and MHD
--  **IMP3**
-   transport code and whole discharge evolution
--  **IMP4**
-   transport and micro-instabilities
--  **IMP5**
-   heating, current drive (H&CD) and fast particles
-
-The "Infrastructure and Software Integration Project" (**ISIP**) was in
-charge of developing, maintaining and operating the code platform structure
-and implementing the EU-IM data-structure. A key function of ISIP was to
-provide infrastructure support to the IMPs. At present, under EUROfusion,
-this expertise and tasks are ensured by the **Core Programming Team** under
-the **Infrastructure and Support Activities Work Package (WP-ISA CPT)**.
-Two further projects ensured the link with the experimentalists and the
-provision of the experimental databases:
-
--  **AMNS**
-   the "Atomic, Molecular, Nuclear Surface" Data
--  **EDRG**
-   "Experimentalists and Diagnosticians Resource Group"
-
-The "ITER Scenario Modelling Working Group" (**ISM**) was established in
-2007 as part of EU-IM with the aim to assist in systematic predictive
-modelling of all ITER reference scenarios by using the major existing
-integrated modelling tools, whilst the EU-IM code platform was in
-development. ISM also supported the verification and validation of the ETS,
-which aims to become the main tool for EU modelling activity.
-
-.. _world_itm_contributors:
-
 Contributors
 ============
 
@@ -204,9 +185,7 @@ Gforge
   `Gforge <https://gforge6.eufus.eu>`__ hosts all projects (software and infrastructure) under the EU-IM.
 
 EU-IM Gateway
-   The EU-IM Gateway is a compute cluster located at Portici (near
-   Napoli in Italy). It is uses for development and fusion simulations in
-   the EU-IM.
+   The EU-IM Gateway is a computer cluster presently hosted at CINECA, Bologna, Italy. It is used for development and fusion simulations in the EU-IM.
 
 EU-IM Portal
    The `EU-IM Portal
@@ -311,67 +290,4 @@ verification
    accurately represents the developer's conceptual description of the model
    and the solution to the model. 
    
-
-Support
-=======
-
-Getting support for the EU-IM platform and Gateway
---------------------------------------------------
-
-The EU-IM provides several ways to get support when you run into problems.
-Which one to choose depends on the nature of your problem. This page
-tries to give an overview.
-
-Support for problems related to the EU-IM Gateway
--------------------------------------------------
-
-The official documentation of the ITM Gateway can be found at
-https://wiki.eufus.eu.
-
-
-Support for problems related to the EU-IM Platform and Software
----------------------------------------------------------------
-
-All ITM-specific software and the whole ITM platform is supported by the
-Core Programming Team (CPT). You can submit trouble tickets to them via
-the General Support Project in the GForge system. To get more effective
-help, have a look at the guidelines prepared here: `How to report an
-issue <http://portal.efda-itm.eu/twiki/bin/view/Main/HowToReportAnIssue>`__.
-
-To directly submit a trouble ticket, go to: `General Support Tracker
-(https://gforge6.eufus.eu/gf/project/generalsupport/tracker/) <https://gforge6.eufus.eu/gf/project/generalsupport/tracker/?action=TrackerItemBrowse&tracker_id=184>`__.
-
-Use this support tracker if your problem falls in the following
-categories:
-
--  Problems using the UAL, FC2K, HPC2K or similar tools
--  Problems running Kepler or Kepler workflows
--  Visualization tools: VisIt, Python
--  Integrated Simulation Editor (ISE)
--  Any software project that is hosted in GForge
--  Any kind of scientific software
-
-Feature requests for EU-IM Software
------------------------------------
-
-Feature requests for software developed within the ITM can be submitted
-to a separate tracker.
-
-To submit a feature request, please go to `General Feature Request
-Tracker <https://gforge6.eufus.eu/gf/project/generalsupport/tracker/?action=TrackerItemBrowse&tracker_id=702>`_.
-
-If you are unsure whether to file a bug report of feature request, have
-a look at these guidlines: `How to report an
-issue <https://portal.eufus.eu/twiki/bin/view/Main/HowToReportAnIssue>`_.
-
-
-.. _world_itm_external_links:
-
-Links to related external projects
-==================================
-
--  `EUFORIA Project <http://www.euforia-project.eu/EUFORIA/>`__
--  `MAPPER Project <http://www.mapper-project.eu/>`__
--  `EFDA High Level Support Team (HLST) <https://www.efda-hlst.eu/>`__
--  `EFDA Goal Oriented Training in Theory (GOTiT) <https://solps-mdsplus.aug.ipp.mpg.de/GOTiT/>`__
 

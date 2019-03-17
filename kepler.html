@@ -17,42 +17,37 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="EUROfusion Integrated Modelling workflows 3.0 documentation" href="index.html"/>
-        <link rel="next" title="EDRG" href="edrg.html"/>
-        <link rel="prev" title="Conventions" href="conventions.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="EDRG" href="edrg.html" />
+    <link rel="prev" title="Conventions" href="conventions.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -91,7 +86,7 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Code Development for integrated modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
@@ -132,7 +127,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">EUROfusion Integrated Modelling workflows</a>
@@ -140,9 +135,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -200,7 +196,7 @@ University of California, Berkeley. Kepler itself is developed and
 maintained by the cross-project Kepler collaboration.</p>
 <p>The main components in a Kepler workflow are actors, which are used in a
 design (inherited from Ptolemy II) that separates workflow components
-(&#8220;actors&#8221;) from workflow orchestration (&#8220;directors&#8221;), making components
+(“actors”) from workflow orchestration (“directors”), making components
 more easily reusable. Workflows can work at very levels of granularity,
 from low-level workflows (that explicitly move data around or start and
 monitor remote jobs, for example) to high-level workflows that interlink
@@ -212,7 +208,7 @@ packages. A wide range of actors are available for use and reuse.</p>
 <p>You can download Kepler from the following page <a class="reference external" href="https://kepler-project.org/users/downloads">https://kepler-project.org/users/downloads</a></p>
 <p>In order to install Kepler and Serpens related workflows you have to do
 following:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
 <span class="go">wget http://scilla.man.poznan.pl/euforia/install/serpens-demo-workflows.zip -O serpens-demo-workflows.zip</span>
 <span class="go">unzip serpens-demo-workflows.zip</span>
 </pre></div>
@@ -266,13 +262,13 @@ the field</div>
 </div>
 <div class="line">Main difference between ualmux/
 ualmuxparam
-actors lays in it&#8217;s ability to be used
+actors lays in it’s ability to be used
 in</div>
 <div class="line">a loop that modify different field
 inside IDS.</div>
 <div class="line">You can simply provide different field
 name
-for different loop&#8217;s step.</div>
+for different loop’s step.</div>
 </div>
 </td>
 </tr>
@@ -353,11 +349,11 @@ passed via input IDS.</div>
 </tr>
 <tr class="row-even"><td>SetBreakpoint</td>
 <td><div class="first last line-block">
-<div class="line">This actor allows to enforce &#8220;debug&#8221;
+<div class="line">This actor allows to enforce “debug”
 mode for IMAS based actors. It sets</div>
-<div class="line">global parameter &#8220;ITM_DEBUG&#8221; to either
+<div class="line">global parameter “ITM_DEBUG” to either
 true or false. In case true is a value</div>
-<div class="line">of &#8220;ITM_DEBUG&#8221; all FC2K generated actors
+<div class="line">of “ITM_DEBUG” all FC2K generated actors
 will start in debug mode.</div>
 </div>
 </td>
@@ -423,14 +419,14 @@ for huge data sets)</div>
 <div class="section" id="setting-up-environment">
 <h4>Setting up environment<a class="headerlink" href="#setting-up-environment" title="Permalink to this headline">¶</a></h4>
 <p>Please do not forget to set JAVA memory settings:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">export _JAVA_OPTIONS=&quot;-Xss20m -Xms8g -Xmx8g&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export _JAVA_OPTIONS=&quot;-Xss20m -Xms8g -Xmx8g&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="backing-up-old-files">
 <h4>Backing up old files<a class="headerlink" href="#backing-up-old-files" title="Permalink to this headline">¶</a></h4>
 <p>Before first configuration of Kepler, make sure to backup your old data files</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
 <span class="go">mv .kepler .kepler~</span>
 <span class="go">mv KeplerData KeplerData~</span>
 <span class="go">mv .ptolemyII .ptolemyII~</span>
@@ -441,7 +437,7 @@ for huge data sets)</div>
 <h4>Creating place to store your personal installations of Kepler<a class="headerlink" href="#creating-place-to-store-your-personal-installations-of-kepler" title="Permalink to this headline">¶</a></h4>
 <p>IMAS based installations are stored inside <strong>$HOME/kepler</strong> directory.</p>
 <p>Before proceeding further, make sure to create <strong>kepler</strong> directory</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> create directory inside <span class="nv">$HOME</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> create directory inside <span class="nv">$HOME</span>
 <span class="go">cd ~</span>
 <span class="go">mkdir kepler</span>
 </pre></div>
@@ -453,7 +449,7 @@ for huge data sets)</div>
 <dt>In order to start Kepler you have use helper scripts that will install and configure your personal copy of Kepler</dt>
 <dd><ul class="first last">
 <li><p class="first">load IMAS module</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="k">module </span><span class="n">load</span> <span class="n">imas</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">module </span><span class="n">load</span> <span class="n">imas</span>
 <span class="k">module </span><span class="n">load</span> <span class="n">kepler</span>
 <span class="cp"># NOTE! It might be that you don&#39;t have Kepler copy inside your $HOME</span>
 <span class="cp"># in that case you need to install it kepler_install_light</span>
@@ -461,7 +457,7 @@ for huge data sets)</div>
 </div>
 </li>
 <li><p class="first">Start Kepler</p>
-<div class="highlight-fortran"><div class="highlight"><pre><span></span><span class="cp"># run alias that will execute Kepler</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="cp"># run alias that will execute Kepler</span>
 <span class="n">kepler</span>
 </pre></div>
 </div>
@@ -476,9 +472,7 @@ for huge data sets)</div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -487,7 +481,7 @@ for huge data sets)</div>
         <a href="edrg.html" class="btn btn-neutral float-right" title="EDRG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conventions.html" class="btn btn-neutral" title="Conventions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conventions.html" class="btn btn-neutral float-left" title="Conventions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -496,11 +490,11 @@ for huge data sets)</div>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, WPCD.
+        &copy; Copyright 2019, WPCD
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -513,37 +507,15 @@ for huge data sets)</div>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'3.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>
