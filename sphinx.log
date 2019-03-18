@@ -1,0 +1,170 @@
+cat source/static/wpcd_banner.png.md5 > source/static/wpcd_banner.png.md5-stamp
+if test -f /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630; \
+then touch -r /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630 -d "-1 minute" source/static/wpcd_banner.png.md5-stamp; \
+     touch -r source/static/wpcd_banner.png.md5-stamp -d "-1 minute"  source/static/wpcd_banner.png.md5; \
+else make /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630; fi
+ln -sf /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630 source/static/wpcd_banner.png
+cat source/static/Phase4.10b.8_HTML.zip.md5 > source/static/Phase4.10b.8_HTML.zip.md5-stamp
+if test -f /home/circleci/assets/MD5/2e40aedfa672e9fb1f08dbeff7488d35; \
+then touch -r /home/circleci/assets/MD5/2e40aedfa672e9fb1f08dbeff7488d35 -d "-1 minute" source/static/Phase4.10b.8_HTML.zip.md5-stamp; \
+     touch -r source/static/Phase4.10b.8_HTML.zip.md5-stamp -d "-1 minute"  source/static/Phase4.10b.8_HTML.zip.md5; \
+else make /home/circleci/assets/MD5/2e40aedfa672e9fb1f08dbeff7488d35; fi
+ln -sf /home/circleci/assets/MD5/2e40aedfa672e9fb1f08dbeff7488d35 source/static/Phase4.10b.8_HTML.zip
+cat source/static/EUROfusionIntegratedModellingworkflows.pdf.md5 > source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp
+if test -f /home/circleci/assets/MD5/2c7be74d594a1f20a6d7bda8f46efde9; \
+then touch -r /home/circleci/assets/MD5/2c7be74d594a1f20a6d7bda8f46efde9 -d "-1 minute" source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp; \
+     touch -r source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp -d "-1 minute"  source/static/EUROfusionIntegratedModellingworkflows.pdf.md5; \
+else make /home/circleci/assets/MD5/2c7be74d594a1f20a6d7bda8f46efde9; fi
+ln -sf /home/circleci/assets/MD5/2c7be74d594a1f20a6d7bda8f46efde9 source/static/EUROfusionIntegratedModellingworkflows.pdf
+sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Workflows.github.io
+Running Sphinx v1.8.5
+loading intersphinx inventory from https://wpcd-workflows.github.io/IMASviz/objects.inv...
+loading intersphinx inventory from http://docs.scipy.org/doc/numpy/objects.inv...
+intersphinx inventory has moved: http://docs.scipy.org/doc/numpy/objects.inv -> https://docs.scipy.org/doc/numpy/objects.inv
+building [mo]: targets for 0 po files that are out of date
+building [html]: targets for 14 source files that are out of date
+updating environment: 14 added, 0 changed, 0 removed
+reading sources... [  7%] amns
+reading sources... [ 14%] averages
+reading sources... [ 21%] codes
+reading sources... [ 28%] conventions
+reading sources... [ 35%] edge
+reading sources... [ 42%] edrg
+reading sources... [ 50%] es
+reading sources... [ 57%] ets
+reading sources... [ 64%] index
+reading sources... [ 71%] infrastructure
+reading sources... [ 78%] introduction
+reading sources... [ 85%] kepler
+reading sources... [ 92%] resources
+reading sources... [100%] transport
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+writing output... [  7%] amns
+writing output... [ 14%] averages
+writing output... [ 21%] codes
+writing output... [ 28%] conventions
+writing output... [ 35%] edge
+writing output... [ 42%] edrg
+writing output... [ 50%] es
+writing output... [ 57%] ets
+writing output... [ 64%] index
+writing output... [ 71%] infrastructure
+writing output... [ 78%] introduction
+writing output... [ 85%] kepler
+writing output... [ 92%] resources
+writing output... [100%] transport
+
+generating indices... genindex
+writing additional pages... search
+copying images... [  1%] images/amns_1.png
+copying images... [  2%] images/amns_2.png
+copying images... [  3%] images/amns_3.png
+copying images... [  4%] images/codes_1.png
+copying images... [  5%] images/codes_2.png
+copying images... [  6%] images/codes_3.png
+copying images... [  7%] images/codes_4.png
+copying images... [  8%] images/conventions_1.png
+copying images... [  9%] images/conventions_2.png
+copying images... [ 10%] images/conventions_3.png
+copying images... [ 11%] images/conventions_4.png
+copying images... [ 12%] images/edge_1.png
+copying images... [ 13%] images/edge_2.png
+copying images... [ 14%] images/edge_3.png
+copying images... [ 15%] images/edge_4.png
+copying images... [ 16%] images/edge_5.png
+copying images... [ 17%] images/edge_6.png
+copying images... [ 18%] images/edrg_1.png
+copying images... [ 19%] images/edrg_2.png
+copying images... [ 20%] images/edrg_3.png
+copying images... [ 21%] images/equstabil_1.png
+copying images... [ 22%] images/equstabil_2.png
+copying images... [ 23%] images/equstabil_3.png
+copying images... [ 25%] images/ets_1.png
+copying images... [ 26%] images/ets_config1.png
+copying images... [ 27%] images/ets_settings1.png
+copying images... [ 28%] images/ets_plasma_composition.png
+copying images... [ 29%] images/ets_run_settings3.png
+copying images... [ 30%] images/ets_run_settings4.png
+copying images... [ 31%] images/ets_run_settings5.png
+copying images... [ 32%] images/ets_run_settings6.png
+copying images... [ 33%] images/ets_convergence1.png
+copying images... [ 34%] images/ets_before_time.png
+copying images... [ 35%] images/ets_run_settings7.png
+copying images... [ 36%] images/ets_convergence_loop_config.png
+copying images... [ 37%] images/ets_equilibrium1.png
+copying images... [ 38%] images/ets_transport1.png
+copying images... [ 39%] images/ets_transport2.png
+copying images... [ 40%] images/ets_transport3.png
+copying images... [ 41%] images/ets_transport4.png
+copying images... [ 42%] images/ets_transport_combiner.png
+copying images... [ 43%] images/ets_mhd.png
+copying images... [ 44%] images/ets_mhd2.png
+copying images... [ 45%] images/ets_source1.png
+copying images... [ 46%] images/ets_sources2.png
+copying images... [ 47%] images/ets_sources3.png
+copying images... [ 48%] images/ets_sources4.png
+copying images... [ 50%] images/ets_sources5.png
+copying images... [ 51%] images/ets_sources6.png
+copying images... [ 52%] images/ets_sources7.png
+copying images... [ 53%] images/ets_sources8.png
+copying images... [ 54%] images/ets_sources9.png
+copying images... [ 55%] images/ets_instantaneous_events1.png
+copying images... [ 56%] images/ets_instantaneous_events2.png
+copying images... [ 57%] images/ets_instantaneous_events3.png
+copying images... [ 58%] images/ets_scenario.png
+copying images... [ 59%] images/ets_visual1.png
+copying images... [ 60%] images/ets_visual2.png
+copying images... [ 61%] images/ets_visual3.png
+copying images... [ 62%] images/ets_top_a.png
+copying images... [ 63%] images/ets_start_a.png
+copying images... [ 64%] images/ets_config1_a.png
+copying images... [ 65%] images/ets_run_settings1_a.png
+copying images... [ 66%] images/ets_run_settings2_a.png
+copying images... [ 67%] images/ets_run_boundary_a.png
+copying images... [ 68%] images/ets_run_boundary2_a.png
+copying images... [ 69%] images/ets_run_boundary3_a.png
+copying images... [ 70%] images/ets_run_boundary5_a.png
+copying images... [ 71%] images/ets_convergence1_a.png
+copying images... [ 72%] images/ets_eq_a.png
+copying images... [ 73%] images/ets_eq2_a.png
+copying images... [ 75%] images/ets_eq3_a.png
+copying images... [ 76%] images/ets_eq4_a.png
+copying images... [ 77%] images/ets_transport1_a.png
+copying images... [ 78%] images/ets_transport2_a.png
+copying images... [ 79%] images/ets_transport3_a.png
+copying images... [ 80%] images/ets_transport4_a.png
+copying images... [ 81%] images/ets_transport5_a.png
+copying images... [ 82%] images/ets_mhd_a.png
+copying images... [ 83%] images/ets_mhd2_a.png
+copying images... [ 84%] images/ets_sources1_a.png
+copying images... [ 85%] images/ets_sources2_a.png
+copying images... [ 86%] images/ets_sources3_a.png
+copying images... [ 87%] images/ets_sources4_a.png
+copying images... [ 88%] images/ets_sources5_a.png
+copying images... [ 89%] images/ets_sources6_a.png
+copying images... [ 90%] images/ets_sources7_a.png
+copying images... [ 91%] images/ets_sources8_a.png
+copying images... [ 92%] images/ets_sources9_a.png
+copying images... [ 93%] images/eps_instantaneous_events_a.png
+copying images... [ 94%] images/eps_instantaneous_events2_a.png
+copying images... [ 95%] images/eps_instantaneous_events3_a.png
+copying images... [ 96%] images/ets_visual1_a.png
+copying images... [ 97%] images/ets_visual2_a.png
+copying images... [ 98%] images/ets_visual3_a.png
+copying images... [100%] images/ets_c.png
+
+copying downloadable files... [100%] static/EUROfusionIntegratedModellingworkflows.pdf
+
+copying static files... done
+copying extra files... done
+dumping search index in English (code: en) ... done
+dumping object inventory... done
+build succeeded.
+
+The HTML pages are in ../WPCD-Workflows.github.io.
+
+Build finished. The HTML pages are in ../WPCD-Workflows.github.io.
