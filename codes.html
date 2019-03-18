@@ -94,8 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Codes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#imasviz">IMASviz</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fc2k">FC2K</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#imasviz">IMASviz</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-turn-a-c-code-into-a-kepler-actor">How to turn a C++ code into a Kepler actor</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#adapt-your-c-function">Adapt your C++ function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-use-code-parameters">How to use code parameters</a></li>
@@ -226,41 +225,8 @@
 <div class="section" id="imasviz">
 <h2>IMASviz<a class="headerlink" href="#imasviz" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://wpcd-workflows.github.io/IMASviz/index.html" title="(in IMASViz)"><span class="xref std std-doc">IMASViz</span></a> code is used for IMAS visualisation.</p>
-</div>
-<div class="section" id="fc2k">
-<span id="isip-fc2k"></span><h2>FC2K<a class="headerlink" href="#fc2k" title="Permalink to this headline">¶</a></h2>
-<p>FC2K is a tool for wrapping a Fortran or C++ source code into a Kepler
-actor. Before using it, your physics code should be EU-IM-compliant (i.e.
-use CPOs as input/output).</p>
-<p>After running the EU-IMv1 script (to properly set up the environment
-variables), FC2K can be run simply by typing fc2k in the Linux command
-line.</p>
-<p><code class="docutils literal notranslate"><span class="pre">fc2k</span></code> was developed by ISIP in Java/Pytho. The program source is
-stored in the Gforge subversion repository fc2k. To check out a
-subversion working copy of the repository, storing it in subdirectory
-<em>fc2k</em>, do</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn co https://gforge6.eufus.eu/svn/fc2k</span>
-</pre></div>
-</div>
-<p>Executables etc are in $SWEU-IMDIR/ihm/fc2k/.</p>
-<p>There are a few tools for managing actors, in $EU-IMSCRIPTDIR/ (put it in
-your $PATH):</p>
-<ul>
-<li><p class="first">rmactor
-: remove an actor from your Kepler version ($KEPLER).</p>
-</li>
-<li><p class="first">extract_actor
-: export an actor from $KEPLER.</p>
-</li>
-<li><p class="first">import_actor</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $KEPLER
-ant buildkarlib
-</pre></div>
-</div>
-</li>
-</ul>
 <div class="section" id="how-to-turn-a-c-code-into-a-kepler-actor">
-<h3>How to turn a C++ code into a Kepler actor<a class="headerlink" href="#how-to-turn-a-c-code-into-a-kepler-actor" title="Permalink to this headline">¶</a></h3>
+<span id="isip-fc2k"></span><h3>How to turn a C++ code into a Kepler actor<a class="headerlink" href="#how-to-turn-a-c-code-into-a-kepler-actor" title="Permalink to this headline">¶</a></h3>
 <p>This document is based on material provided by Yann Frauel and describes
 how to make your C++ code EU-IM compliant and how to turn it into a Kepler
 actor.</p>
