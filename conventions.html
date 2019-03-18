@@ -360,11 +360,7 @@ factor
 <div class="section" id="cocos-toroidal-coordinate-conventions">
 <span id="itm-conventions-cocos"></span><h3>COCOS - toroidal coordinate conventions<a class="headerlink" href="#cocos-toroidal-coordinate-conventions" title="Permalink to this headline">¶</a></h3>
 <p>16 different fundamental coordinate conventions (COCOS) has been identified
-for toroidal systems. These are described by <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S0010465512002962">O. Sauter and S. Yu. Medvedev, Computer Phys. Commun. 184 (2013) 293</a>,
-and summarized in the figure below.</p>
-<div class="figure align-center">
-<img alt="_images/conventions_3.png" src="_images/conventions_3.png" />
-</div>
+for toroidal systems. These are described by <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S0010465512002962">O. Sauter and S. Yu. Medvedev, Computer Phys. Commun. 184 (2013) 293</a>.</p>
 <p>The current EU-IM convention (described
 above) is number 13, while the ITER convention is 11.</p>
 <div class="section" id="equilibrium-cocos-transformation-library-and-actor">
@@ -618,17 +614,6 @@ your modules</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">use itm_types</span>
 </pre></div>
 </div>
-<p>Compiled versions of the module can be found in</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmtypes/lib/<span class="nv">$OBJECTCODE</span>
-</pre></div>
-</div>
-<p>where the following values of OBJECTCODE are supported</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">amd64_g95_0.92</span>
-<span class="go">amd64_gfortran_4.7</span>
-<span class="go">amd64_intel_12</span>
-<span class="go">amd64_pgi_10</span>
-</pre></div>
-</div>
 <p>(More information about the EU-IM libraries.)</p>
 </div>
 <div class="section" id="standardized-physical-constants">
@@ -643,30 +628,6 @@ itmshared . To check out the relevant files please do</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn checkout https://gforge6.eufus.eu/svn/itmshared/trunk/src/itm_constants target_dir</span>
 </pre></div>
 </div>
-<p>Compiled versions of the module can be found in</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/<span class="nv">$OBJECTCODE</span>
-</pre></div>
-</div>
-<p>where the following values of OBJECTCODE are supported</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">amd64_g95_0.92</span>
-<span class="go">amd64_gfortran_4.7</span>
-<span class="go">amd64_intel_12</span>
-<span class="go">amd64_pgi_10</span>
-</pre></div>
-</div>
-<p>The C equivalent (“itm_constants.h”) can be found in</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/include/
-</pre></div>
-</div>
-<p>and the Python in</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/python2.6/
-</pre></div>
-</div>
-<p>A Java version is available but has not yet been released — contact ISIP
-if you are interested.
-( More information about the EU-IM libraries .)
-Thefollowing constants are available: itm_constants.xml All constants are
-double precision floats ( R8 ).</p>
 </div>
 <div class="section" id="invalid-data-base-entries">
 <span id="itm-conventions-invalid-data-base-entries"></span><h3>Invalid Data Base Entries<a class="headerlink" href="#invalid-data-base-entries" title="Permalink to this headline">¶</a></h3>
@@ -722,28 +683,6 @@ following specifies the conventions of the allowed enumerated datatypes.</p>
 <li>wall_identifier.xml</li>
 <li>wave_identifier.xml</li>
 </ul>
-<p>Compiled versions of the modules can be found in</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/<span class="nv">$OBJECTCODE</span>
-</pre></div>
-</div>
-<p>where the following values of OBJECTCODE are supported</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">amd64_g95_0.92</span>
-<span class="go">amd64_gfortran_4.7</span>
-<span class="go">amd64_intel_12</span>
-<span class="go">amd64_pgi_10</span>
-</pre></div>
-</div>
-<p>The C equivalent can be found in</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/include/
-</pre></div>
-</div>
-<p>and the Python in</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMLIBDIR/itmconstants/lib/python2.6/
-</pre></div>
-</div>
-<p>A Java version is available but has not yet been released — contact the
-CPT if you are interested.
-( More information about the EU-IM libraries .)</p>
 <div class="section" id="example-how-to-fill-coresource-values-sourceid">
 <h4>Example: How to fill coresource/values/sourceid<a class="headerlink" href="#example-how-to-fill-coresource-values-sourceid" title="Permalink to this headline">¶</a></h4>
 <p>When filling in an enumerated datatype, like coresource/values/sourceid, it
@@ -1104,241 +1043,6 @@ parameters inside KEPLER.</p>
 <td>pellets</td>
 <td>cpo</td>
 <td>see type and fortran descriptions</td>
-</tr>
-<tr class="row-even"><td rowspan="3">PCS</td>
-<td colspan="2">input</td>
-<td>pcs_in</td>
-<td><div class="first last line-block">
-<div class="line">Diagnostics input signals to the</div>
-<div class="line">plasma control system (see comple-type</div>
-<div class="line">definition below)</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td colspan="2">reference</td>
-<td>pcs_ref</td>
-<td><div class="first last line-block">
-<div class="line">Reference signals for the plasma</div>
-<div class="line">control system (see comple-type</div>
-<div class="line">definition below)</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td colspan="2">output</td>
-<td>pcs_out</td>
-<td><div class="first last line-block">
-<div class="line">Output signals from plasma control</div>
-<div class="line">system (see comple-type definition</div>
-<div class="line">below)</div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p>The complex-types used in the PCS.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="34%" />
-<col width="23%" />
-<col width="43%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><em>Field names</em></th>
-<th class="head"><em>Type</em></th>
-<th class="head"><em>Description</em></th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td colspan="2"><em>pcs_in</em> (under development)</td>
-<td><em>Diagnostics for plasma control</em></td>
-</tr>
-<tr class="row-odd"><td>pcs.inputs.plasma_variables</td>
-<td>type_plasma_variables</td>
-<td>Plasma variables</td>
-</tr>
-<tr class="row-even"><td>pcs.inputs.plant_variables</td>
-<td>type_plant_variables</td>
-<td>Plant variables</td>
-</tr>
-<tr class="row-odd"><td colspan="2"><em>pcs_ref</em> (under development)</td>
-<td><em>Reference signals for plasma control</em></td>
-</tr>
-<tr class="row-even"><td>pcs.reference.plant_variables</td>
-<td>type_plant _variables</td>
-<td>Plant variables</td>
-</tr>
-<tr class="row-odd"><td>pcs.reference.plant_configuration</td>
-<td>type_plant _configuration</td>
-<td>Plant configuration</td>
-</tr>
-<tr class="row-even"><td colspan="2"><em>pcs_out</em> (under development)</td>
-<td><em>Output signal for plasma control</em></td>
-</tr>
-<tr class="row-odd"><td>pcs.output.plasma_variables</td>
-<td>type_plasma _variables</td>
-<td>Plasma variables</td>
-</tr>
-<tr class="row-even"><td>pcs.output.plant_variables</td>
-<td>type_plant _variables</td>
-<td><div class="first last line-block">
-<div class="line">Plant variables. NOTE: only for</div>
-<div class="line">artificial control.</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td colspan="2"><em>type_plasma_variables</em> (under development)</td>
-<td><div class="first last line-block">
-<div class="line"><em>Plasma properties relevant for plasma</em></div>
-<div class="line"><em>control</em></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td>plasma.shape.ZIP</td>
-<td>float</td>
-<td><div class="first last line-block">
-<div class="line">Z_centre*Ip (used for vertical control;</div>
-<div class="line">definition of Z_centre can vary) [Am]</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td>plasma.shape.gaps(:)</td>
-<td>float</td>
-<td><div class="first last line-block">
-<div class="line">Distance between the plasma and the</div>
-<div class="line">wall components [m]</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td>plasma.magnetics.b_toroidal</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">Toroidal magnetic field at the magnetic</div>
-<div class="line">axis [T]</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td>plasma.magnetics.Ip</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">Current (A)</div>
-<div class="line">CPO element:</div>
-<div class="line">equilibrium().global_param.current_tot</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td>plasma.magnetics.v_loop</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">Loop voltage (V)</div>
-<div class="line">CPO element:</div>
-<div class="line">coreprof().profiles1d.vloop.value</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td>plasma.confinement.ne_line_integrated</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">Line integrated electron density
-(\( m^{-2} \))</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td>plasma.confinement.beta_toroidal</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">Toroidal beta</div>
-<div class="line">CPO element:</div>
-<div class="line">equilibrium().global_param.beta_tor</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td colspan="2"><em>plant_variables</em> (under development)</td>
-<td><div class="first last line-block">
-<div class="line"><em>Plant variabels</em></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td>pf_system…</td>
-<td>/</td>
-<td>/</td>
-</tr>
-<tr class="row-odd"><td>plant_variables.fuelling.pellet.trigger</td>
-<td>integer</td>
-<td><div class="first last line-block">
-<div class="line">TRUE if pellet is being launched,</div>
-<div class="line">othervise FALSE</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td>plant_variables.fuelling.gas.puff_rate</td>
-<td>real</td>
-<td>Gas puffing rate (1/s)</td>
-</tr>
-<tr class="row-odd"><td>plant_variables.hcd.nbi.power</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">NBI power (W)</div>
-<div class="line">CPO element:</div>
-<div class="line">nbi().nbi_unit().pow_unit.value</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td>plant_variables.hcd.nbi.injection_angle</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">NBI launching angle (rad)</div>
-<div class="line">CPO element:</div>
-<div class="line">nbi().nbi_unit().pow_unit.value</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td>plant_variables.hcd.ec.power</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">EC power (W)</div>
-<div class="line">CPO element:</div>
-<div class="line">antennas().antenna_unit().antenna_ec.power.value</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td>plant_variables.hcd.ec.angle</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">EC launch angle (definition depend on the</div>
-<div class="line">machine) [rad]</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td>plant_variables.hcd.lh.power</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">LH power (W)</div>
-<div class="line">CPO element:</div>
-<div class="line">antennas().antenna_unit().antenna_lh.power.value</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td>plant_variables.hcd.lh.n_parallel</td>
-<td>real</td>
-<td>Parallel refractive index [1]</td>
-</tr>
-<tr class="row-odd"><td>plant_variables.hcd.ic.power</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">IC power (W)</div>
-<div class="line">CPO element:</div>
-<div class="line">antennas().antenna_unit().antenna_ic.power.value</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td>plant_variables.hcd.ic.frequency</td>
-<td>real</td>
-<td><div class="first last line-block">
-<div class="line">RF wave frequency (Hz)</div>
-<div class="line">CPO element:</div>
-<div class="line">antennas().antenna_unit().antenna_ic.freq</div>
-</div>
-</td>
 </tr>
 </tbody>
 </table>
