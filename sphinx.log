@@ -1,3 +1,26 @@
+cat source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf.md5 > source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf.md5-stamp
+if test -f /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1; \
+then touch -r /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 -d "-1 minute" source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf.md5-stamp; \
+     touch -r source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf.md5-stamp -d "-1 minute"  source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf.md5; \
+else make /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1; fi
+make[1]: Entering directory '/home/circleci/project'
+if ! test -d /home/circleci/assets/MD5; \
+   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
+   if test "x" != "x"; \
+        then chgrp  /home/circleci/assets/MD5; \
+   fi; \
+fi
+curl --location --fail --insecure \
+	--output /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 https://github.com/WPCD-Workflows/assets/raw/master/9f4d5de1a44cd655436ec4fd01f5ecf1
+if test $(md5sum /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1|cut -c 1-32) = 9f4d5de1a44cd655436ec4fd01f5ecf1 ; then \
+  chmod g+rw /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1;\
+else\
+  rm -f /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1; \
+  echo "Error: Checksum of /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 incorrect! Removing it.";\
+  exit 1;\
+fi
+make[1]: Leaving directory '/home/circleci/project'
+ln -sf /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf
 cat source/static/wpcd_banner.png.md5 > source/static/wpcd_banner.png.md5-stamp
 if test -f /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630; \
 then touch -r /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630 -d "-1 minute" source/static/wpcd_banner.png.md5-stamp; \
@@ -156,6 +179,7 @@ copying images... [ 97%] images/ets_visual2_a.png
 copying images... [ 98%] images/ets_visual3_a.png
 copying images... [100%] images/ets_c.png
 
+copying downloadable files... [ 50%] static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf
 copying downloadable files... [100%] static/EUROfusionIntegratedModellingworkflows.pdf
 
 copying static files... done
