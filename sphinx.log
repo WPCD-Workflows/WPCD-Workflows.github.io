@@ -33,6 +33,29 @@ then touch -r /home/circleci/assets/MD5/2e40aedfa672e9fb1f08dbeff7488d35 -d "-1 
      touch -r source/static/Phase4.10b.8_HTML.zip.md5-stamp -d "-1 minute"  source/static/Phase4.10b.8_HTML.zip.md5; \
 else make /home/circleci/assets/MD5/2e40aedfa672e9fb1f08dbeff7488d35; fi
 ln -sf /home/circleci/assets/MD5/2e40aedfa672e9fb1f08dbeff7488d35 source/static/Phase4.10b.8_HTML.zip
+cat source/static/EQSTABIL_tutorial_20151214.pdf.md5 > source/static/EQSTABIL_tutorial_20151214.pdf.md5-stamp
+if test -f /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9; \
+then touch -r /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 -d "-1 minute" source/static/EQSTABIL_tutorial_20151214.pdf.md5-stamp; \
+     touch -r source/static/EQSTABIL_tutorial_20151214.pdf.md5-stamp -d "-1 minute"  source/static/EQSTABIL_tutorial_20151214.pdf.md5; \
+else make /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9; fi
+make[1]: Entering directory '/home/circleci/project'
+if ! test -d /home/circleci/assets/MD5; \
+   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
+   if test "x" != "x"; \
+        then chgrp  /home/circleci/assets/MD5; \
+   fi; \
+fi
+curl --location --fail --insecure \
+	--output /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 https://github.com/WPCD-Workflows/assets/raw/master/c250e80eb66cc61c46fb013e9e0daaf9
+if test $(md5sum /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9|cut -c 1-32) = c250e80eb66cc61c46fb013e9e0daaf9 ; then \
+  chmod g+rw /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9;\
+else\
+  rm -f /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9; \
+  echo "Error: Checksum of /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 incorrect! Removing it.";\
+  exit 1;\
+fi
+make[1]: Leaving directory '/home/circleci/project'
+ln -sf /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 source/static/EQSTABIL_tutorial_20151214.pdf
 cat source/static/EUROfusionIntegratedModellingworkflows.pdf.md5 > source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp
 if test -f /home/circleci/assets/MD5/2c7be74d594a1f20a6d7bda8f46efde9; \
 then touch -r /home/circleci/assets/MD5/2c7be74d594a1f20a6d7bda8f46efde9 -d "-1 minute" source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp; \
@@ -41,12 +64,10 @@ else make /home/circleci/assets/MD5/2c7be74d594a1f20a6d7bda8f46efde9; fi
 ln -sf /home/circleci/assets/MD5/2c7be74d594a1f20a6d7bda8f46efde9 source/static/EUROfusionIntegratedModellingworkflows.pdf
 sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Workflows.github.io
 Running Sphinx v1.8.5
-loading intersphinx inventory from https://wpcd-workflows.github.io/IMASviz/objects.inv...
-loading intersphinx inventory from http://docs.scipy.org/doc/numpy/objects.inv...
-intersphinx inventory has moved: http://docs.scipy.org/doc/numpy/objects.inv -> https://docs.scipy.org/doc/numpy/objects.inv
+loading pickled environment... done
 building [mo]: targets for 0 po files that are out of date
-building [html]: targets for 14 source files that are out of date
-updating environment: 14 added, 0 changed, 0 removed
+building [html]: targets for 0 source files that are out of date
+updating environment: [] 0 added, 14 changed, 0 removed
 reading sources... [  7%] amns
 reading sources... [ 14%] averages
 reading sources... [ 21%] codes
@@ -178,7 +199,8 @@ copying images... [ 97%] images/ets_visual2_a.png
 copying images... [ 98%] images/ets_visual3_a.png
 copying images... [100%] images/ets_c.png
 
-copying downloadable files... [ 50%] static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf
+copying downloadable files... [ 33%] static/EQSTABIL_tutorial_20151214.pdf
+copying downloadable files... [ 66%] static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf
 copying downloadable files... [100%] static/EUROfusionIntegratedModellingworkflows.pdf
 
 copying static files... done
