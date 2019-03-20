@@ -35,7 +35,9 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Turbulent Flux Quantities in Transport Models" href="transport.html" />
+    <link rel="prev" title="Equilibrium and MHD Stability workflow (EQSTABIL)" href="es.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,12 +85,31 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The EQRECONSTRUCT workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-rationale">1. Workflow rationale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-organization-design">2. Workflow organization &amp; design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#i-start"><strong>I - START</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ii-check-data"><strong>II - CHECK_DATA</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iii-reconstruct"><strong>III - Reconstruct</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iv-save-slice"><strong>IV - SAVE SLICE</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-workflow-under-construction">3. Installing the workflow (under construction)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-the-workflow-and-actor-parameters-under-construction">4. Setting up the Workflow and Actor parameters (under construction)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#i-setting-the-workflow-parameters"><strong>I - Setting the workflow parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ii-setting-actor-parameters"><strong>II - Setting actor parameters</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-cases-and-self-oriented-training-under-construction">5. Test cases and self-oriented training (under construction)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#news-and-recent-activity">6. News and Recent activity</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
@@ -147,7 +168,9 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/eqreconstr.rst.txt" rel="nofollow"> View page source</a>
+            
+              <a href="https://github.com/WPCD-Workflows/documentation/blob/master/source/eqreconstr.rst" class="fa fa-github"> Edit on GitHub</a>
+            
           
         
       </li>
@@ -161,11 +184,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="the-eqreconstruct-workflow">
-<h1>The EQRECONSTRUCT workflow<a class="headerlink" href="#the-eqreconstruct-workflow" title="Permalink to this headline">¶</a></h1>
-<p>&lt;br /&gt;</p>
-</div>
+<span id="eqreconstruct"></span><h1>The EQRECONSTRUCT workflow<a class="headerlink" href="#the-eqreconstruct-workflow" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="workflow-rationale">
-<h1>1. Workflow rationale<a class="headerlink" href="#workflow-rationale" title="Permalink to this headline">¶</a></h1>
+<span id="rationale"></span><h2>1. Workflow rationale<a class="headerlink" href="#workflow-rationale" title="Permalink to this headline">¶</a></h2>
 <p>The EQRECONSTRUCT workflow is a Kepler workflow aimed at performing the
 reconstruction of the plasma equilibrium from diagnostic data. The
 workflow can perform both a single time reconstruction and over a
@@ -174,7 +195,7 @@ design facilitates the integration of a variety of plasma reconstruction
 equilibrium codes, all using the same input data from a user defined
 IMAS database. In addition, during all workflow stages (including
 initialization and finalization), the experimental and modeling data are
-cast under the same conceptual data bundling as used by the ETS,
+cast under the same conceptual data bundling as used by the <a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/ETS">ETS</a>,
 <a class="reference external" href="https://portal.eufus.eu//documentation/ITM/html/imp5_workflow__imp5hcd.html">HCD</a>
 and <a class="reference external" href="KeplerWorkflow_EQSTABIL">EQSTABIL</a> workflow. This deliberate
 choice greatly facilitates the interfacing to any of such workflows. In
@@ -201,11 +222,11 @@ workflow, changing the code parameters and resuming) for deselecting
 given diagnostic channels or changing regularization coefficients.</p>
 </div>
 <div class="section" id="workflow-organization-design">
-<h1>2. Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline">¶</a></h1>
+<span id="organization"></span><h2>2. Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline">¶</a></h2>
 <p>The top level layout of the workflow is shown below.</p>
-<p>&lt;img width=”800” alt=”EQRECONSTRUCT_JET_timeloop_records.png”
-src=”<a class="reference external" href="https://portal.eufus.eu/twiki/pub/Main/KeplerWorkflow_EQRECONSTRUCT/EQRECONSTRUCT_JET_timeloop_records.png">https://portal.eufus.eu/twiki/pub/Main/KeplerWorkflow_EQRECONSTRUCT/EQRECONSTRUCT_JET_timeloop_records.png</a>”
-/&gt;</p>
+<div class="figure align-center">
+<img alt="_images/eqreconstruct_JET_timeloop_records.png" src="_images/eqreconstruct_JET_timeloop_records.png" />
+</div>
 <p>As shown in the workflow layout, the workflow execution typically
 follows the following steps (further detailed below):</p>
 <ul class="simple">
@@ -219,87 +240,75 @@ equilibrium)</li>
 <li>STOP THE RUN (end the simulation and stop)</li>
 </ul>
 <div class="section" id="i-start">
-<h2><strong>I - START</strong><a class="headerlink" href="#i-start" title="Permalink to this headline">¶</a></h2>
+<h3><strong>I - START</strong><a class="headerlink" href="#i-start" title="Permalink to this headline">¶</a></h3>
 <p>Composite actor used to initialize the workflow. It reads experimental
 data from an ITM database and assembles the plasma bundle. The database
 details e.g. _user, device, shot, run<em>in</em> are configurable in the
 actor when double clicking on the actor (see Figure below).</p>
-<p>&lt;img width=”650” alt=”EQRECONSTRUCT_START_settings.png”
-src=”<a class="reference external" href="https://portal.eufus.eu/twiki/pub/Main/KeplerWorkflow_EQRECONSTRUCT/EQRECONSTRUCT_START_settings.png">https://portal.eufus.eu/twiki/pub/Main/KeplerWorkflow_EQRECONSTRUCT/EQRECONSTRUCT_START_settings.png</a>”
-title=”EQRECONSTRUCT_START_settings.png” height=”394” /&gt;</p>
+<div class="figure align-center">
+<img alt="_images/eqreconstruct_START_settings.png" src="_images/eqreconstruct_START_settings.png" />
+</div>
 </div>
 <div class="section" id="ii-check-data">
-<h2><strong>II - CHECK_DATA</strong><a class="headerlink" href="#ii-check-data" title="Permalink to this headline">¶</a></h2>
-<p>&lt;span style=”background-color: transparent;”&gt;In this composite actor a
-basic sanity check is performed on the input data and appropriate action
-is taken e.g. if there is no magnetics sensor data it is pointless for
-the workflow to proceed and execution is immediately stopped. Additional
-checking and action includes for instance flagging as invalid any sensor
-data with flatline signal (see Figure below for the sequence of 2
-steps)&lt;/span&gt;</p>
-<p>&lt;img width=”700” alt=”EQRECONSTRUCT_CHECK_DATA.png”
-src=”<a class="reference external" href="https://portal.eufus.eu/twiki/pub/Main/KeplerWorkflow_EQRECONSTRUCT/EQRECONSTRUCT_CHECK_DATA.png">https://portal.eufus.eu/twiki/pub/Main/KeplerWorkflow_EQRECONSTRUCT/EQRECONSTRUCT_CHECK_DATA.png</a>”
-title=”EQRECONSTRUCT_CHECK_DATA.png” height=”284” /&gt;</p>
+<h3><strong>II - CHECK_DATA</strong><a class="headerlink" href="#ii-check-data" title="Permalink to this headline">¶</a></h3>
+<p>In this composite actor a basic sanity check is performed on the input data
+and appropriate action is taken e.g. if there is no magnetics sensor data
+it is pointless for the workflow to proceed and execution is immediately
+stopped. Additional checking and action includes for instance flagging as
+invalid any sensor data with flatline signal (see Figure below for the
+sequence of 2 steps)</p>
+<div class="figure align-center">
+<img alt="_images/eqreconstruct_CHECK_DATA.png" src="_images/eqreconstruct_CHECK_DATA.png" />
+</div>
 </div>
 <div class="section" id="iii-reconstruct">
-<h2><strong>III - Reconstruct</strong><a class="headerlink" href="#iii-reconstruct" title="Permalink to this headline">¶</a></h2>
-<p>&lt;span style=”background-color: transparent;”&gt;In this composite actor the
-actual calculation of the reconstructed equilibrium and if requested of
-the equivalent high resolution equilibrium (with cut-off plasma boundary
-with X-point removed) takes place. The user can easily gain access to
-several options for workflow execution by double clicking on the actor
-(see Figure below). &lt;/span&gt;</p>
-<p>&lt;img width=”700” alt=”EQRECONSTRUCT_RECONSTRUCT_settings.png”
-src=”<a class="reference external" href="https://portal.eufus.eu/twiki/pub/Main/KeplerWorkflow_EQRECONSTRUCT/EQRECONSTRUCT_RECONSTRUCT_settings.png">https://portal.eufus.eu/twiki/pub/Main/KeplerWorkflow_EQRECONSTRUCT/EQRECONSTRUCT_RECONSTRUCT_settings.png</a>”
-title=”EQRECONSTRUCT_RECONSTRUCT_settings.png” height=”391” /&gt;</p>
-<p>&lt;span style=”background-color: transparent;”&gt;Among the several options
-the user can choose :&lt;/span&gt;</p>
+<h3><strong>III - Reconstruct</strong><a class="headerlink" href="#iii-reconstruct" title="Permalink to this headline">¶</a></h3>
+<p>In this composite actor the actual calculation of the reconstructed
+equilibrium and if requested of the equivalent high resolution equilibrium
+(with cut-off plasma boundary with X-point removed) takes place. The user
+can easily gain access to several options for workflow execution by double
+clicking on the actor (see Figure below).</p>
+<div class="figure align-center">
+<img alt="_images/eqreconstruct_RECONSTRUCT_settings.png" src="_images/eqreconstruct_RECONSTRUCT_settings.png" />
+</div>
+<p>Among the several options the user can choose :</p>
 <ul class="simple">
-<li>&lt;span style=”background-color: transparent;”&gt;To perform plasma
-equilibrium reconstruction only (FBE_only = yes/no)&lt;/span&gt;</li>
-<li>&lt;span style=”background-color: transparent;”&gt;Which code to use to
-perform the equilibrium reconstruction (FBEcode)&lt;/span&gt;<ul>
-<li><a class="reference external" href="EquilibriumCode_EQUAL">EQUAL</a>&lt;span style=”background-color:
-transparent;”&gt; (under testing)&lt;/span&gt;</li>
-<li><a class="reference external" href="EquilibriumCodeNICE">NICE</a>&lt;span style=”background-color:
-transparent;”&gt; (under testing)&lt;/span&gt;</li>
-<li><a class="reference external" href="EquilibriumCode_EFITpp">EFIT++</a>&lt;span
-style=”background-color: transparent;”&gt; (under
-construction)&lt;/span&gt;</li>
-<li><a class="reference external" href="EquilibriumCode_CLISTE">CLISTE</a>&lt;span
-style=”background-color: transparent;”&gt; (under
-construction)&lt;/span&gt;</li>
+<li>To perform plasma equilibrium reconstruction only (FBE_only = yes/no)</li>
+<li>Which code to use to perform the equilibrium reconstruction (FBEcode)<ul>
+<li><a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/EquilibriumCode_EQUAL">EQUAL</a></li>
+<li><a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/EquilibriumCodeNICE">NICE</a></li>
+<li><a class="reference external" href="https://portal.eufus.eu/twiki/bin/edit/Main/EquilibriumCode_EFITpp?topicparent=Main.KeplerWorkflow_EQRECONSTRUCT;nowysiwyg=0">EFIT++</a></li>
+<li><a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/EquilibriumCode_CLISTE">CLISTE</a></li>
 </ul>
 </li>
-<li>&lt;span style=”background-color: transparent;”&gt;Which code to use for
-high resolution equilibrium (HREcode)&lt;/span&gt;<ul>
-<li>&lt;span style=”background-color:
-transparent;”&gt;<a class="reference external" href="EquilibriumCode_HELENA">HELENA</a>&lt;/span&gt;</li>
-<li><a class="reference external" href="EquilibriumCode_CHEASE">CHEASE</a></li>
-<li><a class="reference external" href="EquilibriumCode_CAXE">CAXE</a></li>
+<li>Which code to use for high resolution equilibrium (HREcode)<ul>
+<li><a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/EquilibriumCode_HELENA">HELENA</a></li>
+<li><a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/EquilibriumCode_CHEASE">CHEASE</a></li>
+<li><a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/EquilibriumCode_CAXE">CAXE</a></li>
 </ul>
 </li>
-<li>&lt;span style=”background-color: transparent;”&gt;If cutting the
-equilibrium to be piped to the high resultuion calculation is
-necessary (cut_eq = yes/no) and if so at what percentage of the
-normalised separatrix flux (0&lt;cut_off&lt;1)&lt;/span&gt;</li>
-<li>&lt;span style=”background-color: transparent;”&gt;To visualise the
-reconstruction and high resolution results during workflow execution
-(Visualise_FBE, Visualise_HRE=yes/no)&lt;/span&gt;</li>
+<li><dl class="first docutils">
+<dt>If cutting the equilibrium to be piped to the high resultuion calculation</dt>
+<dd>is necessary (cut_eq = yes/no) and if so at what percentage of the
+normalised separatrix flux (0&lt;cut_off&lt;1)</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>To visualise the reconstruction and high resolution results during</dt>
+<dd>workflow execution (Visualise_FBE, Visualise_HRE=yes/no)</dd>
+</dl>
+</li>
 </ul>
-<p>&lt;span style=”background-color: transparent;”&gt;When the user chooses to
-cut the boundary to perform the high resolution equilibrium
-calculations:&lt;/span&gt;</p>
+<p>When the user chooses to cut the boundary to perform the high resolution
+equilibrium calculations:</p>
 <ul class="simple">
-<li>&lt;span style=”background-color: transparent;”&gt;A new plasma boundary is
-determined from the calculated 2D flux map&lt;/span&gt;</li>
-<li>&lt;span style=”background-color: transparent;”&gt;The plasma profiles are
-also cut accordingly (the plasma is not artifically “shrank”)&lt;/span&gt;</li>
+<li>A new plasma boundary is determined from the calculated 2D flux map</li>
+<li>The plasma profiles are also cut accordingly (the plasma is not
+artifically “shrank”)</li>
 <li>The total toroidal plasma current is <em>not</em> recalculated (equilibrium
 code should be set to use the boundary poloidal magnetic flux as
 boundary confition)</li>
-<li>&lt;span style=”background-color: transparent;”&gt;A plot of the original +
-cut_off equilibrium summary is shown if
+<li>A plot of the original + cut_off equilibrium summary is shown if
 _Visualise<em>HRE=yes</em>.&lt;/span&gt;</li>
 </ul>
 <p>When the user chooses to visualise any of the calculated equilibria (
@@ -313,15 +322,15 @@ by the user selected <em>path</em> variable ( <strong>START</strong> actor setup
 </ul>
 </div>
 <div class="section" id="iv-save-slice">
-<h2><strong>IV - SAVE SLICE</strong><a class="headerlink" href="#iv-save-slice" title="Permalink to this headline">¶</a></h2>
+<h3><strong>IV - SAVE SLICE</strong><a class="headerlink" href="#iv-save-slice" title="Permalink to this headline">¶</a></h3>
 <p>In this composite actor the calculated equilibria are saved at each time
 step. Depending on whether the user choses to calculate also the high
 resolution equilibrium and if the Save_FBE_only parameter is set to
 “yes” or “no”, a different number of occurrences of the equilibrium IDS
 can be stored (see Figure below).</p>
-<p>&lt;img width=”700” alt=”EQRECONSTRUCT_SAVE_settings.png”
-src=”<a class="reference external" href="https://portal.eufus.eu/twiki/pub/Main/KeplerWorkflow_EQRECONSTRUCT/EQRECONSTRUCT_SAVE_settings.png">https://portal.eufus.eu/twiki/pub/Main/KeplerWorkflow_EQRECONSTRUCT/EQRECONSTRUCT_SAVE_settings.png</a>”
-title=”EQRECONSTRUCT_SAVE_settings.png” height=”283” /&gt;</p>
+<div class="figure align-center">
+<img alt="_images/eqreconstruct_SAVE_settings.png" src="_images/eqreconstruct_SAVE_settings.png" />
+</div>
 <p>The purpose of saving at each time slice several versions of the
 equilibrium is to grant extra flexibility. If the user decides to
 calculate the high resolution equilibrium associated to the
@@ -335,7 +344,7 @@ please refer to the SAVE SLICE parameter details.</p>
 </div>
 </div>
 <div class="section" id="installing-the-workflow-under-construction">
-<h1>3. Installing the workflow (under construction)<a class="headerlink" href="#installing-the-workflow-under-construction" title="Permalink to this headline">¶</a></h1>
+<span id="installing"></span><h2>3. Installing the workflow (under construction)<a class="headerlink" href="#installing-the-workflow-under-construction" title="Permalink to this headline">¶</a></h2>
 <p>To obtain the workflow and included actors a dressed release of KEPLER
 is recommended. To get such dressed releases please proceed as follows:</p>
 <ul class="simple">
@@ -344,132 +353,112 @@ is recommended. To get such dressed releases please proceed as follows:</p>
 </ul>
 </div>
 <div class="section" id="setting-up-the-workflow-and-actor-parameters-under-construction">
-<h1>4. Setting up the Workflow and Actor parameters (under construction)<a class="headerlink" href="#setting-up-the-workflow-and-actor-parameters-under-construction" title="Permalink to this headline">¶</a></h1>
+<span id="actor"></span><h2>4. Setting up the Workflow and Actor parameters (under construction)<a class="headerlink" href="#setting-up-the-workflow-and-actor-parameters-under-construction" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="i-setting-the-workflow-parameters">
-<h2><strong>I - Setting the workflow parameters</strong><a class="headerlink" href="#i-setting-the-workflow-parameters" title="Permalink to this headline">¶</a></h2>
-<p>&lt;span style=”background-color: transparent;”&gt;The workflow parameters in
-the <strong>START</strong> actor are as follows:&lt;/span&gt;</p>
+<h3><strong>I - Setting the workflow parameters</strong><a class="headerlink" href="#i-setting-the-workflow-parameters" title="Permalink to this headline">¶</a></h3>
+<p>The workflow parameters in the <strong>START</strong> actor are as follows:</p>
 <ul class="simple">
-<li><strong>shot</strong> : the shot number on the user database (or from another
-user) where to read the reference equilibrium from (shot/run_in pair)</li>
-<li><strong>run_in</strong> : the run number where the reference equilibrium is
-(shot/run_in pair)</li>
-<li><strong>run_work</strong> : placeholder run for the temporary Kepler CPOs</li>
-<li><strong>run_out</strong> : run number where the final results of the run will be
-stored (user running the workflow/shot/run_out). Since the input
-equilibrium can be a reconstruction that goes beyond the separatrix,
-3 occurrences of the equilibrium are saved (original eq., cut
-equilibrium inside separatrix and corresponding high resolution
-equilibrium).</li>
-<li><strong>user</strong> : username. Reading from someone else database is possible
-but the run_out will naturally be written to personal database only.</li>
-<li><strong>device</strong> : device database where the input reference data is. MUST
-BE the same as the device set once running “<em>imasdb</em>” command
-otherwise the run_out data will end on the wrong database path.</li>
-<li><strong>time_begin</strong> : starting time for the run (in <em>seconds</em> &lt;span
-style=”background-color: transparent;”&gt;).&lt;/span&gt;</li>
-<li><strong>time_end</strong> &lt;span style=”background-color: transparent;”&gt; : ending
-time for the run (in &lt;/span&gt; <em>seconds</em> &lt;span style=”background-color:
-transparent;”&gt;).&lt;/span&gt;</li>
-<li>&lt;span style=”background-color: transparent;”&gt; <strong>time_dt</strong> : time step
-(constant value) while moving from _time<em>begin</em> to
-_time<em>end</em>.&lt;/span&gt;</li>
+<li><strong>shot</strong> : the shot number on the user database (or from another user) where to read the reference equilibrium from (shot/run_in pair)</li>
+<li><strong>run_in</strong> : the run number where the reference equilibrium is (shot/run_in pair)</li>
+<li><strong>run_work</strong>: placeholder run for the temporary Kepler CPOs</li>
+<li><strong>run_out</strong>: run number where the final results of the run will be stored (user running the workflow/shot/run_out). Since the input equilibrium can be a reconstruction that goes beyond the separatrix, 3 occurrences of the equilibrium are saved (original eq., cut equilibrium inside separatrix and corresponding high resolution equilibrium).</li>
+<li><strong>user</strong>: username. Reading from someone else database is possible but the run_out will naturally be written to personal database only.</li>
+<li><strong>device</strong> : device database where the input reference data is. MUST BE the same as the device set once running “<em>imasdb</em>” command otherwise the run_out data will end on the wrong database path.</li>
+<li><strong>time_begin</strong>: starting time for the run (in <em>seconds</em>).</li>
+<li><strong>time_end</strong>: ending time for the run (in <em>seconds</em>).</li>
+<li><strong>time_dt</strong> : time step (constant value) while moving from _time*begin* to _time<em>end</em>.</li>
 </ul>
 <p>The workflow parameters in the <strong>Reconstruct</strong> actor are as follows:</p>
-<ul class="simple">
-<li><strong>FBE_only</strong> &lt;span style=”background-color: transparent;”&gt; : Set to
-“<em>yes</em>” if addressing only the plasma equilibrium
-reconstruction&lt;/span&gt;&lt;span style=”background-color: transparent;”&gt;.
-If set to “<em>no</em>” the high resolution equilibrium is also
-calculated.&lt;/span&gt;</li>
-<li>&lt;span style=”background-color: transparent;”&gt; <strong>FBEcode</strong> : Choice
-for equilibrium reconstruction code to be used.&lt;/span&gt;</li>
-<li><strong>Visualise_FBE</strong> &lt;span style=”background-color: transparent;”&gt; : Set
-to “<em>yes</em>” to get a plot of the reconstructed equilibrium at every
-step.&lt;/span&gt;</li>
-<li><strong>Visualise_HRE</strong> &lt;span style=”background-color: transparent;”&gt; : Set
-to “&lt;/span&gt;*yes*&lt;span style=”background-color: transparent;”&gt;” to
-get a plot of the high resolution equilibrium derived from the
-reconstructed equilibrium at every step.&lt;/span&gt;</li>
-<li><strong>HREcode</strong> &lt;span style=”background-color: transparent;”&gt; : Choice
-for high resolution equilibrium code to be used.&lt;/span&gt;</li>
-<li><strong>cut_eq</strong> &lt;span style=”background-color: transparent;”&gt; :&lt;/span&gt;<ul>
-<li>&lt;span style=”background-color: transparent;”&gt;yes : cut the input
-equilibrium (necessary if high resolution equilibrium code cannot
-handle separatrix plasma equilibria)&lt;/span&gt;</li>
-<li>&lt;span style=”background-color: transparent;”&gt;no : input
-equilibrium is used “as is”.&lt;/span&gt;</li>
-</ul>
+<ul>
+<li><p class="first"><strong>FBE_only</strong>: Set to “<em>yes</em>” if addressing only the plasma equilibrium reconstruction. If set to “<em>no</em>” the high resolution equilibrium is also calculated.</p>
 </li>
-<li><strong>cut_off</strong> : float ]0,1], specifies the percentage of the separatrix
-flux that will define the poloidal flux of the new plasma boundary.</li>
-<li><strong>path</strong> &lt;span style=”background-color: transparent;”&gt; : temporary
-folder where to dump the plots generated. Also used to store output
-files (used by HELENA)&lt;/span&gt;</li>
+<li><p class="first"><strong>FBEcode</strong>: Choice for equilibrium reconstruction code to be used.</p>
+</li>
+<li><p class="first"><strong>Visualise_FBE</strong>: Set to “<em>yes</em>” to get a plot of the reconstructed equilibrium at every step.</p>
+</li>
+<li><p class="first"><strong>Visualise_HRE</strong>: Set to <em>yes</em> to get a plot of the high resolution equilibrium derived from the reconstructed equilibrium at every step.</p>
+</li>
+<li><p class="first"><strong>HREcode</strong>: Choice for high resolution equilibrium code to be used.</p>
+</li>
+<li><p class="first"><strong>cut_eq</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>yes: cut the input equilibrium (necessary if high resolution equilibrium code cannot handle separatrix plasma equilibria)</li>
+<li>no: input equilibrium is used “as is”.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>cut_off</strong>: float ]0,1], specifies the percentage of the separatrix flux that will define the poloidal flux of the new plasma boundary.</p>
+</li>
+<li><p class="first"><strong>path</strong>: temporary folder where to dump the plots generated. Also used to store output files (used by HELENA).</p>
+</li>
 </ul>
 <p>The workflow parameters in the <strong>SAVE SLICE</strong> actor are as follows:</p>
 <ul class="simple">
 <li><strong>Save_FBE_only</strong>:<ul>
-<li>yes : only occurrence=0 is saved. If the user set
-_FBE<em>only=yes</em> then the equilibrium reconstruction is saved,
-otherwise the high resolution equilibrium is stored.</li>
-<li>no : occurrences = 0,1,2 are saved. Only meaningful if the user
-set _FBE<em>only=no</em>. High resolution equilibrium is stored as
-occurrence=0, the cut boundary “precursor equilibrium” as
-occurrence=1 and the equilibrium reconstruction as occurrence=2</li>
+<li>yes : only occurrence=0 is saved. If the user set _FBE<em>only=yes</em> then the equilibrium reconstruction is saved, otherwise the high resolution equilibrium is stored.</li>
+<li>no : occurrences = 0,1,2 are saved. Only meaningful if the user set _FBE<em>only=no</em>. High resolution equilibrium is stored as occurrence=0, the cut boundary “precursor equilibrium” as occurrence=1 and the equilibrium reconstruction as occurrence=2</li>
 </ul>
 </li>
 </ul>
 <p><em>The user can always stop the workflow by Pressing the STOP button in
 Kepler canvas.</em></p>
 </div>
-<div class="section" id="ii-span-style-background-color-transparent-setting-actor-parameters-span">
-<h2><strong>II -</strong> &lt;span style=”background-color: transparent;”&gt; Setting actor parameters&lt;/span&gt;<a class="headerlink" href="#ii-span-style-background-color-transparent-setting-actor-parameters-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ii-setting-actor-parameters">
+<h3><strong>II - Setting actor parameters</strong><a class="headerlink" href="#ii-setting-actor-parameters" title="Permalink to this headline">¶</a></h3>
 <p>Actor parameters are set on the actors themselves (not passed by the
 workflow). To access the actors codeparam the easiest route is to :</p>
-<p>1 Click on “Outline” Tab (below the “Pause” button in the KEPLER canvas)
-1 Type the name of the actor and press “Search” (or Enter) 1 On the
-final item in the chain of the actor composite, right click and press
-“Configure”. A pop-up panel appears 1 Click on “Edit Code Parameters”
-and a new window appears 1 Edit the code parameters and Press “Save &amp;
-Exit” 1 Press “Commit” and setting is completed To have detailed
-information on how to configure each one of the available actors please
-check their documentation
-<a class="reference external" href="EquilibriumAndStabilityChain#Equilibrium_reconstruction_actor">here</a>
-or
-<a class="reference external" href="EquilibriumAndStabilityChain#High_resolution_equilibrium_acto">here</a>.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Click on “Outline” Tab (below the “Pause” button in the KEPLER canvas)</li>
+<li>Type the name of the actor and press “Search” (or Enter)</li>
+<li>On the final item in the chain of the actor composite, right click and press”Configure”. A pop-up panel appears</li>
+<li>Click on “Edit Code Parameters” and a new window appears</li>
+<li>Edit the code parameters and Press “Save &amp; Exit”</li>
+<li>Press “Commit” and setting is completed</li>
+</ol>
+</div></blockquote>
+<p>To have detailed information on how to configure each one of the available
+actors please check their documentation <a class="reference external" href="EquilibriumAndStabilityChain#Equilibrium_reconstruction_actor">here</a> or <a class="reference external" href="EquilibriumAndStabilityChain#High_resolution_equilibrium_acto">here</a>.</p>
 </div>
 </div>
 <div class="section" id="test-cases-and-self-oriented-training-under-construction">
-<h1>5. Test cases and self-oriented training (under construction)<a class="headerlink" href="#test-cases-and-self-oriented-training-under-construction" title="Permalink to this headline">¶</a></h1>
+<span id="training"></span><h2>5. Test cases and self-oriented training (under construction)<a class="headerlink" href="#test-cases-and-self-oriented-training-under-construction" title="Permalink to this headline">¶</a></h2>
 <p>Several test cases are available for testing, corresponding to different
 applications/examples. The itmdb files are found on the software release
 folder under <em>/tutorial</em></p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="2%" />
-<col width="4%" />
-<col width="3%" />
-<col width="2%" />
-<col width="1%" />
-<col width="88%" />
+<col width="8%" />
+<col width="15%" />
+<col width="10%" />
+<col width="10%" />
+<col width="7%" />
+<col width="51%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Case</th>
-<th class="head">User</th>
-<th class="head">Device</th>
-<th class="head">Shot</th>
-<th class="head">Run</th>
-<th class="head">Description</th>
-</tr>
-</thead>
 <tbody valign="top">
+<tr class="row-odd"><td>Case</td>
+<td>User</td>
+<td>Device</td>
+<td>Shot</td>
+<td>Run</td>
+<td>Description</td>
+</tr>
 <tr class="row-even"><td>1</td>
 <td>g2rcoelh</td>
 <td>test</td>
 <td>84600</td>
 <td>28</td>
-<td>JET shot using exp2imas UDA plugin using 3.20.0 DD, 3.8.3 UAL and 2.2.2 UDA (“old” low level UAL). Contains the following IDSs: IRON_CORE, MAGNETICS, PF_ACTIVE, WALL, TF, THOMSON_SCATTERING.</td>
+<td><div class="first last line-block">
+<div class="line">JET shot using exp2imas UDA plugin
+using 3.20.0 DD, 3.8.3 UAL and</div>
+<div class="line">2.2.2 UDA (“old” low level UAL).
+Contains the following IDSs:</div>
+<div class="line">IRON_CORE, MAGNETICS, PF_ACTIVE,
+WALL, TF, THOMSON_SCATTERING.</div>
+<div class="line"><br /></div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>&#160;</td>
@@ -501,15 +490,15 @@ folder under <em>/tutorial</em></p>
 </tr>
 </tbody>
 </table>
-<p><a class="reference external" href="%ATTACHURL%/Tutorial_EQRECONSTRUCT.pdf">Guided Tutorial on EQRECONSTRUCT (under
-construction)</a></p>
+<p><a class="reference external" href="%ATTACHURL%/Tutorial_EQRECONSTRUCT.pdf">Guided Tutorial on EQRECONSTRUCT (under construction)</a></p>
 </div>
 <div class="section" id="news-and-recent-activity">
-<h1>6. News and Recent activity<a class="headerlink" href="#news-and-recent-activity" title="Permalink to this headline">¶</a></h1>
+<span id="activity"></span><h2>6. News and Recent activity<a class="headerlink" href="#news-and-recent-activity" title="Permalink to this headline">¶</a></h2>
 <p><em>8th March 2019: JET version of the workflow tested successfully on
 test/84600/28 database. Only EQUAL + HELENA codes included. Successful
 run from t=49s to 53s with both EQUAL and HELENA being executed and the
 corresponding data stored on the IMAS database (run=33).</em></p>
+</div>
 </div>
 
 
@@ -517,6 +506,15 @@ corresponding data stored on the IMAS database (run=33).</em></p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="transport.html" class="btn btn-neutral float-right" title="Turbulent Flux Quantities in Transport Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="es.html" class="btn btn-neutral float-left" title="Equilibrium and MHD Stability workflow (EQSTABIL)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
