@@ -1,0 +1,1371 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for lithiumdiag.xsd</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
+         <!--
+        var propertiesBoxes= new Array('properties_lithiumdiag.xsd', 
+				'properties_lithiumdiag', 
+				'properties_lithiumdiag_setup', 
+				'properties_lithsetup_position', 
+				'properties_lithiumdiag_measure', 
+				'properties_lithmeasure_ne', 
+				'properties_lithiumdiag_time');
+var usedByBoxes= new Array('usedBy_lithiumdiag', 
+				'usedBy_lithsetup', 
+				'usedBy_lithmeasure');
+var sourceBoxes= new Array('source_lithiumdiag', 
+				'source_lithiumdiag_setup', 
+				'source_lithsetup_position', 
+				'source_lithiumdiag_measure', 
+				'source_lithmeasure_ne', 
+				'source_lithiumdiag_time', 
+				'source_lithsetup', 
+				'source_lithmeasure');
+var instanceBoxes= new Array('instance_lithiumdiag', 
+				'instance_lithiumdiag_setup', 
+				'instance_lithsetup_position', 
+				'instance_lithiumdiag_measure', 
+				'instance_lithmeasure_ne');
+var diagramBoxes= new Array('diagram_lithiumdiag', 
+				'diagram_lithiumdiag_setup', 
+				'diagram_lithsetup_position', 
+				'diagram_lithiumdiag_measure', 
+				'diagram_lithmeasure_ne', 
+				'diagram_lithiumdiag_time', 
+				'diagram_lithsetup', 
+				'diagram_lithmeasure');
+var annotationBoxes= new Array('annotations_lithiumdiag', 
+				'annotations_lithiumdiag_setup', 
+				'annotations_lithsetup_position', 
+				'annotations_lithiumdiag_measure', 
+				'annotations_lithmeasure_ne', 
+				'annotations_lithiumdiag_time', 
+				'annotations_lithsetup', 
+				'annotations_lithmeasure');
+var modelBoxes= new Array('model_lithiumdiag', 
+				'model_lithiumdiag_setup', 
+				'model_lithsetup_position', 
+				'model_lithiumdiag_measure', 
+				'model_lithmeasure_ne', 
+				'model_lithsetup', 
+				'model_lithmeasure');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="lithiumdiag.xsd"></a><div class="componentTitle">Included schema <span class="qname">lithiumdiag.xsd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_lithiumdiag.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_lithiumdiag.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_lithiumdiag.xsd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">attribute form default</td>
+                                    <td><b>unqualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">element form default</td>
+                                    <td><b>qualified</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="lithiumdiag"></a><div class="componentTitle">Element <span class="qname">lithiumdiag</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_lithiumdiag" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_lithiumdiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_lithiumdiag" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Lithium Beam Diagnostic; Time-dependent CPO</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_lithiumdiag" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_lithiumdiag');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_lithiumdiag" style="display:block"><img alt="Diagram" border="0" src="img/lithiumdiag_xsd_Element_lithiumdiag.png" usemap="#lithiumdiag_xsd_Element_lithiumdiag" /><map name="lithiumdiag_xsd_Element_lithiumdiag" id="lithiumdiag_xsd_Element_lithiumdiag">
+                                 <area alt="utilities_xsd.tmp#datainfo" href="utilities_xsd.html#datainfo" coords="210,2,285,26" />
+                                 <area alt="lithiumdiag_xsd.tmp#lithiumdiag_setup" href="lithiumdiag_xsd.html#lithiumdiag_setup" coords="210,66,271,90" />
+                                 <area alt="lithiumdiag_xsd.tmp#lithiumdiag_measure" href="lithiumdiag_xsd.html#lithiumdiag_measure" coords="210,130,287,154" />
+                                 <area alt="utilities_xsd.tmp#codeparam" href="utilities_xsd.html#codeparam" coords="210,194,301,218" />
+                                 <area alt="lithiumdiag_xsd.tmp#lithiumdiag_time" href="lithiumdiag_xsd.html#lithiumdiag_time" coords="210,258,264,282" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_lithiumdiag" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_lithiumdiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_lithiumdiag" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_lithiumdiag" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_lithiumdiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_lithiumdiag" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="Phase4TOP_xsd.html#top" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for Phase4TOP.xsd')">top</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_lithiumdiag" type="image" src="img/btM.gif" value="-" onclick="switchState('model_lithiumdiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_lithiumdiag" style="display:block"><b><a href="utilities_xsd.html#datainfo" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">datainfo</a></b> , <b><a href="lithiumdiag_xsd.html#lithiumdiag_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">setup</a></b> , <b><a href="lithiumdiag_xsd.html#lithiumdiag_measure" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">measure</a></b> , <b><a href="utilities_xsd.html#codeparam" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">codeparam</a></b> , <b><a href="lithiumdiag_xsd.html#lithiumdiag_time" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">time</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#codeparam" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">codeparam</a></b>, <b><a href="utilities_xsd.html#datainfo" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">datainfo</a></b>, <b><a href="lithiumdiag_xsd.html#lithiumdiag_measure" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">measure</a></b>, <b><a href="lithiumdiag_xsd.html#lithiumdiag_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">setup</a></b>, <b><a href="lithiumdiag_xsd.html#lithiumdiag_time" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">time</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_lithiumdiag" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_lithiumdiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_lithiumdiag" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;lithiumdiag</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;datainfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/datainfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;setup</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/setup&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;measure</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/measure&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;codeparam</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/codeparam&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;time</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/time&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/lithiumdiag&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_lithiumdiag" type="image" src="img/btM.gif" value="-" onclick="switchState('source_lithiumdiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_lithiumdiag" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"lithiumdiag"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Lithium Beam Diagnostic; Time-dependent CPO</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"datainfo"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"setup"</span><span class="tAN"> type=</span><span class="tAV">"lithsetup"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">diagnostic setup information</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"measure"</span><span class="tAN"> type=</span><span class="tAV">"lithmeasure"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Measured values</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"codeparam"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"time"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Time [s]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="lithiumdiag_setup"></a><div class="componentTitle">Element <span class="qname"><b><a href="lithiumdiag_xsd.html#lithiumdiag" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">lithiumdiag</a></b> / setup</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_lithiumdiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_lithiumdiag_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_lithiumdiag_setup" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">diagnostic setup information</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_lithiumdiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_lithiumdiag_setup');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_lithiumdiag_setup" style="display:block"><img alt="Diagram" border="0" src="img/lithiumdiag_xsd_Element_setup.png" usemap="#lithiumdiag_xsd_Element_setup" /><map name="lithiumdiag_xsd_Element_setup" id="lithiumdiag_xsd_Element_setup">
+                                 <area alt="lithiumdiag_xsd.tmp#lithsetup_position" href="lithiumdiag_xsd.html#lithsetup_position" coords="194,44,269,68" />
+                                 <area alt="lithiumdiag_xsd.tmp#lithsetup" href="lithiumdiag_xsd.html#lithsetup" coords="112,3,210,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="lithiumdiag_xsd.html#lithsetup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">lithsetup</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_lithiumdiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_lithiumdiag_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_lithiumdiag_setup" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_lithiumdiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('model_lithiumdiag_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_lithiumdiag_setup" style="display:block"><b><a href="lithiumdiag_xsd.html#lithsetup_position" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">position</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="lithiumdiag_xsd.html#lithsetup_position" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">position</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_lithiumdiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_lithiumdiag_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_lithiumdiag_setup" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;setup</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;position</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/position&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/setup&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_lithiumdiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('source_lithiumdiag_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_lithiumdiag_setup" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"setup"</span><span class="tAN"> type=</span><span class="tAV">"lithsetup"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">diagnostic setup information</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="lithsetup_position"></a><div class="componentTitle">Element <span class="qname"><b><a href="lithiumdiag_xsd.html#lithsetup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">lithsetup</a></b> / position</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_lithsetup_position" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_lithsetup_position');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_lithsetup_position" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Position of the measurement. Vector (nchannels)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_lithsetup_position" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_lithsetup_position');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_lithsetup_position" style="display:block"><img alt="Diagram" border="0" src="img/lithiumdiag_xsd_Element_position.png" usemap="#lithiumdiag_xsd_Element_position" /><map name="lithiumdiag_xsd_Element_position" id="lithiumdiag_xsd_Element_position">
+                                 <area alt="utilities_xsd.tmp#rzphi1D_r" href="utilities_xsd.html#rzphi1D_r" coords="208,40,259,64" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D_z" href="utilities_xsd.html#rzphi1D_z" coords="208,104,259,128" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D_phi" href="utilities_xsd.html#rzphi1D_phi" coords="208,168,259,192" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D" href="utilities_xsd.html#rzphi1D" coords="126,3,220,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#rzphi1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">rzphi1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_lithsetup_position" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_lithsetup_position');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_lithsetup_position" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_lithsetup_position" type="image" src="img/btM.gif" value="-" onclick="switchState('model_lithsetup_position');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_lithsetup_position" style="display:block"><b><a href="utilities_xsd.html#rzphi1D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b> , <b><a href="utilities_xsd.html#rzphi1D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b> , <b><a href="utilities_xsd.html#rzphi1D_phi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">phi</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#rzphi1D_phi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">phi</a></b>, <b><a href="utilities_xsd.html#rzphi1D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b>, <b><a href="utilities_xsd.html#rzphi1D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_lithsetup_position" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_lithsetup_position');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_lithsetup_position" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;position</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;r</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/r&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;z</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/z&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;phi</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/phi&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/position&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_lithsetup_position" type="image" src="img/btM.gif" value="-" onclick="switchState('source_lithsetup_position');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_lithsetup_position" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"position"</span><span class="tAN"> type=</span><span class="tAV">"rzphi1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Position of the measurement. Vector (nchannels)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="lithiumdiag_measure"></a><div class="componentTitle">Element <span class="qname"><b><a href="lithiumdiag_xsd.html#lithiumdiag" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">lithiumdiag</a></b> / measure</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_lithiumdiag_measure" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_lithiumdiag_measure');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_lithiumdiag_measure" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Measured values</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_lithiumdiag_measure" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_lithiumdiag_measure');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_lithiumdiag_measure" style="display:block"><img alt="Diagram" border="0" src="img/lithiumdiag_xsd_Element_measure.png" usemap="#lithiumdiag_xsd_Element_measure" /><map name="lithiumdiag_xsd_Element_measure" id="lithiumdiag_xsd_Element_measure">
+                                 <area alt="lithiumdiag_xsd.tmp#lithmeasure_ne" href="lithiumdiag_xsd.html#lithmeasure_ne" coords="210,44,261,68" />
+                                 <area alt="lithiumdiag_xsd.tmp#lithmeasure" href="lithiumdiag_xsd.html#lithmeasure" coords="128,3,242,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="lithiumdiag_xsd.html#lithmeasure" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">lithmeasure</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_lithiumdiag_measure" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_lithiumdiag_measure');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_lithiumdiag_measure" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_lithiumdiag_measure" type="image" src="img/btM.gif" value="-" onclick="switchState('model_lithiumdiag_measure');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_lithiumdiag_measure" style="display:block"><b><a href="lithiumdiag_xsd.html#lithmeasure_ne" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">ne</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="lithiumdiag_xsd.html#lithmeasure_ne" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">ne</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_lithiumdiag_measure" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_lithiumdiag_measure');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_lithiumdiag_measure" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;measure</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ne</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/ne&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/measure&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_lithiumdiag_measure" type="image" src="img/btM.gif" value="-" onclick="switchState('source_lithiumdiag_measure');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_lithiumdiag_measure" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"measure"</span><span class="tAN"> type=</span><span class="tAV">"lithmeasure"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Measured values</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="lithmeasure_ne"></a><div class="componentTitle">Element <span class="qname"><b><a href="lithiumdiag_xsd.html#lithmeasure" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">lithmeasure</a></b> / ne</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_lithmeasure_ne" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_lithmeasure_ne');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_lithmeasure_ne" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Electron density [m^-3]. Vector (nchannels)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_lithmeasure_ne" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_lithmeasure_ne');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_lithmeasure_ne" style="display:block"><img alt="Diagram" border="0" src="img/lithiumdiag_xsd_Element_ne.png" usemap="#lithiumdiag_xsd_Element_ne" /><map name="lithiumdiag_xsd_Element_ne" id="lithiumdiag_xsd_Element_ne">
+                                 <area alt="utilities_xsd.tmp#exp1D_value" href="utilities_xsd.html#exp1D_value" coords="184,40,243,64" />
+                                 <area alt="utilities_xsd.tmp#exp1D_abserror" href="utilities_xsd.html#exp1D_abserror" coords="184,104,262,128" />
+                                 <area alt="utilities_xsd.tmp#exp1D_relerror" href="utilities_xsd.html#exp1D_relerror" coords="184,168,257,192" />
+                                 <area alt="utilities_xsd.tmp#exp1D" href="utilities_xsd.html#exp1D" coords="102,3,188,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">exp1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_lithmeasure_ne" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_lithmeasure_ne');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_lithmeasure_ne" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_lithmeasure_ne" type="image" src="img/btM.gif" value="-" onclick="switchState('model_lithmeasure_ne');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_lithmeasure_ne" style="display:block"><b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b> , <b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b> , <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b>, <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b>, <b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_lithmeasure_ne" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_lithmeasure_ne');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_lithmeasure_ne" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;ne</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;value</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/value&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;abserror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/abserror&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;relerror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/relerror&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/ne&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_lithmeasure_ne" type="image" src="img/btM.gif" value="-" onclick="switchState('source_lithmeasure_ne');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_lithmeasure_ne" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"ne"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Electron density [m^-3]. Vector (nchannels)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="lithiumdiag_time"></a><div class="componentTitle">Element <span class="qname"><b><a href="lithiumdiag_xsd.html#lithiumdiag" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">lithiumdiag</a></b> / time</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_lithiumdiag_time" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_lithiumdiag_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_lithiumdiag_time" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Time [s]; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_lithiumdiag_time" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_lithiumdiag_time');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_lithiumdiag_time" style="display:block"><img alt="Diagram" border="0" src="img/lithiumdiag_xsd_Element_time.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_lithiumdiag_time" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_lithiumdiag_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_lithiumdiag_time" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_lithiumdiag_time" type="image" src="img/btM.gif" value="-" onclick="switchState('source_lithiumdiag_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_lithiumdiag_time" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"time"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Time [s]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="lithsetup"></a><div class="componentTitle">Complex Type <span class="qname">lithsetup</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_lithsetup" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_lithsetup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_lithsetup" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">diagnostic setup information</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_lithsetup" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_lithsetup');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_lithsetup" style="display:block"><img alt="Diagram" border="0" src="img/lithiumdiag_xsd_Complex_Type_lithsetup.png" usemap="#lithiumdiag_xsd_Complex_Type_lithsetup" /><map name="lithiumdiag_xsd_Complex_Type_lithsetup" id="lithiumdiag_xsd_Complex_Type_lithsetup">
+                                 <area alt="lithiumdiag_xsd.tmp#lithsetup_position" href="lithiumdiag_xsd.html#lithsetup_position" coords="221,4,296,28" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_lithsetup" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_lithsetup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_lithsetup" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="lithiumdiag_xsd.html#lithiumdiag_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">lithiumdiag/setup</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_lithsetup" type="image" src="img/btM.gif" value="-" onclick="switchState('model_lithsetup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_lithsetup" style="display:block"><b><a href="lithiumdiag_xsd.html#lithsetup_position" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">position</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="lithiumdiag_xsd.html#lithsetup_position" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">position</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_lithsetup" type="image" src="img/btM.gif" value="-" onclick="switchState('source_lithsetup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_lithsetup" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"lithsetup"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">diagnostic setup information</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"position"</span><span class="tAN"> type=</span><span class="tAV">"rzphi1D"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Position of the measurement. Vector (nchannels)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:complexType&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="lithmeasure"></a><div class="componentTitle">Complex Type <span class="qname">lithmeasure</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_lithmeasure" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_lithmeasure');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_lithmeasure" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Measured values</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_lithmeasure" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_lithmeasure');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_lithmeasure" style="display:block"><img alt="Diagram" border="0" src="img/lithiumdiag_xsd_Complex_Type_lithmeasure.png" usemap="#lithiumdiag_xsd_Complex_Type_lithmeasure" /><map name="lithiumdiag_xsd_Complex_Type_lithmeasure" id="lithiumdiag_xsd_Complex_Type_lithmeasure">
+                                 <area alt="lithiumdiag_xsd.tmp#lithmeasure_ne" href="lithiumdiag_xsd.html#lithmeasure_ne" coords="237,4,288,28" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_lithmeasure" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_lithmeasure');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_lithmeasure" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="lithiumdiag_xsd.html#lithiumdiag_measure" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">lithiumdiag/measure</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_lithmeasure" type="image" src="img/btM.gif" value="-" onclick="switchState('model_lithmeasure');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_lithmeasure" style="display:block"><b><a href="lithiumdiag_xsd.html#lithmeasure_ne" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">ne</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="lithiumdiag_xsd.html#lithmeasure_ne" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for lithiumdiag.xsd')">ne</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_lithmeasure" type="image" src="img/btM.gif" value="-" onclick="switchState('source_lithmeasure');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_lithmeasure" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"lithmeasure"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Measured values</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"ne"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Electron density [m^-3]. Vector (nchannels)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:complexType&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
+         </div>
+      </div><script type="text/javascript">
+         <!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>

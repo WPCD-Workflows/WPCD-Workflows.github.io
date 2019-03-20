@@ -1,0 +1,2529 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for eqglobal.xsd</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
+         <!--
+        var propertiesBoxes= new Array('properties_eqglobal.xsd', 
+				'properties_global_param', 
+				'properties_global_param_beta_pol', 
+				'properties_global_param_beta_tor', 
+				'properties_global_param_beta_normal', 
+				'properties_global_param_i_plasma', 
+				'properties_global_param_li', 
+				'properties_global_param_volume', 
+				'properties_global_param_area', 
+				'properties_global_param_psi_ax', 
+				'properties_global_param_psi_bound', 
+				'properties_global_param_mag_axis', 
+				'properties_global_param_global_param_mag_axis_position', 
+				'properties_global_param_global_param_mag_axis_bphi', 
+				'properties_global_param_global_param_mag_axis_q', 
+				'properties_global_param_q_95', 
+				'properties_global_param_q_min', 
+				'properties_global_param_toroid_field', 
+				'properties_global_param_w_mhd', 
+				'properties_global_param_gamma');
+var usedByBoxes= new Array('usedBy_global_param');
+var sourceBoxes= new Array('source_global_param', 
+				'source_global_param_beta_pol', 
+				'source_global_param_beta_tor', 
+				'source_global_param_beta_normal', 
+				'source_global_param_i_plasma', 
+				'source_global_param_li', 
+				'source_global_param_volume', 
+				'source_global_param_area', 
+				'source_global_param_psi_ax', 
+				'source_global_param_psi_bound', 
+				'source_global_param_mag_axis', 
+				'source_global_param_global_param_mag_axis_position', 
+				'source_global_param_global_param_mag_axis_bphi', 
+				'source_global_param_global_param_mag_axis_q', 
+				'source_global_param_q_95', 
+				'source_global_param_q_min', 
+				'source_global_param_toroid_field', 
+				'source_global_param_w_mhd', 
+				'source_global_param_gamma');
+var instanceBoxes= new Array('instance_global_param', 
+				'instance_global_param_mag_axis', 
+				'instance_global_param_global_param_mag_axis_position', 
+				'instance_global_param_toroid_field');
+var diagramBoxes= new Array('diagram_global_param', 
+				'diagram_global_param_beta_pol', 
+				'diagram_global_param_beta_tor', 
+				'diagram_global_param_beta_normal', 
+				'diagram_global_param_i_plasma', 
+				'diagram_global_param_li', 
+				'diagram_global_param_volume', 
+				'diagram_global_param_area', 
+				'diagram_global_param_psi_ax', 
+				'diagram_global_param_psi_bound', 
+				'diagram_global_param_mag_axis', 
+				'diagram_global_param_global_param_mag_axis_position', 
+				'diagram_global_param_global_param_mag_axis_bphi', 
+				'diagram_global_param_global_param_mag_axis_q', 
+				'diagram_global_param_q_95', 
+				'diagram_global_param_q_min', 
+				'diagram_global_param_toroid_field', 
+				'diagram_global_param_w_mhd', 
+				'diagram_global_param_gamma');
+var annotationBoxes= new Array('annotations_global_param', 
+				'annotations_global_param_beta_pol', 
+				'annotations_global_param_beta_tor', 
+				'annotations_global_param_beta_normal', 
+				'annotations_global_param_i_plasma', 
+				'annotations_global_param_li', 
+				'annotations_global_param_volume', 
+				'annotations_global_param_area', 
+				'annotations_global_param_psi_ax', 
+				'annotations_global_param_psi_bound', 
+				'annotations_global_param_mag_axis', 
+				'annotations_global_param_global_param_mag_axis_position', 
+				'annotations_global_param_global_param_mag_axis_bphi', 
+				'annotations_global_param_global_param_mag_axis_q', 
+				'annotations_global_param_q_95', 
+				'annotations_global_param_q_min', 
+				'annotations_global_param_toroid_field', 
+				'annotations_global_param_w_mhd', 
+				'annotations_global_param_gamma');
+var modelBoxes= new Array('model_global_param', 
+				'model_global_param_mag_axis', 
+				'model_global_param_global_param_mag_axis_position', 
+				'model_global_param_toroid_field');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="eqglobal.xsd"></a><div class="componentTitle">Included schema <span class="qname">eqglobal.xsd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_eqglobal.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_eqglobal.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_eqglobal.xsd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">attribute form default</td>
+                                    <td><b>unqualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">element form default</td>
+                                    <td><b>qualified</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param"></a><div class="componentTitle">Element <span class="qname">global_param</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">0d output parameters</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_global_param.png" usemap="#eqglobal_xsd_Element_global_param" /><map name="eqglobal_xsd_Element_global_param" id="eqglobal_xsd_Element_global_param">
+                                 <area alt="eqglobal_xsd.tmp#global_param_beta_pol" href="eqglobal_xsd.html#global_param_beta_pol" coords="223,2,300,26" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_beta_tor" href="eqglobal_xsd.html#global_param_beta_tor" coords="223,66,299,90" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_beta_normal" href="eqglobal_xsd.html#global_param_beta_normal" coords="223,130,321,154" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_i_plasma" href="eqglobal_xsd.html#global_param_i_plasma" coords="223,194,301,218" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_li" href="eqglobal_xsd.html#global_param_li" coords="223,284,274,308" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_volume" href="eqglobal_xsd.html#global_param_volume" coords="223,348,293,372" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_area" href="eqglobal_xsd.html#global_param_area" coords="223,425,277,449" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_psi_ax" href="eqglobal_xsd.html#global_param_psi_ax" coords="223,502,289,526" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_psi_bound" href="eqglobal_xsd.html#global_param_psi_bound" coords="223,579,311,603" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_mag_axis" href="eqglobal_xsd.html#global_param_mag_axis" coords="223,669,305,693" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_q_95" href="eqglobal_xsd.html#global_param_q_95" coords="223,733,281,757" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_q_min" href="eqglobal_xsd.html#global_param_q_min" coords="223,810,287,834" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_toroid_field" href="eqglobal_xsd.html#global_param_toroid_field" coords="223,887,316,911" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_w_mhd" href="eqglobal_xsd.html#global_param_w_mhd" coords="223,964,292,988" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_gamma" href="eqglobal_xsd.html#global_param_gamma" coords="223,1054,293,1078" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_global_param" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_global_param');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_global_param" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="equilibrium_xsd.html#equilibrium" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for equilibrium.xsd')">equilibrium</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_global_param" type="image" src="img/btM.gif" value="-" onclick="switchState('model_global_param');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_global_param" style="display:block"><b><a href="eqglobal_xsd.html#global_param_beta_pol" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">beta_pol</a></b> , <b><a href="eqglobal_xsd.html#global_param_beta_tor" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">beta_tor</a></b> , <b><a href="eqglobal_xsd.html#global_param_beta_normal" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">beta_normal</a></b> , <b><a href="eqglobal_xsd.html#global_param_i_plasma" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">i_plasma</a></b> , <b><a href="eqglobal_xsd.html#global_param_li" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">li</a></b> , <b><a href="eqglobal_xsd.html#global_param_volume" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">volume</a></b> , <b><a href="eqglobal_xsd.html#global_param_area" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">area</a></b> , <b><a href="eqglobal_xsd.html#global_param_psi_ax" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">psi_ax</a></b> , <b><a href="eqglobal_xsd.html#global_param_psi_bound" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">psi_bound</a></b> , <b><a href="eqglobal_xsd.html#global_param_mag_axis" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">mag_axis</a></b> , <b><a href="eqglobal_xsd.html#global_param_q_95" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">q_95</a></b> , <b><a href="eqglobal_xsd.html#global_param_q_min" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">q_min</a></b> , <b><a href="eqglobal_xsd.html#global_param_toroid_field" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">toroid_field</a></b> , <b><a href="eqglobal_xsd.html#global_param_w_mhd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">w_mhd</a></b> , <b><a href="eqglobal_xsd.html#global_param_gamma" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">gamma</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="eqglobal_xsd.html#global_param_area" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">area</a></b>, <b><a href="eqglobal_xsd.html#global_param_beta_normal" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">beta_normal</a></b>, <b><a href="eqglobal_xsd.html#global_param_beta_pol" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">beta_pol</a></b>, <b><a href="eqglobal_xsd.html#global_param_beta_tor" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">beta_tor</a></b>, <b><a href="eqglobal_xsd.html#global_param_gamma" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">gamma</a></b>, <b><a href="eqglobal_xsd.html#global_param_i_plasma" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">i_plasma</a></b>, <b><a href="eqglobal_xsd.html#global_param_li" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">li</a></b>, <b><a href="eqglobal_xsd.html#global_param_mag_axis" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">mag_axis</a></b>, <b><a href="eqglobal_xsd.html#global_param_psi_ax" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">psi_ax</a></b>, <b><a href="eqglobal_xsd.html#global_param_psi_bound" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">psi_bound</a></b>, <b><a href="eqglobal_xsd.html#global_param_q_95" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">q_95</a></b>, <b><a href="eqglobal_xsd.html#global_param_q_min" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">q_min</a></b>, <b><a href="eqglobal_xsd.html#global_param_toroid_field" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">toroid_field</a></b>, <b><a href="eqglobal_xsd.html#global_param_volume" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">volume</a></b>, <b><a href="eqglobal_xsd.html#global_param_w_mhd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">w_mhd</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_global_param" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_global_param');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_global_param" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;global_param</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;beta_pol</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/beta_pol&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;beta_tor</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/beta_tor&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;beta_normal</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/beta_normal&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;i_plasma</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/i_plasma&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;li</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/li&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;volume</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/volume&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;area</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/area&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;psi_ax</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/psi_ax&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;psi_bound</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/psi_bound&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;mag_axis</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/mag_axis&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;q_95</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/q_95&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;q_min</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/q_min&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;toroid_field</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/toroid_field&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;w_mhd</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/w_mhd&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;gamma</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/gamma&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/global_param&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"global_param"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">0d output parameters</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"beta_pol"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">poloidal beta; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"beta_tor"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">toroidal beta; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"beta_normal"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">normalised beta; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"i_plasma"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">total toroidal plasma current [A]; Positive sign means anti-clockwise when viewed from above. Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"li"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">internal inductance; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"volume"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">total plasma volume [m^3]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"area"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">area poloidal cross section [m^2]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"psi_ax"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">poloidal flux at the magnetic axis [Wb]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"psi_bound"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">poloidal flux at the selected plasma boundary (separatrix for a free boundary code; fixed boundary for fixed boundary code) [Wb]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"mag_axis"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Magnetic axis values</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"position"</span><span class="tAN"> type=</span><span class="tAV">"rz0D"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Position of the magnetic axis [m]; Time-dependent; Scalar;</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"bphi"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Total toroidal magnetic field at the magnetic axis [T]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"q"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">q at the magnetic axis; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"q_95"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">q at the 95% poloidal flux surface; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"q_min"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">minimum q value in the plasma; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"toroid_field"</span><span class="tAN"> type=</span><span class="tAV">"b0r0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Characteristics of the vacuum toroidal field, redundant with the toroidfield CPO, to be used by the ETS</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"w_mhd"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Plasma energy content = 3/2 * int(p,dV) with p being the total pressure (thermal + fast particles) [J]. Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"gamma"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Adiabatic index. Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_beta_pol"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / beta_pol</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_beta_pol" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_beta_pol');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_beta_pol" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">poloidal beta; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_beta_pol" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_beta_pol');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_beta_pol" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_beta_pol.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_beta_pol" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_beta_pol');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_beta_pol" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_beta_pol" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_beta_pol');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_beta_pol" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"beta_pol"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">poloidal beta; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_beta_tor"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / beta_tor</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_beta_tor" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_beta_tor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_beta_tor" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">toroidal beta; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_beta_tor" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_beta_tor');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_beta_tor" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_beta_tor.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_beta_tor" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_beta_tor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_beta_tor" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_beta_tor" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_beta_tor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_beta_tor" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"beta_tor"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">toroidal beta; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_beta_normal"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / beta_normal</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_beta_normal" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_beta_normal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_beta_normal" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">normalised beta; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_beta_normal" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_beta_normal');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_beta_normal" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_beta_normal.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_beta_normal" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_beta_normal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_beta_normal" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_beta_normal" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_beta_normal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_beta_normal" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"beta_normal"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">normalised beta; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_i_plasma"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / i_plasma</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_i_plasma" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_i_plasma');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_i_plasma" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">total toroidal plasma current [A]; Positive sign means anti-clockwise when viewed from above. Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_i_plasma" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_i_plasma');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_i_plasma" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_i_plasma.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_i_plasma" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_i_plasma');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_i_plasma" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_i_plasma" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_i_plasma');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_i_plasma" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"i_plasma"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">total toroidal plasma current [A]; Positive sign means anti-clockwise when viewed from above. Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_li"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / li</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_li" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_li');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_li" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">internal inductance; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_li" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_li');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_li" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_li.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_li" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_li');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_li" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_li" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_li');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_li" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"li"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">internal inductance; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_volume"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / volume</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_volume" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_volume');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_volume" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">total plasma volume [m^3]; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_volume" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_volume');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_volume" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_volume.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_volume" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_volume');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_volume" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_volume" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_volume');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_volume" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"volume"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">total plasma volume [m^3]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_area"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / area</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_area" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_area');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_area" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">area poloidal cross section [m^2]; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_area" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_area');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_area" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_area.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_area" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_area');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_area" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_area" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_area');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_area" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"area"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">area poloidal cross section [m^2]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_psi_ax"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / psi_ax</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_psi_ax" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_psi_ax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_psi_ax" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">poloidal flux at the magnetic axis [Wb]; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_psi_ax" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_psi_ax');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_psi_ax" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_psi_ax.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_psi_ax" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_psi_ax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_psi_ax" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_psi_ax" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_psi_ax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_psi_ax" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"psi_ax"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">poloidal flux at the magnetic axis [Wb]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_psi_bound"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / psi_bound</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_psi_bound" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_psi_bound');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_psi_bound" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">poloidal flux at the selected plasma boundary (separatrix for a free boundary code; fixed boundary for fixed boundary code) [Wb]; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_psi_bound" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_psi_bound');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_psi_bound" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_psi_bound.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_psi_bound" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_psi_bound');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_psi_bound" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_psi_bound" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_psi_bound');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_psi_bound" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"psi_bound"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">poloidal flux at the selected plasma boundary (separatrix for a free boundary code; fixed boundary for fixed boundary code) [Wb]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_mag_axis"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / mag_axis</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_mag_axis" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_mag_axis');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_mag_axis" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Magnetic axis values</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_mag_axis" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_mag_axis');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_mag_axis" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_mag_axis.png" usemap="#eqglobal_xsd_Element_mag_axis" /><map name="eqglobal_xsd_Element_mag_axis" id="eqglobal_xsd_Element_mag_axis">
+                                 <area alt="eqglobal_xsd.tmp#global_param_global_param_mag_axis_position" href="eqglobal_xsd.html#global_param_global_param_mag_axis_position" coords="201,2,276,26" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_global_param_mag_axis_bphi" href="eqglobal_xsd.html#global_param_global_param_mag_axis_bphi" coords="201,79,256,103" />
+                                 <area alt="eqglobal_xsd.tmp#global_param_global_param_mag_axis_q" href="eqglobal_xsd.html#global_param_global_param_mag_axis_q" coords="201,156,252,180" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_mag_axis" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_mag_axis');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_mag_axis" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_global_param_mag_axis" type="image" src="img/btM.gif" value="-" onclick="switchState('model_global_param_mag_axis');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_global_param_mag_axis" style="display:block"><b><a href="eqglobal_xsd.html#global_param_global_param_mag_axis_position" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">position</a></b> , <b><a href="eqglobal_xsd.html#global_param_global_param_mag_axis_bphi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">bphi</a></b> , <b><a href="eqglobal_xsd.html#global_param_global_param_mag_axis_q" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">q</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="eqglobal_xsd.html#global_param_global_param_mag_axis_bphi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">bphi</a></b>, <b><a href="eqglobal_xsd.html#global_param_global_param_mag_axis_position" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">position</a></b>, <b><a href="eqglobal_xsd.html#global_param_global_param_mag_axis_q" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">q</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_global_param_mag_axis" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_global_param_mag_axis');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_global_param_mag_axis" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;mag_axis</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;position</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/position&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;bphi</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/bphi&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;q</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/q&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/mag_axis&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_mag_axis" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_mag_axis');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_mag_axis" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"mag_axis"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Magnetic axis values</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"position"</span><span class="tAN"> type=</span><span class="tAV">"rz0D"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Position of the magnetic axis [m]; Time-dependent; Scalar;</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"bphi"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Total toroidal magnetic field at the magnetic axis [T]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"q"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">q at the magnetic axis; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_global_param_mag_axis_position"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / <b><a href="eqglobal_xsd.html#global_param_mag_axis" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">mag_axis</a></b> / position</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_global_param_mag_axis_position" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_global_param_mag_axis_position');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_global_param_mag_axis_position" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Position of the magnetic axis [m]; Time-dependent; Scalar;</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_global_param_mag_axis_position" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_global_param_mag_axis_position');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_global_param_mag_axis_position" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_position.png" usemap="#eqglobal_xsd_Element_position" /><map name="eqglobal_xsd_Element_position" id="eqglobal_xsd_Element_position">
+                                 <area alt="utilities_xsd.tmp#rz0D_r" href="utilities_xsd.html#rz0D_r" coords="208,40,259,64" />
+                                 <area alt="utilities_xsd.tmp#rz0D_z" href="utilities_xsd.html#rz0D_z" coords="208,104,259,128" />
+                                 <area alt="utilities_xsd.tmp#rz0D" href="utilities_xsd.html#rz0D" coords="126,3,203,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#rz0D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">rz0D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_global_param_mag_axis_position" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_global_param_mag_axis_position');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_global_param_mag_axis_position" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_global_param_global_param_mag_axis_position" type="image" src="img/btM.gif" value="-" onclick="switchState('model_global_param_global_param_mag_axis_position');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_global_param_global_param_mag_axis_position" style="display:block"><b><a href="utilities_xsd.html#rz0D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b> , <b><a href="utilities_xsd.html#rz0D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#rz0D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b>, <b><a href="utilities_xsd.html#rz0D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_global_param_global_param_mag_axis_position" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_global_param_global_param_mag_axis_position');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_global_param_global_param_mag_axis_position" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;position</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;r</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/r&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;z</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/z&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/position&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_global_param_mag_axis_position" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_global_param_mag_axis_position');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_global_param_mag_axis_position" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"position"</span><span class="tAN"> type=</span><span class="tAV">"rz0D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Position of the magnetic axis [m]; Time-dependent; Scalar;</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_global_param_mag_axis_bphi"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / <b><a href="eqglobal_xsd.html#global_param_mag_axis" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">mag_axis</a></b> / bphi</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_global_param_mag_axis_bphi" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_global_param_mag_axis_bphi');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_global_param_mag_axis_bphi" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Total toroidal magnetic field at the magnetic axis [T]; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_global_param_mag_axis_bphi" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_global_param_mag_axis_bphi');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_global_param_mag_axis_bphi" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_bphi.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_global_param_mag_axis_bphi" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_global_param_mag_axis_bphi');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_global_param_mag_axis_bphi" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_global_param_mag_axis_bphi" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_global_param_mag_axis_bphi');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_global_param_mag_axis_bphi" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"bphi"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Total toroidal magnetic field at the magnetic axis [T]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_global_param_mag_axis_q"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / <b><a href="eqglobal_xsd.html#global_param_mag_axis" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">mag_axis</a></b> / q</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_global_param_mag_axis_q" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_global_param_mag_axis_q');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_global_param_mag_axis_q" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">q at the magnetic axis; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_global_param_mag_axis_q" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_global_param_mag_axis_q');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_global_param_mag_axis_q" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_q.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_global_param_mag_axis_q" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_global_param_mag_axis_q');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_global_param_mag_axis_q" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_global_param_mag_axis_q" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_global_param_mag_axis_q');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_global_param_mag_axis_q" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"q"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">q at the magnetic axis; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_q_95"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / q_95</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_q_95" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_q_95');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_q_95" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">q at the 95% poloidal flux surface; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_q_95" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_q_95');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_q_95" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_q_95.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_q_95" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_q_95');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_q_95" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_q_95" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_q_95');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_q_95" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"q_95"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">q at the 95% poloidal flux surface; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">experimental</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_q_min"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / q_min</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_q_min" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_q_min');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_q_min" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">minimum q value in the plasma; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_q_min" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_q_min');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_q_min" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_q_min.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_q_min" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_q_min');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_q_min" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_q_min" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_q_min');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_q_min" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"q_min"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">minimum q value in the plasma; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_toroid_field"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / toroid_field</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_toroid_field" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_toroid_field');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_toroid_field" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Characteristics of the vacuum toroidal field, redundant with the toroidfield CPO, to be used by the ETS</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_toroid_field" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_toroid_field');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_toroid_field" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_toroid_field.png" usemap="#eqglobal_xsd_Element_toroid_field" /><map name="eqglobal_xsd_Element_toroid_field" id="eqglobal_xsd_Element_toroid_field">
+                                 <area alt="utilities_xsd.tmp#b0r0_r0" href="utilities_xsd.html#b0r0_r0" coords="226,40,277,64" />
+                                 <area alt="utilities_xsd.tmp#b0r0_b0" href="utilities_xsd.html#b0r0_b0" coords="226,130,277,154" />
+                                 <area alt="utilities_xsd.tmp#b0r0" href="utilities_xsd.html#b0r0" coords="144,3,221,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#b0r0" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">b0r0</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_toroid_field" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_toroid_field');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_toroid_field" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_global_param_toroid_field" type="image" src="img/btM.gif" value="-" onclick="switchState('model_global_param_toroid_field');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_global_param_toroid_field" style="display:block"><b><a href="utilities_xsd.html#b0r0_r0" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r0</a></b> , <b><a href="utilities_xsd.html#b0r0_b0" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">b0</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#b0r0_b0" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">b0</a></b>, <b><a href="utilities_xsd.html#b0r0_r0" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r0</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_global_param_toroid_field" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_global_param_toroid_field');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_global_param_toroid_field" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;toroid_field</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;r0</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/r0&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;b0</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/b0&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/toroid_field&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_toroid_field" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_toroid_field');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_toroid_field" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"toroid_field"</span><span class="tAN"> type=</span><span class="tAV">"b0r0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Characteristics of the vacuum toroidal field, redundant with the toroidfield CPO, to be used by the ETS</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_w_mhd"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / w_mhd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_w_mhd" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_w_mhd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_w_mhd" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Plasma energy content = 3/2 * int(p,dV) with p being the total pressure (thermal + fast particles) [J]. Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_w_mhd" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_w_mhd');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_w_mhd" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_w_mhd.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_w_mhd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_w_mhd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_w_mhd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_w_mhd" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_w_mhd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_w_mhd" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"w_mhd"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Plasma energy content = 3/2 * int(p,dV) with p being the total pressure (thermal + fast particles) [J]. Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="global_param_gamma"></a><div class="componentTitle">Element <span class="qname"><b><a href="eqglobal_xsd.html#global_param" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for eqglobal.xsd')">global_param</a></b> / gamma</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_global_param_gamma" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_global_param_gamma');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_global_param_gamma" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Adiabatic index. Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_global_param_gamma" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_global_param_gamma');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_global_param_gamma" style="display:block"><img alt="Diagram" border="0" src="img/eqglobal_xsd_Element_gamma.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_global_param_gamma" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_global_param_gamma');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_global_param_gamma" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">default</td>
+                                    <td><b>0.0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_global_param_gamma" type="image" src="img/btM.gif" value="-" onclick="switchState('source_global_param_gamma');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_global_param_gamma" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"gamma"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tAN"> default=</span><span class="tAV">"0.0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Adiabatic index. Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
+         </div>
+      </div><script type="text/javascript">
+         <!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>

@@ -1,0 +1,2559 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for power_conv.xsd</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
+         <!--
+        var propertiesBoxes= new Array('properties_power_conv.xsd', 
+				'properties_power_conv', 
+				'properties_power_conv_cycle_type', 
+				'properties_power_conv_circuits', 
+				'properties_power_conv_power_conv_circuits_component', 
+				'properties_power_conv_component_name', 
+				'properties_power_conv_component_temp_in', 
+				'properties_power_conv_component_temp_out', 
+				'properties_power_conv_component_press_in', 
+				'properties_power_conv_component_press_out', 
+				'properties_power_conv_component_power', 
+				'properties_power_conv_component_flow', 
+				'properties_power_conv_power_conv_circuits_power_net', 
+				'properties_power_conv_power_conv_circuits_power_int', 
+				'properties_power_conv_power_conv_circuits_efficiency', 
+				'properties_power_conv_power_recirc', 
+				'properties_power_conv_power_net', 
+				'properties_power_conv_power_int', 
+				'properties_power_conv_efficiency', 
+				'properties_power_conv_time');
+var usedByBoxes= new Array('usedBy_power_conv', 
+				'usedBy_power_conv_component');
+var sourceBoxes= new Array('source_power_conv', 
+				'source_power_conv_cycle_type', 
+				'source_power_conv_circuits', 
+				'source_power_conv_power_conv_circuits_component', 
+				'source_power_conv_component_name', 
+				'source_power_conv_component_temp_in', 
+				'source_power_conv_component_temp_out', 
+				'source_power_conv_component_press_in', 
+				'source_power_conv_component_press_out', 
+				'source_power_conv_component_power', 
+				'source_power_conv_component_flow', 
+				'source_power_conv_power_conv_circuits_power_net', 
+				'source_power_conv_power_conv_circuits_power_int', 
+				'source_power_conv_power_conv_circuits_efficiency', 
+				'source_power_conv_power_recirc', 
+				'source_power_conv_power_net', 
+				'source_power_conv_power_int', 
+				'source_power_conv_efficiency', 
+				'source_power_conv_time', 
+				'source_power_conv_component');
+var instanceBoxes= new Array('instance_power_conv', 
+				'instance_power_conv_circuits', 
+				'instance_power_conv_power_conv_circuits_component');
+var diagramBoxes= new Array('diagram_power_conv', 
+				'diagram_power_conv_cycle_type', 
+				'diagram_power_conv_circuits', 
+				'diagram_power_conv_power_conv_circuits_component', 
+				'diagram_power_conv_component_name', 
+				'diagram_power_conv_component_temp_in', 
+				'diagram_power_conv_component_temp_out', 
+				'diagram_power_conv_component_press_in', 
+				'diagram_power_conv_component_press_out', 
+				'diagram_power_conv_component_power', 
+				'diagram_power_conv_component_flow', 
+				'diagram_power_conv_power_conv_circuits_power_net', 
+				'diagram_power_conv_power_conv_circuits_power_int', 
+				'diagram_power_conv_power_conv_circuits_efficiency', 
+				'diagram_power_conv_power_recirc', 
+				'diagram_power_conv_power_net', 
+				'diagram_power_conv_power_int', 
+				'diagram_power_conv_efficiency', 
+				'diagram_power_conv_time', 
+				'diagram_power_conv_component');
+var annotationBoxes= new Array('annotations_power_conv', 
+				'annotations_power_conv_cycle_type', 
+				'annotations_power_conv_circuits', 
+				'annotations_power_conv_power_conv_circuits_component', 
+				'annotations_power_conv_component_name', 
+				'annotations_power_conv_component_temp_in', 
+				'annotations_power_conv_component_temp_out', 
+				'annotations_power_conv_component_press_in', 
+				'annotations_power_conv_component_press_out', 
+				'annotations_power_conv_component_power', 
+				'annotations_power_conv_component_flow', 
+				'annotations_power_conv_power_conv_circuits_power_net', 
+				'annotations_power_conv_power_conv_circuits_power_int', 
+				'annotations_power_conv_power_conv_circuits_efficiency', 
+				'annotations_power_conv_power_recirc', 
+				'annotations_power_conv_power_net', 
+				'annotations_power_conv_power_int', 
+				'annotations_power_conv_efficiency', 
+				'annotations_power_conv_time', 
+				'annotations_power_conv_component');
+var modelBoxes= new Array('model_power_conv', 
+				'model_power_conv_circuits', 
+				'model_power_conv_power_conv_circuits_component', 
+				'model_power_conv_component');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="power_conv.xsd"></a><div class="componentTitle">Included schema <span class="qname">power_conv.xsd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv.xsd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">attribute form default</td>
+                                    <td><b>unqualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">element form default</td>
+                                    <td><b>qualified</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv"></a><div class="componentTitle">Element <span class="qname">power_conv</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Power conversion system. Time-dependent CPO.</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_power_conv.png" usemap="#power_conv_xsd_Element_power_conv" /><map name="power_conv_xsd_Element_power_conv" id="power_conv_xsd_Element_power_conv">
+                                 <area alt="utilities_xsd.tmp#datainfo" href="utilities_xsd.html#datainfo" coords="236,2,311,26" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_cycle_type" href="power_conv_xsd.html#power_conv_cycle_type" coords="236,66,323,90" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_circuits" href="power_conv_xsd.html#power_conv_circuits" coords="236,130,307,154" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_power_recirc" href="power_conv_xsd.html#power_conv_power_recirc" coords="236,207,337,231" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_power_net" href="power_conv_xsd.html#power_conv_power_net" coords="236,284,323,308" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_power_int" href="power_conv_xsd.html#power_conv_power_int" coords="236,348,320,372" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_efficiency" href="power_conv_xsd.html#power_conv_efficiency" coords="236,425,318,449" />
+                                 <area alt="utilities_xsd.tmp#codeparam" href="utilities_xsd.html#codeparam" coords="236,515,327,539" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_time" href="power_conv_xsd.html#power_conv_time" coords="236,579,290,603" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_power_conv" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_power_conv');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_power_conv" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="Phase4TOP_xsd.html#top" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for Phase4TOP.xsd')">top</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_power_conv" type="image" src="img/btM.gif" value="-" onclick="switchState('model_power_conv');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_power_conv" style="display:block"><b><a href="utilities_xsd.html#datainfo" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">datainfo</a></b> , <b><a href="power_conv_xsd.html#power_conv_cycle_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">cycle_type</a></b> , <b><a href="power_conv_xsd.html#power_conv_circuits" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">circuits+</a></b> , <b><a href="power_conv_xsd.html#power_conv_power_recirc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_recirc</a></b> , <b><a href="power_conv_xsd.html#power_conv_power_net" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_net</a></b> , <b><a href="power_conv_xsd.html#power_conv_power_int" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_int</a></b> , <b><a href="power_conv_xsd.html#power_conv_efficiency" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">efficiency</a></b> , <b><a href="utilities_xsd.html#codeparam" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">codeparam</a></b> , <b><a href="power_conv_xsd.html#power_conv_time" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">time</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="power_conv_xsd.html#power_conv_circuits" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">circuits</a></b>, <b><a href="utilities_xsd.html#codeparam" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">codeparam</a></b>, <b><a href="power_conv_xsd.html#power_conv_cycle_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">cycle_type</a></b>, <b><a href="utilities_xsd.html#datainfo" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">datainfo</a></b>, <b><a href="power_conv_xsd.html#power_conv_efficiency" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">efficiency</a></b>, <b><a href="power_conv_xsd.html#power_conv_power_int" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_int</a></b>, <b><a href="power_conv_xsd.html#power_conv_power_net" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_net</a></b>, <b><a href="power_conv_xsd.html#power_conv_power_recirc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_recirc</a></b>, <b><a href="power_conv_xsd.html#power_conv_time" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">time</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_power_conv" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_power_conv');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_power_conv" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;power_conv</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;datainfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/datainfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;cycle_type</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/cycle_type&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;circuits</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/circuits&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;power_recirc</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/power_recirc&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;power_net</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/power_net&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;power_int</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/power_int&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;efficiency</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/efficiency&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;codeparam</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/codeparam&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;time</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/time&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/power_conv&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_conv"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Power conversion system. Time-dependent CPO.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"datainfo"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"cycle_type"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Type of cycle. String</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"circuits"</span><span class="tAN"> nillable=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Description of the circuit of the power conversion system. Array of structure. (ncircuits).</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"component"</span><span class="tAN"> type=</span><span class="tAV">"power_conv_component"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Description of the components of the power conversion system. Array of structure (ncomp).</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_net"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Net electric power generated [W]. Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_int"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Total electric power consumption of the power conversion system.[W]. Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"efficiency"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Efficiency of the reactor (ratio of the alternator electrical power to the total power needed to operate the reactor)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_recirc"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Recirculated electric power (input to the power conversion actor). [W] Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_net"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Net electric power generated [W]. Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_int"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Total electric power consumption of the power conversion system.[W]. Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"efficiency"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Efficiency of the reactor (ratio of the alternator electrical power to the total power needed to operate the reactor)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"codeparam"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"time"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Time [s]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_cycle_type"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv</a></b> / cycle_type</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_cycle_type" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_cycle_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_cycle_type" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Type of cycle. String</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_cycle_type" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_cycle_type');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_cycle_type" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_cycle_type.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_cycle_type" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_cycle_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_cycle_type" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_cycle_type" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_cycle_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_cycle_type" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"cycle_type"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Type of cycle. String</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_circuits"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv</a></b> / circuits</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_circuits" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_circuits');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_circuits" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Description of the circuit of the power conversion system. Array of structure. (ncircuits).</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_circuits" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_circuits');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_circuits" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_circuits.png" usemap="#power_conv_xsd_Element_circuits" /><map name="power_conv_xsd_Element_circuits" id="power_conv_xsd_Element_circuits">
+                                 <area alt="power_conv_xsd.tmp#power_conv_power_conv_circuits_component" href="power_conv_xsd.html#power_conv_power_conv_circuits_component" coords="211,2,303,26" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_power_conv_circuits_power_net" href="power_conv_xsd.html#power_conv_power_conv_circuits_power_net" coords="211,79,298,103" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_power_conv_circuits_power_int" href="power_conv_xsd.html#power_conv_power_conv_circuits_power_int" coords="211,143,295,167" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_power_conv_circuits_efficiency" href="power_conv_xsd.html#power_conv_power_conv_circuits_efficiency" coords="211,220,293,244" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_circuits" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_circuits');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_circuits" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">nillable</td>
+                                    <td><b>false</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_power_conv_circuits" type="image" src="img/btM.gif" value="-" onclick="switchState('model_power_conv_circuits');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_power_conv_circuits" style="display:block"><b><a href="power_conv_xsd.html#power_conv_power_conv_circuits_component" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">component+</a></b> , <b><a href="power_conv_xsd.html#power_conv_power_conv_circuits_power_net" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_net</a></b> , <b><a href="power_conv_xsd.html#power_conv_power_conv_circuits_power_int" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_int</a></b> , <b><a href="power_conv_xsd.html#power_conv_power_conv_circuits_efficiency" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">efficiency</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="power_conv_xsd.html#power_conv_power_conv_circuits_component" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">component</a></b>, <b><a href="power_conv_xsd.html#power_conv_power_conv_circuits_efficiency" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">efficiency</a></b>, <b><a href="power_conv_xsd.html#power_conv_power_conv_circuits_power_int" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_int</a></b>, <b><a href="power_conv_xsd.html#power_conv_power_conv_circuits_power_net" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_net</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_power_conv_circuits" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_power_conv_circuits');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_power_conv_circuits" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;circuits</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;component</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/component&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;power_net</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/power_net&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;power_int</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/power_int&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;efficiency</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/efficiency&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/circuits&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_circuits" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_circuits');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_circuits" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"circuits"</span><span class="tAN"> nillable=</span><span class="tAV">"0"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Description of the circuit of the power conversion system. Array of structure. (ncircuits).</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"component"</span><span class="tAN"> type=</span><span class="tAV">"power_conv_component"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Description of the components of the power conversion system. Array of structure (ncomp).</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_net"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Net electric power generated [W]. Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_int"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Total electric power consumption of the power conversion system.[W]. Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"efficiency"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Efficiency of the reactor (ratio of the alternator electrical power to the total power needed to operate the reactor)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_power_conv_circuits_component"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv</a></b> / <b><a href="power_conv_xsd.html#power_conv_circuits" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">circuits</a></b> / component</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_power_conv_circuits_component" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_power_conv_circuits_component');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_power_conv_circuits_component" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Description of the components of the power conversion system. Array of structure (ncomp).</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_power_conv_circuits_component" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_power_conv_circuits_component');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_power_conv_circuits_component" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_component.png" usemap="#power_conv_xsd_Element_component" /><map name="power_conv_xsd_Element_component" id="power_conv_xsd_Element_component">
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_name" href="power_conv_xsd.html#power_conv_component_name" coords="225,40,285,64" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_temp_in" href="power_conv_xsd.html#power_conv_component_temp_in" coords="225,104,299,128" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_temp_out" href="power_conv_xsd.html#power_conv_component_temp_out" coords="225,168,307,192" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_press_in" href="power_conv_xsd.html#power_conv_component_press_in" coords="225,232,302,256" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_press_out" href="power_conv_xsd.html#power_conv_component_press_out" coords="225,296,310,320" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_power" href="power_conv_xsd.html#power_conv_component_power" coords="225,360,289,384" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_flow" href="power_conv_xsd.html#power_conv_component_flow" coords="225,437,278,461" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component" href="power_conv_xsd.html#power_conv_component" coords="143,3,326,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="power_conv_xsd.html#power_conv_component" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv_component</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_power_conv_circuits_component" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_power_conv_circuits_component');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_power_conv_circuits_component" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_power_conv_power_conv_circuits_component" type="image" src="img/btM.gif" value="-" onclick="switchState('model_power_conv_power_conv_circuits_component');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_power_conv_power_conv_circuits_component" style="display:block"><b><a href="power_conv_xsd.html#power_conv_component_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">name</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_temp_in" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">temp_in</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_temp_out" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">temp_out</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_press_in" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">press_in</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_press_out" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">press_out</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_power" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_flow" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">flow</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="power_conv_xsd.html#power_conv_component_flow" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">flow</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">name</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_power" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_press_in" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">press_in</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_press_out" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">press_out</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_temp_in" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">temp_in</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_temp_out" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">temp_out</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_power_conv_power_conv_circuits_component" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_power_conv_power_conv_circuits_component');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_power_conv_power_conv_circuits_component" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;component</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;name</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/name&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;temp_in</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/temp_in&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;temp_out</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/temp_out&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;press_in</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/press_in&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;press_out</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/press_out&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;power</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/power&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;flow</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/flow&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/component&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_power_conv_circuits_component" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_power_conv_circuits_component');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_power_conv_circuits_component" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"component"</span><span class="tAN"> type=</span><span class="tAV">"power_conv_component"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Description of the components of the power conversion system. Array of structure (ncomp).</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_component_name"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv_component" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv_component</a></b> / name</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_component_name" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_component_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_component_name" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">name of the component</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_component_name" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_component_name');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_component_name" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_name.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_component_name" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_component_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_component_name" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_component_name" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_component_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_component_name" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">name of the component</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_component_temp_in"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv_component" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv_component</a></b> / temp_in</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_component_temp_in" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_component_temp_in');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_component_temp_in" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">temperature of the input [K];Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_component_temp_in" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_component_temp_in');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_component_temp_in" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_temp_in.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_component_temp_in" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_component_temp_in');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_component_temp_in" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_component_temp_in" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_component_temp_in');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_component_temp_in" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"temp_in"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">temperature of the input [K];Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_component_temp_out"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv_component" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv_component</a></b> / temp_out</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_component_temp_out" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_component_temp_out');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_component_temp_out" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">temperature of the output [K];Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_component_temp_out" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_component_temp_out');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_component_temp_out" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_temp_out.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_component_temp_out" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_component_temp_out');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_component_temp_out" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_component_temp_out" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_component_temp_out');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_component_temp_out" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"temp_out"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">temperature of the output [K];Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_component_press_in"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv_component" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv_component</a></b> / press_in</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_component_press_in" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_component_press_in');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_component_press_in" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Pressure of the input[Pa];Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_component_press_in" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_component_press_in');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_component_press_in" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_press_in.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_component_press_in" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_component_press_in');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_component_press_in" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_component_press_in" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_component_press_in');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_component_press_in" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"press_in"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Pressure of the input[Pa];Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_component_press_out"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv_component" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv_component</a></b> / press_out</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_component_press_out" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_component_press_out');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_component_press_out" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Pressure of the output [Pa];Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_component_press_out" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_component_press_out');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_component_press_out" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_press_out.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_component_press_out" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_component_press_out');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_component_press_out" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_component_press_out" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_component_press_out');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_component_press_out" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"press_out"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Pressure of the output [Pa];Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_component_power"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv_component" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv_component</a></b> / power</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_component_power" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_component_power');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_component_power" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">electric consumption  by the component; (consumption power)[W];Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_component_power" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_component_power');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_component_power" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_power.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_component_power" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_component_power');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_component_power" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_component_power" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_component_power');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_component_power" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">electric consumption by the component; (consumption power)[W];Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_component_flow"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv_component" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv_component</a></b> / flow</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_component_flow" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_component_flow');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_component_flow" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Flow through the component [kg/s]; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_component_flow" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_component_flow');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_component_flow" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_flow.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_component_flow" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_component_flow');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_component_flow" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_component_flow" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_component_flow');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_component_flow" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"flow"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Flow through the component [kg/s]; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_power_conv_circuits_power_net"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv</a></b> / <b><a href="power_conv_xsd.html#power_conv_circuits" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">circuits</a></b> / power_net</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_power_conv_circuits_power_net" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_power_conv_circuits_power_net');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_power_conv_circuits_power_net" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Net electric power generated [W]. Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_power_conv_circuits_power_net" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_power_conv_circuits_power_net');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_power_conv_circuits_power_net" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_power_net.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_power_conv_circuits_power_net" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_power_conv_circuits_power_net');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_power_conv_circuits_power_net" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_power_conv_circuits_power_net" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_power_conv_circuits_power_net');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_power_conv_circuits_power_net" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_net"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Net electric power generated [W]. Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_power_conv_circuits_power_int"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv</a></b> / <b><a href="power_conv_xsd.html#power_conv_circuits" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">circuits</a></b> / power_int</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_power_conv_circuits_power_int" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_power_conv_circuits_power_int');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_power_conv_circuits_power_int" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Total electric power consumption of the power conversion system.[W]. Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_power_conv_circuits_power_int" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_power_conv_circuits_power_int');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_power_conv_circuits_power_int" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_power_int.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_power_conv_circuits_power_int" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_power_conv_circuits_power_int');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_power_conv_circuits_power_int" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_power_conv_circuits_power_int" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_power_conv_circuits_power_int');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_power_conv_circuits_power_int" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_int"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Total electric power consumption of the power conversion system.[W]. Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_power_conv_circuits_efficiency"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv</a></b> / <b><a href="power_conv_xsd.html#power_conv_circuits" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">circuits</a></b> / efficiency</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_power_conv_circuits_efficiency" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_power_conv_circuits_efficiency');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_power_conv_circuits_efficiency" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Efficiency of the reactor (ratio of the alternator electrical power to the total power needed to operate the reactor)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_power_conv_circuits_efficiency" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_power_conv_circuits_efficiency');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_power_conv_circuits_efficiency" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_efficiency.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_power_conv_circuits_efficiency" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_power_conv_circuits_efficiency');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_power_conv_circuits_efficiency" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_power_conv_circuits_efficiency" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_power_conv_circuits_efficiency');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_power_conv_circuits_efficiency" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"efficiency"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Efficiency of the reactor (ratio of the alternator electrical power to the total power needed to operate the reactor)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_power_recirc"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv</a></b> / power_recirc</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_power_recirc" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_power_recirc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_power_recirc" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Recirculated electric power (input to the power conversion actor). [W] Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_power_recirc" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_power_recirc');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_power_recirc" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_power_recirc.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_power_recirc" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_power_recirc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_power_recirc" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_power_recirc" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_power_recirc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_power_recirc" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_recirc"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Recirculated electric power (input to the power conversion actor). [W] Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_power_net"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv</a></b> / power_net</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_power_net" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_power_net');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_power_net" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Net electric power generated [W]. Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_power_net" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_power_net');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_power_net" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_power_net_1.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_power_net" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_power_net');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_power_net" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_power_net" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_power_net');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_power_net" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_net"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Net electric power generated [W]. Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_power_int"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv</a></b> / power_int</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_power_int" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_power_int');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_power_int" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Total electric power consumption of the power conversion system.[W]. Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_power_int" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_power_int');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_power_int" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_power_int_1.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_power_int" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_power_int');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_power_int" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_power_int" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_power_int');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_power_int" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power_int"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Total electric power consumption of the power conversion system.[W]. Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_efficiency"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv</a></b> / efficiency</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_efficiency" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_efficiency');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_efficiency" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Efficiency of the reactor (ratio of the alternator electrical power to the total power needed to operate the reactor)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_efficiency" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_efficiency');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_efficiency" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_efficiency_1.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_efficiency" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_efficiency');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_efficiency" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_efficiency" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_efficiency');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_efficiency" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"efficiency"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Efficiency of the reactor (ratio of the alternator electrical power to the total power needed to operate the reactor)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_time"></a><div class="componentTitle">Element <span class="qname"><b><a href="power_conv_xsd.html#power_conv" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv</a></b> / time</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_time" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_time" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Time [s]; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_time" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_time');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_time" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Element_time.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_power_conv_time" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_power_conv_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_power_conv_time" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_time" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_time" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"time"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Time [s]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="power_conv_component"></a><div class="componentTitle">Complex Type <span class="qname">power_conv_component</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_power_conv_component" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_power_conv_component');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_power_conv_component" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Description of the components of the power conversion system. Array of structure (ncomp).</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_power_conv_component" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_power_conv_component');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_power_conv_component" style="display:block"><img alt="Diagram" border="0" src="img/power_conv_xsd_Complex_Type_power_conv_component.png" usemap="#power_conv_xsd_Complex_Type_power_conv_component" /><map name="power_conv_xsd_Complex_Type_power_conv_component" id="power_conv_xsd_Complex_Type_power_conv_component">
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_name" href="power_conv_xsd.html#power_conv_component_name" coords="306,0,366,24" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_temp_in" href="power_conv_xsd.html#power_conv_component_temp_in" coords="306,64,380,88" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_temp_out" href="power_conv_xsd.html#power_conv_component_temp_out" coords="306,128,388,152" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_press_in" href="power_conv_xsd.html#power_conv_component_press_in" coords="306,192,383,216" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_press_out" href="power_conv_xsd.html#power_conv_component_press_out" coords="306,256,391,280" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_power" href="power_conv_xsd.html#power_conv_component_power" coords="306,320,370,344" />
+                                 <area alt="power_conv_xsd.tmp#power_conv_component_flow" href="power_conv_xsd.html#power_conv_component_flow" coords="306,397,359,421" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_power_conv_component" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_power_conv_component');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_power_conv_component" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="power_conv_xsd.html#power_conv_power_conv_circuits_component" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power_conv/circuits/component</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_power_conv_component" type="image" src="img/btM.gif" value="-" onclick="switchState('model_power_conv_component');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_power_conv_component" style="display:block"><b><a href="power_conv_xsd.html#power_conv_component_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">name</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_temp_in" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">temp_in</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_temp_out" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">temp_out</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_press_in" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">press_in</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_press_out" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">press_out</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_power" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power</a></b> , <b><a href="power_conv_xsd.html#power_conv_component_flow" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">flow</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="power_conv_xsd.html#power_conv_component_flow" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">flow</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">name</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_power" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">power</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_press_in" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">press_in</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_press_out" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">press_out</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_temp_in" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">temp_in</a></b>, <b><a href="power_conv_xsd.html#power_conv_component_temp_out" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for power_conv.xsd')">temp_out</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_power_conv_component" type="image" src="img/btM.gif" value="-" onclick="switchState('source_power_conv_component');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_power_conv_component" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"power_conv_component"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Description of the components of the power conversion system. Array of structure (ncomp).</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">name of the component</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"temp_in"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">temperature of the input [K];Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"temp_out"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">temperature of the output [K];Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"press_in"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Pressure of the input[Pa];Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"press_out"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Pressure of the output [Pa];Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"power"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">electric consumption by the component; (consumption power)[W];Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"flow"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Flow through the component [kg/s]; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:complexType&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
+         </div>
+      </div><script type="text/javascript">
+         <!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>

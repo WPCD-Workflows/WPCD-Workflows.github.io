@@ -1,0 +1,2071 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for pfpassive.xsd</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
+         <!--
+        var propertiesBoxes= new Array('properties_pfpassive.xsd', 
+				'properties_pfpassive', 
+				'properties_pfpassive_name', 
+				'properties_pfpassive_area', 
+				'properties_pfpassive_res', 
+				'properties_pfpassive_eta', 
+				'properties_pfpassive_current', 
+				'properties_NO_NAMESPACE_pfpassive_current_toroidal', 
+				'properties_NO_NAMESPACE_pfpassive_current_poloidal', 
+				'properties_pfpassive_pfpageometry', 
+				'properties_pfpassive_pfpassive_pfpageometry_type', 
+				'properties_pfpassive_pfpassive_pfpageometry_npoints', 
+				'properties_pfpassive_pfpassive_pfpageometry_rzcoordinate', 
+				'properties_pfpassive_pfpassive_pfpageometry_rzdrdz');
+var usedByBoxes= new Array('usedBy_pfpassive', 
+				'usedBy_NO_NAMESPACE_pfpassive_current');
+var sourceBoxes= new Array('source_pfpassive', 
+				'source_pfpassive_name', 
+				'source_pfpassive_area', 
+				'source_pfpassive_res', 
+				'source_pfpassive_eta', 
+				'source_pfpassive_current', 
+				'source_NO_NAMESPACE_pfpassive_current_toroidal', 
+				'source_NO_NAMESPACE_pfpassive_current_poloidal', 
+				'source_pfpassive_pfpageometry', 
+				'source_pfpassive_pfpassive_pfpageometry_type', 
+				'source_pfpassive_pfpassive_pfpageometry_npoints', 
+				'source_pfpassive_pfpassive_pfpageometry_rzcoordinate', 
+				'source_pfpassive_pfpassive_pfpageometry_rzdrdz', 
+				'source_NO_NAMESPACE_pfpassive_current');
+var instanceBoxes= new Array('instance_pfpassive', 
+				'instance_pfpassive_current', 
+				'instance_NO_NAMESPACE_pfpassive_current_toroidal', 
+				'instance_NO_NAMESPACE_pfpassive_current_poloidal', 
+				'instance_pfpassive_pfpageometry', 
+				'instance_pfpassive_pfpassive_pfpageometry_rzcoordinate');
+var diagramBoxes= new Array('diagram_pfpassive', 
+				'diagram_pfpassive_name', 
+				'diagram_pfpassive_area', 
+				'diagram_pfpassive_res', 
+				'diagram_pfpassive_eta', 
+				'diagram_pfpassive_current', 
+				'diagram_NO_NAMESPACE_pfpassive_current_toroidal', 
+				'diagram_NO_NAMESPACE_pfpassive_current_poloidal', 
+				'diagram_pfpassive_pfpageometry', 
+				'diagram_pfpassive_pfpassive_pfpageometry_type', 
+				'diagram_pfpassive_pfpassive_pfpageometry_npoints', 
+				'diagram_pfpassive_pfpassive_pfpageometry_rzcoordinate', 
+				'diagram_pfpassive_pfpassive_pfpageometry_rzdrdz', 
+				'diagram_NO_NAMESPACE_pfpassive_current');
+var annotationBoxes= new Array('annotations_pfpassive', 
+				'annotations_pfpassive_name', 
+				'annotations_pfpassive_area', 
+				'annotations_pfpassive_res', 
+				'annotations_pfpassive_eta', 
+				'annotations_pfpassive_current', 
+				'annotations_NO_NAMESPACE_pfpassive_current_toroidal', 
+				'annotations_NO_NAMESPACE_pfpassive_current_poloidal', 
+				'annotations_pfpassive_pfpageometry', 
+				'annotations_pfpassive_pfpassive_pfpageometry_type', 
+				'annotations_pfpassive_pfpassive_pfpageometry_npoints', 
+				'annotations_pfpassive_pfpassive_pfpageometry_rzcoordinate', 
+				'annotations_pfpassive_pfpassive_pfpageometry_rzdrdz', 
+				'annotations_NO_NAMESPACE_pfpassive_current');
+var modelBoxes= new Array('model_pfpassive', 
+				'model_pfpassive_current', 
+				'model_NO_NAMESPACE_pfpassive_current_toroidal', 
+				'model_NO_NAMESPACE_pfpassive_current_poloidal', 
+				'model_pfpassive_pfpageometry', 
+				'model_pfpassive_pfpassive_pfpageometry_rzcoordinate', 
+				'model_NO_NAMESPACE_pfpassive_current');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="pfpassive.xsd"></a><div class="componentTitle">Included schema <span class="qname">pfpassive.xsd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive.xsd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">attribute form default</td>
+                                    <td><b>unqualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">element form default</td>
+                                    <td><b>qualified</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfpassive"></a><div class="componentTitle">Element <span class="qname">pfpassive</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfpassive" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfpassive');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfpassive" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Passive axisymmetric conductor description</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfpassive" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfpassive');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfpassive" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_pfpassive.png" usemap="#pfpassive_xsd_Element_pfpassive" /><map name="pfpassive_xsd_Element_pfpassive" id="pfpassive_xsd_Element_pfpassive">
+                                 <area alt="pfpassive_xsd.tmp#pfpassive_name" href="pfpassive_xsd.html#pfpassive_name" coords="201,2,261,26" />
+                                 <area alt="pfpassive_xsd.tmp#pfpassive_area" href="pfpassive_xsd.html#pfpassive_area" coords="201,66,255,90" />
+                                 <area alt="pfpassive_xsd.tmp#pfpassive_res" href="pfpassive_xsd.html#pfpassive_res" coords="201,143,252,167" />
+                                 <area alt="pfpassive_xsd.tmp#pfpassive_eta" href="pfpassive_xsd.html#pfpassive_eta" coords="201,220,252,244" />
+                                 <area alt="pfpassive_xsd.tmp#pfpassive_current" href="pfpassive_xsd.html#pfpassive_current" coords="201,297,272,321" />
+                                 <area alt="pfpassive_xsd.tmp#pfpassive_pfpageometry" href="pfpassive_xsd.html#pfpassive_pfpageometry" coords="201,361,307,385" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_pfpassive" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_pfpassive');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_pfpassive" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="pfsystems_xsd.html#pfsystems" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsystems.xsd')">pfsystems</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_pfpassive" type="image" src="img/btM.gif" value="-" onclick="switchState('model_pfpassive');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_pfpassive" style="display:block"><b><a href="pfpassive_xsd.html#pfpassive_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">name</a></b> , <b><a href="pfpassive_xsd.html#pfpassive_area" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">area</a></b> , <b><a href="pfpassive_xsd.html#pfpassive_res" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">res</a></b> , <b><a href="pfpassive_xsd.html#pfpassive_eta" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">eta</a></b> , <b><a href="pfpassive_xsd.html#pfpassive_current" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">current</a></b> , <b><a href="pfpassive_xsd.html#pfpassive_pfpageometry" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpageometry</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="pfpassive_xsd.html#pfpassive_area" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">area</a></b>, <b><a href="pfpassive_xsd.html#pfpassive_current" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">current</a></b>, <b><a href="pfpassive_xsd.html#pfpassive_eta" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">eta</a></b>, <b><a href="pfpassive_xsd.html#pfpassive_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">name</a></b>, <b><a href="pfpassive_xsd.html#pfpassive_pfpageometry" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpageometry</a></b>, <b><a href="pfpassive_xsd.html#pfpassive_res" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">res</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_pfpassive" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_pfpassive');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_pfpassive" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;pfpassive</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;name</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/name&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;area</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/area&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;res</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/res&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;eta</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/eta&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;current</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/current&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;pfpageometry</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/pfpageometry&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/pfpassive&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfpassive" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfpassive');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfpassive" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"pfpassive"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Passive axisymmetric conductor description</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of coil. Array of strings (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"area"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Surface area of this passive element [m^2]; Vector (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"res"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Passive element resistance [Ohm]; Vector (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"eta"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Passive element resistivity [Ohm.m]; Vector (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"current"</span><span class="tAN"> type=</span><span class="tAV">"pfpassive_current"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Current induced in passive structures.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"pfpageometry"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Geometry of the passive elements</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"type"</span><span class="tAN"> type=</span><span class="tAV">"vecint_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Type used to describe the shape (0 for 'rzcoordinates' or 1 for 'rzdrdz'); Vector of integers (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"npoints"</span><span class="tAN"> type=</span><span class="tAV">"vecint_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Number of points describing an element (irregular outline rzcoordinates); Vector of integers (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"rzcoordinate"</span><span class="tAN"> type=</span><span class="tAV">"rz2D"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Irregular outline [m]; Matrix (nelements,max_npoints)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"rzdrdz"</span><span class="tAN"> type=</span><span class="tAV">"matflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">4-vector defining Centre R,Z and full extents dR, dZ [m]; Matrix (nelements,4)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfpassive_name"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#pfpassive" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive</a></b> / name</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfpassive_name" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfpassive_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfpassive_name" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Name of coil. Array of strings (nelements)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfpassive_name" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfpassive_name');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfpassive_name" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_name.png" usemap="#pfpassive_xsd_Element_name" /><map name="pfpassive_xsd_Element_name" id="pfpassive_xsd_Element_name">
+                                 <area alt="utilities_xsd.tmp#vecstring_type" href="utilities_xsd.html#vecstring_type" coords="108,0,242,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecstring_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecstring_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive_name" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive_name" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfpassive_name" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfpassive_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfpassive_name" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of coil. Array of strings (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfpassive_area"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#pfpassive" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive</a></b> / area</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfpassive_area" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfpassive_area');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfpassive_area" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Surface area of this passive element [m^2]; Vector (nelements)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfpassive_area" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfpassive_area');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfpassive_area" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_area.png" usemap="#pfpassive_xsd_Element_area" /><map name="pfpassive_xsd_Element_area" id="pfpassive_xsd_Element_area">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="102,0,215,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive_area" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive_area');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive_area" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfpassive_area" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfpassive_area');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfpassive_area" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"area"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Surface area of this passive element [m^2]; Vector (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfpassive_res"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#pfpassive" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive</a></b> / res</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfpassive_res" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfpassive_res');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfpassive_res" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Passive element resistance [Ohm]; Vector (nelements)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfpassive_res" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfpassive_res');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfpassive_res" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_res.png" usemap="#pfpassive_xsd_Element_res" /><map name="pfpassive_xsd_Element_res" id="pfpassive_xsd_Element_res">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="99,0,212,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive_res" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive_res');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive_res" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfpassive_res" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfpassive_res');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfpassive_res" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"res"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Passive element resistance [Ohm]; Vector (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfpassive_eta"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#pfpassive" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive</a></b> / eta</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfpassive_eta" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfpassive_eta');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfpassive_eta" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Passive element resistivity [Ohm.m]; Vector (nelements)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfpassive_eta" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfpassive_eta');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfpassive_eta" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_eta.png" usemap="#pfpassive_xsd_Element_eta" /><map name="pfpassive_xsd_Element_eta" id="pfpassive_xsd_Element_eta">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="99,0,212,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive_eta" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive_eta');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive_eta" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfpassive_eta" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfpassive_eta');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfpassive_eta" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"eta"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Passive element resistivity [Ohm.m]; Vector (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfpassive_current"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#pfpassive" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive</a></b> / current</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfpassive_current" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfpassive_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfpassive_current" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Current induced in passive structures.</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfpassive_current" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfpassive_current');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfpassive_current" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_current.png" usemap="#pfpassive_xsd_Element_current" /><map name="pfpassive_xsd_Element_current" id="pfpassive_xsd_Element_current">
+                                 <area alt="pfpassive_xsd.tmp#NO_NAMESPACE_pfpassive_current_toroidal" href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_toroidal" coords="204,40,277,64" />
+                                 <area alt="pfpassive_xsd.tmp#NO_NAMESPACE_pfpassive_current_poloidal" href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_poloidal" coords="204,117,278,141" />
+                                 <area alt="pfpassive_xsd.tmp#NO_NAMESPACE_pfpassive_current" href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current" coords="122,3,270,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive_current</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive_current" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive_current" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_pfpassive_current" type="image" src="img/btM.gif" value="-" onclick="switchState('model_pfpassive_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_pfpassive_current" style="display:block"><b><a href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_toroidal" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">toroidal</a></b> , <b><a href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_poloidal" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">poloidal</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_poloidal" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">poloidal</a></b>, <b><a href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_toroidal" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">toroidal</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_pfpassive_current" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_pfpassive_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_pfpassive_current" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;current</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;toroidal</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/toroidal&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;poloidal</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/poloidal&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/current&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfpassive_current" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfpassive_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfpassive_current" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"current"</span><span class="tAN"> type=</span><span class="tAV">"pfpassive_current"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Current induced in passive structures.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="NO_NAMESPACE_pfpassive_current_toroidal"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive_current</a></b> / toroidal</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_NO_NAMESPACE_pfpassive_current_toroidal" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_NO_NAMESPACE_pfpassive_current_toroidal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_NO_NAMESPACE_pfpassive_current_toroidal" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Toroidal current induced in passive structures [A]. Vector (nelements); Time-dependent</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_NO_NAMESPACE_pfpassive_current_toroidal" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_NO_NAMESPACE_pfpassive_current_toroidal');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_NO_NAMESPACE_pfpassive_current_toroidal" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_toroidal.png" usemap="#pfpassive_xsd_Element_toroidal" /><map name="pfpassive_xsd_Element_toroidal" id="pfpassive_xsd_Element_toroidal">
+                                 <area alt="utilities_xsd.tmp#exp1D_value" href="utilities_xsd.html#exp1D_value" coords="206,40,265,64" />
+                                 <area alt="utilities_xsd.tmp#exp1D_abserror" href="utilities_xsd.html#exp1D_abserror" coords="206,104,284,128" />
+                                 <area alt="utilities_xsd.tmp#exp1D_relerror" href="utilities_xsd.html#exp1D_relerror" coords="206,168,279,192" />
+                                 <area alt="utilities_xsd.tmp#exp1D" href="utilities_xsd.html#exp1D" coords="124,3,210,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">exp1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_NO_NAMESPACE_pfpassive_current_toroidal" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_NO_NAMESPACE_pfpassive_current_toroidal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_NO_NAMESPACE_pfpassive_current_toroidal" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_NO_NAMESPACE_pfpassive_current_toroidal" type="image" src="img/btM.gif" value="-" onclick="switchState('model_NO_NAMESPACE_pfpassive_current_toroidal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_NO_NAMESPACE_pfpassive_current_toroidal" style="display:block"><b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b> , <b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b> , <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b>, <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b>, <b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_NO_NAMESPACE_pfpassive_current_toroidal" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_NO_NAMESPACE_pfpassive_current_toroidal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_NO_NAMESPACE_pfpassive_current_toroidal" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;toroidal</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;value</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/value&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;abserror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/abserror&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;relerror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/relerror&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/toroidal&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_NO_NAMESPACE_pfpassive_current_toroidal" type="image" src="img/btM.gif" value="-" onclick="switchState('source_NO_NAMESPACE_pfpassive_current_toroidal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_NO_NAMESPACE_pfpassive_current_toroidal" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"toroidal"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Toroidal current induced in passive structures [A]. Vector (nelements); Time-dependent</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="NO_NAMESPACE_pfpassive_current_poloidal"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive_current</a></b> / poloidal</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_NO_NAMESPACE_pfpassive_current_poloidal" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_NO_NAMESPACE_pfpassive_current_poloidal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_NO_NAMESPACE_pfpassive_current_poloidal" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Poloidal current induced in passive structures [A]. Vector (nelements); Time-dependent</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_NO_NAMESPACE_pfpassive_current_poloidal" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_NO_NAMESPACE_pfpassive_current_poloidal');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_NO_NAMESPACE_pfpassive_current_poloidal" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_poloidal.png" usemap="#pfpassive_xsd_Element_poloidal" /><map name="pfpassive_xsd_Element_poloidal" id="pfpassive_xsd_Element_poloidal">
+                                 <area alt="utilities_xsd.tmp#exp1D_value" href="utilities_xsd.html#exp1D_value" coords="207,40,266,64" />
+                                 <area alt="utilities_xsd.tmp#exp1D_abserror" href="utilities_xsd.html#exp1D_abserror" coords="207,104,285,128" />
+                                 <area alt="utilities_xsd.tmp#exp1D_relerror" href="utilities_xsd.html#exp1D_relerror" coords="207,168,280,192" />
+                                 <area alt="utilities_xsd.tmp#exp1D" href="utilities_xsd.html#exp1D" coords="125,3,211,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">exp1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_NO_NAMESPACE_pfpassive_current_poloidal" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_NO_NAMESPACE_pfpassive_current_poloidal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_NO_NAMESPACE_pfpassive_current_poloidal" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_NO_NAMESPACE_pfpassive_current_poloidal" type="image" src="img/btM.gif" value="-" onclick="switchState('model_NO_NAMESPACE_pfpassive_current_poloidal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_NO_NAMESPACE_pfpassive_current_poloidal" style="display:block"><b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b> , <b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b> , <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b>, <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b>, <b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_NO_NAMESPACE_pfpassive_current_poloidal" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_NO_NAMESPACE_pfpassive_current_poloidal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_NO_NAMESPACE_pfpassive_current_poloidal" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;poloidal</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;value</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/value&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;abserror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/abserror&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;relerror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/relerror&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/poloidal&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_NO_NAMESPACE_pfpassive_current_poloidal" type="image" src="img/btM.gif" value="-" onclick="switchState('source_NO_NAMESPACE_pfpassive_current_poloidal');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_NO_NAMESPACE_pfpassive_current_poloidal" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"poloidal"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Poloidal current induced in passive structures [A]. Vector (nelements); Time-dependent</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfpassive_pfpageometry"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#pfpassive" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive</a></b> / pfpageometry</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfpassive_pfpageometry" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfpassive_pfpageometry');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfpassive_pfpageometry" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Geometry of the passive elements</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfpassive_pfpageometry" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfpassive_pfpageometry');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfpassive_pfpageometry" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_pfpageometry.png" usemap="#pfpassive_xsd_Element_pfpageometry" /><map name="pfpassive_xsd_Element_pfpageometry" id="pfpassive_xsd_Element_pfpageometry">
+                                 <area alt="pfpassive_xsd.tmp#pfpassive_pfpassive_pfpageometry_type" href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_type" coords="225,2,279,26" />
+                                 <area alt="pfpassive_xsd.tmp#pfpassive_pfpassive_pfpageometry_npoints" href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_npoints" coords="225,92,297,116" />
+                                 <area alt="pfpassive_xsd.tmp#pfpassive_pfpassive_pfpageometry_rzcoordinate" href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_rzcoordinate" coords="225,182,325,206" />
+                                 <area alt="pfpassive_xsd.tmp#pfpassive_pfpassive_pfpageometry_rzdrdz" href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_rzdrdz" coords="225,246,292,270" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive_pfpageometry" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive_pfpageometry');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive_pfpageometry" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_pfpassive_pfpageometry" type="image" src="img/btM.gif" value="-" onclick="switchState('model_pfpassive_pfpageometry');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_pfpassive_pfpageometry" style="display:block"><b><a href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">type</a></b> , <b><a href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_npoints" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">npoints</a></b> , <b><a href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_rzcoordinate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">rzcoordinate</a></b> , <b><a href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_rzdrdz" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">rzdrdz</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_npoints" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">npoints</a></b>, <b><a href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_rzcoordinate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">rzcoordinate</a></b>, <b><a href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_rzdrdz" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">rzdrdz</a></b>, <b><a href="pfpassive_xsd.html#pfpassive_pfpassive_pfpageometry_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_pfpassive_pfpageometry" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_pfpassive_pfpageometry');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_pfpassive_pfpageometry" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;pfpageometry</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;type</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/type&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;npoints</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/npoints&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rzcoordinate</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/rzcoordinate&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rzdrdz</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/rzdrdz&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/pfpageometry&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfpassive_pfpageometry" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfpassive_pfpageometry');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfpassive_pfpageometry" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"pfpageometry"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Geometry of the passive elements</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"type"</span><span class="tAN"> type=</span><span class="tAV">"vecint_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Type used to describe the shape (0 for 'rzcoordinates' or 1 for 'rzdrdz'); Vector of integers (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"npoints"</span><span class="tAN"> type=</span><span class="tAV">"vecint_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Number of points describing an element (irregular outline rzcoordinates); Vector of integers (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"rzcoordinate"</span><span class="tAN"> type=</span><span class="tAV">"rz2D"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Irregular outline [m]; Matrix (nelements,max_npoints)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"rzdrdz"</span><span class="tAN"> type=</span><span class="tAV">"matflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">4-vector defining Centre R,Z and full extents dR, dZ [m]; Matrix (nelements,4)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfpassive_pfpassive_pfpageometry_type"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#pfpassive" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive</a></b> / <b><a href="pfpassive_xsd.html#pfpassive_pfpageometry" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpageometry</a></b> / type</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfpassive_pfpassive_pfpageometry_type" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfpassive_pfpassive_pfpageometry_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfpassive_pfpassive_pfpageometry_type" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Type used to describe the shape (0 for 'rzcoordinates' or 1 for 'rzdrdz'); Vector of integers (nelements)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfpassive_pfpassive_pfpageometry_type" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfpassive_pfpassive_pfpageometry_type');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfpassive_pfpassive_pfpageometry_type" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_type.png" usemap="#pfpassive_xsd_Element_type" /><map name="pfpassive_xsd_Element_type" id="pfpassive_xsd_Element_type">
+                                 <area alt="utilities_xsd.tmp#vecint_type" href="utilities_xsd.html#vecint_type" coords="102,0,218,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecint_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecint_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive_pfpassive_pfpageometry_type" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive_pfpassive_pfpageometry_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive_pfpassive_pfpageometry_type" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfpassive_pfpassive_pfpageometry_type" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfpassive_pfpassive_pfpageometry_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfpassive_pfpassive_pfpageometry_type" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"type"</span><span class="tAN"> type=</span><span class="tAV">"vecint_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Type used to describe the shape (0 for 'rzcoordinates' or 1 for 'rzdrdz'); Vector of integers (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfpassive_pfpassive_pfpageometry_npoints"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#pfpassive" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive</a></b> / <b><a href="pfpassive_xsd.html#pfpassive_pfpageometry" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpageometry</a></b> / npoints</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfpassive_pfpassive_pfpageometry_npoints" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfpassive_pfpassive_pfpageometry_npoints');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfpassive_pfpassive_pfpageometry_npoints" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Number of points describing an element (irregular outline rzcoordinates); Vector of integers (nelements)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfpassive_pfpassive_pfpageometry_npoints" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfpassive_pfpassive_pfpageometry_npoints');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfpassive_pfpassive_pfpageometry_npoints" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_npoints.png" usemap="#pfpassive_xsd_Element_npoints" /><map name="pfpassive_xsd_Element_npoints" id="pfpassive_xsd_Element_npoints">
+                                 <area alt="utilities_xsd.tmp#vecint_type" href="utilities_xsd.html#vecint_type" coords="120,0,236,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecint_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecint_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive_pfpassive_pfpageometry_npoints" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive_pfpassive_pfpageometry_npoints');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive_pfpassive_pfpageometry_npoints" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfpassive_pfpassive_pfpageometry_npoints" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfpassive_pfpassive_pfpageometry_npoints');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfpassive_pfpassive_pfpageometry_npoints" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"npoints"</span><span class="tAN"> type=</span><span class="tAV">"vecint_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Number of points describing an element (irregular outline rzcoordinates); Vector of integers (nelements)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfpassive_pfpassive_pfpageometry_rzcoordinate"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#pfpassive" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive</a></b> / <b><a href="pfpassive_xsd.html#pfpassive_pfpageometry" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpageometry</a></b> / rzcoordinate</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfpassive_pfpassive_pfpageometry_rzcoordinate" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfpassive_pfpassive_pfpageometry_rzcoordinate');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfpassive_pfpassive_pfpageometry_rzcoordinate" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Irregular outline [m]; Matrix (nelements,max_npoints)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfpassive_pfpassive_pfpageometry_rzcoordinate" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfpassive_pfpassive_pfpageometry_rzcoordinate');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfpassive_pfpassive_pfpageometry_rzcoordinate" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_rzcoordinate.png" usemap="#pfpassive_xsd_Element_rzcoordinate" /><map name="pfpassive_xsd_Element_rzcoordinate" id="pfpassive_xsd_Element_rzcoordinate">
+                                 <area alt="utilities_xsd.tmp#rz2D_r" href="utilities_xsd.html#rz2D_r" coords="233,40,284,64" />
+                                 <area alt="utilities_xsd.tmp#rz2D_z" href="utilities_xsd.html#rz2D_z" coords="233,104,284,128" />
+                                 <area alt="utilities_xsd.tmp#rz2D" href="utilities_xsd.html#rz2D" coords="151,3,228,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#rz2D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">rz2D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive_pfpassive_pfpageometry_rzcoordinate" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive_pfpassive_pfpageometry_rzcoordinate');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive_pfpassive_pfpageometry_rzcoordinate" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_pfpassive_pfpassive_pfpageometry_rzcoordinate" type="image" src="img/btM.gif" value="-" onclick="switchState('model_pfpassive_pfpassive_pfpageometry_rzcoordinate');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_pfpassive_pfpassive_pfpageometry_rzcoordinate" style="display:block"><b><a href="utilities_xsd.html#rz2D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b> , <b><a href="utilities_xsd.html#rz2D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#rz2D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b>, <b><a href="utilities_xsd.html#rz2D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_pfpassive_pfpassive_pfpageometry_rzcoordinate" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_pfpassive_pfpassive_pfpageometry_rzcoordinate');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_pfpassive_pfpassive_pfpageometry_rzcoordinate" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;rzcoordinate</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;r</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/r&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;z</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/z&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/rzcoordinate&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfpassive_pfpassive_pfpageometry_rzcoordinate" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfpassive_pfpassive_pfpageometry_rzcoordinate');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfpassive_pfpassive_pfpageometry_rzcoordinate" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"rzcoordinate"</span><span class="tAN"> type=</span><span class="tAV">"rz2D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Irregular outline [m]; Matrix (nelements,max_npoints)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfpassive_pfpassive_pfpageometry_rzdrdz"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfpassive_xsd.html#pfpassive" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive</a></b> / <b><a href="pfpassive_xsd.html#pfpassive_pfpageometry" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpageometry</a></b> / rzdrdz</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfpassive_pfpassive_pfpageometry_rzdrdz" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfpassive_pfpassive_pfpageometry_rzdrdz');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfpassive_pfpassive_pfpageometry_rzdrdz" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">4-vector defining Centre R,Z and full extents dR, dZ [m]; Matrix (nelements,4)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfpassive_pfpassive_pfpageometry_rzdrdz" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfpassive_pfpassive_pfpageometry_rzdrdz');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfpassive_pfpassive_pfpageometry_rzdrdz" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Element_rzdrdz.png" usemap="#pfpassive_xsd_Element_rzdrdz" /><map name="pfpassive_xsd_Element_rzdrdz" id="pfpassive_xsd_Element_rzdrdz">
+                                 <area alt="utilities_xsd.tmp#matflt_type" href="utilities_xsd.html#matflt_type" coords="115,0,230,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#matflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">matflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfpassive_pfpassive_pfpageometry_rzdrdz" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfpassive_pfpassive_pfpageometry_rzdrdz');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfpassive_pfpassive_pfpageometry_rzdrdz" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfpassive_pfpassive_pfpageometry_rzdrdz" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfpassive_pfpassive_pfpageometry_rzdrdz');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfpassive_pfpassive_pfpageometry_rzdrdz" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"rzdrdz"</span><span class="tAN"> type=</span><span class="tAV">"matflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">4-vector defining Centre R,Z and full extents dR, dZ [m]; Matrix (nelements,4)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="NO_NAMESPACE_pfpassive_current"></a><div class="componentTitle">Complex Type <span class="qname">pfpassive_current</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_NO_NAMESPACE_pfpassive_current" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_NO_NAMESPACE_pfpassive_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_NO_NAMESPACE_pfpassive_current" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Current induced in passive structures.</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_NO_NAMESPACE_pfpassive_current" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_NO_NAMESPACE_pfpassive_current');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_NO_NAMESPACE_pfpassive_current" style="display:block"><img alt="Diagram" border="0" src="img/pfpassive_xsd_Complex_Type_pfpassive_current.png" usemap="#pfpassive_xsd_Complex_Type_pfpassive_current" /><map name="pfpassive_xsd_Complex_Type_pfpassive_current" id="pfpassive_xsd_Complex_Type_pfpassive_current">
+                                 <area alt="pfpassive_xsd.tmp#NO_NAMESPACE_pfpassive_current_toroidal" href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_toroidal" coords="271,0,344,24" />
+                                 <area alt="pfpassive_xsd.tmp#NO_NAMESPACE_pfpassive_current_poloidal" href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_poloidal" coords="271,77,345,101" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_NO_NAMESPACE_pfpassive_current" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_NO_NAMESPACE_pfpassive_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_NO_NAMESPACE_pfpassive_current" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="pfpassive_xsd.html#pfpassive_current" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">pfpassive/current</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_NO_NAMESPACE_pfpassive_current" type="image" src="img/btM.gif" value="-" onclick="switchState('model_NO_NAMESPACE_pfpassive_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_NO_NAMESPACE_pfpassive_current" style="display:block"><b><a href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_toroidal" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">toroidal</a></b> , <b><a href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_poloidal" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">poloidal</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_poloidal" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">poloidal</a></b>, <b><a href="pfpassive_xsd.html#NO_NAMESPACE_pfpassive_current_toroidal" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfpassive.xsd')">toroidal</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_NO_NAMESPACE_pfpassive_current" type="image" src="img/btM.gif" value="-" onclick="switchState('source_NO_NAMESPACE_pfpassive_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_NO_NAMESPACE_pfpassive_current" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"pfpassive_current"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Current induced in passive structures.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"toroidal"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Toroidal current induced in passive structures [A]. Vector (nelements); Time-dependent</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"poloidal"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Poloidal current induced in passive structures [A]. Vector (nelements); Time-dependent</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:complexType&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
+         </div>
+      </div><script type="text/javascript">
+         <!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>

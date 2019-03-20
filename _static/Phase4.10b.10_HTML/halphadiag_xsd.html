@@ -1,0 +1,1743 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for halphadiag.xsd</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
+         <!--
+        var propertiesBoxes= new Array('properties_halphadiag.xsd', 
+				'properties_halphadiag', 
+				'properties_halphadiag_setup', 
+				'properties_halpha_setup_name', 
+				'properties_halpha_setup_pivot_point', 
+				'properties_halpha_setup_horchordang', 
+				'properties_halpha_setup_verchordang', 
+				'properties_halpha_setup_second_point', 
+				'properties_halpha_setup_solidangle', 
+				'properties_halphadiag_intensity', 
+				'properties_halphadiag_time');
+var usedByBoxes= new Array('usedBy_halphadiag', 
+				'usedBy_halpha_setup');
+var sourceBoxes= new Array('source_halphadiag', 
+				'source_halphadiag_setup', 
+				'source_halpha_setup_name', 
+				'source_halpha_setup_pivot_point', 
+				'source_halpha_setup_horchordang', 
+				'source_halpha_setup_verchordang', 
+				'source_halpha_setup_second_point', 
+				'source_halpha_setup_solidangle', 
+				'source_halphadiag_intensity', 
+				'source_halphadiag_time', 
+				'source_halpha_setup');
+var instanceBoxes= new Array('instance_halphadiag', 
+				'instance_halphadiag_setup', 
+				'instance_halpha_setup_pivot_point', 
+				'instance_halpha_setup_second_point', 
+				'instance_halpha_setup_solidangle', 
+				'instance_halphadiag_intensity');
+var diagramBoxes= new Array('diagram_halphadiag', 
+				'diagram_halphadiag_setup', 
+				'diagram_halpha_setup_name', 
+				'diagram_halpha_setup_pivot_point', 
+				'diagram_halpha_setup_horchordang', 
+				'diagram_halpha_setup_verchordang', 
+				'diagram_halpha_setup_second_point', 
+				'diagram_halpha_setup_solidangle', 
+				'diagram_halphadiag_intensity', 
+				'diagram_halphadiag_time', 
+				'diagram_halpha_setup');
+var annotationBoxes= new Array('annotations_halphadiag', 
+				'annotations_halphadiag_setup', 
+				'annotations_halpha_setup_name', 
+				'annotations_halpha_setup_pivot_point', 
+				'annotations_halpha_setup_horchordang', 
+				'annotations_halpha_setup_verchordang', 
+				'annotations_halpha_setup_second_point', 
+				'annotations_halpha_setup_solidangle', 
+				'annotations_halphadiag_intensity', 
+				'annotations_halphadiag_time', 
+				'annotations_halpha_setup');
+var modelBoxes= new Array('model_halphadiag', 
+				'model_halphadiag_setup', 
+				'model_halpha_setup_pivot_point', 
+				'model_halpha_setup_second_point', 
+				'model_halpha_setup_solidangle', 
+				'model_halphadiag_intensity', 
+				'model_halpha_setup');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="halphadiag.xsd"></a><div class="componentTitle">Included schema <span class="qname">halphadiag.xsd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_halphadiag.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_halphadiag.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_halphadiag.xsd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">attribute form default</td>
+                                    <td><b>unqualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">element form default</td>
+                                    <td><b>qualified</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="halphadiag"></a><div class="componentTitle">Element <span class="qname">halphadiag</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_halphadiag" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_halphadiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_halphadiag" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">H/D alpha line integrated diagnostic; Time-dependent CPO</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_halphadiag" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_halphadiag');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_halphadiag" style="display:block"><img alt="Diagram" border="0" src="img/halphadiag_xsd_Element_halphadiag.png" usemap="#halphadiag_xsd_Element_halphadiag" /><map name="halphadiag_xsd_Element_halphadiag" id="halphadiag_xsd_Element_halphadiag">
+                                 <area alt="utilities_xsd.tmp#datainfo" href="utilities_xsd.html#datainfo" coords="209,2,284,26" />
+                                 <area alt="halphadiag_xsd.tmp#halphadiag_setup" href="halphadiag_xsd.html#halphadiag_setup" coords="209,66,270,90" />
+                                 <area alt="halphadiag_xsd.tmp#halphadiag_intensity" href="halphadiag_xsd.html#halphadiag_intensity" coords="209,143,286,167" />
+                                 <area alt="utilities_xsd.tmp#codeparam" href="utilities_xsd.html#codeparam" coords="209,220,300,244" />
+                                 <area alt="halphadiag_xsd.tmp#halphadiag_time" href="halphadiag_xsd.html#halphadiag_time" coords="209,284,263,308" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_halphadiag" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_halphadiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_halphadiag" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_halphadiag" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_halphadiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_halphadiag" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="Phase4TOP_xsd.html#top" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for Phase4TOP.xsd')">top</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_halphadiag" type="image" src="img/btM.gif" value="-" onclick="switchState('model_halphadiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_halphadiag" style="display:block"><b><a href="utilities_xsd.html#datainfo" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">datainfo</a></b> , <b><a href="halphadiag_xsd.html#halphadiag_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">setup</a></b> , <b><a href="halphadiag_xsd.html#halphadiag_intensity" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">intensity</a></b> , <b><a href="utilities_xsd.html#codeparam" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">codeparam</a></b> , <b><a href="halphadiag_xsd.html#halphadiag_time" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">time</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#codeparam" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">codeparam</a></b>, <b><a href="utilities_xsd.html#datainfo" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">datainfo</a></b>, <b><a href="halphadiag_xsd.html#halphadiag_intensity" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">intensity</a></b>, <b><a href="halphadiag_xsd.html#halphadiag_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">setup</a></b>, <b><a href="halphadiag_xsd.html#halphadiag_time" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">time</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_halphadiag" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_halphadiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_halphadiag" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;halphadiag</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;datainfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/datainfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;setup</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/setup&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;intensity</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/intensity&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;codeparam</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/codeparam&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;time</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/time&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/halphadiag&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_halphadiag" type="image" src="img/btM.gif" value="-" onclick="switchState('source_halphadiag');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_halphadiag" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"halphadiag"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">H/D alpha line integrated diagnostic; Time-dependent CPO</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"datainfo"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"setup"</span><span class="tAN"> type=</span><span class="tAV">"halpha_setup"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">setup for the lines of sight of the line integrated measurement</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"intensity"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Measured light intensity (a.u.). Time-dependent. Vector (nlos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"codeparam"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"time"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Time [s]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="halphadiag_setup"></a><div class="componentTitle">Element <span class="qname"><b><a href="halphadiag_xsd.html#halphadiag" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">halphadiag</a></b> / setup</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_halphadiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_halphadiag_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_halphadiag_setup" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">setup for the lines of sight of the line integrated measurement</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_halphadiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_halphadiag_setup');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_halphadiag_setup" style="display:block"><img alt="Diagram" border="0" src="img/halphadiag_xsd_Element_setup.png" usemap="#halphadiag_xsd_Element_setup" /><map name="halphadiag_xsd_Element_setup" id="halphadiag_xsd_Element_setup">
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_name" href="halphadiag_xsd.html#halpha_setup_name" coords="194,40,254,64" />
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_pivot_point" href="halphadiag_xsd.html#halpha_setup_pivot_point" coords="194,104,286,128" />
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_horchordang" href="halphadiag_xsd.html#halpha_setup_horchordang" coords="194,181,296,205" />
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_verchordang" href="halphadiag_xsd.html#halpha_setup_verchordang" coords="194,258,294,282" />
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_second_point" href="halphadiag_xsd.html#halpha_setup_second_point" coords="194,335,298,359" />
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_solidangle" href="halphadiag_xsd.html#halpha_setup_solidangle" coords="194,412,280,436" />
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup" href="halphadiag_xsd.html#halpha_setup" coords="112,3,235,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="halphadiag_xsd.html#halpha_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">halpha_setup</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_halphadiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_halphadiag_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_halphadiag_setup" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_halphadiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('model_halphadiag_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_halphadiag_setup" style="display:block"><b><a href="halphadiag_xsd.html#halpha_setup_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">name</a></b> , <b><a href="halphadiag_xsd.html#halpha_setup_pivot_point" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">pivot_point</a></b> , <b><a href="halphadiag_xsd.html#halpha_setup_horchordang" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">horchordang</a></b> , <b><a href="halphadiag_xsd.html#halpha_setup_verchordang" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">verchordang</a></b> , <b><a href="halphadiag_xsd.html#halpha_setup_second_point" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">second_point</a></b> , <b><a href="halphadiag_xsd.html#halpha_setup_solidangle" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">solidangle</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="halphadiag_xsd.html#halpha_setup_horchordang" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">horchordang</a></b>, <b><a href="halphadiag_xsd.html#halpha_setup_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">name</a></b>, <b><a href="halphadiag_xsd.html#halpha_setup_pivot_point" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">pivot_point</a></b>, <b><a href="halphadiag_xsd.html#halpha_setup_second_point" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">second_point</a></b>, <b><a href="halphadiag_xsd.html#halpha_setup_solidangle" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">solidangle</a></b>, <b><a href="halphadiag_xsd.html#halpha_setup_verchordang" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">verchordang</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_halphadiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_halphadiag_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_halphadiag_setup" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;setup</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;name</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/name&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;pivot_point</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/pivot_point&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;horchordang</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/horchordang&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;verchordang</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/verchordang&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;second_point</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/second_point&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;solidangle</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/solidangle&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/setup&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_halphadiag_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('source_halphadiag_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_halphadiag_setup" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"setup"</span><span class="tAN"> type=</span><span class="tAV">"halpha_setup"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">setup for the lines of sight of the line integrated measurement</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="halpha_setup_name"></a><div class="componentTitle">Element <span class="qname"><b><a href="halphadiag_xsd.html#halpha_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">halpha_setup</a></b> / name</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_halpha_setup_name" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_halpha_setup_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_halpha_setup_name" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Name of the channel.  Array of strings (nlos).</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_halpha_setup_name" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_halpha_setup_name');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_halpha_setup_name" style="display:block"><img alt="Diagram" border="0" src="img/halphadiag_xsd_Element_name.png" usemap="#halphadiag_xsd_Element_name" /><map name="halphadiag_xsd_Element_name" id="halphadiag_xsd_Element_name">
+                                 <area alt="utilities_xsd.tmp#vecstring_type" href="utilities_xsd.html#vecstring_type" coords="108,0,242,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecstring_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecstring_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_halpha_setup_name" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_halpha_setup_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_halpha_setup_name" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_halpha_setup_name" type="image" src="img/btM.gif" value="-" onclick="switchState('source_halpha_setup_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_halpha_setup_name" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of the channel. Array of strings (nlos).</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="halpha_setup_pivot_point"></a><div class="componentTitle">Element <span class="qname"><b><a href="halphadiag_xsd.html#halpha_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">halpha_setup</a></b> / pivot_point</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_halpha_setup_pivot_point" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_halpha_setup_pivot_point');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_halpha_setup_pivot_point" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Pivot point of l.o.s. it can be either the collimator position or entry point on the vessel. Vector (nlos)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_halpha_setup_pivot_point" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_halpha_setup_pivot_point');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_halpha_setup_pivot_point" style="display:block"><img alt="Diagram" border="0" src="img/halphadiag_xsd_Element_pivot_point.png" usemap="#halphadiag_xsd_Element_pivot_point" /><map name="halphadiag_xsd_Element_pivot_point" id="halphadiag_xsd_Element_pivot_point">
+                                 <area alt="utilities_xsd.tmp#rzphi1D_r" href="utilities_xsd.html#rzphi1D_r" coords="225,40,276,64" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D_z" href="utilities_xsd.html#rzphi1D_z" coords="225,104,276,128" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D_phi" href="utilities_xsd.html#rzphi1D_phi" coords="225,168,276,192" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D" href="utilities_xsd.html#rzphi1D" coords="143,3,237,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#rzphi1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">rzphi1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_halpha_setup_pivot_point" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_halpha_setup_pivot_point');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_halpha_setup_pivot_point" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_halpha_setup_pivot_point" type="image" src="img/btM.gif" value="-" onclick="switchState('model_halpha_setup_pivot_point');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_halpha_setup_pivot_point" style="display:block"><b><a href="utilities_xsd.html#rzphi1D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b> , <b><a href="utilities_xsd.html#rzphi1D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b> , <b><a href="utilities_xsd.html#rzphi1D_phi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">phi</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#rzphi1D_phi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">phi</a></b>, <b><a href="utilities_xsd.html#rzphi1D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b>, <b><a href="utilities_xsd.html#rzphi1D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_halpha_setup_pivot_point" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_halpha_setup_pivot_point');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_halpha_setup_pivot_point" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;pivot_point</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;r</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/r&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;z</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/z&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;phi</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/phi&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/pivot_point&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_halpha_setup_pivot_point" type="image" src="img/btM.gif" value="-" onclick="switchState('source_halpha_setup_pivot_point');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_halpha_setup_pivot_point" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"pivot_point"</span><span class="tAN"> type=</span><span class="tAV">"rzphi1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Pivot point of l.o.s. it can be either the collimator position or entry point on the vessel. Vector (nlos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="halpha_setup_horchordang"></a><div class="componentTitle">Element <span class="qname"><b><a href="halphadiag_xsd.html#halpha_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">halpha_setup</a></b> / horchordang</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_halpha_setup_horchordang" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_halpha_setup_horchordang');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_halpha_setup_horchordang" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Angle [rad] of horizontal projection of l.o.s. with poloidal cross section (0 for HFS to LFS trajectory - see Convention_angles_interfdiag.pdf) [rad]. Vector (nlos)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_halpha_setup_horchordang" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_halpha_setup_horchordang');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_halpha_setup_horchordang" style="display:block"><img alt="Diagram" border="0" src="img/halphadiag_xsd_Element_horchordang.png" usemap="#halphadiag_xsd_Element_horchordang" /><map name="halphadiag_xsd_Element_horchordang" id="halphadiag_xsd_Element_horchordang">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="150,0,263,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_halpha_setup_horchordang" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_halpha_setup_horchordang');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_halpha_setup_horchordang" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_halpha_setup_horchordang" type="image" src="img/btM.gif" value="-" onclick="switchState('source_halpha_setup_horchordang');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_halpha_setup_horchordang" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"horchordang"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Angle [rad] of horizontal projection of l.o.s. with poloidal cross section (0 for HFS to LFS trajectory - see Convention_angles_interfdiag.pdf) [rad]. Vector (nlos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="halpha_setup_verchordang"></a><div class="componentTitle">Element <span class="qname"><b><a href="halphadiag_xsd.html#halpha_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">halpha_setup</a></b> / verchordang</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_halpha_setup_verchordang" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_halpha_setup_verchordang');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_halpha_setup_verchordang" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Angle of l.o.s. with vertical axis (0 for bottom-top trajectory, Pi for top-bottom trajectory - see Convention_angles_interfdiag.pdf) [rad]; Vector (npos)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_halpha_setup_verchordang" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_halpha_setup_verchordang');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_halpha_setup_verchordang" style="display:block"><img alt="Diagram" border="0" src="img/halphadiag_xsd_Element_verchordang.png" usemap="#halphadiag_xsd_Element_verchordang" /><map name="halphadiag_xsd_Element_verchordang" id="halphadiag_xsd_Element_verchordang">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="148,0,261,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_halpha_setup_verchordang" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_halpha_setup_verchordang');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_halpha_setup_verchordang" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_halpha_setup_verchordang" type="image" src="img/btM.gif" value="-" onclick="switchState('source_halpha_setup_verchordang');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_halpha_setup_verchordang" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"verchordang"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Angle of l.o.s. with vertical axis (0 for bottom-top trajectory, Pi for top-bottom trajectory - see Convention_angles_interfdiag.pdf) [rad]; Vector (npos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="halpha_setup_second_point"></a><div class="componentTitle">Element <span class="qname"><b><a href="halphadiag_xsd.html#halpha_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">halpha_setup</a></b> / second_point</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_halpha_setup_second_point" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_halpha_setup_second_point');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_halpha_setup_second_point" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Second point defining the l.o.s. together with the pivot_point. Vector (nlos)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_halpha_setup_second_point" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_halpha_setup_second_point');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_halpha_setup_second_point" style="display:block"><img alt="Diagram" border="0" src="img/halphadiag_xsd_Element_second_point.png" usemap="#halphadiag_xsd_Element_second_point" /><map name="halphadiag_xsd_Element_second_point" id="halphadiag_xsd_Element_second_point">
+                                 <area alt="utilities_xsd.tmp#rzphi1D_r" href="utilities_xsd.html#rzphi1D_r" coords="237,40,288,64" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D_z" href="utilities_xsd.html#rzphi1D_z" coords="237,104,288,128" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D_phi" href="utilities_xsd.html#rzphi1D_phi" coords="237,168,288,192" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D" href="utilities_xsd.html#rzphi1D" coords="155,3,249,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#rzphi1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">rzphi1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_halpha_setup_second_point" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_halpha_setup_second_point');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_halpha_setup_second_point" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_halpha_setup_second_point" type="image" src="img/btM.gif" value="-" onclick="switchState('model_halpha_setup_second_point');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_halpha_setup_second_point" style="display:block"><b><a href="utilities_xsd.html#rzphi1D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b> , <b><a href="utilities_xsd.html#rzphi1D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b> , <b><a href="utilities_xsd.html#rzphi1D_phi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">phi</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#rzphi1D_phi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">phi</a></b>, <b><a href="utilities_xsd.html#rzphi1D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b>, <b><a href="utilities_xsd.html#rzphi1D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_halpha_setup_second_point" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_halpha_setup_second_point');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_halpha_setup_second_point" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;second_point</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;r</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/r&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;z</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/z&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;phi</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/phi&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/second_point&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_halpha_setup_second_point" type="image" src="img/btM.gif" value="-" onclick="switchState('source_halpha_setup_second_point');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_halpha_setup_second_point" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"second_point"</span><span class="tAN"> type=</span><span class="tAV">"rzphi1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Second point defining the l.o.s. together with the pivot_point. Vector (nlos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="halpha_setup_solidangle"></a><div class="componentTitle">Element <span class="qname"><b><a href="halphadiag_xsd.html#halpha_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">halpha_setup</a></b> / solidangle</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_halpha_setup_solidangle" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_halpha_setup_solidangle');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_halpha_setup_solidangle" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Solid angle of the detector; [sr] Vector (nlos)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_halpha_setup_solidangle" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_halpha_setup_solidangle');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_halpha_setup_solidangle" style="display:block"><img alt="Diagram" border="0" src="img/halphadiag_xsd_Element_solidangle.png" usemap="#halphadiag_xsd_Element_solidangle" /><map name="halphadiag_xsd_Element_solidangle" id="halphadiag_xsd_Element_solidangle">
+                                 <area alt="utilities_xsd.tmp#exp1D_value" href="utilities_xsd.html#exp1D_value" coords="219,40,278,64" />
+                                 <area alt="utilities_xsd.tmp#exp1D_abserror" href="utilities_xsd.html#exp1D_abserror" coords="219,104,297,128" />
+                                 <area alt="utilities_xsd.tmp#exp1D_relerror" href="utilities_xsd.html#exp1D_relerror" coords="219,168,292,192" />
+                                 <area alt="utilities_xsd.tmp#exp1D" href="utilities_xsd.html#exp1D" coords="137,3,223,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">exp1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_halpha_setup_solidangle" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_halpha_setup_solidangle');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_halpha_setup_solidangle" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_halpha_setup_solidangle" type="image" src="img/btM.gif" value="-" onclick="switchState('model_halpha_setup_solidangle');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_halpha_setup_solidangle" style="display:block"><b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b> , <b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b> , <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b>, <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b>, <b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_halpha_setup_solidangle" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_halpha_setup_solidangle');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_halpha_setup_solidangle" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;solidangle</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;value</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/value&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;abserror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/abserror&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;relerror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/relerror&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/solidangle&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_halpha_setup_solidangle" type="image" src="img/btM.gif" value="-" onclick="switchState('source_halpha_setup_solidangle');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_halpha_setup_solidangle" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"solidangle"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Solid angle of the detector; [sr] Vector (nlos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="halphadiag_intensity"></a><div class="componentTitle">Element <span class="qname"><b><a href="halphadiag_xsd.html#halphadiag" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">halphadiag</a></b> / intensity</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_halphadiag_intensity" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_halphadiag_intensity');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_halphadiag_intensity" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Measured light intensity (a.u.).  Time-dependent. Vector (nlos)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_halphadiag_intensity" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_halphadiag_intensity');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_halphadiag_intensity" style="display:block"><img alt="Diagram" border="0" src="img/halphadiag_xsd_Element_intensity.png" usemap="#halphadiag_xsd_Element_intensity" /><map name="halphadiag_xsd_Element_intensity" id="halphadiag_xsd_Element_intensity">
+                                 <area alt="utilities_xsd.tmp#exp1D_value" href="utilities_xsd.html#exp1D_value" coords="210,40,269,64" />
+                                 <area alt="utilities_xsd.tmp#exp1D_abserror" href="utilities_xsd.html#exp1D_abserror" coords="210,104,288,128" />
+                                 <area alt="utilities_xsd.tmp#exp1D_relerror" href="utilities_xsd.html#exp1D_relerror" coords="210,168,283,192" />
+                                 <area alt="utilities_xsd.tmp#exp1D" href="utilities_xsd.html#exp1D" coords="128,3,214,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">exp1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_halphadiag_intensity" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_halphadiag_intensity');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_halphadiag_intensity" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_halphadiag_intensity" type="image" src="img/btM.gif" value="-" onclick="switchState('model_halphadiag_intensity');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_halphadiag_intensity" style="display:block"><b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b> , <b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b> , <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b>, <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b>, <b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_halphadiag_intensity" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_halphadiag_intensity');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_halphadiag_intensity" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;intensity</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;value</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/value&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;abserror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/abserror&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;relerror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/relerror&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/intensity&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_halphadiag_intensity" type="image" src="img/btM.gif" value="-" onclick="switchState('source_halphadiag_intensity');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_halphadiag_intensity" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"intensity"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Measured light intensity (a.u.). Time-dependent. Vector (nlos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="halphadiag_time"></a><div class="componentTitle">Element <span class="qname"><b><a href="halphadiag_xsd.html#halphadiag" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">halphadiag</a></b> / time</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_halphadiag_time" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_halphadiag_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_halphadiag_time" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Time [s]; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_halphadiag_time" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_halphadiag_time');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_halphadiag_time" style="display:block"><img alt="Diagram" border="0" src="img/halphadiag_xsd_Element_time.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_halphadiag_time" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_halphadiag_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_halphadiag_time" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_halphadiag_time" type="image" src="img/btM.gif" value="-" onclick="switchState('source_halphadiag_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_halphadiag_time" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"time"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Time [s]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="halpha_setup"></a><div class="componentTitle">Complex Type <span class="qname">halpha_setup</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_halpha_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_halpha_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_halpha_setup" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">setup for the lines of sight of the line integrated measurement</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_halpha_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_halpha_setup');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_halpha_setup" style="display:block"><img alt="Diagram" border="0" src="img/halphadiag_xsd_Complex_Type_halpha_setup.png" usemap="#halphadiag_xsd_Complex_Type_halpha_setup" /><map name="halphadiag_xsd_Complex_Type_halpha_setup" id="halphadiag_xsd_Complex_Type_halpha_setup">
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_name" href="halphadiag_xsd.html#halpha_setup_name" coords="246,0,306,24" />
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_pivot_point" href="halphadiag_xsd.html#halpha_setup_pivot_point" coords="246,64,338,88" />
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_horchordang" href="halphadiag_xsd.html#halpha_setup_horchordang" coords="246,141,348,165" />
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_verchordang" href="halphadiag_xsd.html#halpha_setup_verchordang" coords="246,218,346,242" />
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_second_point" href="halphadiag_xsd.html#halpha_setup_second_point" coords="246,295,350,319" />
+                                 <area alt="halphadiag_xsd.tmp#halpha_setup_solidangle" href="halphadiag_xsd.html#halpha_setup_solidangle" coords="246,372,332,396" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_halpha_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_halpha_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_halpha_setup" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="halphadiag_xsd.html#halphadiag_setup" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">halphadiag/setup</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_halpha_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('model_halpha_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_halpha_setup" style="display:block"><b><a href="halphadiag_xsd.html#halpha_setup_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">name</a></b> , <b><a href="halphadiag_xsd.html#halpha_setup_pivot_point" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">pivot_point</a></b> , <b><a href="halphadiag_xsd.html#halpha_setup_horchordang" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">horchordang</a></b> , <b><a href="halphadiag_xsd.html#halpha_setup_verchordang" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">verchordang</a></b> , <b><a href="halphadiag_xsd.html#halpha_setup_second_point" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">second_point</a></b> , <b><a href="halphadiag_xsd.html#halpha_setup_solidangle" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">solidangle</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="halphadiag_xsd.html#halpha_setup_horchordang" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">horchordang</a></b>, <b><a href="halphadiag_xsd.html#halpha_setup_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">name</a></b>, <b><a href="halphadiag_xsd.html#halpha_setup_pivot_point" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">pivot_point</a></b>, <b><a href="halphadiag_xsd.html#halpha_setup_second_point" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">second_point</a></b>, <b><a href="halphadiag_xsd.html#halpha_setup_solidangle" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">solidangle</a></b>, <b><a href="halphadiag_xsd.html#halpha_setup_verchordang" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for halphadiag.xsd')">verchordang</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_halpha_setup" type="image" src="img/btM.gif" value="-" onclick="switchState('source_halpha_setup');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_halpha_setup" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"halpha_setup"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">setup for the lines of sight of the line integrated measurement</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of the channel. Array of strings (nlos).</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"pivot_point"</span><span class="tAN"> type=</span><span class="tAV">"rzphi1D"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Pivot point of l.o.s. it can be either the collimator position or entry point on the vessel. Vector (nlos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"horchordang"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Angle [rad] of horizontal projection of l.o.s. with poloidal cross section (0 for HFS to LFS trajectory - see Convention_angles_interfdiag.pdf) [rad]. Vector (nlos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"verchordang"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Angle of l.o.s. with vertical axis (0 for bottom-top trajectory, Pi for top-bottom trajectory - see Convention_angles_interfdiag.pdf) [rad]; Vector (npos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"second_point"</span><span class="tAN"> type=</span><span class="tAV">"rzphi1D"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Second point defining the l.o.s. together with the pivot_point. Vector (nlos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"solidangle"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Solid angle of the detector; [sr] Vector (nlos)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:complexType&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
+         </div>
+      </div><script type="text/javascript">
+         <!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>

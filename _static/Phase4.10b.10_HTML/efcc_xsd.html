@@ -1,0 +1,1975 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for efcc.xsd</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
+         <!--
+        var propertiesBoxes= new Array('properties_efcc.xsd', 
+				'properties_efcc', 
+				'properties_efcc_coil', 
+				'properties_efcc_efcc_coil_desc_coils', 
+				'properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name', 
+				'properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res', 
+				'properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns', 
+				'properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed', 
+				'properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges', 
+				'properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi', 
+				'properties_efcc_efcc_coil_coilcurrent', 
+				'properties_efcc_efcc_coil_coilvoltage', 
+				'properties_efcc_time');
+var usedByBoxes= new Array('usedBy_efcc');
+var sourceBoxes= new Array('source_efcc', 
+				'source_efcc_coil', 
+				'source_efcc_efcc_coil_desc_coils', 
+				'source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name', 
+				'source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res', 
+				'source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns', 
+				'source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed', 
+				'source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges', 
+				'source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi', 
+				'source_efcc_efcc_coil_coilcurrent', 
+				'source_efcc_efcc_coil_coilvoltage', 
+				'source_efcc_time');
+var instanceBoxes= new Array('instance_efcc', 
+				'instance_efcc_coil', 
+				'instance_efcc_efcc_coil_desc_coils', 
+				'instance_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges', 
+				'instance_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi', 
+				'instance_efcc_efcc_coil_coilcurrent', 
+				'instance_efcc_efcc_coil_coilvoltage');
+var diagramBoxes= new Array('diagram_efcc', 
+				'diagram_efcc_coil', 
+				'diagram_efcc_efcc_coil_desc_coils', 
+				'diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name', 
+				'diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res', 
+				'diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns', 
+				'diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed', 
+				'diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges', 
+				'diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi', 
+				'diagram_efcc_efcc_coil_coilcurrent', 
+				'diagram_efcc_efcc_coil_coilvoltage', 
+				'diagram_efcc_time');
+var annotationBoxes= new Array('annotations_efcc', 
+				'annotations_efcc_coil', 
+				'annotations_efcc_efcc_coil_desc_coils', 
+				'annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name', 
+				'annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res', 
+				'annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns', 
+				'annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed', 
+				'annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges', 
+				'annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi', 
+				'annotations_efcc_efcc_coil_coilcurrent', 
+				'annotations_efcc_efcc_coil_coilvoltage', 
+				'annotations_efcc_time');
+var modelBoxes= new Array('model_efcc', 
+				'model_efcc_coil', 
+				'model_efcc_efcc_coil_desc_coils', 
+				'model_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges', 
+				'model_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi', 
+				'model_efcc_efcc_coil_coilcurrent', 
+				'model_efcc_efcc_coil_coilvoltage');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="efcc.xsd"></a><div class="componentTitle">Included schema <span class="qname">efcc.xsd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc.xsd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">attribute form default</td>
+                                    <td><b>unqualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">element form default</td>
+                                    <td><b>qualified</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc"></a><div class="componentTitle">Element <span class="qname">efcc</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Error field correction coils. Time-dependent CPO.</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_efcc.png" usemap="#efcc_xsd_Element_efcc" /><map name="efcc_xsd_Element_efcc" id="efcc_xsd_Element_efcc">
+                                 <area alt="utilities_xsd.tmp#datainfo" href="utilities_xsd.html#datainfo" coords="193,2,268,26" />
+                                 <area alt="efcc_xsd.tmp#efcc_coil" href="efcc_xsd.html#efcc_coil" coords="193,66,244,90" />
+                                 <area alt="efcc_xsd.tmp#efcc_time" href="efcc_xsd.html#efcc_time" coords="193,156,247,180" />
+                                 <area alt="utilities_xsd.tmp#codeparam" href="utilities_xsd.html#codeparam" coords="193,220,284,244" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_efcc" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_efcc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_efcc" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="Phase4TOP_xsd.html#top" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for Phase4TOP.xsd')">top</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_efcc" type="image" src="img/btM.gif" value="-" onclick="switchState('model_efcc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_efcc" style="display:block"><b><a href="utilities_xsd.html#datainfo" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">datainfo</a></b> , <b><a href="efcc_xsd.html#efcc_coil" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coil+</a></b> , <b><a href="efcc_xsd.html#efcc_time" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">time</a></b> , <b><a href="utilities_xsd.html#codeparam" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">codeparam</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#codeparam" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">codeparam</a></b>, <b><a href="efcc_xsd.html#efcc_coil" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coil</a></b>, <b><a href="utilities_xsd.html#datainfo" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">datainfo</a></b>, <b><a href="efcc_xsd.html#efcc_time" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">time</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_efcc" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_efcc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_efcc" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;efcc</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;datainfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/datainfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;coil</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/coil&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;time</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/time&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;codeparam</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/codeparam&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/efcc&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"efcc"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Error field correction coils. Time-dependent CPO.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"datainfo"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"coil"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Individual coil. Time-dependent. Structure array. Replicate this coil structure for coil element in the efcc array.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"desc_coils"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Description of the coils</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of coil.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"res"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coil resistance [Ohm]</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"nturns"</span><span class="tAN"> type=</span><span class="tAV">"xs:integer"</span><span class="tEl">&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">number of turns inside the coil</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"closed"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Identify whether the coil is closed (y) or open (n). For closed coils there is no need to replicate the first r,z,phi point as last point</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"edges"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Edges defining the coil volume faces. Structure array. Replicate this edge structure N-times for N-edge cross sections. Use just one for wire coil approximation.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+                        </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"edge_rzphi"</span><span class="tAN"> type=</span><span class="tAV">"rzphi1D"</span><span class="tEl">&gt;</span><span class="tI">
+                          </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                            </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                            </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Sequence of points describing a coil edge. Vector (npoints)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                          </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+                        </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"coilcurrent"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Circuit feed current in the coil, defined positive if it flows from point 1 to point 2 of the geometry description [A]; Time-dependent</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"coilvoltage"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Voltage on the full coil [V]; Time-dependent</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"time"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Time [s]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"codeparam"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc_coil"></a><div class="componentTitle">Element <span class="qname"><b><a href="efcc_xsd.html#efcc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">efcc</a></b> / coil</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc_coil" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc_coil');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc_coil" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Individual coil. Time-dependent. Structure array. Replicate this coil structure for coil element in the efcc array.</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc_coil" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc_coil');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc_coil" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_coil.png" usemap="#efcc_xsd_Element_coil" /><map name="efcc_xsd_Element_coil" id="efcc_xsd_Element_coil">
+                                 <area alt="efcc_xsd.tmp#efcc_efcc_coil_desc_coils" href="efcc_xsd.html#efcc_efcc_coil_desc_coils" coords="170,2,257,26" />
+                                 <area alt="efcc_xsd.tmp#efcc_efcc_coil_coilcurrent" href="efcc_xsd.html#efcc_efcc_coil_coilcurrent" coords="170,66,260,90" />
+                                 <area alt="efcc_xsd.tmp#efcc_efcc_coil_coilvoltage" href="efcc_xsd.html#efcc_efcc_coil_coilvoltage" coords="170,156,259,180" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc_coil" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc_coil');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc_coil" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_efcc_coil" type="image" src="img/btM.gif" value="-" onclick="switchState('model_efcc_coil');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_efcc_coil" style="display:block"><b><a href="efcc_xsd.html#efcc_efcc_coil_desc_coils" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">desc_coils</a></b> , <b><a href="efcc_xsd.html#efcc_efcc_coil_coilcurrent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coilcurrent</a></b> , <b><a href="efcc_xsd.html#efcc_efcc_coil_coilvoltage" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coilvoltage</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="efcc_xsd.html#efcc_efcc_coil_coilcurrent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coilcurrent</a></b>, <b><a href="efcc_xsd.html#efcc_efcc_coil_coilvoltage" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coilvoltage</a></b>, <b><a href="efcc_xsd.html#efcc_efcc_coil_desc_coils" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">desc_coils</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_efcc_coil" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_efcc_coil');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_efcc_coil" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;coil</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;desc_coils</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/desc_coils&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;coilcurrent</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/coilcurrent&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;coilvoltage</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/coilvoltage&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/coil&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc_coil" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc_coil');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc_coil" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"coil"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Individual coil. Time-dependent. Structure array. Replicate this coil structure for coil element in the efcc array.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"desc_coils"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Description of the coils</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of coil.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"res"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coil resistance [Ohm]</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"nturns"</span><span class="tAN"> type=</span><span class="tAV">"xs:integer"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">number of turns inside the coil</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"closed"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Identify whether the coil is closed (y) or open (n). For closed coils there is no need to replicate the first r,z,phi point as last point</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"edges"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Edges defining the coil volume faces. Structure array. Replicate this edge structure N-times for N-edge cross sections. Use just one for wire coil approximation.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"edge_rzphi"</span><span class="tAN"> type=</span><span class="tAV">"rzphi1D"</span><span class="tEl">&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Sequence of points describing a coil edge. Vector (npoints)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"coilcurrent"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Circuit feed current in the coil, defined positive if it flows from point 1 to point 2 of the geometry description [A]; Time-dependent</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"coilvoltage"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Voltage on the full coil [V]; Time-dependent</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc_efcc_coil_desc_coils"></a><div class="componentTitle">Element <span class="qname"><b><a href="efcc_xsd.html#efcc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">efcc</a></b> / <b><a href="efcc_xsd.html#efcc_coil" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coil</a></b> / desc_coils</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc_efcc_coil_desc_coils" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc_efcc_coil_desc_coils');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc_efcc_coil_desc_coils" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Description of the coils</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc_efcc_coil_desc_coils" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc_efcc_coil_desc_coils');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc_efcc_coil_desc_coils" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_desc_coils.png" usemap="#efcc_xsd_Element_desc_coils" /><map name="efcc_xsd_Element_desc_coils" id="efcc_xsd_Element_desc_coils">
+                                 <area alt="efcc_xsd.tmp#efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" coords="227,2,287,26" />
+                                 <area alt="efcc_xsd.tmp#efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" coords="227,66,278,90" />
+                                 <area alt="efcc_xsd.tmp#efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" coords="227,130,294,154" />
+                                 <area alt="efcc_xsd.tmp#efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" coords="227,194,293,218" />
+                                 <area alt="efcc_xsd.tmp#efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" coords="227,284,290,308" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc_efcc_coil_desc_coils" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc_efcc_coil_desc_coils');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc_efcc_coil_desc_coils" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_efcc_efcc_coil_desc_coils" type="image" src="img/btM.gif" value="-" onclick="switchState('model_efcc_efcc_coil_desc_coils');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_efcc_efcc_coil_desc_coils" style="display:block"><b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">name</a></b> , <b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">res</a></b> , <b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">nturns</a></b> , <b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">closed</a></b> , <b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">edges+</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">closed</a></b>, <b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">edges</a></b>, <b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">name</a></b>, <b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">nturns</a></b>, <b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">res</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_efcc_efcc_coil_desc_coils" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_efcc_efcc_coil_desc_coils');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_efcc_efcc_coil_desc_coils" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;desc_coils</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;name</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/name&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;res</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/res&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;nturns</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/nturns&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;closed</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/closed&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;edges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/edges&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/desc_coils&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc_efcc_coil_desc_coils" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc_efcc_coil_desc_coils');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc_efcc_coil_desc_coils" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"desc_coils"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Description of the coils</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of coil.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"res"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coil resistance [Ohm]</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"nturns"</span><span class="tAN"> type=</span><span class="tAV">"xs:integer"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">number of turns inside the coil</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"closed"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Identify whether the coil is closed (y) or open (n). For closed coils there is no need to replicate the first r,z,phi point as last point</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"edges"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Edges defining the coil volume faces. Structure array. Replicate this edge structure N-times for N-edge cross sections. Use just one for wire coil approximation.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"edge_rzphi"</span><span class="tAN"> type=</span><span class="tAV">"rzphi1D"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Sequence of points describing a coil edge. Vector (npoints)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc_efcc_coil_efcc_efcc_coil_desc_coils_name"></a><div class="componentTitle">Element <span class="qname"><b><a href="efcc_xsd.html#efcc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">efcc</a></b> / <b><a href="efcc_xsd.html#efcc_coil" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coil</a></b> / <b><a href="efcc_xsd.html#efcc_efcc_coil_desc_coils" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">desc_coils</a></b> / name</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Name of coil.</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_name.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_name" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of coil.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc_efcc_coil_efcc_efcc_coil_desc_coils_res"></a><div class="componentTitle">Element <span class="qname"><b><a href="efcc_xsd.html#efcc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">efcc</a></b> / <b><a href="efcc_xsd.html#efcc_coil" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coil</a></b> / <b><a href="efcc_xsd.html#efcc_efcc_coil_desc_coils" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">desc_coils</a></b> / res</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Coil resistance [Ohm]</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_res.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_res" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"res"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coil resistance [Ohm]</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns"></a><div class="componentTitle">Element <span class="qname"><b><a href="efcc_xsd.html#efcc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">efcc</a></b> / <b><a href="efcc_xsd.html#efcc_coil" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coil</a></b> / <b><a href="efcc_xsd.html#efcc_efcc_coil_desc_coils" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">desc_coils</a></b> / nturns</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">number of turns inside the coil</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_nturns.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:integer</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_nturns" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"nturns"</span><span class="tAN"> type=</span><span class="tAV">"xs:integer"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">number of turns inside the coil</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed"></a><div class="componentTitle">Element <span class="qname"><b><a href="efcc_xsd.html#efcc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">efcc</a></b> / <b><a href="efcc_xsd.html#efcc_coil" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coil</a></b> / <b><a href="efcc_xsd.html#efcc_efcc_coil_desc_coils" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">desc_coils</a></b> / closed</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Identify whether the coil is closed (y) or open (n). For closed coils there is no need to replicate the first r,z,phi point as last point</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_closed.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_closed" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"closed"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Identify whether the coil is closed (y) or open (n). For closed coils there is no need to replicate the first r,z,phi point as last point</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges"></a><div class="componentTitle">Element <span class="qname"><b><a href="efcc_xsd.html#efcc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">efcc</a></b> / <b><a href="efcc_xsd.html#efcc_coil" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coil</a></b> / <b><a href="efcc_xsd.html#efcc_efcc_coil_desc_coils" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">desc_coils</a></b> / edges</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Edges defining the coil volume faces. Structure array. Replicate this edge structure N-times for N-edge cross sections. Use just one for wire coil approximation.</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_edges.png" usemap="#efcc_xsd_Element_edges" /><map name="efcc_xsd_Element_edges" id="efcc_xsd_Element_edges">
+                                 <area alt="efcc_xsd.tmp#efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" coords="182,6,273,30" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" type="image" src="img/btM.gif" value="-" onclick="switchState('model_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" style="display:block"><b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">edge_rzphi</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">edge_rzphi</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;edges</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;edge_rzphi</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/edge_rzphi&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/edges&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"edges"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Edges defining the coil volume faces. Structure array. Replicate this edge structure N-times for N-edge cross sections. Use just one for wire coil approximation.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"edge_rzphi"</span><span class="tAN"> type=</span><span class="tAV">"rzphi1D"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Sequence of points describing a coil edge. Vector (npoints)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi"></a><div class="componentTitle">Element <span class="qname"><b><a href="efcc_xsd.html#efcc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">efcc</a></b> / <b><a href="efcc_xsd.html#efcc_coil" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coil</a></b> / <b><a href="efcc_xsd.html#efcc_efcc_coil_desc_coils" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">desc_coils</a></b> / <b><a href="efcc_xsd.html#efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">edges</a></b> / edge_rzphi</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Sequence of points describing a coil edge. Vector (npoints)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_edge_rzphi.png" usemap="#efcc_xsd_Element_edge_rzphi" /><map name="efcc_xsd_Element_edge_rzphi" id="efcc_xsd_Element_edge_rzphi">
+                                 <area alt="utilities_xsd.tmp#rzphi1D_r" href="utilities_xsd.html#rzphi1D_r" coords="224,40,275,64" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D_z" href="utilities_xsd.html#rzphi1D_z" coords="224,104,275,128" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D_phi" href="utilities_xsd.html#rzphi1D_phi" coords="224,168,275,192" />
+                                 <area alt="utilities_xsd.tmp#rzphi1D" href="utilities_xsd.html#rzphi1D" coords="142,3,236,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#rzphi1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">rzphi1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" type="image" src="img/btM.gif" value="-" onclick="switchState('model_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" style="display:block"><b><a href="utilities_xsd.html#rzphi1D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b> , <b><a href="utilities_xsd.html#rzphi1D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b> , <b><a href="utilities_xsd.html#rzphi1D_phi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">phi</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#rzphi1D_phi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">phi</a></b>, <b><a href="utilities_xsd.html#rzphi1D_r" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">r</a></b>, <b><a href="utilities_xsd.html#rzphi1D_z" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">z</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;edge_rzphi</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;r</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/r&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;z</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/z&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;phi</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/phi&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/edge_rzphi&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc_efcc_coil_efcc_efcc_coil_desc_coils_efcc_efcc_coil_efcc_efcc_coil_desc_coils_edges_edge_rzphi" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"edge_rzphi"</span><span class="tAN"> type=</span><span class="tAV">"rzphi1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Sequence of points describing a coil edge. Vector (npoints)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc_efcc_coil_coilcurrent"></a><div class="componentTitle">Element <span class="qname"><b><a href="efcc_xsd.html#efcc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">efcc</a></b> / <b><a href="efcc_xsd.html#efcc_coil" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coil</a></b> / coilcurrent</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc_efcc_coil_coilcurrent" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc_efcc_coil_coilcurrent');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc_efcc_coil_coilcurrent" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Circuit feed current in the coil, defined positive if it flows from point 1 to point 2 of the geometry description [A]; Time-dependent</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc_efcc_coil_coilcurrent" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc_efcc_coil_coilcurrent');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc_efcc_coil_coilcurrent" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_coilcurrent.png" usemap="#efcc_xsd_Element_coilcurrent" /><map name="efcc_xsd_Element_coilcurrent" id="efcc_xsd_Element_coilcurrent">
+                                 <area alt="utilities_xsd.tmp#exp1D_value" href="utilities_xsd.html#exp1D_value" coords="223,40,282,64" />
+                                 <area alt="utilities_xsd.tmp#exp1D_abserror" href="utilities_xsd.html#exp1D_abserror" coords="223,104,301,128" />
+                                 <area alt="utilities_xsd.tmp#exp1D_relerror" href="utilities_xsd.html#exp1D_relerror" coords="223,168,296,192" />
+                                 <area alt="utilities_xsd.tmp#exp1D" href="utilities_xsd.html#exp1D" coords="141,3,227,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">exp1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc_efcc_coil_coilcurrent" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc_efcc_coil_coilcurrent');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc_efcc_coil_coilcurrent" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_efcc_efcc_coil_coilcurrent" type="image" src="img/btM.gif" value="-" onclick="switchState('model_efcc_efcc_coil_coilcurrent');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_efcc_efcc_coil_coilcurrent" style="display:block"><b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b> , <b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b> , <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b>, <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b>, <b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_efcc_efcc_coil_coilcurrent" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_efcc_efcc_coil_coilcurrent');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_efcc_efcc_coil_coilcurrent" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;coilcurrent</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;value</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/value&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;abserror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/abserror&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;relerror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/relerror&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/coilcurrent&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc_efcc_coil_coilcurrent" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc_efcc_coil_coilcurrent');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc_efcc_coil_coilcurrent" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"coilcurrent"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Circuit feed current in the coil, defined positive if it flows from point 1 to point 2 of the geometry description [A]; Time-dependent</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc_efcc_coil_coilvoltage"></a><div class="componentTitle">Element <span class="qname"><b><a href="efcc_xsd.html#efcc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">efcc</a></b> / <b><a href="efcc_xsd.html#efcc_coil" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">coil</a></b> / coilvoltage</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc_efcc_coil_coilvoltage" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc_efcc_coil_coilvoltage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc_efcc_coil_coilvoltage" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Voltage on the full coil [V]; Time-dependent</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc_efcc_coil_coilvoltage" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc_efcc_coil_coilvoltage');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc_efcc_coil_coilvoltage" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_coilvoltage.png" usemap="#efcc_xsd_Element_coilvoltage" /><map name="efcc_xsd_Element_coilvoltage" id="efcc_xsd_Element_coilvoltage">
+                                 <area alt="utilities_xsd.tmp#exp1D_value" href="utilities_xsd.html#exp1D_value" coords="222,40,281,64" />
+                                 <area alt="utilities_xsd.tmp#exp1D_abserror" href="utilities_xsd.html#exp1D_abserror" coords="222,104,300,128" />
+                                 <area alt="utilities_xsd.tmp#exp1D_relerror" href="utilities_xsd.html#exp1D_relerror" coords="222,168,295,192" />
+                                 <area alt="utilities_xsd.tmp#exp1D" href="utilities_xsd.html#exp1D" coords="140,3,226,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">exp1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc_efcc_coil_coilvoltage" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc_efcc_coil_coilvoltage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc_efcc_coil_coilvoltage" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_efcc_efcc_coil_coilvoltage" type="image" src="img/btM.gif" value="-" onclick="switchState('model_efcc_efcc_coil_coilvoltage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_efcc_efcc_coil_coilvoltage" style="display:block"><b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b> , <b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b> , <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b>, <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b>, <b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_efcc_efcc_coil_coilvoltage" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_efcc_efcc_coil_coilvoltage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_efcc_efcc_coil_coilvoltage" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;coilvoltage</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;value</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/value&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;abserror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/abserror&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;relerror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/relerror&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/coilvoltage&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc_efcc_coil_coilvoltage" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc_efcc_coil_coilvoltage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc_efcc_coil_coilvoltage" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"coilvoltage"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Voltage on the full coil [V]; Time-dependent</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="efcc_time"></a><div class="componentTitle">Element <span class="qname"><b><a href="efcc_xsd.html#efcc" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for efcc.xsd')">efcc</a></b> / time</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_efcc_time" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_efcc_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_efcc_time" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Time [s]; Time-dependent; Scalar</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_efcc_time" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_efcc_time');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_efcc_time" style="display:block"><img alt="Diagram" border="0" src="img/efcc_xsd_Element_time.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:float</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_efcc_time" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_efcc_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_efcc_time" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_efcc_time" type="image" src="img/btM.gif" value="-" onclick="switchState('source_efcc_time');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_efcc_time" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"time"</span><span class="tAN"> type=</span><span class="tAV">"xs:float"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Time [s]; Time-dependent; Scalar</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
+         </div>
+      </div><script type="text/javascript">
+         <!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>

@@ -1,0 +1,2442 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for pfsupplies.xsd</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
+         <!--
+        var propertiesBoxes= new Array('properties_pfsupplies.xsd', 
+				'properties_pfsupplies', 
+				'properties_pfsupplies_desc_supply', 
+				'properties_pfsupplies_pfsupplies_desc_supply_name', 
+				'properties_pfsupplies_pfsupplies_desc_supply_id', 
+				'properties_pfsupplies_pfsupplies_desc_supply_type', 
+				'properties_pfsupplies_pfsupplies_desc_supply_delay', 
+				'properties_pfsupplies_pfsupplies_desc_supply_filter', 
+				'properties_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num', 
+				'properties_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den', 
+				'properties_pfsupplies_pfsupplies_desc_supply_imin', 
+				'properties_pfsupplies_pfsupplies_desc_supply_imax', 
+				'properties_pfsupplies_pfsupplies_desc_supply_res', 
+				'properties_pfsupplies_pfsupplies_desc_supply_umin', 
+				'properties_pfsupplies_pfsupplies_desc_supply_umax', 
+				'properties_pfsupplies_pfsupplies_desc_supply_emax', 
+				'properties_pfsupplies_voltage', 
+				'properties_pfsupplies_current');
+var usedByBoxes= new Array('usedBy_pfsupplies');
+var sourceBoxes= new Array('source_pfsupplies', 
+				'source_pfsupplies_desc_supply', 
+				'source_pfsupplies_pfsupplies_desc_supply_name', 
+				'source_pfsupplies_pfsupplies_desc_supply_id', 
+				'source_pfsupplies_pfsupplies_desc_supply_type', 
+				'source_pfsupplies_pfsupplies_desc_supply_delay', 
+				'source_pfsupplies_pfsupplies_desc_supply_filter', 
+				'source_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num', 
+				'source_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den', 
+				'source_pfsupplies_pfsupplies_desc_supply_imin', 
+				'source_pfsupplies_pfsupplies_desc_supply_imax', 
+				'source_pfsupplies_pfsupplies_desc_supply_res', 
+				'source_pfsupplies_pfsupplies_desc_supply_umin', 
+				'source_pfsupplies_pfsupplies_desc_supply_umax', 
+				'source_pfsupplies_pfsupplies_desc_supply_emax', 
+				'source_pfsupplies_voltage', 
+				'source_pfsupplies_current');
+var instanceBoxes= new Array('instance_pfsupplies', 
+				'instance_pfsupplies_desc_supply', 
+				'instance_pfsupplies_pfsupplies_desc_supply_filter', 
+				'instance_pfsupplies_voltage', 
+				'instance_pfsupplies_current');
+var diagramBoxes= new Array('diagram_pfsupplies', 
+				'diagram_pfsupplies_desc_supply', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_name', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_id', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_type', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_delay', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_filter', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_imin', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_imax', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_res', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_umin', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_umax', 
+				'diagram_pfsupplies_pfsupplies_desc_supply_emax', 
+				'diagram_pfsupplies_voltage', 
+				'diagram_pfsupplies_current');
+var annotationBoxes= new Array('annotations_pfsupplies', 
+				'annotations_pfsupplies_desc_supply', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_name', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_id', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_type', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_delay', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_filter', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_imin', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_imax', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_res', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_umin', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_umax', 
+				'annotations_pfsupplies_pfsupplies_desc_supply_emax', 
+				'annotations_pfsupplies_voltage', 
+				'annotations_pfsupplies_current');
+var modelBoxes= new Array('model_pfsupplies', 
+				'model_pfsupplies_desc_supply', 
+				'model_pfsupplies_pfsupplies_desc_supply_filter', 
+				'model_pfsupplies_voltage', 
+				'model_pfsupplies_current');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="pfsupplies.xsd"></a><div class="componentTitle">Included schema <span class="qname">pfsupplies.xsd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies.xsd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">attribute form default</td>
+                                    <td><b>unqualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">element form default</td>
+                                    <td><b>qualified</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies"></a><div class="componentTitle">Element <span class="qname">pfsupplies</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">PF power supplies</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_pfsupplies.png" usemap="#pfsupplies_xsd_Element_pfsupplies" /><map name="pfsupplies_xsd_Element_pfsupplies" id="pfsupplies_xsd_Element_pfsupplies">
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_desc_supply" href="pfsupplies_xsd.html#pfsupplies_desc_supply" coords="206,2,304,26" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_voltage" href="pfsupplies_xsd.html#pfsupplies_voltage" coords="206,66,276,90" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_current" href="pfsupplies_xsd.html#pfsupplies_current" coords="206,143,277,167" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_pfsupplies" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_pfsupplies');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_pfsupplies" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="pfsystems_xsd.html#pfsystems" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsystems.xsd')">pfsystems</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_pfsupplies" type="image" src="img/btM.gif" value="-" onclick="switchState('model_pfsupplies');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_pfsupplies" style="display:block"><b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_voltage" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">voltage</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_current" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">current</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="pfsupplies_xsd.html#pfsupplies_current" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">current</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_voltage" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">voltage</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_pfsupplies" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_pfsupplies');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_pfsupplies" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;pfsupplies</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;desc_supply</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/desc_supply&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;voltage</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/voltage&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;current</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/current&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/pfsupplies&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"pfsupplies"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">PF power supplies</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"desc_supply"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Description of the power supplies</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of the supply; Array of strings (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"id"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">ID of the supply; Array of strings (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"type"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Type of supply; Array of strings (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"delay"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Pure delay in the supply [s]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"filter"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Laplace proper filter</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"num"</span><span class="tAN"> type=</span><span class="tAV">"matflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coefficients of the numerator, in increasing order : a0 + a1*s + ... + an*s^n; Matrix (nsupplies,n)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"den"</span><span class="tAN"> type=</span><span class="tAV">"matflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coefficients of the denominator, in increasing order : b0 + b1*s + ... + bm*s^m; Matrix (nsupplies,m)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"imin"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Minimum current [A]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"imax"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Maximum current [A]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"res"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Supply internal resistance [Ohm]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"umin"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Minimum voltage [V]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"umax"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Maximum voltage [V]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"emax"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Maximum Energy to be dissipated in supply [J]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"voltage"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Voltage at the supply output [V]; Time-dependent; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"current"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Current at the supply output, defined positive if it flows from point 1 to point 2 of the component in the pfcircuit description [A]; Time-dependent; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_desc_supply"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / desc_supply</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_desc_supply" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_desc_supply');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_desc_supply" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Description of the power supplies</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_desc_supply" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_desc_supply');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_desc_supply" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_desc_supply.png" usemap="#pfsupplies_xsd_Element_desc_supply" /><map name="pfsupplies_xsd_Element_desc_supply" id="pfsupplies_xsd_Element_desc_supply">
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_name" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_name" coords="217,2,277,26" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_id" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_id" coords="217,66,268,90" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_type" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_type" coords="217,130,271,154" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_delay" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_delay" coords="217,194,276,218" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_filter" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_filter" coords="217,258,273,282" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_imin" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_imin" coords="217,322,271,346" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_imax" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_imax" coords="217,386,274,410" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_res" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_res" coords="217,450,268,474" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_umin" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_umin" coords="217,527,275,551" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_umax" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_umax" coords="217,591,278,615" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_emax" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_emax" coords="217,655,277,679" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_desc_supply" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_desc_supply');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_desc_supply" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_pfsupplies_desc_supply" type="image" src="img/btM.gif" value="-" onclick="switchState('model_pfsupplies_desc_supply');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_pfsupplies_desc_supply" style="display:block"><b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">name</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_id" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">id</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">type</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_delay" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">delay</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_filter" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">filter</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_imin" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">imin</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_imax" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">imax</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_res" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">res</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_umin" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">umin</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_umax" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">umax</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_emax" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">emax</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_delay" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">delay</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_emax" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">emax</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_filter" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">filter</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_id" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">id</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_imax" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">imax</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_imin" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">imin</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">name</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_res" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">res</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">type</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_umax" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">umax</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_umin" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">umin</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_pfsupplies_desc_supply" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_pfsupplies_desc_supply');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_pfsupplies_desc_supply" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;desc_supply</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;name</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/name&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;id</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/id&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;type</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/type&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;delay</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/delay&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;filter</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/filter&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;imin</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/imin&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;imax</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/imax&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;res</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/res&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;umin</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/umin&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;umax</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/umax&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;emax</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/emax&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/desc_supply&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_desc_supply" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_desc_supply');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_desc_supply" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"desc_supply"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Description of the power supplies</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of the supply; Array of strings (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"id"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">ID of the supply; Array of strings (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"type"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Type of supply; Array of strings (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"delay"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Pure delay in the supply [s]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"filter"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Laplace proper filter</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"num"</span><span class="tAN"> type=</span><span class="tAV">"matflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coefficients of the numerator, in increasing order : a0 + a1*s + ... + an*s^n; Matrix (nsupplies,n)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"den"</span><span class="tAN"> type=</span><span class="tAV">"matflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coefficients of the denominator, in increasing order : b0 + b1*s + ... + bm*s^m; Matrix (nsupplies,m)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"imin"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Minimum current [A]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"imax"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Maximum current [A]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"res"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Supply internal resistance [Ohm]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"umin"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Minimum voltage [V]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"umax"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Maximum voltage [V]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"emax"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Maximum Energy to be dissipated in supply [J]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_name"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / name</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_name" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_name" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Name of the supply; Array of strings (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_name" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_name');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_name" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_name.png" usemap="#pfsupplies_xsd_Element_name" /><map name="pfsupplies_xsd_Element_name" id="pfsupplies_xsd_Element_name">
+                                 <area alt="utilities_xsd.tmp#vecstring_type" href="utilities_xsd.html#vecstring_type" coords="108,0,242,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecstring_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecstring_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_name" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_name" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_name" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_name');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_name" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of the supply; Array of strings (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_id"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / id</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_id" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_id');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_id" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">ID of the supply; Array of strings (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_id" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_id');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_id" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_id.png" usemap="#pfsupplies_xsd_Element_id" /><map name="pfsupplies_xsd_Element_id" id="pfsupplies_xsd_Element_id">
+                                 <area alt="utilities_xsd.tmp#vecstring_type" href="utilities_xsd.html#vecstring_type" coords="99,0,233,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecstring_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecstring_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_id" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_id');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_id" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_id" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_id');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_id" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"id"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">ID of the supply; Array of strings (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_type"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / type</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_type" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_type" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Type of supply; Array of strings (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_type" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_type');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_type" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_type.png" usemap="#pfsupplies_xsd_Element_type" /><map name="pfsupplies_xsd_Element_type" id="pfsupplies_xsd_Element_type">
+                                 <area alt="utilities_xsd.tmp#vecstring_type" href="utilities_xsd.html#vecstring_type" coords="102,0,236,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecstring_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecstring_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_type" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_type" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_type" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_type" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"type"</span><span class="tAN"> type=</span><span class="tAV">"vecstring_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Type of supply; Array of strings (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_delay"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / delay</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_delay" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_delay');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_delay" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Pure delay in the supply [s]; Vector (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_delay" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_delay');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_delay" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_delay.png" usemap="#pfsupplies_xsd_Element_delay" /><map name="pfsupplies_xsd_Element_delay" id="pfsupplies_xsd_Element_delay">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="107,0,220,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_delay" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_delay');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_delay" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_delay" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_delay');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_delay" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"delay"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Pure delay in the supply [s]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_filter"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / filter</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_filter" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_filter');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_filter" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Laplace proper filter</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_filter" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_filter');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_filter" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_filter.png" usemap="#pfsupplies_xsd_Element_filter" /><map name="pfsupplies_xsd_Element_filter" id="pfsupplies_xsd_Element_filter">
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" coords="175,2,230,26" />
+                                 <area alt="pfsupplies_xsd.tmp#pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" coords="175,92,226,116" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_filter" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_filter');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_filter" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_pfsupplies_pfsupplies_desc_supply_filter" type="image" src="img/btM.gif" value="-" onclick="switchState('model_pfsupplies_pfsupplies_desc_supply_filter');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_pfsupplies_pfsupplies_desc_supply_filter" style="display:block"><b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">num</a></b> , <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">den</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">den</a></b>, <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">num</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_pfsupplies_pfsupplies_desc_supply_filter" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_pfsupplies_pfsupplies_desc_supply_filter');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_pfsupplies_pfsupplies_desc_supply_filter" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;filter</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;num</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/num&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;den</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/den&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/filter&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_filter" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_filter');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_filter" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"filter"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Laplace proper filter</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"num"</span><span class="tAN"> type=</span><span class="tAV">"matflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coefficients of the numerator, in increasing order : a0 + a1*s + ... + an*s^n; Matrix (nsupplies,n)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"den"</span><span class="tAN"> type=</span><span class="tAV">"matflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coefficients of the denominator, in increasing order : b0 + b1*s + ... + bm*s^m; Matrix (nsupplies,m)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_filter" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">filter</a></b> / num</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Coefficients of the numerator, in increasing order : a0 + a1*s + ... + an*s^n; Matrix (nsupplies,n)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_num.png" usemap="#pfsupplies_xsd_Element_num" /><map name="pfsupplies_xsd_Element_num" id="pfsupplies_xsd_Element_num">
+                                 <area alt="utilities_xsd.tmp#matflt_type" href="utilities_xsd.html#matflt_type" coords="103,0,218,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#matflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">matflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_num" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"num"</span><span class="tAN"> type=</span><span class="tAV">"matflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coefficients of the numerator, in increasing order : a0 + a1*s + ... + an*s^n; Matrix (nsupplies,n)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_pfsupplies_desc_supply_filter" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">filter</a></b> / den</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Coefficients of the denominator, in increasing order : b0 + b1*s + ... + bm*s^m; Matrix (nsupplies,m)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_den.png" usemap="#pfsupplies_xsd_Element_den" /><map name="pfsupplies_xsd_Element_den" id="pfsupplies_xsd_Element_den">
+                                 <area alt="utilities_xsd.tmp#matflt_type" href="utilities_xsd.html#matflt_type" coords="99,0,214,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#matflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">matflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_pfsupplies_pfsupplies_desc_supply_filter_den" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"den"</span><span class="tAN"> type=</span><span class="tAV">"matflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Coefficients of the denominator, in increasing order : b0 + b1*s + ... + bm*s^m; Matrix (nsupplies,m)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_imin"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / imin</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_imin" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_imin');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_imin" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Minimum current [A]; Vector (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_imin" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_imin');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_imin" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_imin.png" usemap="#pfsupplies_xsd_Element_imin" /><map name="pfsupplies_xsd_Element_imin" id="pfsupplies_xsd_Element_imin">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="102,0,215,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_imin" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_imin');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_imin" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_imin" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_imin');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_imin" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"imin"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Minimum current [A]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_imax"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / imax</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_imax" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_imax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_imax" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Maximum current [A]; Vector (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_imax" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_imax');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_imax" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_imax.png" usemap="#pfsupplies_xsd_Element_imax" /><map name="pfsupplies_xsd_Element_imax" id="pfsupplies_xsd_Element_imax">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="105,0,218,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_imax" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_imax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_imax" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_imax" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_imax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_imax" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"imax"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Maximum current [A]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_res"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / res</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_res" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_res');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_res" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Supply internal resistance [Ohm]; Vector (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_res" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_res');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_res" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_res.png" usemap="#pfsupplies_xsd_Element_res" /><map name="pfsupplies_xsd_Element_res" id="pfsupplies_xsd_Element_res">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="99,0,212,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_res" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_res');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_res" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_res" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_res');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_res" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"res"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Supply internal resistance [Ohm]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_umin"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / umin</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_umin" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_umin');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_umin" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Minimum voltage [V]; Vector (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_umin" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_umin');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_umin" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_umin.png" usemap="#pfsupplies_xsd_Element_umin" /><map name="pfsupplies_xsd_Element_umin" id="pfsupplies_xsd_Element_umin">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="106,0,219,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_umin" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_umin');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_umin" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_umin" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_umin');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_umin" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"umin"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Minimum voltage [V]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_umax"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / umax</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_umax" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_umax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_umax" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Maximum voltage [V]; Vector (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_umax" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_umax');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_umax" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_umax.png" usemap="#pfsupplies_xsd_Element_umax" /><map name="pfsupplies_xsd_Element_umax" id="pfsupplies_xsd_Element_umax">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="109,0,222,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_umax" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_umax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_umax" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_umax" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_umax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_umax" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"umax"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Maximum voltage [V]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_pfsupplies_desc_supply_emax"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / <b><a href="pfsupplies_xsd.html#pfsupplies_desc_supply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">desc_supply</a></b> / emax</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_pfsupplies_desc_supply_emax" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_pfsupplies_desc_supply_emax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_pfsupplies_desc_supply_emax" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Maximum Energy to be dissipated in supply [J]; Vector (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_pfsupplies_desc_supply_emax" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_pfsupplies_desc_supply_emax');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_pfsupplies_desc_supply_emax" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_emax.png" usemap="#pfsupplies_xsd_Element_emax" /><map name="pfsupplies_xsd_Element_emax" id="pfsupplies_xsd_Element_emax">
+                                 <area alt="utilities_xsd.tmp#vecflt_type" href="utilities_xsd.html#vecflt_type" coords="108,0,221,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#vecflt_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">vecflt_type</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_pfsupplies_desc_supply_emax" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_pfsupplies_desc_supply_emax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_pfsupplies_desc_supply_emax" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">final</td>
+                                    <td><b>restriction</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_pfsupplies_desc_supply_emax" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_pfsupplies_desc_supply_emax');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_pfsupplies_desc_supply_emax" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"emax"</span><span class="tAN"> type=</span><span class="tAV">"vecflt_type"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Maximum Energy to be dissipated in supply [J]; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:appinfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">machine description</span><span class="tEl">&lt;/xs:appinfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_voltage"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / voltage</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_voltage" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_voltage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_voltage" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Voltage at the supply output [V]; Time-dependent; Vector  (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_voltage" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_voltage');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_voltage" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_voltage.png" usemap="#pfsupplies_xsd_Element_voltage" /><map name="pfsupplies_xsd_Element_voltage" id="pfsupplies_xsd_Element_voltage">
+                                 <area alt="utilities_xsd.tmp#exp1D_value" href="utilities_xsd.html#exp1D_value" coords="203,40,262,64" />
+                                 <area alt="utilities_xsd.tmp#exp1D_abserror" href="utilities_xsd.html#exp1D_abserror" coords="203,104,281,128" />
+                                 <area alt="utilities_xsd.tmp#exp1D_relerror" href="utilities_xsd.html#exp1D_relerror" coords="203,168,276,192" />
+                                 <area alt="utilities_xsd.tmp#exp1D" href="utilities_xsd.html#exp1D" coords="121,3,207,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">exp1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_voltage" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_voltage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_voltage" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_pfsupplies_voltage" type="image" src="img/btM.gif" value="-" onclick="switchState('model_pfsupplies_voltage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_pfsupplies_voltage" style="display:block"><b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b> , <b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b> , <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b>, <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b>, <b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_pfsupplies_voltage" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_pfsupplies_voltage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_pfsupplies_voltage" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;voltage</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;value</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/value&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;abserror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/abserror&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;relerror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/relerror&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/voltage&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_voltage" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_voltage');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_voltage" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"voltage"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Voltage at the supply output [V]; Time-dependent; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="pfsupplies_current"></a><div class="componentTitle">Element <span class="qname"><b><a href="pfsupplies_xsd.html#pfsupplies" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for pfsupplies.xsd')">pfsupplies</a></b> / current</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_pfsupplies_current" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_pfsupplies_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_pfsupplies_current" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%"><pre><span class="tT">Current at the supply output, defined positive if it flows from point 1 to point 2 of the component in the pfcircuit description [A]; Time-dependent; Vector (nsupplies)</span></pre></td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_pfsupplies_current" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_pfsupplies_current');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_pfsupplies_current" style="display:block"><img alt="Diagram" border="0" src="img/pfsupplies_xsd_Element_current.png" usemap="#pfsupplies_xsd_Element_current" /><map name="pfsupplies_xsd_Element_current" id="pfsupplies_xsd_Element_current">
+                                 <area alt="utilities_xsd.tmp#exp1D_value" href="utilities_xsd.html#exp1D_value" coords="204,40,263,64" />
+                                 <area alt="utilities_xsd.tmp#exp1D_abserror" href="utilities_xsd.html#exp1D_abserror" coords="204,104,282,128" />
+                                 <area alt="utilities_xsd.tmp#exp1D_relerror" href="utilities_xsd.html#exp1D_relerror" coords="204,168,277,192" />
+                                 <area alt="utilities_xsd.tmp#exp1D" href="utilities_xsd.html#exp1D" coords="122,3,208,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">exp1D</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_pfsupplies_current" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_pfsupplies_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_pfsupplies_current" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_pfsupplies_current" type="image" src="img/btM.gif" value="-" onclick="switchState('model_pfsupplies_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_pfsupplies_current" style="display:block"><b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b> , <b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b> , <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="utilities_xsd.html#exp1D_abserror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">abserror</a></b>, <b><a href="utilities_xsd.html#exp1D_relerror" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">relerror</a></b>, <b><a href="utilities_xsd.html#exp1D_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for utilities.xsd')">value</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_pfsupplies_current" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_pfsupplies_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_pfsupplies_current" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;current</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;value</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/value&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;abserror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/abserror&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;relerror</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/relerror&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/current&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_pfsupplies_current" type="image" src="img/btM.gif" value="-" onclick="switchState('source_pfsupplies_current');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_pfsupplies_current" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"current"</span><span class="tAN"> type=</span><span class="tAV">"exp1D"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Current at the supply output, defined positive if it flows from point 1 to point 2 of the component in the pfcircuit description [A]; Time-dependent; Vector (nsupplies)</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
+         </div>
+      </div><script type="text/javascript">
+         <!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>
