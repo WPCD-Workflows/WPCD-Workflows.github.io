@@ -89,7 +89,15 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Core Transport Simulator (ETS)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#documentation-for-the-ets">Documentation for the ETS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ets-documentation">ETS Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#guide-on-using-ets-with-jet-data">Guide on using ETS with JET data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-of-ets-workflow-in-kepler">Configuration of ETS workflow in Kepler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jet-data-to-ets">JET data to ETS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ets-releases">ETS releases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ets-verification-and-validation">ETS verification and validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#useful-links">Useful links</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#ets-workflows-in-kepler">ETS workflows in KEPLER</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#configuring-the-ets-run">Configuring the ETS run</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#workflow-parameters">Workflow parameters</a></li>
@@ -217,8 +225,57 @@
             
   <div class="section" id="core-transport-simulator-ets">
 <h1>Core Transport Simulator (ETS)<a class="headerlink" href="#core-transport-simulator-ets" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="documentation-for-the-ets">
-<h2>Documentation for the ETS<a class="headerlink" href="#documentation-for-the-ets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ets-documentation">
+<h2>ETS Documentation<a class="headerlink" href="#ets-documentation" title="Permalink to this headline">¶</a></h2>
+<p>This page contains useful information on the European Transport Simulator (ETS) including documentation, description of the pre and post-processing tools used with ETS as well as instructions on how to use ETS and tools at JET.</p>
+<div class="section" id="guide-on-using-ets-with-jet-data">
+<h3>Guide on using ETS with JET data<a class="headerlink" href="#guide-on-using-ets-with-jet-data" title="Permalink to this headline">¶</a></h3>
+<p>ETS is a multi-machine modular transport simulator that can simulate different devices. This section provides a detailed guide on how to use ETS with JET data.</p>
+<p>The guide can be found <a class="reference external" href="https://users.euro-fusion.org/tfwiki/index.php/Etsguide">here</a></p>
+</div>
+<div class="section" id="configuration-of-ets-workflow-in-kepler">
+<h3>Configuration of ETS workflow in Kepler<a class="headerlink" href="#configuration-of-ets-workflow-in-kepler" title="Permalink to this headline">¶</a></h3>
+<p>Instructions on the ETS configuration options can be found <a class="reference external" href="https://users.euro-fusion.org/tfwiki/images/5/56/Ets_config_v3.pdf">here</a></p>
+<p>Instructions on HCD module in ETS can be found <a class="reference external" href="https://users.euro-fusion.org/tfwiki/images/4/4a/Hcd_config_v1.pdf">here</a></p>
+<p>Instructions on impurities in ETS (including example workflow and plotting tools) can be found <a class="reference external" href="https://users.euro-fusion.org/pages/tfiospti/ETSmeetings/08Dec2017/Impurities_in_ETS_v5_dy.pdf">here</a></p>
+</div>
+<div class="section" id="jet-data-to-ets">
+<h3>JET data to ETS<a class="headerlink" href="#jet-data-to-ets" title="Permalink to this headline">¶</a></h3>
+<p>ETS uses a standard format for input/output data. In order to get data from different machines (in different formats, using different units) a dedicated tool called “exp2itm” is provided. This section describes how this tool can be used to convert JET data to be used in ETS.</p>
+<p>Information about available data mappings is provided <a class="reference external" href="https://users.euro-fusion.org/tfwiki/index.php/Mappings_jet_ets">here</a>.</p>
+<p>Guidelines to get JET data are provided <a class="reference external" href="https://users.euro-fusion.org/tfwiki/index.php/Get_jet_data_gen">here</a></p>
+</div>
+<div class="section" id="ets-releases">
+<h3>ETS releases<a class="headerlink" href="#ets-releases" title="Permalink to this headline">¶</a></h3>
+<p>Information related to the ETS releases is given in this section.</p>
+<p><a class="reference external" href="https://users.euro-fusion.org/tfwiki/index.php/Changes_v510">changes, updates for ETS release 5.1.0</a></p>
+<p><a class="reference external" href="https://users.euro-fusion.org/tfwiki/index.php/Changes_v503">changes, updates for ETS release 5.0.3</a></p>
+<p><a class="reference external" href="https://users.euro-fusion.org/tfwiki/index.php/Changes_v502">changes, updates for ETS release 5.0.2</a></p>
+</div>
+<div class="section" id="ets-verification-and-validation">
+<h3>ETS verification and validation<a class="headerlink" href="#ets-verification-and-validation" title="Permalink to this headline">¶</a></h3>
+<p>Activities to verify ETS against other codes and to validate ETS against experimental data are summarized here (including instructions for users)</p>
+<p><a class="reference external" href="https://users.euro-fusion.org/tfwiki/index.php/ETS_TRANSP_benchmark">ETS benchmark against TRANSP</a></p>
+</div>
+<div class="section" id="useful-links">
+<h3>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h3>
+<p>This section contains further links to documentation connected to ETS.</p>
+<p>The training material is available here: <a class="reference external" href="https://users.euro-fusion.org/iterphysicswiki/index.php/ETS_Training_Tutorials">ETS Training Tutorials</a></p>
+<ul class="simple">
+<li><a class="reference external" href="http://portal.eufus.eu/twiki/bin/view/Main/Accessing_EUIM_infrastructure_at_JET">set up environment</a>, <a class="reference external" href="https://users.euro-fusion.org/iterphysicswiki/index.php/EU-IM_set_up_at_JET">EU-IM_set_up_at_JET</a></li>
+<li>get ETS (see Running the ETS Workflow  in <a class="reference external" href="http://portal.eufus.eu/twiki/bin/view/Main/Accessing_EUIM_infrastructure_at_JET">set up environment</a>)</li>
+<li><a class="reference external" href="http://www.eufus.eu/ITM/imports/isip/public/data_structure/4.10b.10/Phase4TOP.html">data structure to be used</a> (list of CPOs)</li>
+<li>test pulses (in preparation)</li>
+<li><a class="reference external" href="http://www.eufus.eu/ITM/html/ETS_A_4.10b_run_config.htmlsetupworkflowparameters">set up workflow parameters</a></li>
+<li><a class="reference external" href="http://portal.eufus.eu/twiki/bin/view/Main/RunningKeplerViaQueue">run ETS in batch mode</a></li>
+<li>Coordinate conventions, see <a class="reference external" href="http://www.eufus.eu/ITM/html/itm_conventions.html#itm_conventions_9">COCOS documentation</a>, <a class="reference external" href="http://www.sciencedirect.com/science?_ob=ArticleListURL&amp;_method=list&amp;_ArticleListID=-950871037&amp;_sort=r&amp;_st=13&amp;view=c&amp;md5=a2e468420878e8d72cc5cabfc2f184ff&amp;searchtype=a">COCOS paper</a></li>
+<li><a class="reference external" href="http://portal.eufus.eu/twiki/bin/view/Main/Feedback_on_ETS?sso_from=bin/view/Main/Feedback_on_ETS">Feedback</a></li>
+<li><a class="reference external" href="http://gforge6.eufus.eu/gf/project/generalsupport/tracker/?action=TrackerItemAdd&amp;tracker_id=184">Submit Report Request</a></li>
+</ul>
+<p><a class="reference external" href="https://users.euro-fusion.org/tfwiki/index.php/ETS_Users_Group">ETS Users Group</a> containing information related to the ETS User’s meetings</p>
+<p><a class="reference external" href="https://users.euro-fusion.org/iterphysicswiki/index.php/ETS_Training_2018">ETS training 2018</a> web page for ETS training at JET 14-18 May 2018</p>
+<p><a class="reference external" href="https://portal.eufus.eu/itm/portal/">EU IM Gateway</a> gateway portal web page (requires gateway account)</p>
+<p><a class="reference external" href="https://users.euro-fusion.org/tfwiki/index.php/Committee_92436">technical users meetings</a> containing information related to the technical users meetings (aka committee 92436 meetings)</p>
 <ul class="simple">
 <li><a class="reference external" href="https://portal.eufus.eu/documentation/ITM/imports/imp3/public/ETS_Documentation/ETS_TRANSPORT_EQUATIONS.pdf">Description of the ETS</a></li>
 <li><a class="reference external" href="https://portal.eufus.eu/documentation/ITM/imports/imp3/public/ETS_Documentation/STANDARDISED_EQUATION.pdf">Form of the standardize equations</a></li>
@@ -226,6 +283,7 @@
 <li><a class="reference external" href="https://portal.eufus.eu/documentation/ITM/imports/imp3/public/ETS_Documentation/ETS_Status.pdf">ETS Status</a></li>
 <li><a class="reference download internal" download="" href="_downloads/fcd733e8f7376d79e312931cd115c09e/ETS_TRANSPORT_EQUATIONS_V1.0.pdf"><code class="xref download docutils literal notranslate"><span class="pre">ETS</span> <span class="pre">Transport</span> <span class="pre">equations,</span> <span class="pre">variables</span> <span class="pre">and</span> <span class="pre">Fortran</span> <span class="pre">implementation</span></code></a></li>
 </ul>
+</div>
 </div>
 <div class="section" id="ets-workflows-in-kepler">
 <span id="ets-in-kepler"></span><h2>ETS workflows in KEPLER<a class="headerlink" href="#ets-workflows-in-kepler" title="Permalink to this headline">¶</a></h2>
@@ -1723,11 +1781,11 @@ INPUT DATA)</p>
 <p>You can run the workflow!!!</p>
 </div>
 <div class="section" id="ets-a-4-10a-configuring">
-<span id="id1"></span><h3>Configuring the ETS run<a class="headerlink" href="#ets-a-4-10a-configuring" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h3>Configuring the ETS run<a class="headerlink" href="#ets-a-4-10a-configuring" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="ets-a-4-10a-workflow-parameters">
-<span id="id2"></span><h4>Workflow Parameters<a class="headerlink" href="#ets-a-4-10a-workflow-parameters" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id3">
-<h5>General Parameters<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<span id="id3"></span><h4>Workflow Parameters<a class="headerlink" href="#ets-a-4-10a-workflow-parameters" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h5>General Parameters<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>USER - your userid</li>
 <li>MACHINE - machine name (database name) for which comutations are done</li>
@@ -1739,8 +1797,8 @@ INPUT DATA)</p>
 (RECOMENDED SELECTION: 3 or 4)</li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h5>Space resolution<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id5">
+<h5>Space resolution<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>NRHO - number of radial points for transport equations</li>
 <li>NPSI - number of points for equilibrium 1-D arrays</li>
@@ -1749,8 +1807,8 @@ INPUT DATA)</p>
 <li>NEQ_MAX_NPOINTS - maximum number of points for equilibrium boundary</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h5>Time resolution<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id6">
+<h5>Time resolution<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
 <p>Start and End time</p>
 <ul class="simple">
 <li>TBEGIN - Computations start time</li>
@@ -1797,9 +1855,9 @@ from the first to the last [1:NIMP], separated by commas</li>
 </div>
 </div>
 <div class="section" id="ets-a-4-10a-equations">
-<span id="id6"></span><h4>Equations to be solved and boundary conditions<a class="headerlink" href="#ets-a-4-10a-equations" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id7">
-<h5>Main plasma<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<span id="id7"></span><h4>Equations to be solved and boundary conditions<a class="headerlink" href="#ets-a-4-10a-equations" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id8">
+<h5>Main plasma<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
 <p>Before starting the run you need to select the type and value of the
 boundary conditions for all equations. Please note that the value should
 correspond to the type. All equations allow for following types of
@@ -1842,8 +1900,8 @@ specified <em>ni_bnd_value</em> or inversely proportional to their charge
 <em>(charge_proportional)</em>. This is defined by option:
 <em>ni_from_quasineutrality</em>.</p>
 </div>
-<div class="section" id="id8">
-<h5>Impurity<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id9">
+<h5>Impurity<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
 <p>You can set up the boundary conditions for impurity ions in a similar
 way as for main ions. !!! Note, that at the moment only types: <em>OFF</em>;
 <em>value</em> and <em>value_from_input_CPO</em> are accepter by impurity solver.</p>
@@ -1877,8 +1935,8 @@ first element from above as a total density</li>
 with corona, using the first element from above as a total density</li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h5>Neutrals<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id10">
+<h5>Neutrals<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
 <p>!!! AT THE MOMENT BOUNDARY CONDITIONS FOR NEUTRAL VELOCITIES ARE
 DISABLED, MIGHT BE ADDED ON REQUEST</p>
 <p>Note, that ALL values should be specified in the order: <em>{1, 2, 3
@@ -1897,8 +1955,8 @@ component [1, 2, 3 …NION, 1, 2, 3, …NIMP], separated by commas</li>
 <img alt="_images/ets_run_boundary3_a.png" src="_images/ets_run_boundary3_a.png" />
 </div>
 </div>
-<div class="section" id="id10">
-<h5>Input Profiles Interpolation<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id11">
+<h5>Input Profiles Interpolation<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
 <p>You are going to start the ETS run from some input shot, which might
 contain some conflicting rho grids. Thus there is a choice for the user
 to decide on the grid on which the starting profiles should be load by
@@ -1916,7 +1974,7 @@ the worflow, <em>Interpolation_of_input_profiles</em>.</p>
 </div>
 </div>
 <div class="section" id="ets-a-4-10a-convergence">
-<span id="id11"></span><h4>Convergence loop<a class="headerlink" href="#ets-a-4-10a-convergence" title="Permalink to this headline">¶</a></h4>
+<span id="id12"></span><h4>Convergence loop<a class="headerlink" href="#ets-a-4-10a-convergence" title="Permalink to this headline">¶</a></h4>
 <p>ETS updates input from different physics actors in a sequence, which is
 finished by solving the transport equations. Ther are possible none-linear
 couplings between different parts of the system. These nonelinearities are
@@ -1960,7 +2018,7 @@ authomatic ajustment of this fraction by selecting: <em>Ajust_Mixing_for_…</em
 to <em>YES</em></p>
 </div>
 <div class="section" id="ets-a-4-10a-equilibrium">
-<span id="id12"></span><h4>Equilibrium<a class="headerlink" href="#ets-a-4-10a-equilibrium" title="Permalink to this headline">¶</a></h4>
+<span id="id13"></span><h4>Equilibrium<a class="headerlink" href="#ets-a-4-10a-equilibrium" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="starting-settings">
 <h5>Starting Settings<a class="headerlink" href="#starting-settings" title="Permalink to this headline">¶</a></h5>
 <p>Before starting the run you need to set up your initial equlibrium. There
@@ -2023,8 +2081,8 @@ different input. Thus it is a user responsibility to check that the
 information inside input shot/run is enough to run selected equilibrium
 solver.</p>
 </div>
-<div class="section" id="id13">
-<h5>Run Settings<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id14">
+<h5>Run Settings<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
 <p>There are several equilibrium solvers connected to the ETS. You can
 select the one of them.Therefore please do:</p>
 <ul class="simple">
@@ -2051,7 +2109,7 @@ of some signals.</p>
 </div>
 </div>
 <div class="section" id="ets-a-4-10a-transport">
-<span id="id14"></span><h4>Transport<a class="headerlink" href="#ets-a-4-10a-transport" title="Permalink to this headline">¶</a></h4>
+<span id="id15"></span><h4>Transport<a class="headerlink" href="#ets-a-4-10a-transport" title="Permalink to this headline">¶</a></h4>
 <p>The settings for TRANSPORT can be done inside the CONVERGENCE LOOP
 composite actor. Therefore please do:</p>
 <ul class="simple">
@@ -2114,8 +2172,8 @@ ionization states)</p>
 <img alt="_images/ets_transport4_a.png" src="_images/ets_transport4_a.png" />
 </div>
 </div>
-<div class="section" id="id15">
-<h5>Edge transport barrier<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id16">
+<h5>Edge transport barrier<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h5>
 <p>In this section you can artificially supress the transport outside of
 specified <em>RHO_TOR_NORM_ETB</em>. Total transport coefficients for all
 transport channels (ne, ni, nz, Te, Ti,…) will be reduced to constant
@@ -2125,8 +2183,8 @@ the strings {1:NION}) and {1:NIMP} respectively)</p>
 <img alt="_images/ets_transport5_a.png" src="_images/ets_transport5_a.png" />
 </div>
 </div>
-<div class="section" id="id16">
-<h5>Total transport coefficients<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id17">
+<h5>Total transport coefficients<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h5>
 <p>Profiles of the total transport coefficient for each channel are
 obtained from the the individual contributions (Data Base, Anomalous,
 Neoclassical and Background) as a summ of all activated transport models
@@ -2178,7 +2236,7 @@ coefficients;</li>
 </div>
 </div>
 <div class="section" id="ets-a-4-10a-mhd">
-<span id="id17"></span><h4>MHD<a class="headerlink" href="#ets-a-4-10a-mhd" title="Permalink to this headline">¶</a></h4>
+<span id="id18"></span><h4>MHD<a class="headerlink" href="#ets-a-4-10a-mhd" title="Permalink to this headline">¶</a></h4>
 <p>The settings for MHD type of events can be done inside the CONVERGENCE
 LOOP composite actor. Therefore please do:</p>
 <ul class="simple">
@@ -2214,7 +2272,7 @@ multiplied with this value</li>
 </div>
 </div>
 <div class="section" id="ets-a-4-10a-sources">
-<span id="id18"></span><h4>Sources and impurity<a class="headerlink" href="#ets-a-4-10a-sources" title="Permalink to this headline">¶</a></h4>
+<span id="id19"></span><h4>Sources and impurity<a class="headerlink" href="#ets-a-4-10a-sources" title="Permalink to this headline">¶</a></h4>
 <p>The settings for SOURCES AND IMPURITY can be done inside the CONVERGENCE
 LOOP composite actor. Therefore please do:</p>
 <ul class="simple">
@@ -2297,8 +2355,8 @@ of activated PINI. Maximum accepted number of PINIs = 16.</p>
 <img alt="_images/ets_sources5_a.png" src="_images/ets_sources5_a.png" />
 </div>
 </div>
-<div class="section" id="id19">
-<h5>Power control<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id20">
+<h5>Power control<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h5>
 <p>You also can activate the power control for the IMP5HCD sources.</p>
 <div class="figure align-center">
 <img alt="_images/ets_sources6_a.png" src="_images/ets_sources6_a.png" />
@@ -2323,8 +2381,8 @@ sequence = 2e6,4e6,1e6 and frequency = 10 (Hz) tstart =0.0 (s) tend =
 <img alt="_images/ets_sources8_a.png" src="_images/ets_sources8_a.png" />
 </div>
 </div>
-<div class="section" id="id20">
-<h5>Total power<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id21">
+<h5>Total power<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
 <p>Profiles of the total source for each channel are obtained from the the
 individual contributions (Data Base, Gaussian, Neutrals, Impurity and
 HCD) as a summ of all activated sources multiplied with coefficients
@@ -2370,8 +2428,8 @@ source modules (array of five space separated values is expected):<ul>
 <span id="ets-a-4-10a-inst-events"></span><h4>Instantaneous events<a class="headerlink" href="#instantaneous-events" title="Permalink to this headline">¶</a></h4>
 <p>At the moment, user can swith ON and OFF two types of events: PELLET and
 SAWTOOTH</p>
-<div class="section" id="id21">
-<h5>Pellet<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id22">
+<h5>Pellet<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h5>
 <p>At the top level of the workflow you can configure times for pellet
 injection</p>
 <ul class="simple">
@@ -2442,8 +2500,8 @@ cross the same flux surface twice)</li>
 used in JETTO</li>
 </ul>
 </div>
-<div class="section" id="id22">
-<h5>MHD<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id23">
+<h5>MHD<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h5>
 <p>At the top level of the workflow you can switch ON/OFF possible MHD
 events</p>
 <ul class="simple">
@@ -2457,8 +2515,8 @@ events</p>
 <div class="section" id="visualization-during-the-run">
 <span id="ets-a-4-10a-visualization"></span><h4>Visualization during the run<a class="headerlink" href="#visualization-during-the-run" title="Permalink to this headline">¶</a></h4>
 <p>There is a number tools visualizing the ETS run.</p>
-<div class="section" id="id23">
-<h5>Multiple Tab Display<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id24">
+<h5>Multiple Tab Display<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h5>
 <p>The display appeares automaticaly when the ETS workflow is launched. It
 displays diagnostic text messages from the workflow on following topics:</p>
 <ul class="simple">
@@ -2476,8 +2534,8 @@ here.</p>
 <img alt="_images/ets_visual1_a.png" src="_images/ets_visual1_a.png" />
 </div>
 </div>
-<div class="section" id="id24">
-<h5>Python Visualization Display<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id25">
+<h5>Python Visualization Display<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h5>
 <p>You can activate the graphical visualization of your run evolution:</p>
 <ul class="simple">
 <li>right click on the box ‘Check Time &amp; Save Slice’</li>
@@ -2516,7 +2574,7 @@ interface for configuring the simulation</li>
 </div>
 </div>
 <div class="section" id="ets-status">
-<span id="id25"></span><h6>ETS Status<a class="headerlink" href="#ets-status" title="Permalink to this headline">¶</a></h6>
+<span id="id26"></span><h6>ETS Status<a class="headerlink" href="#ets-status" title="Permalink to this headline">¶</a></h6>
 <table border="1" class="docutils">
 <colgroup>
 <col width="33%" />
