@@ -90,7 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Edge Transport Simulator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#imp3-general-grid-description-and-grid-service-library">IMP3 General Grid Description and Grid Service Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-grid-description-and-grid-service-library">General Grid Description and Grid Service Library</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#resources">Resources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#outdated-documentation">Outdated documentation</a><ul>
@@ -179,11 +179,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="edge-transport-simulator">
-<span id="imp3-edge"></span><h1>Edge Transport Simulator<a class="headerlink" href="#edge-transport-simulator" title="Permalink to this headline">¶</a></h1>
+<span id="edge"></span><h1>Edge Transport Simulator<a class="headerlink" href="#edge-transport-simulator" title="Permalink to this headline">¶</a></h1>
 <p>The goal of this work is to adopt the edge code like SOLPS-B2 to be used
 within the EU-IM platform.</p>
-<div class="section" id="imp3-general-grid-description-and-grid-service-library">
-<span id="imp3-grid"></span><h2>IMP3 General Grid Description and Grid Service Library<a class="headerlink" href="#imp3-general-grid-description-and-grid-service-library" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general-grid-description-and-grid-service-library">
+<span id="grid"></span><h2>General Grid Description and Grid Service Library<a class="headerlink" href="#general-grid-description-and-grid-service-library" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="resources">
 <h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -269,14 +269,10 @@ service library implementation, i.e. the automated testing framework.</p>
 <p>A 2d grid in (R,Z) constructed by combining two structured
 one-dimensional spaces. The spaces are defined as follows, they define
 nodes and edges as subobjects.</p>
-<div class="figure align-center">
-<img alt="_images/edge_1.png" src="_images/edge_1.png" />
-</div>
+<img alt="_images/edge_1.png" class="align-center" src="_images/edge_1.png" />
 <p>The whole grid then looks like this (attention, slightly differing scales
 in R and Z):</p>
-<div class="figure align-center">
-<img alt="_images/edge_2.png" src="_images/edge_2.png" />
-</div>
+<img alt="_images/edge_2.png" class="align-center" src="_images/edge_2.png" />
 <p>A couple of examples for object descriptor are given. Some explanations:</p>
 <p>((1,1) (4,2)) = a 2d object (2d cell or face), implicitly created by
 combining the 1d object (edge) no. 4 from space 1 and the 1d object no.
@@ -292,24 +288,16 @@ implicit numbering of the objects in a class is obtained by iterating
 over all subobjects defining the objects, lowest space first.</p>
 <p>Object class (1,1): 2d cells/faces. They have the following implicit
 numbering:</p>
-<div class="figure align-center">
-<img alt="_images/edge_3.png" src="_images/edge_3.png" />
-</div>
+<img alt="_images/edge_3.png" class="align-center" src="_images/edge_3.png" />
 <p>Object class (1,0): 1d edges, aligned along the R axis (“r-aligned”).
 They have the following implicit numbering:</p>
-<div class="figure align-center">
-<img alt="_images/edge_4.png" src="_images/edge_4.png" />
-</div>
+<img alt="_images/edge_4.png" class="align-center" src="_images/edge_4.png" />
 <p>Object class (0,1): 1d edges, aligned along the Z axis (“z-aligned”).
 They have the following implicit numbering:</p>
-<div class="figure align-center">
-<img alt="_images/edge_5.png" src="_images/edge_5.png" />
-</div>
+<img alt="_images/edge_5.png" class="align-center" src="_images/edge_5.png" />
 <p>Object class (0,0): 0d nodes. They have the following implicit
 numbering:</p>
-<div class="figure align-center">
-<img alt="_images/edge_6.png" src="_images/edge_6.png" />
-</div>
+<img alt="_images/edge_6.png" class="align-center" src="_images/edge_6.png" />
 </div>
 </div>
 <div class="section" id="example-2-b2-grid">
