@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>The EQRECONSTRUCT workflow &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  <title>6. The EQRECONSTRUCT workflow &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Turbulent Flux Quantities in Transport Models" href="transport.html" />
-    <link rel="prev" title="Equilibrium and MHD Stability workflow (EQSTABIL)" href="es.html" /> 
+    <link rel="next" title="7. Turbulent Flux Quantities in Transport Models" href="transport.html" />
+    <link rel="prev" title="5. Equilibrium and MHD Stability workflow (EQSTABIL)" href="es.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,37 +86,37 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">The EQRECONSTRUCT workflow</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#workflow-rationale">1. Workflow rationale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#workflow-organization-design">2. Workflow organization &amp; design</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#i-start"><strong>I - START</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ii-check-data"><strong>II - CHECK_DATA</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#iii-reconstruct"><strong>III - Reconstruct</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#iv-save-slice"><strong>IV - SAVE SLICE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">2. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ets.html">3. Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">4. Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">5. Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. The EQRECONSTRUCT workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-rationale">6.1. 1. Workflow rationale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-organization-design">6.2. 2. Workflow organization &amp; design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#i-start">6.2.1. <strong>I - START</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ii-check-data">6.2.2. <strong>II - CHECK_DATA</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iii-reconstruct">6.2.3. <strong>III - Reconstruct</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iv-save-slice">6.2.4. <strong>IV - SAVE SLICE</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-the-workflow-under-construction">3. Installing the workflow (under construction)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#setting-up-the-workflow-and-actor-parameters-under-construction">4. Setting up the Workflow and Actor parameters (under construction)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#i-setting-the-workflow-parameters"><strong>I - Setting the workflow parameters</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ii-setting-actor-parameters"><strong>II - Setting actor parameters</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-workflow-under-construction">6.3. 3. Installing the workflow (under construction)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-the-workflow-and-actor-parameters-under-construction">6.4. 4. Setting up the Workflow and Actor parameters (under construction)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#i-setting-the-workflow-parameters">6.4.1. <strong>I - Setting the workflow parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ii-setting-actor-parameters">6.4.2. <strong>II - Setting actor parameters</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#test-cases-and-self-oriented-training-under-construction">5. Test cases and self-oriented training (under construction)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#news-and-recent-activity">6. News and Recent activity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-cases-and-self-oriented-training-under-construction">6.5. 5. Test cases and self-oriented training (under construction)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#news-and-recent-activity">6.6. 6. News and Recent activity</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
-<li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">Additional resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">7. Turbulent Flux Quantities in Transport Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="averages.html">8. Running Exponential Average</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">9. Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">10. Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">11. Kepler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">12. AMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">13. Additional resources</a></li>
 </ul>
 
             
@@ -162,7 +162,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>The EQRECONSTRUCT workflow</li>
+      <li>6. The EQRECONSTRUCT workflow</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -184,9 +184,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="the-eqreconstruct-workflow">
-<span id="eqreconstruct"></span><h1>The EQRECONSTRUCT workflow<a class="headerlink" href="#the-eqreconstruct-workflow" title="Permalink to this headline">¶</a></h1>
+<span id="eqreconstruct"></span><h1>6. The EQRECONSTRUCT workflow<a class="headerlink" href="#the-eqreconstruct-workflow" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="workflow-rationale">
-<span id="rationale"></span><h2>1. Workflow rationale<a class="headerlink" href="#workflow-rationale" title="Permalink to this headline">¶</a></h2>
+<span id="rationale"></span><h2>6.1. 1. Workflow rationale<a class="headerlink" href="#workflow-rationale" title="Permalink to this headline">¶</a></h2>
 <p>The EQRECONSTRUCT workflow is a Kepler workflow aimed at performing the
 reconstruction of the plasma equilibrium from diagnostic data. The
 workflow can perform both a single time reconstruction and over a
@@ -222,7 +222,7 @@ workflow, changing the code parameters and resuming) for deselecting
 given diagnostic channels or changing regularization coefficients.</p>
 </div>
 <div class="section" id="workflow-organization-design">
-<span id="organization"></span><h2>2. Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline">¶</a></h2>
+<span id="organization"></span><h2>6.2. 2. Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline">¶</a></h2>
 <p>The top level layout of the workflow is shown below.</p>
 <div class="figure align-center">
 <img alt="_images/eqreconstruct_JET_timeloop_records.png" src="_images/eqreconstruct_JET_timeloop_records.png" />
@@ -240,7 +240,7 @@ equilibrium)</li>
 <li>STOP THE RUN (end the simulation and stop)</li>
 </ul>
 <div class="section" id="i-start">
-<h3><strong>I - START</strong><a class="headerlink" href="#i-start" title="Permalink to this headline">¶</a></h3>
+<h3>6.2.1. <strong>I - START</strong><a class="headerlink" href="#i-start" title="Permalink to this headline">¶</a></h3>
 <p>Composite actor used to initialize the workflow. It reads experimental
 data from an ITM database and assembles the plasma bundle. The database
 details e.g. _user, device, shot, run<em>in</em> are configurable in the
@@ -250,7 +250,7 @@ actor when double clicking on the actor (see Figure below).</p>
 </div>
 </div>
 <div class="section" id="ii-check-data">
-<h3><strong>II - CHECK_DATA</strong><a class="headerlink" href="#ii-check-data" title="Permalink to this headline">¶</a></h3>
+<h3>6.2.2. <strong>II - CHECK_DATA</strong><a class="headerlink" href="#ii-check-data" title="Permalink to this headline">¶</a></h3>
 <p>In this composite actor a basic sanity check is performed on the input data
 and appropriate action is taken e.g. if there is no magnetics sensor data
 it is pointless for the workflow to proceed and execution is immediately
@@ -262,7 +262,7 @@ sequence of 2 steps)</p>
 </div>
 </div>
 <div class="section" id="iii-reconstruct">
-<h3><strong>III - Reconstruct</strong><a class="headerlink" href="#iii-reconstruct" title="Permalink to this headline">¶</a></h3>
+<h3>6.2.3. <strong>III - Reconstruct</strong><a class="headerlink" href="#iii-reconstruct" title="Permalink to this headline">¶</a></h3>
 <p>In this composite actor the actual calculation of the reconstructed
 equilibrium and if requested of the equivalent high resolution equilibrium
 (with cut-off plasma boundary with X-point removed) takes place. The user
@@ -322,7 +322,7 @@ by the user selected <em>path</em> variable ( <strong>START</strong> actor setup
 </ul>
 </div>
 <div class="section" id="iv-save-slice">
-<h3><strong>IV - SAVE SLICE</strong><a class="headerlink" href="#iv-save-slice" title="Permalink to this headline">¶</a></h3>
+<h3>6.2.4. <strong>IV - SAVE SLICE</strong><a class="headerlink" href="#iv-save-slice" title="Permalink to this headline">¶</a></h3>
 <p>In this composite actor the calculated equilibria are saved at each time
 step. Depending on whether the user choses to calculate also the high
 resolution equilibrium and if the Save_FBE_only parameter is set to
@@ -344,7 +344,7 @@ please refer to the SAVE SLICE parameter details.</p>
 </div>
 </div>
 <div class="section" id="installing-the-workflow-under-construction">
-<span id="installing"></span><h2>3. Installing the workflow (under construction)<a class="headerlink" href="#installing-the-workflow-under-construction" title="Permalink to this headline">¶</a></h2>
+<span id="installing"></span><h2>6.3. 3. Installing the workflow (under construction)<a class="headerlink" href="#installing-the-workflow-under-construction" title="Permalink to this headline">¶</a></h2>
 <p>To obtain the workflow and included actors a dressed release of KEPLER
 is recommended. To get such dressed releases please proceed as follows:</p>
 <ul class="simple">
@@ -353,9 +353,9 @@ is recommended. To get such dressed releases please proceed as follows:</p>
 </ul>
 </div>
 <div class="section" id="setting-up-the-workflow-and-actor-parameters-under-construction">
-<span id="actor"></span><h2>4. Setting up the Workflow and Actor parameters (under construction)<a class="headerlink" href="#setting-up-the-workflow-and-actor-parameters-under-construction" title="Permalink to this headline">¶</a></h2>
+<span id="actor"></span><h2>6.4. 4. Setting up the Workflow and Actor parameters (under construction)<a class="headerlink" href="#setting-up-the-workflow-and-actor-parameters-under-construction" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="i-setting-the-workflow-parameters">
-<h3><strong>I - Setting the workflow parameters</strong><a class="headerlink" href="#i-setting-the-workflow-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>6.4.1. <strong>I - Setting the workflow parameters</strong><a class="headerlink" href="#i-setting-the-workflow-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The workflow parameters in the <strong>START</strong> actor are as follows:</p>
 <ul class="simple">
 <li><strong>shot</strong> : the shot number on the user database (or from another user) where to read the reference equilibrium from (shot/run_in pair)</li>
@@ -405,7 +405,7 @@ is recommended. To get such dressed releases please proceed as follows:</p>
 Kepler canvas.</em></p>
 </div>
 <div class="section" id="ii-setting-actor-parameters">
-<h3><strong>II - Setting actor parameters</strong><a class="headerlink" href="#ii-setting-actor-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>6.4.2. <strong>II - Setting actor parameters</strong><a class="headerlink" href="#ii-setting-actor-parameters" title="Permalink to this headline">¶</a></h3>
 <p>Actor parameters are set on the actors themselves (not passed by the
 workflow). To access the actors codeparam the easiest route is to :</p>
 <blockquote>
@@ -423,7 +423,7 @@ actors please check their documentation <a class="reference external" href="Equi
 </div>
 </div>
 <div class="section" id="test-cases-and-self-oriented-training-under-construction">
-<span id="training"></span><h2>5. Test cases and self-oriented training (under construction)<a class="headerlink" href="#test-cases-and-self-oriented-training-under-construction" title="Permalink to this headline">¶</a></h2>
+<span id="training"></span><h2>6.5. 5. Test cases and self-oriented training (under construction)<a class="headerlink" href="#test-cases-and-self-oriented-training-under-construction" title="Permalink to this headline">¶</a></h2>
 <p>Several test cases are available for testing, corresponding to different
 applications/examples. The itmdb files are found on the software release
 folder under <em>/tutorial</em></p>
@@ -493,7 +493,7 @@ WALL, TF, THOMSON_SCATTERING.</div>
 <p><a class="reference external" href="%ATTACHURL%/Tutorial_EQRECONSTRUCT.pdf">Guided Tutorial on EQRECONSTRUCT (under construction)</a></p>
 </div>
 <div class="section" id="news-and-recent-activity">
-<span id="activity"></span><h2>6. News and Recent activity<a class="headerlink" href="#news-and-recent-activity" title="Permalink to this headline">¶</a></h2>
+<span id="activity"></span><h2>6.6. 6. News and Recent activity<a class="headerlink" href="#news-and-recent-activity" title="Permalink to this headline">¶</a></h2>
 <p><em>8th March 2019: JET version of the workflow tested successfully on
 test/84600/28 database. Only EQUAL + HELENA codes included. Successful
 run from t=49s to 53s with both EQUAL and HELENA being executed and the
@@ -509,10 +509,10 @@ corresponding data stored on the IMAS database (run=33).</em></p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="transport.html" class="btn btn-neutral float-right" title="Turbulent Flux Quantities in Transport Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="transport.html" class="btn btn-neutral float-right" title="7. Turbulent Flux Quantities in Transport Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="es.html" class="btn btn-neutral float-left" title="Equilibrium and MHD Stability workflow (EQSTABIL)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="es.html" class="btn btn-neutral float-left" title="5. Equilibrium and MHD Stability workflow (EQSTABIL)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

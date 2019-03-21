@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Running Exponential Average &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  <title>8. Running Exponential Average &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Codes" href="codes.html" />
-    <link rel="prev" title="Turbulent Flux Quantities in Transport Models" href="transport.html" /> 
+    <link rel="next" title="9. Codes" href="codes.html" />
+    <link rel="prev" title="7. Turbulent Flux Quantities in Transport Models" href="transport.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,26 +86,26 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">The EQRECONSTRUCT workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Running Exponential Average</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#definition">Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#differential-equation">Differential Equation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#equivalence-to-past-time-convolution-integral">Equivalence to Past-Time Convolution Integral</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#notes">notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">2. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ets.html">3. Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">4. Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">5. Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">6. The EQRECONSTRUCT workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">7. Turbulent Flux Quantities in Transport Models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Running Exponential Average</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">8.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition">8.2. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#differential-equation">8.3. Differential Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#equivalence-to-past-time-convolution-integral">8.4. Equivalence to Past-Time Convolution Integral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">8.5. notes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="codes.html">Codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">Additional resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">9. Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">10. Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">11. Kepler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">12. AMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">13. Additional resources</a></li>
 </ul>
 
             
@@ -151,7 +151,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Running Exponential Average</li>
+      <li>8. Running Exponential Average</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -173,9 +173,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="running-exponential-average">
-<span id="imp4-averages"></span><h1>Running Exponential Average<a class="headerlink" href="#running-exponential-average" title="Permalink to this headline">¶</a></h1>
+<span id="imp4-averages"></span><h1>8. Running Exponential Average<a class="headerlink" href="#running-exponential-average" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2>8.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>In conventional transport modelling, turbulent fluxes are modelled in terms
 of processes which are diffusive in the local relaxation sense, with the
 average flux given by a diffusion coefficient and an effective pinch
@@ -203,7 +203,7 @@ Tests Based on Geometric Moving Averages,” Technometrics 1 (1959)
 page on Moving Averages and the NIST Statistical Handbook online.</p>
 </div>
 <div class="section" id="definition">
-<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+<h2>8.2. Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
 <p>Consider a process \( p ( \vec u ) \) which is a functional of dependent
 variables \( \vec u \). Measure \( p \) at discrete time intervals
 \( t_n, \) with values \( p_n=p(t_n) \) and interval length \(
@@ -218,7 +218,7 @@ assumed that the initial state for \( p \) has persisted for infinite
 previous time up to the initial time point.</p>
 </div>
 <div class="section" id="differential-equation">
-<h2>Differential Equation<a class="headerlink" href="#differential-equation" title="Permalink to this headline">¶</a></h2>
+<h2>8.3. Differential Equation<a class="headerlink" href="#differential-equation" title="Permalink to this headline">¶</a></h2>
 <p>The equivalent differential equation is found by forming the relevant
 finite difference,</p>
 <div class="math notranslate nohighlight">
@@ -232,7 +232,7 @@ finite difference,</p>
 <p>whose solution is given below.</p>
 </div>
 <div class="section" id="equivalence-to-past-time-convolution-integral">
-<h2>Equivalence to Past-Time Convolution Integral<a class="headerlink" href="#equivalence-to-past-time-convolution-integral" title="Permalink to this headline">¶</a></h2>
+<h2>8.4. Equivalence to Past-Time Convolution Integral<a class="headerlink" href="#equivalence-to-past-time-convolution-integral" title="Permalink to this headline">¶</a></h2>
 <p>The solution of the above differential equation is given by the method
 of undetermined coefficients,</p>
 <div class="math notranslate nohighlight">
@@ -252,7 +252,7 @@ the current value of \( A \), as it already contains all that is needed
 of the past time evolution of \( p \).</p>
 </div>
 <div class="section" id="notes">
-<h2>notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<h2>8.5. notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <p>Some properties of the running exponential average and how to choose its
 main time-memory parameter:</p>
 <ul class="simple">
@@ -289,10 +289,10 @@ the correlation and saturation times of the turbulence, respectively.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="codes.html" class="btn btn-neutral float-right" title="Codes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="codes.html" class="btn btn-neutral float-right" title="9. Codes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="transport.html" class="btn btn-neutral float-left" title="Turbulent Flux Quantities in Transport Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="transport.html" class="btn btn-neutral float-left" title="7. Turbulent Flux Quantities in Transport Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

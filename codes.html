@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Codes &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  <title>9. Codes &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Conventions" href="conventions.html" />
-    <link rel="prev" title="Running Exponential Average" href="averages.html" /> 
+    <link rel="next" title="10. Conventions" href="conventions.html" />
+    <link rel="prev" title="8. Running Exponential Average" href="averages.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,59 +86,59 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ets.html">Core Transport Simulator (ETS)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge Transport Simulator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="es.html">Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">The EQRECONSTRUCT workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transport.html">Turbulent Flux Quantities in Transport Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="averages.html">Running Exponential Average</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Codes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#imasviz">IMASviz</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-turn-a-c-code-into-a-kepler-actor">How to turn a C++ code into a Kepler actor</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#adapt-your-c-function">Adapt your C++ function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#how-to-use-code-parameters">How to use code parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#compile-your-function-as-a-library">Compile your function as a library</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#full-example">Full example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#how-to-fill-the-fc2k-window">How to fill the FC2K window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">2. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ets.html">3. Core Transport Simulator (ETS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">4. Edge Transport Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">5. Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">6. The EQRECONSTRUCT workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">7. Turbulent Flux Quantities in Transport Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="averages.html">8. Running Exponential Average</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#imasviz">9.1. IMASviz</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-turn-a-c-code-into-a-kepler-actor">9.1.1. How to turn a C++ code into a Kepler actor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adapt-your-c-function">9.1.1.1. Adapt your C++ function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-code-parameters">9.1.1.2. How to use code parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compile-your-function-as-a-library">9.1.1.3. Compile your function as a library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#full-example">9.1.1.4. Full example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-fill-the-fc2k-window">9.1.1.5. How to fill the FC2K window</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#plasma-equilibrium-and-mhd-list-of-codes">Plasma equilibrium and MHD list of codes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#free-boundary-equilibrium-codes">Free boundary equilibrium codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fixed-boundary-equilibrium-codes">Fixed boundary equilibrium codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#linear-mhd-stability-codes">Linear MHD stability codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sawtooth-crash-modules">Sawtooth Crash Modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#elm-modules">ELM Modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ntm-modules">NTM Modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#numerical-tools">Numerical Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plasma-equilibrium-and-mhd-list-of-codes">9.2. Plasma equilibrium and MHD list of codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#free-boundary-equilibrium-codes">9.2.1. Free boundary equilibrium codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed-boundary-equilibrium-codes">9.2.2. Fixed boundary equilibrium codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linear-mhd-stability-codes">9.2.3. Linear MHD stability codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sawtooth-crash-modules">9.2.4. Sawtooth Crash Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elm-modules">9.2.5. ELM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ntm-modules">9.2.6. NTM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numerical-tools">9.2.7. Numerical Tools</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#heating-current-drive-h-cd-and-fast-particles-list-of-codes">Heating, current drive (H&amp;CD) and fast particles list of codes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#electron-heating-codes">Electron heating codes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ec-wave-codes">EC wave codes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#combined-electron-fokker-planck-codes">Combined electron Fokker-Planck codes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#wave-codes-for-ion-cyclotron-heating">Wave codes for ion cyclotron heating</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#fokker-planck-codes-for-ion-cyclotron-heating">Fokker-Planck codes for ion cyclotron heating</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nbi-sources-for-fokker-planck-codes">NBI sources for Fokker-Planck codes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nuclear-sources-input-for-fokker-planck-codes">Nuclear sources (input for Fokker-Planck codes)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nbi-fokker-planck-codes">NBI Fokker-Planck codes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#runaway-electrons">Runaway electrons</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#advanced-codes">Advanced codes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#codes-for-fast-ion-mhd-interactions">Codes for fast ion-MHD interactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heating-current-drive-h-cd-and-fast-particles-list-of-codes">9.3. Heating, current drive (H&amp;CD) and fast particles list of codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#electron-heating-codes">9.3.1. Electron heating codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ec-wave-codes">9.3.1.1. EC wave codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combined-electron-fokker-planck-codes">9.3.1.2. Combined electron Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wave-codes-for-ion-cyclotron-heating">9.3.1.3. Wave codes for ion cyclotron heating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fokker-planck-codes-for-ion-cyclotron-heating">9.3.1.4. Fokker-Planck codes for ion cyclotron heating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nbi-sources-for-fokker-planck-codes">9.3.1.5. NBI sources for Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nuclear-sources-input-for-fokker-planck-codes">9.3.1.6. Nuclear sources (input for Fokker-Planck codes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nbi-fokker-planck-codes">9.3.1.7. NBI Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#runaway-electrons">9.3.1.8. Runaway electrons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advanced-codes">9.3.1.9. Advanced codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codes-for-fast-ion-mhd-interactions">9.3.1.10. Codes for fast ion-MHD interactions</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#transport-list-of-codes">Transport list of codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transport-list-of-codes">9.4. Transport list of codes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler.html">Kepler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="amns.html">AMNS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">Additional resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">10. Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler.html">11. Kepler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">12. AMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">13. Additional resources</a></li>
 </ul>
 
             
@@ -184,7 +184,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Codes</li>
+      <li>9. Codes</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -206,17 +206,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="codes">
-<h1>Codes<a class="headerlink" href="#codes" title="Permalink to this headline">¶</a></h1>
+<h1>9. Codes<a class="headerlink" href="#codes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="imasviz">
-<h2>IMASviz<a class="headerlink" href="#imasviz" title="Permalink to this headline">¶</a></h2>
+<h2>9.1. IMASviz<a class="headerlink" href="#imasviz" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://wpcd-workflows.github.io/IMASviz/index.html" title="(in IMASViz)"><span class="xref std std-doc">IMASViz</span></a> code is used for IMAS visualisation.</p>
 <div class="section" id="how-to-turn-a-c-code-into-a-kepler-actor">
-<span id="isip-fc2k"></span><h3>How to turn a C++ code into a Kepler actor<a class="headerlink" href="#how-to-turn-a-c-code-into-a-kepler-actor" title="Permalink to this headline">¶</a></h3>
+<span id="isip-fc2k"></span><h3>9.1.1. How to turn a C++ code into a Kepler actor<a class="headerlink" href="#how-to-turn-a-c-code-into-a-kepler-actor" title="Permalink to this headline">¶</a></h3>
 <p>This document is based on material provided by Yann Frauel and describes
 how to make your C++ code EU-IM compliant and how to turn it into a Kepler
 actor.</p>
 <div class="section" id="adapt-your-c-function">
-<h4>Adapt your C++ function<a class="headerlink" href="#adapt-your-c-function" title="Permalink to this headline">¶</a></h4>
+<h4>9.1.1.1. Adapt your C++ function<a class="headerlink" href="#adapt-your-c-function" title="Permalink to this headline">¶</a></h4>
 <p>You must include the header file UALClasses.h:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>include <span class="s2">&quot;UALClasses.h&quot;</span>
 </pre></div>
@@ -254,7 +254,7 @@ arrays:</p>
 </div>
 </div>
 <div class="section" id="how-to-use-code-parameters">
-<h4>How to use code parameters<a class="headerlink" href="#how-to-use-code-parameters" title="Permalink to this headline">¶</a></h4>
+<h4>9.1.1.2. How to use code parameters<a class="headerlink" href="#how-to-use-code-parameters" title="Permalink to this headline">¶</a></h4>
 <p>The code parameters are passed as the last argument with
 ItmNs::codeparam_t&amp; type:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void mycppfunction(..., ItmNs::codeparam_t &amp; codeparam)</span>
@@ -265,7 +265,7 @@ necessarily terminated by 0-character! (This does not follow C/C++
 standards and should be changed in the future.)</p>
 </div>
 <div class="section" id="compile-your-function-as-a-library">
-<h4>Compile your function as a library<a class="headerlink" href="#compile-your-function-as-a-library" title="Permalink to this headline">¶</a></h4>
+<h4>9.1.1.3. Compile your function as a library<a class="headerlink" href="#compile-your-function-as-a-library" title="Permalink to this headline">¶</a></h4>
 <p>You need to include the header directories for the UAL and Blitz:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-I$(UAL)/include -I$(UAL)/lowlevel -I$(UAL)/cppinterface/ -I/afs/efda-</span>
 <span class="go">itm.eu/gf/project/switm/blitz/blitz-0.9/include/</span>
@@ -279,7 +279,7 @@ standards and should be changed in the future.)</p>
 <p>Additionally, you must compile with the -fPIC option.</p>
 </div>
 <div class="section" id="full-example">
-<h4>Full example<a class="headerlink" href="#full-example" title="Permalink to this headline">¶</a></h4>
+<h4>9.1.1.4. Full example<a class="headerlink" href="#full-example" title="Permalink to this headline">¶</a></h4>
 <p>We want to generate an actor that has three different types of actors as
 inputs and three different types of actors as output. Additionally, we
 have an integer as input/output, a vector of doubles as output and a
@@ -370,7 +370,7 @@ mycppfunction.cpp:</p>
 </div>
 </div>
 <div class="section" id="how-to-fill-the-fc2k-window">
-<h4>How to fill the FC2K window<a class="headerlink" href="#how-to-fill-the-fc2k-window" title="Permalink to this headline">¶</a></h4>
+<h4>9.1.1.5. How to fill the FC2K window<a class="headerlink" href="#how-to-fill-the-fc2k-window" title="Permalink to this headline">¶</a></h4>
 <p>First tab (Argument):</p>
 <ul class="simple">
 <li>set number of input and output arguments (combined)</li>
@@ -426,11 +426,11 @@ when running Kepler workflows</li>
 </div>
 </div>
 <div class="section" id="plasma-equilibrium-and-mhd-list-of-codes">
-<span id="imp12-listcodes"></span><h2>Plasma equilibrium and MHD list of codes<a class="headerlink" href="#plasma-equilibrium-and-mhd-list-of-codes" title="Permalink to this headline">¶</a></h2>
+<span id="imp12-listcodes"></span><h2>9.2. Plasma equilibrium and MHD list of codes<a class="headerlink" href="#plasma-equilibrium-and-mhd-list-of-codes" title="Permalink to this headline">¶</a></h2>
 <p>The following list lists the codes and modules which are part of WPCD
 tasks and their responsible officers.</p>
 <div class="section" id="free-boundary-equilibrium-codes">
-<h3>Free boundary equilibrium codes<a class="headerlink" href="#free-boundary-equilibrium-codes" title="Permalink to this headline">¶</a></h3>
+<h3>9.2.1. Free boundary equilibrium codes<a class="headerlink" href="#free-boundary-equilibrium-codes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>CEDRES++, S. Brémond, CEA</li>
 <li>CLISTE, P. Mc Carthy, DCU</li>
@@ -442,7 +442,7 @@ tasks and their responsible officers.</p>
 </ul>
 </div>
 <div class="section" id="fixed-boundary-equilibrium-codes">
-<h3>Fixed boundary equilibrium codes<a class="headerlink" href="#fixed-boundary-equilibrium-codes" title="Permalink to this headline">¶</a></h3>
+<h3>9.2.2. Fixed boundary equilibrium codes<a class="headerlink" href="#fixed-boundary-equilibrium-codes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>CAXE, S. Medvedev, EPFL</li>
 <li>CHEASE, O. Sauter, EPFL</li>
@@ -450,7 +450,7 @@ tasks and their responsible officers.</p>
 </ul>
 </div>
 <div class="section" id="linear-mhd-stability-codes">
-<h3>Linear MHD stability codes<a class="headerlink" href="#linear-mhd-stability-codes" title="Permalink to this headline">¶</a></h3>
+<h3>9.2.3. Linear MHD stability codes<a class="headerlink" href="#linear-mhd-stability-codes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>KINX, S. Medvedev, EPFL</li>
 <li>ILSA, C. Konz, IPP</li>
@@ -459,22 +459,22 @@ tasks and their responsible officers.</p>
 </ul>
 </div>
 <div class="section" id="sawtooth-crash-modules">
-<h3>Sawtooth Crash Modules<a class="headerlink" href="#sawtooth-crash-modules" title="Permalink to this headline">¶</a></h3>
+<h3>9.2.4. Sawtooth Crash Modules<a class="headerlink" href="#sawtooth-crash-modules" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>SAWTEETH, O. Sauter, CRPP</li>
 </ul>
 </div>
 <div class="section" id="elm-modules">
-<h3>ELM Modules<a class="headerlink" href="#elm-modules" title="Permalink to this headline">¶</a></h3>
+<h3>9.2.5. ELM Modules<a class="headerlink" href="#elm-modules" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="ntm-modules">
-<h3>NTM Modules<a class="headerlink" href="#ntm-modules" title="Permalink to this headline">¶</a></h3>
+<h3>9.2.6. NTM Modules<a class="headerlink" href="#ntm-modules" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>NTMETS, S. Nowak</li>
 </ul>
 </div>
 <div class="section" id="numerical-tools">
-<h3>Numerical Tools<a class="headerlink" href="#numerical-tools" title="Permalink to this headline">¶</a></h3>
+<h3>9.2.7. Numerical Tools<a class="headerlink" href="#numerical-tools" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>PROGEN, C. Konz, IPP</li>
 <li>JALPHA, C. Konz, IPP</li>
@@ -482,13 +482,13 @@ tasks and their responsible officers.</p>
 </div>
 </div>
 <div class="section" id="heating-current-drive-h-cd-and-fast-particles-list-of-codes">
-<span id="imp5-listcodes"></span><h2>Heating, current drive (H&amp;CD) and fast particles list of codes<a class="headerlink" href="#heating-current-drive-h-cd-and-fast-particles-list-of-codes" title="Permalink to this headline">¶</a></h2>
+<span id="imp5-listcodes"></span><h2>9.3. Heating, current drive (H&amp;CD) and fast particles list of codes<a class="headerlink" href="#heating-current-drive-h-cd-and-fast-particles-list-of-codes" title="Permalink to this headline">¶</a></h2>
 <p>The following list lists the codes and modules which are part of WPCD
 tasks and their responsible officers.</p>
 <div class="section" id="electron-heating-codes">
-<span id="imp5-listcodes-electron-heating-codes"></span><h3>Electron heating codes<a class="headerlink" href="#electron-heating-codes" title="Permalink to this headline">¶</a></h3>
+<span id="imp5-listcodes-electron-heating-codes"></span><h3>9.3.1. Electron heating codes<a class="headerlink" href="#electron-heating-codes" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="ec-wave-codes">
-<span id="imp5-listcodes-ec-wave-codes"></span><h4>EC wave codes<a class="headerlink" href="#ec-wave-codes" title="Permalink to this headline">¶</a></h4>
+<span id="imp5-listcodes-ec-wave-codes"></span><h4>9.3.1.1. EC wave codes<a class="headerlink" href="#ec-wave-codes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>TORAY-FOM, E. Westerhof, FOM</li>
 <li>TORBEAM, E. Poli, IPP-Garching</li>
@@ -497,13 +497,13 @@ tasks and their responsible officers.</p>
 </ul>
 </div>
 <div class="section" id="combined-electron-fokker-planck-codes">
-<span id="imp5-listcodes-electron-fokker-planck"></span><h4>Combined electron Fokker-Planck codes<a class="headerlink" href="#combined-electron-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
+<span id="imp5-listcodes-electron-fokker-planck"></span><h4>9.3.1.2. Combined electron Fokker-Planck codes<a class="headerlink" href="#combined-electron-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>RELAX, E. Westerhof, FOM</li>
 </ul>
 </div>
 <div class="section" id="wave-codes-for-ion-cyclotron-heating">
-<span id="imp5-listcodes-ic-wave-codes"></span><h4>Wave codes for ion cyclotron heating<a class="headerlink" href="#wave-codes-for-ion-cyclotron-heating" title="Permalink to this headline">¶</a></h4>
+<span id="imp5-listcodes-ic-wave-codes"></span><h4>9.3.1.3. Wave codes for ion cyclotron heating<a class="headerlink" href="#wave-codes-for-ion-cyclotron-heating" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>TORIC, R. Bilato, IPP-Garching</li>
 <li>EVE, R. Dumont, CEA (Cadarache)</li>
@@ -513,41 +513,41 @@ tasks and their responsible officers.</p>
 </ul>
 </div>
 <div class="section" id="fokker-planck-codes-for-ion-cyclotron-heating">
-<span id="imp5-listcodes-ic-fokker-planck"></span><h4>Fokker-Planck codes for ion cyclotron heating<a class="headerlink" href="#fokker-planck-codes-for-ion-cyclotron-heating" title="Permalink to this headline">¶</a></h4>
+<span id="imp5-listcodes-ic-fokker-planck"></span><h4>9.3.1.4. Fokker-Planck codes for ion cyclotron heating<a class="headerlink" href="#fokker-planck-codes-for-ion-cyclotron-heating" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>RFOF, T. Johnson, VR</li>
 <li>StixRedist, E. Lerche and D. Van Eester</li>
 </ul>
 </div>
 <div class="section" id="nbi-sources-for-fokker-planck-codes">
-<span id="imp5-listcodes-nbi-sources"></span><h4>NBI sources for Fokker-Planck codes<a class="headerlink" href="#nbi-sources-for-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
+<span id="imp5-listcodes-nbi-sources"></span><h4>9.3.1.5. NBI sources for Fokker-Planck codes<a class="headerlink" href="#nbi-sources-for-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>BBNBI (Beamlet-based NBI module of ASCOT), J. Varje, TEKES</li>
 <li>NEMO, M. Schneider, CEA (Cadarache)</li>
 </ul>
 </div>
 <div class="section" id="nuclear-sources-input-for-fokker-planck-codes">
-<span id="imp5-listcodes-nuclear-sources"></span><h4>Nuclear sources (input for Fokker-Planck codes)<a class="headerlink" href="#nuclear-sources-input-for-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
+<span id="imp5-listcodes-nuclear-sources"></span><h4>9.3.1.6. Nuclear sources (input for Fokker-Planck codes)<a class="headerlink" href="#nuclear-sources-input-for-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Nuclearsim, T.Johnson, VR</li>
 <li>AFSI Ascot Fusion Source Integrator, J. Varje, Aalto</li>
 </ul>
 </div>
 <div class="section" id="nbi-fokker-planck-codes">
-<span id="imp5-listcodes-nbi-fokker-planck"></span><h4>NBI Fokker-Planck codes<a class="headerlink" href="#nbi-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
+<span id="imp5-listcodes-nbi-fokker-planck"></span><h4>9.3.1.7. NBI Fokker-Planck codes<a class="headerlink" href="#nbi-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>RISK, M. Schneider, CEA (ITER)</li>
 <li>NBISIM, T. Johnson, VR</li>
 </ul>
 </div>
 <div class="section" id="runaway-electrons">
-<span id="imp5-listcodes-runaways"></span><h4>Runaway electrons<a class="headerlink" href="#runaway-electrons" title="Permalink to this headline">¶</a></h4>
+<span id="imp5-listcodes-runaways"></span><h4>9.3.1.8. Runaway electrons<a class="headerlink" href="#runaway-electrons" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Runafluid, G. Pokol</li>
 </ul>
 </div>
 <div class="section" id="advanced-codes">
-<span id="imp5-listcodes-advanced-fokker-planck"></span><h4>Advanced codes<a class="headerlink" href="#advanced-codes" title="Permalink to this headline">¶</a></h4>
+<span id="imp5-listcodes-advanced-fokker-planck"></span><h4>9.3.1.9. Advanced codes<a class="headerlink" href="#advanced-codes" title="Permalink to this headline">¶</a></h4>
 <p>(The following codes include either the synergy between IC and NBI
 heating, or include both wave field and Fokker-Planck solver)</p>
 <ul class="simple">
@@ -556,7 +556,7 @@ heating, or include both wave field and Fokker-Planck solver)</p>
 </ul>
 </div>
 <div class="section" id="codes-for-fast-ion-mhd-interactions">
-<span id="imp5-listcodes-fast-ions-mhd"></span><h4>Codes for fast ion-MHD interactions<a class="headerlink" href="#codes-for-fast-ion-mhd-interactions" title="Permalink to this headline">¶</a></h4>
+<span id="imp5-listcodes-fast-ions-mhd"></span><h4>9.3.1.10. Codes for fast ion-MHD interactions<a class="headerlink" href="#codes-for-fast-ion-mhd-interactions" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>LIGKA, P. Lauber, IPP-Garching</li>
 <li>MARS, G. Vlad, ENEA-Frascati</li>
@@ -568,7 +568,7 @@ heating, or include both wave field and Fokker-Planck solver)</p>
 </div>
 </div>
 <div class="section" id="transport-list-of-codes">
-<h2>Transport list of codes<a class="headerlink" href="#transport-list-of-codes" title="Permalink to this headline">¶</a></h2>
+<h2>9.4. Transport list of codes<a class="headerlink" href="#transport-list-of-codes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>ASPOEL</li>
 <li>BIT1</li>
@@ -594,10 +594,10 @@ heating, or include both wave field and Fokker-Planck solver)</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conventions.html" class="btn btn-neutral float-right" title="Conventions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conventions.html" class="btn btn-neutral float-right" title="10. Conventions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="averages.html" class="btn btn-neutral float-left" title="Running Exponential Average" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="averages.html" class="btn btn-neutral float-left" title="8. Running Exponential Average" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
