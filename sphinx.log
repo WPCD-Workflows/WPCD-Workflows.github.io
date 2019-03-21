@@ -33,7 +33,7 @@ sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Wo
 Running Sphinx v1.8.5
 loading pickled environment... done
 building [mo]: targets for 0 po files that are out of date
-building [html]: targets for 0 source files that are out of date
+building [html]: targets for 15 source files that are out of date
 updating environment: [] 0 added, 15 changed, 0 removed
 reading sources... [  6%] amns
 reading sources... [ 13%] averages
