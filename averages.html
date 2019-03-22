@@ -204,17 +204,17 @@ page on Moving Averages and the NIST Statistical Handbook online.</p>
 </div>
 <div class="section" id="definition">
 <h2>8.2. Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
-<p>Consider a process \( p ( \vec u ) \) which is a functional of dependent
-variables \( \vec u \). Measure \( p \) at discrete time intervals
-\( t_n, \) with values \( p_n=p(t_n) \) and interval length \(
-\tau=t_n-t_{n-1} \). The moving exponential average \( A_n=A(p_n) \)
-on the \( n \hbox{-th} \) interval is defined as</p>
+<p>Consider a process <span class="math notranslate nohighlight">\(p ( \vec u )\)</span> which is a functional of dependent
+variables <span class="math notranslate nohighlight">\(\vec u\)</span>. Measure <span class="math notranslate nohighlight">\(p\)</span> at discrete time intervals
+<span class="math notranslate nohighlight">\(t_n,\)</span> with values <span class="math notranslate nohighlight">\(p_n=p(t_n)\)</span> and interval length
+<span class="math notranslate nohighlight">\(\tau=t_n-t_{n-1}\)</span>. The moving exponential average <span class="math notranslate nohighlight">\(A_n=A(p_n)\)</span>
+on the <span class="math notranslate nohighlight">\(n \hbox{-th}\)</span> interval is defined as</p>
 <div class="math notranslate nohighlight">
 \[A_n = \epsilon p_n + (1-\epsilon)A_{n-1} \qquad \qquad \hbox{with} \qquad \epsilon=\alpha \tau\]</div>
-<p>in which the small parameter \( \epsilon \) is given in terms of the interval \( \tau \) and an inverse time constant \( \alpha. \)</p>
-<p>In the first instance \( p \) is measured there is no \( A \) so the
-first value of \( A \) is simply set to \( p \) since it can be
-assumed that the initial state for \( p \) has persisted for infinite
+<p>in which the small parameter <span class="math notranslate nohighlight">\(\epsilon\)</span> is given in terms of the interval <span class="math notranslate nohighlight">\(\tau\)</span> and an inverse time constant <span class="math notranslate nohighlight">\(\alpha.\)</span></p>
+<p>In the first instance <span class="math notranslate nohighlight">\(p\)</span> is measured there is no <span class="math notranslate nohighlight">\(A\)</span> so the
+first value of <span class="math notranslate nohighlight">\(A\)</span> is simply set to <span class="math notranslate nohighlight">\(p\)</span> since it can be
+assumed that the initial state for <span class="math notranslate nohighlight">\(p\)</span> has persisted for infinite
 previous time up to the initial time point.</p>
 </div>
 <div class="section" id="differential-equation">
@@ -226,7 +226,7 @@ finite difference,</p>
 <p>which we can also cast as</p>
 <div class="math notranslate nohighlight">
 \[(1-\epsilon)(A_n - A_{n-1}) = \epsilon (p_n - A_n)\]</div>
-<p>Taking the limit \( \tau \to 0 \) is the same as taking \( \epsilon \to 0 \) so both of these expressions become equivalent to</p>
+<p>Taking the limit <span class="math notranslate nohighlight">\(\tau \to 0\)</span> is the same as taking <span class="math notranslate nohighlight">\(\epsilon \to 0\)</span> so both of these expressions become equivalent to</p>
 <div class="math notranslate nohighlight">
 \[{\partial A \over \partial t} = \alpha(p-A)\]</div>
 <p>whose solution is given below.</p>
@@ -236,47 +236,47 @@ finite difference,</p>
 <p>The solution of the above differential equation is given by the method
 of undetermined coefficients,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}{\partial A \over \partial t} +\alpha A = \alpha p \\ \\ e^{-\alpha t}{\partial \over \partial t} \left( e^{ \alpha t} A \right) = \alpha p \\ \\ {\partial \over \partial t} \left( e^{\alpha t} A \right) = \alpha p e^{\alpha t}\end{split}\]</div>
+\[{\partial A \over \partial t} +\alpha A = \alpha p \ \ e^{-\alpha t}{\partial \over \partial t} \left( e^{ \alpha t} A \right) = \alpha p \ \ {\partial \over \partial t} \left( e^{\alpha t} A \right) = \alpha p e^{\alpha t}\]</div>
 <p>We may integrate this over all past time, to find</p>
 <div class="math notranslate nohighlight">
 \[A(t) = \int_{-\infty}^t \alpha dt' p(t') e^{-\alpha (t-t') }\]</div>
-<p>This is a convolution integral over the kernel \( e^{-\alpha(t-t’)} \)
-and the signal \( p(t’) \). The time constant \( \alpha^{-1} \) is
-just the memory decay time, while if \( p \) is constant then the
-integral yields unity times \( p \). This is the same as the
-normalisation with the \( (1-\epsilon) \) factor in the average formula
+<p>This is a convolution integral over the kernel <span class="math notranslate nohighlight">\(e^{-\alpha(t-t')}\)</span>
+and the signal <span class="math notranslate nohighlight">\(p(t')\)</span>. The time constant <span class="math notranslate nohighlight">\(\alpha^{-1}\)</span> is
+just the memory decay time, while if <span class="math notranslate nohighlight">\(p\)</span> is constant then the
+integral yields unity times <span class="math notranslate nohighlight">\(p\)</span>. This is the same as the
+normalisation with the <span class="math notranslate nohighlight">\((1-\epsilon)\)</span> factor in the average formula
 above, which is needed since the interval is of finite size.</p>
 <p>Hence the running exponential average is operationally the same as a memory
 decay integral over past time. The elegant feature is the need to keep only
-the current value of \( A \), as it already contains all that is needed
-of the past time evolution of \( p \).</p>
+the current value of <span class="math notranslate nohighlight">\(A\)</span>, as it already contains all that is needed
+of the past time evolution of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </div>
 <div class="section" id="notes">
 <h2>8.5. notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <p>Some properties of the running exponential average and how to choose its
 main time-memory parameter:</p>
 <ul class="simple">
-<li>The \( (1-\epsilon) \) factor is needed for normalisation</li>
-<li>if \( p=\hbox{constant} \) then \( A=p \) for all \( t \)</li>
+<li>The <span class="math notranslate nohighlight">\((1-\epsilon)\)</span> factor is needed for normalisation</li>
+<li>if <span class="math notranslate nohighlight">\(p=\hbox{constant}\)</span> then <span class="math notranslate nohighlight">\(A=p\)</span> for all <span class="math notranslate nohighlight">\(t\)</span></li>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>the integral with \( \alpha dt’ \) yields unity</li>
-<li>the \( \epsilon \) and \( (1-\epsilon) \) factors add to unity</li>
-<li>therefore set the first value of \( A \) to the first value of \( p      \)</li>
+<li>the integral with <span class="math notranslate nohighlight">\(\alpha dt'\)</span> yields unity</li>
+<li>the <span class="math notranslate nohighlight">\(\epsilon\)</span> and <span class="math notranslate nohighlight">\((1-\epsilon)\)</span> factors add to unity</li>
+<li>therefore set the first value of <span class="math notranslate nohighlight">\(A\)</span> to the first value of :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>p     `</li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li>in choosing the memory decay time \( \alpha^{-1} \dots \)</li>
+<li>in choosing the memory decay time <span class="math notranslate nohighlight">\(\alpha^{-1} \dots\)</span></li>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>one should have \( \alpha \tau_{cor} \ll 1 \)</li>
-<li>best results are for \( \alpha \tau_{sat} \sim 1 \)</li>
-<li>some trial/error required; edge turbulence likes \( \alpha^{-1}=200 L_ \parallel / c_s \)</li>
+<li>one should have <span class="math notranslate nohighlight">\(\alpha \tau_{cor} \ll 1\)</span></li>
+<li>best results are for <span class="math notranslate nohighlight">\(\alpha \tau_{sat} \sim 1\)</span></li>
+<li>some trial/error required; edge turbulence likes <span class="math notranslate nohighlight">\(\alpha^{-1}=200 L_\parallel / c_s\)</span></li>
 </ul>
 </div></blockquote>
-<p>In these expressions \( \tau_{{cor}} \) and \( \tau_{{sat}} \) are
+<p>In these expressions <span class="math notranslate nohighlight">\(\tau_{{cor}}\)</span> and <span class="math notranslate nohighlight">\(\tau_{{sat}}\)</span> are
 the correlation and saturation times of the turbulence, respectively.</p>
 </div>
 </div>
