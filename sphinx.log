@@ -27,23 +27,6 @@ if test -f /home/circleci/assets/MD5/d391c9c30f9d5414dc2f8dbc391564ec; \
 then touch -r /home/circleci/assets/MD5/d391c9c30f9d5414dc2f8dbc391564ec -d "-1 minute" source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp; \
      touch -r source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp -d "-1 minute"  source/static/EUROfusionIntegratedModellingworkflows.pdf.md5; \
 else make /home/circleci/assets/MD5/d391c9c30f9d5414dc2f8dbc391564ec; fi
-make[1]: Entering directory '/home/circleci/project'
-if ! test -d /home/circleci/assets/MD5; \
-   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
-   if test "x" != "x"; \
-        then chgrp  /home/circleci/assets/MD5; \
-   fi; \
-fi
-curl --location --fail --insecure \
-	--output /home/circleci/assets/MD5/d391c9c30f9d5414dc2f8dbc391564ec https://github.com/WPCD-Workflows/assets/raw/master/d391c9c30f9d5414dc2f8dbc391564ec
-if test $(md5sum /home/circleci/assets/MD5/d391c9c30f9d5414dc2f8dbc391564ec|cut -c 1-32) = d391c9c30f9d5414dc2f8dbc391564ec ; then \
-  chmod g+rw /home/circleci/assets/MD5/d391c9c30f9d5414dc2f8dbc391564ec;\
-else\
-  rm -f /home/circleci/assets/MD5/d391c9c30f9d5414dc2f8dbc391564ec; \
-  echo "Error: Checksum of /home/circleci/assets/MD5/d391c9c30f9d5414dc2f8dbc391564ec incorrect! Removing it.";\
-  exit 1;\
-fi
-make[1]: Leaving directory '/home/circleci/project'
 ln -sf /home/circleci/assets/MD5/d391c9c30f9d5414dc2f8dbc391564ec source/static/EUROfusionIntegratedModellingworkflows.pdf
 unzip -q -d source/static/Phase4.10b.10_HTML source/static/Phase4.10b.10_HTML.zip
 sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Workflows.github.io
@@ -240,7 +223,7 @@ copying static files... done
 copying extra files... done
 dumping search index in English (code: en) ... done
 dumping object inventory... done
-build succeeded, 4 warnings.
+build succeeded, 1 warning.
 
 The HTML pages are in ../WPCD-Workflows.github.io.
 
