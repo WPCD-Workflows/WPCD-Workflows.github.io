@@ -595,9 +595,11 @@ for huge data sets)</div>
 </div>
 <div class="section" id="fc2k-main-window">
 <h4>11.4.1.2. FC2K main window<a class="headerlink" href="#fc2k-main-window" title="Permalink to this headline">¶</a></h4>
+<img alt="_images/kepler_1.png" class="align-center" src="_images/kepler_1.png" />
 </div>
 <div class="section" id="actor-description">
 <h4>11.4.1.3. Actor description<a class="headerlink" href="#actor-description" title="Permalink to this headline">¶</a></h4>
+<img alt="_images/kepler_2.png" class="align-center" src="_images/kepler_2.png" />
 <p>This group of graphical controls allows to set the description of the actor and its “place” in hierarchy of Kepler elements in Kepler “Component” browser</p>
 <ul class="simple">
 <li><strong>Project</strong> - defines a branch in Kepler “Component” browser where an actor will be placed</li>
@@ -608,6 +610,7 @@ for huge data sets)</div>
 </div>
 <div class="section" id="environment">
 <h4>11.4.1.4. Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h4>
+<img alt="_images/kepler_3.png" class="align-center" src="_images/kepler_3.png" />
 <p>The Environment text fields shows UAL and Kepler locations.</p>
 <ul class="simple">
 <li><strong>Kepler</strong> - Kepler location (usually the same as $KEPLER)</li>
@@ -617,6 +620,7 @@ for huge data sets)</div>
 <div class="section" id="arguments-tab-explained">
 <h4>11.4.1.5. “Arguments” tab explained<a class="headerlink" href="#arguments-tab-explained" title="Permalink to this headline">¶</a></h4>
 <p>Below you can find explanation of FC2K arguments tab.</p>
+<img alt="_images/kepler_4.png" class="align-center" src="_images/kepler_4.png" />
 <ul class="simple">
 <li><strong>Type</strong> - Defines a type of an argument. It is possible to choose either IDS based type (e.g. equilibrium, topinfo, etc.) or primitive type (e.g. int, long, double, char)</li>
 <li><strong>Single slice</strong> - Determines if IDS is passed as single slice or an array. (This setting is valid for IDS types only )<ul>
@@ -634,6 +638,7 @@ for huge data sets)</div>
 <li><strong>Output</strong> - Defines argument as an output</li>
 <li><strong>Label</strong> - User defined name of an argument (and actor port)</li>
 </ul>
+<img alt="_images/kepler_5.png" class="align-center" src="_images/kepler_5.png" />
 <p>Please take a look on a screenshot above:</p>
 <ul class="simple">
 <li><em>equilibrium</em> - an input parameter - one IDS (slice)</li>
@@ -647,6 +652,7 @@ for huge data sets)</div>
 <div class="section" id="parameters-tab-explained">
 <h4>11.4.1.6. “Parameters” tab explained<a class="headerlink" href="#parameters-tab-explained" title="Permalink to this headline">¶</a></h4>
 <p>Code specific parameters are all parameters which are specific to the code (like switches, scaling parameters, and parameters for built-in analytical models) as well as parameters to explicitly overrule fields in the ITM data structures.</p>
+<img alt="_images/kepler_6.png" class="align-center" src="_images/kepler_6.png" />
 <ul class="simple">
 <li><strong>Frequently Used XML</strong> - Actual value of the code parameters</li>
 <li><strong>Default XML</strong> - Default values of the code parameters</li>
@@ -655,6 +661,7 @@ for huge data sets)</div>
 </div>
 <div class="section" id="source-tab-explained">
 <h4>11.4.1.7. “Source” tab explained<a class="headerlink" href="#source-tab-explained" title="Permalink to this headline">¶</a></h4>
+<img alt="_images/kepler_7.png" class="align-center" src="_images/kepler_7.png" />
 <p>The purpose of this tab is to define all code related issues:</p>
 <ul class="simple">
 <li>a programming language</li>
@@ -666,10 +673,12 @@ for huge data sets)</div>
 <h5>11.4.1.7.1. Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h5>
 <p><em>“Main library”</em></p>
 <p>A “Main library” field allows to define a path to library containing user subroutine/function.</p>
+<img alt="_images/kepler_8.png" class="align-center" src="_images/kepler_8.png" />
 <p><em>“Optional library”</em></p>
 <p>A “Optional library” field allows to define a path to optional library containing user subroutine/function.</p>
 <p><em>“Custom libraries”</em></p>
 <p>“Custom libraries” are non-standard static libraries required for building the user code.</p>
+<img alt="_images/kepler_9.png" class="align-center" src="_images/kepler_9.png" />
 <p>Available operations on libraries list:</p>
 <ul class="simple">
 <li><em>“Add…”</em> - Adds a new library to the list</li>
@@ -678,17 +687,20 @@ for huge data sets)</div>
 </ul>
 <p><em>“System libraries”</em></p>
 <p>“System libraries” are system libraries handled by pkg-config mechanism and required for building the user code.</p>
+<img alt="_images/kepler_10.png" class="align-center" src="_images/kepler_10.png" />
 <p>A user can:</p>
 <ul class="simple">
 <li>add library from the list,</li>
 <li>remove library</li>
 <li>display detailed info (library definition returned by pkg-config mechanism)</li>
 </ul>
+<img alt="_images/kepler_11.png" class="align-center" src="_images/kepler_11.png" />
 </div>
 </div>
 <div class="section" id="settings-tab-explained">
 <h4>11.4.1.8. “Settings” tab explained<a class="headerlink" href="#settings-tab-explained" title="Permalink to this headline">¶</a></h4>
 <p>A user, using this tab, selects programming language of codes provided, compiler used to built library and type of code execution (sequential or parallel)</p>
+<img alt="_images/kepler_12.png" class="align-center" src="_images/kepler_12.png" />
 <ul>
 <li><p class="first"><strong>Programming languange:</strong></p>
 <blockquote>
@@ -734,10 +746,12 @@ for huge data sets)</div>
 <div class="section" id="documentation-tab-explained">
 <h4>11.4.1.9. “Documentation” tab explained<a class="headerlink" href="#documentation-tab-explained" title="Permalink to this headline">¶</a></h4>
 <p>The “Documentation” tab specifies an user-defined Kepler actor description. It could be displayed from actor pop-up menu.</p>
+<img alt="_images/kepler_13.png" class="align-center" src="_images/kepler_13.png" />
 </div>
 <div class="section" id="interface-tab-explained">
 <h4>11.4.1.10. “Interface” tab explained<a class="headerlink" href="#interface-tab-explained" title="Permalink to this headline">¶</a></h4>
 <p>The “Interface” tab specifies interface for Kepler actor.</p>
+<img alt="_images/kepler_14.png" class="align-center" src="_images/kepler_14.png" />
 </div>
 </div>
 <div class="section" id="incorporating-user-codes-into-kepler-using-fc2k-exercises">
@@ -1130,15 +1144,18 @@ Please find examples of the simple “makefiles” below:</p>
 <li>You should see new parameter settings loaded into FC2K.</li>
 <li>After loading parameters you can notice that parameters point to locations within your home directory.</li>
 </ol>
+<img alt="_images/kepler_15.png" class="align-center" src="_images/kepler_15.png" />
 </div>
 <div class="section" id="project-settings">
 <h3>11.6.6. Project settings<a class="headerlink" href="#project-settings" title="Permalink to this headline">¶</a></h3>
 <p>Please take a look at the project settings.</p>
+<img alt="_images/kepler_16.png" class="align-center" src="_images/kepler_16.png" />
 <p>Subroutine arguments:</p>
 <ul class="simple">
 <li>one input argument of type integer</li>
 <li>one output argument of type integer</li>
 </ul>
+<img alt="_images/kepler_17.png" class="align-center" src="_images/kepler_17.png" />
 </div>
 <div class="section" id="after-all-the-settings-are-correct-you-can-generate-actor">
 <h3>11.6.7. After all the settings are correct, you can generate actor<a class="headerlink" href="#after-all-the-settings-are-correct-you-can-generate-actor" title="Permalink to this headline">¶</a></h3>
@@ -1147,6 +1164,7 @@ Please find examples of the simple “makefiles” below:</p>
 <div class="section" id="confirm-kepler-compilation">
 <h3>11.6.8. Confirm Kepler compilation<a class="headerlink" href="#confirm-kepler-compilation" title="Permalink to this headline">¶</a></h3>
 <p>After actor is generated, FC2K offers to compile Kepler application. Make sure to compile it by pressing “Yes”.</p>
+<img alt="_images/kepler_18.png" class="align-center" src="_images/kepler_18.png" />
 </div>
 <div class="section" id="you-can-now-start-kepler-and-use-generated-actor">
 <h3>11.6.9. You can now start Kepler and use generated actor<a class="headerlink" href="#you-can-now-start-kepler-and-use-generated-actor" title="Permalink to this headline">¶</a></h3>
@@ -1160,11 +1178,14 @@ Please find examples of the simple “makefiles” below:</p>
 </pre></div>
 </div>
 <p>You should see similar workflow on screen.</p>
+<img alt="_images/kepler_19.png" class="align-center" src="_images/kepler_19.png" />
 </div>
 <div class="section" id="launch-the-workflow">
 <h3>11.6.10. Launch the workflow<a class="headerlink" href="#launch-the-workflow" title="Permalink to this headline">¶</a></h3>
 <p>You can start the workflow execution, by pressing “Play” button</p>
+<img alt="_images/kepler_20.png" class="align-center" src="_images/kepler_20.png" />
 <p>After workflow finishes it’s execution, you should see result similar to one below:</p>
+<img alt="_images/kepler_21.png" class="align-center" src="_images/kepler_21.png" />
 <p>Exercise no. 1 finishes here.</p>
 </div>
 </div>
@@ -1232,15 +1253,18 @@ Please find examples of the simple “makefiles” below:</p>
 <li>Open file cposlice2cposlicef_fc2k.xml.</li>
 <li>You should see new project loaded into FC2K.</li>
 </ol>
+<img alt="_images/kepler_22.png" class="align-center" src="_images/kepler_22.png" />
 </div>
 <div class="section" id="id9">
 <h3>11.7.6. Project settings<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>Please take a look at the project settings.</p>
+<img alt="_images/kepler_23.png" class="align-center" src="_images/kepler_23.png" />
 <p>Subroutine arguments:</p>
 <ul class="simple">
 <li>one input argument - CPO array</li>
 <li>one output argument - CPO array</li>
 </ul>
+<img alt="_images/kepler_24.png" class="align-center" src="_images/kepler_24.png" />
 <p>After loading parameters you can notice that library location points to location within your itmwork directory <strong>($ITMWORK)</strong>.</p>
 </div>
 <div class="section" id="id10">
@@ -1250,6 +1274,7 @@ Please find examples of the simple “makefiles” below:</p>
 <div class="section" id="id11">
 <h3>11.7.8. Confirm Kepler compilation<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>After actor is generated, FC2K offers to compile Kepler application. Make sure to compile it by pressing “Yes”.</p>
+<img alt="_images/kepler_25.png" class="align-center" src="_images/kepler_25.png" />
 </div>
 <div class="section" id="id12">
 <h3>11.7.9. You can now start Kepler and use generated actor<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
@@ -1263,11 +1288,14 @@ Please find examples of the simple “makefiles” below:</p>
 </pre></div>
 </div>
 <p>You should see similar workflow on screen.</p>
+<img alt="_images/kepler_26.png" class="align-center" src="_images/kepler_26.png" />
 </div>
 <div class="section" id="id13">
 <h3>11.7.10. Launch the workflow<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>You can start the workflow execution, by pressing “Play” button</p>
+<img alt="_images/kepler_27.png" class="align-center" src="_images/kepler_27.png" />
 <p>After workflow finishes it’s execution, you should see result similar to one below:</p>
+<img alt="_images/kepler_28.png" class="align-center" src="_images/kepler_28.png" />
 <p>Exercise no. 2 finishes here.</p>
 </div>
 </div>
@@ -1330,15 +1358,18 @@ Please find examples of the simple “makefiles” below:</p>
 <li>Open file simplecppactor_nocpo_fc2k.xml.</li>
 <li>You should see new project loaded into FC2K.</li>
 </ol>
+<img alt="_images/kepler_29.png" class="align-center" src="_images/kepler_29.png" />
 </div>
 <div class="section" id="id18">
 <h3>11.8.6. Project settings<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <p>Please take a look at the project settings.</p>
+<img alt="_images/kepler_30.png" class="align-center" src="_images/kepler_30.png" />
 <p>Function arguments:</p>
 <ul class="simple">
 <li>one input argument - double</li>
 <li>one output argument - double</li>
 </ul>
+<img alt="_images/kepler_31.png" class="align-center" src="_images/kepler_31.png" />
 <p>After loading parameters you can notice that library location points to location within your $TUTORIAL_DIR directory.</p>
 </div>
 <div class="section" id="actor-generation">
@@ -1349,6 +1380,7 @@ Please find examples of the simple “makefiles” below:</p>
 <div class="section" id="id19">
 <h3>11.8.8. Confirm Kepler compilation<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <p>After actor is generated, FC2K offers to compile Kepler application. Make sure to compile it by pressing “Yes”.</p>
+<img alt="_images/kepler_32.png" class="align-center" src="_images/kepler_32.png" />
 </div>
 <div class="section" id="id20">
 <h3>11.8.9. You can now start Kepler and use generated actor<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
@@ -1362,11 +1394,14 @@ Please find examples of the simple “makefiles” below:</p>
 </pre></div>
 </div>
 <p>You should see similar workflow on screen.</p>
+<img alt="_images/kepler_33.png" class="align-center" src="_images/kepler_33.png" />
 </div>
 <div class="section" id="id21">
 <h3>11.8.10. Launch the workflow<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <p>You can start the workflow, by pressing “Play” button</p>
+<img alt="_images/kepler_34.png" class="align-center" src="_images/kepler_34.png" />
 <p>After workflow finishes it’s execution, you should see result similar to one below:</p>
+<img alt="_images/kepler_35.png" class="align-center" src="_images/kepler_35.png" />
 <p>Exercise no. 3 finishes here.</p>
 </div>
 </div>
@@ -1427,16 +1462,19 @@ In this exercise you will execute simple C++ code within Kepler. In order to do 
 <li>Open file simplecppactor_fc2k.xml.</li>
 <li>You should see new parameter settings loaded into FC2K.</li>
 </ol>
+<img alt="_images/kepler_36.png" class="align-center" src="_images/kepler_36.png" />
 </div>
 <div class="section" id="id26">
 <h3>11.9.6. Project settings<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
 <p>Please take a look at the project settings.</p>
+<img alt="_images/kepler_37.png" class="align-center" src="_images/kepler_37.png" />
 <p>Function arguments:</p>
 <ul class="simple">
 <li>input argument - equilibrium</li>
 <li>input argument - double</li>
 <li>output argument - double</li>
 </ul>
+<img alt="_images/kepler_38.png" class="align-center" src="_images/kepler_38.png" />
 <p>You should modify these setting, so they point to locations within you home directory. They will typically be as follows:</p>
 </div>
 <div class="section" id="id27">
@@ -1447,6 +1485,7 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 <div class="section" id="id28">
 <h3>11.9.8. Confirm Kepler compilation<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
 <p>After actor is generated, FC2K offers to compile Kepler application. Make sure to compile it by pressing “Yes”.</p>
+<img alt="_images/kepler_39.png" class="align-center" src="_images/kepler_39.png" />
 </div>
 <div class="section" id="id29">
 <h3>11.9.9. You can now start Kepler and use generated actor<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
@@ -1460,9 +1499,12 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 </pre></div>
 </div>
 <p>You should see similar workflow on screen.</p>
+<img alt="_images/kepler_40.png" class="align-center" src="_images/kepler_40.png" />
 <p>Launch the workflow</p>
 <p>You can start the workflow, by pressing “Play” button</p>
+<img alt="_images/kepler_41.png" class="align-center" src="_images/kepler_41.png" />
 <p>After workflow finishes it’s execution, you should see result similar to one below:</p>
+<img alt="_images/kepler_42.png" class="align-center" src="_images/kepler_42.png" />
 <p>Exercise no. 4 finishes here.</p>
 </div>
 </div>
@@ -1471,17 +1513,17 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 <div class="section" id="installation-of-default-version-of-kepler-without-actors">
 <h3>11.10.1. Installation of default version of Kepler (without actors)<a class="headerlink" href="#installation-of-default-version-of-kepler-without-actors" title="Permalink to this headline">¶</a></h3>
 <p>In order to use most recent version of Kepler do following. First of all make sure you have directory imas-kepler inside your $HOME</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span># in case you already have imas-kepler inside $HOME
-# you can move it to $ITMWORK/imas-kepler
-&gt; mv $HOME/imas-kepler $ITMWORK/imas-kepler
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> in case you already have imas-kepler inside $HOME</span>
+<span class="go"> you can move it to $ITMWORK/imas-kepler</span>
+<span class="gp">&gt;</span> mv <span class="nv">$HOME</span>/imas-kepler <span class="nv">$ITMWORK</span>/imas-kepler
 
-# If you don&#39;t have $HOME/imas-kepler directory, create
-# it inside $ITMWORK
-&gt; mkdir $ITMWORK/imas-kepler
+<span class="go"> If you don&#39;t have $HOME/imas-kepler directory, create</span>
+<span class="go"> it inside $ITMWORK</span>
+<span class="gp">&gt;</span> mkdir <span class="nv">$ITMWORK</span>/imas-kepler
 
-# create symbolic link inside $HOME
-&gt; cd $HOME
-&gt; ln -s $ITMWORK/imas-kepler
+<span class="go"> create symbolic link inside $HOME</span>
+<span class="gp">&gt;</span> <span class="nb">cd</span> <span class="nv">$HOME</span>
+<span class="gp">&gt;</span> ln -s <span class="nv">$ITMWORK</span>/imas-kepler
 </pre></div>
 </div>
 <p>Then, you can load imasenv module by calling</p>
