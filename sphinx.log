@@ -23,11 +23,28 @@ then touch -r /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 -d "-1 
 else make /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9; fi
 ln -sf /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 source/static/EQSTABIL_tutorial_20151214.pdf
 cat source/static/EUROfusionIntegratedModellingworkflows.pdf.md5 > source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp
-if test -f /home/circleci/assets/MD5/29571911dcc7f2e737ed27312e31add5; \
-then touch -r /home/circleci/assets/MD5/29571911dcc7f2e737ed27312e31add5 -d "-1 minute" source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp; \
+if test -f /home/circleci/assets/MD5/cd9e5271adae54c43ce780a22374e683; \
+then touch -r /home/circleci/assets/MD5/cd9e5271adae54c43ce780a22374e683 -d "-1 minute" source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp; \
      touch -r source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp -d "-1 minute"  source/static/EUROfusionIntegratedModellingworkflows.pdf.md5; \
-else make /home/circleci/assets/MD5/29571911dcc7f2e737ed27312e31add5; fi
-ln -sf /home/circleci/assets/MD5/29571911dcc7f2e737ed27312e31add5 source/static/EUROfusionIntegratedModellingworkflows.pdf
+else make /home/circleci/assets/MD5/cd9e5271adae54c43ce780a22374e683; fi
+make[1]: Entering directory '/home/circleci/project'
+if ! test -d /home/circleci/assets/MD5; \
+   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
+   if test "x" != "x"; \
+        then chgrp  /home/circleci/assets/MD5; \
+   fi; \
+fi
+curl --location --fail --insecure \
+	--output /home/circleci/assets/MD5/cd9e5271adae54c43ce780a22374e683 https://github.com/WPCD-Workflows/assets/raw/master/cd9e5271adae54c43ce780a22374e683
+if test $(md5sum /home/circleci/assets/MD5/cd9e5271adae54c43ce780a22374e683|cut -c 1-32) = cd9e5271adae54c43ce780a22374e683 ; then \
+  chmod g+rw /home/circleci/assets/MD5/cd9e5271adae54c43ce780a22374e683;\
+else\
+  rm -f /home/circleci/assets/MD5/cd9e5271adae54c43ce780a22374e683; \
+  echo "Error: Checksum of /home/circleci/assets/MD5/cd9e5271adae54c43ce780a22374e683 incorrect! Removing it.";\
+  exit 1;\
+fi
+make[1]: Leaving directory '/home/circleci/project'
+ln -sf /home/circleci/assets/MD5/cd9e5271adae54c43ce780a22374e683 source/static/EUROfusionIntegratedModellingworkflows.pdf
 unzip -q -d source/static/Phase4.10b.10_HTML source/static/Phase4.10b.10_HTML.zip
 sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Workflows.github.io
 Running Sphinx v1.8.5
