@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7. Turbulent Flux Quantities in Transport Models &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  <title>Turbulent Flux Quantities in Transport Models &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
   
 
   
@@ -35,9 +35,7 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. Running Exponential Average" href="averages.html" />
-    <link rel="prev" title="6. The EQRECONSTRUCT workflow" href="eqreconstr.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,29 +83,16 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">2. Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">3. Core Transport Simulator (ETS)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edge.html">4. Edge Transport Simulator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="es.html">5. Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">6. The EQRECONSTRUCT workflow</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Turbulent Flux Quantities in Transport Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">7.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#particle-flux-as-an-example">7.2. Particle Flux as an Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#metric-coefficients">7.3. Metric Coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#heat-fluxes">7.4. Heat Fluxes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ds-and-vs-from-turbulence-codes-to-transport-solvers">7.5. Ds and Vs from Turbulence Codes to Transport Solvers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ambipolarity">7.6. Ambipolarity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#statistical-character">7.7. Statistical Character</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="averages.html">8. Running Exponential Average</a></li>
-<li class="toctree-l1"><a class="reference internal" href="codes.html">9. Codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conventions.html">10. Conventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler.html">11. Kepler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="amns.html">12. AMNS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">13. Additional resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">4. Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">5. The EQRECONSTRUCT workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">6. Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">7. Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">8. AMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">9. Additional resources</a></li>
 </ul>
 
             
@@ -153,7 +138,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>7. Turbulent Flux Quantities in Transport Models</li>
+      <li>Turbulent Flux Quantities in Transport Models</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,9 +160,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="turbulent-flux-quantities-in-transport-models">
-<span id="imp4-transport"></span><h1>7. Turbulent Flux Quantities in Transport Models<a class="headerlink" href="#turbulent-flux-quantities-in-transport-models" title="Permalink to this headline">¶</a></h1>
+<span id="imp4-transport"></span><h1>Turbulent Flux Quantities in Transport Models<a class="headerlink" href="#turbulent-flux-quantities-in-transport-models" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
-<h2>7.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>In conventional transport modelling, all quantities appearing in the
 equations are 1-D, in some radial coordinate (poloidal flux, normalised
 radius, etc). In general any monotonic radial coordinate is acceptable.
@@ -215,7 +200,7 @@ coreimpurity CPO is used in the workflow. These auxiliary actors are
 described on the <a class="reference external" href="#imp4_aux_actors">auxiliary actors page.</a></p>
 </div>
 <div class="section" id="particle-flux-as-an-example">
-<h2>7.2. Particle Flux as an Example<a class="headerlink" href="#particle-flux-as-an-example" title="Permalink to this headline">¶</a></h2>
+<h2>Particle Flux as an Example<a class="headerlink" href="#particle-flux-as-an-example" title="Permalink to this headline">¶</a></h2>
 <p>The mean field equation governing particle balance is the transport
 equation for electrons,</p>
 <div class="math notranslate nohighlight">
@@ -264,7 +249,7 @@ the flux-surface averaged flux itself and its expression in terms of
 diffusion and frictional slip are identical characterisations.</p>
 </div>
 <div class="section" id="metric-coefficients">
-<h2>7.3. Metric Coefficients<a class="headerlink" href="#metric-coefficients" title="Permalink to this headline">¶</a></h2>
+<h2>Metric Coefficients<a class="headerlink" href="#metric-coefficients" title="Permalink to this headline">¶</a></h2>
 <p>Transport modellers want the Ds and Vs as physical quantities in SI
 units. In general the fluxes are (magnetic) flux surface averaged
 quantities, which implies the existence of metric elements in the
@@ -280,7 +265,7 @@ informational content is the same, but this difference has to be taken
 into account in any transport modelling and benchmarking.</p>
 </div>
 <div class="section" id="heat-fluxes">
-<h2>7.4. Heat Fluxes<a class="headerlink" href="#heat-fluxes" title="Permalink to this headline">¶</a></h2>
+<h2>Heat Fluxes<a class="headerlink" href="#heat-fluxes" title="Permalink to this headline">¶</a></h2>
 <p>The heat flux is treated in a similar way, with transport equation</p>
 <div class="math notranslate nohighlight">
 \[{3 \over 2}{\partial p_e \over \partial t} +{1 \over V'_\rho}{\partial \over \partial \rho} V'_\rho \langle q_e^\rho \rangle = Q_e + \sum_{{\rm ions}}T_{ei},\]</div>
@@ -330,7 +315,7 @@ flux surface average is a problematic operation on open field lines
 doesn’t enter.</p>
 </div>
 <div class="section" id="ds-and-vs-from-turbulence-codes-to-transport-solvers">
-<h2>7.5. Ds and Vs from Turbulence Codes to Transport Solvers<a class="headerlink" href="#ds-and-vs-from-turbulence-codes-to-transport-solvers" title="Permalink to this headline">¶</a></h2>
+<h2>Ds and Vs from Turbulence Codes to Transport Solvers<a class="headerlink" href="#ds-and-vs-from-turbulence-codes-to-transport-solvers" title="Permalink to this headline">¶</a></h2>
 <p>To serve the results from turbulence codes to transport solvers, we have
 to turn the fluxes (results) into diffusivities and effective velocities
 (coefficients, Ds and Vs for short), which represent more information
@@ -394,7 +379,7 @@ we treat each scale length separately as above and use N-way maxima in
 the Prandtl correction for the N channels.</p>
 </div>
 <div class="section" id="ambipolarity">
-<h2>7.6. Ambipolarity<a class="headerlink" href="#ambipolarity" title="Permalink to this headline">¶</a></h2>
+<h2>Ambipolarity<a class="headerlink" href="#ambipolarity" title="Permalink to this headline">¶</a></h2>
 <p>There remains the issue of ambipolarity of the D and V for particle
 flux. For a pure singly charged plasma the ion and electron Ds and Vs
 should be equal. Even if the turbulence model is gyrokinetic or
@@ -418,7 +403,7 @@ the same information in a different way, and they will compute ambipolar
 particle fluxes (radial transport of charge is zero).</p>
 </div>
 <div class="section" id="statistical-character">
-<h2>7.7. Statistical Character<a class="headerlink" href="#statistical-character" title="Permalink to this headline">¶</a></h2>
+<h2>Statistical Character<a class="headerlink" href="#statistical-character" title="Permalink to this headline">¶</a></h2>
 <p>Turbulence has a statistical character, so convergence to a mean is not
 monotonic and when within one std dev of the mean there is no further
 convergence. The diffusivity for ExB turbulence is comparable to</p>
@@ -439,15 +424,6 @@ averages.</a></p>
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="averages.html" class="btn btn-neutral float-right" title="8. Running Exponential Average" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="eqreconstr.html" class="btn btn-neutral float-left" title="6. The EQRECONSTRUCT workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

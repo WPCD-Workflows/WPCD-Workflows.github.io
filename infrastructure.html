@@ -87,18 +87,109 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Infrastructure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Infrastructure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#kepler">2.1. Kepler</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-to-kepler-basics">2.1.1. Introduction to Kepler - basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installing-kepler-and-tutorial-workflows">2.1.1.1. Installing Kepler and tutorial workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#kepler-imas-actors">2.1.2. Kepler IMAS actors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imas-kepler-based-configuration">2.1.3. IMAS Kepler based configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#running-kepler-using-imas-environment">2.1.3.1. Running Kepler using IMAS environment</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fc2k-embedding-user-codes-into-kepler">2.1.4. FC2K - Embedding user codes into Kepler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fc2k-basics">2.1.4.1. FC2K basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#incorporating-user-codes-into-kepler-using-fc2k-exercises">2.1.4.2. Incorporating user codes into Kepler using FC2K - exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fc2k-developer-guidelines">2.1.5. FC2K - developer guidelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-code-wrapper-actually-does">2.1.5.1. What code wrapper actually does?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#development-of-fortran-codes">2.1.5.2. Development of Fortran codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#development-of-c-codes">2.1.5.3. Development of C++ codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delivery-of-the-user-code">2.1.5.4. Delivery of the user code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fc2k-example-1-embedding-fortran-codes-into-kepler-no-cpos">2.1.6. FC2K - Example 1 - Embedding Fortran codes into Kepler (no CPOs)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#get-familiar-with-codes-that-will-be-incorporated-into-kepler">2.1.6.1. Get familiar with codes that will be incorporated into Kepler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-the-code-by-issuing">2.1.6.2. Build the code by issuing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prepare-environment-for-fc2k">2.1.6.3. Prepare environment for FC2K</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-fc2k-application">2.1.6.4. Start FC2K application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#open-a-nocpo-example-1-project">2.1.6.5. Open a nocpo_example_1 project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#project-settings">2.1.6.6. Project settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#after-all-the-settings-are-correct-you-can-generate-actor">2.1.6.7. After all the settings are correct, you can generate actor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#confirm-kepler-compilation">2.1.6.8. Confirm Kepler compilation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#you-can-now-start-kepler-and-use-generated-actor">2.1.6.9. You can now start Kepler and use generated actor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-the-workflow">2.1.6.10. Launch the workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fc2k-example-2-embedding-fortran-code-into-kepler-cpos">2.1.7. FC2K - Example 2 - Embedding Fortran code into Kepler (CPOs)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">2.1.7.1. Get familiar with codes that will be incorporated into Kepler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-the-code">2.1.7.2. Build the code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2.1.7.3. Prepare environment for FC2K</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">2.1.7.4. Start FC2K application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#open-project-cposlice2cposlicef-fc2k">2.1.7.5. Open project cposlice2cposlicef_fc2k</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">2.1.7.6. Project settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">2.1.7.7. After all the settings are correct, you can generate actor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">2.1.7.8. Confirm Kepler compilation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">2.1.7.9. You can now start Kepler and use generated actor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">2.1.7.10. Launch the workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fc2k-example-3-embedding-c-code-within-kepler-no-cpos">2.1.8. FC2K - Example 3 - Embedding C++ code within Kepler (no CPOs)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">2.1.8.1. Get familiar with codes that will be incorporated into Kepler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">2.1.8.2. Build the code by issuing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">2.1.8.3. Prepare environment for FC2K</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">2.1.8.4. Start FC2K application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#open-project-simplecppactor-nocpo">2.1.8.5. Open project simplecppactor_nocpo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">2.1.8.6. Project settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#actor-generation">2.1.8.7. Actor generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">2.1.8.8. Confirm Kepler compilation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">2.1.8.9. You can now start Kepler and use generated actor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">2.1.8.10. Launch the workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fc2k-example-4-embedding-c-code-within-kepler-cpos">2.1.9. FC2K - Example 4 - Embedding C++ code within Kepler (CPOs)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id22">2.1.9.1. Get familiar with codes that will be incorporated into Kepler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">2.1.9.2. Build the code by issuing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24">2.1.9.3. Prepare environment for FC2K</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id25">2.1.9.4. Start FC2K application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#open-project-simplecppactor">2.1.9.5. Open project simplecppactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">2.1.9.6. Project settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id27">2.1.9.7. Actor generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id28">2.1.9.8. Confirm Kepler compilation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id29">2.1.9.9. You can now start Kepler and use generated actor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#imas-kepler-2-1-3-default-release">2.1.10. IMAS Kepler 2.1.3 (default release)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installation-of-default-version-of-kepler-without-actors">2.1.10.1. Installation of default version of Kepler (without actors)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-of-dressed-version-of-kepler-with-actors">2.1.10.2. Installation of “dressed” version of Kepler (with actors)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#imas-kepler-2-1-5-release-candidate">2.1.11. IMAS Kepler 2.1.5 (release candidate)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-based-on-readme-file">2.1.12. Installation based on README file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#general-grid-description-and-grid-service-library">2.2. General Grid Description and Grid Service Library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#resources">2.2.1. Resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation">2.2.2. Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#outdated-documentation">2.2.3. Outdated documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-grids">2.2.3.1. Example grids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grid-service-library">2.2.3.2. Grid service library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#imp3-general-grid-description-and-grid-service-library-tutorial">2.2.3.3. IMP3 General Grid Description and Grid Service Library - Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">3. Core Transport Simulator (ETS)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edge.html">4. Edge Transport Simulator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="es.html">5. Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">6. The EQRECONSTRUCT workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transport.html">7. Turbulent Flux Quantities in Transport Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="averages.html">8. Running Exponential Average</a></li>
-<li class="toctree-l1"><a class="reference internal" href="codes.html">9. Codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conventions.html">10. Conventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler.html">11. Kepler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="amns.html">12. AMNS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">13. Additional resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es.html">4. Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">5. The EQRECONSTRUCT workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">6. Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">7. Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">8. AMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">9. Additional resources</a></li>
 </ul>
 
             
@@ -178,6 +269,1908 @@ interfaces for I/O.</p>
 <blockquote>
 <div><p><a class="reference external" href="_static/Phase4.10b.10_HTML/Phase4TOP.html">Data structure 4.10b.10</a></p>
 </div></blockquote>
+<div class="section" id="kepler">
+<span id="id1"></span><h2>2.1. Kepler<a class="headerlink" href="#kepler" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction-to-kepler-basics">
+<h3>2.1.1. Introduction to Kepler - basics<a class="headerlink" href="#introduction-to-kepler-basics" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://kepler-project.org/">Kepler</a> is a workflow engine and design
+platform for analyzing and modeling scientific data. Kepler provides a
+graphical interface and a library of pre-defined components to enable users
+to construct scientific workflows which can undertake a wide range of
+functionality. It is primarily designed to access, analyse, and visualise
+scientific data but can be used to construct whole programs or run
+pre-existing simulation codes.</p>
+<p>Kepler builds upon the mature Ptolemy II framework, developed at the
+University of California, Berkeley. Kepler itself is developed and
+maintained by the cross-project Kepler collaboration.</p>
+<p>The main components in a Kepler workflow are actors, which are used in a
+design (inherited from Ptolemy II) that separates workflow components
+(“actors”) from workflow orchestration (“directors”), making components
+more easily reusable. Workflows can work at very levels of granularity,
+from low-level workflows (that explicitly move data around or start and
+monitor remote jobs, for example) to high-level workflows that interlink
+complex steps/actors. Actors can be reused to construct more complex
+actors enabling complex functionality to be encapsulated in easy to use
+packages. A wide range of actors are available for use and reuse.</p>
+<div class="section" id="installing-kepler-and-tutorial-workflows">
+<h4>2.1.1.1. Installing Kepler and tutorial workflows<a class="headerlink" href="#installing-kepler-and-tutorial-workflows" title="Permalink to this headline">¶</a></h4>
+<p>You can download Kepler from the following page <a class="reference external" href="https://kepler-project.org/users/downloads">https://kepler-project.org/users/downloads</a></p>
+<p>In order to install Kepler and tutorial related workflows you have to follow the instruction at</p>
+<p><a class="reference external" href="https://confluence.man.poznan.pl/community/display/WFMS/5.3.+Kepler+Basics#id-5.3.KeplerBasics-1InstallingKepler">https://confluence.man.poznan.pl/community/display/WFMS/5.3.+Kepler+Basics#id-5.3.KeplerBasics-1InstallingKepler</a></p>
+<p>Now you can start Kepler application and proceed to tutorial examples</p>
+</div>
+</div>
+<div class="section" id="kepler-imas-actors">
+<h3>2.1.2. Kepler IMAS actors<a class="headerlink" href="#kepler-imas-actors" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Imas actor</strong></p></th>
+<th class="head"><p><strong>Deacription</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>UALSliceCollector</p></td>
+<td><div class="line-block">
+<div class="line">Store one slice from input IDS into
+different run. This way, it is possible</div>
+<div class="line">to collect intermediate results during
+workflow execution.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>UALPython</p></td>
+<td><div class="line-block">
+<div class="line">Allows to run external Python process and
+pass input/output data between workflow</div>
+<div class="line">and process itself. This actor is, most
+commonly, used for data visualization.</div>
+<div class="line">User can pass Python script directly to
+the actor.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>UALMuxParam</p></td>
+<td><div class="line-block">
+<div class="line">Provides similar behavior to
+ualmux/UALMux, however, this actors has</div>
+<div class="line">two additional ports:</div>
+<div class="line-block">
+<div class="line">- fieldDescription - contains name of
+the filed that will be modified</div>
+<div class="line">- fieldValue - contains new value of
+the field</div>
+</div>
+<div class="line">Main difference between ualmux/
+ualmuxparam
+actors lays in it’s ability to be used
+in</div>
+<div class="line">a loop that modify different field
+inside IDS.</div>
+<div class="line">You can simply provide different field
+name
+for different loop’s step.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>UALMux</p></td>
+<td><div class="line-block">
+<div class="line">Provides a method for putting data inside
+IDS inputs</div>
+<div class="line-block">
+<div class="line">- inputIds/inputCpo - cpo we are going
+to modify</div>
+<div class="line">- inTime - time index at which data are
+supposed to be updated</div>
+<div class="line">- name of the field is specified as port
+name</div>
+<div class="line">- new value of the field is passed as
+value sent to the port</div>
+</div>
+<div class="line">outputs:</div>
+<div class="line-block">
+<div class="line">- outputIds/outputCpo - modified IDS</div>
+<div class="line">- outTime - actual time index (depend
+on approximation mode)</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>UALInit</p></td>
+<td><div class="line-block">
+<div class="line">Initializes input pulse file, creates
+run work and provides ID S description</div>
+<div class="line">for other actors
+inputs:</div>
+<div class="line-block">
+<div class="line">- user - name of the user for input
+data file (e.g. g2michal)</div>
+<div class="line">- machine - name of the machine for
+input data file (e.g. test/jet)</div>
+<div class="line">- shot - shot number</div>
+<div class="line">- run - run number</div>
+<div class="line">- runwork - temporary run number
+(place where output will be stored)</div>
+</div>
+<div class="line">outputs:</div>
+<div class="line-block">
+<div class="line">- error - description of error in case
+there are problems while accessing
+input data</div>
+<div class="line">- all IDSess requested by user (each
+IDS is specified as output port
+name)</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>UALDemux</p></td>
+<td><div class="line-block">
+<div class="line">Allows to read data from given IDS -
+name of the field is specified as</div>
+<div class="line">output port.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>UALCollector</p></td>
+<td><div class="line-block">
+<div class="line">Stores input IDSess inside new run.
+This way, it is possible to copy data</div>
+<div class="line">into different shot/run rather than
+inside run work.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>UALClose</p></td>
+<td><div class="line-block">
+<div class="line">Closes run work based on description
+passed via input IDS.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>SetBreakpoint</p></td>
+<td><div class="line-block">
+<div class="line">This actor allows to enforce “debug”
+mode for IMAS based actors. It sets</div>
+<div class="line">global parameter “ITM_DEBUG” to either
+true or false. In case true is a value</div>
+<div class="line">of “ITM_DEBUG” all FC2K generated actors
+will start in debug mode.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>RecordSet</p></td>
+<td><div class="line-block">
+<div class="line">Sets values inside record (take a look
+for short tutorial: RecordGet/RecordSet)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>RecordGet</p></td>
+<td><div class="line-block">
+<div class="line">Gets values from the record (take a
+look here for short tutorial:</div>
+<div class="line">RecordGet/RecordSet)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IDSOccurence</p></td>
+<td><div class="line-block">
+<div class="line">Provides a method to create duplicate
+of IDS with new occurrence number.</div>
+<div class="line">This way, it is possible to store data
+before they get modified by user code.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IDSFlush</p></td>
+<td><div class="line-block">
+<div class="line">Flushes data from workflow. Data from
+memory cache are stored inside database</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IDSDiscard</p></td>
+<td><div class="line-block">
+<div class="line">Discards data inside workflow. Data will
+be re-read into memory cache.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IDSContentStd</p></td>
+<td><div class="line-block">
+<div class="line">Displays IDS data on console (better
+for huge data sets)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IDSContent</p></td>
+<td><div class="line-block">
+<div class="line">Displays IDS data</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="imas-kepler-based-configuration">
+<h3>2.1.3. IMAS Kepler based configuration<a class="headerlink" href="#imas-kepler-based-configuration" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="running-kepler-using-imas-environment">
+<h4>2.1.3.1. Running Kepler using IMAS environment<a class="headerlink" href="#running-kepler-using-imas-environment" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="setting-up-environment">
+<h5>2.1.3.1.1. Setting up environment<a class="headerlink" href="#setting-up-environment" title="Permalink to this headline">¶</a></h5>
+<p>Please do not forget to set JAVA memory settings:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export _JAVA_OPTIONS=&quot;-Xss20m -Xms8g -Xmx8g&quot;</span>
+</pre></div>
+</div>
+<div class="section" id="backing-up-old-files">
+<h6>2.1.3.1.1.1. Backing up old files<a class="headerlink" href="#backing-up-old-files" title="Permalink to this headline">¶</a></h6>
+<p>Before first configuration of Kepler, make sure to backup your old data files</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
+<span class="go">mv .kepler .kepler~</span>
+<span class="go">mv KeplerData KeplerData~</span>
+<span class="go">mv .ptolemyII .ptolemyII~</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-place-to-store-your-personal-installations-of-kepler">
+<h5>2.1.3.1.2. Creating place to store your personal installations of Kepler<a class="headerlink" href="#creating-place-to-store-your-personal-installations-of-kepler" title="Permalink to this headline">¶</a></h5>
+<p>IMAS based installations are stored inside <strong>$HOME/kepler</strong> directory.</p>
+<p>Before proceeding further, make sure to create <strong>kepler</strong> directory</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> create directory inside <span class="nv">$HOME</span>
+<span class="go">cd ~</span>
+<span class="go">mkdir kepler</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-kepler-default-release">
+<h5>2.1.3.1.3. Running Kepler (default release)<a class="headerlink" href="#running-kepler-default-release" title="Permalink to this headline">¶</a></h5>
+<dl>
+<dt>In order to start Kepler you have use helper scripts that will install and configure your personal copy of Kepler</dt><dd><ul>
+<li><p>load IMAS module</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">module </span><span class="n">load</span> <span class="n">imas</span>
+<span class="k">module </span><span class="n">load</span> <span class="n">kepler</span>
+<span class="cp"># NOTE! It might be that you don&#39;t have Kepler copy inside your $HOME</span>
+<span class="cp"># in that case you need to install it kepler_install_light</span>
+</pre></div>
+</div>
+</li>
+<li><p>Start Kepler</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="cp"># run alias that will execute Kepler</span>
+<span class="n">kepler</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="fc2k-embedding-user-codes-into-kepler">
+<h3>2.1.4. FC2K - Embedding user codes into Kepler<a class="headerlink" href="#fc2k-embedding-user-codes-into-kepler" title="Permalink to this headline">¶</a></h3>
+<p>This tutorial is designed to introduce the concept of using FC2K tool in order to build Kepler compatible actors.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">This tutorial explains</span>
+<span class="go">how to set up codes for FC2K</span>
+<span class="go">how to build actor using FC2K</span>
+<span class="go">how to incorporate actor within Kepler workflow</span>
+</pre></div>
+</div>
+<div class="section" id="fc2k-basics">
+<h4>2.1.4.1. FC2K basics<a class="headerlink" href="#fc2k-basics" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="what-fc2k-actually-does">
+<h5>2.1.4.1.1. What FC2K actually does?<a class="headerlink" href="#what-fc2k-actually-does" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>Generates a Fortran/CPP wrapper, which intermediates between Kepler actor and user code in terms of:</p>
+<ul>
+<li><p>reading/writing of in/out physical data (IDS)</p></li>
+<li><p>passing arguments of standard types to/from the actor</p></li>
+</ul>
+</li>
+<li><p>Creates a Kepler actor that:</p>
+<ul>
+<li><p>calls a user code</p></li>
+<li><p>provides error handling</p></li>
+<li><p>calls debugger (if run in “debug” mode)</p></li>
+<li><p>calls batch submission commands for MPI based actors</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="fc2k-main-window">
+<h5>2.1.4.1.2. FC2K main window<a class="headerlink" href="#fc2k-main-window" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/kepler_1.png" class="align-center" src="_images/kepler_1.png" />
+</div>
+<div class="section" id="actor-description">
+<h5>2.1.4.1.3. Actor description<a class="headerlink" href="#actor-description" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/kepler_2.png" class="align-center" src="_images/kepler_2.png" />
+<p>This group of graphical controls allows to set the description of the actor and its “place” in hierarchy of Kepler elements in Kepler “Component” browser</p>
+<ul class="simple">
+<li><p><strong>Project</strong> - defines a branch in Kepler “Component” browser where an actor will be placed</p></li>
+<li><p><strong>Name</strong> - a user defined name of the actor</p></li>
+<li><p><strong>Version</strong> - a user defined version of user codes</p></li>
+<li><p><strong>Subroutine</strong> - A name of user subroutine (Fortran) or function (C++)</p></li>
+</ul>
+</div>
+<div class="section" id="environment">
+<h5>2.1.4.1.4. Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/kepler_3.png" class="align-center" src="_images/kepler_3.png" />
+<p>The Environment text fields shows UAL and Kepler locations.</p>
+<ul class="simple">
+<li><p><strong>Kepler</strong> - Kepler location (usually the same as $KEPLER)</p></li>
+<li><p><strong>UAL</strong> - IMAS UAL location (usually the same as $IMAS_PREFIX)</p></li>
+</ul>
+</div>
+<div class="section" id="arguments-tab-explained">
+<h5>2.1.4.1.5. “Arguments” tab explained<a class="headerlink" href="#arguments-tab-explained" title="Permalink to this headline">¶</a></h5>
+<p>Below you can find explanation of FC2K arguments tab.</p>
+<img alt="_images/kepler_4.png" class="align-center" src="_images/kepler_4.png" />
+<ul class="simple">
+<li><p><strong>Type</strong> - Defines a type of an argument. It is possible to choose either IDS based type (e.g. equilibrium, topinfo, etc.) or primitive type (e.g. int, long, double, char)</p></li>
+<li><p><strong>Single slice</strong> - Determines if IDS is passed as single slice or an array. (This setting is valid for IDS types only )</p>
+<ul>
+<li><p>if turned <strong>ON</strong> - Only one slice is passed. An actor will get an additional port to define a time.</p></li>
+<li><p>if turned <strong>OFF</strong> - All IDSes for given shot run is passed.</p></li>
+</ul>
+</li>
+<li><p><strong>Is array</strong> - Determines if a primitive type  is passed as a scalar or an array</p>
+<ul>
+<li><p>if turned <strong>ON</strong> - An argument is passed as an array. It requires definition of array size (dynamic array are not supported)</p></li>
+<li><p>if turned <strong>OFF</strong> - An argument is passed as a scalar.</p></li>
+</ul>
+</li>
+<li><p><strong>Array size</strong> - Defines the size of an array of primitive types</p></li>
+<li><p><strong>Input</strong> - Defines argument as an input</p></li>
+<li><p><strong>Output</strong> - Defines argument as an output</p></li>
+<li><p><strong>Label</strong> - User defined name of an argument (and actor port)</p></li>
+</ul>
+<img alt="_images/kepler_5.png" class="align-center" src="_images/kepler_5.png" />
+<p>Please take a look on a screenshot above:</p>
+<ul class="simple">
+<li><p><em>equilibrium</em> - an input parameter - one IDS (slice)</p></li>
+<li><p><em>amns</em> - an input parameter - all amns IDS slices stored in given shot/run</p></li>
+<li><p><em>integer</em> - an input parameter - a scalar</p></li>
+<li><p><em>double</em> - an input parameter - an array of size 10</p></li>
+<li><p><em>edge</em> - an in/out parameter - single slice of “edge” IDS</p></li>
+<li><p><em>waves</em> - an output parameter - all slices of “waves” IDS</p></li>
+</ul>
+</div>
+<div class="section" id="parameters-tab-explained">
+<h5>2.1.4.1.6. “Parameters” tab explained<a class="headerlink" href="#parameters-tab-explained" title="Permalink to this headline">¶</a></h5>
+<p>Code specific parameters are all parameters which are specific to the code (like switches, scaling parameters, and parameters for built-in analytical models) as well as parameters to explicitly overrule fields in the ITM data structures.</p>
+<img alt="_images/kepler_6.png" class="align-center" src="_images/kepler_6.png" />
+<ul class="simple">
+<li><p><strong>Frequently Used XML</strong> - Actual value of the code parameters</p></li>
+<li><p><strong>Default XML</strong> - Default values of the code parameters</p></li>
+<li><p><strong>Schema</strong> - A (XSD) XML schema</p></li>
+</ul>
+</div>
+<div class="section" id="source-tab-explained">
+<h5>2.1.4.1.7. “Source” tab explained<a class="headerlink" href="#source-tab-explained" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/kepler_7.png" class="align-center" src="_images/kepler_7.png" />
+<p>The purpose of this tab is to define all code related issues:</p>
+<ul class="simple">
+<li><p>a programming language</p></li>
+<li><p>utilized compiler,</p></li>
+<li><p>type of code execution (sequential of parallel)</p></li>
+<li><p>libraries being used</p></li>
+</ul>
+<div class="section" id="libraries">
+<h6>2.1.4.1.7.1. Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h6>
+<p><em>“Main library”</em></p>
+<p>A “Main library” field allows to define a path to library containing user subroutine/function.</p>
+<img alt="_images/kepler_8.png" class="align-center" src="_images/kepler_8.png" />
+<p><em>“Optional library”</em></p>
+<p>A “Optional library” field allows to define a path to optional library containing user subroutine/function.</p>
+<p><em>“Custom libraries”</em></p>
+<p>“Custom libraries” are non-standard static libraries required for building the user code.</p>
+<img alt="_images/kepler_9.png" class="align-center" src="_images/kepler_9.png" />
+<p>Available operations on libraries list:</p>
+<ul class="simple">
+<li><p><em>“Add…”</em> - Adds a new library to the list</p></li>
+<li><p><em>“Edit…”</em> - Edits library path</p></li>
+<li><p><em>“Remove”</em> - Removes a new library from the list</p></li>
+</ul>
+<p><em>“System libraries”</em></p>
+<p>“System libraries” are system libraries handled by pkg-config mechanism and required for building the user code.</p>
+<img alt="_images/kepler_10.png" class="align-center" src="_images/kepler_10.png" />
+<p>A user can:</p>
+<ul class="simple">
+<li><p>add library from the list,</p></li>
+<li><p>remove library</p></li>
+<li><p>display detailed info (library definition returned by pkg-config mechanism)</p></li>
+</ul>
+<img alt="_images/kepler_11.png" class="align-center" src="_images/kepler_11.png" />
+</div>
+</div>
+<div class="section" id="settings-tab-explained">
+<h5>2.1.4.1.8. “Settings” tab explained<a class="headerlink" href="#settings-tab-explained" title="Permalink to this headline">¶</a></h5>
+<p>A user, using this tab, selects programming language of codes provided, compiler used to built library and type of code execution (sequential or parallel)</p>
+<img alt="_images/kepler_12.png" class="align-center" src="_images/kepler_12.png" />
+<ul>
+<li><p><strong>Programming languange:</strong></p>
+<blockquote>
+<div><ul>
+<li><p><strong>Type</strong> - Defines programming language of user codes. It could be set to:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fortran</p></li>
+<li><p>_C/C++</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Compiler</strong> - Defines compiler being used. Possible values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ifort, gfortran</p></li>
+<li><p>gcc, g++</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Computation:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Parallel MPI</strong> - If turned <strong>ON</strong> uses MPI compilers (mpiifort for ifort, mpif90 for gfortran, mpigxx for C)</p></li>
+<li><p><strong>OPENMP</strong> - Defined if usage of OpenMP directives is turned ON/OFF</p></li>
+<li><p><strong>Batch</strong> - If turned <strong>ON</strong>, submits a user code to jobs queue (combined with Parallel MPI or OPENMP switch runs user code as parallel job)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Additional features:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Calls init method</strong> - If user function needs any pre-initialization, an additional function will be called.</p></li>
+<li><p><strong>Returns diagnostic info</strong> - adds output diagnostic information</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="documentation-tab-explained">
+<h5>2.1.4.1.9. “Documentation” tab explained<a class="headerlink" href="#documentation-tab-explained" title="Permalink to this headline">¶</a></h5>
+<p>The “Documentation” tab specifies an user-defined Kepler actor description. It could be displayed from actor pop-up menu.</p>
+<img alt="_images/kepler_13.png" class="align-center" src="_images/kepler_13.png" />
+</div>
+<div class="section" id="interface-tab-explained">
+<h5>2.1.4.1.10. “Interface” tab explained<a class="headerlink" href="#interface-tab-explained" title="Permalink to this headline">¶</a></h5>
+<p>The “Interface” tab specifies interface for Kepler actor.</p>
+<img alt="_images/kepler_14.png" class="align-center" src="_images/kepler_14.png" />
+</div>
+</div>
+<div class="section" id="incorporating-user-codes-into-kepler-using-fc2k-exercises">
+<h4>2.1.4.2. Incorporating user codes into Kepler using FC2K - exercises<a class="headerlink" href="#incorporating-user-codes-into-kepler-using-fc2k-exercises" title="Permalink to this headline">¶</a></h4>
+<p>In this part of the tutorial you will learn how to incorporate Fortran and C++ codes into Kepler.</p>
+<p>Hands-on exercises show:</p>
+<ul class="simple">
+<li><p>how to prepare C++ codes for FC2K</p></li>
+<li><p>how to prepare C++ library</p></li>
+<li><p>how set up Makefile</p></li>
+<li><p>how start and configure FC2K tool</p></li>
+</ul>
+<div class="section" id="embedding-fortran-codes-into-kepler">
+<h5>2.1.4.2.1. Embedding Fortran codes into Kepler<a class="headerlink" href="#embedding-fortran-codes-into-kepler" title="Permalink to this headline">¶</a></h5>
+<p><strong>Simple Fortran code</strong></p>
+<p>In this exercise you will execute simple Fortran code (multiplying input value by two) within Kepler.</p>
+<p><a class="reference internal" href="#exercise1">Exercise1</a></p>
+<p><strong>Fortran UAL example (CPO handling)</strong></p>
+<p>In this exercise you will create Kepler actor that uses UAL.</p>
+<p><a class="reference internal" href="#exercise2">Exercise2</a></p>
+</div>
+<div class="section" id="embedding-c-codes">
+<h5>2.1.4.2.2. Embedding C++ codes<a class="headerlink" href="#embedding-c-codes" title="Permalink to this headline">¶</a></h5>
+<p><strong>Simple C++ code</strong></p>
+<p>Simple C++ code that will be incorporated into Kepler via FC2K tool - addition of one to the value passed into input port of the actor</p>
+<p><a class="reference internal" href="#exercise3">Exercise3</a></p>
+<p><strong>C++ code within Kepler (CPO)</strong></p>
+<p>In this exercise you will create Kepler actor that uses UAL.</p>
+<p><a class="reference internal" href="#exercise4">Exercise4</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="fc2k-developer-guidelines">
+<h3>2.1.5. FC2K - developer guidelines<a class="headerlink" href="#fc2k-developer-guidelines" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="what-code-wrapper-actually-does">
+<h4>2.1.5.1. What code wrapper actually does?<a class="headerlink" href="#what-code-wrapper-actually-does" title="Permalink to this headline">¶</a></h4>
+<p>The code wrapper intermediates between Kepler actor and user code:</p>
+<ul class="simple">
+<li><p>Passes variables of language built-in types (int, char, etc) from actor to the code</p></li>
+<li><p>Reads CPO(s) from UAL and passes data to user code</p></li>
+<li><p>Passes input code parameters (XML/XSD files) to user code</p></li>
+<li><p>Calls user subroutine/function</p></li>
+<li><p>Saves output CPO(s)</p></li>
+</ul>
+</div>
+<div class="section" id="development-of-fortran-codes">
+<h4>2.1.5.2. Development of Fortran codes<a class="headerlink" href="#development-of-fortran-codes" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="subroutine-syntax">
+<h5>2.1.5.2.1. Subroutine syntax<a class="headerlink" href="#subroutine-syntax" title="Permalink to this headline">¶</a></h5>
+<p>subroutine name (&lt;in/out arguments list&gt; [,code_parameters] [,diagnostic_info])</p>
+<ul class="simple">
+<li><p>name - subroutine name</p></li>
+<li><p>in/out arguments list - a list of input and output subroutine arguments</p></li>
+<li><p>diagnostic_info - arbitrary output diagnostic information</p></li>
+</ul>
+</div>
+<div class="section" id="arguments-list">
+<h5>2.1.5.2.2. Arguments list<a class="headerlink" href="#arguments-list" title="Permalink to this headline">¶</a></h5>
+<ul>
+<li><p>A mandatory position</p></li>
+<li><p>A list of input and output subroutine arguments including:</p>
+<blockquote>
+<div><ul>
+<li><p>Fortran intrisic data types, eg:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>integer :: input</p></li>
+<li><p>character(50) :: charstring</p></li>
+<li><p>integer,dimension(4) :: tabint</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>CPOs, eg:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>type (type_equilibrium),pointer :: equilibriumin(:)</p></li>
+<li><p>type (type_distsource),pointer :: distsourceout(:)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="code-parameters">
+<h5>2.1.5.2.3. Code parameters<a class="headerlink" href="#code-parameters" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>user defined input parameters</p></li>
+<li><p>input / optional</p></li>
+<li><p>Argument of type: type_param</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">type type_param  !</span>
+<span class="go">    character(len=132), dimension(:), pointer ::parameters</span>
+<span class="go">    character(len=132), dimension(:), pointer ::default_param</span>
+<span class="go">    character(len=132), dimension(:), pointer ::schema</span>
+<span class="go">endtype</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Derived type type_param describes:</p>
+<ul>
+<li><p>parameters - Actual value of the code parameters (instance of coparam/parameters in XML format).</p></li>
+<li><p>default_param - Default value of the code parameters (instance of coparam/parameters in XML format).</p></li>
+<li><p>schema - Code parameters schema.</p></li>
+</ul>
+</li>
+<li><p>An example:</p>
+<ul>
+<li><p>(type_param) :: codeparam{{</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="diagnostic-info">
+<h5>2.1.5.2.4. Diagnostic info<a class="headerlink" href="#diagnostic-info" title="Permalink to this headline">¶</a></h5>
+<ul>
+<li><p>arbitrary output diagnostic information</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>output / optional</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">!----  Diagnostic info  ----</span>
+<span class="go">integer, intent(out)     ::     user_out_outputFlag</span>
+<span class="go">character(len=:), pointer, intent(out)    ::    user_out_diagnosticInfo</span>
+</pre></div>
+</div>
+</li>
+<li><p>outputFlag - indicates if user subroutine was successfully executed</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>outpuflag = 0    - SUCCESS, no action is taken</p></li>
+<li><p>outputFlag &gt; 0  - WARNING, a warning message is displayed, workflow continuue execution</p></li>
+<li><p>outputFlag &lt; 0 - ERROR, actor throws an exception, workflow stops</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>diagnosticInfo - an arbitrary string</p></li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h5>2.1.5.2.5. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Example</span> <span class="mi">1</span> <span class="n">Simple</span> <span class="n">in</span><span class="o">/</span><span class="n">out</span> <span class="n">argument</span> <span class="n">types</span><span class="o">**</span>
+<span class="k">subroutine </span><span class="n">nocpo</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+   <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span> <span class="n">input</span>
+   <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="kd">::</span> <span class="n">output</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">**Example 2 A CPO array as a subroutine argument**</span>
+<span class="go">subroutine equil2dist(equilibriumin, distsourceout)</span>
+<span class="go">    use euITM_schemas</span>
+<span class="go">    implicit none</span>
+
+<span class="go">    !input</span>
+<span class="go">    type (type_equilibrium), pointer :: equilibriumin(:)</span>
+<span class="go">    !output</span>
+<span class="go">    type (type_distsource), pointer :: distsourceout(:)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">**Example 3 Usage of code input parameters**</span>
+<span class="go">subroutine teststring(coreprof,equi,tabint,tabchar,codeparam)</span>
+<span class="go">    use euITM_schemas</span>
+
+<span class="go">    implicit none</span>
+
+<span class="go">!input</span>
+<span class="go">    type(type_coreprof),pointer,dimension(:) :: coreprof</span>
+<span class="go">    integer, dimension(4), intent(in) :: tabint</span>
+
+<span class="go">!output</span>
+<span class="go">    type(type_equilibrium),pointer,dimension(:) :: equi</span>
+<span class="go">    character(50), intent(out) :: tabchar</span>
+
+<span class="go">!code parameters</span>
+<span class="go">    type(type_param), intent(in) :: codeparam</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="development-of-c-codes">
+<h4>2.1.5.3. Development of C++ codes<a class="headerlink" href="#development-of-c-codes" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="function-syntax">
+<h5>2.1.5.3.1. Function syntax<a class="headerlink" href="#function-syntax" title="Permalink to this headline">¶</a></h5>
+<p>void name ( &lt;in/out arguments list&gt; [,code_parameters] [,diagnostic_info] )</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>name - function name</p></li>
+<li><p>code_parameters - optional - user defined input parameters</p></li>
+<li><p>diagnostic_info -  arbitrary output diagnostic information</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h5>2.1.5.3.2. Arguments list<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<blockquote>
+<div><ul>
+<li><p>in/out arguments list</p></li>
+<li><p>mandatory</p></li>
+<li><p>a list of input and output function arguments including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CPP intrisic data types, eg:</p>
+<ul>
+<li><p>int &amp;x</p></li>
+<li><p>double &amp;y</p></li>
+</ul>
+</li>
+<li><p>CPOs, eg:</p>
+<ul>
+<li><p>ItmNs::Itm::antennas &amp; ant</p></li>
+<li><p>ItmNs::Itm::equilibriumArray &amp; eq</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h5>2.1.5.3.3. Code parameters<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<blockquote>
+<div><ul>
+<li><p>Optional</p></li>
+<li><p>User defined input parameters</p></li>
+<li><p>Argument of type: ItmNs:: codeparam_t &amp;</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">typedef struct {</span>
+<span class="go">   char **parameters;</span>
+<span class="go">   char **default_param;</span>
+<span class="go">   char **schema;</span>
+<span class="go">} codeparam_t;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>A structure codeparam_t describes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>parameters - Actual value of the code parameters (instance of coparam/parameters in XML format).</p></li>
+<li><p>default_param - Default value of the code parameters (instance of coparam/parameters in XML format).</p></li>
+<li><p>schema - Code parameters schema.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>An example: ItmNs::codeparam_t &amp; codeparam</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h5>2.1.5.3.4. Diagnostic info<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<blockquote>
+<div><ul class="simple">
+<li><p>arbitrary output diagnostic information</p></li>
+<li><p>output / optional</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void name(...., int* output_flag, char** diagnostic_info)</span>
+</pre></div>
+</div>
+<ul>
+<li><p>output_flag - indicates if user subroutine was successfully executed</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>output_flag = 0  - SUCCESS, no action is taken</p></li>
+<li><p>output_flag &gt; 0  - WARNING, a warning message is displayed, workflow continuue execution</p></li>
+<li><p>output_flag &lt; 0  - ERROR, actor throws an exception, workflow stops</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>diagnostic_info - an arbitrary string</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h5>2.1.5.3.5. Examples<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">**Example 4. Simple in/out argument types**</span>
+<span class="go">void simplecppactornocpo(double &amp;x, double &amp;y)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">**Example 5. A CPO array as a function argument**</span>
+<span class="go">void simplecppactor(ItmNs::Itm::equilibriumArray &amp;eq, double &amp;x, double &amp;y)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">**Example 6. Usage of init function and code input parameters**</span>
+<span class="go">void mycppfunctionbis_init();</span>
+<span class="go">void mycppfunction(ItmNs::Itm::summary&amp; sum, ItmNs::Itm::equilibriumArray&amp; eq, int&amp; x, ItmNs::Itm::coreimpur&amp; cor,  double&amp;  y, ItmNs::codeparam_t&amp; codeparam)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="delivery-of-the-user-code">
+<h4>2.1.5.4. Delivery of the user code<a class="headerlink" href="#delivery-of-the-user-code" title="Permalink to this headline">¶</a></h4>
+<p>The user code should be delivered as a static library.
+Please find examples of the simple “makefiles” below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">**Example 6. Building of Fortran code**</span>
+<span class="go">F90 = $(ITM_INTEL_FC)</span>
+<span class="go">COPTS = -g -O0 -assume no2underscore -fPIC -shared-intel</span>
+
+<span class="go">INCLUDES = $(shell eval-pkg-config --cflags ual-$(ITM_INTEL_OBJECTCODE))</span>
+
+<span class="go">all: equilibrium2distsource.o libequilibrium2distsource</span>
+
+<span class="go">libequilibrium2distsource: equilibrium2distsource.o</span>
+<span class="go">       ar -rvs libequilibrium2distsource.a equilibrium2distsource.o</span>
+
+<span class="go">equilibrium2distsource.o: equilibrium2distsource.f90</span>
+<span class="gp">       $</span><span class="o">(</span>F90<span class="o">)</span> <span class="k">$(</span>COPTS<span class="k">)</span> -c -o <span class="nv">$@</span> $^ <span class="si">${</span><span class="nv">INCLUDES</span><span class="si">}</span>
+
+<span class="go">clean:</span>
+<span class="go">      rm -f *.o *.a</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">**Example 7. Building of C++ code**</span>
+<span class="go">CXX=g++</span>
+<span class="go">CXXFLAGS= -g -fPIC</span>
+<span class="go">CXXINCLUDES= ${shell eval-pkg-config --cflags ual-cpp-gnu}</span>
+
+<span class="go">all: libsimplecppactor.a</span>
+
+<span class="go">libsimplecppactor.a: simplecppactor.o</span>
+<span class="go">     ar -rvs $@ $^</span>
+
+<span class="go">simplecppactor.o: simplecppactor.cpp</span>
+<span class="gp">     $</span><span class="o">(</span>CXX<span class="o">)</span> <span class="k">$(</span>CXXFLAGS<span class="k">)</span> <span class="k">$(</span>CXXINCLUDES<span class="k">)</span> -c -o <span class="nv">$@</span> $^
+
+<span class="go">clean:</span>
+<span class="go">     rm *.a *.o</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fc2k-example-1-embedding-fortran-codes-into-kepler-no-cpos">
+<span id="exercise1"></span><h3>2.1.6. FC2K - Example 1 - Embedding Fortran codes into Kepler (no CPOs)<a class="headerlink" href="#fc2k-example-1-embedding-fortran-codes-into-kepler-no-cpos" title="Permalink to this headline">¶</a></h3>
+<p><strong>The knowledge gained</strong>
+<strong>After this exercise you will:</strong></p>
+<ul class="simple">
+<li><p>know how to prepare Fortran codes for FC2K</p></li>
+<li><p>know how to build Fortran library</p></li>
+<li><p>know how set up Makefile</p></li>
+<li><p>know how start and configure FC2K tool</p></li>
+</ul>
+<p>In this exercise you will execute simple Fortran code within Kepler. In order to this follow the instructions:</p>
+<div class="section" id="get-familiar-with-codes-that-will-be-incorporated-into-kepler">
+<h4>2.1.6.1. Get familiar with codes that will be incorporated into Kepler<a class="headerlink" href="#get-familiar-with-codes-that-will-be-incorporated-into-kepler" title="Permalink to this headline">¶</a></h4>
+<p>Go to Code Camp related materials within your home directory</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; cd $TUTORIAL_DIR/FC2K/nocpo_example_1</span>
+</pre></div>
+</div>
+<p>You can find there various files. Pay particular attention to following ones:</p>
+<ul class="simple">
+<li><p>nocpo.f90 - Fortran source code that will be executed from Kepler</p></li>
+<li><p>Makefile - makefile that allows to build library file</p></li>
+<li><p>nocpo_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</p></li>
+<li><p>nocpo.xml - example workflow</p></li>
+</ul>
+</div>
+<div class="section" id="build-the-code-by-issuing">
+<h4>2.1.6.2. Build the code by issuing<a class="headerlink" href="#build-the-code-by-issuing" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; make clean</span>
+<span class="go">shell&gt; make</span>
+</pre></div>
+</div>
+<p>Codes are ready to be used within FC2K</p>
+</div>
+<div class="section" id="prepare-environment-for-fc2k">
+<h4>2.1.6.3. Prepare environment for FC2K<a class="headerlink" href="#prepare-environment-for-fc2k" title="Permalink to this headline">¶</a></h4>
+<p>Make sure that all required system settings are correctly set</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; source $ITMSCRIPTDIR/ITMv1 kepler test 4.10b &gt; /dev/null</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-fc2k-application">
+<h4>2.1.6.4. Start FC2K application<a class="headerlink" href="#start-fc2k-application" title="Permalink to this headline">¶</a></h4>
+<p>This is as simple as typing <strong>fc2k</strong> from terminal</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; fc2k</span>
+</pre></div>
+</div>
+<p>After a while, you should see FC2K’s main window.</p>
+</div>
+<div class="section" id="open-a-nocpo-example-1-project">
+<h4>2.1.6.5. Open a nocpo_example_1 project<a class="headerlink" href="#open-a-nocpo-example-1-project" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Choose <strong>File -&gt; Open</strong> and navigate to <strong>$TUTORIAL_DIR/FC2K/nocpo_example_1.</strong></p></li>
+<li><p>Open file <strong>nocpo_fc2k.xml.</strong></p></li>
+<li><p>You should see new parameter settings loaded into FC2K.</p></li>
+<li><p>After loading parameters you can notice that parameters point to locations within your home directory.</p></li>
+</ol>
+<img alt="_images/kepler_15.png" class="align-center" src="_images/kepler_15.png" />
+</div>
+<div class="section" id="project-settings">
+<h4>2.1.6.6. Project settings<a class="headerlink" href="#project-settings" title="Permalink to this headline">¶</a></h4>
+<p>Please take a look at the project settings.</p>
+<img alt="_images/kepler_16.png" class="align-center" src="_images/kepler_16.png" />
+<p>Subroutine arguments:</p>
+<ul class="simple">
+<li><p>one input argument of type integer</p></li>
+<li><p>one output argument of type integer</p></li>
+</ul>
+<img alt="_images/kepler_17.png" class="align-center" src="_images/kepler_17.png" />
+</div>
+<div class="section" id="after-all-the-settings-are-correct-you-can-generate-actor">
+<h4>2.1.6.7. After all the settings are correct, you can generate actor<a class="headerlink" href="#after-all-the-settings-are-correct-you-can-generate-actor" title="Permalink to this headline">¶</a></h4>
+<p>Simply press “Generate” button and wait till FC2K finishes the generation.</p>
+</div>
+<div class="section" id="confirm-kepler-compilation">
+<h4>2.1.6.8. Confirm Kepler compilation<a class="headerlink" href="#confirm-kepler-compilation" title="Permalink to this headline">¶</a></h4>
+<p>After actor is generated, FC2K offers to compile Kepler application. Make sure to compile it by pressing “Yes”.</p>
+<img alt="_images/kepler_18.png" class="align-center" src="_images/kepler_18.png" />
+</div>
+<div class="section" id="you-can-now-start-kepler-and-use-generated-actor">
+<h4>2.1.6.9. You can now start Kepler and use generated actor<a class="headerlink" href="#you-can-now-start-kepler-and-use-generated-actor" title="Permalink to this headline">¶</a></h4>
+<p>Open new terminal window and make sure that all environment settings are correctly set and execute Kepler.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; source $ITMSCRIPTDIR/ITMv1 kepler test 4.10b &gt; /dev/null</span>
+<span class="go">shell&gt; kepler.sh</span>
+</pre></div>
+</div>
+<p>After Kepler is started, open example workflow from the following location</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>TUTORIAL_DIR/FC2K/nocpo_example_1/nocpo.xml
+</pre></div>
+</div>
+<p>You should see similar workflow on screen.</p>
+<img alt="_images/kepler_19.png" class="align-center" src="_images/kepler_19.png" />
+</div>
+<div class="section" id="launch-the-workflow">
+<h4>2.1.6.10. Launch the workflow<a class="headerlink" href="#launch-the-workflow" title="Permalink to this headline">¶</a></h4>
+<p>You can start the workflow execution, by pressing “Play” button</p>
+<img alt="_images/kepler_20.png" class="align-center" src="_images/kepler_20.png" />
+<p>After workflow finishes it’s execution, you should see result similar to one below:</p>
+<img alt="_images/kepler_21.png" class="align-center" src="_images/kepler_21.png" />
+<p>Exercise no. 1 finishes here.</p>
+</div>
+</div>
+<div class="section" id="fc2k-example-2-embedding-fortran-code-into-kepler-cpos">
+<span id="exercise2"></span><h3>2.1.7. FC2K - Example 2 - Embedding Fortran code into Kepler (CPOs)<a class="headerlink" href="#fc2k-example-2-embedding-fortran-code-into-kepler-cpos" title="Permalink to this headline">¶</a></h3>
+<p><strong>Exercise no. 2.</strong></p>
+<p><em>Fortran example (CPO handling)</em></p>
+<p>(approx. 30 min)</p>
+<p><strong>The knowledge gained</strong></p>
+<p><strong>After this exercise you will:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>know how to prepare Fortran codes that use UAL</p></li>
+<li><p>know how to prepare Fortran based library that uses UAL</p></li>
+<li><p>know how set up Makefile</p></li>
+<li><p>know how start and configure FC2K tool</p></li>
+</ul>
+</div></blockquote>
+<p>In this exercise you will execute simple Fortran code that uses UAL. Code will be incorporated into Kepler. In order to do this follow the instructions:</p>
+<div class="section" id="id6">
+<h4>2.1.7.1. Get familiar with codes that will be incorporated into Kepler<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>Go to Code Camp related materials within your home directory</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; cd $TUTORIAL_DIR/FC2K/equilibrium2distsource/</span>
+</pre></div>
+</div>
+<p>You can find there various files. Pay particular attention to following ones:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>equilibrium2distsource.f90 - Fortran source code that will be executed fromKepler - this code uses UAL</p></li>
+<li><p>Makefile - makefile that allows to build library file</p></li>
+<li><p>cposlice2cposlicef_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</p></li>
+<li><p>cposlice2cposlicef_kepler.xml - example workflow</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="build-the-code">
+<h4>2.1.7.2. Build the code<a class="headerlink" href="#build-the-code" title="Permalink to this headline">¶</a></h4>
+<p>A Fortran example could be built by issuing</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; make clean -f make_ifort</span>
+<span class="go">shell&gt; make -f make_ifort</span>
+</pre></div>
+</div>
+<p>Codes are ready to be used within FC2K</p>
+</div>
+<div class="section" id="id7">
+<h4>2.1.7.3. Prepare environment for FC2K<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>Make sure that all required system settings are correctly set</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; source $ITMSCRIPTDIR/ITMv1 kepler test 4.10b &gt; /dev/null</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h4>2.1.7.4. Start FC2K application<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>This is as simple as typing fc2k from terminal</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; fc2k</span>
+</pre></div>
+</div>
+<p>After a while, you should see FC2K’s main window</p>
+</div>
+<div class="section" id="open-project-cposlice2cposlicef-fc2k">
+<h4>2.1.7.5. Open project cposlice2cposlicef_fc2k<a class="headerlink" href="#open-project-cposlice2cposlicef-fc2k" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Choose <strong>File -&gt; Open</strong></p></li>
+<li><p>Navigate to $TUTORIAL_DIR/FC2K/equilibrium2distsource/.</p></li>
+<li><p>Open file cposlice2cposlicef_fc2k.xml.</p></li>
+<li><p>You should see new project loaded into FC2K.</p></li>
+</ol>
+<img alt="_images/kepler_22.png" class="align-center" src="_images/kepler_22.png" />
+</div>
+<div class="section" id="id9">
+<h4>2.1.7.6. Project settings<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>Please take a look at the project settings.</p>
+<img alt="_images/kepler_23.png" class="align-center" src="_images/kepler_23.png" />
+<p>Subroutine arguments:</p>
+<ul class="simple">
+<li><p>one input argument - CPO array</p></li>
+<li><p>one output argument - CPO array</p></li>
+</ul>
+<img alt="_images/kepler_24.png" class="align-center" src="_images/kepler_24.png" />
+<p>After loading parameters you can notice that library location points to location within your itmwork directory <strong>($ITMWORK)</strong>.</p>
+</div>
+<div class="section" id="id10">
+<h4>2.1.7.7. After all the settings are correct, you can generate actor<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>Simply press “Generate” button and wait till FC2K finishes the generation.</p>
+</div>
+<div class="section" id="id11">
+<h4>2.1.7.8. Confirm Kepler compilation<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>After actor is generated, FC2K offers to compile Kepler application. Make sure to compile it by pressing “Yes”.</p>
+<img alt="_images/kepler_25.png" class="align-center" src="_images/kepler_25.png" />
+</div>
+<div class="section" id="id12">
+<h4>2.1.7.9. You can now start Kepler and use generated actor<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<p>Open new terminal window and make sure that all environment settings are correctly set and execute Kepler.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; source $ITMSCRIPTDIR/ITMv1 kepler test 4.10b &gt; /dev/null</span>
+<span class="go">shell&gt; kepler.sh</span>
+</pre></div>
+</div>
+<p>After Kepler is started, open example workflow from the following location</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">shell&gt; $</span>TUTORIAL_DIR/FC2K/equilibrium2distsource/cposlice2cposlicef_kepler.xml
+</pre></div>
+</div>
+<p>You should see similar workflow on screen.</p>
+<img alt="_images/kepler_26.png" class="align-center" src="_images/kepler_26.png" />
+</div>
+<div class="section" id="id13">
+<h4>2.1.7.10. Launch the workflow<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<p>You can start the workflow execution, by pressing “Play” button</p>
+<img alt="_images/kepler_27.png" class="align-center" src="_images/kepler_27.png" />
+<p>After workflow finishes it’s execution, you should see result similar to one below:</p>
+<img alt="_images/kepler_28.png" class="align-center" src="_images/kepler_28.png" />
+<p>Exercise no. 2 finishes here.</p>
+</div>
+</div>
+<div class="section" id="fc2k-example-3-embedding-c-code-within-kepler-no-cpos">
+<span id="exercise3"></span><h3>2.1.8. FC2K - Example 3 - Embedding C++ code within Kepler (no CPOs)<a class="headerlink" href="#fc2k-example-3-embedding-c-code-within-kepler-no-cpos" title="Permalink to this headline">¶</a></h3>
+<p><strong>Exercise no. 3</strong></p>
+<p><em>Embedding simple C++ code within Kepler (no CPOs)</em></p>
+<p>(approx. 30 min)</p>
+<p><strong>The knowledge gained</strong>
+<strong>After this exercise you will:</strong></p>
+<ul class="simple">
+<li><p>know how to prepare C++ codes for FC2K</p></li>
+<li><p>know how to prepare C++ library</p></li>
+<li><p>know how set up Makefile</p></li>
+<li><p>know how start and configure FC2K tool</p></li>
+</ul>
+<p>In this exercise you will execute simple C++ code within Kepler. In order to do this follow the instructions:</p>
+<div class="section" id="id14">
+<h4>2.1.8.1. Get familiar with codes that will be incorporated into Kepler<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<p>Go to Code Camp related materials within your home directory</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd $TUTORIAL_DIR/FC2K/simplecppactor_nocpo</span>
+</pre></div>
+</div>
+<p>You can find there various files. Pay particular attention to following ones:</p>
+<ul class="simple">
+<li><p>simplecppactornocpo.cpp - C++ source code that will be executed from Kepler</p></li>
+<li><p>Makefile - makefile that allows to build library file</p></li>
+<li><p>simplecppactor_nocpo_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</p></li>
+<li><p>simplecppactor_nocpo_workflow.xml - example workflow</p></li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h4>2.1.8.2. Build the code by issuing<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; make clean</span>
+<span class="go">shell&gt; make</span>
+</pre></div>
+</div>
+<p>Codes are ready to be used within FC2K</p>
+</div>
+<div class="section" id="id16">
+<h4>2.1.8.3. Prepare environment for FC2K<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<p>Make sure that all required system settings are correctly set</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; source $ITMSCRIPTDIR/ITMv1 kepler test 4.10b &gt; /dev/null</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id17">
+<h4>2.1.8.4. Start FC2K application<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<p>This is as simple as typing fc2k from terminal</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; fc2k</span>
+</pre></div>
+</div>
+<p>After a while, you should see FC2K’s main window</p>
+</div>
+<div class="section" id="open-project-simplecppactor-nocpo">
+<h4>2.1.8.5. Open project simplecppactor_nocpo<a class="headerlink" href="#open-project-simplecppactor-nocpo" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Choose <strong>File -&gt; Open</strong></p></li>
+<li><p>Navigate to $TUTORIAL_DIR/FC2K/simplecppactor_nocpo</p></li>
+<li><p>Open file simplecppactor_nocpo_fc2k.xml.</p></li>
+<li><p>You should see new project loaded into FC2K.</p></li>
+</ol>
+<img alt="_images/kepler_29.png" class="align-center" src="_images/kepler_29.png" />
+</div>
+<div class="section" id="id18">
+<h4>2.1.8.6. Project settings<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<p>Please take a look at the project settings.</p>
+<img alt="_images/kepler_30.png" class="align-center" src="_images/kepler_30.png" />
+<p>Function arguments:</p>
+<ul class="simple">
+<li><p>one input argument - double</p></li>
+<li><p>one output argument - double</p></li>
+</ul>
+<img alt="_images/kepler_31.png" class="align-center" src="_images/kepler_31.png" />
+<p>After loading parameters you can notice that library location points to location within your $TUTORIAL_DIR directory.</p>
+</div>
+<div class="section" id="actor-generation">
+<h4>2.1.8.7. Actor generation<a class="headerlink" href="#actor-generation" title="Permalink to this headline">¶</a></h4>
+<p>After all the settings are correct, you can generate actor</p>
+<p>Simply press “Generate” button and wait till FC2K finishes the generation.</p>
+</div>
+<div class="section" id="id19">
+<h4>2.1.8.8. Confirm Kepler compilation<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<p>After actor is generated, FC2K offers to compile Kepler application. Make sure to compile it by pressing “Yes”.</p>
+<img alt="_images/kepler_32.png" class="align-center" src="_images/kepler_32.png" />
+</div>
+<div class="section" id="id20">
+<h4>2.1.8.9. You can now start Kepler and use generated actor<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<p>Open new terminal window and make sure that all environment settings are correctly set and execute Kepler.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; source $ITMSCRIPTDIR/ITMv1 kepler test 4.10b &gt; /dev/null</span>
+<span class="go">shell&gt; kepler</span>
+</pre></div>
+</div>
+<p>After Kepler is started, open example workflow from the following location</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>TUTORIAL_DIR/FC2K/simplecppactor_nocpo/simplecppactor_nocpo_workflow.xml
+</pre></div>
+</div>
+<p>You should see similar workflow on screen.</p>
+<img alt="_images/kepler_33.png" class="align-center" src="_images/kepler_33.png" />
+</div>
+<div class="section" id="id21">
+<h4>2.1.8.10. Launch the workflow<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<p>You can start the workflow, by pressing “Play” button</p>
+<img alt="_images/kepler_34.png" class="align-center" src="_images/kepler_34.png" />
+<p>After workflow finishes it’s execution, you should see result similar to one below:</p>
+<img alt="_images/kepler_35.png" class="align-center" src="_images/kepler_35.png" />
+<p>Exercise no. 3 finishes here.</p>
+</div>
+</div>
+<div class="section" id="fc2k-example-4-embedding-c-code-within-kepler-cpos">
+<span id="exercise4"></span><h3>2.1.9. FC2K - Example 4 - Embedding C++ code within Kepler (CPOs)<a class="headerlink" href="#fc2k-example-4-embedding-c-code-within-kepler-cpos" title="Permalink to this headline">¶</a></h3>
+<p><strong>Exercise no. 4</strong></p>
+<p><em>C++ code within Kepler (CPO handling)</em></p>
+<p>(approx. 30 min)</p>
+<p><strong>The knowledge gained:</strong>
+<strong>After this exercise you will:</strong>
+- know how to prepare C++ codes for FC2K
+- know how to prepare C++ library
+- know how set up Makefile
+- know how start and configure FC2K tool
+In this exercise you will execute simple C++ code within Kepler. In order to do this follow the instructions:</p>
+<div class="section" id="id22">
+<h4>2.1.9.1. Get familiar with codes that will be incorporated into Kepler<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<p>Go to Code Camp related materials within your home directory</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; cd $TUTORIAL_DIR/FC2K/simplecppactor</span>
+</pre></div>
+</div>
+<p>You can find there various files. Pay particular attention to following ones:</p>
+<ul class="simple">
+<li><p>simplecppactor.cpp - C++ source code that will be executed from Kepler</p></li>
+<li><p>Makefile - makefile that allows to build library file</p></li>
+<li><p>simplecppactor_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</p></li>
+<li><p>simplecppactor_workflow.xml - example workflow</p></li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h4>2.1.9.2. Build the code by issuing<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; make clean</span>
+<span class="go">shell&gt; make</span>
+</pre></div>
+</div>
+<p>Codes are ready to be used within FC2K</p>
+</div>
+<div class="section" id="id24">
+<h4>2.1.9.3. Prepare environment for FC2K<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<p>Make sure that all required system settings are correctly set</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; source $ITMSCRIPTDIR/ITMv1 kepler test 4.10b &gt; /dev/null</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id25">
+<h4>2.1.9.4. Start FC2K application<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<p>This is as simple as typing fc2k from terminal</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; fc2k</span>
+</pre></div>
+</div>
+<p>After a while, you should see FC2K’s main window.</p>
+</div>
+<div class="section" id="open-project-simplecppactor">
+<h4>2.1.9.5. Open project simplecppactor<a class="headerlink" href="#open-project-simplecppactor" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Choose <strong>File -&gt; Open</strong></p></li>
+<li><p>Navigate to $TUTORIAL_DIR/FC2K/simplecppactor.</p></li>
+<li><p>Open file simplecppactor_fc2k.xml.</p></li>
+<li><p>You should see new parameter settings loaded into FC2K.</p></li>
+</ol>
+<img alt="_images/kepler_36.png" class="align-center" src="_images/kepler_36.png" />
+</div>
+<div class="section" id="id26">
+<h4>2.1.9.6. Project settings<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<p>Please take a look at the project settings.</p>
+<img alt="_images/kepler_37.png" class="align-center" src="_images/kepler_37.png" />
+<p>Function arguments:</p>
+<ul class="simple">
+<li><p>input argument - equilibrium</p></li>
+<li><p>input argument - double</p></li>
+<li><p>output argument - double</p></li>
+</ul>
+<img alt="_images/kepler_38.png" class="align-center" src="_images/kepler_38.png" />
+<p>You should modify these setting, so they point to locations within you home directory. They will typically be as follows:</p>
+</div>
+<div class="section" id="id27">
+<h4>2.1.9.7. Actor generation<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
+<p>After all the settings are correct, you can generate actor
+Simply press “Generate” button and wait till FC2K finishes the generation.</p>
+</div>
+<div class="section" id="id28">
+<h4>2.1.9.8. Confirm Kepler compilation<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<p>After actor is generated, FC2K offers to compile Kepler application. Make sure to compile it by pressing “Yes”.</p>
+<img alt="_images/kepler_39.png" class="align-center" src="_images/kepler_39.png" />
+</div>
+<div class="section" id="id29">
+<h4>2.1.9.9. You can now start Kepler and use generated actor<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+<p>Open new terminal window and make sure that all environment settings are correctly set and execute Kepler.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; source $ITMSCRIPTDIR/ITMv1 kepler test 4.10b &gt; /dev/null</span>
+<span class="go">kepler.sh</span>
+</pre></div>
+</div>
+<p>After Kepler is started, open example workflow from the following location</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">shell&gt; $</span>TUTORIAL_DIR/FC2K/simplecppactor/simplecppactor_workflow.xml
+</pre></div>
+</div>
+<p>You should see similar workflow on screen.</p>
+<img alt="_images/kepler_40.png" class="align-center" src="_images/kepler_40.png" />
+<p>Launch the workflow</p>
+<p>You can start the workflow, by pressing “Play” button</p>
+<img alt="_images/kepler_41.png" class="align-center" src="_images/kepler_41.png" />
+<p>After workflow finishes it’s execution, you should see result similar to one below:</p>
+<img alt="_images/kepler_42.png" class="align-center" src="_images/kepler_42.png" />
+<p>Exercise no. 4 finishes here.</p>
+</div>
+</div>
+<div class="section" id="imas-kepler-2-1-3-default-release">
+<h3>2.1.10. IMAS Kepler 2.1.3 (default release)<a class="headerlink" href="#imas-kepler-2-1-3-default-release" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="installation-of-default-version-of-kepler-without-actors">
+<h4>2.1.10.1. Installation of default version of Kepler (without actors)<a class="headerlink" href="#installation-of-default-version-of-kepler-without-actors" title="Permalink to this headline">¶</a></h4>
+<p>In order to use most recent version of Kepler do following. First of all make sure you have directory imas-kepler inside your $HOME</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> in case you already have imas-kepler inside $HOME</span>
+<span class="go"> you can move it to $ITMWORK/imas-kepler</span>
+<span class="gp">&gt;</span> mv <span class="nv">$HOME</span>/imas-kepler <span class="nv">$ITMWORK</span>/imas-kepler
+
+<span class="go"> If you don&#39;t have $HOME/imas-kepler directory, create</span>
+<span class="go"> it inside $ITMWORK</span>
+<span class="gp">&gt;</span> mkdir <span class="nv">$ITMWORK</span>/imas-kepler
+
+<span class="go"> create symbolic link inside $HOME</span>
+<span class="gp">&gt;</span> <span class="nb">cd</span> <span class="nv">$HOME</span>
+<span class="gp">&gt;</span> ln -s <span class="nv">$ITMWORK</span>/imas-kepler
+</pre></div>
+</div>
+<p>Then, you can load imasenv module by calling</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module load imasenv
+</pre></div>
+</div>
+<p>If there is no Kepler version installed, you will be informed by message</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">WARNING: Cannot find /afs/eufus.eu/user/..../imas-kepler/2.5p2-2.1.3... Run kepler_install_light before running kepler;</span>
+<span class="go">INFO: setting KEPLER=/gw/swimas/extra/kepler/2.5p2-2.1.3;</span>
+<span class="go">IMAS environment loaded.</span>
+<span class="go">Please do not forget to set database by calling &#39;imasdb &lt;machine_name&gt;&#39; !</span>
+</pre></div>
+</div>
+<p>In that case, call kepler_install_light - you will see installation process running in your terminal.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler_install_light
+<span class="go">Warning: $KEPLER_INSTALL_PATH override by environment: /afs/eufus.eu/user/g/g2michal/imas-kepler/2.5p2-2.1.3</span>
+<span class="go">mkdir: created directory ?/afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler/2.5p2-2.1.3?</span>
+<span class="go">sending incremental file list</span>
+<span class="go">.ptolemy-compiled</span>
+<span class="go">build-area/</span>
+<span class="go">build-area/README.txt</span>
+<span class="go">build-area/build.xml</span>
+<span class="go">build-area/current-suite.txt</span>
+<span class="go">...</span>
+<span class="go">...</span>
+<span class="go">...</span>
+<span class="go">?gui? -&gt; ?gui-2.5?</span>
+<span class="go">?common? -&gt; ?common-2.5?</span>
+<span class="go">Done installing /afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler/2.5p2-2.1.3.</span>
+<span class="go">Run `module switch kepler/2.5p2-2.1.3` to update $KEPLER to match.</span>
+<span class="go">Then run `kepler` to try your lightweight installation.</span>
+</pre></div>
+</div>
+<p>You have to switch module, to make sure that KEPLER variable points to proper location.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module switch kepler/2.5p2-2.1.3
+</pre></div>
+</div>
+<p>Once you have set version of Kepler, you can run it by typing kepler</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler
+<span class="go">The base dir is /afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler/2.5p2-2.1.3</span>
+<span class="go">Kepler.run going to run.setMain(org.kepler.Kepler)</span>
+<span class="go">JVM Memory: min = 1G,  max = 8G, stack = 20m, maxPermGen = default</span>
+<span class="go">adding $CLASSPATH to RunClassPath: /gw/switm/jaxfront/R1.0/XMLParamForm.jar:/gw/switm/jaxfront/R1.0/jaxfront-core.jar:/gw/switm/jaxfront/R1.0/jaxfront-swing.jar:/gw/switm/jaxfront/R1.0/xercesImpl.jar:/gw/swimas/core/imas/3.20.0/ual/3.8.3/jar/imas.jar</span>
+<span class="go">...</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-of-dressed-version-of-kepler-with-actors">
+<h4>2.1.10.2. Installation of “dressed” version of Kepler (with actors)<a class="headerlink" href="#installation-of-dressed-version-of-kepler-with-actors" title="Permalink to this headline">¶</a></h4>
+<p>In order to use most recent version of Kepler (with actors) do following. First of all make sure you have directory imas-kepler inside your $HOME</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> mkdir <span class="nv">$HOME</span>/imas-kepler
+</pre></div>
+</div>
+<p>Then, you can load imasenv module by calling</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module load imasenv
+</pre></div>
+</div>
+<p>If there is no Kepler version installed, you will be informed by message</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">WARNING: Cannot find /afs/eufus.eu/user/..../imas-kepler/2.5p2-2.1.3... Run kepler_install_light before running kepler;</span>
+<span class="go">INFO: setting KEPLER=/gw/swimas/extra/kepler/2.5p2-2.1.3;</span>
+<span class="go">IMAS environment loaded.</span>
+<span class="go">Please do not forget to set database by calling &#39;imasdb &lt;machine_name&gt;&#39; !</span>
+</pre></div>
+</div>
+<p>You have to switch to “dressed” version of Kepler by calling</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module switch kepler/2.5p2-2.1.3_IMAS_3.20.0
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler_install_light
+<span class="go">Warning: $KEPLER_INSTALL_PATH override by environment: /afs/eufus.eu/user/g/g2michal/imas-kepler/2.5p2-2.1.3_IMAS_3.20.0</span>
+<span class="go">mkdir: created directory ?/afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler?</span>
+<span class="go">mkdir: created directory ?/afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler/2.5p2-2.1.3_IMAS_3.20.0?</span>
+<span class="go">...</span>
+<span class="go">...</span>
+<span class="go">Done installing /afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler/2.5p2-2.1.3_IMAS_3.20.0.</span>
+<span class="go">Run `module switch kepler/2.5p2-2.1.3_IMAS_3.20.0` to update $KEPLER to match.</span>
+<span class="go">Then run `kepler` to try your lightweight installation.</span>
+</pre></div>
+</div>
+<p>You have to switch module, to make sure that KEPLER variable points to proper location.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module switch kepler/2.5p2-2.1.3_IMAS_3.20.0
+</pre></div>
+</div>
+<p>Once you have set version of Kepler, you can run it by typing kepler</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler
+<span class="go">The base dir is /afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler/2.5p2-2.1.3_IMAS_3.20.0</span>
+<span class="go">Kepler.run going to run.setMain(org.kepler.Kepler)</span>
+<span class="go">JVM Memory: min = 1G,  max = 8G, stack = 20m, maxPermGen = default</span>
+<span class="go">...</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="imas-kepler-2-1-5-release-candidate">
+<h3>2.1.11. IMAS Kepler 2.1.5 (release candidate)<a class="headerlink" href="#imas-kepler-2-1-5-release-candidate" title="Permalink to this headline">¶</a></h3>
+<p><strong>Most recent steps for Gateway users</strong></p>
+<p>In order to use most recent version of Kepler do following. First of all make sure you have directory imas-kepler inside your $HOME</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> mkdir -p <span class="nv">$HOME</span>/imas-kepler/modulefiles
+</pre></div>
+</div>
+<p>Make sure to set IMAS_KEPLER_DIR variable inside .cshrc file</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> <span class="nb">echo</span> <span class="s2">&quot;setenv IMAS_KEPLER_DIR </span><span class="nv">$HOME</span><span class="s2">/imas-kepler&quot;</span> &gt;&gt; ~/.cshrc
+</pre></div>
+</div>
+<p>Now, you can load imasenv/3.21.0 module by calling</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module load imasenv/3.21.0
+</pre></div>
+</div>
+<p>Note that this module uses kepler/2.5p2-2.1.5 instead of kepler/2.5p2-2.1.3</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module load imasenv/3.21.0
+<span class="go">IMAS environment loaded.</span>
+<span class="go">Please do not forget to set database by calling &#39;imasdb &lt;machine_name&gt;&#39; !</span>
+</pre></div>
+</div>
+<p>Now, you can install your personal Kepler installation (please note that since release 2.5p-2.1.5 and keplertools-1.7.0 it is possible to switch between different installations of Kepler (they will not collide).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler_install my_own_kepler
+<span class="go">Using IMAS_KEPLER_DIR at: /pfs/work/g2michal/imas-keplers.</span>
+<span class="go">Using KEPLER_SRC from KEPLER: /gw/swimas/extra/kepler/2.5p2-2.1.5.</span>
+<span class="go">mkdir: created directory ?/pfs/work/g2michal/imas-keplers/my_own_kepler</span>
+<span class="go">mkdir: created directory ?/pfs/work/g2michal/imas-keplers/my_own_kepler/.kepler?</span>
+<span class="go">mkdir: created directory ?/pfs/work/g2michal/imas-keplers/my_own_kepler/.ptolemyII?</span>
+<span class="go">mkdir: created directory ?/pfs/work/g2michal/imas-keplers/my_own_kepler/KeplerData?</span>
+<span class="go">Done installing /pfs/work/g2michal/imas-keplers/my_own_kepler/kepler.</span>
+<span class="go">?/gw/swimas/extra/keplertools/1.7.0/share/modulefiles/kepler? -&gt; ?/pfs/work/g2michal/imas-keplers/modulefiles/kepler/my_own_kepler?</span>
+
+<span class="go">Kepler was installed inside /pfs/work/g2michal/imas-keplers/my_own_kepler</span>
+<span class="go">Its module file is: /pfs/work/g2michal/imas-keplers/modulefiles/kepler/my_own_kepler</span>
+<span class="go">To load this environment, run: module switch kepler/my_own_kepler</span>
+<span class="go">To see available installations: module avail kepler</span>
+</pre></div>
+</div>
+<p>As you can see, your personal Kepler installations are available via modules. In order to switch to given version of Kepler you need to switch the module</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module switch kepler/my_own_kepler
+</pre></div>
+</div>
+<p>Once you have set version of Kepler, you can run it by typing kepler</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler
+<span class="go">kepler</span>
+<span class="go">The base dir is /marconi_work/eufus_gw/work/g2michal/imas-keplers/my_own_kepler/kepler</span>
+<span class="go">Kepler.run going to run.setMain(org.kepler.Kepler)</span>
+<span class="go">JVM Memory: min = 1G,  max = 8G, stack = 20m, maxPermGen = default</span>
+<span class="go">...</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-based-on-readme-file">
+<h3>2.1.12. Installation based on README file<a class="headerlink" href="#installation-based-on-readme-file" title="Permalink to this headline">¶</a></h3>
+<p>Installation instructions based on most recent version of IMAS Kepler</p>
+<p>Detailed, up to date, instructions on how to install and switch between different installations of Kepler, can be found here</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> git clone ssh://git@git.iter.org/imex/kepler-installer.git
+
+<span class="gp">&gt;</span> cat kepler-installer/README
+</pre></div>
+</div>
+<p>You can also find latest documentation at following location (Gateway)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> cat <span class="nv">$SWIMASDIR</span>/extra/kepler-installer/README
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="general-grid-description-and-grid-service-library">
+<span id="grid"></span><h2>2.2. General Grid Description and Grid Service Library<a class="headerlink" href="#general-grid-description-and-grid-service-library" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="resources">
+<h3>2.2.1. Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>GForge project page</p></li>
+<li><p>Linking to library:
+general
+,
+specific</p></li>
+<li><p>A tutorial talk.
+Note: some slides might be out of date, please refer to the
+documentation.</p></li>
+</ul>
+</div>
+<div class="section" id="documentation">
+<h3>2.2.2. Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>4.09a
+Resources:
+<a class="reference external" href="https://gforge6.eufus.eu/svn/itmggd/branches/4.09a/">Sources</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/svn/itmggd/branches/4.09a/f90/src/examples/">Fortran
+Examples</a></p>
+<p>Documentation:</p>
+<ul class="simple">
+<li><p>Release v1.2:
+Fortran 90
+,
+Python
+,
+ualconnector
+,</p></li>
+</ul>
+</li>
+<li><p>4.10a
+Resources:
+<a class="reference external" href="https://gforge6.eufus.eu/svn/itmggd/branches/4.10a/">Sources</a>,
+<a class="reference external" href="https://gforge6.eufus.eu/svn/itmggd/branches/4.10a/f90/src/examples/">Fortran
+Examples</a></p>
+<p>Documentation:</p>
+<ul class="simple">
+<li><p>Release v1.2:
+Fortran 90
+,
+Python
+,
+ualconnector
+,</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="outdated-documentation">
+<h3>2.2.3. Outdated documentation<a class="headerlink" href="#outdated-documentation" title="Permalink to this headline">¶</a></h3>
+<p>This section collects information and documentation related to the
+general grid description.</p>
+<ul class="simple">
+<li><p>Some presentations:</p>
+<ul>
+<li><p>A tutorial talk from 2011
+,</p></li>
+<li><p>General Meeting 2011:
+Short overview talk
+and
+detailed presentation</p></li>
+</ul>
+</li>
+<li><p>Instructions how to get a copy of the Grid Service Library</p></li>
+<li><p>Documentation for the EU-IM Grid Service Library:
+Fortran 90
+,
+Python</p></li>
+<li><p>A short manual for ualconnector and VisIt</p></li>
+</ul>
+<p>Some examples are included in the Grid Service Library distribution.</p>
+<div class="section" id="example-grids">
+<span id="imp3-gridexamples"></span><h4>2.2.3.1. Example grids<a class="headerlink" href="#example-grids" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="example-grid-details">
+<h5>2.2.3.1.1. Example grid details<a class="headerlink" href="#example-grid-details" title="Permalink to this headline">¶</a></h5>
+<p>This section describes a number of example grids and gives some examples
+for specific constructs (object lists, subgrids).</p>
+<div class="section" id="example-grid-1-2d-structured-r-z-grid">
+<h6>2.2.3.1.1.1. Example Grid #1: 2d structured R,Z grid<a class="headerlink" href="#example-grid-1-2d-structured-r-z-grid" title="Permalink to this headline">¶</a></h6>
+<p>Note: the grids shown here are used in the unit tests of the grid
+service library implementation, i.e. the automated testing framework.</p>
+<p>A 2d grid in (R,Z) constructed by combining two structured
+one-dimensional spaces. The spaces are defined as follows, they define
+nodes and edges as subobjects.</p>
+<img alt="_images/edge_1.png" class="align-center" src="_images/edge_1.png" />
+<p>The whole grid then looks like this (attention, slightly differing scales
+in R and Z):</p>
+<img alt="_images/edge_2.png" class="align-center" src="_images/edge_2.png" />
+<p>A couple of examples for object descriptor are given. Some explanations:</p>
+<p>((1,1) (4,2)) = a 2d object (2d cell or face), implicitly created by
+combining the 1d object (edge) no. 4 from space 1 and the 1d object no.
+2 from space 2. ((1,0) (2,4)) = a 1d object (edge), implicitly created
+by combining 1d object (edge) from space 1 with the 0d object (node) no.
+4 from space 2. ((0,0) (2,2)) = a 0d object (node), implicitly created
+by combining 0d objects (nodes) no. 2 from space 1 and no. 2 from space
+2.</p>
+</div>
+<div class="section" id="object-classes">
+<h6>2.2.3.1.1.2. Object classes<a class="headerlink" href="#object-classes" title="Permalink to this headline">¶</a></h6>
+<p>This section shows the different object classes present in the grid. The
+implicit numbering of the objects in a class is obtained by iterating
+over all subobjects defining the objects, lowest space first.</p>
+<p>Object class (1,1): 2d cells/faces. They have the following implicit
+numbering:</p>
+<img alt="_images/edge_3.png" class="align-center" src="_images/edge_3.png" />
+<p>Object class (1,0): 1d edges, aligned along the R axis (“r-aligned”).
+They have the following implicit numbering:</p>
+<img alt="_images/edge_4.png" class="align-center" src="_images/edge_4.png" />
+<p>Object class (0,1): 1d edges, aligned along the Z axis (“z-aligned”).
+They have the following implicit numbering:</p>
+<img alt="_images/edge_5.png" class="align-center" src="_images/edge_5.png" />
+<p>Object class (0,0): 0d nodes. They have the following implicit
+numbering:</p>
+<img alt="_images/edge_6.png" class="align-center" src="_images/edge_6.png" />
+</div>
+<div class="section" id="example-2-b2-grid">
+<h6>2.2.3.1.1.3. Example 2: B2 grid<a class="headerlink" href="#example-2-b2-grid" title="Permalink to this headline">¶</a></h6>
+</div>
+</div>
+<div class="section" id="object-list-examples">
+<h5>2.2.3.1.2. Object list examples<a class="headerlink" href="#object-list-examples" title="Permalink to this headline">¶</a></h5>
+<p>Some examples for object lists, to explain the concept and show the
+notation. All examples refer to the 2d structured R,Z example grid #1
+given above.
+Object descriptor A single object (= and object descriptor), for object
+with object class (1,1), object index (4,2).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((1,1) (4,2))</span>
+</pre></div>
+</div>
+<p>Explicit object lists An explicit object list is simply an enumeration
+of object descriptors. The ordering of the objects is given directly by
+their position in the list. Note that by definition, all objects in the
+list must be of the same class (An implementation of an explicit object
+list should enforce this. If you need lists of objects with differing
+class, have a look at subgrids).</p>
+<p>An explicit list of 2d cells (faces), listing the four corner cells of
+the grid in the order bottom-left, bottom-right, top-left, top-right:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">(((1,1) (1,1)),</span>
+<span class="go">((1,1) (5,1)),</span>
+<span class="go">((1,1) (1,4)),</span>
+<span class="go">((1,1) (5,4)))</span>
+</pre></div>
+</div>
+<p>Implicit object lists Implicit object lists use the implicit order of
+(sub)objects to form an efficient representation of (possibly large)
+sets of objects. They thus avoid explicit enumeration of individual
+objects as done in the explicit objects lists. The following examples
+demonstrate the implicit list notation. Note: the implicit list notation
+is used in the Python implementation of the grid service library in
+exactly the form given here.</p>
+<p>Selecting all indices An implicit object list of all r-aligned edges:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((1,0) (0,0))</span>
+</pre></div>
+</div>
+<p>Object and subobject indices in the grid description start counting from
+1, i.e. object no. 1 is the first object. The index 0 is special and
+denotes an undefined index. In this notation, it denotes all possible
+indices.</p>
+<p>An implicit object list of the (z-aligned) boundary edges on the left
+boundary of the grid:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((0,1) (1,0))</span>
+</pre></div>
+</div>
+<p>The first entry of the index tuple denotes the first node in the
+r-space, the second entry denotes all edges in the z space. The implicit
+list denotes a total of 4 1d edges. Their implicit numbering is again
+given by iterating over all defining objects, lowest space first. The
+list therefore expands to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((0,1) (1,1))</span>
+<span class="go">((0,1) (1,2))</span>
+<span class="go">((0,1) (1,3))</span>
+<span class="go">((0,1) (1,4))</span>
+</pre></div>
+</div>
+<p>Selecting explicit lists of indices An implicit object list of the
+(z-aligned) right and left boundary edges:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((0,1) ([1,6],0))</span>
+</pre></div>
+</div>
+<p>The first entry of the index tuple denotes a list of nodes in the
+r-space, more specifically the first and the last (=6th) node. The
+second entry denotes again all edges in the z space. The implicit list
+then denotes a total of 8 1d edges in the following order:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((0,1) (1,1))</span>
+<span class="go">((0,1) (6,1))</span>
+<span class="go">((0,1) (1,2))</span>
+<span class="go">((0,1) (6,2))</span>
+<span class="go">((0,1) (1,3))</span>
+<span class="go">((0,1) (6,3))</span>
+<span class="go">((0,1) (1,4))</span>
+<span class="go">((0,1) (6,4))</span>
+</pre></div>
+</div>
+<p>Selecting ranges of indices An implicit object list of all 2d cells,
+except the cells on the left and right boundary.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((1,1) ((2,4),0))</span>
+</pre></div>
+</div>
+<p>The first entry of the index tuple denotes a range of edges in the
+r-space, more specifically the edges 2 to 4. The second entry of the
+index tuple denotes all four edges in the z-space. The implicit list
+then denotes a total of 12 2d cells in the following order:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((1,1) (2,1))</span>
+<span class="go">((1,1) (3,1))</span>
+<span class="go">((1,1) (4,1))</span>
+<span class="go">((1,1) (2,2))</span>
+<span class="go">((1,1) (3,2))</span>
+<span class="go">((1,1) (4,2))</span>
+<span class="go">((1,1) (2,3))</span>
+<span class="go">((1,1) (3,3))</span>
+<span class="go">((1,1) (4,3))</span>
+<span class="go">((1,1) (2,4))</span>
+<span class="go">((1,1) (3,4))</span>
+<span class="go">((1,1) (4,4))</span>
+</pre></div>
+</div>
+<p>All implementations of the grid service library define the constant
+GRID_UNDEFINED=0 to specify an undefined index. Use of GRID_UNDEFINED
+instead of 0 is advised to increase the readability of the code. The
+following notations are therefore equivalent
+((1,0) (0,0)) = ((1,0) (GRID_UNDEFINED,GRID_UNDEFINED))
+((0,1) (1,0)) = ((0,1) (1,GRID_UNDEFINED))</p>
+</div>
+<div class="section" id="subgrid-examples">
+<h5>2.2.3.1.3. Subgrid examples<a class="headerlink" href="#subgrid-examples" title="Permalink to this headline">¶</a></h5>
+<p>A subgrid is an ordered list of grid objects of a common dimension. The
+difference to object lists is that they can contain objects of different
+object classes.</p>
+<p>The subgrid concept is central to storing data on grids. To store data,
+first a subgrid has to be defined. The objects in the grid have a fixed
+order, which then allows to unambiguously store the data associated with
+the objects in vectors.</p>
+<p>Technically, a subgrid is an ordered list of object lists, of which
+every individual list is either explicit or implicit. The ordering of
+the objects in the subgrid is then directly given by the ordering of the
+object lists and the ordering of the grid objects therein.</p>
+<p>Subgrid example The following subgrid consists of all boundary edges of
+the 2d R,Z example grid #1, given as four implicit object lists.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((1,0) (0,1))    ! bottom edges</span>
+<span class="go">((0,1) (6,0))    ! right edges</span>
+<span class="go">((1,0) (0,5))    ! top edges</span>
+<span class="go">((0,1) (1,0))    ! left edges</span>
+</pre></div>
+</div>
+<p>Explicitly listing the objects in the order given by the subgrid gives:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1:  ((1,0) (1,1))    ! bottom edges</span>
+<span class="go">2:  ((1,0) (2,1))</span>
+<span class="go">3:  ((1,0) (3,1))</span>
+<span class="go">4:  ((1,0) (4,1))</span>
+<span class="go">5:  ((1,0) (5,1))</span>
+<span class="go">6:  ((0,1) (6,1))    ! right edges</span>
+<span class="go">7:  ((0,1) (6,2))</span>
+<span class="go">8:  ((0,1) (6,3))</span>
+<span class="go">9:  ((0,1) (6,4))</span>
+<span class="go">10: ((1,0) (1,5))    ! top edges</span>
+<span class="go">11: ((1,0) (2,5))</span>
+<span class="go">12: ((1,0) (3,5))</span>
+<span class="go">13: ((1,0) (4,5))</span>
+<span class="go">14: ((1,0) (5,5))</span>
+<span class="go">15: ((0,1) (1,1))    ! left edges</span>
+<span class="go">16: ((0,1) (1,2))</span>
+<span class="go">17: ((0,1) (1,3))</span>
+<span class="go">18: ((0,1) (1,4))</span>
+</pre></div>
+</div>
+<p>The number at the beginning of each line is the <em>local index</em> of the
+object, where local means locally in the subgrid. Note that, again,
+counting starts at 1.</p>
+</div>
+</div>
+<div class="section" id="grid-service-library">
+<span id="imp3-gridservicelibrary"></span><h4>2.2.3.2. Grid service library<a class="headerlink" href="#grid-service-library" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="using-the-grid-service-library">
+<h5>2.2.3.2.1. Using the grid service library<a class="headerlink" href="#using-the-grid-service-library" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="setting-up-the-environment">
+<h6>2.2.3.2.1.1. Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">¶</a></h6>
+<p>The grid service library requires the EU-IM data structure version 4.09a
+(or later). Before using it you have to make sure your environment is
+set up properly. The following section assumes you are using csh or tcsh
+on the Gateway.</p>
+<p>First, your environment variables have to be set up properly. To check
+them do</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">echo $TOKAMAKNAME</span>
+</pre></div>
+</div>
+<p>It should return</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">test</span>
+</pre></div>
+</div>
+<p>Also do</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">echo $DATAVERSION</span>
+</pre></div>
+</div>
+<p>It should return</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">4.09a</span>
+</pre></div>
+</div>
+<p>(or some higher version number). If either of them returns something
+different, run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/EU-IMv1 kepler test 4.09a &gt; /dev/null</span>
+</pre></div>
+</div>
+<p>and check the variables again.</p>
+<p>Second, you have to ensure your data tree is set up properly. Do</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ls ~/public/itmdb/itm_trees/$TOKAMAKNAME/$DATAVERSION/mdsplus/0/</span>
+</pre></div>
+</div>
+<p>If you get something like “No such file or directory”, you have to set
+up the tree first by running</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>EU-IMSCRIPTDIR/create_user_itm_dir <span class="nv">$TOKAMAKNAME</span> <span class="nv">$DATAVERSION</span>
+</pre></div>
+</div>
+<p>and then do the previous check again.</p>
+</div>
+<div class="section" id="checking-out-and-testing-the-grid-service-library">
+<h6>2.2.3.2.1.2. Checking out and testing the grid service library<a class="headerlink" href="#checking-out-and-testing-the-grid-service-library" title="Permalink to this headline">¶</a></h6>
+<p>To be able to get the code of the grid service library, you have to be a
+member of the EU-IM General Grid description (itmggd) project (you can
+apply for this <a class="reference external" href="https://gforge6.eufus.eu/gf/project/itmggd/">here</a>).</p>
+<p>Once you are a member, you can check out the code by</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn co https://gforge6.eufus.eu/svn/itmggd itm-grid</span>
+</pre></div>
+</div>
+<p>Then you can run the unit tests for the grid service library by</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd itm-grid</span>
+<span class="go">source setup.csh</span>
+</pre></div>
+</div>
+<p>This will setup environment variables (especially OBJECTCODE) and
+aliases. Then do</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">testgrid setup</span>
+</pre></div>
+</div>
+<p>This will set up the build system for the individual languages. It will
+also build and execute a Fortran program that writes a simple 2d example
+grid stored in an edge CPO into shot 1, run 1.</p>
+<p>To actually run the tests do</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">testgrid all</span>
+</pre></div>
+</div>
+<p>This will go through the implementations in the different languages
+(F90, Python, …) and run unit tests for every on of them. If all goes
+well, it should end with the message</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Test all implementations: OK</span>
+</pre></div>
+</div>
+<p>If this is not the case, something is broken and must be fixed.</p>
+</div>
+</div>
+<div class="section" id="example-applications-outdated">
+<h5>2.2.3.2.2. Example applications (outdated)<a class="headerlink" href="#example-applications-outdated" title="Permalink to this headline">¶</a></h5>
+<p>Note: this is a bit outdated.
+Have a look here.</p>
+<div class="section" id="plotting-3d-wall-geometry-with-visit-temporary-solution-not-required-any-more">
+<h6>2.2.3.2.2.1. Plotting 3d wall geometry with VisIt (temporary solution, not required any more)<a class="headerlink" href="#plotting-3d-wall-geometry-with-visit-temporary-solution-not-required-any-more" title="Permalink to this headline">¶</a></h6>
+<p>This example plots a 3d wall representation stored in the edge CPO (in
+the future, this information will be stored in the wall CPO). The
+example data used here is generated by a preprocessing tool which is
+part of the ASCOT code.</p>
+<ol class="arabic simple">
+<li><p>Check out the grid service library (See above. You don’t necessarily
+have to run the tests)</p></li>
+<li><p>Change to the python/ directory and setup the environment:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd itm-grid/python/; source setup.csh</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Edit the file itm/examples/write_xdmf.py to use the right shot number</p></li>
+<li><p>Run it (still in the python/ directory of the service library) with</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">   python26 itm/examples/write_xdmf.py</span>
+
+<span class="go">This will create two files: wall.xmf and wall.h5</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Start visit with</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">   visit23</span>
+
+<span class="go">and open the wall.xmf file. Then select Plot-&gt;Mesh-&gt;Triangle and</span>
+<span class="go">click on the &quot;Draw&quot; button.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-ualconnector-to-visualize-cpos-using-the-general-grid-description">
+<h6>2.2.3.2.2.2. Using UALConnector to visualize CPOs using the general grid description<a class="headerlink" href="#using-ualconnector-to-visualize-cpos-using-the-general-grid-description" title="Permalink to this headline">¶</a></h6>
+<p>UALConnector allows you to bring data directly from the UAL into VisIt.</p>
+<ol class="arabic simple">
+<li><p>Check out the grid service library (See above. You don’t necessarily
+have to run the tests)</p></li>
+<li><p>Run UALConnector. Examples:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./itm-grid/ualconnector -s 9001,1,1.0 -c edge -u klingshi -t test -v 4.09a</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./itm-grid/ualconnector -s 15,1,1.0 -c edge -u klingshi -t test -v 4.09a</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>When finished, close VisIt and terminate the UALConnector by typing
+‘quit’.</p></li>
+</ol>
+<p>You don’t even have to check out the service library. UALConnector is
+made available at</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector</span>
+</pre></div>
+</div>
+<p>, i.e.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector -s 9001,1,1.0 -c edge -u klingshi -t test -v 4.09a</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector -s 15,1,1.0 -c edge -u klingshi -t test -v 4.09a</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="imp3-general-grid-description-and-grid-service-library-tutorial">
+<span id="imp3-grid-tutorial"></span><h4>2.2.3.3. IMP3 General Grid Description and Grid Service Library - Tutorial<a class="headerlink" href="#imp3-general-grid-description-and-grid-service-library-tutorial" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="setup-your-environment">
+<h5>2.2.3.3.1. Setup your environment<a class="headerlink" href="#setup-your-environment" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">echo $DATAVERSION</span>
+<span class="go">echo $TOKAMAKNAME</span>
+</pre></div>
+</div>
+<p>should give “4.09a” and “test”. If not, run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $EU-IMSCRIPTDIR/EU-IMv1 kepler test 4.09a &gt; /dev/null</span>
+</pre></div>
+</div>
+<p>To copy the tutorial files:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cp -r ~klingshi/bin/itm-grid ~/public</span>
+</pre></div>
+</div>
+<p>Switch to the right version of the PGI compiler:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module unload openmpi/1.3.2/pgi-8.0 compilers/pgi/8.0</span>
+<span class="go">module load compilers/pgi/10.2 openmpi/1.4.3/pgi-10.2</span>
+</pre></div>
+</div>
+<p>To set up the environment:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd $HOME/public/itm-grid/f90</span>
+<span class="go">source setup.csh</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compile-run-examples">
+<h5>2.2.3.3.2. Compile &amp; run examples<a class="headerlink" href="#compile-run-examples" title="Permalink to this headline">¶</a></h5>
+<p>2d structured grid write example
+Source file is at:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">src/examples/itm_grid_example1_2dstructured_servicelibrary.f90</span>
+</pre></div>
+</div>
+<p>Compile:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make depend</span>
+<span class="go">make $OBJECTCODE/itm_grid_example1_2dstructured_servicelibrary.exe</span>
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>OBJECTCODE/itm_grid_example1_2dstructured_servicelibrary.exe
+</pre></div>
+</div>
+<p>2d structured grid read example
+Source file is at:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">src/examples/itm_grid_example1_2dstructured_read.f90</span>
+</pre></div>
+</div>
+<p>Compile:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make $OBJECTCODE/itm_grid_example1_2dstructured_read.exe</span>
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>OBJECTCODE/itm_grid_example1_2dstructured_read.exe
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualize">
+<h5>2.2.3.3.3. Visualize<a class="headerlink" href="#visualize" title="Permalink to this headline">¶</a></h5>
+<p>To visualize the data written by the example program</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector -s 9001,1,0.0 -c edge</span>
+</pre></div>
+</div>
+<p>To visualize a more complex dataset</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector -s 17151,899,1000.0 -c edge -u klingshi -t aug</span>
+</pre></div>
+</div>
+<p>Combining data from two CPOs:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~klingshi/bin/itm-grid/ualconnector -s 17151,898,1000.0 -c edge -s 17151,899,1000.0 -c edge -u klingshi -t aug</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. Equilibrium and MHD Stability workflow (EQSTABIL) &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  <title>4. Equilibrium and MHD Stability workflow (EQSTABIL) &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. The EQRECONSTRUCT workflow" href="eqreconstr.html" />
-    <link rel="prev" title="4. Edge Transport Simulator" href="edge.html" /> 
+    <link rel="next" title="5. The EQRECONSTRUCT workflow" href="eqreconstr.html" />
+    <link rel="prev" title="3. Core Transport Simulator (ETS)" href="ets.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,39 +89,35 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">2. Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ets.html">3. Core Transport Simulator (ETS)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edge.html">4. Edge Transport Simulator</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Equilibrium and MHD Stability workflow (EQSTABIL)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#workflow-rationale">5.1. Workflow rationale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#workflow-organization-design">5.2. Workflow organization &amp; design</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#initialization">5.2.1. Initialization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fixedbndcode">5.2.2. FixedBndCode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#redefining-the-plasma-boundary-cutoff">5.2.2.1. Redefining the plasma boundary (Cutoff)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#calculation-of-equilibrium-fixbndequil">5.2.2.2. Calculation of Equilibrium (Fixbndequil)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#visualization-visual">5.2.2.3. Visualization (Visual)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Equilibrium and MHD Stability workflow (EQSTABIL)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-rationale">4.1. Workflow rationale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-organization-design">4.2. Workflow organization &amp; design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initialization">4.2.1. Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixedbndcode">4.2.2. FixedBndCode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#redefining-the-plasma-boundary-cutoff">4.2.2.1. Redefining the plasma boundary (Cutoff)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calculation-of-equilibrium-fixbndequil">4.2.2.2. Calculation of Equilibrium (Fixbndequil)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#visualization-visual">4.2.2.3. Visualization (Visual)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#stabcode">5.2.3. StabCode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#finalize">5.2.4. Finalize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stabcode">4.2.3. StabCode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finalize">4.2.4. Finalize</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#actors-involved">5.3. Actors involved</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#setting-up-workflow-and-actor-parameters">5.4. Setting up Workflow and Actor parameters</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#setting-workflow-parameters">5.4.1. Setting workflow parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setting-actor-parameters">5.4.2. Setting actor parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#actors-involved">4.3. Actors involved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-workflow-and-actor-parameters">4.4. Setting up Workflow and Actor parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setting-workflow-parameters">4.4.1. Setting workflow parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-actor-parameters">4.4.2. Setting actor parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#test-cases-and-self-oriented-training">5.5. Test cases and self-oriented training</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#eqstabil-tutorial">5.6. EQSTABIL Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-cases-and-self-oriented-training">4.5. Test cases and self-oriented training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#eqstabil-tutorial">4.6. EQSTABIL Tutorial</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">6. The EQRECONSTRUCT workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transport.html">7. Turbulent Flux Quantities in Transport Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="averages.html">8. Running Exponential Average</a></li>
-<li class="toctree-l1"><a class="reference internal" href="codes.html">9. Codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conventions.html">10. Conventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler.html">11. Kepler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="amns.html">12. AMNS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">13. Additional resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">5. The EQRECONSTRUCT workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">6. Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">7. Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">8. AMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">9. Additional resources</a></li>
 </ul>
 
             
@@ -167,7 +163,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>5. Equilibrium and MHD Stability workflow (EQSTABIL)</li>
+      <li>4. Equilibrium and MHD Stability workflow (EQSTABIL)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,9 +185,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="equilibrium-and-mhd-stability-workflow-eqstabil">
-<span id="eqstabil"></span><h1>5. Equilibrium and MHD Stability workflow (EQSTABIL)<a class="headerlink" href="#equilibrium-and-mhd-stability-workflow-eqstabil" title="Permalink to this headline">¶</a></h1>
+<span id="eqstabil"></span><h1>4. Equilibrium and MHD Stability workflow (EQSTABIL)<a class="headerlink" href="#equilibrium-and-mhd-stability-workflow-eqstabil" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="workflow-rationale">
-<h2>5.1. Workflow rationale<a class="headerlink" href="#workflow-rationale" title="Permalink to this headline">¶</a></h2>
+<h2>4.1. Workflow rationale<a class="headerlink" href="#workflow-rationale" title="Permalink to this headline">¶</a></h2>
 <p>The EQSTABIL workflow is a Kepler workflow aimed at performing linear
 MHD stability analysis of tokamak plasma equilibria for a single or
 multiple toroidal mode numbers when executed. The high resolution
@@ -216,14 +212,14 @@ stay tuned for News and Recent activity.</p></li>
 </ul>
 </div>
 <div class="section" id="workflow-organization-design">
-<h2>5.2. Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline">¶</a></h2>
+<h2>4.2. Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline">¶</a></h2>
 <p>The top level layout of the workflow is shown below.</p>
 <div class="figure align-center">
 <img alt="_images/equstabil_1.png" src="_images/equstabil_1.png" />
 </div>
 <p>The workflow is organised in four sequential steps :</p>
 <div class="section" id="initialization">
-<h3>5.2.1. Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h3>
+<h3>4.2.1. Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h3>
 <p>Composite actor used to initialize the workflow. It reads from the ITM
 database that is specified by local variables (user, device, shot,
 run_in) and for the closest time sample to local variable <em>time</em> .
@@ -244,7 +240,7 @@ Kepler variables, mimicking the <a class="reference external" href="https://port
 facilitates the future coupling of the workflow to the <a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/ETS">ETS</a>.</p>
 </div>
 <div class="section" id="fixedbndcode">
-<h3>5.2.2. FixedBndCode<a class="headerlink" href="#fixedbndcode" title="Permalink to this headline">¶</a></h3>
+<h3>4.2.2. FixedBndCode<a class="headerlink" href="#fixedbndcode" title="Permalink to this headline">¶</a></h3>
 <p>Composite actor that prepares/calculates the equilibrium to be passed
 later to the MHD stability codes. This composite actor is composed of 3
 main steps:</p>
@@ -252,7 +248,7 @@ main steps:</p>
 <img alt="_images/equstabil_2.png" src="_images/equstabil_2.png" />
 </div>
 <div class="section" id="redefining-the-plasma-boundary-cutoff">
-<h4>5.2.2.1. Redefining the plasma boundary (Cutoff)<a class="headerlink" href="#redefining-the-plasma-boundary-cutoff" title="Permalink to this headline">¶</a></h4>
+<h4>4.2.2.1. Redefining the plasma boundary (Cutoff)<a class="headerlink" href="#redefining-the-plasma-boundary-cutoff" title="Permalink to this headline">¶</a></h4>
 <p>This is deemed necessary when the input equilibrium
 (reconstructed/predictive equilibrium) as a separatrix as plasma boundary
 since at this moment none of the flux coordinates based equilibrium codes
@@ -271,7 +267,7 @@ occurrences contain the original equilibrium.</p>
 plot window leads to the second stage.</p>
 </div>
 <div class="section" id="calculation-of-equilibrium-fixbndequil">
-<h4>5.2.2.2. Calculation of Equilibrium (Fixbndequil)<a class="headerlink" href="#calculation-of-equilibrium-fixbndequil" title="Permalink to this headline">¶</a></h4>
+<h4>4.2.2.2. Calculation of Equilibrium (Fixbndequil)<a class="headerlink" href="#calculation-of-equilibrium-fixbndequil" title="Permalink to this headline">¶</a></h4>
 <p>Calculation of the high resolution equilibrium with 3 possible codes
 (CAXE, CHEASE, HELENA). The cut-off equilibrium (or original one) is
 passed to the equilibrium codes. The output HR equilibrium is added to
@@ -281,7 +277,7 @@ not cut_off is requested) and occurrence=2 for the original
 equilibrium.</p>
 </div>
 <div class="section" id="visualization-visual">
-<h4>5.2.2.3. Visualization (Visual)<a class="headerlink" href="#visualization-visual" title="Permalink to this headline">¶</a></h4>
+<h4>4.2.2.3. Visualization (Visual)<a class="headerlink" href="#visualization-visual" title="Permalink to this headline">¶</a></h4>
 <p>Visualization part. This part plots the (R,Z) flux map of the HR
 equilibrium and the most relevant profiles. The figures are saved
 automatically on closing the windows at the <em>path</em> indicated in the top
@@ -289,7 +285,7 @@ level accordingly Kepler variable.</p>
 </div>
 </div>
 <div class="section" id="stabcode">
-<h3>5.2.3. StabCode<a class="headerlink" href="#stabcode" title="Permalink to this headline">¶</a></h3>
+<h3>4.2.3. StabCode<a class="headerlink" href="#stabcode" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
 <img alt="_images/equstabil_3.png" src="_images/equstabil_3.png" />
 </div>
@@ -307,7 +303,7 @@ not. The plasma bundle, on exit, is updated with the MHD cpo from the
 stability code.</p>
 </div>
 <div class="section" id="finalize">
-<h3>5.2.4. Finalize<a class="headerlink" href="#finalize" title="Permalink to this headline">¶</a></h3>
+<h3>4.2.4. Finalize<a class="headerlink" href="#finalize" title="Permalink to this headline">¶</a></h3>
 <p>Composite actor to wrap up the final plasma bundle, with the equilibrium
 CPO containing 3 occurrences and one occurrence of the MHD CPO.</p>
 <p>N.B. Only a single time slice of equilibrium and MHD CPOs is written, the
@@ -315,7 +311,7 @@ remaining plasma bundle CPOs are written “as is” (whatever time slices).</p>
 </div>
 </div>
 <div class="section" id="actors-involved">
-<h2>5.3. Actors involved<a class="headerlink" href="#actors-involved" title="Permalink to this headline">¶</a></h2>
+<h2>4.3. Actors involved<a class="headerlink" href="#actors-involved" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 32%" />
@@ -538,9 +534,9 @@ Kepler variable <em>path</em></div>
 </table>
 </div>
 <div class="section" id="setting-up-workflow-and-actor-parameters">
-<h2>5.4. Setting up Workflow and Actor parameters<a class="headerlink" href="#setting-up-workflow-and-actor-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>4.4. Setting up Workflow and Actor parameters<a class="headerlink" href="#setting-up-workflow-and-actor-parameters" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="setting-workflow-parameters">
-<h3>5.4.1. Setting workflow parameters<a class="headerlink" href="#setting-workflow-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>4.4.1. Setting workflow parameters<a class="headerlink" href="#setting-workflow-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The workflow has basic settings in order to work.</p>
 <ul class="simple">
 <li><p><strong>shot</strong> : the shot number on the user database (or from another user)
@@ -579,7 +575,7 @@ by Pressing the STOP button in Kepler GUI before closing the plot window
 with the summary of the equilibrium.</p>
 </div>
 <div class="section" id="setting-actor-parameters">
-<h3>5.4.2. Setting actor parameters<a class="headerlink" href="#setting-actor-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>4.4.2. Setting actor parameters<a class="headerlink" href="#setting-actor-parameters" title="Permalink to this headline">¶</a></h3>
 <p>Actor parameters are set on the actors themselves (not passed by the
 workflow). To access the actors codeparam the easiest route is to :</p>
 <ol class="arabic simple">
@@ -593,7 +589,7 @@ workflow). To access the actors codeparam the easiest route is to :</p>
 </div>
 </div>
 <div class="section" id="test-cases-and-self-oriented-training">
-<h2>5.5. Test cases and self-oriented training<a class="headerlink" href="#test-cases-and-self-oriented-training" title="Permalink to this headline">¶</a></h2>
+<h2>4.5. Test cases and self-oriented training<a class="headerlink" href="#test-cases-and-self-oriented-training" title="Permalink to this headline">¶</a></h2>
 <p>Several test cases are available for testing, corresponding to different
 applications/examples. The itmdb files are found on the software release
 folder under <em>/tutorial</em></p>
@@ -695,7 +691,7 @@ reconstruction.</div>
 </table>
 </div>
 <div class="section" id="eqstabil-tutorial">
-<h2>5.6. EQSTABIL Tutorial<a class="headerlink" href="#eqstabil-tutorial" title="Permalink to this headline">¶</a></h2>
+<h2>4.6. EQSTABIL Tutorial<a class="headerlink" href="#eqstabil-tutorial" title="Permalink to this headline">¶</a></h2>
 <p>Tutorial on using EQSTABIL workflow is available in <a class="reference download internal" download="" href="_downloads/518e0c8747bb91db12657b079fedacef/EQSTABIL_tutorial_20151214.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF</span></code></a>.</p>
 </div>
 </div>
@@ -708,10 +704,10 @@ reconstruction.</div>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="eqreconstr.html" class="btn btn-neutral float-right" title="6. The EQRECONSTRUCT workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="eqreconstr.html" class="btn btn-neutral float-right" title="5. The EQRECONSTRUCT workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="edge.html" class="btn btn-neutral float-left" title="4. Edge Transport Simulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ets.html" class="btn btn-neutral float-left" title="3. Core Transport Simulator (ETS)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
