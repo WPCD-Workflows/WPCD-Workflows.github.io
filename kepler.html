@@ -315,19 +315,19 @@ packages. A wide range of actors are available for use and reuse.</p>
 </div>
 <div class="section" id="kepler-imas-actors">
 <h2>11.2. Kepler IMAS actors<a class="headerlink" href="#kepler-imas-actors" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="29%" />
-<col width="71%" />
+<col style="width: 29%" />
+<col style="width: 71%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><strong>Imas actor</strong></th>
-<th class="head"><strong>Deacription</strong></th>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Imas actor</strong></p></th>
+<th class="head"><p><strong>Deacription</strong></p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>UALSliceCollector</td>
-<td><div class="first last line-block">
+<tbody>
+<tr class="row-even"><td><p>UALSliceCollector</p></td>
+<td><div class="line-block">
 <div class="line">Store one slice from input IDS into
 different run. This way, it is possible</div>
 <div class="line">to collect intermediate results during
@@ -335,8 +335,8 @@ workflow execution.</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>UALPython</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>UALPython</p></td>
+<td><div class="line-block">
 <div class="line">Allows to run external Python process and
 pass input/output data between workflow</div>
 <div class="line">and process itself. This actor is, most
@@ -346,8 +346,8 @@ the actor.</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>UALMuxParam</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>UALMuxParam</p></td>
+<td><div class="line-block">
 <div class="line">Provides similar behavior to
 ualmux/UALMux, however, this actors has</div>
 <div class="line">two additional ports:</div>
@@ -369,8 +369,8 @@ for different loop’s step.</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>UALMux</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>UALMux</p></td>
+<td><div class="line-block">
 <div class="line">Provides a method for putting data inside
 IDS inputs</div>
 <div class="line-block">
@@ -392,8 +392,8 @@ on approximation mode)</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>UALInit</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>UALInit</p></td>
+<td><div class="line-block">
 <div class="line">Initializes input pulse file, creates
 run work and provides ID S description</div>
 <div class="line">for other actors
@@ -420,16 +420,16 @@ name)</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>UALDemux</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>UALDemux</p></td>
+<td><div class="line-block">
 <div class="line">Allows to read data from given IDS -
 name of the field is specified as</div>
 <div class="line">output port.</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>UALCollector</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>UALCollector</p></td>
+<td><div class="line-block">
 <div class="line">Stores input IDSess inside new run.
 This way, it is possible to copy data</div>
 <div class="line">into different shot/run rather than
@@ -437,15 +437,15 @@ inside run work.</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>UALClose</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>UALClose</p></td>
+<td><div class="line-block">
 <div class="line">Closes run work based on description
 passed via input IDS.</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>SetBreakpoint</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>SetBreakpoint</p></td>
+<td><div class="line-block">
 <div class="line">This actor allows to enforce “debug”
 mode for IMAS based actors. It sets</div>
 <div class="line">global parameter “ITM_DEBUG” to either
@@ -455,23 +455,23 @@ will start in debug mode.</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>RecordSet</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>RecordSet</p></td>
+<td><div class="line-block">
 <div class="line">Sets values inside record (take a look
 for short tutorial: RecordGet/RecordSet)</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>RecordGet</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>RecordGet</p></td>
+<td><div class="line-block">
 <div class="line">Gets values from the record (take a
 look here for short tutorial:</div>
 <div class="line">RecordGet/RecordSet)</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>IDSOccurence</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>IDSOccurence</p></td>
+<td><div class="line-block">
 <div class="line">Provides a method to create duplicate
 of IDS with new occurrence number.</div>
 <div class="line">This way, it is possible to store data
@@ -479,29 +479,29 @@ before they get modified by user code.</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>IDSFlush</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>IDSFlush</p></td>
+<td><div class="line-block">
 <div class="line">Flushes data from workflow. Data from
 memory cache are stored inside database</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>IDSDiscard</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>IDSDiscard</p></td>
+<td><div class="line-block">
 <div class="line">Discards data inside workflow. Data will
 be re-read into memory cache.</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>IDSContentStd</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>IDSContentStd</p></td>
+<td><div class="line-block">
 <div class="line">Displays IDS data on console (better
 for huge data sets)</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>IDSContent</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>IDSContent</p></td>
+<td><div class="line-block">
 <div class="line">Displays IDS data</div>
 </div>
 </td>
@@ -542,10 +542,9 @@ for huge data sets)</div>
 </div>
 <div class="section" id="running-kepler-default-release">
 <h4>11.3.1.4. Running Kepler (default release)<a class="headerlink" href="#running-kepler-default-release" title="Permalink to this headline">¶</a></h4>
-<dl class="docutils">
-<dt>In order to start Kepler you have use helper scripts that will install and configure your personal copy of Kepler</dt>
-<dd><ul class="first last">
-<li><p class="first">load IMAS module</p>
+<dl>
+<dt>In order to start Kepler you have use helper scripts that will install and configure your personal copy of Kepler</dt><dd><ul>
+<li><p>load IMAS module</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">module </span><span class="n">load</span> <span class="n">imas</span>
 <span class="k">module </span><span class="n">load</span> <span class="n">kepler</span>
 <span class="cp"># NOTE! It might be that you don&#39;t have Kepler copy inside your $HOME</span>
@@ -553,7 +552,7 @@ for huge data sets)</div>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Start Kepler</p>
+<li><p>Start Kepler</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="cp"># run alias that will execute Kepler</span>
 <span class="n">kepler</span>
 </pre></div>
@@ -579,16 +578,18 @@ for huge data sets)</div>
 <div class="section" id="what-fc2k-actually-does">
 <h4>11.4.1.1. What FC2K actually does?<a class="headerlink" href="#what-fc2k-actually-does" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>Generates a Fortran/CPP wrapper, which intermediates between Kepler actor and user code in terms of:<ul>
-<li>reading/writing of in/out physical data (IDS)</li>
-<li>passing arguments of standard types to/from the actor</li>
+<li><p>Generates a Fortran/CPP wrapper, which intermediates between Kepler actor and user code in terms of:</p>
+<ul>
+<li><p>reading/writing of in/out physical data (IDS)</p></li>
+<li><p>passing arguments of standard types to/from the actor</p></li>
 </ul>
 </li>
-<li>Creates a Kepler actor that:<ul>
-<li>calls a user code</li>
-<li>provides error handling</li>
-<li>calls debugger (if run in “debug” mode)</li>
-<li>calls batch submission commands for MPI based actors</li>
+<li><p>Creates a Kepler actor that:</p>
+<ul>
+<li><p>calls a user code</p></li>
+<li><p>provides error handling</p></li>
+<li><p>calls debugger (if run in “debug” mode)</p></li>
+<li><p>calls batch submission commands for MPI based actors</p></li>
 </ul>
 </li>
 </ul>
@@ -602,10 +603,10 @@ for huge data sets)</div>
 <img alt="_images/kepler_2.png" class="align-center" src="_images/kepler_2.png" />
 <p>This group of graphical controls allows to set the description of the actor and its “place” in hierarchy of Kepler elements in Kepler “Component” browser</p>
 <ul class="simple">
-<li><strong>Project</strong> - defines a branch in Kepler “Component” browser where an actor will be placed</li>
-<li><strong>Name</strong> - a user defined name of the actor</li>
-<li><strong>Version</strong> - a user defined version of user codes</li>
-<li><strong>Subroutine</strong> - A name of user subroutine (Fortran) or function (C++)</li>
+<li><p><strong>Project</strong> - defines a branch in Kepler “Component” browser where an actor will be placed</p></li>
+<li><p><strong>Name</strong> - a user defined name of the actor</p></li>
+<li><p><strong>Version</strong> - a user defined version of user codes</p></li>
+<li><p><strong>Subroutine</strong> - A name of user subroutine (Fortran) or function (C++)</p></li>
 </ul>
 </div>
 <div class="section" id="environment">
@@ -613,8 +614,8 @@ for huge data sets)</div>
 <img alt="_images/kepler_3.png" class="align-center" src="_images/kepler_3.png" />
 <p>The Environment text fields shows UAL and Kepler locations.</p>
 <ul class="simple">
-<li><strong>Kepler</strong> - Kepler location (usually the same as $KEPLER)</li>
-<li><strong>UAL</strong> - IMAS UAL location (usually the same as $IMAS_PREFIX)</li>
+<li><p><strong>Kepler</strong> - Kepler location (usually the same as $KEPLER)</p></li>
+<li><p><strong>UAL</strong> - IMAS UAL location (usually the same as $IMAS_PREFIX)</p></li>
 </ul>
 </div>
 <div class="section" id="arguments-tab-explained">
@@ -622,31 +623,33 @@ for huge data sets)</div>
 <p>Below you can find explanation of FC2K arguments tab.</p>
 <img alt="_images/kepler_4.png" class="align-center" src="_images/kepler_4.png" />
 <ul class="simple">
-<li><strong>Type</strong> - Defines a type of an argument. It is possible to choose either IDS based type (e.g. equilibrium, topinfo, etc.) or primitive type (e.g. int, long, double, char)</li>
-<li><strong>Single slice</strong> - Determines if IDS is passed as single slice or an array. (This setting is valid for IDS types only )<ul>
-<li>if turned <strong>ON</strong> - Only one slice is passed. An actor will get an additional port to define a time.</li>
-<li>if turned <strong>OFF</strong> - All IDSes for given shot run is passed.</li>
+<li><p><strong>Type</strong> - Defines a type of an argument. It is possible to choose either IDS based type (e.g. equilibrium, topinfo, etc.) or primitive type (e.g. int, long, double, char)</p></li>
+<li><p><strong>Single slice</strong> - Determines if IDS is passed as single slice or an array. (This setting is valid for IDS types only )</p>
+<ul>
+<li><p>if turned <strong>ON</strong> - Only one slice is passed. An actor will get an additional port to define a time.</p></li>
+<li><p>if turned <strong>OFF</strong> - All IDSes for given shot run is passed.</p></li>
 </ul>
 </li>
-<li><strong>Is array</strong> - Determines if a primitive type  is passed as a scalar or an array<ul>
-<li>if turned <strong>ON</strong> - An argument is passed as an array. It requires definition of array size (dynamic array are not supported)</li>
-<li>if turned <strong>OFF</strong> - An argument is passed as a scalar.</li>
+<li><p><strong>Is array</strong> - Determines if a primitive type  is passed as a scalar or an array</p>
+<ul>
+<li><p>if turned <strong>ON</strong> - An argument is passed as an array. It requires definition of array size (dynamic array are not supported)</p></li>
+<li><p>if turned <strong>OFF</strong> - An argument is passed as a scalar.</p></li>
 </ul>
 </li>
-<li><strong>Array size</strong> - Defines the size of an array of primitive types</li>
-<li><strong>Input</strong> - Defines argument as an input</li>
-<li><strong>Output</strong> - Defines argument as an output</li>
-<li><strong>Label</strong> - User defined name of an argument (and actor port)</li>
+<li><p><strong>Array size</strong> - Defines the size of an array of primitive types</p></li>
+<li><p><strong>Input</strong> - Defines argument as an input</p></li>
+<li><p><strong>Output</strong> - Defines argument as an output</p></li>
+<li><p><strong>Label</strong> - User defined name of an argument (and actor port)</p></li>
 </ul>
 <img alt="_images/kepler_5.png" class="align-center" src="_images/kepler_5.png" />
 <p>Please take a look on a screenshot above:</p>
 <ul class="simple">
-<li><em>equilibrium</em> - an input parameter - one IDS (slice)</li>
-<li><em>amns</em> - an input parameter - all amns IDS slices stored in given shot/run</li>
-<li><em>integer</em> - an input parameter - a scalar</li>
-<li><em>double</em> - an input parameter - an array of size 10</li>
-<li><em>edge</em> - an in/out parameter - single slice of “edge” IDS</li>
-<li><em>waves</em> - an output parameter - all slices of “waves” IDS</li>
+<li><p><em>equilibrium</em> - an input parameter - one IDS (slice)</p></li>
+<li><p><em>amns</em> - an input parameter - all amns IDS slices stored in given shot/run</p></li>
+<li><p><em>integer</em> - an input parameter - a scalar</p></li>
+<li><p><em>double</em> - an input parameter - an array of size 10</p></li>
+<li><p><em>edge</em> - an in/out parameter - single slice of “edge” IDS</p></li>
+<li><p><em>waves</em> - an output parameter - all slices of “waves” IDS</p></li>
 </ul>
 </div>
 <div class="section" id="parameters-tab-explained">
@@ -654,9 +657,9 @@ for huge data sets)</div>
 <p>Code specific parameters are all parameters which are specific to the code (like switches, scaling parameters, and parameters for built-in analytical models) as well as parameters to explicitly overrule fields in the ITM data structures.</p>
 <img alt="_images/kepler_6.png" class="align-center" src="_images/kepler_6.png" />
 <ul class="simple">
-<li><strong>Frequently Used XML</strong> - Actual value of the code parameters</li>
-<li><strong>Default XML</strong> - Default values of the code parameters</li>
-<li><strong>Schema</strong> - A (XSD) XML schema</li>
+<li><p><strong>Frequently Used XML</strong> - Actual value of the code parameters</p></li>
+<li><p><strong>Default XML</strong> - Default values of the code parameters</p></li>
+<li><p><strong>Schema</strong> - A (XSD) XML schema</p></li>
 </ul>
 </div>
 <div class="section" id="source-tab-explained">
@@ -664,10 +667,10 @@ for huge data sets)</div>
 <img alt="_images/kepler_7.png" class="align-center" src="_images/kepler_7.png" />
 <p>The purpose of this tab is to define all code related issues:</p>
 <ul class="simple">
-<li>a programming language</li>
-<li>utilized compiler,</li>
-<li>type of code execution (sequential of parallel)</li>
-<li>libraries being used</li>
+<li><p>a programming language</p></li>
+<li><p>utilized compiler,</p></li>
+<li><p>type of code execution (sequential of parallel)</p></li>
+<li><p>libraries being used</p></li>
 </ul>
 <div class="section" id="libraries">
 <h5>11.4.1.7.1. Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h5>
@@ -681,18 +684,18 @@ for huge data sets)</div>
 <img alt="_images/kepler_9.png" class="align-center" src="_images/kepler_9.png" />
 <p>Available operations on libraries list:</p>
 <ul class="simple">
-<li><em>“Add…”</em> - Adds a new library to the list</li>
-<li><em>“Edit…”</em> - Edits library path</li>
-<li><em>“Remove”</em> - Removes a new library from the list</li>
+<li><p><em>“Add…”</em> - Adds a new library to the list</p></li>
+<li><p><em>“Edit…”</em> - Edits library path</p></li>
+<li><p><em>“Remove”</em> - Removes a new library from the list</p></li>
 </ul>
 <p><em>“System libraries”</em></p>
 <p>“System libraries” are system libraries handled by pkg-config mechanism and required for building the user code.</p>
 <img alt="_images/kepler_10.png" class="align-center" src="_images/kepler_10.png" />
 <p>A user can:</p>
 <ul class="simple">
-<li>add library from the list,</li>
-<li>remove library</li>
-<li>display detailed info (library definition returned by pkg-config mechanism)</li>
+<li><p>add library from the list,</p></li>
+<li><p>remove library</p></li>
+<li><p>display detailed info (library definition returned by pkg-config mechanism)</p></li>
 </ul>
 <img alt="_images/kepler_11.png" class="align-center" src="_images/kepler_11.png" />
 </div>
@@ -702,42 +705,42 @@ for huge data sets)</div>
 <p>A user, using this tab, selects programming language of codes provided, compiler used to built library and type of code execution (sequential or parallel)</p>
 <img alt="_images/kepler_12.png" class="align-center" src="_images/kepler_12.png" />
 <ul>
-<li><p class="first"><strong>Programming languange:</strong></p>
+<li><p><strong>Programming languange:</strong></p>
 <blockquote>
 <div><ul>
-<li><p class="first"><strong>Type</strong> - Defines programming language of user codes. It could be set to:</p>
+<li><p><strong>Type</strong> - Defines programming language of user codes. It could be set to:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Fortran</li>
-<li>_C/C++</li>
+<li><p>Fortran</p></li>
+<li><p>_C/C++</p></li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>Compiler</strong> - Defines compiler being used. Possible values:</p>
+<li><p><strong>Compiler</strong> - Defines compiler being used. Possible values:</p>
 <blockquote>
 <div><ul class="simple">
-<li>ifort, gfortran</li>
-<li>gcc, g++</li>
+<li><p>ifort, gfortran</p></li>
+<li><p>gcc, g++</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>Computation:</strong></p>
+<li><p><strong>Computation:</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li><strong>Parallel MPI</strong> - If turned <strong>ON</strong> uses MPI compilers (mpiifort for ifort, mpif90 for gfortran, mpigxx for C)</li>
-<li><strong>OPENMP</strong> - Defined if usage of OpenMP directives is turned ON/OFF</li>
-<li><strong>Batch</strong> - If turned <strong>ON</strong>, submits a user code to jobs queue (combined with Parallel MPI or OPENMP switch runs user code as parallel job)</li>
+<li><p><strong>Parallel MPI</strong> - If turned <strong>ON</strong> uses MPI compilers (mpiifort for ifort, mpif90 for gfortran, mpigxx for C)</p></li>
+<li><p><strong>OPENMP</strong> - Defined if usage of OpenMP directives is turned ON/OFF</p></li>
+<li><p><strong>Batch</strong> - If turned <strong>ON</strong>, submits a user code to jobs queue (combined with Parallel MPI or OPENMP switch runs user code as parallel job)</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>Additional features:</strong></p>
+<li><p><strong>Additional features:</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li><strong>Calls init method</strong> - If user function needs any pre-initialization, an additional function will be called.</li>
-<li><strong>Returns diagnostic info</strong> - adds output diagnostic information</li>
+<li><p><strong>Calls init method</strong> - If user function needs any pre-initialization, an additional function will be called.</p></li>
+<li><p><strong>Returns diagnostic info</strong> - adds output diagnostic information</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -759,10 +762,10 @@ for huge data sets)</div>
 <p>In this part of the tutorial you will learn how to incorporate Fortran and C++ codes into Kepler.</p>
 <p>Hands-on exercises show:</p>
 <ul class="simple">
-<li>how to prepare C++ codes for FC2K</li>
-<li>how to prepare C++ library</li>
-<li>how set up Makefile</li>
-<li>how start and configure FC2K tool</li>
+<li><p>how to prepare C++ codes for FC2K</p></li>
+<li><p>how to prepare C++ library</p></li>
+<li><p>how set up Makefile</p></li>
+<li><p>how start and configure FC2K tool</p></li>
 </ul>
 <div class="section" id="embedding-fortran-codes-into-kepler">
 <h4>11.4.2.1. Embedding Fortran codes into Kepler<a class="headerlink" href="#embedding-fortran-codes-into-kepler" title="Permalink to this headline">¶</a></h4>
@@ -790,11 +793,11 @@ for huge data sets)</div>
 <h3>11.5.1. What code wrapper actually does?<a class="headerlink" href="#what-code-wrapper-actually-does" title="Permalink to this headline">¶</a></h3>
 <p>The code wrapper intermediates between Kepler actor and user code:</p>
 <ul class="simple">
-<li>Passes variables of language built-in types (int, char, etc) from actor to the code</li>
-<li>Reads CPO(s) from UAL and passes data to user code</li>
-<li>Passes input code parameters (XML/XSD files) to user code</li>
-<li>Calls user subroutine/function</li>
-<li>Saves output CPO(s)</li>
+<li><p>Passes variables of language built-in types (int, char, etc) from actor to the code</p></li>
+<li><p>Reads CPO(s) from UAL and passes data to user code</p></li>
+<li><p>Passes input code parameters (XML/XSD files) to user code</p></li>
+<li><p>Calls user subroutine/function</p></li>
+<li><p>Saves output CPO(s)</p></li>
 </ul>
 </div>
 <div class="section" id="development-of-fortran-codes">
@@ -803,33 +806,32 @@ for huge data sets)</div>
 <h4>11.5.2.1. Subroutine syntax<a class="headerlink" href="#subroutine-syntax" title="Permalink to this headline">¶</a></h4>
 <p>subroutine name (&lt;in/out arguments list&gt; [,code_parameters] [,diagnostic_info])</p>
 <ul class="simple">
-<li>name - subroutine name</li>
-<li>in/out arguments list - a list of input and output subroutine arguments</li>
-<li>diagnostic_info - arbitrary output diagnostic information</li>
+<li><p>name - subroutine name</p></li>
+<li><p>in/out arguments list - a list of input and output subroutine arguments</p></li>
+<li><p>diagnostic_info - arbitrary output diagnostic information</p></li>
 </ul>
 </div>
 <div class="section" id="arguments-list">
 <h4>11.5.2.2. Arguments list<a class="headerlink" href="#arguments-list" title="Permalink to this headline">¶</a></h4>
 <ul>
-<li><p class="first">A mandatory position</p>
-</li>
-<li><p class="first">A list of input and output subroutine arguments including:</p>
+<li><p>A mandatory position</p></li>
+<li><p>A list of input and output subroutine arguments including:</p>
 <blockquote>
 <div><ul>
-<li><p class="first">Fortran intrisic data types, eg:</p>
+<li><p>Fortran intrisic data types, eg:</p>
 <blockquote>
 <div><ul class="simple">
-<li>integer :: input</li>
-<li>character(50) :: charstring</li>
-<li>integer,dimension(4) :: tabint</li>
+<li><p>integer :: input</p></li>
+<li><p>character(50) :: charstring</p></li>
+<li><p>integer,dimension(4) :: tabint</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">CPOs, eg:</p>
+<li><p>CPOs, eg:</p>
 <blockquote>
 <div><ul class="simple">
-<li>type (type_equilibrium),pointer :: equilibriumin(:)</li>
-<li>type (type_distsource),pointer :: distsourceout(:)</li>
+<li><p>type (type_equilibrium),pointer :: equilibriumin(:)</p></li>
+<li><p>type (type_distsource),pointer :: distsourceout(:)</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -841,9 +843,9 @@ for huge data sets)</div>
 <div class="section" id="code-parameters">
 <h4>11.5.2.3. Code parameters<a class="headerlink" href="#code-parameters" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>user defined input parameters</li>
-<li>input / optional</li>
-<li>Argument of type: type_param</li>
+<li><p>user defined input parameters</p></li>
+<li><p>input / optional</p></li>
+<li><p>Argument of type: type_param</p></li>
 </ul>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">type type_param  !</span>
 <span class="go">    character(len=132), dimension(:), pointer ::parameters</span>
@@ -853,14 +855,16 @@ for huge data sets)</div>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Derived type type_param describes:<ul>
-<li>parameters - Actual value of the code parameters (instance of coparam/parameters in XML format).</li>
-<li>default_param - Default value of the code parameters (instance of coparam/parameters in XML format).</li>
-<li>schema - Code parameters schema.</li>
+<li><p>Derived type type_param describes:</p>
+<ul>
+<li><p>parameters - Actual value of the code parameters (instance of coparam/parameters in XML format).</p></li>
+<li><p>default_param - Default value of the code parameters (instance of coparam/parameters in XML format).</p></li>
+<li><p>schema - Code parameters schema.</p></li>
 </ul>
 </li>
-<li>An example:<ul>
-<li>(type_param) :: codeparam{{</li>
+<li><p>An example:</p>
+<ul>
+<li><p>(type_param) :: codeparam{{</p></li>
 </ul>
 </li>
 </ul>
@@ -868,10 +872,10 @@ for huge data sets)</div>
 <div class="section" id="diagnostic-info">
 <h4>11.5.2.4. Diagnostic info<a class="headerlink" href="#diagnostic-info" title="Permalink to this headline">¶</a></h4>
 <ul>
-<li><p class="first">arbitrary output diagnostic information</p>
+<li><p>arbitrary output diagnostic information</p>
 <blockquote>
 <div><ul class="simple">
-<li>output / optional</li>
+<li><p>output / optional</p></li>
 </ul>
 </div></blockquote>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">!----  Diagnostic info  ----</span>
@@ -880,17 +884,16 @@ for huge data sets)</div>
 </pre></div>
 </div>
 </li>
-<li><p class="first">outputFlag - indicates if user subroutine was successfully executed</p>
+<li><p>outputFlag - indicates if user subroutine was successfully executed</p>
 <blockquote>
 <div><ul class="simple">
-<li>outpuflag = 0    - SUCCESS, no action is taken</li>
-<li>outputFlag &gt; 0  - WARNING, a warning message is displayed, workflow continuue execution</li>
-<li>outputFlag &lt; 0 - ERROR, actor throws an exception, workflow stops</li>
+<li><p>outpuflag = 0    - SUCCESS, no action is taken</p></li>
+<li><p>outputFlag &gt; 0  - WARNING, a warning message is displayed, workflow continuue execution</p></li>
+<li><p>outputFlag &lt; 0 - ERROR, actor throws an exception, workflow stops</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">diagnosticInfo - an arbitrary string</p>
-</li>
+<li><p>diagnosticInfo - an arbitrary string</p></li>
 </ul>
 </div>
 <div class="section" id="examples">
@@ -939,9 +942,9 @@ for huge data sets)</div>
 <p>void name ( &lt;in/out arguments list&gt; [,code_parameters] [,diagnostic_info] )</p>
 <blockquote>
 <div><ul class="simple">
-<li>name - function name</li>
-<li>code_parameters - optional - user defined input parameters</li>
-<li>diagnostic_info -  arbitrary output diagnostic information</li>
+<li><p>name - function name</p></li>
+<li><p>code_parameters - optional - user defined input parameters</p></li>
+<li><p>diagnostic_info -  arbitrary output diagnostic information</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -949,21 +952,21 @@ for huge data sets)</div>
 <h4>11.5.3.2. Arguments list<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul>
-<li><p class="first">in/out arguments list</p>
-</li>
-<li><p class="first">mandatory</p>
-</li>
-<li><p class="first">a list of input and output function arguments including:</p>
+<li><p>in/out arguments list</p></li>
+<li><p>mandatory</p></li>
+<li><p>a list of input and output function arguments including:</p>
 <blockquote>
 <div><ul class="simple">
-<li>CPP intrisic data types, eg:<ul>
-<li>int &amp;x</li>
-<li>double &amp;y</li>
+<li><p>CPP intrisic data types, eg:</p>
+<ul>
+<li><p>int &amp;x</p></li>
+<li><p>double &amp;y</p></li>
 </ul>
 </li>
-<li>CPOs, eg:<ul>
-<li>ItmNs::Itm::antennas &amp; ant</li>
-<li>ItmNs::Itm::equilibriumArray &amp; eq</li>
+<li><p>CPOs, eg:</p>
+<ul>
+<li><p>ItmNs::Itm::antennas &amp; ant</p></li>
+<li><p>ItmNs::Itm::equilibriumArray &amp; eq</p></li>
 </ul>
 </li>
 </ul>
@@ -976,11 +979,9 @@ for huge data sets)</div>
 <h4>11.5.3.3. Code parameters<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul>
-<li><p class="first">Optional</p>
-</li>
-<li><p class="first">User defined input parameters</p>
-</li>
-<li><p class="first">Argument of type: ItmNs:: codeparam_t &amp;</p>
+<li><p>Optional</p></li>
+<li><p>User defined input parameters</p></li>
+<li><p>Argument of type: ItmNs:: codeparam_t &amp;</p>
 <blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">typedef struct {</span>
 <span class="go">   char **parameters;</span>
@@ -991,17 +992,16 @@ for huge data sets)</div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">A structure codeparam_t describes:</p>
+<li><p>A structure codeparam_t describes:</p>
 <blockquote>
 <div><ul class="simple">
-<li>parameters - Actual value of the code parameters (instance of coparam/parameters in XML format).</li>
-<li>default_param - Default value of the code parameters (instance of coparam/parameters in XML format).</li>
-<li>schema - Code parameters schema.</li>
+<li><p>parameters - Actual value of the code parameters (instance of coparam/parameters in XML format).</p></li>
+<li><p>default_param - Default value of the code parameters (instance of coparam/parameters in XML format).</p></li>
+<li><p>schema - Code parameters schema.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">An example: ItmNs::codeparam_t &amp; codeparam</p>
-</li>
+<li><p>An example: ItmNs::codeparam_t &amp; codeparam</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -1009,24 +1009,23 @@ for huge data sets)</div>
 <h4>11.5.3.4. Diagnostic info<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
-<li>arbitrary output diagnostic information</li>
-<li>output / optional</li>
+<li><p>arbitrary output diagnostic information</p></li>
+<li><p>output / optional</p></li>
 </ul>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">void name(...., int* output_flag, char** diagnostic_info)</span>
 </pre></div>
 </div>
 <ul>
-<li><p class="first">output_flag - indicates if user subroutine was successfully executed</p>
+<li><p>output_flag - indicates if user subroutine was successfully executed</p>
 <blockquote>
 <div><ul class="simple">
-<li>output_flag = 0  - SUCCESS, no action is taken</li>
-<li>output_flag &gt; 0  - WARNING, a warning message is displayed, workflow continuue execution</li>
-<li>output_flag &lt; 0  - ERROR, actor throws an exception, workflow stops</li>
+<li><p>output_flag = 0  - SUCCESS, no action is taken</p></li>
+<li><p>output_flag &gt; 0  - WARNING, a warning message is displayed, workflow continuue execution</p></li>
+<li><p>output_flag &lt; 0  - ERROR, actor throws an exception, workflow stops</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">diagnostic_info - an arbitrary string</p>
-</li>
+<li><p>diagnostic_info - an arbitrary string</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -1093,10 +1092,10 @@ Please find examples of the simple “makefiles” below:</p>
 <p><strong>The knowledge gained</strong>
 <strong>After this exercise you will:</strong></p>
 <ul class="simple">
-<li>know how to prepare Fortran codes for FC2K</li>
-<li>know how to build Fortran library</li>
-<li>know how set up Makefile</li>
-<li>know how start and configure FC2K tool</li>
+<li><p>know how to prepare Fortran codes for FC2K</p></li>
+<li><p>know how to build Fortran library</p></li>
+<li><p>know how set up Makefile</p></li>
+<li><p>know how start and configure FC2K tool</p></li>
 </ul>
 <p>In this exercise you will execute simple Fortran code within Kepler. In order to this follow the instructions:</p>
 <div class="section" id="get-familiar-with-codes-that-will-be-incorporated-into-kepler">
@@ -1107,10 +1106,10 @@ Please find examples of the simple “makefiles” below:</p>
 </div>
 <p>You can find there various files. Pay particular attention to following ones:</p>
 <ul class="simple">
-<li>nocpo.f90 - Fortran source code that will be executed from Kepler</li>
-<li>Makefile - makefile that allows to build library file</li>
-<li>nocpo_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</li>
-<li>nocpo.xml - example workflow</li>
+<li><p>nocpo.f90 - Fortran source code that will be executed from Kepler</p></li>
+<li><p>Makefile - makefile that allows to build library file</p></li>
+<li><p>nocpo_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</p></li>
+<li><p>nocpo.xml - example workflow</p></li>
 </ul>
 </div>
 <div class="section" id="build-the-code-by-issuing">
@@ -1139,10 +1138,10 @@ Please find examples of the simple “makefiles” below:</p>
 <div class="section" id="open-a-nocpo-example-1-project">
 <h3>11.6.5. Open a nocpo_example_1 project<a class="headerlink" href="#open-a-nocpo-example-1-project" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Choose <strong>File -&gt; Open</strong> and navigate to <strong>$TUTORIAL_DIR/FC2K/nocpo_example_1.</strong></li>
-<li>Open file <strong>nocpo_fc2k.xml.</strong></li>
-<li>You should see new parameter settings loaded into FC2K.</li>
-<li>After loading parameters you can notice that parameters point to locations within your home directory.</li>
+<li><p>Choose <strong>File -&gt; Open</strong> and navigate to <strong>$TUTORIAL_DIR/FC2K/nocpo_example_1.</strong></p></li>
+<li><p>Open file <strong>nocpo_fc2k.xml.</strong></p></li>
+<li><p>You should see new parameter settings loaded into FC2K.</p></li>
+<li><p>After loading parameters you can notice that parameters point to locations within your home directory.</p></li>
 </ol>
 <img alt="_images/kepler_15.png" class="align-center" src="_images/kepler_15.png" />
 </div>
@@ -1152,8 +1151,8 @@ Please find examples of the simple “makefiles” below:</p>
 <img alt="_images/kepler_16.png" class="align-center" src="_images/kepler_16.png" />
 <p>Subroutine arguments:</p>
 <ul class="simple">
-<li>one input argument of type integer</li>
-<li>one output argument of type integer</li>
+<li><p>one input argument of type integer</p></li>
+<li><p>one output argument of type integer</p></li>
 </ul>
 <img alt="_images/kepler_17.png" class="align-center" src="_images/kepler_17.png" />
 </div>
@@ -1198,10 +1197,10 @@ Please find examples of the simple “makefiles” below:</p>
 <p><strong>After this exercise you will:</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li>know how to prepare Fortran codes that use UAL</li>
-<li>know how to prepare Fortran based library that uses UAL</li>
-<li>know how set up Makefile</li>
-<li>know how start and configure FC2K tool</li>
+<li><p>know how to prepare Fortran codes that use UAL</p></li>
+<li><p>know how to prepare Fortran based library that uses UAL</p></li>
+<li><p>know how set up Makefile</p></li>
+<li><p>know how start and configure FC2K tool</p></li>
 </ul>
 </div></blockquote>
 <p>In this exercise you will execute simple Fortran code that uses UAL. Code will be incorporated into Kepler. In order to do this follow the instructions:</p>
@@ -1214,10 +1213,10 @@ Please find examples of the simple “makefiles” below:</p>
 <p>You can find there various files. Pay particular attention to following ones:</p>
 <blockquote>
 <div><ul class="simple">
-<li>equilibrium2distsource.f90 - Fortran source code that will be executed fromKepler - this code uses UAL</li>
-<li>Makefile - makefile that allows to build library file</li>
-<li>cposlice2cposlicef_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</li>
-<li>cposlice2cposlicef_kepler.xml - example workflow</li>
+<li><p>equilibrium2distsource.f90 - Fortran source code that will be executed fromKepler - this code uses UAL</p></li>
+<li><p>Makefile - makefile that allows to build library file</p></li>
+<li><p>cposlice2cposlicef_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</p></li>
+<li><p>cposlice2cposlicef_kepler.xml - example workflow</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -1248,10 +1247,10 @@ Please find examples of the simple “makefiles” below:</p>
 <div class="section" id="open-project-cposlice2cposlicef-fc2k">
 <h3>11.7.5. Open project cposlice2cposlicef_fc2k<a class="headerlink" href="#open-project-cposlice2cposlicef-fc2k" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Choose <strong>File -&gt; Open</strong></li>
-<li>Navigate to $TUTORIAL_DIR/FC2K/equilibrium2distsource/.</li>
-<li>Open file cposlice2cposlicef_fc2k.xml.</li>
-<li>You should see new project loaded into FC2K.</li>
+<li><p>Choose <strong>File -&gt; Open</strong></p></li>
+<li><p>Navigate to $TUTORIAL_DIR/FC2K/equilibrium2distsource/.</p></li>
+<li><p>Open file cposlice2cposlicef_fc2k.xml.</p></li>
+<li><p>You should see new project loaded into FC2K.</p></li>
 </ol>
 <img alt="_images/kepler_22.png" class="align-center" src="_images/kepler_22.png" />
 </div>
@@ -1261,8 +1260,8 @@ Please find examples of the simple “makefiles” below:</p>
 <img alt="_images/kepler_23.png" class="align-center" src="_images/kepler_23.png" />
 <p>Subroutine arguments:</p>
 <ul class="simple">
-<li>one input argument - CPO array</li>
-<li>one output argument - CPO array</li>
+<li><p>one input argument - CPO array</p></li>
+<li><p>one output argument - CPO array</p></li>
 </ul>
 <img alt="_images/kepler_24.png" class="align-center" src="_images/kepler_24.png" />
 <p>After loading parameters you can notice that library location points to location within your itmwork directory <strong>($ITMWORK)</strong>.</p>
@@ -1307,10 +1306,10 @@ Please find examples of the simple “makefiles” below:</p>
 <p><strong>The knowledge gained</strong>
 <strong>After this exercise you will:</strong></p>
 <ul class="simple">
-<li>know how to prepare C++ codes for FC2K</li>
-<li>know how to prepare C++ library</li>
-<li>know how set up Makefile</li>
-<li>know how start and configure FC2K tool</li>
+<li><p>know how to prepare C++ codes for FC2K</p></li>
+<li><p>know how to prepare C++ library</p></li>
+<li><p>know how set up Makefile</p></li>
+<li><p>know how start and configure FC2K tool</p></li>
 </ul>
 <p>In this exercise you will execute simple C++ code within Kepler. In order to do this follow the instructions:</p>
 <div class="section" id="id14">
@@ -1321,10 +1320,10 @@ Please find examples of the simple “makefiles” below:</p>
 </div>
 <p>You can find there various files. Pay particular attention to following ones:</p>
 <ul class="simple">
-<li>simplecppactornocpo.cpp - C++ source code that will be executed from Kepler</li>
-<li>Makefile - makefile that allows to build library file</li>
-<li>simplecppactor_nocpo_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</li>
-<li>simplecppactor_nocpo_workflow.xml - example workflow</li>
+<li><p>simplecppactornocpo.cpp - C++ source code that will be executed from Kepler</p></li>
+<li><p>Makefile - makefile that allows to build library file</p></li>
+<li><p>simplecppactor_nocpo_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</p></li>
+<li><p>simplecppactor_nocpo_workflow.xml - example workflow</p></li>
 </ul>
 </div>
 <div class="section" id="id15">
@@ -1353,10 +1352,10 @@ Please find examples of the simple “makefiles” below:</p>
 <div class="section" id="open-project-simplecppactor-nocpo">
 <h3>11.8.5. Open project simplecppactor_nocpo<a class="headerlink" href="#open-project-simplecppactor-nocpo" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Choose <strong>File -&gt; Open</strong></li>
-<li>Navigate to $TUTORIAL_DIR/FC2K/simplecppactor_nocpo</li>
-<li>Open file simplecppactor_nocpo_fc2k.xml.</li>
-<li>You should see new project loaded into FC2K.</li>
+<li><p>Choose <strong>File -&gt; Open</strong></p></li>
+<li><p>Navigate to $TUTORIAL_DIR/FC2K/simplecppactor_nocpo</p></li>
+<li><p>Open file simplecppactor_nocpo_fc2k.xml.</p></li>
+<li><p>You should see new project loaded into FC2K.</p></li>
 </ol>
 <img alt="_images/kepler_29.png" class="align-center" src="_images/kepler_29.png" />
 </div>
@@ -1366,8 +1365,8 @@ Please find examples of the simple “makefiles” below:</p>
 <img alt="_images/kepler_30.png" class="align-center" src="_images/kepler_30.png" />
 <p>Function arguments:</p>
 <ul class="simple">
-<li>one input argument - double</li>
-<li>one output argument - double</li>
+<li><p>one input argument - double</p></li>
+<li><p>one output argument - double</p></li>
 </ul>
 <img alt="_images/kepler_31.png" class="align-center" src="_images/kepler_31.png" />
 <p>After loading parameters you can notice that library location points to location within your $TUTORIAL_DIR directory.</p>
@@ -1425,10 +1424,10 @@ In this exercise you will execute simple C++ code within Kepler. In order to do 
 </div>
 <p>You can find there various files. Pay particular attention to following ones:</p>
 <ul class="simple">
-<li>simplecppactor.cpp - C++ source code that will be executed from Kepler</li>
-<li>Makefile - makefile that allows to build library file</li>
-<li>simplecppactor_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</li>
-<li>simplecppactor_workflow.xml - example workflow</li>
+<li><p>simplecppactor.cpp - C++ source code that will be executed from Kepler</p></li>
+<li><p>Makefile - makefile that allows to build library file</p></li>
+<li><p>simplecppactor_fc2k.xml - parameters for FC2K application (NOTE! this file contains my own settings, we will modify them during tutorial)</p></li>
+<li><p>simplecppactor_workflow.xml - example workflow</p></li>
 </ul>
 </div>
 <div class="section" id="id23">
@@ -1457,10 +1456,10 @@ In this exercise you will execute simple C++ code within Kepler. In order to do 
 <div class="section" id="open-project-simplecppactor">
 <h3>11.9.5. Open project simplecppactor<a class="headerlink" href="#open-project-simplecppactor" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Choose <strong>File -&gt; Open</strong></li>
-<li>Navigate to $TUTORIAL_DIR/FC2K/simplecppactor.</li>
-<li>Open file simplecppactor_fc2k.xml.</li>
-<li>You should see new parameter settings loaded into FC2K.</li>
+<li><p>Choose <strong>File -&gt; Open</strong></p></li>
+<li><p>Navigate to $TUTORIAL_DIR/FC2K/simplecppactor.</p></li>
+<li><p>Open file simplecppactor_fc2k.xml.</p></li>
+<li><p>You should see new parameter settings loaded into FC2K.</p></li>
 </ol>
 <img alt="_images/kepler_36.png" class="align-center" src="_images/kepler_36.png" />
 </div>
@@ -1470,9 +1469,9 @@ In this exercise you will execute simple C++ code within Kepler. In order to do 
 <img alt="_images/kepler_37.png" class="align-center" src="_images/kepler_37.png" />
 <p>Function arguments:</p>
 <ul class="simple">
-<li>input argument - equilibrium</li>
-<li>input argument - double</li>
-<li>output argument - double</li>
+<li><p>input argument - equilibrium</p></li>
+<li><p>input argument - double</p></li>
+<li><p>output argument - double</p></li>
 </ul>
 <img alt="_images/kepler_38.png" class="align-center" src="_images/kepler_38.png" />
 <p>You should modify these setting, so they point to locations within you home directory. They will typically be as follows:</p>

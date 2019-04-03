@@ -202,17 +202,17 @@ fluid ideal/resistive MHD with compressibility.</p>
 plasma scenario, reading from a pre-existent WPCD database shot/run/time
 entry. Therefore,</p>
 <ul class="simple">
-<li>It does not read from experimental databases storing locally
+<li><p>It does not read from experimental databases storing locally
 processed plasma equilibrium e.g. PPFs (JET) or shotfiles (AUG).
 These can be fetched using <a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/Exp2ITM">exp2itm</a> (ask the workflow
-developer for assistance).</li>
-<li>It is not meant for parametric studies in a single workflow execution
+developer for assistance).</p></li>
+<li><p>It is not meant for parametric studies in a single workflow execution
 e.g. process several time slices or scan over resistive wall position
 or number of poloidal harmonics. Dedicated runs for such cases are
 necessary, storing each run on a dedicated output shot/run_out
 database entry. The workflow may be subject to upgrades/revisions to
 accomodate new features that facilitate/enhance user experience so
-stay tuned for News and Recent activity.</li>
+stay tuned for News and Recent activity.</p></li>
 </ul>
 </div>
 <div class="section" id="workflow-organization-design">
@@ -316,20 +316,20 @@ remaining plasma bundle CPOs are written “as is” (whatever time slices).</p>
 </div>
 <div class="section" id="actors-involved">
 <h2>5.3. Actors involved<a class="headerlink" href="#actors-involved" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="32%" />
-<col width="32%" />
-<col width="35%" />
+<col style="width: 32%" />
+<col style="width: 32%" />
+<col style="width: 35%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>Name</strong></td>
-<td><strong>Location</strong></td>
-<td><strong>Description</strong></td>
+<tbody>
+<tr class="row-odd"><td><p><strong>Name</strong></p></td>
+<td><p><strong>Location</strong></p></td>
+<td><p><strong>Description</strong></p></td>
 </tr>
-<tr class="row-even"><td>Check_Device</td>
-<td>INITIALIZATION</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>Check_Device</p></td>
+<td><p>INITIALIZATION</p></td>
+<td><div class="line-block">
 <div class="line">Checks if the
 <em>device</em> Kepler</div>
 <div class="line">variable coincides
@@ -339,9 +339,9 @@ If not the run stops.</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>SELECT_TIME_CORE/EQ</td>
-<td>INITIALIZATION</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>SELECT_TIME_CORE/EQ</p></td>
+<td><p>INITIALIZATION</p></td>
+<td><div class="line-block">
 <div class="line">Selects time slice of
 CPOs matching/closest</div>
 <div class="line">to the requested time
@@ -350,10 +350,10 @@ variable</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>Check Coreprof/Equil
-Time and Flag</td>
-<td>INITIALIZATION</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>Check Coreprof/Equil
+Time and Flag</p></td>
+<td><p>INITIALIZATION</p></td>
+<td><div class="line-block">
 <div class="line">Checks the
 output_flag of the</div>
 <div class="line">input CPOs to know if
@@ -388,9 +388,9 @@ affected.</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>Cutoff</td>
-<td>FixedBndCode</td>
-<td><div class="first line-block">
+<tr class="row-odd"><td><p>Cutoff</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
 <div class="line">Performs the
 cut-off of the input</div>
 <div class="line">equilibrium if
@@ -415,7 +415,7 @@ just the original (in</div>
 shown when
 cut_off : no</div>
 </div>
-<div class="last line-block">
+<div class="line-block">
 <div class="line"><strong>NOTE</strong>: A
 useful trick to STOP</div>
 <div class="line">the workflow
@@ -434,9 +434,9 @@ proceed.</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>Fixbndequil</td>
-<td>FixedBndCode</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>Fixbndequil</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
 <div class="line">Selects from a pool
 of 3 equilibrium</div>
 <div class="line">codes the one to
@@ -447,9 +447,9 @@ Kepler variable
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>Caxe</td>
-<td>FixedBndCode</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>Caxe</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
 <div class="line">The CAXE code.</div>
 <div class="line">It can operate
 jointly with KINX
@@ -457,9 +457,9 @@ only.</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>Chease</td>
-<td>FixedBndCode</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>Chease</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
 <div class="line">The CHEASE code.</div>
 <div class="line">It can operate
 jointly with ILSA,
@@ -468,9 +468,9 @@ MARS</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>Helena</td>
-<td>FixedBndCode</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>Helena</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
 <div class="line">The HELENA code.</div>
 <div class="line">It can operate
 jointly with ILSA,
@@ -479,9 +479,9 @@ MARS</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>Visual</td>
-<td>FixedBndCode</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>Visual</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
 <div class="line">Visualize the
 resulting equilibrium.</div>
 <div class="line">A Copy in EPS format
@@ -491,9 +491,9 @@ variable %BLUE%path</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>Ilsa</td>
-<td>StabCode</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>Ilsa</p></td>
+<td><p>StabCode</p></td>
+<td><div class="line-block">
 <div class="line">The ILSA code suite.</div>
 <div class="line">At the moment only
 the MISHKA1 kernel</div>
@@ -502,21 +502,21 @@ MHD) is active</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>Kinx</td>
-<td>StabCode</td>
-<td>The KINX code.</td>
+<tr class="row-even"><td><p>Kinx</p></td>
+<td><p>StabCode</p></td>
+<td><p>The KINX code.</p></td>
 </tr>
-<tr class="row-odd"><td>Marsgw</td>
-<td>StabCode</td>
-<td>The MARS code</td>
+<tr class="row-odd"><td><p>Marsgw</p></td>
+<td><p>StabCode</p></td>
+<td><p>The MARS code</p></td>
 </tr>
-<tr class="row-even"><td>Marsf</td>
-<td>StabCode</td>
-<td>The MARS-F code</td>
+<tr class="row-even"><td><p>Marsf</p></td>
+<td><p>StabCode</p></td>
+<td><p>The MARS-F code</p></td>
 </tr>
-<tr class="row-odd"><td>PLOT_EIGENFUNCTION</td>
-<td>StabCode</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>PLOT_EIGENFUNCTION</p></td>
+<td><p>StabCode</p></td>
+<td><div class="line-block">
 <div class="line">Visualize the real
 and imaginary</div>
 <div class="line">eigenfunction
@@ -543,34 +543,35 @@ Kepler variable <em>path</em></div>
 <h3>5.4.1. Setting workflow parameters<a class="headerlink" href="#setting-workflow-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The workflow has basic settings in order to work.</p>
 <ul class="simple">
-<li><strong>shot</strong> : the shot number on the user database (or from another user)
-where to read the reference equilibrium from (shot/run_in pair)</li>
-<li><strong>run_in</strong> : the run number where the reference equilibrium is
-(shot/run_in pair)</li>
-<li><strong>run_work</strong> : placeholder run for the temporary Kepler CPOs</li>
-<li><strong>run_out</strong> : run number where the final results of the run will be
+<li><p><strong>shot</strong> : the shot number on the user database (or from another user)
+where to read the reference equilibrium from (shot/run_in pair)</p></li>
+<li><p><strong>run_in</strong> : the run number where the reference equilibrium is
+(shot/run_in pair)</p></li>
+<li><p><strong>run_work</strong> : placeholder run for the temporary Kepler CPOs</p></li>
+<li><p><strong>run_out</strong> : run number where the final results of the run will be
 stored (user running the workflow/shot/run_out). Since the input
 equilibrium can be a reconstruction that goes beyond the separatrix, 3
 occurrences of the equilibrium are saved (original eq., cut equilibrium
-inside separatrix and corresponding high resolution equilibrium).</li>
-<li><strong>user</strong> : username. Reading from someone else database is possible but
-the run_out will naturally be written to personal database only.</li>
-<li><strong>device</strong> : device database where the input reference data is. MUST BE
-the same as env variable TOKAMAKNAME</li>
-<li><strong>time</strong> : time slice (in equilibrium CPO) to be analysed in case the
-input shot/run_in contains many time slices.</li>
-<li><strong>path</strong> : temporary folder where to dump the plots generated. Also used
-to store output files (used by HELENA/ILSA only)</li>
-<li><strong>cut_eq</strong> :<ul>
-<li>yes : cut the input equilibrium (necessary if high resolution
-equilibrium code cannot handle separatrix plasma equilibria)</li>
-<li>no : input equilibrium is used “as is”.</li>
+inside separatrix and corresponding high resolution equilibrium).</p></li>
+<li><p><strong>user</strong> : username. Reading from someone else database is possible but
+the run_out will naturally be written to personal database only.</p></li>
+<li><p><strong>device</strong> : device database where the input reference data is. MUST BE
+the same as env variable TOKAMAKNAME</p></li>
+<li><p><strong>time</strong> : time slice (in equilibrium CPO) to be analysed in case the
+input shot/run_in contains many time slices.</p></li>
+<li><p><strong>path</strong> : temporary folder where to dump the plots generated. Also used
+to store output files (used by HELENA/ILSA only)</p></li>
+<li><p><strong>cut_eq</strong> :</p>
+<ul>
+<li><p>yes : cut the input equilibrium (necessary if high resolution
+equilibrium code cannot handle separatrix plasma equilibria)</p></li>
+<li><p>no : input equilibrium is used “as is”.</p></li>
 </ul>
 </li>
-<li><strong>cut_off</strong> : float ]0,1], specifies the percentage of the separatrix
-flux that will define the poloidal flux of the new plasma boundary.</li>
-<li><strong>eqcode</strong> : chease/caxe/helena. The equilibrium code to be used</li>
-<li><strong>stabcode</strong> : ilsa/kinx/marsgw/marsf. The MHD stability code to be used</li>
+<li><p><strong>cut_off</strong> : float ]0,1], specifies the percentage of the separatrix
+flux that will define the poloidal flux of the new plasma boundary.</p></li>
+<li><p><strong>eqcode</strong> : chease/caxe/helena. The equilibrium code to be used</p></li>
+<li><p><strong>stabcode</strong> : ilsa/kinx/marsgw/marsf. The MHD stability code to be used</p></li>
 </ul>
 <p>The user can always prevent the workflow from proceeding to the
 calculation of the high resolution equilibrium after the cut-off stage
@@ -582,12 +583,12 @@ with the summary of the equilibrium.</p>
 <p>Actor parameters are set on the actors themselves (not passed by the
 workflow). To access the actors codeparam the easiest route is to :</p>
 <ol class="arabic simple">
-<li>Click on “Outline” Tab (below the “Pause” button)</li>
-<li>Type the name of the actor and press “Search” (or Enter)</li>
-<li>On the final item in the chain of the actor composite, right click and press “Configure”. A pop-up panel appears</li>
-<li>Click on “Edit Code Parameters” and a new window appears</li>
-<li>Edit the code parameters and Press “Save &amp; Exit”</li>
-<li>Press “Commit” and setting is completed</li>
+<li><p>Click on “Outline” Tab (below the “Pause” button)</p></li>
+<li><p>Type the name of the actor and press “Search” (or Enter)</p></li>
+<li><p>On the final item in the chain of the actor composite, right click and press “Configure”. A pop-up panel appears</p></li>
+<li><p>Click on “Edit Code Parameters” and a new window appears</p></li>
+<li><p>Edit the code parameters and Press “Save &amp; Exit”</p></li>
+<li><p>Press “Commit” and setting is completed</p></li>
 </ol>
 </div>
 </div>
@@ -596,29 +597,29 @@ workflow). To access the actors codeparam the easiest route is to :</p>
 <p>Several test cases are available for testing, corresponding to different
 applications/examples. The itmdb files are found on the software release
 folder under <em>/tutorial</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="24%" />
-<col width="24%" />
-<col width="26%" />
-<col width="26%" />
+<col style="width: 24%" />
+<col style="width: 24%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Case</th>
-<th class="head">Path</th>
-<th class="head">Original source</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Case</p></th>
+<th class="head"><p>Path</p></th>
+<th class="head"><p>Original source</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>1</td>
-<td>/tutorial/case1</td>
-<td><div class="first last line-block">
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>/tutorial/case1</p></td>
+<td><div class="line-block">
 <div class="line">gvlad/test/180/</div>
 <div class="line">300</div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line">Test equilibrium
 of elongated
 JET-like</div>
@@ -628,10 +629,10 @@ mode</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>2</td>
-<td>/tutorial/case2</td>
-<td>diy/test/1/2</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>/tutorial/case2</p></td>
+<td><p>diy/test/1/2</p></td>
+<td><div class="line-block">
 <div class="line">Test equilibrium
 of circular
 plasma,</div>
@@ -640,14 +641,14 @@ global n=1 mode</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>3</td>
-<td>/tutorial/case3</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>3</p></td>
+<td><p>/tutorial/case3</p></td>
+<td><div class="line-block">
 <div class="line">rcoelho/aug/291</div>
 <div class="line">00/5</div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line">AUG equilibrium
 without
 separatrix,</div>
@@ -657,14 +658,14 @@ n=1 mode</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>4</td>
-<td>/tutorial/case4</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>/tutorial/case4</p></td>
+<td><div class="line-block">
 <div class="line">rcoelho/jet/778</div>
 <div class="line">77/2</div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line">JET equilibrium
 without
 separatrix,</div>
@@ -674,14 +675,14 @@ mode</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>5</td>
-<td>/tutorial/case5</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>5</p></td>
+<td><p>/tutorial/case5</p></td>
+<td><div class="line-block">
 <div class="line">rcoelho/aug/291</div>
 <div class="line">00/4</div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line">Same equilibrium
 of Case 3 but
 from full</div>
