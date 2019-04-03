@@ -31,14 +31,10 @@ ln -sf /home/circleci/assets/MD5/d391c9c30f9d5414dc2f8dbc391564ec source/static/
 unzip -q -d source/static/Phase4.10b.10_HTML source/static/Phase4.10b.10_HTML.zip
 sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Workflows.github.io
 Running Sphinx v2.0.0
-loading pickled environment... failed
-failed: build environment version not current
-loading intersphinx inventory from https://wpcd-workflows.github.io/IMASviz/objects.inv...
-loading intersphinx inventory from http://docs.scipy.org/doc/numpy/objects.inv...
-intersphinx inventory has moved: http://docs.scipy.org/doc/numpy/objects.inv -> https://docs.scipy.org/doc/numpy/objects.inv
+loading pickled environment... done
 building [mo]: targets for 0 po files that are out of date
 building [html]: targets for 15 source files that are out of date
-updating environment: 15 added, 0 changed, 0 removed
+updating environment: [] 0 added, 15 changed, 0 removed
 reading sources... [  6%] amns
 reading sources... [ 13%] averages
 reading sources... [ 20%] codes
