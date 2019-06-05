@@ -109,8 +109,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#setting-actor-parameters">4.4.2. Setting actor parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#test-cases-and-self-oriented-training">4.5. Test cases and self-oriented training</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#eqstabil-tutorial">4.6. EQSTABIL Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#eqstabil-tutorial">4.5. EQSTABIL Tutorial</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">5. The EQRECONSTRUCT workflow</a></li>
@@ -220,24 +219,24 @@ stay tuned for News and Recent activity.</p></li>
 <p>The workflow is organised in four sequential steps :</p>
 <div class="section" id="initialization">
 <h3>4.2.1. Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h3>
-<p>Composite actor used to initialize the workflow. It reads from the ITM
+<p>Composite actor used to initialize the workflow. It reads from the IMAS
 database that is specified by local variables (user, device, shot,
 run_in) and for the closest time sample to local variable <em>time</em> .
 If the user reads the input data from some other user database, the
 output data will however be written on his/her own database with shot/run_out id.</p>
 <p>-&gt; The workflow local variable <em>device</em> <strong>must</strong> be the same as the
 environment variable TOKAMAKNAME. In case the two do not match the
-workflow stops execution. The user must close the workflow, ITMv1 with
+workflow stops execution. The user must close the workflow, set imasdb with
 the correct device name and run the workflow.</p>
 <p>-&gt; Validity checks (void/not void) are made on the input equilibrium and
-coreprof CPOs (MARSGW actor can use coreprof for density profile). If
-the equilibrium CPO is not considered valid the workflow stops. If the
-coreprof CPO is not considered valid, the workflow continues to run but
+core_profile IDSs (MARSGW actor can use core_profile for density profile). If
+the equilibrium IDS is not considered valid the workflow stops. If the
+core_profile IDS is not considered valid, the workflow continues to run but
 the user can still have the option to stop it before executing the
 chosen MHD code.</p>
 <p>At the exit of the Composite actor, a Plasma_reference bundle (list of
-Kepler variables, mimicking the <a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/ETS">ETS</a> bundle) is returned. This
-facilitates the future coupling of the workflow to the <a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/ETS">ETS</a>.</p>
+Kepler variables, mimicking the ETS bundle is returned. This
+facilitates the future coupling of the workflow to the ETS.</p>
 </div>
 <div class="section" id="fixedbndcode">
 <h3>4.2.2. FixedBndCode<a class="headerlink" href="#fixedbndcode" title="Permalink to this headline">¶</a></h3>
@@ -305,233 +304,13 @@ stability code.</p>
 <div class="section" id="finalize">
 <h3>4.2.4. Finalize<a class="headerlink" href="#finalize" title="Permalink to this headline">¶</a></h3>
 <p>Composite actor to wrap up the final plasma bundle, with the equilibrium
-CPO containing 3 occurrences and one occurrence of the MHD CPO.</p>
-<p>N.B. Only a single time slice of equilibrium and MHD CPOs is written, the
-remaining plasma bundle CPOs are written “as is” (whatever time slices).</p>
+IDS containing 3 occurrences and one occurrence of the MHD IDS.</p>
+<p>N.B. Only a single time slice of equilibrium and MHD IDSs is written, the
+remaining plasma bundle IDSs are written “as is” (whatever time slices).</p>
 </div>
 </div>
 <div class="section" id="actors-involved">
 <h2>4.3. Actors involved<a class="headerlink" href="#actors-involved" title="Permalink to this headline">¶</a></h2>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 32%" />
-<col style="width: 35%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>Name</strong></p></td>
-<td><p><strong>Location</strong></p></td>
-<td><p><strong>Description</strong></p></td>
-</tr>
-<tr class="row-even"><td><p>Check_Device</p></td>
-<td><p>INITIALIZATION</p></td>
-<td><div class="line-block">
-<div class="line">Checks if the
-<em>device</em> Kepler</div>
-<div class="line">variable coincides
-with the environment</div>
-<div class="line">variable TOKAMAKNAME.
-If not the run stops.</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>SELECT_TIME_CORE/EQ</p></td>
-<td><p>INITIALIZATION</p></td>
-<td><div class="line-block">
-<div class="line">Selects time slice of
-CPOs matching/closest</div>
-<div class="line">to the requested time
-in <em>time</em> Kepler
-variable</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>Check Coreprof/Equil
-Time and Flag</p></td>
-<td><p>INITIALIZATION</p></td>
-<td><div class="line-block">
-<div class="line">Checks the
-output_flag of the</div>
-<div class="line">input CPOs to know if
-they are valid and</div>
-<div class="line">prints the actual
-time stamp retrived</div>
-<div class="line">from both CPOs (if
-time = -1 and</div>
-<div class="line">output_flag is
-negative then the CPO</div>
-<div class="line">is not valid). If the
-equilibrium is</div>
-<div class="line">considered invalid a
-message in displayed</div>
-<div class="line">on the Multi Tab
-Display window and</div>
-<div class="line">workflow execution is
-stopped. If the</div>
-<div class="line">coreprof is
-considered invalid a</div>
-<div class="line">message is displayed
-on the Multi Tab</div>
-<div class="line">Display window but
-the workflow will</div>
-<div class="line">continue since some
-of the MHD codes</div>
-<div class="line">handle plasma density
-internally as code</div>
-<div class="line">parameter and their
-execution is not
-affected.</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Cutoff</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">Performs the
-cut-off of the input</div>
-<div class="line">equilibrium if
-requested and</div>
-<div class="line">provided the input
-CPO has a poloidal</div>
-<div class="line">flux (Psi) mapping
-i.e. Psi(R,Z). If not</div>
-<div class="line">present then workflow
-execution stops and a</div>
-<div class="line">message is displayed
-on the Multi Tab</div>
-<div class="line">Display window. A
-plot with the</div>
-<div class="line">original (in blue)
-and cut equilibrium</div>
-<div class="line">(in green) is shown
-when cut_off: yes</div>
-<div class="line">A plot with
-just the original (in</div>
-<div class="line">blue) equilibrium is
-shown when
-cut_off : no</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>NOTE</strong>: A
-useful trick to STOP</div>
-<div class="line">the workflow
-execution*-&gt; when a</div>
-<div class="line">Python plot window is
-shown, Press the STOP</div>
-<div class="line">button on the Kepler
-GUI before closing</div>
-<div class="line">the plot window. This
-ensures workflow</div>
-<div class="line">execution is stopped
-since Kepler is</div>
-<div class="line">waiting for Python
-process to
-proceed.</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>Fixbndequil</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">Selects from a pool
-of 3 equilibrium</div>
-<div class="line">codes the one to
-launch according to</div>
-<div class="line">the value of the
-Kepler variable
-<em>eqcode</em></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Caxe</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">The CAXE code.</div>
-<div class="line">It can operate
-jointly with KINX
-only.</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>Chease</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">The CHEASE code.</div>
-<div class="line">It can operate
-jointly with ILSA,
-MARS</div>
-<div class="line">and MARS-F</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Helena</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">The HELENA code.</div>
-<div class="line">It can operate
-jointly with ILSA,
-MARS</div>
-<div class="line">and MARS-F</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>Visual</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">Visualize the
-resulting equilibrium.</div>
-<div class="line">A Copy in EPS format
-is stored on the path</div>
-<div class="line">defined by Kepler
-variable %BLUE%path</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Ilsa</p></td>
-<td><p>StabCode</p></td>
-<td><div class="line-block">
-<div class="line">The ILSA code suite.</div>
-<div class="line">At the moment only
-the MISHKA1 kernel</div>
-<div class="line">(ideal incompressible
-MHD) is active</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>Kinx</p></td>
-<td><p>StabCode</p></td>
-<td><p>The KINX code.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Marsgw</p></td>
-<td><p>StabCode</p></td>
-<td><p>The MARS code</p></td>
-</tr>
-<tr class="row-even"><td><p>Marsf</p></td>
-<td><p>StabCode</p></td>
-<td><p>The MARS-F code</p></td>
-</tr>
-<tr class="row-odd"><td><p>PLOT_EIGENFUNCTION</p></td>
-<td><p>StabCode</p></td>
-<td><div class="line-block">
-<div class="line">Visualize the real
-and imaginary</div>
-<div class="line">eigenfunction
-components. In case</div>
-<div class="line">multiple toroidal
-mode numbers are set</div>
-<div class="line">(ILSA or KINX), one
-plot window per each</div>
-<div class="line">toroidal eigenmode is
-returned. A Copy in</div>
-<div class="line">EPS format of each
-window is stored on</div>
-<div class="line">the path defined by
-Kepler variable <em>path</em></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="section" id="setting-up-workflow-and-actor-parameters">
 <h2>4.4. Setting up Workflow and Actor parameters<a class="headerlink" href="#setting-up-workflow-and-actor-parameters" title="Permalink to this headline">¶</a></h2>
@@ -543,7 +322,7 @@ Kepler variable <em>path</em></div>
 where to read the reference equilibrium from (shot/run_in pair)</p></li>
 <li><p><strong>run_in</strong> : the run number where the reference equilibrium is
 (shot/run_in pair)</p></li>
-<li><p><strong>run_work</strong> : placeholder run for the temporary Kepler CPOs</p></li>
+<li><p><strong>run_work</strong> : placeholder run for the temporary Kepler IDSs</p></li>
 <li><p><strong>run_out</strong> : run number where the final results of the run will be
 stored (user running the workflow/shot/run_out). Since the input
 equilibrium can be a reconstruction that goes beyond the separatrix, 3
@@ -553,7 +332,7 @@ inside separatrix and corresponding high resolution equilibrium).</p></li>
 the run_out will naturally be written to personal database only.</p></li>
 <li><p><strong>device</strong> : device database where the input reference data is. MUST BE
 the same as env variable TOKAMAKNAME</p></li>
-<li><p><strong>time</strong> : time slice (in equilibrium CPO) to be analysed in case the
+<li><p><strong>time</strong> : time slice (in equilibrium IDS) to be analysed in case the
 input shot/run_in contains many time slices.</p></li>
 <li><p><strong>path</strong> : temporary folder where to dump the plots generated. Also used
 to store output files (used by HELENA/ILSA only)</p></li>
@@ -588,110 +367,8 @@ workflow). To access the actors codeparam the easiest route is to :</p>
 </ol>
 </div>
 </div>
-<div class="section" id="test-cases-and-self-oriented-training">
-<h2>4.5. Test cases and self-oriented training<a class="headerlink" href="#test-cases-and-self-oriented-training" title="Permalink to this headline">¶</a></h2>
-<p>Several test cases are available for testing, corresponding to different
-applications/examples. The itmdb files are found on the software release
-folder under <em>/tutorial</em></p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 24%" />
-<col style="width: 26%" />
-<col style="width: 26%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Case</p></th>
-<th class="head"><p>Path</p></th>
-<th class="head"><p>Original source</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>/tutorial/case1</p></td>
-<td><div class="line-block">
-<div class="line">gvlad/test/180/</div>
-<div class="line">300</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">Test equilibrium
-of elongated
-JET-like</div>
-<div class="line">plasma, unstable
-to internal n=1
-mode</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>/tutorial/case2</p></td>
-<td><p>diy/test/1/2</p></td>
-<td><div class="line-block">
-<div class="line">Test equilibrium
-of circular
-plasma,</div>
-<div class="line">unstable to
-global n=1 mode</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>/tutorial/case3</p></td>
-<td><div class="line-block">
-<div class="line">rcoelho/aug/291</div>
-<div class="line">00/5</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">AUG equilibrium
-without
-separatrix,</div>
-<div class="line">unstable to
-internal/global
-n=1 mode</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>/tutorial/case4</p></td>
-<td><div class="line-block">
-<div class="line">rcoelho/jet/778</div>
-<div class="line">77/2</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">JET equilibrium
-without
-separatrix,</div>
-<div class="line">unstable to
-internal n=1
-mode</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>/tutorial/case5</p></td>
-<td><div class="line-block">
-<div class="line">rcoelho/aug/291</div>
-<div class="line">00/4</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">Same equilibrium
-of Case 3 but
-from full</div>
-<div class="line">(R,Z) CLISTE
-reconstruction.</div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
 <div class="section" id="eqstabil-tutorial">
-<h2>4.6. EQSTABIL Tutorial<a class="headerlink" href="#eqstabil-tutorial" title="Permalink to this headline">¶</a></h2>
+<h2>4.5. EQSTABIL Tutorial<a class="headerlink" href="#eqstabil-tutorial" title="Permalink to this headline">¶</a></h2>
 <p>Tutorial on using EQSTABIL workflow is available in <a class="reference download internal" download="" href="_downloads/518e0c8747bb91db12657b079fedacef/EQSTABIL_tutorial_20151214.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF</span></code></a>.</p>
 </div>
 </div>
