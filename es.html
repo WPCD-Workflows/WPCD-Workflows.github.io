@@ -198,10 +198,10 @@ fluid ideal/resistive MHD with compressibility.</p>
 plasma scenario, reading from a pre-existent WPCD database shot/run/time
 entry. Therefore,</p>
 <ul class="simple">
-<li><p>It does not read from experimental databases storing locally
-processed plasma equilibrium e.g. PPFs (JET) or shotfiles (AUG).
-These can be fetched using <a class="reference external" href="https://portal.eufus.eu/twiki/bin/view/Main/Exp2ITM">exp2itm</a> (ask the workflow
-developer for assistance).</p></li>
+<li><p>Equilibrium data need to be read from experimental databases and stored locally
+on the platform where EQSTABIL is run.
+Alternatively the equilibrium IDS could be the output of another workflow (e.g.
+EQRECONSTRUCT or ETS)</p></li>
 <li><p>It is not meant for parametric studies in a single workflow execution
 e.g. process several time slices or scan over resistive wall position
 or number of poloidal harmonics. Dedicated runs for such cases are
@@ -312,7 +312,7 @@ remaining plasma bundle CPOs are written “as is” (whatever time slices).</p>
 </div>
 <div class="section" id="actors-involved">
 <h2>4.3. Actors involved<a class="headerlink" href="#actors-involved" title="Permalink to this headline">¶</a></h2>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 32%" />
 <col style="width: 32%" />
@@ -593,7 +593,7 @@ workflow). To access the actors codeparam the easiest route is to :</p>
 <p>Several test cases are available for testing, corresponding to different
 applications/examples. The itmdb files are found on the software release
 folder under <em>/tutorial</em></p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 24%" />
 <col style="width: 24%" />
