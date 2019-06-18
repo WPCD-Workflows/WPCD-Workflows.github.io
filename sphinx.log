@@ -32,9 +32,6 @@ unzip -q -d source/static/Phase4.10b.10_HTML source/static/Phase4.10b.10_HTML.zi
 sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Workflows.github.io
 Running Sphinx v2.1.1
 loading pickled environment... done
-loading intersphinx inventory from https://wpcd-workflows.github.io/IMASviz/objects.inv...
-loading intersphinx inventory from http://docs.scipy.org/doc/numpy/objects.inv...
-intersphinx inventory has moved: http://docs.scipy.org/doc/numpy/objects.inv -> https://docs.scipy.org/doc/numpy/objects.inv
 building [mo]: targets for 0 po files that are out of date
 building [html]: targets for 15 source files that are out of date
 updating environment: [] 0 added, 15 changed, 0 removed
