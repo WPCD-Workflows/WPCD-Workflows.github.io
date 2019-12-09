@@ -1803,7 +1803,7 @@ notation. All examples refer to the 2d structured R,Z example grid #1
 given above.
 Object descriptor A single object (= and object descriptor), for object
 with object class (1,1), object index (4,2).</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((1,1) (4,2))</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(4,2))</span>
 </pre></div>
 </div>
 <p>Explicit object lists An explicit object list is simply an enumeration
@@ -1814,10 +1814,10 @@ list should enforce this. If you need lists of objects with differing
 class, have a look at subgrids).</p>
 <p>An explicit list of 2d cells (faces), listing the four corner cells of
 the grid in the order bottom-left, bottom-right, top-left, top-right:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">(((1,1) (1,1)),</span>
-<span class="go">((1,1) (5,1)),</span>
-<span class="go">((1,1) (1,4)),</span>
-<span class="go">((1,1) (5,4)))</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(((1,1)</span> <span class="go">(1,1)),</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(5,1)),</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(1,4)),</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(5,4)))</span>
 </pre></div>
 </div>
 <p>Implicit object lists Implicit object lists use the implicit order of
@@ -1828,7 +1828,7 @@ demonstrate the implicit list notation. Note: the implicit list notation
 is used in the Python implementation of the grid service library in
 exactly the form given here.</p>
 <p>Selecting all indices An implicit object list of all r-aligned edges:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((1,0) (0,0))</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">((1,0)</span> <span class="go">(0,0))</span>
 </pre></div>
 </div>
 <p>Object and subobject indices in the grid description start counting from
@@ -1837,7 +1837,7 @@ denotes an undefined index. In this notation, it denotes all possible
 indices.</p>
 <p>An implicit object list of the (z-aligned) boundary edges on the left
 boundary of the grid:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((0,1) (1,0))</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(1,0))</span>
 </pre></div>
 </div>
 <p>The first entry of the index tuple denotes the first node in the
@@ -1845,52 +1845,52 @@ r-space, the second entry denotes all edges in the z space. The implicit
 list denotes a total of 4 1d edges. Their implicit numbering is again
 given by iterating over all defining objects, lowest space first. The
 list therefore expands to</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((0,1) (1,1))</span>
-<span class="go">((0,1) (1,2))</span>
-<span class="go">((0,1) (1,3))</span>
-<span class="go">((0,1) (1,4))</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(1,1))</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(1,2))</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(1,3))</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(1,4))</span>
 </pre></div>
 </div>
 <p>Selecting explicit lists of indices An implicit object list of the
 (z-aligned) right and left boundary edges:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((0,1) ([1,6],0))</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">([1,6],0))</span>
 </pre></div>
 </div>
 <p>The first entry of the index tuple denotes a list of nodes in the
 r-space, more specifically the first and the last (=6th) node. The
 second entry denotes again all edges in the z space. The implicit list
 then denotes a total of 8 1d edges in the following order:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((0,1) (1,1))</span>
-<span class="go">((0,1) (6,1))</span>
-<span class="go">((0,1) (1,2))</span>
-<span class="go">((0,1) (6,2))</span>
-<span class="go">((0,1) (1,3))</span>
-<span class="go">((0,1) (6,3))</span>
-<span class="go">((0,1) (1,4))</span>
-<span class="go">((0,1) (6,4))</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(1,1))</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(6,1))</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(1,2))</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(6,2))</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(1,3))</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(6,3))</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(1,4))</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(6,4))</span>
 </pre></div>
 </div>
 <p>Selecting ranges of indices An implicit object list of all 2d cells,
 except the cells on the left and right boundary.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((1,1) ((2,4),0))</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">((2,4),0))</span>
 </pre></div>
 </div>
 <p>The first entry of the index tuple denotes a range of edges in the
 r-space, more specifically the edges 2 to 4. The second entry of the
 index tuple denotes all four edges in the z-space. The implicit list
 then denotes a total of 12 2d cells in the following order:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((1,1) (2,1))</span>
-<span class="go">((1,1) (3,1))</span>
-<span class="go">((1,1) (4,1))</span>
-<span class="go">((1,1) (2,2))</span>
-<span class="go">((1,1) (3,2))</span>
-<span class="go">((1,1) (4,2))</span>
-<span class="go">((1,1) (2,3))</span>
-<span class="go">((1,1) (3,3))</span>
-<span class="go">((1,1) (4,3))</span>
-<span class="go">((1,1) (2,4))</span>
-<span class="go">((1,1) (3,4))</span>
-<span class="go">((1,1) (4,4))</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(2,1))</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(3,1))</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(4,1))</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(2,2))</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(3,2))</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(4,2))</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(2,3))</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(3,3))</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(4,3))</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(2,4))</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(3,4))</span>
+<span class="gp gp-VirtualEnv">((1,1)</span> <span class="go">(4,4))</span>
 </pre></div>
 </div>
 <p>All implementations of the grid service library define the constant
@@ -1915,10 +1915,10 @@ the objects in the subgrid is then directly given by the ordering of the
 object lists and the ordering of the grid objects therein.</p>
 <p>Subgrid example The following subgrid consists of all boundary edges of
 the 2d R,Z example grid #1, given as four implicit object lists.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">((1,0) (0,1))    ! bottom edges</span>
-<span class="go">((0,1) (6,0))    ! right edges</span>
-<span class="go">((1,0) (0,5))    ! top edges</span>
-<span class="go">((0,1) (1,0))    ! left edges</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">((1,0)</span> <span class="go">(0,1))    ! bottom edges</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(6,0))    ! right edges</span>
+<span class="gp gp-VirtualEnv">((1,0)</span> <span class="go">(0,5))    ! top edges</span>
+<span class="gp gp-VirtualEnv">((0,1)</span> <span class="go">(1,0))    ! left edges</span>
 </pre></div>
 </div>
 <p>Explicitly listing the objects in the order given by the subgrid gives:</p>

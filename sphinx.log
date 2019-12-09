@@ -115,13 +115,13 @@ make[1]: Leaving directory '/home/circleci/project'
 ln -sf /home/circleci/assets/MD5/d391c9c30f9d5414dc2f8dbc391564ec source/static/EUROfusionIntegratedModellingworkflows.pdf
 unzip -q -d source/static/Phase4.10b.10_HTML source/static/Phase4.10b.10_HTML.zip
 sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Workflows.github.io
-Running Sphinx v2.1.2
+Running Sphinx v2.2.2
 loading intersphinx inventory from https://wpcd-workflows.github.io/IMASviz/objects.inv...
 loading intersphinx inventory from http://docs.scipy.org/doc/numpy/objects.inv...
 intersphinx inventory has moved: http://docs.scipy.org/doc/numpy/objects.inv -> https://docs.scipy.org/doc/numpy/objects.inv
 building [mo]: targets for 0 po files that are out of date
 building [html]: targets for 15 source files that are out of date
-updating environment: 15 added, 0 changed, 0 removed
+updating environment: [new config] 15 added, 0 changed, 0 removed
 reading sources... [  6%] amns
 reading sources... [ 13%] averages
 reading sources... [ 20%] codes
@@ -158,8 +158,8 @@ writing output... [ 86%] kepler
 writing output... [ 93%] resources
 writing output... [100%] transport
 
-generating indices... genindex
-writing additional pages... search
+generating indices...  genindexdone
+writing additional pages...  searchdone
 copying images... [  0%] images/amns_1.png
 copying images... [  1%] images/amns_2.png
 copying images... [  2%] images/amns_3.png
@@ -294,9 +294,9 @@ copying downloadable files... [ 33%] static/EQSTABIL_tutorial_20151214.pdf
 copying downloadable files... [ 66%] static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf
 copying downloadable files... [100%] static/EUROfusionIntegratedModellingworkflows.pdf
 
-copying static files... done
+copying static files... ... done
 copying extra files... done
-dumping search index in English (code: en) ... done
+dumping search index in English (code: en)... done
 dumping object inventory... done
 build succeeded, 18 warnings.
 
