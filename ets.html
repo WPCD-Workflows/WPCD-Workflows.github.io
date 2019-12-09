@@ -231,14 +231,17 @@
 <h3>3.1.1. Configuration of the ETS-5 workflow in Kepler<a class="headerlink" href="#configuration-of-the-ets-5-workflow-in-kepler" title="Permalink to this headline">¶</a></h3>
 <p>ETS-5 uses CPO for actor integration in Kepler and as input data to the workflow. This means that the user environment
 needs to be set up as ITM environment. To do so login on the EUROfusion Gateway and type the following commands</p>
-<p>module purge
-module load cineca
-module load itmenv/ETS_4.10b.10_v5.4.0
-source $ITMSCRIPTDIR/ITMv2.sh JET
-export ITM_KEPLER_DIR=$ITMWORK/my_keplers
-export _JAVA_OPTIONS=-Dsun.java2d.xrender=false
-export I_MPI_FABRICS=shm
-export _JAVA_OPTIONS=”-Xss20m -Xms4g -Xmx8g -Dsun.java2d.xrender=false”</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>&gt;module purge
+&gt;module load cineca
+&gt;module load itmenv/ETS_4.10b.10_v5.4.0
+&gt;source $ITMSCRIPTDIR/ITMv2.sh JET
+&gt;export ITM_KEPLER_DIR=$ITMWORK/my_keplers
+&gt;export _JAVA_OPTIONS=-Dsun.java2d.xrender=false
+&gt;export I_MPI_FABRICS=shm
+&gt;export _JAVA_OPTIONS=”-Xss20m -Xms4g -Xmx8g -Dsun.java2d.xrender=false”</p>
 <p>The command ‘module load itmenv/ETS…’ loads the itmenv environment and in particula the ETS / Kepler version 5.4.0
 To load a different version just change the number e.g. v5.5.0</p>
 <p>The $ITMSCRIPTDIR/ITMv2.sh JET command will set up the local database to JET. This menas that any simulation done with ETS
