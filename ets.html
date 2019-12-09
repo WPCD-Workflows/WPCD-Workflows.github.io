@@ -107,12 +107,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#instantaneous-events-actuators">3.2.1.9. Instantaneous events &amp; Actuators</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#scenario-output">3.2.1.10. Scenario output</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#visualization">3.2.1.11. Visualization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#multiple-tab-display">3.2.1.12. Multiple Tab Display</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#python-visualization-display">3.2.1.13. Python Visualization Display</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-tab-display-etsviz-py">3.2.1.12. Multiple Tab Display (ETSviz.py)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#list-of-actors">3.2.2. List of Actors</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#equilibrium-actors">3.2.2.1. Equilibrium actors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#some-equilibrium-actors">3.2.2.1. Some Equilibrium actors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#core-transport-actors">3.2.2.2. Core transport actors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#edge-transport-actors">3.2.2.3. Edge transport actors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#heating-and-current-drive-actors">3.2.2.4. Heating and current drive actors</a></li>
@@ -138,7 +137,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#running-exponential-average">3.4. Running Exponential Average</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id13">3.4.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">3.4.1. Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#definition">3.4.2. Definition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#differential-equation">3.4.3. Differential Equation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#equivalence-to-past-time-convolution-integral">3.4.4. Equivalence to Past-Time Convolution Integral</a></li>
@@ -506,8 +505,6 @@ with corona, using the first element from above as a total density</p></li>
 </div>
 <div class="section" id="neutrals">
 <h5>3.2.1.3.3. Neutrals<a class="headerlink" href="#neutrals" title="Permalink to this headline">¶</a></h5>
-<p>!!! AT THE MOMENT BOUNDARY CONDITIONS FOR NEUTRAL VELOCITIES ARE DISABLED,
-MIGHT BE ADDED ON REQUEST</p>
 <p>Note, that ALL values should be specified in the order: {<em>1, 2, 3 …NION, 1, 2, 3, …NIMP</em>}</p>
 <p>To set up boundary conditions:</p>
 <ul class="simple">
@@ -542,14 +539,14 @@ should be load by the worflow,</p>
 </div>
 </div>
 <div class="section" id="convergence-loop">
-<span id="ets-a-4-10b-convergence"></span><h4>3.2.1.4. Convergence loop<a class="headerlink" href="#convergence-loop" title="Permalink to this headline">¶</a></h4>
+<h4>3.2.1.4. Convergence loop<a class="headerlink" href="#convergence-loop" title="Permalink to this headline">¶</a></h4>
 <p>ETS updates input from different physics actors in a sequence, which is
 finished by solving the transport equations. Ther are possible
 none-linear couplings between different parts of the system. These
-nonelinearities are trited by the ETS using iterations. The decision to
+nonelinearities are treated by the ETS using iterations. The decision to
 step in time is made by the ETS based on the criteria that the maximum
 relative deviation of main plasma profiles is lower than some predefined
-tolerance. There is a number of settings and sitches in the ETS that are
+tolerance. There is a number of settings and switches in the ETS that are
 used by the iterative scheme. To edit them do:</p>
 <ul class="simple">
 <li><p>right click on the box CONVERGENCE LOOP</p></li>
@@ -812,7 +809,7 @@ LOOP composite actor. Therefore please do:</p>
 </div>
 <div class="section" id="analytical-impurity-sources">
 <h5>3.2.1.8.1. Analytical &amp; Impurity sources<a class="headerlink" href="#analytical-impurity-sources" title="Permalink to this headline">¶</a></h5>
-<p>There is a number of sources developed by IMP3 project, which are actors
+<p>There is a number of sources developed by WPCD, which are actors
 or internal routines of the transport solver. You can activate them by
 selecting <strong>ON / OFF</strong> in front of corresponding source:</p>
 <ul class="simple">
@@ -833,7 +830,7 @@ specified on ¨Before_time_evolution¨ composite actor interface; <strong>OFF</s
 </div>
 <div class="section" id="hcd-sources">
 <h5>3.2.1.8.2. HCD sources<a class="headerlink" href="#hcd-sources" title="Permalink to this headline">¶</a></h5>
-<p>There is a number of sources developed by HCD project, that are
+<p>There is a number of sources developed by WPCD, that are
 incorporated by the ETS workflow.</p>
 <p>For the HCD sources please activate the type of heating source, by
 ticking the box in front of it, and select the code to simulate it.</p>
@@ -852,9 +849,7 @@ ticking the box in front of it, and select the code to simulate it.</p>
 <div class="figure align-center">
 <img alt="_images/ets_sources4.png" src="_images/ets_sources4.png" />
 </div>
-<p>The detailed information on initial IMP5HCD settings can be found
-<a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/imp5_imp5hcd.html">here</a>.
-Please note that settings for NBI are done independent for each PINI.
+<p>Please note that settings for NBI are done independent for each PINI.
 Therefore, for NBI settings, please insert the values separated by
 commas. The number of the element in the array corresponds to the number
 of activated PINI. Maximum accepted number of PINIs = 16.</p>
@@ -1024,8 +1019,8 @@ runaways</p>
 <span id="ets-a-4-10b-visualization"></span><h4>3.2.1.11. Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h4>
 <p>There is a number tools visualizing the ETS run.</p>
 </div>
-<div class="section" id="multiple-tab-display">
-<h4>3.2.1.12. Multiple Tab Display<a class="headerlink" href="#multiple-tab-display" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="multiple-tab-display-etsviz-py">
+<h4>3.2.1.12. Multiple Tab Display (ETSviz.py)<a class="headerlink" href="#multiple-tab-display-etsviz-py" title="Permalink to this headline">¶</a></h4>
 <p>The display appeares automaticaly when the ETS workflow is launched. It
 displays diagnostic text messages from the workflow on following topics:</p>
 <ul class="simple">
@@ -1034,44 +1029,16 @@ displays diagnostic text messages from the workflow on following topics:</p>
 CURRENT</p></li>
 <li><p>Time evolution</p></li>
 <li><p>Convergence of iteratinos within the time step</p></li>
-<li><p>IMP5HCD settings</p></li>
+<li><p>HCD settings</p></li>
 <li><p>Power used by IMP5HCD actors durung the run</p></li>
 </ul>
-<p>Also the error messages from execution of the workflow will be displayed
-here.</p>
-<div class="figure align-center">
-<img alt="_images/ets_visual1.png" src="_images/ets_visual1.png" />
-</div>
-</div>
-<div class="section" id="python-visualization-display">
-<h4>3.2.1.13. Python Visualization Display<a class="headerlink" href="#python-visualization-display" title="Permalink to this headline">¶</a></h4>
-<p>Please note, if you plan to use python based vizualization <strong>nomatlab</strong>
-argument is essential by the opening of the workflow.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>kepler.sh nomatlab workflow_path/workflow_name.xml
-</pre></div>
-</div>
-<p>You can activate the graphical visualization of your run evolution:</p>
-<ul class="simple">
-<li><p>right click on the box Check Time &amp; Save Slice</p></li>
-<li><p>select <strong>Configure actor</strong></p></li>
-<li><p>select visualisation <strong>YES</strong> or <strong>NO</strong></p></li>
-<li><p><strong>Commit</strong></p></li>
-</ul>
-<div class="figure align-center">
-<img alt="_images/ets_visual2.png" src="_images/ets_visual2.png" />
-</div>
-<p>Then evolution of main discharge parameters will be shown in this
-window:</p>
-<div class="figure align-center">
-<img alt="_images/ets_visual3.png" src="_images/ets_visual3.png" />
-</div>
 </div>
 </div>
 <div class="section" id="list-of-actors">
 <span id="ets-a-4-10b-list-actors"></span><h3>3.2.2. List of Actors<a class="headerlink" href="#list-of-actors" title="Permalink to this headline">¶</a></h3>
 <p>UNDER DEVELOPMENT</p>
-<div class="section" id="equilibrium-actors">
-<span id="ets-a-4-10b-list-actors-equilibrium"></span><h4>3.2.2.1. Equilibrium actors<a class="headerlink" href="#equilibrium-actors" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="some-equilibrium-actors">
+<span id="ets-a-4-10b-list-actors-equilibrium"></span><h4>3.2.2.1. Some Equilibrium actors<a class="headerlink" href="#some-equilibrium-actors" title="Permalink to this headline">¶</a></h4>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -1187,8 +1154,8 @@ window:</p>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
 <div class="line">TCI/MMM</div>
-<div class="line">(not yet</div>
-<div class="line">in ETS)</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1203,8 +1170,8 @@ window:</p>
 </tr>
 <tr class="row-even"><td><div class="line-block">
 <div class="line">TCI/EDWM</div>
-<div class="line">(not yet</div>
-<div class="line">in ETS)</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1219,8 +1186,8 @@ window:</p>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
 <div class="line">nclass</div>
-<div class="line">(not yet</div>
-<div class="line">in ETS)</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1234,8 +1201,8 @@ window:</p>
 </tr>
 <tr class="row-even"><td><div class="line-block">
 <div class="line">neos</div>
-<div class="line">(not yet</div>
-<div class="line">in ETS)</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1291,6 +1258,29 @@ window:</p>
 <tr class="row-even"><td><p>synchrotronsources</p></td>
 <td></td>
 <td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TGLF</p></td>
+<td></td>
+<td><ol class="upperalpha simple" start="7">
+<li><p>Stabler</p></li>
+</ol>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>NEO               |</p></td>
+<td><ol class="upperalpha simple" start="5">
+<li><p>Belli</p></li>
+</ol>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>QualiKiz</p></td>
+<td></td>
+<td><ol class="upperalpha simple" start="10">
+<li><p>Citrin.</p></li>
+</ol>
+</td>
 <td></td>
 </tr>
 </tbody>
@@ -1530,8 +1520,6 @@ window:</p>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
 <div class="line">Eve</div>
-<div class="line">(not yet in</div>
-<div class="line">ETS)</div>
 </div>
 </td>
 <td><p>IC / waves</p></td>
@@ -1703,8 +1691,6 @@ input shot)</p>
 </div>
 <p>You should choose from the list of evailable models in each cathegory or
 switch it OFF</p>
-<p>The list of available transport models can be found
-<a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/ets_status.html">here</a>.</p>
 <div class="figure align-center">
 <img alt="_images/ets_transport2_a.png" src="_images/ets_transport2_a.png" />
 </div>
@@ -1856,8 +1842,8 @@ LOOP composite actor. Therefore please do:</p>
 <div class="figure align-center">
 <img alt="_images/ets_sources1_a.png" src="_images/ets_sources1_a.png" />
 </div>
-<div class="section" id="imp3-sources">
-<h5>3.2.2.9.1. IMP3 sources<a class="headerlink" href="#imp3-sources" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="heat-and-particle-sources">
+<h5>3.2.2.9.1. Heat and Particle sources<a class="headerlink" href="#heat-and-particle-sources" title="Permalink to this headline">¶</a></h5>
 <p>There is a number of sources developed by IMP3 project, which are actors
 or internal routines of the transport solver. You can activate them by
 selecting <em>ON / OFF</em> in front of corresponding source:</p>
@@ -1894,16 +1880,16 @@ INTERPRETATIVE
 <img alt="_images/ets_sources2_a.png" src="_images/ets_sources2_a.png" />
 </div>
 </div>
-<div class="section" id="imp5hcd-sources">
-<h5>3.2.2.9.2. IMP5HCD sources<a class="headerlink" href="#imp5hcd-sources" title="Permalink to this headline">¶</a></h5>
-<p>There is a number of sources developed by IMP5 project, that are
+<div class="section" id="heating-sources">
+<h5>3.2.2.9.2. Heating sources<a class="headerlink" href="#heating-sources" title="Permalink to this headline">¶</a></h5>
+<p>There is a number of sources developed by WPCD, that are
 incorporated by the ETS workflow.</p>
-<p>For the IMP5HCD sources please activate the type of heating source, by
+<p>For the WPCD sources please activate the type of heating source, by
 ticking the box in front of it, and select the code to simulate it.</p>
 <div class="figure align-center">
 <img alt="_images/ets_sources3_a.png" src="_images/ets_sources3_a.png" />
 </div>
-<p>You also need to configure initial IMP5HCD settings. Therefore please:</p>
+<p>You also need to configure initial  settings. Therefore please:</p>
 <ul class="simple">
 <li><p>right click on the box ‘BEFORE THE TIME EVOLUTION’</p></li>
 <li><p>select ‘Open Actor’</p></li>
@@ -1915,9 +1901,7 @@ ticking the box in front of it, and select the code to simulate it.</p>
 <div class="figure align-center">
 <img alt="_images/ets_sources4_a.png" src="_images/ets_sources4_a.png" />
 </div>
-<p>The detailed information on initial IMP5HCD settings can be found
-<a class="reference external" href="https://www.eufus.eu/documentation/EU-IM/html/imp5_imp5hcd.html">here</a>.
-Please note that settings for NBI are done independent for each PINI.
+<p>Please note that settings for NBI are done independent for each PINI.
 Therefore, for NBI settings, please insert the values separated by
 commas. The number of the element in the array corresponds to the number
 of activated PINI. Maximum accepted number of PINIs = 16.</p>
@@ -1927,7 +1911,7 @@ of activated PINI. Maximum accepted number of PINIs = 16.</p>
 </div>
 <div class="section" id="id6">
 <h5>3.2.2.9.3. Power control<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
-<p>You also can activate the power control for the IMP5HCD sources.</p>
+<p>You also can activate the power control for the sources.</p>
 <div class="figure align-center">
 <img alt="_images/ets_sources6_a.png" src="_images/ets_sources6_a.png" />
 </div>
@@ -2087,8 +2071,8 @@ events</p>
 <div class="section" id="visualization-during-the-run">
 <span id="ets-a-4-10a-visualization"></span><h4>3.2.2.11. Visualization during the run<a class="headerlink" href="#visualization-during-the-run" title="Permalink to this headline">¶</a></h4>
 <p>There is a number tools visualizing the ETS run.</p>
-<div class="section" id="id10">
-<h5>3.2.2.11.1. Multiple Tab Display<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="multiple-tab-display">
+<h5>3.2.2.11.1. Multiple Tab Display<a class="headerlink" href="#multiple-tab-display" title="Permalink to this headline">¶</a></h5>
 <p>The display appeares automaticaly when the ETS workflow is launched. It
 displays diagnostic text messages from the workflow on following topics:</p>
 <ul class="simple">
@@ -2106,596 +2090,11 @@ here.</p>
 <img alt="_images/ets_visual1_a.png" src="_images/ets_visual1_a.png" />
 </div>
 </div>
-<div class="section" id="id11">
-<h5>3.2.2.11.2. Python Visualization Display<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
-<p>You can activate the graphical visualization of your run evolution:</p>
-<ul class="simple">
-<li><p>right click on the box ‘Check Time &amp; Save Slice’</p></li>
-<li><p>select ‘Configure actor’</p></li>
-<li><p>select visualisation ‘YES’ or ‘NO’</p></li>
-<li><p>Commit</p></li>
-</ul>
-<div class="figure align-center">
-<img alt="_images/ets_visual2_a.png" src="_images/ets_visual2_a.png" />
-</div>
-<p>Then evolution of main discharge parameters will be shown in this
-window:</p>
-<div class="figure align-center">
-<img alt="_images/ets_visual3_a.png" src="_images/ets_visual3_a.png" />
-</div>
-<div class="section" id="ets-c">
-<span id="ets-c-kepler"></span><h6>3.2.2.11.2.1. ETS_C<a class="headerlink" href="#ets-c" title="Permalink to this headline">¶</a></h6>
-<p>The ETS workflow (IMP3-ACT1) is used for 1-D transport simulation of a
-tokamak core plasma.</p>
-<p><strong>ETS workflow in KEPLER</strong>:</p>
-<ul class="simple">
-<li><p>uses as actors and composite actors from other IMPs, thus for the
-most recent versions of them please check with relevant project</p></li>
-<li><p>complex, but clearly structured workflow, which offers user friendly
-interface for configuring the simulation</p></li>
-<li><dl class="simple">
-<dt>allows for easy modifications (connecting new modules, or reconnecting</dt><dd><p>the parts of the workflow) through the easy graphical interface</p>
-</dd>
-</dl>
-</li>
-<li><p>provides users with all updates through the version control system</p></li>
-<li><p>still actively developing tool</p></li>
-</ul>
-<div class="figure align-center">
-<img alt="_images/ets_c.png" src="_images/ets_c.png" />
-</div>
-</div>
-<div class="section" id="ets-status">
-<span id="id12"></span><h6>3.2.2.11.2.2. ETS Status<a class="headerlink" href="#ets-status" title="Permalink to this headline">¶</a></h6>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 34%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><div class="line-block">
-<div class="line"><em>Package Name</em> /</div>
-<div class="line"><em>Physics Module</em></div>
-</div>
-</th>
-<th class="head"><p>ETS-A</p></th>
-<th class="head"><p>ETS-C</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><em>EQUILIBRIUM</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><em>fixed boundary:</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>BDSEQ</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>EMEQ</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>SPIDER</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>SPIDER_IMP12</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>CHEASE</p></td>
-<td><p>Ready for use</p></td>
-<td><p>validate</p></td>
-</tr>
-<tr class="row-odd"><td><p>HELENA</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>HELENA21</p></td>
-<td></td>
-<td><div class="line-block">
-<div class="line">work in 4.09a problem</div>
-<div class="line">when it doesn’t find</div>
-<div class="line">any equilibrium crash</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><em>free boundary:</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>CEDRES++</p></td>
-<td><div class="line-block">
-<div class="line">In progress/tests</div>
-<div class="line">are planned for</div>
-<div class="line">Nov.2014</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">validate (static</div>
-<div class="line">mode, TBD evolution</div>
-<div class="line">mode)</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>CREATE-NL</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>FIXFREE</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>EQFAST</p></td>
-<td></td>
-<td><p>work in 4.09a</p></td>
-</tr>
-<tr class="row-odd"><td><p>FREEBIE</p></td>
-<td></td>
-<td><p>validate</p></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><em>MHD</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>NTM</p></td>
-<td><p>Ready for use</p></td>
-<td><p>validate</p></td>
-</tr>
-<tr class="row-odd"><td><p>SAWTEETH</p></td>
-<td><div class="line-block">
-<div class="line">Implemented/Tested/</div>
-<div class="line">release</div>
-<div class="line">date:Nov.2014</div>
-</div>
-</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">Linear Stability</div>
-<div class="line">Chain</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">Stand alone</div>
-<div class="line">tests/implementation</div>
-<div class="line">in ETS and</div>
-<div class="line">release:2015</div>
-</div>
-</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><em>TRANSPORT</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line"><em>analytical &amp;</em></div>
-<div class="line"><em>interpretative:</em></div>
-</div>
-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">From DATA BASE</div>
-<div class="line">(interpretative)</div>
-</div>
-</td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">Edge Transport</div>
-<div class="line">Barried (analytical)</div>
-</div>
-</td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><em>anomalous:</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>ETAIGB</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>BOHM-GYROBOHM</p></td>
-<td><p>Ready for use</p></td>
-<td><div class="line-block">
-<div class="line">validate, + effect of</div>
-<div class="line">rotation</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>GLF23</p></td>
-<td><div class="line-block">
-<div class="line">Implemented/Tested/</div>
-<div class="line">release</div>
-<div class="line">date:Nov.2014</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">to be tested (GLF23</div>
-<div class="line">installed in previous</div>
-<div class="line">gateway not</div>
-<div class="line">validated)</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>WEILAND</p></td>
-<td><div class="line-block">
-<div class="line">Implemented/Tested/</div>
-<div class="line">release</div>
-<div class="line">date:Nov.2014</div>
-</div>
-</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>REU-IM</p></td>
-<td><div class="line-block">
-<div class="line">Implemented/Tested/</div>
-<div class="line">release</div>
-<div class="line">date:Nov.2014</div>
-</div>
-</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>EWDM</p></td>
-<td><div class="line-block">
-<div class="line">Implemented/Tested/</div>
-<div class="line">release</div>
-<div class="line">date:Nov.2014</div>
-</div>
-</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>TGLF</p></td>
-<td><div class="line-block">
-<div class="line">In progress/Some</div>
-<div class="line">initial tests</div>
-</div>
-</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>KIAUTO</p></td>
-<td></td>
-<td><div class="line-block">
-<div class="line">installed (transport</div>
-<div class="line">model based on</div>
-<div class="line">scaling law)</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><em>neoclassical:</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>NEOS</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>NEOWES</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>NEOART</p></td>
-<td><div class="line-block">
-<div class="line">Ready for use</div>
-<div class="line">(probably not</div>
-<div class="line">suggested as being</div>
-<div class="line">too oscilatory)</div>
-</div>
-</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>NCLASS</p></td>
-<td><p>In progress</p></td>
-<td><div class="line-block">
-<div class="line">validate with</div>
-<div class="line">composition (to be</div>
-<div class="line">upgrade with</div>
-<div class="line">compositions</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>NCLASS/FORCEBALL</p></td>
-<td></td>
-<td><div class="line-block">
-<div class="line">installed (gives the</div>
-<div class="line">radial electric</div>
-<div class="line">field)</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line"><em>HEAT,PARTICLE</em></div>
-<div class="line"><em>SOURCES &amp; CURRENT</em></div>
-<div class="line"><em>DRIVE</em></div>
-</div>
-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line"><em>analytical &amp;</em></div>
-<div class="line"><em>interpretative:</em></div>
-</div>
-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">From DATA BASE</div>
-<div class="line">(interpretative)</div>
-</div>
-</td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Gaussian</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line"><em>impurity and</em></div>
-<div class="line"><em>particles:</em></div>
-</div>
-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>IMPURITY</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>NEUTRALS</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>PELLET</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>ZNEUTRES</p></td>
-<td></td>
-<td><div class="line-block">
-<div class="line">installed (simple</div>
-<div class="line">module of CRONOS for</div>
-<div class="line">neutral source terms)</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>ZRECYCLE</p></td>
-<td></td>
-<td><div class="line-block">
-<div class="line">edge boundary for</div>
-<div class="line">electron density</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><em>ECRH</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>GRAY</p></td>
-<td><p>Ready for use</p></td>
-<td><p>Installed</p></td>
-</tr>
-<tr class="row-even"><td><p>TORAY-FOM</p></td>
-<td></td>
-<td><p>In preparation</p></td>
-</tr>
-<tr class="row-odd"><td><p>TRAVIS</p></td>
-<td><p>Tested</p></td>
-<td><p>In preparation</p></td>
-</tr>
-<tr class="row-even"><td><p>TORBEAM</p></td>
-<td></td>
-<td><p>In preparation</p></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><em>ICRH</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>TORIC</p></td>
-<td><p>In progress</p></td>
-<td><p>In preparation</p></td>
-</tr>
-<tr class="row-even"><td><p>ICDEP</p></td>
-<td></td>
-<td><p>Installed</p></td>
-</tr>
-<tr class="row-odd"><td><p>FPSIM</p></td>
-<td></td>
-<td><p>Installed</p></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><em>NBI</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>NEMO</p></td>
-<td><p>Ready for use</p></td>
-<td><p>Installed</p></td>
-</tr>
-<tr class="row-odd"><td><p>BBNBI</p></td>
-<td><p>Ready for use</p></td>
-<td><p>In preparation</p></td>
-</tr>
-<tr class="row-even"><td><p>NBISIM</p></td>
-<td><p>Ready for use</p></td>
-<td><p>Installed</p></td>
-</tr>
-<tr class="row-odd"><td><p>ASCOT</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>RISK</p></td>
-<td><p>Ready for use</p></td>
-<td><p>In preparation</p></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><em>LH</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><em>nuclear sources</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>nuclearsim</p></td>
-<td><p>Ready for use</p></td>
-<td><p>Installed</p></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><em>CONTROLS</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>NBI power control</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>ECRH power control</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>ICRH power control</p></td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">Pellet frequency</div>
-<div class="line">control</div>
-</div>
-</td>
-<td><p>Ready for use</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><em>COUPLING TO EDGE</em></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>SOLPS</p></td>
-<td><div class="line-block">
-<div class="line">Tested at Fortran</div>
-<div class="line">level</div>
-</div>
-</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line"><em>DOCUMENTATION and</em></div>
-<div class="line"><em>MANUALS</em></div>
-</div>
-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Physics Description</p></td>
-<td><div class="line-block">
-<div class="line">Description of the</div>
-<div class="line">ETS</div>
-</div>
-</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Numerics Description</p></td>
-<td><div class="line-block">
-<div class="line">Form of the</div>
-<div class="line">standardize</div>
-<div class="line">equations</div>
-</div>
-</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Manuals</p></td>
-<td><div class="line-block">
-<div class="line">-  ETS workflows in</div>
-<div class="line-block">
-<div class="line">KEPLER</div>
-</div>
-<div class="line">-  ETS source in</div>
-<div class="line-block">
-<div class="line">Fortran</div>
-</div>
-</div>
-</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 </div>
 </div>
 </div>
 <div class="section" id="turbulent-flux-quantities-in-transport-models">
-<span id="imp4-transport"></span><h2>3.3. Turbulent Flux Quantities in Transport Models<a class="headerlink" href="#turbulent-flux-quantities-in-transport-models" title="Permalink to this headline">¶</a></h2>
+<h2>3.3. Turbulent Flux Quantities in Transport Models<a class="headerlink" href="#turbulent-flux-quantities-in-transport-models" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="overview">
 <h3>3.3.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
 <p>In conventional transport modelling, all quantities appearing in the
@@ -2955,8 +2354,8 @@ averages.</a></p>
 </div>
 <div class="section" id="running-exponential-average">
 <span id="imp4-averages"></span><h2>3.4. Running Exponential Average<a class="headerlink" href="#running-exponential-average" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id13">
-<h3>3.4.1. Overview<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>3.4.1. Overview<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>In conventional transport modelling, turbulent fluxes are modelled in terms
 of processes which are diffusive in the local relaxation sense, with the
 average flux given by a diffusion coefficient and an effective pinch
