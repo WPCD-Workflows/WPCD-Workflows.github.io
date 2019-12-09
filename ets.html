@@ -308,22 +308,6 @@ ways tio execute it:</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>For execution in none GUI mode:</p></li>
-</ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>kepler.sh -runwf -nogui -redirectgui <span class="nv">$EU</span>-IMHOME/some_dir_name workflow_path/workflow_name.xml
-</pre></div>
-</div>
-<ul>
-<li><p>For execution in batch mode:
-it is essential to keep the workflow inside your $EU-IMWORK area</p>
-<p>it is essential to switch to scripts/R2.2 module</p>
-</li>
-</ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>module switch scripts/R2.2
-<span class="gp">&gt;</span>submit_batch_kepler.sh run_dircetory <span class="m">1</span> <span class="nv">$EU</span>-IMWORK/workflow_path/workflow_name.xml <span class="nv">$EU</span>-IMSCRIPTDIR/batch_submission/ParallelKepler.bsub
-</pre></div>
-</div>
-<ul class="simple">
 <li><p>for executution via autoGui</p></li>
 </ul>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>autoGui
