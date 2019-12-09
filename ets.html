@@ -298,8 +298,6 @@ parts of the workflow) through an easy graphical interface</p></li>
 <li><p>provide users with all updates through the version control system</p></li>
 <li><p>still in active development tool (ETS-6)</p></li>
 </ul>
-<p><strong>The workflow shall run!</strong> If it
-does not, please use the contact from above.</p>
 <p><strong>Starting the workflow:</strong>
 If you have the workflow already installed, there are there are several
 ways tio execute it:</p>
@@ -325,8 +323,17 @@ it is essential to keep the workflow inside your $EU-IMWORK area</p>
 <span class="gp">&gt;</span>submit_batch_kepler.sh run_dircetory <span class="m">1</span> <span class="nv">$EU</span>-IMWORK/workflow_path/workflow_name.xml <span class="nv">$EU</span>-IMSCRIPTDIR/batch_submission/ParallelKepler.bsub
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>for executution via autoGui</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>autoGui
+</pre></div>
+</div>
+<p>once the GUI opens select load workflow or load parameter file. You can create a parameter file by loading the standard
+workflow released with the kepler version and the n chosing the option from the top menu ‘save parameter file’.
+The use of autoGui is strongly suggested as worklows are large xml files while parameter files are small and do not take all your disk space. Moreover parameter files can be loaded in any version of ETS-5 by opening the standard worklow included in the released.</p>
 <div class="section" id="configuring-the-ets-run">
-<span id="ets-a-4-10b-run-config"></span><h3>3.2.1. Configuring the ETS run<a class="headerlink" href="#configuring-the-ets-run" title="Permalink to this headline">¶</a></h3>
+<h3>3.2.1. Configuring the ETS run<a class="headerlink" href="#configuring-the-ets-run" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="workflow-parameters">
 <span id="ets-a-4-10b-workflow-parameters"></span><h4>3.2.1.1. Workflow parameters<a class="headerlink" href="#workflow-parameters" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="general-parameters">
