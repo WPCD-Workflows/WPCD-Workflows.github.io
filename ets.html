@@ -250,17 +250,16 @@ will be saved under the JET database (even if you are simulating TCV!!).</p>
 <p>If it is the first time you run ETS then you will need to install your first ‘dressed’ Kepler version which corresponds
 to Kepler with all the WPCD actors embedded in it.</p>
 <p><strong>This can be done by executing the following command</strong></p>
-<p><strong>For loading the Workflow+tools(import data, postprocessing):</strong>
-.. code-block:: console</p>
-<blockquote>
-<div><p>&gt;svn co <a class="reference external" href="https://gforge6.eufus.eu/svn/keplerworkflows/tags/ETS_4.10b.10_v5.5.0">https://gforge6.eufus.eu/svn/keplerworkflows/tags/ETS_4.10b.10_v5.5.0</a></p>
-</div></blockquote>
-<p>The above commands requires enabled access to GFORGE (if you are a simple user you need to get access to GFORGE enabled).
-<strong>Plotting routines such as kplots can be found under</strong>
-.. code-block:: console</p>
-<blockquote>
-<div><p>&gt;cd $KEPLER</p>
-</div></blockquote>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>install_kepler.sh ets_v550 trunk/ETS_4.10b.10_v5.5.0/central <span class="s2">&quot;dressed central kepler v5.5.0&quot;</span>
+<span class="gp">&gt;</span>switch_to_kepler.sh ets_v550
+</pre></div>
+</div>
+<p><strong>For loading the Workflow+tools(import data, postprocessing):</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>svn co https://gforge6.eufus.eu/svn/keplerworkflows/tags/ETS_4.10b.10_v5.5.0
+</pre></div>
+</div>
+<p>The above commands requires enabled access to GFORGE (if you are a simple user you need to get access to GFORGE enabled).</p>
+<p><strong>Plotting routines such as kplots can be found under</strong></p>
 <p>You are now ready to start ETS!!</p>
 <p>Instructions on the ETS configuration options can be found <a class="reference external" href="https://users.euro-fusion.org/tfwiki/images/5/56/Ets_config_v3.pdf">here</a></p>
 <p>Instructions on HCD module in ETS can be found <a class="reference external" href="https://users.euro-fusion.org/tfwiki/images/4/4a/Hcd_config_v1.pdf">here</a></p>
