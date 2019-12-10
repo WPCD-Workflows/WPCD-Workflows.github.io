@@ -110,12 +110,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#list-of-actors">3.2.2. List of Actors</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#some-equilibrium-actors">3.2.2.1. Some Equilibrium actors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equilibrium-actors">3.2.2.1. Equilibrium actors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#core-transport-actors">3.2.2.2. Core transport actors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#edge-transport-actors">3.2.2.3. Edge transport actors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#heating-and-current-drive-actors">3.2.2.4. Heating and current drive actors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#events-actors">3.2.2.5. Events actors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#non-physics-actors">3.2.2.6. Non-physics actors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heating-and-current-drive-actors">3.2.2.3. Heating and current drive actors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#events-actors">3.2.2.4. Events actors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#non-physics-actors">3.2.2.5. Non-physics actors</a></li>
 </ul>
 </li>
 </ul>
@@ -131,7 +130,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#running-exponential-average">3.4. Running Exponential Average</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">3.4.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.4.1. Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#definition">3.4.2. Definition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#differential-equation">3.4.3. Differential Equation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#equivalence-to-past-time-convolution-integral">3.4.4. Equivalence to Past-Time Convolution Integral</a></li>
@@ -1041,8 +1040,8 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 <div class="section" id="list-of-actors">
 <span id="ets-a-4-10b-list-actors"></span><h3>3.2.2. List of Actors<a class="headerlink" href="#list-of-actors" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="some-equilibrium-actors">
-<span id="ets-a-4-10b-list-actors-equilibrium"></span><h4>3.2.2.1. Some Equilibrium actors<a class="headerlink" href="#some-equilibrium-actors" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="equilibrium-actors">
+<span id="ets-a-4-10b-list-actors-equilibrium"></span><h4>3.2.2.1. Equilibrium actors<a class="headerlink" href="#equilibrium-actors" title="Permalink to this headline">¶</a></h4>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 19%" />
@@ -1085,7 +1084,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 <td><p>Rui Coelho</p></td>
-<td></td>
+<td><p>fix-b equilibrium</p></td>
 </tr>
 <tr class="row-even"><td><p>spider</p></td>
 <td><div class="line-block">
@@ -1096,7 +1095,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 <li><p>Fable</p></li>
 </ol>
 </td>
-<td></td>
+<td><p>ASTRA fix-B equilibrium</p></td>
 </tr>
 <tr class="row-odd"><td><p>helena</p></td>
 <td><div class="line-block">
@@ -1107,7 +1106,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 <li><p>Huijsmans</p></li>
 </ol>
 </td>
-<td></td>
+<td><p>fix-B equilibrium</p></td>
 </tr>
 <tr class="row-even"><td><p>spider_imp12</p></td>
 <td><div class="line-block">
@@ -1118,7 +1117,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 <li><p>Coelho</p></li>
 </ol>
 </td>
-<td></td>
+<td><p>ASTRA fix-b equilibrium</p></td>
 </tr>
 </tbody>
 </table>
@@ -1140,32 +1139,43 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>ETS</p></td>
-<td><p>Transport solver</p></td>
-<td><p>Denis Kalupin</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>BohmGB</p></td>
+<tr class="row-even"><td><p>BohmGB</p></td>
 <td><div class="line-block">
 <div class="line">Bohm/gyro-Bohm</div>
 <div class="line">transport</div>
 <div class="line">coefficients</div>
 </div>
 </td>
-<td><p>/</p></td>
-<td></td>
+<td><ol class="upperalpha simple">
+<li><p>Taroni</p></li>
+</ol>
+</td>
+<td><p>Analytical model</p></td>
 </tr>
-<tr class="row-even"><td><p>TCI/Weiland</p></td>
+<tr class="row-odd"><td><p>CDBM</p></td>
 <td><div class="line-block">
-<div class="line">Transport</div>
-<div class="line">coefficient from</div>
+<div class="line">CDBM</div>
+<div class="line">transport</div>
 <div class="line">coefficients</div>
 </div>
 </td>
+<td><ol class="upperalpha simple" start="13">
+<li><p>Honda</p></li>
+</ol>
+</td>
+<td><p>Analytical model</p></td>
+</tr>
+<tr class="row-even"><td><p>Weiland</p></td>
+<td><div class="line-block">
+<div class="line">Transport</div>
+<div class="line">coefficient from</div>
+<div class="line">fluid turbulence</div>
+</div>
+</td>
 <td><p>Pär Strand</p></td>
-<td></td>
+<td><p>Fluid model</p></td>
 </tr>
-<tr class="row-odd"><td><p>TCI/GLF23</p></td>
+<tr class="row-odd"><td><p>GLF23</p></td>
 <td><div class="line-block">
 <div class="line">Transport</div>
 <div class="line">coefficient from</div>
@@ -1173,10 +1183,13 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 <div class="line">turbulence</div>
 </div>
 </td>
-<td><p>/</p></td>
-<td></td>
+<td><ol class="upperalpha simple" start="7">
+<li><p>Stabler (GA)</p></li>
+</ol>
+</td>
+<td><p>Gyrokinetic model</p></td>
 </tr>
-<tr class="row-even"><td><p>TCI/RITM</p></td>
+<tr class="row-even"><td><p>RITM</p></td>
 <td><div class="line-block">
 <div class="line">Transport</div>
 <div class="line">coefficient from</div>
@@ -1184,15 +1197,10 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 <div class="line">turbulence</div>
 </div>
 </td>
-<td><p>/</p></td>
-<td></td>
+<td><p>Pär Strand</p></td>
+<td><p>Gyrokinetic model</p></td>
 </tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">TCI/MMM</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</td>
+<tr class="row-odd"><td><p>MMM</p></td>
 <td><div class="line-block">
 <div class="line">Transport</div>
 <div class="line">coefficient from</div>
@@ -1200,15 +1208,10 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 <div class="line">turbulence</div>
 </div>
 </td>
-<td><p>/</p></td>
-<td></td>
+<td><p>PPPL</p></td>
+<td><p>Gyrokinetic model</p></td>
 </tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">TCI/EDWM</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</td>
+<tr class="row-even"><td><p>EDWM/EDWMZ</p></td>
 <td><div class="line-block">
 <div class="line">Transport</div>
 <div class="line">coefficient from</div>
@@ -1216,15 +1219,10 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 <div class="line">turbulence</div>
 </div>
 </td>
-<td><p>/</p></td>
-<td></td>
+<td><p>Pär Strand</p></td>
+<td><p>multi-ion model</p></td>
 </tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">nclass</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</td>
+<tr class="row-odd"><td><p>nclass</p></td>
 <td><div class="line-block">
 <div class="line">Neoclassical</div>
 <div class="line">transport</div>
@@ -1232,14 +1230,9 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 <td><p>Pär Strand</p></td>
-<td></td>
+<td><p>Neoclassical model</p></td>
 </tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">neos</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</td>
+<tr class="row-even"><td><p>neos</p></td>
 <td><div class="line-block">
 <div class="line">Neoclassical</div>
 <div class="line">transport</div>
@@ -1247,7 +1240,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 <td><p>Olivier Sauter</p></td>
-<td></td>
+<td><p>Neoclassical model</p></td>
 </tr>
 <tr class="row-odd"><td><p>neowesz</p></td>
 <td><div class="line-block">
@@ -1276,56 +1269,57 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>spitzer</p></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p><a href="#id1"><span class="problematic" id="id2">|</span></a>Resistivity</p></td>
+<td><p>Spitzer</p></td>
+<td><p>Resistivity model</p></td>
 </tr>
-<tr class="row-even"><td><p>ETBtransport</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>coronal</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>synchrotronsources</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>TGLF</p></td>
-<td></td>
+<tr class="row-even"><td><p>TGLF</p></td>
+<td><div class="line-block">
+<div class="line">Transport</div>
+<div class="line">coefficient from</div>
+<div class="line">drift wave</div>
+<div class="line">turbulence</div>
+</div>
+</td>
 <td><ol class="upperalpha simple" start="7">
 <li><p>Stabler</p></li>
 </ol>
 </td>
-<td></td>
+<td><p>Gyrokinetic model</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><p>NEO               |</p></td>
+<tr class="row-odd"><td><p>NEO</p></td>
+<td><div class="line-block">
+<div class="line">Transport</div>
+<div class="line">coefficient from</div>
+<div class="line">drift kinetic</div>
+<div class="line">equations</div>
+</div>
+</td>
 <td><ol class="upperalpha simple" start="5">
 <li><p>Belli</p></li>
 </ol>
 </td>
-<td></td>
+<td><p>Gyrokinetic model</p></td>
 </tr>
-<tr class="row-odd"><td><p>QualiKiz</p></td>
-<td></td>
+<tr class="row-even"><td><p>QualiKiz</p></td>
+<td><div class="line-block">
+<div class="line">Transport</div>
+<div class="line">coefficient from</div>
+<div class="line">drift wave</div>
+<div class="line">turbulence</div>
+</div>
+</td>
 <td><ol class="upperalpha simple" start="10">
-<li><p>Citrin.</p></li>
+<li><p>Citrin</p></li>
 </ol>
 </td>
-<td></td>
+<td><p>Gyrokinetic model</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="edge-transport-actors">
-<span id="ets-a-4-10b-list-actors-edge"></span><h4>3.2.2.3. Edge transport actors<a class="headerlink" href="#edge-transport-actors" title="Permalink to this headline">¶</a></h4>
-</div>
 <div class="section" id="heating-and-current-drive-actors">
-<span id="ets-a-4-10b-list-actors-hcd"></span><h4>3.2.2.4. Heating and current drive actors<a class="headerlink" href="#heating-and-current-drive-actors" title="Permalink to this headline">¶</a></h4>
+<span id="ets-a-4-10b-list-actors-hcd"></span><h4>3.2.2.3. Heating and current drive actors<a class="headerlink" href="#heating-and-current-drive-actors" title="Permalink to this headline">¶</a></h4>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 16%" />
@@ -1381,7 +1375,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </tr>
 <tr class="row-odd"><td><p>bbnbi</p></td>
 <td><p>NBI/source</p></td>
-<td><p>Otto Asunta</p></td>
+<td><p>Seppo Sipila</p></td>
 <td><div class="line-block">
 <div class="line">Calculate the deposition rates of neutrals</div>
 <div class="line">beam particles, i.e. the input source for</div>
@@ -1418,7 +1412,17 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>nbisim</p></td>
+<tr class="row-even"><td><p>afsi</p></td>
+<td><p>nuclear/source</p></td>
+<td><p>Thomas Johnson</p></td>
+<td><div class="line-block">
+<div class="line">Complete code for nuclear sources from</div>
+<div class="line">all reactions. Code-parameter</div>
+<div class="line">documentation can be found</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>nbisim</p></td>
 <td><div class="line-block">
 <div class="line">NBI, alphas/</div>
 <div class="line">Fokker-Planck</div>
@@ -1433,7 +1437,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>risk</p></td>
+<tr class="row-even"><td><p>risk</p></td>
 <td><div class="line-block">
 <div class="line">NBI Fokker-</div>
 <div class="line">Planck</div>
@@ -1453,7 +1457,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>spot</p></td>
+<tr class="row-odd"><td><p>spot</p></td>
 <td><div class="line-block">
 <div class="line">NBI, alphas</div>
 <div class="line">and</div>
@@ -1479,7 +1483,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>ascot4serial</p></td>
+<tr class="row-even"><td><p>ascot4serial</p></td>
 <td><div class="line-block">
 <div class="line">NBI, alphas,</div>
 <div class="line">ICRF/</div>
@@ -1501,7 +1505,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>ascot4parallel</p></td>
+<tr class="row-odd"><td><p>ascot4parallel</p></td>
 <td><div class="line-block">
 <div class="line">NBI, alphas,</div>
 <div class="line">ICRF/</div>
@@ -1523,7 +1527,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>Lion</p></td>
+<tr class="row-even"><td><p>Lion</p></td>
 <td><p>IC / waves</p></td>
 <td><div class="line-block">
 <div class="line">Olivier Sauter</div>
@@ -1538,7 +1542,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>Cyrano</p></td>
+<tr class="row-odd"><td><p>Cyrano</p></td>
 <td><p>IC / waves</p></td>
 <td><div class="line-block">
 <div class="line">Ernesto Lerche</div>
@@ -1553,7 +1557,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="line-block">
+<tr class="row-even"><td><div class="line-block">
 <div class="line">Eve</div>
 </div>
 </td>
@@ -1564,7 +1568,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>StixReDist</p></td>
+<tr class="row-odd"><td><p>StixReDist</p></td>
 <td><p>IC / waves</p></td>
 <td><div class="line-block">
 <div class="line">Dirk</div>
@@ -1579,7 +1583,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>ICdep</p></td>
+<tr class="row-even"><td><p>ICdep</p></td>
 <td><p>IC / waves</p></td>
 <td><p>Thomas Johnson</p></td>
 <td><div class="line-block">
@@ -1591,7 +1595,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>ICcoup</p></td>
+<tr class="row-odd"><td><p>ICcoup</p></td>
 <td><p>IC / coupling</p></td>
 <td><p>Thomas Johnson</p></td>
 <td><div class="line-block">
@@ -1605,7 +1609,7 @@ ETSviz appears automatically during the ETS run. If you would like to launch ETS
 </table>
 </div>
 <div class="section" id="events-actors">
-<span id="ets-a-4-10b-list-actors-events"></span><h4>3.2.2.5. Events actors<a class="headerlink" href="#events-actors" title="Permalink to this headline">¶</a></h4>
+<span id="ets-a-4-10b-list-actors-events"></span><h4>3.2.2.4. Events actors<a class="headerlink" href="#events-actors" title="Permalink to this headline">¶</a></h4>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 19%" />
@@ -1671,7 +1675,7 @@ second by default.</div>
 </table>
 </div>
 <div class="section" id="non-physics-actors">
-<h4>3.2.2.6. Non-physics actors<a class="headerlink" href="#non-physics-actors" title="Permalink to this headline">¶</a></h4>
+<h4>3.2.2.5. Non-physics actors<a class="headerlink" href="#non-physics-actors" title="Permalink to this headline">¶</a></h4>
 <p>The ETS uses the following list of non-physics actors: addECant,
 addICant, backgroundtransport, calculateRHO, changeocc, changepsi,
 changeradii, checkconvergence, controlAMIX, coredelta2coreprof,
@@ -1952,8 +1956,8 @@ averages.</a></p>
 </div>
 <div class="section" id="running-exponential-average">
 <span id="imp4-averages"></span><h2>3.4. Running Exponential Average<a class="headerlink" href="#running-exponential-average" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>3.4.1. Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>3.4.1. Overview<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>In conventional transport modelling, turbulent fluxes are modelled in terms
 of processes which are diffusive in the local relaxation sense, with the
 average flux given by a diffusion coefficient and an effective pinch
