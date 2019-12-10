@@ -106,8 +106,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#sources-and-impurity">3.2.1.8. Sources and impurity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#instantaneous-events-actuators">3.2.1.9. Instantaneous events &amp; Actuators</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#scenario-output">3.2.1.10. Scenario output</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#visualization">3.2.1.11. Visualization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#multiple-tab-display-etsviz-py">3.2.1.12. Multiple Tab Display (ETSviz.py)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#visualization-during-the-run">3.2.1.11. Visualization during the run</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#list-of-actors">3.2.2. List of Actors</a><ul>
@@ -117,7 +116,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#heating-and-current-drive-actors">3.2.2.4. Heating and current drive actors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#events-actors">3.2.2.5. Events actors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#non-physics-actors">3.2.2.6. Non-physics actors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#visualization-during-the-run">3.2.2.7. Visualization during the run</a></li>
 </ul>
 </li>
 </ul>
@@ -1011,12 +1009,11 @@ runaways</p>
 <img alt="_images/ets_scenario.png" src="_images/ets_scenario.png" />
 </div>
 </div>
-<div class="section" id="visualization">
-<span id="ets-a-4-10b-visualization"></span><h4>3.2.1.11. Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="visualization-during-the-run">
+<span id="ets-a-4-10a-visualization"></span><h4>3.2.1.11. Visualization during the run<a class="headerlink" href="#visualization-during-the-run" title="Permalink to this headline">¶</a></h4>
 <p>There is a number tools visualizing the ETS run.</p>
-</div>
-<div class="section" id="multiple-tab-display-etsviz-py">
-<h4>3.2.1.12. Multiple Tab Display (ETSviz.py)<a class="headerlink" href="#multiple-tab-display-etsviz-py" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="multiple-tab-display">
+<h5>3.2.1.11.1. Multiple Tab Display<a class="headerlink" href="#multiple-tab-display" title="Permalink to this headline">¶</a></h5>
 <p>The display appeares automaticaly when the ETS workflow is launched. It
 displays diagnostic text messages from the workflow on following topics:</p>
 <ul class="simple">
@@ -1025,9 +1022,21 @@ displays diagnostic text messages from the workflow on following topics:</p>
 CURRENT</p></li>
 <li><p>Time evolution</p></li>
 <li><p>Convergence of iteratinos within the time step</p></li>
-<li><p>HCD settings</p></li>
+<li><p>IMP5HCD settings</p></li>
 <li><p>Power used by IMP5HCD actors durung the run</p></li>
 </ul>
+<p>Also the error messages from execution of the workflow will be displayed
+here.</p>
+<div class="figure align-center">
+<img alt="_images/ets_visual1_a.png" src="_images/ets_visual1_a.png" />
+</div>
+</div>
+<div class="section" id="etsviz">
+<h5>3.2.1.11.2. ETSviz<a class="headerlink" href="#etsviz" title="Permalink to this headline">¶</a></h5>
+<p>ETSviz is a python visualization tool with a graphical interphase that shows during the run the calculated kinetic
+profiles evolution, particle energy sources and sinks, equilibrium evolution and other useful infoirmnation.
+ETSviz appears automatically during the ETS run. If you would like to launch ETSviz you can find the script in $KEPLER/kplots</p>
+</div>
 </div>
 </div>
 <div class="section" id="list-of-actors">
@@ -1649,29 +1658,6 @@ plasmacomposition, PowerFromArray, PowerModulation, profilesdatabase,
 readjustprof, sawupdate_slice, scaleprof, sourcecombiner,
 sourcedatabase, transportcombiner, transportdatabase, wallFiller and
 waves2sources.</p>
-</div>
-<div class="section" id="visualization-during-the-run">
-<span id="ets-a-4-10a-visualization"></span><h4>3.2.2.7. Visualization during the run<a class="headerlink" href="#visualization-during-the-run" title="Permalink to this headline">¶</a></h4>
-<p>There is a number tools visualizing the ETS run.</p>
-<div class="section" id="multiple-tab-display">
-<h5>3.2.2.7.1. Multiple Tab Display<a class="headerlink" href="#multiple-tab-display" title="Permalink to this headline">¶</a></h5>
-<p>The display appeares automaticaly when the ETS workflow is launched. It
-displays diagnostic text messages from the workflow on following topics:</p>
-<ul class="simple">
-<li><p>Input data statement</p></li>
-<li><p>Iterations to check the initial convergence between EQUILIBRIUM and
-CURRENT</p></li>
-<li><p>Time evolution</p></li>
-<li><p>Convergence of iteratinos within the time step</p></li>
-<li><p>IMP5HCD settings</p></li>
-<li><p>Power used by IMP5HCD actors durung the run</p></li>
-</ul>
-<p>Also the error messages from execution of the workflow will be displayed
-here.</p>
-<div class="figure align-center">
-<img alt="_images/ets_visual1_a.png" src="_images/ets_visual1_a.png" />
-</div>
-</div>
 </div>
 </div>
 </div>
