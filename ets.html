@@ -100,8 +100,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#ion-impurity-and-neutral-composition">3.2.1.2. Ion, Impurity and Neutral Composition</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#equations-to-be-solved-and-boundary-conditions">3.2.1.3. Equations to be solved and boundary conditions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#convergence-loop">3.2.1.4. Convergence loop</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#equilibrium">3.2.1.5. Equilibrium</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#transport">3.2.1.6. Transport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ets-a-4-10b-equilibrium">3.2.1.5. Equilibrium</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ets-a-4-10b-transport">3.2.1.6. Transport</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mhd">3.2.1.7. MHD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sources-and-impurity">3.2.1.8. Sources and impurity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#instantaneous-events-actuators">3.2.1.9. Instantaneous events &amp; Actuators</a></li>
@@ -130,7 +130,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#running-exponential-average">3.4. Running Exponential Average</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">3.4.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.4.1. Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#definition">3.4.2. Definition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#differential-equation">3.4.3. Differential Equation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#equivalence-to-past-time-convolution-integral">3.4.4. Equivalence to Past-Time Convolution Integral</a></li>
@@ -327,16 +327,30 @@ The use of autoGui is strongly recommanded as worklows are large xml files while
 - input run number</p></li>
 <li><p>RUN_OUT
 - output run number</p></li>
-<li><p>NUMERICAL_SOLVER
-- choice of the numerics solving transport equations (RECOMENDED
-SELECTION: 3 or 4)</p></li>
+<li><p>RUNWORK
+- work directory number (tipically 800)</p></li>
 </ul>
 </div>
-<div class="section" id="space-resolution">
-<h5>3.2.1.1.2. Space resolution<a class="headerlink" href="#space-resolution" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="time-resolution">
+<h5>3.2.1.1.2. Time resolution<a class="headerlink" href="#time-resolution" title="Permalink to this headline">¶</a></h5>
+<p><strong>Start and End time:</strong></p>
+<ul class="simple">
+<li><p>TBEGIN
+- Computations start time</p></li>
+<li><p>TEND
+- Computattions end time</p></li>
+</ul>
+</div>
+<div class="section" id="transport">
+<h5>3.2.1.1.3. Transport<a class="headerlink" href="#transport" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li><p>NRHO
 - number of radial points for transport equations</p></li>
+</ul>
+</div>
+<div class="section" id="equilibrium">
+<h5>3.2.1.1.4. Equilibrium<a class="headerlink" href="#equilibrium" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
 <li><p>NPSI
 - number of points for equilibrium 1-D arrays</p></li>
 <li><p>NEQ_DIM1
@@ -347,14 +361,43 @@ SELECTION: 3 or 4)</p></li>
 - maximum number of points for equilibrium boundary</p></li>
 </ul>
 </div>
-<div class="section" id="time-resolution">
-<h5>3.2.1.1.3. Time resolution<a class="headerlink" href="#time-resolution" title="Permalink to this headline">¶</a></h5>
-<p><strong>Start and End time:</strong></p>
+<div class="section" id="numerics">
+<h5>3.2.1.1.5. Numerics<a class="headerlink" href="#numerics" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
-<li><p>TBEGIN
-- Computations start time</p></li>
-<li><p>TEND
-- Computattions end time</p></li>
+<li><p>NUMERICAL_SOLVER
+- choice of the numerics solving transport equations (RECOMENDED
+SELECTION: 3 or 4)</p></li>
+<li><p>EXPLICIT HYPER DIFFUSIVITY
+- used in the solution of the transport equations</p></li>
+<li><dl class="simple">
+<dt>IMPLICIT HYPER DIFFUSIVITY</dt><dd><ul>
+<li><p>used in the solution of the transport equations</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>MINIMUM TIME STEP</dt><dd><ul>
+<li><p>Time step used in the transport solver</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>MAXIMUMX TIME STEP
+- Time step used in the transport solver</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h5>3.2.1.1.6. Equilibrium<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>NPSI
+- number of points for equilibrium 1-D arrays</p></li>
+<li><p>NEQ_DIM1
+- number of points for equilibrium 2-D arrays, first index</p></li>
+<li><p>NEQ_DIM2
+- number of points for equilibrium 2-D arrays, second index</p></li>
+<li><p>NEQ_MAX_NPOINTS
+- maximum number of points for equilibrium boundary</p></li>
 </ul>
 <div class="figure align-center">
 <img alt="_images/ETS_Main_Param.png" src="_images/ETS_Main_Param.png" />
@@ -576,8 +619,8 @@ corresponding <em>Mixing_fraction_…</em> to be between [0:1]
 You also can activate the authomatic ajustment of this fraction by selecting:
 <em>Ajust_Mixing_for_…</em> to <em>YES</em></p>
 </div>
-<div class="section" id="equilibrium">
-<span id="ets-a-4-10b-equilibrium"></span><h4>3.2.1.5. Equilibrium<a class="headerlink" href="#equilibrium" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="ets-a-4-10b-equilibrium">
+<span id="id2"></span><h4>3.2.1.5. Equilibrium<a class="headerlink" href="#ets-a-4-10b-equilibrium" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="initialization-settings">
 <h5>3.2.1.5.1. Initialization Settings<a class="headerlink" href="#initialization-settings" title="Permalink to this headline">¶</a></h5>
 <p>Before starting the run you need to set up your initial equlibrium.
@@ -665,8 +708,8 @@ of some signals.</p>
 </div>
 </div>
 </div>
-<div class="section" id="transport">
-<span id="ets-a-4-10b-transport"></span><h4>3.2.1.6. Transport<a class="headerlink" href="#transport" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="ets-a-4-10b-transport">
+<span id="id3"></span><h4>3.2.1.6. Transport<a class="headerlink" href="#ets-a-4-10b-transport" title="Permalink to this headline">¶</a></h4>
 <p>The settings for TRANSPORT can be done inside the CONVERGENCE LOOP
 composite actor. Therefore please do:</p>
 <ul class="simple">
@@ -1956,8 +1999,8 @@ averages.</a></p>
 </div>
 <div class="section" id="running-exponential-average">
 <span id="imp4-averages"></span><h2>3.4. Running Exponential Average<a class="headerlink" href="#running-exponential-average" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>3.4.1. Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>3.4.1. Overview<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>In conventional transport modelling, turbulent fluxes are modelled in terms
 of processes which are diffusive in the local relaxation sense, with the
 average flux given by a diffusion coefficient and an effective pinch
