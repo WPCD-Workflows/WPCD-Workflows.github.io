@@ -99,7 +99,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#iv-save-slice">5.2.4. <strong>IV - SAVE SLICE</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-the-workflow-under-construction">5.3. 3. Installing the workflow (under construction)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-and-running-the-workflow">5.3. 3. Installing and running the workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setting-up-the-workflow-and-actor-parameters-under-construction">5.4. 4. Setting up the Workflow and Actor parameters (under construction)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#i-setting-the-workflow-parameters">5.4.1. <strong>I - Setting the workflow parameters</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ii-setting-actor-parameters">5.4.2. <strong>II - Setting actor parameters</strong></a></li>
@@ -158,7 +158,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>5. The EQRECONSTRUCT workflow</li>
+      <li><span class="section-number">5. </span>The EQRECONSTRUCT workflow</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -180,9 +180,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="the-eqreconstruct-workflow">
-<span id="eqreconstruct"></span><h1>5. The EQRECONSTRUCT workflow<a class="headerlink" href="#the-eqreconstruct-workflow" title="Permalink to this headline">¶</a></h1>
+<span id="eqreconstruct"></span><h1><span class="section-number">5. </span>The EQRECONSTRUCT workflow<a class="headerlink" href="#the-eqreconstruct-workflow" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="workflow-rationale">
-<span id="rationale"></span><h2>5.1. 1. Workflow rationale<a class="headerlink" href="#workflow-rationale" title="Permalink to this headline">¶</a></h2>
+<span id="rationale"></span><h2><span class="section-number">5.1. </span>1. Workflow rationale<a class="headerlink" href="#workflow-rationale" title="Permalink to this headline">¶</a></h2>
 <p>The EQRECONSTRUCT workflow is a Kepler workflow aimed at performing the
 reconstruction of the plasma equilibrium from diagnostic data. The
 workflow can perform both a single time reconstruction and over a
@@ -218,7 +218,7 @@ workflow, changing the code parameters and resuming) for deselecting
 given diagnostic channels or changing regularization coefficients.</p>
 </div>
 <div class="section" id="workflow-organization-design">
-<span id="organization"></span><h2>5.2. 2. Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline">¶</a></h2>
+<span id="organization"></span><h2><span class="section-number">5.2. </span>2. Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline">¶</a></h2>
 <p>The top level layout of the workflow is shown below.</p>
 <div class="figure align-center">
 <img alt="_images/eqreconstruct_JET_timeloop_records.png" src="_images/eqreconstruct_JET_timeloop_records.png" />
@@ -236,7 +236,7 @@ equilibrium)</p></li>
 <li><p>STOP THE RUN (end the simulation and stop)</p></li>
 </ul>
 <div class="section" id="i-start">
-<h3>5.2.1. <strong>I - START</strong><a class="headerlink" href="#i-start" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.1. </span><strong>I - START</strong><a class="headerlink" href="#i-start" title="Permalink to this headline">¶</a></h3>
 <p>Composite actor used to initialize the workflow. It reads experimental
 data from an ITM database and assembles the plasma bundle. The database
 details e.g. _user, device, shot, run<em>in</em> are configurable in the
@@ -246,7 +246,7 @@ actor when double clicking on the actor (see Figure below).</p>
 </div>
 </div>
 <div class="section" id="ii-check-data">
-<h3>5.2.2. <strong>II - CHECK_DATA</strong><a class="headerlink" href="#ii-check-data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.2. </span><strong>II - CHECK_DATA</strong><a class="headerlink" href="#ii-check-data" title="Permalink to this headline">¶</a></h3>
 <p>In this composite actor a basic sanity check is performed on the input data
 and appropriate action is taken e.g. if there is no magnetics sensor data
 it is pointless for the workflow to proceed and execution is immediately
@@ -258,7 +258,7 @@ sequence of 2 steps)</p>
 </div>
 </div>
 <div class="section" id="iii-reconstruct">
-<h3>5.2.3. <strong>III - Reconstruct</strong><a class="headerlink" href="#iii-reconstruct" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.3. </span><strong>III - Reconstruct</strong><a class="headerlink" href="#iii-reconstruct" title="Permalink to this headline">¶</a></h3>
 <p>In this composite actor the actual calculation of the reconstructed
 equilibrium and if requested of the equivalent high resolution equilibrium
 (with cut-off plasma boundary with X-point removed) takes place. The user
@@ -320,7 +320,7 @@ by the user selected <em>path</em> variable ( <strong>START</strong> actor setup
 </ul>
 </div>
 <div class="section" id="iv-save-slice">
-<h3>5.2.4. <strong>IV - SAVE SLICE</strong><a class="headerlink" href="#iv-save-slice" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.4. </span><strong>IV - SAVE SLICE</strong><a class="headerlink" href="#iv-save-slice" title="Permalink to this headline">¶</a></h3>
 <p>In this composite actor the calculated equilibria are saved at each time
 step. Depending on whether the user choses to calculate also the high
 resolution equilibrium and if the Save_FBE_only parameter is set to
@@ -341,19 +341,36 @@ reconstruction as occurrence=2. To control the imasdb saving option
 please refer to the SAVE SLICE parameter details.</p>
 </div>
 </div>
-<div class="section" id="installing-the-workflow-under-construction">
-<span id="installing"></span><h2>5.3. 3. Installing the workflow (under construction)<a class="headerlink" href="#installing-the-workflow-under-construction" title="Permalink to this headline">¶</a></h2>
-<p>To obtain the workflow and included actors a dressed release of KEPLER
-is recommended. To get such dressed releases please proceed as follows:</p>
-<ul class="simple">
-<li><p>CPT indication 1</p></li>
-<li><p>CPT indication 2</p></li>
-</ul>
+<div class="section" id="installing-and-running-the-workflow">
+<span id="installing"></span><h2><span class="section-number">5.3. </span>3. Installing and running the workflow<a class="headerlink" href="#installing-and-running-the-workflow" title="Permalink to this headline">¶</a></h2>
+<p>Establish the IMAS environment by typing</p>
+<p>module purge
+module load cineca
+module load imasenv</p>
+<p>export KEPLER_DIR=$ITMWORK/imas_kepler</p>
+<p>if it is the first time you go through this process you will need to create the imas_kepler directory</p>
+<p>mkdir $ITMWORK/imas_kepler</p>
+<p>(the one below is the latest version of the dressed kepler containing all the actors for EQreconstruct, EQstabil and ETS-6)</p>
+<p>module switch kepler/2.5p4-3.0.6_dressed_3.25
+kepler_install my_2.5p4-3.0.6_dressed_3.25
+kepler_load my_2.5p4-3.0.6_dressed_3.25</p>
+<p>Once you have installed kepler you do not need to repeat this operation and it will be enought to
+execute the kepler_load instruction.</p>
+<p>Now you need to check out the workflow by typing (only for first time users)</p>
+<p>svn co –username g2mroma <a class="reference external" href="https://gforge6.eufus.eu/svn/eqstabil/tags/imas_3.25.0_4.4.0/workflows">https://gforge6.eufus.eu/svn/eqstabil/tags/imas_3.25.0_4.4.0/workflows</a> eqstabil_workflow</p>
+<p>Create the database folder with the name of the device you wish to run the equilibrium for</p>
+<p>imasdb JET</p>
+<p>Retrieve the data for magnetic-only equilibrium by launching IMASviz or TCV2IDS</p>
+<p>Import the following IDSs</p>
+<p>magnetics, pf_active, (pf_passive), (iron_core), wall</p>
+<p>You are now ready to launch Kepler by typing</p>
+<p>kepler</p>
+<p>load the EQRECONSTRUCT workflow from your eqstabil_workflow directory</p>
 </div>
 <div class="section" id="setting-up-the-workflow-and-actor-parameters-under-construction">
-<span id="actor"></span><h2>5.4. 4. Setting up the Workflow and Actor parameters (under construction)<a class="headerlink" href="#setting-up-the-workflow-and-actor-parameters-under-construction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span>4. Setting up the Workflow and Actor parameters (under construction)<a class="headerlink" href="#setting-up-the-workflow-and-actor-parameters-under-construction" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="i-setting-the-workflow-parameters">
-<h3>5.4.1. <strong>I - Setting the workflow parameters</strong><a class="headerlink" href="#i-setting-the-workflow-parameters" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.4.1. </span><strong>I - Setting the workflow parameters</strong><a class="headerlink" href="#i-setting-the-workflow-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The workflow parameters in the <strong>START</strong> actor are as follows:</p>
 <ul class="simple">
 <li><p><strong>shot</strong> : the shot number on the user database (or from another user) where to read the reference equilibrium from (shot/run_in pair)</p></li>
@@ -397,7 +414,7 @@ is recommended. To get such dressed releases please proceed as follows:</p>
 Kepler canvas.</em></p>
 </div>
 <div class="section" id="ii-setting-actor-parameters">
-<h3>5.4.2. <strong>II - Setting actor parameters</strong><a class="headerlink" href="#ii-setting-actor-parameters" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.4.2. </span><strong>II - Setting actor parameters</strong><a class="headerlink" href="#ii-setting-actor-parameters" title="Permalink to this headline">¶</a></h3>
 <p>Actor parameters are set on the actors themselves (not passed by the
 workflow). To access the actors codeparam the easiest route is to :</p>
 <blockquote>
@@ -415,7 +432,7 @@ actors please check their documentation <a class="reference external" href="Equi
 </div>
 </div>
 <div class="section" id="test-cases-and-self-oriented-training-under-construction">
-<span id="training"></span><h2>5.5. 5. Test cases and self-oriented training (under construction)<a class="headerlink" href="#test-cases-and-self-oriented-training-under-construction" title="Permalink to this headline">¶</a></h2>
+<span id="training"></span><h2><span class="section-number">5.5. </span>5. Test cases and self-oriented training (under construction)<a class="headerlink" href="#test-cases-and-self-oriented-training-under-construction" title="Permalink to this headline">¶</a></h2>
 <p>Several test cases are available for testing, corresponding to different
 applications/examples. The itmdb files are found on the software release
 folder under <em>/tutorial</em></p>
@@ -485,7 +502,7 @@ WALL, TF, THOMSON_SCATTERING.</div>
 <p><a class="reference external" href="%ATTACHURL%/Tutorial_EQRECONSTRUCT.pdf">Guided Tutorial on EQRECONSTRUCT (under construction)</a></p>
 </div>
 <div class="section" id="news-and-recent-activity">
-<span id="activity"></span><h2>5.6. 6. News and Recent activity<a class="headerlink" href="#news-and-recent-activity" title="Permalink to this headline">¶</a></h2>
+<span id="activity"></span><h2><span class="section-number">5.6. </span>6. News and Recent activity<a class="headerlink" href="#news-and-recent-activity" title="Permalink to this headline">¶</a></h2>
 <p><em>8th March 2019: JET version of the workflow tested successfully on
 test/84600/28 database. Only EQUAL + HELENA codes included. Successful
 run from t=49s to 53s with both EQUAL and HELENA being executed and the
