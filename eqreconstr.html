@@ -344,16 +344,23 @@ please refer to the SAVE SLICE parameter details.</p>
 <div class="section" id="installing-and-running-the-workflow">
 <span id="installing"></span><h2><span class="section-number">5.3. </span>3. Installing and running the workflow<a class="headerlink" href="#installing-and-running-the-workflow" title="Permalink to this headline">¶</a></h2>
 <p>Establish the IMAS environment by typing</p>
-<p>module purge
-module load cineca
-module load imasenv</p>
-<p>export KEPLER_DIR=$ITMWORK/imas_kepler</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module purge</span>
+<span class="go">module load cineca</span>
+<span class="go">module load imasenv</span>
+
+<span class="go">export KEPLER_DIR=$ITMWORK/imas_kepler</span>
+</pre></div>
+</div>
 <p>if it is the first time you go through this process you will need to create the imas_kepler directory</p>
-<p>mkdir $ITMWORK/imas_kepler</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir $ITMWORK/imas_kepler</span>
+</pre></div>
+</div>
 <p>(the one below is the latest version of the dressed kepler containing all the actors for EQreconstruct, EQstabil and ETS-6)</p>
-<p>module switch kepler/2.5p4-3.0.6_dressed_3.25
-kepler_install my_2.5p4-3.0.6_dressed_3.25
-kepler_load my_2.5p4-3.0.6_dressed_3.25</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module switch kepler/2.5p4-3.0.6_dressed_3.25</span>
+<span class="go">kepler_install my_2.5p4-3.0.6_dressed_3.25</span>
+<span class="go">kepler_load my_2.5p4-3.0.6_dressed_3.25</span>
+</pre></div>
+</div>
 <p>Once you have installed kepler you do not need to repeat this operation and it will be enought to
 execute the kepler_load instruction.</p>
 <p>Now you need to check out the workflow by typing (only for first time users)</p>
