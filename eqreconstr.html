@@ -105,8 +105,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#ii-setting-actor-parameters">5.4.2. <strong>II - Setting actor parameters</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#test-cases-and-self-oriented-training">5.5. 5. Test cases and self-oriented training</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#news-and-recent-activity">5.6. 6. News and Recent activity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#news-and-recent-activity">5.5. 6. News and Recent activity</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="codes.html">6. Codes</a></li>
@@ -361,7 +360,7 @@ please refer to the SAVE SLICE parameter details.</p>
 <span class="go">kepler_load my_2.5p4-3.0.6_dressed_3.25</span>
 </pre></div>
 </div>
-<p>Once you have installed kepler you do not need to repeat this operation and it will be enought to
+<p>Once you have installed kepler you do not need to repeat this operation and it will be enough to
 execute the kepler_load instruction.</p>
 <p>Now you need to check out the workflow by typing (only for first time users)</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn co --username g2mroma https://gforge6.eufus.eu/svn/eqstabil/tags/imas_3.25.0_4.4.0/workflows eqstabil_workflow</span>
@@ -373,8 +372,9 @@ execute the kepler_load instruction.</p>
 </div>
 <p>Retrieve the data for magnetic-only equilibrium by launching IMASviz or TCV2IDS</p>
 <p>Import the following IDSs</p>
-<p>magnetics, pf_active, (pf_passive), (iron_core), wall</p>
-<p>You are now ready to launch Kepler by typing</p>
+<p>magnetics, pf_active, (pf_passive), (iron_core), wall, tf</p>
+<p>Note that iron_core is only needed for JET and WEST and pf_passive is only desirable (not supported by all equilibrium reconstruction actors)
+You are now ready to launch Kepler by typing</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kepler</span>
 </pre></div>
 </div>
@@ -444,77 +444,8 @@ workflow). To access the actors codeparam the easiest route is to :</p>
 actors please check their documentation <a class="reference external" href="EquilibriumAndStabilityChain#Equilibrium_reconstruction_actor">here</a> or <a class="reference external" href="EquilibriumAndStabilityChain#High_resolution_equilibrium_acto">here</a>.</p>
 </div>
 </div>
-<div class="section" id="test-cases-and-self-oriented-training">
-<span id="training"></span><h2><span class="section-number">5.5. </span>5. Test cases and self-oriented training<a class="headerlink" href="#test-cases-and-self-oriented-training" title="Permalink to this headline">¶</a></h2>
-<p>Several test cases are available for testing, corresponding to different
-applications/examples. The itmdb files are found on the software release
-folder under <em>/tutorial</em></p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 15%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 7%" />
-<col style="width: 51%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Case</p></td>
-<td><p>User</p></td>
-<td><p>Device</p></td>
-<td><p>Shot</p></td>
-<td><p>Run</p></td>
-<td><p>Description</p></td>
-</tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>g2rcoelh</p></td>
-<td><p>test</p></td>
-<td><p>84600</p></td>
-<td><p>28</p></td>
-<td><div class="line-block">
-<div class="line">JET shot using exp2imas UDA plugin
-using 3.20.0 DD, 3.8.3 UAL and</div>
-<div class="line">2.2.2 UDA (“old” low level UAL).
-Contains the following IDSs:</div>
-<div class="line">IRON_CORE, MAGNETICS, PF_ACTIVE,
-WALL, TF, THOMSON_SCATTERING.</div>
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
 <div class="section" id="news-and-recent-activity">
-<span id="activity"></span><h2><span class="section-number">5.6. </span>6. News and Recent activity<a class="headerlink" href="#news-and-recent-activity" title="Permalink to this headline">¶</a></h2>
+<span id="activity"></span><h2><span class="section-number">5.5. </span>6. News and Recent activity<a class="headerlink" href="#news-and-recent-activity" title="Permalink to this headline">¶</a></h2>
 <p><em>8th March 2019: JET version of the workflow tested successfully on
 test/84600/28 database. Only EQUAL + HELENA codes included. Successful
 run from t=49s to 53s with both EQUAL and HELENA being executed and the
