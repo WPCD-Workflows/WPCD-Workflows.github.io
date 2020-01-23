@@ -364,14 +364,20 @@ please refer to the SAVE SLICE parameter details.</p>
 <p>Once you have installed kepler you do not need to repeat this operation and it will be enought to
 execute the kepler_load instruction.</p>
 <p>Now you need to check out the workflow by typing (only for first time users)</p>
-<p>svn co –username g2mroma <a class="reference external" href="https://gforge6.eufus.eu/svn/eqstabil/tags/imas_3.25.0_4.4.0/workflows">https://gforge6.eufus.eu/svn/eqstabil/tags/imas_3.25.0_4.4.0/workflows</a> eqstabil_workflow</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn co --username g2mroma https://gforge6.eufus.eu/svn/eqstabil/tags/imas_3.25.0_4.4.0/workflows eqstabil_workflow</span>
+</pre></div>
+</div>
 <p>Create the database folder with the name of the device you wish to run the equilibrium for</p>
-<p>imasdb JET</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">imasdb JET</span>
+</pre></div>
+</div>
 <p>Retrieve the data for magnetic-only equilibrium by launching IMASviz or TCV2IDS</p>
 <p>Import the following IDSs</p>
 <p>magnetics, pf_active, (pf_passive), (iron_core), wall</p>
 <p>You are now ready to launch Kepler by typing</p>
-<p>kepler</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kepler</span>
+</pre></div>
+</div>
 <p>load the EQRECONSTRUCT workflow from your eqstabil_workflow directory</p>
 </div>
 <div class="section" id="setting-up-the-workflow-and-actor-parameters-under-construction">
