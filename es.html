@@ -311,6 +311,226 @@ remaining plasma bundle IDSs are written “as is” (whatever time slices).</p>
 </div>
 <div class="section" id="actors-involved">
 <h2><span class="section-number">4.3. </span>Actors involved<a class="headerlink" href="#actors-involved" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 32%" />
+<col style="width: 35%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Name</strong></p></td>
+<td><p><strong>Location</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Check_Device</p></td>
+<td><p>INITIALIZATION</p></td>
+<td><div class="line-block">
+<div class="line">Checks if the
+<em>device</em> Kepler</div>
+<div class="line">variable coincides
+with the environment</div>
+<div class="line">variable TOKAMAKNAME.
+If not the run stops.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SELECT_TIME_CORE/EQ</p></td>
+<td><p>INITIALIZATION</p></td>
+<td><div class="line-block">
+<div class="line">Selects time slice of
+IDSs matching/closest</div>
+<div class="line">to the requested time
+in <em>time</em> Kepler
+variable</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Check Coreprof/Equil
+Time and Flag</p></td>
+<td><p>INITIALIZATION</p></td>
+<td><div class="line-block">
+<div class="line">Checks the
+output_flag of the</div>
+<div class="line">input IDSs to know if
+they are valid and</div>
+<div class="line">prints the actual
+time stamp retrived</div>
+<div class="line">from both IDSs (if
+time = -1 and</div>
+<div class="line">output_flag is
+negative then the IDS</div>
+<div class="line">is not valid). If the
+equilibrium is</div>
+<div class="line">considered invalid a
+message in displayed</div>
+<div class="line">on the Multi Tab
+Display window and</div>
+<div class="line">workflow execution is
+stopped. If the</div>
+<div class="line">core_profile is
+considered invalid a</div>
+<div class="line">message is displayed
+on the Multi Tab</div>
+<div class="line">Display window but
+the workflow will</div>
+<div class="line">continue since some
+of the MHD codes</div>
+<div class="line">handle plasma density
+internally as code</div>
+<div class="line">parameter and their
+execution is not
+affected.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Cutoff</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
+<div class="line">Performs the
+cut-off of the input</div>
+<div class="line">equilibrium if
+requested and</div>
+<div class="line">provided the input
+CPO has a poloidal</div>
+<div class="line">flux (Psi) mapping
+i.e. Psi(R,Z). If not</div>
+<div class="line">present then workflow
+execution stops and a</div>
+<div class="line">message is displayed
+on the Multi Tab</div>
+<div class="line">Display window. A
+plot with the</div>
+<div class="line">original (in blue)
+and cut equilibrium</div>
+<div class="line">(in green) is shown
+when cut_off: yes</div>
+<div class="line">A plot with
+just the original (in</div>
+<div class="line">blue) equilibrium is
+shown when
+cut_off : no</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>NOTE</strong>: A
+useful trick to STOP</div>
+<div class="line">the workflow
+execution*-&gt; when a</div>
+<div class="line">Python plot window is
+shown, Press the STOP</div>
+<div class="line">button on the Kepler
+GUI before closing</div>
+<div class="line">the plot window. This
+ensures workflow</div>
+<div class="line">execution is stopped
+since Kepler is</div>
+<div class="line">waiting for Python
+process to
+proceed.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Fixbndequil</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
+<div class="line">Selects from a pool
+of 3 equilibrium</div>
+<div class="line">codes the one to
+launch according to</div>
+<div class="line">the value of the
+Kepler variable
+<em>eqcode</em></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Caxe</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
+<div class="line">The CAXE code.</div>
+<div class="line">It can operate
+jointly with KINX
+only.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Chease</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
+<div class="line">The CHEASE code.</div>
+<div class="line">It can operate
+jointly with ILSA,
+MARS</div>
+<div class="line">and MARS-F</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Helena</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
+<div class="line">The HELENA code.</div>
+<div class="line">It can operate
+jointly with ILSA,
+MARS</div>
+<div class="line">and MARS-F</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Visual</p></td>
+<td><p>FixedBndCode</p></td>
+<td><div class="line-block">
+<div class="line">Visualize the
+resulting equilibrium.</div>
+<div class="line">A Copy in EPS format
+is stored on the path</div>
+<div class="line">defined by Kepler
+variable %BLUE%path</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Ilsa</p></td>
+<td><p>StabCode</p></td>
+<td><div class="line-block">
+<div class="line">The ILSA code suite.</div>
+<div class="line">At the moment only
+the MISHKA1 kernel</div>
+<div class="line">(ideal incompressible
+MHD) is active</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Kinx</p></td>
+<td><p>StabCode</p></td>
+<td><p>The KINX code.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Marsgw</p></td>
+<td><p>StabCode</p></td>
+<td><p>The MARS code</p></td>
+</tr>
+<tr class="row-even"><td><p>Marsf</p></td>
+<td><p>StabCode</p></td>
+<td><p>The MARS-F code</p></td>
+</tr>
+<tr class="row-odd"><td><p>PLOT_EIGENFUNCTION</p></td>
+<td><p>StabCode</p></td>
+<td><div class="line-block">
+<div class="line">Visualize the real
+and imaginary</div>
+<div class="line">eigenfunction
+components. In case</div>
+<div class="line">multiple toroidal
+mode numbers are set</div>
+<div class="line">(ILSA or KINX), one
+plot window per each</div>
+<div class="line">toroidal eigenmode is
+returned. A Copy in</div>
+<div class="line">EPS format of each
+window is stored on</div>
+<div class="line">the path defined by
+Kepler variable <em>path</em></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="setting-up-workflow-and-actor-parameters">
 <h2><span class="section-number">4.4. </span>Setting up Workflow and Actor parameters<a class="headerlink" href="#setting-up-workflow-and-actor-parameters" title="Permalink to this headline">¶</a></h2>

@@ -33,43 +33,33 @@ sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Wo
 Running Sphinx v2.3.1
 loading pickled environment... done
 building [mo]: targets for 0 po files that are out of date
-building [html]: targets for 15 source files that are out of date
-updating environment: 0 added, 15 changed, 0 removed
-reading sources... [  6%] amns
-reading sources... [ 13%] averages
+building [html]: targets for 10 source files that are out of date
+updating environment: 0 added, 10 changed, 5 removed
+reading sources... [ 10%] amns
 reading sources... [ 20%] codes
-reading sources... [ 26%] conventions
-reading sources... [ 33%] edge
-reading sources... [ 40%] edrg
-reading sources... [ 46%] eqreconstr
-reading sources... [ 53%] es
+reading sources... [ 30%] conventions
+reading sources... [ 40%] eqreconstr
+reading sources... [ 50%] es
 reading sources... [ 60%] ets
-reading sources... [ 66%] index
-reading sources... [ 73%] infrastructure
-reading sources... [ 80%] introduction
-reading sources... [ 86%] kepler
-reading sources... [ 93%] resources
-reading sources... [100%] transport
+reading sources... [ 70%] index
+reading sources... [ 80%] infrastructure
+reading sources... [ 90%] introduction
+reading sources... [100%] resources
 
 looking for now-outdated files... none found
 pickling environment... done
 checking consistency... done
 preparing documents... done
-writing output... [  6%] amns
-writing output... [ 13%] averages
+writing output... [ 10%] amns
 writing output... [ 20%] codes
-writing output... [ 26%] conventions
-writing output... [ 33%] edge
-writing output... [ 40%] edrg
-writing output... [ 46%] eqreconstr
-writing output... [ 53%] es
+writing output... [ 30%] conventions
+writing output... [ 40%] eqreconstr
+writing output... [ 50%] es
 writing output... [ 60%] ets
-writing output... [ 66%] index
-writing output... [ 73%] infrastructure
-writing output... [ 80%] introduction
-writing output... [ 86%] kepler
-writing output... [ 93%] resources
-writing output... [100%] transport
+writing output... [ 70%] index
+writing output... [ 80%] infrastructure
+writing output... [ 90%] introduction
+writing output... [100%] resources
 
 generating indices...  genindexdone
 writing additional pages...  searchdone
@@ -82,101 +72,98 @@ copying images... [  5%] images/codes_3.png
 copying images... [  6%] images/codes_4.png
 copying images... [  7%] images/conventions_1.png
 copying images... [  8%] images/conventions_2.png
-copying images... [  9%] images/edge_1.png
-copying images... [ 10%] images/edge_2.png
-copying images... [ 11%] images/edge_3.png
-copying images... [ 12%] images/edge_4.png
-copying images... [ 13%] images/edge_5.png
-copying images... [ 14%] images/edge_6.png
-copying images... [ 15%] images/edrg_1.png
-copying images... [ 16%] images/edrg_2.png
-copying images... [ 17%] images/edrg_3.png
-copying images... [ 18%] images/eqreconstruct_JET_timeloop_records.png
-copying images... [ 19%] images/eqreconstruct_START_settings.png
-copying images... [ 20%] images/eqreconstruct_CHECK_DATA.png
-copying images... [ 21%] images/eqreconstruct_RECONSTRUCT_settings.png
-copying images... [ 22%] images/eqreconstruct_SAVE_settings.png
-copying images... [ 23%] images/equstabil_1.png
-copying images... [ 24%] images/equstabil_2.png
-copying images... [ 25%] images/equstabil_3.png
-copying images... [ 25%] images/autoGui.png
-copying images... [ 26%] images/ETS_Main_Param.png
-copying images... [ 27%] images/ets_settings1.png
-copying images... [ 28%] images/ets_plasma_composition.png
-copying images... [ 29%] images/ets_run_settings3.png
-copying images... [ 30%] images/ets_run_settings4.png
-copying images... [ 31%] images/ets_run_settings5.png
-copying images... [ 32%] images/ets_run_settings6.png
-copying images... [ 33%] images/Convergence_Loop.png
-copying images... [ 34%] images/ets_before_time.png
-copying images... [ 35%] images/ets_run_settings7.png
-copying images... [ 36%] images/ets_convergence_loop_config.png
-copying images... [ 37%] images/ets_equilibrium1.png
-copying images... [ 38%] images/ets_transport1.png
-copying images... [ 39%] images/ets_transport2.png
-copying images... [ 40%] images/ets_transport3.png
-copying images... [ 41%] images/ets_transport4.png
-copying images... [ 42%] images/ets_transport_combiner.png
-copying images... [ 43%] images/ets_mhd.png
-copying images... [ 44%] images/ets_mhd2.png
-copying images... [ 45%] images/ets_source1.png
-copying images... [ 46%] images/ets_sources2.png
-copying images... [ 47%] images/ets_sources3.png
-copying images... [ 48%] images/ets_sources4.png
-copying images... [ 49%] images/ets_sources5.png
-copying images... [ 50%] images/ets_sources6.png
-copying images... [ 50%] images/ets_sources7.png
-copying images... [ 51%] images/ets_sources8.png
-copying images... [ 52%] images/ets_sources9.png
-copying images... [ 53%] images/ets_instantaneous_events1.png
-copying images... [ 54%] images/ets_instantaneous_events2.png
-copying images... [ 55%] images/ets_instantaneous_events3.png
-copying images... [ 56%] images/ets_scenario.png
-copying images... [ 57%] images/ets_visual1_a.png
-copying images... [ 58%] images/ETSviz.png
-copying images... [ 59%] images/wpcd_banner_new.png
-copying images... [ 60%] images/kepler_1.png
-copying images... [ 61%] images/kepler_2.png
-copying images... [ 62%] images/kepler_3.png
-copying images... [ 63%] images/kepler_4.png
-copying images... [ 64%] images/kepler_5.png
-copying images... [ 65%] images/kepler_6.png
-copying images... [ 66%] images/kepler_7.png
-copying images... [ 67%] images/kepler_8.png
-copying images... [ 68%] images/kepler_9.png
-copying images... [ 69%] images/kepler_10.png
-copying images... [ 70%] images/kepler_11.png
-copying images... [ 71%] images/kepler_12.png
-copying images... [ 72%] images/kepler_13.png
-copying images... [ 73%] images/kepler_14.png
-copying images... [ 74%] images/kepler_15.png
-copying images... [ 75%] images/kepler_16.png
-copying images... [ 75%] images/kepler_17.png
-copying images... [ 76%] images/kepler_18.png
-copying images... [ 77%] images/kepler_19.png
-copying images... [ 78%] images/kepler_20.png
-copying images... [ 79%] images/kepler_21.png
-copying images... [ 80%] images/kepler_22.png
-copying images... [ 81%] images/kepler_23.png
-copying images... [ 82%] images/kepler_24.png
-copying images... [ 83%] images/kepler_25.png
-copying images... [ 84%] images/kepler_26.png
-copying images... [ 85%] images/kepler_27.png
-copying images... [ 86%] images/kepler_28.png
-copying images... [ 87%] images/kepler_29.png
-copying images... [ 88%] images/kepler_30.png
-copying images... [ 89%] images/kepler_31.png
-copying images... [ 90%] images/kepler_32.png
-copying images... [ 91%] images/kepler_33.png
-copying images... [ 92%] images/kepler_34.png
-copying images... [ 93%] images/kepler_35.png
-copying images... [ 94%] images/kepler_36.png
-copying images... [ 95%] images/kepler_37.png
-copying images... [ 96%] images/kepler_38.png
-copying images... [ 97%] images/kepler_39.png
-copying images... [ 98%] images/kepler_40.png
-copying images... [ 99%] images/kepler_41.png
-copying images... [100%] images/kepler_42.png
+copying images... [  9%] images/eqreconstruct_JET_timeloop_records.png
+copying images... [ 10%] images/eqreconstruct_START_settings.png
+copying images... [ 11%] images/eqreconstruct_CHECK_DATA.png
+copying images... [ 12%] images/eqreconstruct_RECONSTRUCT_settings.png
+copying images... [ 13%] images/eqreconstruct_SAVE_settings.png
+copying images... [ 14%] images/equstabil_1.png
+copying images... [ 15%] images/equstabil_2.png
+copying images... [ 16%] images/equstabil_3.png
+copying images... [ 17%] images/autoGui.png
+copying images... [ 18%] images/ETS_Main_Param.png
+copying images... [ 19%] images/ets_settings1.png
+copying images... [ 20%] images/ets_plasma_composition.png
+copying images... [ 21%] images/ets_run_settings3.png
+copying images... [ 22%] images/ets_run_settings4.png
+copying images... [ 23%] images/ets_run_settings5.png
+copying images... [ 24%] images/ets_run_settings6.png
+copying images... [ 25%] images/Convergence_Loop.png
+copying images... [ 26%] images/ets_before_time.png
+copying images... [ 27%] images/ets_run_settings7.png
+copying images... [ 28%] images/ets_convergence_loop_config.png
+copying images... [ 29%] images/ets_equilibrium1.png
+copying images... [ 30%] images/ets_transport1.png
+copying images... [ 31%] images/ets_transport2.png
+copying images... [ 32%] images/ets_transport3.png
+copying images... [ 33%] images/ets_transport4.png
+copying images... [ 34%] images/ets_transport_combiner.png
+copying images... [ 35%] images/ets_mhd.png
+copying images... [ 36%] images/ets_mhd2.png
+copying images... [ 37%] images/ets_source1.png
+copying images... [ 38%] images/ets_sources2.png
+copying images... [ 39%] images/ets_sources3.png
+copying images... [ 40%] images/ets_sources4.png
+copying images... [ 41%] images/ets_sources5.png
+copying images... [ 42%] images/ets_sources6.png
+copying images... [ 43%] images/ets_sources7.png
+copying images... [ 44%] images/ets_sources8.png
+copying images... [ 45%] images/ets_sources9.png
+copying images... [ 46%] images/ets_instantaneous_events1.png
+copying images... [ 47%] images/ets_instantaneous_events2.png
+copying images... [ 48%] images/ets_instantaneous_events3.png
+copying images... [ 49%] images/ets_scenario.png
+copying images... [ 50%] images/ets_visual1_a.png
+copying images... [ 51%] images/ETSviz.png
+copying images... [ 52%] images/wpcd_banner_new.png
+copying images... [ 53%] images/kepler_1.png
+copying images... [ 54%] images/kepler_2.png
+copying images... [ 55%] images/kepler_3.png
+copying images... [ 56%] images/kepler_4.png
+copying images... [ 57%] images/kepler_5.png
+copying images... [ 58%] images/kepler_6.png
+copying images... [ 59%] images/kepler_7.png
+copying images... [ 60%] images/kepler_8.png
+copying images... [ 61%] images/kepler_9.png
+copying images... [ 62%] images/kepler_10.png
+copying images... [ 63%] images/kepler_11.png
+copying images... [ 64%] images/kepler_12.png
+copying images... [ 65%] images/kepler_13.png
+copying images... [ 66%] images/kepler_14.png
+copying images... [ 67%] images/kepler_15.png
+copying images... [ 68%] images/kepler_16.png
+copying images... [ 69%] images/kepler_17.png
+copying images... [ 70%] images/kepler_18.png
+copying images... [ 71%] images/kepler_19.png
+copying images... [ 72%] images/kepler_20.png
+copying images... [ 73%] images/kepler_21.png
+copying images... [ 74%] images/kepler_22.png
+copying images... [ 75%] images/kepler_23.png
+copying images... [ 76%] images/kepler_24.png
+copying images... [ 77%] images/kepler_25.png
+copying images... [ 78%] images/kepler_26.png
+copying images... [ 79%] images/kepler_27.png
+copying images... [ 80%] images/kepler_28.png
+copying images... [ 81%] images/kepler_29.png
+copying images... [ 82%] images/kepler_30.png
+copying images... [ 83%] images/kepler_31.png
+copying images... [ 84%] images/kepler_32.png
+copying images... [ 85%] images/kepler_33.png
+copying images... [ 86%] images/kepler_34.png
+copying images... [ 87%] images/kepler_35.png
+copying images... [ 88%] images/kepler_36.png
+copying images... [ 89%] images/kepler_37.png
+copying images... [ 90%] images/kepler_38.png
+copying images... [ 91%] images/kepler_39.png
+copying images... [ 92%] images/kepler_40.png
+copying images... [ 93%] images/kepler_41.png
+copying images... [ 94%] images/kepler_42.png
+copying images... [ 95%] images/edge_1.png
+copying images... [ 96%] images/edge_2.png
+copying images... [ 97%] images/edge_3.png
+copying images... [ 98%] images/edge_4.png
+copying images... [ 99%] images/edge_5.png
+copying images... [100%] images/edge_6.png
 
 copying downloadable files... [ 50%] static/EQSTABIL_tutorial_20151214.pdf
 copying downloadable files... [100%] static/EUROfusionIntegratedModellingworkflows.pdf
@@ -185,7 +172,7 @@ copying static files... ... done
 copying extra files... done
 dumping search index in English (code: en)... done
 dumping object inventory... done
-build succeeded, 38 warnings.
+build succeeded, 1 warning.
 
 The HTML pages are in ../WPCD-Workflows.github.io.
 

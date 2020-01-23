@@ -102,18 +102,30 @@
 <li class="toctree-l3"><a class="reference internal" href="#how-to-fill-the-fc2k-window">6.3.5. How to fill the FC2K window</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#plasma-equilibrium-and-mhd-list-of-codes">6.4. Plasma equilibrium and MHD list of codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plasma-equilibrium-and-mhd-list-of-codes">6.4. Plasma equilibrium and MHD list of codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#free-boundary-equilibrium-codes">6.4.1. Free boundary equilibrium codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed-boundary-equilibrium-codes">6.4.2. Fixed boundary equilibrium codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linear-mhd-stability-codes">6.4.3. Linear MHD stability codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sawtooth-crash-modules">6.4.4. Sawtooth Crash Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elm-modules">6.4.5. ELM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ntm-modules">6.4.6. NTM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numerical-tools">6.4.7. Numerical Tools</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#heating-current-drive-h-cd-and-fast-particles-list-of-codes">6.5. Heating, current drive (H&amp;CD) and fast particles list of codes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ec-wave-codes">6.5.1. EC wave codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#combined-electron-fokker-planck-codes">6.5.2. Combined electron Fokker-Planck codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wave-codes-for-ion-cyclotron-heating">6.5.3. Wave codes for ion cyclotron heating</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fokker-planck-codes-for-ion-cyclotron-heating">6.5.4. Fokker-Planck codes for ion cyclotron heating</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nbi-sources-for-fokker-planck-codes">6.5.5. NBI sources for Fokker-Planck codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nuclear-sources-input-for-fokker-planck-codes">6.5.6. Nuclear sources (input for Fokker-Planck codes)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nbi-fokker-planck-codes">6.5.7. NBI Fokker-Planck codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#runaway-electrons">6.5.8. Runaway electrons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#advanced-codes">6.5.9. Advanced codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#codes-for-fast-ion-mhd-interactions">6.5.10. Codes for fast ion-MHD interactions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#electron-heating-codes">6.5.1. Electron heating codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ec-wave-codes">6.5.1.1. EC wave codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combined-electron-fokker-planck-codes">6.5.1.2. Combined electron Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wave-codes-for-ion-cyclotron-heating">6.5.1.3. Wave codes for ion cyclotron heating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fokker-planck-codes-for-ion-cyclotron-heating">6.5.1.4. Fokker-Planck codes for ion cyclotron heating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nbi-sources-for-fokker-planck-codes">6.5.1.5. NBI sources for Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nuclear-sources-input-for-fokker-planck-codes">6.5.1.6. Nuclear sources (input for Fokker-Planck codes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nbi-fokker-planck-codes">6.5.1.7. NBI Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#runaway-electrons">6.5.1.8. Runaway electrons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advanced-codes">6.5.1.9. Advanced codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codes-for-fast-ion-mhd-interactions">6.5.1.10. Codes for fast ion-MHD interactions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#transport-list-of-codes">6.6. Transport list of codes</a></li>
@@ -493,6 +505,8 @@ when running Kepler workflows</p></li>
 <span id="imp12-listcodes"></span><h2><span class="section-number">6.4. </span>Plasma equilibrium and MHD list of codes<a class="headerlink" href="#plasma-equilibrium-and-mhd-list-of-codes" title="Permalink to this headline">¶</a></h2>
 <p>The following list lists the codes and modules which are part of WPCD
 tasks and their responsible officers.</p>
+<div class="section" id="free-boundary-equilibrium-codes">
+<h3><span class="section-number">6.4.1. </span>Free boundary equilibrium codes<a class="headerlink" href="#free-boundary-equilibrium-codes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>CEDRES++, S. Brémond, CEA</p></li>
 <li><p>CLISTE, P. Mc Carthy, DCU</p></li>
@@ -502,34 +516,55 @@ tasks and their responsible officers.</p>
 <li><p>EQUINOX, B. Faugeras, CEA</p></li>
 <li><p>FIXFREE, E. Giovannozzi, ENEA Frascati</p></li>
 </ul>
+</div>
+<div class="section" id="fixed-boundary-equilibrium-codes">
+<h3><span class="section-number">6.4.2. </span>Fixed boundary equilibrium codes<a class="headerlink" href="#fixed-boundary-equilibrium-codes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>CAXE, S. Medvedev, EPFL</p></li>
 <li><p>CHEASE, O. Sauter, EPFL</p></li>
 <li><p>HELENA, C. Konz, IPP</p></li>
 </ul>
+</div>
+<div class="section" id="linear-mhd-stability-codes">
+<h3><span class="section-number">6.4.3. </span>Linear MHD stability codes<a class="headerlink" href="#linear-mhd-stability-codes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>KINX, S. Medvedev, EPFL</p></li>
 <li><p>ILSA, C. Konz, IPP</p></li>
 <li><p>MARS, G. Vlad, ENEA Frascati</p></li>
 <li><p>MARS-F, D. Yadykin, Chalmers</p></li>
 </ul>
+</div>
+<div class="section" id="sawtooth-crash-modules">
+<h3><span class="section-number">6.4.4. </span>Sawtooth Crash Modules<a class="headerlink" href="#sawtooth-crash-modules" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>SAWTEETH, O. Sauter, CRPP</p></li>
 </ul>
+</div>
+<div class="section" id="elm-modules">
+<h3><span class="section-number">6.4.5. </span>ELM Modules<a class="headerlink" href="#elm-modules" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ntm-modules">
+<h3><span class="section-number">6.4.6. </span>NTM Modules<a class="headerlink" href="#ntm-modules" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>NTMETS, S. Nowak</p></li>
 </ul>
+</div>
+<div class="section" id="numerical-tools">
+<h3><span class="section-number">6.4.7. </span>Numerical Tools<a class="headerlink" href="#numerical-tools" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>PROGEN, C. Konz, IPP</p></li>
 <li><p>JALPHA, C. Konz, IPP</p></li>
 </ul>
 </div>
+</div>
 <div class="section" id="heating-current-drive-h-cd-and-fast-particles-list-of-codes">
 <span id="imp5-listcodes"></span><h2><span class="section-number">6.5. </span>Heating, current drive (H&amp;CD) and fast particles list of codes<a class="headerlink" href="#heating-current-drive-h-cd-and-fast-particles-list-of-codes" title="Permalink to this headline">¶</a></h2>
 <p>The following list lists the codes and modules which are part of WPCD
 tasks and their responsible officers.</p>
+<div class="section" id="electron-heating-codes">
+<span id="imp5-listcodes-electron-heating-codes"></span><h3><span class="section-number">6.5.1. </span>Electron heating codes<a class="headerlink" href="#electron-heating-codes" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="ec-wave-codes">
-<span id="imp5-listcodes-ec-wave-codes"></span><h3><span class="section-number">6.5.1. </span>EC wave codes<a class="headerlink" href="#ec-wave-codes" title="Permalink to this headline">¶</a></h3>
+<span id="imp5-listcodes-ec-wave-codes"></span><h4><span class="section-number">6.5.1.1. </span>EC wave codes<a class="headerlink" href="#ec-wave-codes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>TORAY-FOM, E. Westerhof, FOM</p></li>
 <li><p>TORBEAM, E. Poli, IPP-Garching</p></li>
@@ -538,13 +573,13 @@ tasks and their responsible officers.</p>
 </ul>
 </div>
 <div class="section" id="combined-electron-fokker-planck-codes">
-<span id="imp5-listcodes-electron-fokker-planck"></span><h3><span class="section-number">6.5.2. </span>Combined electron Fokker-Planck codes<a class="headerlink" href="#combined-electron-fokker-planck-codes" title="Permalink to this headline">¶</a></h3>
+<span id="imp5-listcodes-electron-fokker-planck"></span><h4><span class="section-number">6.5.1.2. </span>Combined electron Fokker-Planck codes<a class="headerlink" href="#combined-electron-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>RELAX, E. Westerhof, FOM</p></li>
 </ul>
 </div>
 <div class="section" id="wave-codes-for-ion-cyclotron-heating">
-<span id="imp5-listcodes-ic-wave-codes"></span><h3><span class="section-number">6.5.3. </span>Wave codes for ion cyclotron heating<a class="headerlink" href="#wave-codes-for-ion-cyclotron-heating" title="Permalink to this headline">¶</a></h3>
+<span id="imp5-listcodes-ic-wave-codes"></span><h4><span class="section-number">6.5.1.3. </span>Wave codes for ion cyclotron heating<a class="headerlink" href="#wave-codes-for-ion-cyclotron-heating" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>TORIC, R. Bilato, IPP-Garching</p></li>
 <li><p>EVE, R. Dumont, CEA (Cadarache)</p></li>
@@ -554,42 +589,42 @@ tasks and their responsible officers.</p>
 </ul>
 </div>
 <div class="section" id="fokker-planck-codes-for-ion-cyclotron-heating">
-<span id="imp5-listcodes-ic-fokker-planck"></span><h3><span class="section-number">6.5.4. </span>Fokker-Planck codes for ion cyclotron heating<a class="headerlink" href="#fokker-planck-codes-for-ion-cyclotron-heating" title="Permalink to this headline">¶</a></h3>
+<span id="imp5-listcodes-ic-fokker-planck"></span><h4><span class="section-number">6.5.1.4. </span>Fokker-Planck codes for ion cyclotron heating<a class="headerlink" href="#fokker-planck-codes-for-ion-cyclotron-heating" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>RFOF, T. Johnson, VR</p></li>
 <li><p>StixRedist, E. Lerche and D. Van Eester</p></li>
 </ul>
 </div>
 <div class="section" id="nbi-sources-for-fokker-planck-codes">
-<span id="imp5-listcodes-nbi-sources"></span><h3><span class="section-number">6.5.5. </span>NBI sources for Fokker-Planck codes<a class="headerlink" href="#nbi-sources-for-fokker-planck-codes" title="Permalink to this headline">¶</a></h3>
+<span id="imp5-listcodes-nbi-sources"></span><h4><span class="section-number">6.5.1.5. </span>NBI sources for Fokker-Planck codes<a class="headerlink" href="#nbi-sources-for-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>BBNBI (Beamlet-based NBI module of ASCOT), J. Varje, TEKES</p></li>
 <li><p>NEMO, M. Schneider, CEA (Cadarache)</p></li>
 </ul>
 </div>
 <div class="section" id="nuclear-sources-input-for-fokker-planck-codes">
-<span id="imp5-listcodes-nuclear-sources"></span><h3><span class="section-number">6.5.6. </span>Nuclear sources (input for Fokker-Planck codes)<a class="headerlink" href="#nuclear-sources-input-for-fokker-planck-codes" title="Permalink to this headline">¶</a></h3>
+<span id="imp5-listcodes-nuclear-sources"></span><h4><span class="section-number">6.5.1.6. </span>Nuclear sources (input for Fokker-Planck codes)<a class="headerlink" href="#nuclear-sources-input-for-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Nuclearsim, T.Johnson, VR</p></li>
 <li><p>AFSI Ascot Fusion Source Integrator, J. Varje, Aalto</p></li>
 </ul>
 </div>
 <div class="section" id="nbi-fokker-planck-codes">
-<span id="imp5-listcodes-nbi-fokker-planck"></span><h3><span class="section-number">6.5.7. </span>NBI Fokker-Planck codes<a class="headerlink" href="#nbi-fokker-planck-codes" title="Permalink to this headline">¶</a></h3>
+<span id="imp5-listcodes-nbi-fokker-planck"></span><h4><span class="section-number">6.5.1.7. </span>NBI Fokker-Planck codes<a class="headerlink" href="#nbi-fokker-planck-codes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>RISK, M. Schneider, CEA (ITER)</p></li>
 <li><p>NBISIM, T. Johnson, VR</p></li>
 </ul>
 </div>
 <div class="section" id="runaway-electrons">
-<span id="imp5-listcodes-runaways"></span><h3><span class="section-number">6.5.8. </span>Runaway electrons<a class="headerlink" href="#runaway-electrons" title="Permalink to this headline">¶</a></h3>
+<span id="imp5-listcodes-runaways"></span><h4><span class="section-number">6.5.1.8. </span>Runaway electrons<a class="headerlink" href="#runaway-electrons" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Runaway Indicator (Runin), G. Pokol, et al (BME): Runin has been developed to provide an indication for when to expect runaway tail formation. The source code is stored in the <cite>OSREP project &lt;https://github.com/osrep&gt;</cite>.</p></li>
 <li><p>Runaway Fluid (Runafluid), G. Pokol, et al (BME): Porpose of Runafluid is to provide a non-inductive current due to runaway electrons using computationaly cheap analytical estimates of ruraway electron growth rates and transport. The source code is stored in the <cite>OSREP project &lt;https://github.com/osrep&gt;</cite>.</p></li>
 </ul>
 </div>
 <div class="section" id="advanced-codes">
-<span id="imp5-listcodes-advanced-fokker-planck"></span><h3><span class="section-number">6.5.9. </span>Advanced codes<a class="headerlink" href="#advanced-codes" title="Permalink to this headline">¶</a></h3>
+<span id="imp5-listcodes-advanced-fokker-planck"></span><h4><span class="section-number">6.5.1.9. </span>Advanced codes<a class="headerlink" href="#advanced-codes" title="Permalink to this headline">¶</a></h4>
 <p>(The following codes include either the synergy between IC and NBI
 heating, or include both wave field and Fokker-Planck solver)</p>
 <ul class="simple">
@@ -598,7 +633,7 @@ heating, or include both wave field and Fokker-Planck solver)</p>
 </ul>
 </div>
 <div class="section" id="codes-for-fast-ion-mhd-interactions">
-<span id="imp5-listcodes-fast-ions-mhd"></span><h3><span class="section-number">6.5.10. </span>Codes for fast ion-MHD interactions<a class="headerlink" href="#codes-for-fast-ion-mhd-interactions" title="Permalink to this headline">¶</a></h3>
+<span id="imp5-listcodes-fast-ions-mhd"></span><h4><span class="section-number">6.5.1.10. </span>Codes for fast ion-MHD interactions<a class="headerlink" href="#codes-for-fast-ion-mhd-interactions" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>LIGKA, P. Lauber, IPP-Garching</p></li>
 <li><p>MARS, G. Vlad, ENEA-Frascati</p></li>
@@ -606,6 +641,7 @@ heating, or include both wave field and Fokker-Planck solver)</p>
 <li><p>HMGC, C. Di Troia, ENEA-Frascati</p></li>
 <li><p>LEMAN, W.A. Cooper, EPFL-CRPP</p></li>
 </ul>
+</div>
 </div>
 </div>
 <div class="section" id="transport-list-of-codes">
