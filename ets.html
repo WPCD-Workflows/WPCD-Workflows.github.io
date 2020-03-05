@@ -224,28 +224,28 @@
 <p>ETS-5 uses CPO for actor integration in Kepler and as input data to the workflow. This means that the user environment
 needs to be set up as ITM environment.</p>
 <p><strong>To do so login on the EUROfusion Gateway and type the following commands:</strong></p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>module purge
-<span class="gp">&gt;</span>module load cineca
-<span class="gp">&gt;</span>module load itmenv/ETS_4.10b.10_v5.5.0
-<span class="gp">&gt;</span><span class="nb">source</span> <span class="nv">$ITMSCRIPTDIR</span>/ITMv2.sh JET
-<span class="gp">&gt;</span><span class="nb">export</span> <span class="nv">ITM_KEPLER_DIR</span><span class="o">=</span><span class="nv">$ITMWORK</span>/my_keplers
-<span class="gp">&gt;</span><span class="nb">export</span> <span class="nv">_JAVA_OPTIONS</span><span class="o">=</span>-Dsun.java2d.xrender<span class="o">=</span><span class="nb">false</span>
-<span class="gp">&gt;</span><span class="nb">export</span> <span class="nv">I_MPI_FABRICS</span><span class="o">=</span>shm
-<span class="gp">&gt;</span><span class="nb">export</span> <span class="nv">_JAVA_OPTIONS</span><span class="o">=</span><span class="s2">&quot;-Xss20m -Xms4g -Xmx8g -Dsun.java2d.xrender=false&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>The command ‘module load itmenv/ETS…’ loads the itmenv environment and in particular in the case above the ETS / Kepler version 5.5.0
-To load a different version just change the number e.g. v5.4.0</p>
+<p>module purge
+module load cineca
+module load itmenv/ETS_4.10b.10_v5.6.0
+source $ITMSCRIPTDIR/ITMv2 jet
+setenv ITM_KEPLER_DIR $ITMWORK/my_keplers/
+setenv _JAVA_OPTIONS “-Xss20m -Xms4g -Xmx8g -Dsun.java2d.xrender=false”</p>
+<p>The command ‘module load itmenv/ETS…’ loads the itmenv environment and in particular in the case above the ETS / Kepler version 5.6.0
+To load a different version just change the number e.g. v5.5.0</p>
 <p>The $ITMSCRIPTDIR/ITMv2.sh JET command will set up your local database folder to ‘JET’. This means that any simulation done with ETS
 will be saved in the JET folder (even if you are simulating TCV!!). If you would like to simulate any other Tokamak, type again the command and change JET with e.g. AUG.</p>
 <p>The remaining commands are JAVA options for running Kepler and setting of MPI useful for running parallel actors.</p>
 <p>If it is the first time you run ETS then you will need to install your first ‘dressed’ Kepler version which corresponds
 to Kepler with all the WPCD actors embedded in it.</p>
 <p><strong>This can be done by executing the following command</strong></p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>install_kepler.sh ets_v550 trunk/ETS_4.10b.10_v5.5.0/central <span class="s2">&quot;dressed central kepler v5.5.0&quot;</span>
-<span class="gp">&gt;</span>switch_to_kepler.sh ets_v550
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+<p>install_kepler.sh ets_v561 trunk/ETS_4.10b.10_v5.6.1/central “dressed central kepler v5.6.1”
+switch_to_kepler.sh ets_v561</p>
 <p><strong>For loading the Workflow+tools (import data, postprocessing):</strong></p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span>svn co https://gforge6.eufus.eu/svn/keplerworkflows/tags/ETS_4.10b.10_v5.5.0
 </pre></div>
