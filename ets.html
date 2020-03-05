@@ -228,8 +228,8 @@ needs to be set up as ITM environment.</p>
 <span class="go">module load cineca</span>
 <span class="go">module load itmenv/ETS_4.10b.10_v5.6.0</span>
 <span class="go">source $ITMSCRIPTDIR/ITMv2 jet</span>
-<span class="go">setenv ITM_KEPLER_DIR $ITMWORK/my_keplers/</span>
-<span class="go">setenv _JAVA_OPTIONS &quot;-Xss20m -Xms4g -Xmx8g -Dsun.java2d.xrender=false&quot;</span>
+<span class="go">export ITM_KEPLER_DIR $ITMWORK/my_keplers/</span>
+<span class="go">export _JAVA_OPTIONS &quot;-Xss20m -Xms4g -Xmx8g -Dsun.java2d.xrender=false&quot;</span>
 </pre></div>
 </div>
 <p>The command ‘module load itmenv/ETS…’ loads the itmenv environment and in particular in the case above the ETS / Kepler version 5.6.0
