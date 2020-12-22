@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,28 +11,29 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Introduction to the EUROfusion Project Code Development for integrated modelling" href="introduction.html" /> 
@@ -50,7 +50,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> EUROfusion Integrated Modelling workflows
+            <a href="#" class="icon icon-home" alt="Documentation Home"> EUROfusion Integrated Modelling workflows
           
 
           
@@ -80,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -93,15 +94,17 @@
 <li class="toctree-l1"><a class="reference internal" href="ets.html">3. European Transport Simulator (ETS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="es.html">4. Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">5. The EQRECONSTRUCT workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="codes.html">6. Codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conventions.html">7. Conventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="amns.html">8. AMNS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">9. Additional resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbulence.html">6. Turbulence with synthetic diagnostics workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">7. Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">8. Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">9. AMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">10. Additional resources</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -140,7 +143,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
       <li>Welcome to EUROfusion Integrated Modelling workflow’s documentation!</li>
     
@@ -472,121 +475,142 @@
 <li class="toctree-l2"><a class="reference internal" href="eqreconstr.html#news-and-recent-activity">5.5. 6. News and Recent activity</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="codes.html">6. Codes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="codes.html#imasviz">6.1. IMASviz</a></li>
-<li class="toctree-l2"><a class="reference internal" href="codes.html#imasgo">6.2. IMASgo!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="codes.html#how-to-turn-a-c-code-into-a-kepler-actor">6.3. How to turn a C++ code into a Kepler actor</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#adapt-your-c-function">6.3.1. Adapt your C++ function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#how-to-use-code-parameters">6.3.2. How to use code parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#compile-your-function-as-a-library">6.3.3. Compile your function as a library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#full-example">6.3.4. Full example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#how-to-fill-the-fc2k-window">6.3.5. How to fill the FC2K window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbulence.html">6. Turbulence with synthetic diagnostics workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="turbulence.html#hesel-documentation">6.1. HESEL Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="turbulence.html#hesel-as-stand-alone">6.1.1. HESEL as stand-alone</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="turbulence.html#obtaining-and-building-hesel">6.1.1.1. Obtaining and building HESEL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="turbulence.html#hesel-input">6.1.1.2. HESEL input</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="turbulence.html#id3">6.1.1.2.1. HESEL input</a></li>
+<li class="toctree-l5"><a class="reference internal" href="turbulence.html#profile-datafile">6.1.1.2.2. Profile datafile</a></li>
+<li class="toctree-l5"><a class="reference internal" href="turbulence.html#probe-positions">6.1.1.2.3. Probe positions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="codes.html#plasma-equilibrium-and-mhd-list-of-codes">6.4. Plasma equilibrium and MHD list of codes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#free-boundary-equilibrium-codes">6.4.1. Free boundary equilibrium codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#fixed-boundary-equilibrium-codes">6.4.2. Fixed boundary equilibrium codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#linear-mhd-stability-codes">6.4.3. Linear MHD stability codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#sawtooth-crash-modules">6.4.4. Sawtooth Crash Modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#elm-modules">6.4.5. ELM Modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#ntm-modules">6.4.6. NTM Modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#numerical-tools">6.4.7. Numerical Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="turbulence.html#hesel-code-structure">6.1.1.3. HESEL code structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="turbulence.html#running-a-hesel-simulation">6.1.1.4. Running a HESEL simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="turbulence.html#hesel-output">6.1.1.5. HESEL output</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="codes.html#heating-current-drive-h-cd-and-fast-particles-list-of-codes">6.5. Heating, current drive (H&amp;CD) and fast particles list of codes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="codes.html#electron-heating-codes">6.5.1. Electron heating codes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="codes.html#ec-wave-codes">6.5.1.1. EC wave codes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="codes.html#combined-electron-fokker-planck-codes">6.5.1.2. Combined electron Fokker-Planck codes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="codes.html#wave-codes-for-ion-cyclotron-heating">6.5.1.3. Wave codes for ion cyclotron heating</a></li>
-<li class="toctree-l4"><a class="reference internal" href="codes.html#fokker-planck-codes-for-ion-cyclotron-heating">6.5.1.4. Fokker-Planck codes for ion cyclotron heating</a></li>
-<li class="toctree-l4"><a class="reference internal" href="codes.html#nbi-sources-for-fokker-planck-codes">6.5.1.5. NBI sources for Fokker-Planck codes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="codes.html#nuclear-sources-input-for-fokker-planck-codes">6.5.1.6. Nuclear sources (input for Fokker-Planck codes)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="codes.html#nbi-fokker-planck-codes">6.5.1.7. NBI Fokker-Planck codes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="codes.html#runaway-electrons">6.5.1.8. Runaway electrons</a></li>
-<li class="toctree-l4"><a class="reference internal" href="codes.html#advanced-codes">6.5.1.9. Advanced codes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="codes.html#codes-for-fast-ion-mhd-interactions">6.5.1.10. Codes for fast ion-MHD interactions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turbulence.html#hesel-as-workflow-actor">6.1.2. HESEL as workflow actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turbulence.html#hesel-in-the-kepler-workflow">6.1.3. HESEL in the KEPLER workflow</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="codes.html#transport-list-of-codes">6.6. Transport list of codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">7. Codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="codes.html#imasviz">7.1. IMASviz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codes.html#imasgo">7.2. IMASgo!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codes.html#how-to-turn-a-c-code-into-a-kepler-actor">7.3. How to turn a C++ code into a Kepler actor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#adapt-your-c-function">7.3.1. Adapt your C++ function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#how-to-use-code-parameters">7.3.2. How to use code parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#compile-your-function-as-a-library">7.3.3. Compile your function as a library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#full-example">7.3.4. Full example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#how-to-fill-the-fc2k-window">7.3.5. How to fill the FC2K window</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="conventions.html">7. Conventions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="conventions.html#standard-machine-names">7.1. Standard Machine Names</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conventions.html#physics-conventions">7.2. Physics Conventions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#coordinate-system">7.2.1. Coordinate System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#representation-of-the-magnetic-field-and-current">7.2.2. Representation of the Magnetic Field and Current</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#poloidal-and-toroidal-fluxes">7.2.3. Poloidal and Toroidal Fluxes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#safety-factor">7.2.4. Safety Factor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#signs">7.2.5. Signs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#cocos-toroidal-coordinate-conventions">7.2.6. COCOS - toroidal coordinate conventions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="conventions.html#equilibrium-cocos-transformation-library-and-actor">7.2.6.1. Equilibrium COCOS transformation library and actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codes.html#plasma-equilibrium-and-mhd-list-of-codes">7.4. Plasma equilibrium and MHD list of codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#free-boundary-equilibrium-codes">7.4.1. Free boundary equilibrium codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#fixed-boundary-equilibrium-codes">7.4.2. Fixed boundary equilibrium codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#linear-mhd-stability-codes">7.4.3. Linear MHD stability codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#sawtooth-crash-modules">7.4.4. Sawtooth Crash Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#elm-modules">7.4.5. ELM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#ntm-modules">7.4.6. NTM Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#numerical-tools">7.4.7. Numerical Tools</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#the-flux-surface-average">7.2.7. The Flux Surface Average</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#the-toroidal-flux-radius-as-the-radial-coordinate">7.2.8. The Toroidal Flux Radius as the Radial Coordinate</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#toroidal-and-parallel-current">7.2.9. Toroidal and Parallel Current</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#straight-field-line-coordinates">7.2.10. Straight Field Line Coordinates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#plasma-betas">7.2.11. Plasma Betas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#internal-inductance">7.2.12. Internal Inductance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#poloidal-angle-dimension-in-equilibrium-cpo">7.2.13. Poloidal Angle Dimension in Equilibrium CPO</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="conventions.html#numerical-and-computational-conventions">7.3. Numerical and computational conventions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#standardized-variable-types">7.3.1. Standardized Variable Types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#standardized-physical-constants">7.3.2. Standardized Physical Constants</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#invalid-data-base-entries">7.3.3. Invalid Data Base Entries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#enumerated-datatypes-identifiers">7.3.4. Enumerated datatypes/Identifiers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="conventions.html#example-how-to-fill-coresource-values-sourceid">7.3.4.1. Example: How to fill coresource/values/sourceid</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#grid-types-in-equilibrium-cpo">7.3.5. Grid Types in Equilibrium CPO</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="conventions.html#grid-type-identifier">7.3.5.1. Grid Type Identifier</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="conventions.html#poloidal-angle-identifier">7.3.5.1.1. Poloidal Angle Identifier</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="conventions.html#standardized-eu-eu-im-plasma-bundle">7.3.6. Standardized EU-EU-IM Plasma Bundle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codes.html#heating-current-drive-h-cd-and-fast-particles-list-of-codes">7.5. Heating, current drive (H&amp;CD) and fast particles list of codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="codes.html#electron-heating-codes">7.5.1. Electron heating codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#ec-wave-codes">7.5.1.1. EC wave codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#combined-electron-fokker-planck-codes">7.5.1.2. Combined electron Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#wave-codes-for-ion-cyclotron-heating">7.5.1.3. Wave codes for ion cyclotron heating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#fokker-planck-codes-for-ion-cyclotron-heating">7.5.1.4. Fokker-Planck codes for ion cyclotron heating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#nbi-sources-for-fokker-planck-codes">7.5.1.5. NBI sources for Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#nuclear-sources-input-for-fokker-planck-codes">7.5.1.6. Nuclear sources (input for Fokker-Planck codes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#nbi-fokker-planck-codes">7.5.1.7. NBI Fokker-Planck codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#runaway-electrons">7.5.1.8. Runaway electrons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#advanced-codes">7.5.1.9. Advanced codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="codes.html#codes-for-fast-ion-mhd-interactions">7.5.1.10. Codes for fast ion-MHD interactions</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="amns.html">8. AMNS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="amns.html#scientific-rationale-and-main-objectives">8.1. Scientific Rationale and Main Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="amns.html#eu-im-contact-person">8.2. EU-IM contact person</a></li>
-<li class="toctree-l2"><a class="reference internal" href="amns.html#amns-tasks">8.3. AMNS tasks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="amns.html#amns-documentation">8.4. AMNS Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="amns.html#amns-user-interface">8.4.1. AMNS User Interface</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-structures">8.4.1.1. AMNS User Interface Data Structures</a></li>
-<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-reactions">8.4.1.2. AMNS User Interface Data Reactions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-queries">8.4.1.3. AMNS User Interface Data Queries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-setting-options">8.4.1.4. AMNS User Interface Data Setting Options</a></li>
-<li class="toctree-l4"><a class="reference internal" href="amns.html#fortran-amns-user-interface">8.4.1.5. FORTRAN AMNS User Interface</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="amns.html#amns-user-interface-fortran-calls">8.4.1.5.1. AMNS User Interface: Fortran Calls</a></li>
-<li class="toctree-l5"><a class="reference internal" href="amns.html#amns-user-interface-example-fortran">8.4.1.5.2. AMNS User Interface Example (Fortran)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="amns.html#amns-user-interface-example-fortran-makefile">8.4.1.5.3. AMNS User Interface Example Fortran Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codes.html#transport-list-of-codes">7.6. Transport list of codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">8. Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#standard-machine-names">8.1. Standard Machine Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#physics-conventions">8.2. Physics Conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#coordinate-system">8.2.1. Coordinate System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#representation-of-the-magnetic-field-and-current">8.2.2. Representation of the Magnetic Field and Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#poloidal-and-toroidal-fluxes">8.2.3. Poloidal and Toroidal Fluxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#safety-factor">8.2.4. Safety Factor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#signs">8.2.5. Signs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#cocos-toroidal-coordinate-conventions">8.2.6. COCOS - toroidal coordinate conventions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conventions.html#equilibrium-cocos-transformation-library-and-actor">8.2.6.1. Equilibrium COCOS transformation library and actor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#the-flux-surface-average">8.2.7. The Flux Surface Average</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#the-toroidal-flux-radius-as-the-radial-coordinate">8.2.8. The Toroidal Flux Radius as the Radial Coordinate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#toroidal-and-parallel-current">8.2.9. Toroidal and Parallel Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#straight-field-line-coordinates">8.2.10. Straight Field Line Coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#plasma-betas">8.2.11. Plasma Betas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#internal-inductance">8.2.12. Internal Inductance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#poloidal-angle-dimension-in-equilibrium-cpo">8.2.13. Poloidal Angle Dimension in Equilibrium CPO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#numerical-and-computational-conventions">8.3. Numerical and computational conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#standardized-variable-types">8.3.1. Standardized Variable Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#standardized-physical-constants">8.3.2. Standardized Physical Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#invalid-data-base-entries">8.3.3. Invalid Data Base Entries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#enumerated-datatypes-identifiers">8.3.4. Enumerated datatypes/Identifiers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conventions.html#example-how-to-fill-coresource-values-sourceid">8.3.4.1. Example: How to fill coresource/values/sourceid</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#grid-types-in-equilibrium-cpo">8.3.5. Grid Types in Equilibrium CPO</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conventions.html#grid-type-identifier">8.3.5.1. Grid Type Identifier</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="conventions.html#poloidal-angle-identifier">8.3.5.1.1. Poloidal Angle Identifier</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="amns.html#c-amns-user-interface">8.4.2. C AMNS User Interface</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-c-calls">8.4.2.1. AMNS User Interface: C Calls</a></li>
-<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-example-c">8.4.2.2. AMNS User Interface Example (C)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-example-c-makefile">8.4.2.3. AMNS User Interface Example C Makefile</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="amns.html#python-amns-user-interface">8.4.3. Python AMNS User Interface</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-python-calls">8.4.3.1. AMNS User Interface: Python Calls</a></li>
-<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-example-python">8.4.3.2. AMNS User Interface Example (Python)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#standardized-eu-eu-im-plasma-bundle">8.3.6. Standardized EU-EU-IM Plasma Bundle</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">9. AMNS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="amns.html#scientific-rationale-and-main-objectives">9.1. Scientific Rationale and Main Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amns.html#eu-im-contact-person">9.2. EU-IM contact person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amns.html#amns-tasks">9.3. AMNS tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amns.html#amns-documentation">9.4. AMNS Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="amns.html#amns-user-interface">9.4.1. AMNS User Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-structures">9.4.1.1. AMNS User Interface Data Structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-reactions">9.4.1.2. AMNS User Interface Data Reactions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-queries">9.4.1.3. AMNS User Interface Data Queries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-data-setting-options">9.4.1.4. AMNS User Interface Data Setting Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#fortran-amns-user-interface">9.4.1.5. FORTRAN AMNS User Interface</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="amns.html#amns-user-interface-fortran-calls">9.4.1.5.1. AMNS User Interface: Fortran Calls</a></li>
+<li class="toctree-l5"><a class="reference internal" href="amns.html#amns-user-interface-example-fortran">9.4.1.5.2. AMNS User Interface Example (Fortran)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="amns.html#amns-user-interface-example-fortran-makefile">9.4.1.5.3. AMNS User Interface Example Fortran Makefile</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">9. Additional resources</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="amns.html#c-amns-user-interface">9.4.2. C AMNS User Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-c-calls">9.4.2.1. AMNS User Interface: C Calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-example-c">9.4.2.2. AMNS User Interface Example (C)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-example-c-makefile">9.4.2.3. AMNS User Interface Example C Makefile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="amns.html#python-amns-user-interface">9.4.3. Python AMNS User Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-python-calls">9.4.3.1. AMNS User Interface: Python Calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="amns.html#amns-user-interface-example-python">9.4.3.2. AMNS User Interface Example (Python)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">10. Additional resources</a></li>
 </ul>
 </div>
 </div>
@@ -616,11 +640,19 @@ EUROfusion consortium.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, WPCD
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -631,7 +663,6 @@ EUROfusion consortium.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

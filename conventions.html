@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7. Conventions &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
+  <title>8. Conventions &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
 
   
   
@@ -17,27 +20,24 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. AMNS" href="amns.html" />
-    <link rel="prev" title="6. Codes" href="codes.html" /> 
+    <link rel="next" title="9. AMNS" href="amns.html" />
+    <link rel="prev" title="7. Codes" href="codes.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> EUROfusion Integrated Modelling workflows
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> EUROfusion Integrated Modelling workflows
           
 
           
@@ -81,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -94,52 +95,54 @@
 <li class="toctree-l1"><a class="reference internal" href="ets.html">3. European Transport Simulator (ETS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="es.html">4. Equilibrium and MHD Stability workflow (EQSTABIL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eqreconstr.html">5. The EQRECONSTRUCT workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="codes.html">6. Codes</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Conventions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#standard-machine-names">7.1. Standard Machine Names</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#physics-conventions">7.2. Physics Conventions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#coordinate-system">7.2.1. Coordinate System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#representation-of-the-magnetic-field-and-current">7.2.2. Representation of the Magnetic Field and Current</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#poloidal-and-toroidal-fluxes">7.2.3. Poloidal and Toroidal Fluxes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#safety-factor">7.2.4. Safety Factor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#signs">7.2.5. Signs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cocos-toroidal-coordinate-conventions">7.2.6. COCOS - toroidal coordinate conventions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#equilibrium-cocos-transformation-library-and-actor">7.2.6.1. Equilibrium COCOS transformation library and actor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbulence.html">6. Turbulence with synthetic diagnostics workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codes.html">7. Codes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#standard-machine-names">8.1. Standard Machine Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#physics-conventions">8.2. Physics Conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#coordinate-system">8.2.1. Coordinate System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#representation-of-the-magnetic-field-and-current">8.2.2. Representation of the Magnetic Field and Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#poloidal-and-toroidal-fluxes">8.2.3. Poloidal and Toroidal Fluxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#safety-factor">8.2.4. Safety Factor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#signs">8.2.5. Signs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cocos-toroidal-coordinate-conventions">8.2.6. COCOS - toroidal coordinate conventions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#equilibrium-cocos-transformation-library-and-actor">8.2.6.1. Equilibrium COCOS transformation library and actor</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#the-flux-surface-average">7.2.7. The Flux Surface Average</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-toroidal-flux-radius-as-the-radial-coordinate">7.2.8. The Toroidal Flux Radius as the Radial Coordinate</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#toroidal-and-parallel-current">7.2.9. Toroidal and Parallel Current</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#straight-field-line-coordinates">7.2.10. Straight Field Line Coordinates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#plasma-betas">7.2.11. Plasma Betas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internal-inductance">7.2.12. Internal Inductance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#poloidal-angle-dimension-in-equilibrium-cpo">7.2.13. Poloidal Angle Dimension in Equilibrium CPO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-flux-surface-average">8.2.7. The Flux Surface Average</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-toroidal-flux-radius-as-the-radial-coordinate">8.2.8. The Toroidal Flux Radius as the Radial Coordinate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toroidal-and-parallel-current">8.2.9. Toroidal and Parallel Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#straight-field-line-coordinates">8.2.10. Straight Field Line Coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plasma-betas">8.2.11. Plasma Betas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-inductance">8.2.12. Internal Inductance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#poloidal-angle-dimension-in-equilibrium-cpo">8.2.13. Poloidal Angle Dimension in Equilibrium CPO</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#numerical-and-computational-conventions">7.3. Numerical and computational conventions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#standardized-variable-types">7.3.1. Standardized Variable Types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#standardized-physical-constants">7.3.2. Standardized Physical Constants</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#invalid-data-base-entries">7.3.3. Invalid Data Base Entries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#enumerated-datatypes-identifiers">7.3.4. Enumerated datatypes/Identifiers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#example-how-to-fill-coresource-values-sourceid">7.3.4.1. Example: How to fill coresource/values/sourceid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numerical-and-computational-conventions">8.3. Numerical and computational conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standardized-variable-types">8.3.1. Standardized Variable Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standardized-physical-constants">8.3.2. Standardized Physical Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#invalid-data-base-entries">8.3.3. Invalid Data Base Entries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enumerated-datatypes-identifiers">8.3.4. Enumerated datatypes/Identifiers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-how-to-fill-coresource-values-sourceid">8.3.4.1. Example: How to fill coresource/values/sourceid</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#grid-types-in-equilibrium-cpo">7.3.5. Grid Types in Equilibrium CPO</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#grid-type-identifier">7.3.5.1. Grid Type Identifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grid-types-in-equilibrium-cpo">8.3.5. Grid Types in Equilibrium CPO</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#grid-type-identifier">8.3.5.1. Grid Type Identifier</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#standardized-eu-eu-im-plasma-bundle">7.3.6. Standardized EU-EU-IM Plasma Bundle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standardized-eu-eu-im-plasma-bundle">8.3.6. Standardized EU-EU-IM Plasma Bundle</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="amns.html">8. AMNS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">9. Additional resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amns.html">9. AMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">10. Additional resources</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -178,9 +181,9 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">7. </span>Conventions</li>
+      <li><span class="section-number">8. </span>Conventions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -202,9 +205,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="conventions">
-<span id="itm-conventions"></span><h1><span class="section-number">7. </span>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h1>
+<span id="itm-conventions"></span><h1><span class="section-number">8. </span>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="standard-machine-names">
-<span id="machine-names"></span><h2><span class="section-number">7.1. </span>Standard Machine Names<a class="headerlink" href="#standard-machine-names" title="Permalink to this headline">¶</a></h2>
+<span id="machine-names"></span><h2><span class="section-number">8.1. </span>Standard Machine Names<a class="headerlink" href="#standard-machine-names" title="Permalink to this headline">¶</a></h2>
 <p>The following machine names are suggested:</p>
 <ul class="simple">
 <li><p>aug</p></li>
@@ -218,7 +221,7 @@
 </ul>
 </div>
 <div class="section" id="physics-conventions">
-<span id="id1"></span><h2><span class="section-number">7.2. </span>Physics Conventions<a class="headerlink" href="#physics-conventions" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2><span class="section-number">8.2. </span>Physics Conventions<a class="headerlink" href="#physics-conventions" title="Permalink to this headline">¶</a></h2>
 <p>The EU-IM-TF has agreed on a variety of conventions to facilitate the
 integration of the code modules across EFDA. In the following the most
 important conventions are explained in detail to remove confusion and
@@ -226,7 +229,7 @@ avoid ambiguity. For more physical detail than that represented here see
 F Hinton and R Hazeltine, Rev Mod Phys 48 (1976) 239-308, or R Hazeltine
 and J Meiss, Plasma Confinement (Addison-Wesley, 1992).</p>
 <div class="section" id="coordinate-system">
-<span id="itm-coordinate-system"></span><h3><span class="section-number">7.2.1. </span>Coordinate System<a class="headerlink" href="#coordinate-system" title="Permalink to this headline">¶</a></h3>
+<span id="itm-coordinate-system"></span><h3><span class="section-number">8.2.1. </span>Coordinate System<a class="headerlink" href="#coordinate-system" title="Permalink to this headline">¶</a></h3>
 <p>There are generally two choices for defining a right-handed coordinate
 system in a toroidal geometry with the following coordinates:</p>
 <ul class="simple">
@@ -255,7 +258,7 @@ positive.</p>
 <p><a class="reference external" href="http://en.wikipedia.org/wiki/Toroidal_and_poloidal">http://en.wikipedia.org/wiki/Toroidal_and_poloidal</a></p>
 </div>
 <div class="section" id="representation-of-the-magnetic-field-and-current">
-<span id="itm-conventions-representation-of-the-magnetic-field-and-current"></span><h3><span class="section-number">7.2.2. </span>Representation of the Magnetic Field and Current<a class="headerlink" href="#representation-of-the-magnetic-field-and-current" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-representation-of-the-magnetic-field-and-current"></span><h3><span class="section-number">8.2.2. </span>Representation of the Magnetic Field and Current<a class="headerlink" href="#representation-of-the-magnetic-field-and-current" title="Permalink to this headline">¶</a></h3>
 <p>Generally, the magnetic field is described in terms of two scalar fields as
 it is divergence free. If the field is also axisymmetric then MHD
 equilibrium demands these are functions of each other. In the EU-IM-TF the
@@ -279,7 +282,7 @@ of <span class="math notranslate nohighlight">\(J_{\phi} / R\)</span> over the p
 not always, over the closed flux surface region only).</p>
 </div>
 <div class="section" id="poloidal-and-toroidal-fluxes">
-<span id="itm-conventions-poloidal-and-toroidal-fluxes"></span><h3><span class="section-number">7.2.3. </span>Poloidal and Toroidal Fluxes<a class="headerlink" href="#poloidal-and-toroidal-fluxes" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-poloidal-and-toroidal-fluxes"></span><h3><span class="section-number">8.2.3. </span>Poloidal and Toroidal Fluxes<a class="headerlink" href="#poloidal-and-toroidal-fluxes" title="Permalink to this headline">¶</a></h3>
 <p>The toroidal flux <span class="math notranslate nohighlight">\(\Phi\)</span> is the integral of <span class="math notranslate nohighlight">\(B_{\phi} / R\)</span> over
 the region enclosed by the flux surface. Due to axisymmetry it is also a
 volume integral</p>
@@ -297,7 +300,7 @@ poloidal flux <span class="math notranslate nohighlight">\(\Psi\)</span> and its
 are often used equivalently in the literature.</p>
 </div>
 <div class="section" id="safety-factor">
-<span id="itm-conventions-safety-factor"></span><h3><span class="section-number">7.2.4. </span>Safety Factor<a class="headerlink" href="#safety-factor" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-safety-factor"></span><h3><span class="section-number">8.2.4. </span>Safety Factor<a class="headerlink" href="#safety-factor" title="Permalink to this headline">¶</a></h3>
 <p>The magnetic pitch parameter is defined in terms of the flux components:</p>
 <div class="math notranslate nohighlight">
 \[q\equiv d \Phi d \Psi\]</div>
@@ -309,13 +312,13 @@ surface). Equivalent relations often seen depend on the definition of
 coordinates. These are given for straight field line coordinates, below.</p>
 </div>
 <div class="section" id="signs">
-<span id="itm-conventions-signs"></span><h3><span class="section-number">7.2.5. </span>Signs<a class="headerlink" href="#signs" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-signs"></span><h3><span class="section-number">8.2.5. </span>Signs<a class="headerlink" href="#signs" title="Permalink to this headline">¶</a></h3>
 <p>With the above definition of the toroidal coordinate system and the
 magnetic field, the following sign relationships ensue (where increasing
 and decreasing refer to going from the magnetic axis to the separatrix
 on the outboard midplane):</p>
 <table class="docutils align-default" id="id3">
-<caption><span class="caption-number">Table 7.1 </span><span class="caption-text">Sign Relations</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 8.1 </span><span class="caption-text">Sign Relations</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 23%" />
 <col style="width: 19%" />
@@ -362,13 +365,13 @@ factor
 </table>
 </div>
 <div class="section" id="cocos-toroidal-coordinate-conventions">
-<span id="itm-conventions-cocos"></span><h3><span class="section-number">7.2.6. </span>COCOS - toroidal coordinate conventions<a class="headerlink" href="#cocos-toroidal-coordinate-conventions" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-cocos"></span><h3><span class="section-number">8.2.6. </span>COCOS - toroidal coordinate conventions<a class="headerlink" href="#cocos-toroidal-coordinate-conventions" title="Permalink to this headline">¶</a></h3>
 <p>16 different fundamental coordinate conventions (COCOS) has been identified
 for toroidal systems. These are described by <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S0010465512002962">O. Sauter and S. Yu. Medvedev, Computer Phys. Commun. 184 (2013) 293</a>.</p>
 <p>The current EU-IM convention (described
 above) is number 13, while the ITER convention is 11.</p>
 <div class="section" id="equilibrium-cocos-transformation-library-and-actor">
-<span id="itm-conventions-cocos-conversions"></span><span id="itm-conventions-cocos-determine"></span><h4><span class="section-number">7.2.6.1. </span>Equilibrium COCOS transformation library and actor<a class="headerlink" href="#equilibrium-cocos-transformation-library-and-actor" title="Permalink to this headline">¶</a></h4>
+<span id="itm-conventions-cocos-conversions"></span><span id="itm-conventions-cocos-determine"></span><h4><span class="section-number">8.2.6.1. </span>Equilibrium COCOS transformation library and actor<a class="headerlink" href="#equilibrium-cocos-transformation-library-and-actor" title="Permalink to this headline">¶</a></h4>
 <p>A Fortran library has been developed for transforming the equilibrium
 cpo between different COCOS. The source is found in</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">https://gforge6.eufus.eu/svn/numerical_tools/tags/COCOStransform_v1_1</span>
@@ -397,7 +400,7 @@ desired</p></li>
 </div>
 </div>
 <div class="section" id="the-flux-surface-average">
-<span id="itm-conventions-flux-surface-average"></span><h3><span class="section-number">7.2.7. </span>The Flux Surface Average<a class="headerlink" href="#the-flux-surface-average" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-flux-surface-average"></span><h3><span class="section-number">8.2.7. </span>The Flux Surface Average<a class="headerlink" href="#the-flux-surface-average" title="Permalink to this headline">¶</a></h3>
 <p>In general, the flux surface average is the operation which annihilates the
 magnetic derivative <span class="math notranslate nohighlight">\({\bf B} \cdot \nabla\)</span> and acts as an identity
 operator on any flux quantity. It can be proved that this results in a
@@ -419,7 +422,7 @@ axisymmetric quantity so the integration is actually over both angles.</p>
 <p>For more detail see the above references.</p>
 </div>
 <div class="section" id="the-toroidal-flux-radius-as-the-radial-coordinate">
-<span id="itm-conventions-toroidal-flux-radius-as-the-radial-coordinate"></span><h3><span class="section-number">7.2.8. </span>The Toroidal Flux Radius as the Radial Coordinate<a class="headerlink" href="#the-toroidal-flux-radius-as-the-radial-coordinate" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-toroidal-flux-radius-as-the-radial-coordinate"></span><h3><span class="section-number">8.2.8. </span>The Toroidal Flux Radius as the Radial Coordinate<a class="headerlink" href="#the-toroidal-flux-radius-as-the-radial-coordinate" title="Permalink to this headline">¶</a></h3>
 <p>The EU-IM-TF has decided to use the toroidal flux radius <span class="math notranslate nohighlight">\(\rho_{{ \rm tor}}\)</span> defined by</p>
 <div class="math notranslate nohighlight">
 \[\Phi = \pi B_0 \rho_{{ \rm tor}}^2\]</div>
@@ -433,7 +436,7 @@ defined as</p>
 in the equilibrium CPO (as well as <span class="math notranslate nohighlight">\({ \tt volume} \equiv V\)</span> itself).</p>
 </div>
 <div class="section" id="toroidal-and-parallel-current">
-<span id="itm-conventions-toroidal-and-parallel-current"></span><h3><span class="section-number">7.2.9. </span>Toroidal and Parallel Current<a class="headerlink" href="#toroidal-and-parallel-current" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-toroidal-and-parallel-current"></span><h3><span class="section-number">8.2.9. </span>Toroidal and Parallel Current<a class="headerlink" href="#toroidal-and-parallel-current" title="Permalink to this headline">¶</a></h3>
 <p>These are not equivalent, despite the often-seen experimental practice of
 considering them so. The toroidal current given in Amperes depends on some
 convention applied to <span class="math notranslate nohighlight">\(J_{\phi}\)</span> given above, which is not a flux
@@ -467,7 +470,7 @@ and the magnetic flux diffusion equation (see the Hinton and Hazeltine
 reference above).</p>
 </div>
 <div class="section" id="straight-field-line-coordinates">
-<span id="itm-conventions-straight-field-line"></span><h3><span class="section-number">7.2.10. </span>Straight Field Line Coordinates<a class="headerlink" href="#straight-field-line-coordinates" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-straight-field-line"></span><h3><span class="section-number">8.2.10. </span>Straight Field Line Coordinates<a class="headerlink" href="#straight-field-line-coordinates" title="Permalink to this headline">¶</a></h3>
 <p>A variety of modules in the EU-IM-TF use straight field line coordinate
 systems to represent the closed flux surface region. To guarantee
 consistency with the definition of the poloidal flux and the magnetic field
@@ -512,7 +515,7 @@ B^{\Psi} &amp;= {\bf B} \cdot {\bf \nabla} \Psi = 0\end{split}\]</div>
 CPO.</p>
 </div>
 <div class="section" id="plasma-betas">
-<span id="itm-conventions-plasma-betas"></span><h3><span class="section-number">7.2.11. </span>Plasma Betas<a class="headerlink" href="#plasma-betas" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-plasma-betas"></span><h3><span class="section-number">8.2.11. </span>Plasma Betas<a class="headerlink" href="#plasma-betas" title="Permalink to this headline">¶</a></h3>
 <p>Out of the many definitions of plasma betas, the EU-IM has agreed to
 adhere to the following definitions: Following Wesson (p. 116), the
 poloidal beta is defined as an integral over the poloidal cross section</p>
@@ -533,7 +536,7 @@ PPCF 44 (2002), 1285) and a is the minor radius. It is stored in
 global_param%beta_normal.</p>
 </div>
 <div class="section" id="internal-inductance">
-<span id="itm-conventions-internal-inductance"></span><h3><span class="section-number">7.2.12. </span>Internal Inductance<a class="headerlink" href="#internal-inductance" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-internal-inductance"></span><h3><span class="section-number">8.2.12. </span>Internal Inductance<a class="headerlink" href="#internal-inductance" title="Permalink to this headline">¶</a></h3>
 <p>The definition of the internal inductance follows J.A. Romero et al., NF 50
 (2010), 115002. The magnetic energy contained inside the flux surface
 <span class="math notranslate nohighlight">\(\Psi\)</span> is</p>
@@ -553,7 +556,7 @@ stored in profiles_1d%li is defined as</p>
 <p>The overall internal inductance <span class="math notranslate nohighlight">\(l_{\rm i} (\Psi = \Psi_{\rm bd})\)</span> is stored in global_param%li.</p>
 </div>
 <div class="section" id="poloidal-angle-dimension-in-equilibrium-cpo">
-<span id="itm-conventions-poloidal-angle-dimension-in-equilibrium-cpo"></span><h3><span class="section-number">7.2.13. </span>Poloidal Angle Dimension in Equilibrium CPO<a class="headerlink" href="#poloidal-angle-dimension-in-equilibrium-cpo" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-poloidal-angle-dimension-in-equilibrium-cpo"></span><h3><span class="section-number">8.2.13. </span>Poloidal Angle Dimension in Equilibrium CPO<a class="headerlink" href="#poloidal-angle-dimension-in-equilibrium-cpo" title="Permalink to this headline">¶</a></h3>
 <p>The following entries in the equilibrium CPO are defined along the
 poloidal dimension (as dim2 in the case of a flux surface equilibrium,
 i.e. radial coordinate psi in dim1 and poloidal angle in dim2):</p>
@@ -584,9 +587,9 @@ poloidal grid points), whatever the choice of this angle is.</p>
 </div>
 </div>
 <div class="section" id="numerical-and-computational-conventions">
-<span id="id2"></span><h2><span class="section-number">7.3. </span>Numerical and computational conventions<a class="headerlink" href="#numerical-and-computational-conventions" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><span class="section-number">8.3. </span>Numerical and computational conventions<a class="headerlink" href="#numerical-and-computational-conventions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="standardized-variable-types">
-<span id="itm-conventions-standardized-variable-types"></span><h3><span class="section-number">7.3.1. </span>Standardized Variable Types<a class="headerlink" href="#standardized-variable-types" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-standardized-variable-types"></span><h3><span class="section-number">8.3.1. </span>Standardized Variable Types<a class="headerlink" href="#standardized-variable-types" title="Permalink to this headline">¶</a></h3>
 <p>To ensure that physics modules produce identical results on various
 computer architectures and to avoid issues with double precision versus
 single precision interfaces, the EU-IM-TF has agreed on a set of
@@ -619,7 +622,7 @@ your modules</p>
 <p>(More information about the EU-IM libraries.)</p>
 </div>
 <div class="section" id="standardized-physical-constants">
-<span id="itm-conventions-standardized-physical-constants"></span><h3><span class="section-number">7.3.2. </span>Standardized Physical Constants<a class="headerlink" href="#standardized-physical-constants" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-standardized-physical-constants"></span><h3><span class="section-number">8.3.2. </span>Standardized Physical Constants<a class="headerlink" href="#standardized-physical-constants" title="Permalink to this headline">¶</a></h3>
 <p>To avoid discrepancies in simulations from using different definitions of
 the physical constants, the EU-IM-TF has agreed upon a set of standardized
 physical constants (all in SI units except for temperatures) based on the
@@ -632,7 +635,7 @@ itmshared . To check out the relevant files please do</p>
 </div>
 </div>
 <div class="section" id="invalid-data-base-entries">
-<span id="itm-conventions-invalid-data-base-entries"></span><h3><span class="section-number">7.3.3. </span>Invalid Data Base Entries<a class="headerlink" href="#invalid-data-base-entries" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-invalid-data-base-entries"></span><h3><span class="section-number">8.3.3. </span>Invalid Data Base Entries<a class="headerlink" href="#invalid-data-base-entries" title="Permalink to this headline">¶</a></h3>
 <p>The EU-IM data base does not allow for setting data base entries directly
 to invalid in case they should not be set. Since the Universal Access Layer
 (UAL) always pulls out complete CPOs, i.e. complete data structures, of
@@ -665,7 +668,7 @@ Example:</p>
 </div>
 </div>
 <div class="section" id="enumerated-datatypes-identifiers">
-<span id="itm-conventions-enumerated-datatypes"></span><h3><span class="section-number">7.3.4. </span>Enumerated datatypes/Identifiers<a class="headerlink" href="#enumerated-datatypes-identifiers" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-enumerated-datatypes"></span><h3><span class="section-number">8.3.4. </span>Enumerated datatypes/Identifiers<a class="headerlink" href="#enumerated-datatypes-identifiers" title="Permalink to this headline">¶</a></h3>
 <p>This section concerns how to specify the origin of data in certain types of
 CPOs. The specification is performed using the datatype identifier. The
 following specifies the conventions of the allowed enumerated datatypes.</p>
@@ -686,7 +689,7 @@ following specifies the conventions of the allowed enumerated datatypes.</p>
 <li><p>wave_identifier.xml</p></li>
 </ul>
 <div class="section" id="example-how-to-fill-coresource-values-sourceid">
-<h4><span class="section-number">7.3.4.1. </span>Example: How to fill coresource/values/sourceid<a class="headerlink" href="#example-how-to-fill-coresource-values-sourceid" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">8.3.4.1. </span>Example: How to fill coresource/values/sourceid<a class="headerlink" href="#example-how-to-fill-coresource-values-sourceid" title="Permalink to this headline">¶</a></h4>
 <p>When filling in an enumerated datatype, like coresource/values/sourceid, it
 is recomended to use the parameters and functions built into the fortran
 modules associated with each such datatype. These modules are available as
@@ -743,7 +746,7 @@ datatypes, are available in:</p>
 </div>
 </div>
 <div class="section" id="grid-types-in-equilibrium-cpo">
-<span id="itm-conventions-grid-types-in-equilibrium-cpo"></span><h3><span class="section-number">7.3.5. </span>Grid Types in Equilibrium CPO<a class="headerlink" href="#grid-types-in-equilibrium-cpo" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-grid-types-in-equilibrium-cpo"></span><h3><span class="section-number">8.3.5. </span>Grid Types in Equilibrium CPO<a class="headerlink" href="#grid-types-in-equilibrium-cpo" title="Permalink to this headline">¶</a></h3>
 <p>Equilibria may be represented in a variety of different ways depending on
 which EU-IM module has calculated them and which module shall use them. To
 avoid ambiguity and to allow modules to check which type of equilibrium is
@@ -777,7 +780,7 @@ notation):</p>
 </tbody>
 </table>
 <div class="section" id="grid-type-identifier">
-<span id="itm-conventions-grid-type-identifier"></span><h4><span class="section-number">7.3.5.1. </span>Grid Type Identifier<a class="headerlink" href="#grid-type-identifier" title="Permalink to this headline">¶</a></h4>
+<span id="itm-conventions-grid-type-identifier"></span><h4><span class="section-number">8.3.5.1. </span>Grid Type Identifier<a class="headerlink" href="#grid-type-identifier" title="Permalink to this headline">¶</a></h4>
 <p>The currently allowed values (integer and string) for the identifier of
 the grid type are listed below:</p>
 <table class="docutils align-default">
@@ -819,7 +822,7 @@ as lists of vertices (for</div>
 </tbody>
 </table>
 <div class="section" id="poloidal-angle-identifier">
-<span id="itm-conventions-poloidal-angle-identifier"></span><h5><span class="section-number">7.3.5.1.1. </span>Poloidal Angle Identifier<a class="headerlink" href="#poloidal-angle-identifier" title="Permalink to this headline">¶</a></h5>
+<span id="itm-conventions-poloidal-angle-identifier"></span><h5><span class="section-number">8.3.5.1.1. </span>Poloidal Angle Identifier<a class="headerlink" href="#poloidal-angle-identifier" title="Permalink to this headline">¶</a></h5>
 <p>The currently allowed values (integer and string) for the identifier of
 the poloidal angle are listed below:</p>
 <table class="docutils align-default">
@@ -862,7 +865,7 @@ System</p></td>
 </div>
 </div>
 <div class="section" id="standardized-eu-eu-im-plasma-bundle">
-<span id="itm-conventions-plasma-bundle"></span><h3><span class="section-number">7.3.6. </span>Standardized EU-EU-IM Plasma Bundle<a class="headerlink" href="#standardized-eu-eu-im-plasma-bundle" title="Permalink to this headline">¶</a></h3>
+<span id="itm-conventions-plasma-bundle"></span><h3><span class="section-number">8.3.6. </span>Standardized EU-EU-IM Plasma Bundle<a class="headerlink" href="#standardized-eu-eu-im-plasma-bundle" title="Permalink to this headline">¶</a></h3>
 <p>The EU-IM has agreed on a standardized way to bundle CPOs and control
 parameters inside KEPLER.</p>
 <table class="docutils align-default">
@@ -1060,10 +1063,10 @@ parameters inside KEPLER.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="amns.html" class="btn btn-neutral float-right" title="8. AMNS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="amns.html" class="btn btn-neutral float-right" title="9. AMNS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="codes.html" class="btn btn-neutral float-left" title="6. Codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="codes.html" class="btn btn-neutral float-left" title="7. Codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1072,11 +1075,19 @@ parameters inside KEPLER.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, WPCD
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1087,7 +1098,6 @@ parameters inside KEPLER.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
