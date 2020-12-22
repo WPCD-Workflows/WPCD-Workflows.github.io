@@ -3,125 +3,38 @@ if test -f /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1; \
 then touch -r /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 -d "-1 minute" source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf.md5-stamp; \
      touch -r source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf.md5-stamp -d "-1 minute"  source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf.md5; \
 else make /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1; fi
-make[1]: Entering directory '/home/circleci/project'
-if ! test -d /home/circleci/assets/MD5; \
-   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
-   if test "x" != "x"; \
-        then chgrp  /home/circleci/assets/MD5; \
-   fi; \
-fi
-curl --location --fail --insecure \
-	--output /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 https://github.com/WPCD-Workflows/assets/raw/master/9f4d5de1a44cd655436ec4fd01f5ecf1
-if test $(md5sum /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1|cut -c 1-32) = 9f4d5de1a44cd655436ec4fd01f5ecf1 ; then \
-  chmod g+rw /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1;\
-else\
-  rm -f /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1; \
-  echo "Error: Checksum of /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 incorrect! Removing it.";\
-  exit 1;\
-fi
-make[1]: Leaving directory '/home/circleci/project'
 ln -sf /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf
 cat source/static/wpcd_banner.png.md5 > source/static/wpcd_banner.png.md5-stamp
 if test -f /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630; \
 then touch -r /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630 -d "-1 minute" source/static/wpcd_banner.png.md5-stamp; \
      touch -r source/static/wpcd_banner.png.md5-stamp -d "-1 minute"  source/static/wpcd_banner.png.md5; \
 else make /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630; fi
-make[1]: Entering directory '/home/circleci/project'
-if ! test -d /home/circleci/assets/MD5; \
-   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
-   if test "x" != "x"; \
-        then chgrp  /home/circleci/assets/MD5; \
-   fi; \
-fi
-curl --location --fail --insecure \
-	--output /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630 https://github.com/WPCD-Workflows/assets/raw/master/f9abb57ea05b10c36a566da44be17630
-if test $(md5sum /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630|cut -c 1-32) = f9abb57ea05b10c36a566da44be17630 ; then \
-  chmod g+rw /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630;\
-else\
-  rm -f /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630; \
-  echo "Error: Checksum of /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630 incorrect! Removing it.";\
-  exit 1;\
-fi
-make[1]: Leaving directory '/home/circleci/project'
 ln -sf /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630 source/static/wpcd_banner.png
 cat source/static/Phase4.10b.10_HTML.zip.md5 > source/static/Phase4.10b.10_HTML.zip.md5-stamp
 if test -f /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe; \
 then touch -r /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe -d "-1 minute" source/static/Phase4.10b.10_HTML.zip.md5-stamp; \
      touch -r source/static/Phase4.10b.10_HTML.zip.md5-stamp -d "-1 minute"  source/static/Phase4.10b.10_HTML.zip.md5; \
 else make /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe; fi
-make[1]: Entering directory '/home/circleci/project'
-if ! test -d /home/circleci/assets/MD5; \
-   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
-   if test "x" != "x"; \
-        then chgrp  /home/circleci/assets/MD5; \
-   fi; \
-fi
-curl --location --fail --insecure \
-	--output /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe https://github.com/WPCD-Workflows/assets/raw/master/0349e745a49f99b628d9dcf6e7255efe
-if test $(md5sum /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe|cut -c 1-32) = 0349e745a49f99b628d9dcf6e7255efe ; then \
-  chmod g+rw /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe;\
-else\
-  rm -f /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe; \
-  echo "Error: Checksum of /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe incorrect! Removing it.";\
-  exit 1;\
-fi
-make[1]: Leaving directory '/home/circleci/project'
 ln -sf /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe source/static/Phase4.10b.10_HTML.zip
 cat source/static/EQSTABIL_tutorial_20151214.pdf.md5 > source/static/EQSTABIL_tutorial_20151214.pdf.md5-stamp
 if test -f /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9; \
 then touch -r /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 -d "-1 minute" source/static/EQSTABIL_tutorial_20151214.pdf.md5-stamp; \
      touch -r source/static/EQSTABIL_tutorial_20151214.pdf.md5-stamp -d "-1 minute"  source/static/EQSTABIL_tutorial_20151214.pdf.md5; \
 else make /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9; fi
-make[1]: Entering directory '/home/circleci/project'
-if ! test -d /home/circleci/assets/MD5; \
-   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
-   if test "x" != "x"; \
-        then chgrp  /home/circleci/assets/MD5; \
-   fi; \
-fi
-curl --location --fail --insecure \
-	--output /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 https://github.com/WPCD-Workflows/assets/raw/master/c250e80eb66cc61c46fb013e9e0daaf9
-if test $(md5sum /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9|cut -c 1-32) = c250e80eb66cc61c46fb013e9e0daaf9 ; then \
-  chmod g+rw /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9;\
-else\
-  rm -f /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9; \
-  echo "Error: Checksum of /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 incorrect! Removing it.";\
-  exit 1;\
-fi
-make[1]: Leaving directory '/home/circleci/project'
 ln -sf /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 source/static/EQSTABIL_tutorial_20151214.pdf
 cat source/static/EUROfusionIntegratedModellingworkflows.pdf.md5 > source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp
 if test -f /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e; \
 then touch -r /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e -d "-1 minute" source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp; \
      touch -r source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp -d "-1 minute"  source/static/EUROfusionIntegratedModellingworkflows.pdf.md5; \
 else make /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e; fi
-make[1]: Entering directory '/home/circleci/project'
-if ! test -d /home/circleci/assets/MD5; \
-   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
-   if test "x" != "x"; \
-        then chgrp  /home/circleci/assets/MD5; \
-   fi; \
-fi
-curl --location --fail --insecure \
-	--output /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e https://github.com/WPCD-Workflows/assets/raw/master/fd9c34bf76ca67859940386abb3aa61e
-if test $(md5sum /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e|cut -c 1-32) = fd9c34bf76ca67859940386abb3aa61e ; then \
-  chmod g+rw /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e;\
-else\
-  rm -f /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e; \
-  echo "Error: Checksum of /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e incorrect! Removing it.";\
-  exit 1;\
-fi
-make[1]: Leaving directory '/home/circleci/project'
 ln -sf /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e source/static/EUROfusionIntegratedModellingworkflows.pdf
 unzip -q -d source/static/Phase4.10b.10_HTML source/static/Phase4.10b.10_HTML.zip
 sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Workflows.github.io
 Running Sphinx v3.4.0
-loading intersphinx inventory from https://wpcd-workflows.github.io/IMASviz/objects.inv...
-loading intersphinx inventory from http://docs.scipy.org/doc/numpy/objects.inv...
-intersphinx inventory has moved: http://docs.scipy.org/doc/numpy/objects.inv -> https://numpy.org/doc/stable/objects.inv
+loading pickled environment... done
 building [mo]: targets for 0 po files that are out of date
 building [html]: targets for 11 source files that are out of date
-updating environment: [new config] 11 added, 0 changed, 0 removed
+updating environment: 0 added, 11 changed, 0 removed
 reading sources... [  9%] amns
 reading sources... [ 18%] codes
 reading sources... [ 27%] conventions
