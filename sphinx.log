@@ -3,38 +3,125 @@ if test -f /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1; \
 then touch -r /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 -d "-1 minute" source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf.md5-stamp; \
      touch -r source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf.md5-stamp -d "-1 minute"  source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf.md5; \
 else make /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1; fi
+make[1]: Entering directory '/home/circleci/project'
+if ! test -d /home/circleci/assets/MD5; \
+   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
+   if test "x" != "x"; \
+        then chgrp  /home/circleci/assets/MD5; \
+   fi; \
+fi
+curl --location --fail --insecure \
+	--output /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 https://github.com/WPCD-Workflows/assets/raw/master/9f4d5de1a44cd655436ec4fd01f5ecf1
+if test $(md5sum /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1|cut -c 1-32) = 9f4d5de1a44cd655436ec4fd01f5ecf1 ; then \
+  chmod g+rw /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1;\
+else\
+  rm -f /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1; \
+  echo "Error: Checksum of /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 incorrect! Removing it.";\
+  exit 1;\
+fi
+make[1]: Leaving directory '/home/circleci/project'
 ln -sf /home/circleci/assets/MD5/9f4d5de1a44cd655436ec4fd01f5ecf1 source/static/ETS_TRANSPORT_EQUATIONS_V1.0.pdf
 cat source/static/wpcd_banner.png.md5 > source/static/wpcd_banner.png.md5-stamp
 if test -f /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630; \
 then touch -r /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630 -d "-1 minute" source/static/wpcd_banner.png.md5-stamp; \
      touch -r source/static/wpcd_banner.png.md5-stamp -d "-1 minute"  source/static/wpcd_banner.png.md5; \
 else make /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630; fi
+make[1]: Entering directory '/home/circleci/project'
+if ! test -d /home/circleci/assets/MD5; \
+   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
+   if test "x" != "x"; \
+        then chgrp  /home/circleci/assets/MD5; \
+   fi; \
+fi
+curl --location --fail --insecure \
+	--output /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630 https://github.com/WPCD-Workflows/assets/raw/master/f9abb57ea05b10c36a566da44be17630
+if test $(md5sum /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630|cut -c 1-32) = f9abb57ea05b10c36a566da44be17630 ; then \
+  chmod g+rw /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630;\
+else\
+  rm -f /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630; \
+  echo "Error: Checksum of /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630 incorrect! Removing it.";\
+  exit 1;\
+fi
+make[1]: Leaving directory '/home/circleci/project'
 ln -sf /home/circleci/assets/MD5/f9abb57ea05b10c36a566da44be17630 source/static/wpcd_banner.png
 cat source/static/Phase4.10b.10_HTML.zip.md5 > source/static/Phase4.10b.10_HTML.zip.md5-stamp
 if test -f /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe; \
 then touch -r /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe -d "-1 minute" source/static/Phase4.10b.10_HTML.zip.md5-stamp; \
      touch -r source/static/Phase4.10b.10_HTML.zip.md5-stamp -d "-1 minute"  source/static/Phase4.10b.10_HTML.zip.md5; \
 else make /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe; fi
+make[1]: Entering directory '/home/circleci/project'
+if ! test -d /home/circleci/assets/MD5; \
+   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
+   if test "x" != "x"; \
+        then chgrp  /home/circleci/assets/MD5; \
+   fi; \
+fi
+curl --location --fail --insecure \
+	--output /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe https://github.com/WPCD-Workflows/assets/raw/master/0349e745a49f99b628d9dcf6e7255efe
+if test $(md5sum /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe|cut -c 1-32) = 0349e745a49f99b628d9dcf6e7255efe ; then \
+  chmod g+rw /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe;\
+else\
+  rm -f /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe; \
+  echo "Error: Checksum of /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe incorrect! Removing it.";\
+  exit 1;\
+fi
+make[1]: Leaving directory '/home/circleci/project'
 ln -sf /home/circleci/assets/MD5/0349e745a49f99b628d9dcf6e7255efe source/static/Phase4.10b.10_HTML.zip
 cat source/static/EQSTABIL_tutorial_20151214.pdf.md5 > source/static/EQSTABIL_tutorial_20151214.pdf.md5-stamp
 if test -f /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9; \
 then touch -r /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 -d "-1 minute" source/static/EQSTABIL_tutorial_20151214.pdf.md5-stamp; \
      touch -r source/static/EQSTABIL_tutorial_20151214.pdf.md5-stamp -d "-1 minute"  source/static/EQSTABIL_tutorial_20151214.pdf.md5; \
 else make /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9; fi
+make[1]: Entering directory '/home/circleci/project'
+if ! test -d /home/circleci/assets/MD5; \
+   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
+   if test "x" != "x"; \
+        then chgrp  /home/circleci/assets/MD5; \
+   fi; \
+fi
+curl --location --fail --insecure \
+	--output /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 https://github.com/WPCD-Workflows/assets/raw/master/c250e80eb66cc61c46fb013e9e0daaf9
+if test $(md5sum /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9|cut -c 1-32) = c250e80eb66cc61c46fb013e9e0daaf9 ; then \
+  chmod g+rw /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9;\
+else\
+  rm -f /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9; \
+  echo "Error: Checksum of /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 incorrect! Removing it.";\
+  exit 1;\
+fi
+make[1]: Leaving directory '/home/circleci/project'
 ln -sf /home/circleci/assets/MD5/c250e80eb66cc61c46fb013e9e0daaf9 source/static/EQSTABIL_tutorial_20151214.pdf
 cat source/static/EUROfusionIntegratedModellingworkflows.pdf.md5 > source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp
-if test -f /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e; \
-then touch -r /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e -d "-1 minute" source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp; \
+if test -f /home/circleci/assets/MD5/e37499f4e4dda8325f096d20d8475376; \
+then touch -r /home/circleci/assets/MD5/e37499f4e4dda8325f096d20d8475376 -d "-1 minute" source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp; \
      touch -r source/static/EUROfusionIntegratedModellingworkflows.pdf.md5-stamp -d "-1 minute"  source/static/EUROfusionIntegratedModellingworkflows.pdf.md5; \
-else make /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e; fi
-ln -sf /home/circleci/assets/MD5/fd9c34bf76ca67859940386abb3aa61e source/static/EUROfusionIntegratedModellingworkflows.pdf
+else make /home/circleci/assets/MD5/e37499f4e4dda8325f096d20d8475376; fi
+make[1]: Entering directory '/home/circleci/project'
+if ! test -d /home/circleci/assets/MD5; \
+   then mkdir -m 3775 -p /home/circleci/assets/MD5; \
+   if test "x" != "x"; \
+        then chgrp  /home/circleci/assets/MD5; \
+   fi; \
+fi
+curl --location --fail --insecure \
+	--output /home/circleci/assets/MD5/e37499f4e4dda8325f096d20d8475376 https://github.com/WPCD-Workflows/assets/raw/master/e37499f4e4dda8325f096d20d8475376
+if test $(md5sum /home/circleci/assets/MD5/e37499f4e4dda8325f096d20d8475376|cut -c 1-32) = e37499f4e4dda8325f096d20d8475376 ; then \
+  chmod g+rw /home/circleci/assets/MD5/e37499f4e4dda8325f096d20d8475376;\
+else\
+  rm -f /home/circleci/assets/MD5/e37499f4e4dda8325f096d20d8475376; \
+  echo "Error: Checksum of /home/circleci/assets/MD5/e37499f4e4dda8325f096d20d8475376 incorrect! Removing it.";\
+  exit 1;\
+fi
+make[1]: Leaving directory '/home/circleci/project'
+ln -sf /home/circleci/assets/MD5/e37499f4e4dda8325f096d20d8475376 source/static/EUROfusionIntegratedModellingworkflows.pdf
 unzip -q -d source/static/Phase4.10b.10_HTML source/static/Phase4.10b.10_HTML.zip
 sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Workflows.github.io
-Running Sphinx v3.4.0
-loading pickled environment... done
+Running Sphinx v4.0.2
+loading intersphinx inventory from https://wpcd-workflows.github.io/IMASviz/objects.inv...
+loading intersphinx inventory from http://docs.scipy.org/doc/numpy/objects.inv...
+intersphinx inventory has moved: http://docs.scipy.org/doc/numpy/objects.inv -> https://numpy.org/doc/stable/objects.inv
 building [mo]: targets for 0 po files that are out of date
 building [html]: targets for 11 source files that are out of date
-updating environment: 0 added, 11 changed, 0 removed
+updating environment: [new config] 11 added, 0 changed, 0 removed
 reading sources... [  9%] amns
 reading sources... [ 18%] codes
 reading sources... [ 27%] conventions
@@ -77,95 +164,103 @@ copying images... [  8%] images/eqreconstruct_CHECK_DATA.png
 copying images... [  9%] images/eqreconstruct_RECONSTRUCT_settings.png
 copying images... [ 10%] images/eqreconstruct_SAVE_settings.png
 copying images... [ 11%] images/equstabil_1.png
-copying images... [ 12%] images/equstabil_2.png
-copying images... [ 13%] images/equstabil_3.png
-copying images... [ 14%] images/autoGui.png
-copying images... [ 15%] images/ETS_Main_Param.png
-copying images... [ 16%] images/ets_settings1.png
-copying images... [ 17%] images/ets_plasma_composition.png
-copying images... [ 18%] images/ets_run_settings3.png
-copying images... [ 19%] images/ets_run_settings4.png
-copying images... [ 20%] images/ets_run_settings5.png
-copying images... [ 21%] images/ets_run_settings6.png
-copying images... [ 22%] images/Convergence_Loop.png
-copying images... [ 23%] images/ets_before_time.png
-copying images... [ 24%] images/ets_run_settings7.png
-copying images... [ 25%] images/ets_convergence_loop_config.png
-copying images... [ 26%] images/ets_equilibrium1.png
-copying images... [ 27%] images/ets_transport1.png
-copying images... [ 28%] images/ets_transport2.png
-copying images... [ 29%] images/ets_transport3.png
-copying images... [ 30%] images/ets_transport4.png
-copying images... [ 31%] images/ets_transport_combiner.png
-copying images... [ 32%] images/ets_mhd.png
-copying images... [ 33%] images/ets_mhd2.png
-copying images... [ 34%] images/ets_source1.png
-copying images... [ 35%] images/ets_sources2.png
-copying images... [ 36%] images/ets_sources3.png
-copying images... [ 37%] images/ets_sources4.png
-copying images... [ 38%] images/ets_sources5.png
-copying images... [ 39%] images/ets_sources6.png
-copying images... [ 40%] images/ets_sources7.png
-copying images... [ 41%] images/ets_sources8.png
-copying images... [ 42%] images/ets_sources9.png
-copying images... [ 43%] images/ets_instantaneous_events1.png
-copying images... [ 44%] images/ets_instantaneous_events2.png
-copying images... [ 45%] images/ets_instantaneous_events3.png
-copying images... [ 46%] images/ets_scenario.png
-copying images... [ 47%] images/ets_visual1_a.png
-copying images... [ 48%] images/ETSviz.png
-copying images... [ 49%] images/kepler_1.png
-copying images... [ 50%] images/kepler_2.png
-copying images... [ 51%] images/kepler_3.png
-copying images... [ 52%] images/kepler_4.png
-copying images... [ 53%] images/kepler_5.png
-copying images... [ 54%] images/kepler_6.png
-copying images... [ 55%] images/kepler_7.png
-copying images... [ 56%] images/kepler_8.png
-copying images... [ 57%] images/kepler_9.png
-copying images... [ 58%] images/kepler_10.png
-copying images... [ 59%] images/kepler_11.png
-copying images... [ 60%] images/kepler_12.png
-copying images... [ 61%] images/kepler_13.png
-copying images... [ 62%] images/kepler_14.png
-copying images... [ 63%] images/kepler_15.png
-copying images... [ 64%] images/kepler_16.png
-copying images... [ 65%] images/kepler_17.png
-copying images... [ 66%] images/kepler_18.png
-copying images... [ 67%] images/kepler_19.png
-copying images... [ 68%] images/kepler_20.png
-copying images... [ 69%] images/kepler_21.png
-copying images... [ 70%] images/kepler_22.png
-copying images... [ 71%] images/kepler_23.png
-copying images... [ 72%] images/kepler_24.png
-copying images... [ 73%] images/kepler_25.png
-copying images... [ 74%] images/kepler_26.png
-copying images... [ 75%] images/kepler_27.png
-copying images... [ 76%] images/kepler_28.png
-copying images... [ 77%] images/kepler_29.png
-copying images... [ 78%] images/kepler_30.png
-copying images... [ 79%] images/kepler_31.png
-copying images... [ 80%] images/kepler_32.png
-copying images... [ 81%] images/kepler_33.png
-copying images... [ 82%] images/kepler_34.png
-copying images... [ 83%] images/kepler_35.png
-copying images... [ 84%] images/kepler_36.png
-copying images... [ 85%] images/kepler_37.png
-copying images... [ 86%] images/kepler_38.png
-copying images... [ 87%] images/kepler_39.png
-copying images... [ 88%] images/kepler_40.png
-copying images... [ 89%] images/kepler_41.png
-copying images... [ 90%] images/kepler_42.png
-copying images... [ 91%] images/edge_1.png
-copying images... [ 92%] images/edge_2.png
-copying images... [ 93%] images/edge_3.png
-copying images... [ 94%] images/edge_4.png
-copying images... [ 95%] images/edge_5.png
-copying images... [ 96%] images/edge_6.png
-copying images... [ 97%] images/hesel_location.png
-copying images... [ 98%] images/hesel_domain.png
-copying images... [ 99%] images/hesel_simulation.png
-copying images... [100%] images/hesel_esel_c_GRAPH.png
+copying images... [ 11%] images/equstabil_2.png
+copying images... [ 12%] images/equstabil_3.png
+copying images... [ 13%] images/autoGui.png
+copying images... [ 14%] images/ETS_Main_Param.png
+copying images... [ 15%] images/ets_settings1.png
+copying images... [ 16%] images/ets_plasma_composition.png
+copying images... [ 17%] images/ets_run_settings3.png
+copying images... [ 18%] images/ets_run_settings4.png
+copying images... [ 19%] images/ets_run_settings5.png
+copying images... [ 20%] images/ets_run_settings6.png
+copying images... [ 21%] images/Convergence_Loop.png
+copying images... [ 22%] images/ets_before_time.png
+copying images... [ 22%] images/ets_run_settings7.png
+copying images... [ 23%] images/ets_convergence_loop_config.png
+copying images... [ 24%] images/ets_equilibrium1.png
+copying images... [ 25%] images/ets_transport1.png
+copying images... [ 26%] images/ets_transport2.png
+copying images... [ 27%] images/ets_transport3.png
+copying images... [ 28%] images/ets_transport4.png
+copying images... [ 29%] images/ets_transport_combiner.png
+copying images... [ 30%] images/ets_mhd.png
+copying images... [ 31%] images/ets_mhd2.png
+copying images... [ 32%] images/ets_source1.png
+copying images... [ 33%] images/ets_sources2.png
+copying images... [ 33%] images/ets_sources3.png
+copying images... [ 34%] images/ets_sources4.png
+copying images... [ 35%] images/ets_sources5.png
+copying images... [ 36%] images/ets_sources6.png
+copying images... [ 37%] images/ets_sources7.png
+copying images... [ 38%] images/ets_sources8.png
+copying images... [ 39%] images/ets_sources9.png
+copying images... [ 40%] images/ets_instantaneous_events1.png
+copying images... [ 41%] images/ets_instantaneous_events2.png
+copying images... [ 42%] images/ets_instantaneous_events3.png
+copying images... [ 43%] images/ets_scenario.png
+copying images... [ 44%] images/ets_visual1_a.png
+copying images... [ 44%] images/ETSviz.png
+copying images... [ 45%] images/kepler_1.png
+copying images... [ 46%] images/kepler_2.png
+copying images... [ 47%] images/kepler_3.png
+copying images... [ 48%] images/kepler_4.png
+copying images... [ 49%] images/kepler_5.png
+copying images... [ 50%] images/kepler_6.png
+copying images... [ 51%] images/kepler_7.png
+copying images... [ 52%] images/kepler_8.png
+copying images... [ 53%] images/kepler_9.png
+copying images... [ 54%] images/kepler_10.png
+copying images... [ 55%] images/kepler_11.png
+copying images... [ 55%] images/kepler_12.png
+copying images... [ 56%] images/kepler_13.png
+copying images... [ 57%] images/kepler_14.png
+copying images... [ 58%] images/kepler_15.png
+copying images... [ 59%] images/kepler_16.png
+copying images... [ 60%] images/kepler_17.png
+copying images... [ 61%] images/kepler_18.png
+copying images... [ 62%] images/kepler_19.png
+copying images... [ 63%] images/kepler_20.png
+copying images... [ 64%] images/kepler_21.png
+copying images... [ 65%] images/kepler_22.png
+copying images... [ 66%] images/kepler_23.png
+copying images... [ 66%] images/kepler_24.png
+copying images... [ 67%] images/kepler_25.png
+copying images... [ 68%] images/kepler_26.png
+copying images... [ 69%] images/kepler_27.png
+copying images... [ 70%] images/kepler_28.png
+copying images... [ 71%] images/kepler_29.png
+copying images... [ 72%] images/kepler_30.png
+copying images... [ 73%] images/kepler_31.png
+copying images... [ 74%] images/kepler_32.png
+copying images... [ 75%] images/kepler_33.png
+copying images... [ 76%] images/kepler_34.png
+copying images... [ 77%] images/kepler_35.png
+copying images... [ 77%] images/kepler_36.png
+copying images... [ 78%] images/kepler_37.png
+copying images... [ 79%] images/kepler_38.png
+copying images... [ 80%] images/kepler_39.png
+copying images... [ 81%] images/kepler_40.png
+copying images... [ 82%] images/kepler_41.png
+copying images... [ 83%] images/kepler_42.png
+copying images... [ 84%] images/edge_1.png
+copying images... [ 85%] images/edge_2.png
+copying images... [ 86%] images/edge_3.png
+copying images... [ 87%] images/edge_4.png
+copying images... [ 88%] images/edge_5.png
+copying images... [ 88%] images/edge_6.png
+copying images... [ 89%] images/hesel_location.png
+copying images... [ 90%] images/hesel_domain.png
+copying images... [ 91%] images/hesel_simulation.png
+copying images... [ 92%] images/hesel_esel_c_GRAPH.png
+copying images... [ 93%] images/hesel_generate_actor.png
+copying images... [ 94%] images/hesel_kepler_workflow.png
+copying images... [ 95%] images/hesel_kepler_START.png
+copying images... [ 96%] images/hesel_kepler_MAP.png
+copying images... [ 97%] images/hesel_kepler_profiles.png
+copying images... [ 98%] images/hesel_kepler_HESEL.png
+copying images... [ 99%] images/hesel_kepler_HESEL__edit.png
+copying images... [100%] images/hesel_kepler_HESEL__para.png
 
 copying downloadable files... [ 20%] static/EQSTABIL_tutorial_20151214.pdf
 copying downloadable files... [ 40%] static/EUROfusionIntegratedModellingworkflows.pdf
@@ -177,7 +272,7 @@ copying static files... done
 copying extra files... done
 dumping search index in English (code: en)... done
 dumping object inventory... done
-build succeeded, 1 warning.
+build succeeded.
 
 The HTML pages are in ../WPCD-Workflows.github.io.
 

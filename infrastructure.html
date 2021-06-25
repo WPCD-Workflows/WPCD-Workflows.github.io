@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2. Infrastructure &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
   
@@ -13,10 +13,15 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -26,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -51,7 +56,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> EUROfusion Integrated Modelling workflows
+            <a href="index.html" class="icon icon-home"> EUROfusion Integrated Modelling workflows
           
 
           
@@ -235,6 +240,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -246,7 +253,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             
               <a href="https://github.com/WPCD-Workflows/documentation/blob/master/source/infrastructure.rst" class="fa fa-github"> Edit on GitHub</a>
             
@@ -527,7 +534,7 @@ for huge data sets)</div>
 <h5><span class="section-number">2.1.3.1.2. </span>Creating place to store your personal installations of Kepler<a class="headerlink" href="#creating-place-to-store-your-personal-installations-of-kepler" title="Permalink to this headline">¶</a></h5>
 <p>IMAS based installations are stored inside <strong>$HOME/kepler</strong> directory.</p>
 <p>Before proceeding further, make sure to create <strong>kepler</strong> directory</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> create directory inside <span class="nv">$HOME</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>create directory inside <span class="nv">$HOME</span>
 <span class="go">cd ~</span>
 <span class="go">mkdir kepler</span>
 </pre></div>
@@ -1507,19 +1514,19 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 <p>In order to use most recent version of Kepler do following. First of all make sure you have directory imas-kepler inside your $HOME</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> in case you already have imas-kepler inside $HOME</span>
 <span class="go"> you can move it to $ITMWORK/imas-kepler</span>
-<span class="gp">&gt;</span> mv <span class="nv">$HOME</span>/imas-kepler <span class="nv">$ITMWORK</span>/imas-kepler
+<span class="go">&gt; mv $HOME/imas-kepler $ITMWORK/imas-kepler</span>
 
 <span class="go"> If you don&#39;t have $HOME/imas-kepler directory, create</span>
 <span class="go"> it inside $ITMWORK</span>
-<span class="gp">&gt;</span> mkdir <span class="nv">$ITMWORK</span>/imas-kepler
+<span class="go">&gt; mkdir $ITMWORK/imas-kepler</span>
 
 <span class="go"> create symbolic link inside $HOME</span>
-<span class="gp">&gt;</span> <span class="nb">cd</span> <span class="nv">$HOME</span>
-<span class="gp">&gt;</span> ln -s <span class="nv">$ITMWORK</span>/imas-kepler
+<span class="go">&gt; cd $HOME</span>
+<span class="go">&gt; ln -s $ITMWORK/imas-kepler</span>
 </pre></div>
 </div>
 <p>Then, you can load imasenv module by calling</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module load imasenv
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; module load imasenv</span>
 </pre></div>
 </div>
 <p>If there is no Kepler version installed, you will be informed by message</p>
@@ -1530,7 +1537,7 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 </pre></div>
 </div>
 <p>In that case, call kepler_install_light - you will see installation process running in your terminal.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler_install_light
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; kepler_install_light</span>
 <span class="go">Warning: $KEPLER_INSTALL_PATH override by environment: /afs/eufus.eu/user/g/g2michal/imas-kepler/2.5p2-2.1.3</span>
 <span class="go">mkdir: created directory ?/afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler/2.5p2-2.1.3?</span>
 <span class="go">sending incremental file list</span>
@@ -1550,11 +1557,11 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 </pre></div>
 </div>
 <p>You have to switch module, to make sure that KEPLER variable points to proper location.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module switch kepler/2.5p2-2.1.3
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; module switch kepler/2.5p2-2.1.3</span>
 </pre></div>
 </div>
 <p>Once you have set version of Kepler, you can run it by typing kepler</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; kepler</span>
 <span class="go">The base dir is /afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler/2.5p2-2.1.3</span>
 <span class="go">Kepler.run going to run.setMain(org.kepler.Kepler)</span>
 <span class="go">JVM Memory: min = 1G,  max = 8G, stack = 20m, maxPermGen = default</span>
@@ -1567,11 +1574,11 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 <div class="section" id="installation-of-dressed-version-of-kepler-with-actors">
 <h4><span class="section-number">2.1.10.2. </span>Installation of “dressed” version of Kepler (with actors)<a class="headerlink" href="#installation-of-dressed-version-of-kepler-with-actors" title="Permalink to this headline">¶</a></h4>
 <p>In order to use most recent version of Kepler (with actors) do following. First of all make sure you have directory imas-kepler inside your $HOME</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> mkdir <span class="nv">$HOME</span>/imas-kepler
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; mkdir $HOME/imas-kepler</span>
 </pre></div>
 </div>
 <p>Then, you can load imasenv module by calling</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module load imasenv
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; module load imasenv</span>
 </pre></div>
 </div>
 <p>If there is no Kepler version installed, you will be informed by message</p>
@@ -1582,10 +1589,10 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 </pre></div>
 </div>
 <p>You have to switch to “dressed” version of Kepler by calling</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module switch kepler/2.5p2-2.1.3_IMAS_3.20.0
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; module switch kepler/2.5p2-2.1.3_IMAS_3.20.0</span>
 </pre></div>
 </div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler_install_light
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; kepler_install_light</span>
 <span class="go">Warning: $KEPLER_INSTALL_PATH override by environment: /afs/eufus.eu/user/g/g2michal/imas-kepler/2.5p2-2.1.3_IMAS_3.20.0</span>
 <span class="go">mkdir: created directory ?/afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler?</span>
 <span class="go">mkdir: created directory ?/afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler/2.5p2-2.1.3_IMAS_3.20.0?</span>
@@ -1597,11 +1604,11 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 </pre></div>
 </div>
 <p>You have to switch module, to make sure that KEPLER variable points to proper location.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module switch kepler/2.5p2-2.1.3_IMAS_3.20.0
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; module switch kepler/2.5p2-2.1.3_IMAS_3.20.0</span>
 </pre></div>
 </div>
 <p>Once you have set version of Kepler, you can run it by typing kepler</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; kepler</span>
 <span class="go">The base dir is /afs/eufus.eu/g2itmdev/user/g2michal/imas-kepler/2.5p2-2.1.3_IMAS_3.20.0</span>
 <span class="go">Kepler.run going to run.setMain(org.kepler.Kepler)</span>
 <span class="go">JVM Memory: min = 1G,  max = 8G, stack = 20m, maxPermGen = default</span>
@@ -1615,25 +1622,25 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 <h3><span class="section-number">2.1.11. </span>IMAS Kepler 2.1.5 (release candidate)<a class="headerlink" href="#imas-kepler-2-1-5-release-candidate" title="Permalink to this headline">¶</a></h3>
 <p><strong>Most recent steps for Gateway users</strong></p>
 <p>In order to use most recent version of Kepler do following. First of all make sure you have directory imas-kepler inside your $HOME</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> mkdir -p <span class="nv">$HOME</span>/imas-kepler/modulefiles
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; mkdir -p $HOME/imas-kepler/modulefiles</span>
 </pre></div>
 </div>
 <p>Make sure to set IMAS_KEPLER_DIR variable inside .cshrc file</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> <span class="nb">echo</span> <span class="s2">&quot;setenv IMAS_KEPLER_DIR </span><span class="nv">$HOME</span><span class="s2">/imas-kepler&quot;</span> &gt;&gt; ~/.cshrc
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; echo &quot;setenv IMAS_KEPLER_DIR $HOME/imas-kepler&quot; &gt;&gt; ~/.cshrc</span>
 </pre></div>
 </div>
 <p>Now, you can load imasenv/3.21.0 module by calling</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module load imasenv/3.21.0
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; module load imasenv/3.21.0</span>
 </pre></div>
 </div>
 <p>Note that this module uses kepler/2.5p2-2.1.5 instead of kepler/2.5p2-2.1.3</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module load imasenv/3.21.0
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; module load imasenv/3.21.0</span>
 <span class="go">IMAS environment loaded.</span>
 <span class="go">Please do not forget to set database by calling &#39;imasdb &lt;machine_name&gt;&#39; !</span>
 </pre></div>
 </div>
 <p>Now, you can install your personal Kepler installation (please note that since release 2.5p-2.1.5 and keplertools-1.7.0 it is possible to switch between different installations of Kepler (they will not collide).</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler_install my_own_kepler
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; kepler_install my_own_kepler</span>
 <span class="go">Using IMAS_KEPLER_DIR at: /pfs/work/g2michal/imas-keplers.</span>
 <span class="go">Using KEPLER_SRC from KEPLER: /gw/swimas/extra/kepler/2.5p2-2.1.5.</span>
 <span class="go">mkdir: created directory ?/pfs/work/g2michal/imas-keplers/my_own_kepler</span>
@@ -1650,11 +1657,11 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 </pre></div>
 </div>
 <p>As you can see, your personal Kepler installations are available via modules. In order to switch to given version of Kepler you need to switch the module</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module switch kepler/my_own_kepler
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; module switch kepler/my_own_kepler</span>
 </pre></div>
 </div>
 <p>Once you have set version of Kepler, you can run it by typing kepler</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> kepler
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; kepler</span>
 <span class="go">kepler</span>
 <span class="go">The base dir is /marconi_work/eufus_gw/work/g2michal/imas-keplers/my_own_kepler/kepler</span>
 <span class="go">Kepler.run going to run.setMain(org.kepler.Kepler)</span>
@@ -1668,13 +1675,13 @@ Simply press “Generate” button and wait till FC2K finishes the generation.</
 <h3><span class="section-number">2.1.12. </span>Installation based on README file<a class="headerlink" href="#installation-based-on-readme-file" title="Permalink to this headline">¶</a></h3>
 <p>Installation instructions based on most recent version of IMAS Kepler</p>
 <p>Detailed, up to date, instructions on how to install and switch between different installations of Kepler, can be found here</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> git clone ssh://git@git.iter.org/imex/kepler-installer.git
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; git clone ssh://git@git.iter.org/imex/kepler-installer.git</span>
 
-<span class="gp">&gt;</span> cat kepler-installer/README
+<span class="go">&gt; cat kepler-installer/README</span>
 </pre></div>
 </div>
 <p>You can also find latest documentation at following location (Gateway)</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> cat <span class="nv">$SWIMASDIR</span>/extra/kepler-installer/README
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; cat $SWIMASDIR/extra/kepler-installer/README</span>
 </pre></div>
 </div>
 </div>
@@ -2184,37 +2191,29 @@ Source file is at:</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="ets.html" class="btn btn-neutral float-right" title="3. European Transport Simulator (ETS)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="introduction.html" class="btn btn-neutral float-left" title="1. Introduction to the EUROfusion Project Code Development for integrated modelling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="ets.html" class="btn btn-neutral float-right" title="3. European Transport Simulator (ETS)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="introduction.html" class="btn btn-neutral float-left" title="1. Introduction to the EUROfusion Project Code Development for integrated modelling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2019, WPCD
+        &#169; Copyright 2019, WPCD.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
