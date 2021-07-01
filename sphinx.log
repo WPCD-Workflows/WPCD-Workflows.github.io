@@ -32,9 +32,6 @@ unzip -q -d source/static/Phase4.10b.10_HTML source/static/Phase4.10b.10_HTML.zi
 sphinx-build -b html -d ../WPCD-Workflows.github.io/doctrees   source ../WPCD-Workflows.github.io
 Running Sphinx v4.0.2
 loading pickled environment... done
-loading intersphinx inventory from https://wpcd-workflows.github.io/IMASviz/objects.inv...
-loading intersphinx inventory from http://docs.scipy.org/doc/numpy/objects.inv...
-intersphinx inventory has moved: http://docs.scipy.org/doc/numpy/objects.inv -> https://numpy.org/doc/stable/objects.inv
 building [mo]: targets for 0 po files that are out of date
 building [html]: targets for 11 source files that are out of date
 updating environment: 0 added, 11 changed, 0 removed
@@ -74,7 +71,7 @@ copying images... [  2%] images/codes_3.png
 copying images... [  3%] images/codes_4.png
 copying images... [  4%] images/conventions_1.png
 copying images... [  5%] images/conventions_2.png
-copying images... [  6%] images/eqreconstruct_JET_timeloop_records.png
+copying images... [  6%] images/eqreconstruct_JET_timeloop_records_62.png
 copying images... [  7%] images/eqreconstruct_START_settings.png
 copying images... [  8%] images/eqreconstruct_CHECK_DATA.png
 copying images... [  9%] images/eqreconstruct_RECONSTRUCT_settings.png

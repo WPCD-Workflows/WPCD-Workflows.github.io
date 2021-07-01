@@ -217,12 +217,12 @@ the run execution. This allow for an immediate inspection of the
 results. Some fundamental data verification is performed on the input
 and processed data to ensure a “safe landing” of the workflow in case
 any problems are identified.</p>
-<p>The workflow is presently targeting primarily straightforward magnetics
-only plasma reconstruction calculations in any plasma scenario.
+<p>The workflow is now able to target both straightforward magnetics
+only plasma reconstruction calculations in any plasma scenario but also
+incorporate kinetic data (thermal or thermal+fast pressure).
 Interferometry, polarimetry and Motional Stark Effect assisted
 reconstructions are also possible since no workflow changes are
-necessary. Future versions of the workflow will incorporate kinetic data
-(thermal/fast pressure).</p>
+necessary.</p>
 <p>The workflow is not meant for running use cases that require strong user
 intervention during the run execution e.g. setting different code
 parameters at different time steps (though possible by pausing the
@@ -233,7 +233,7 @@ given diagnostic channels or changing regularization coefficients.</p>
 <span id="organization"></span><h2><span class="section-number">5.2. </span>2. Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline">¶</a></h2>
 <p>The top level layout of the workflow is shown below.</p>
 <div class="figure align-center">
-<img alt="_images/eqreconstruct_JET_timeloop_records.png" src="_images/eqreconstruct_JET_timeloop_records.png" />
+<img alt="_images/eqreconstruct_JET_timeloop_records_62.png" src="_images/eqreconstruct_JET_timeloop_records_62.png" />
 </div>
 <p>As shown in the workflow layout, the workflow execution typically
 follows the following steps (further detailed below):</p>
@@ -368,24 +368,27 @@ please refer to the SAVE SLICE parameter details.</p>
 </pre></div>
 </div>
 <p>(the one below is the latest version of the dressed kepler containing all the actors for EQRECONSTRUCT, EQSTABIL and ETS-6)</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module switch kepler/2.5p4-3.0.6_dressed_3.25</span>
-<span class="go">kepler_install my_2.5p4-3.0.6_dressed_3.25</span>
-<span class="go">kepler_load my_2.5p4-3.0.6_dressed_3.25</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module switch kepler/2.5p5-3.1.1_dressed_3.28.1</span>
+<span class="go">kepler_install my_2.5p5-3.1.1_dressed_3.28.1</span>
+<span class="go">kepler_load my_2.5p5-3.1.1_dressed_3.28.1</span>
 </pre></div>
 </div>
 <p>Once you have installed kepler you do not need to repeat this operation and it will be enough to
 execute the kepler_load instruction.</p>
 <p>Now you need to check out the workflow by typing (only for first time users)</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn co --username g2mroma https://gforge-next.eufus.eu/svn/eqstabil/tags/imas_3.25.0_4.4.0/workflows eqstabil_workflow</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn co --username g2rcoelh https://gforge-next.eufus.eu/svn/eqstabil/tags/imas_3.28.1_4.7.2/workflows eqreconstruct_workflow</span>
 </pre></div>
 </div>
 <p>Create the database folder with the name of the device you wish to run the equilibrium for</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">imasdb JET</span>
 </pre></div>
 </div>
-<p>Retrieve the data for magnetic-only equilibrium by launching IMASviz or TCV2IDS</p>
+<p>Retrieve the data for needed to reconstruct the plasma equilibrium by launching :
+- IMASviz
+- TCV2IDS
+- ReadAUG</p>
 <p>Import the following IDSs</p>
-<p>magnetics, pf_active, (pf_passive), (iron_core), wall, tf</p>
+<p>magnetics, pf_active, (pf_passive), iron_core, wall, tf, thomson_scattering</p>
 <p>Note that iron_core is only needed for JET and WEST and pf_passive is only desirable (not supported by all equilibrium reconstruction actors)</p>
 <p>You are now ready to launch Kepler by typing</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kepler</span>
@@ -459,7 +462,11 @@ workflow). To access the actors codeparam the easiest route is to :</p>
 </div>
 <div class="section" id="news-and-recent-activity">
 <span id="activity"></span><h2><span class="section-number">5.5. </span>6. News and Recent activity<a class="headerlink" href="#news-and-recent-activity" title="Permalink to this headline">¶</a></h2>
-<p><em>8th March 2019: JET version of the workflow tested successfully on
+<p><em>30th June 2021: Time loop version available using both magnetics and
+pressure constraints. EQUAL and NICE codes included and verified for
+IMAS DD 3.29.0. HELENA, CHEASE and CAXE codes embedded in the high
+resolution stage</em>
+<em>8th March 2019: JET version of the workflow tested successfully on
 test/84600/28 database. Only EQUAL + HELENA codes included. Successful
 run from t=49s to 53s with both EQUAL and HELENA being executed and the
 corresponding data stored on the IMAS database (run=33).</em></p>
