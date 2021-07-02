@@ -422,6 +422,7 @@ execute the kepler_load instruction.</p>
 <p>The workflow parameters in the <strong>Reconstruct</strong> actor are as follows:</p>
 <ul>
 <li><p><strong>FBE_only</strong>: Set to “<em>yes</em>” if addressing only the plasma equilibrium reconstruction. If set to “<em>no</em>” the high resolution equilibrium is also calculated.</p></li>
+<li><p><strong>FBEkinetics</strong>: Set to “<em>no</em>” to perform magnetics only reconstruction (Farady+MSE usage is set in the actors). If set to “<em>yes</em>” thermal plasma pressure is also considered.</p></li>
 <li><p><strong>FBEcode</strong>: Choice for equilibrium reconstruction code to be used.</p></li>
 <li><p><strong>Visualise_FBE</strong>: Set to “<em>yes</em>” to get a plot of the reconstructed equilibrium at every step.</p></li>
 <li><p><strong>Visualise_HRE</strong>: Set to <em>yes</em> to get a plot of the high resolution equilibrium derived from the reconstructed equilibrium at every step.</p></li>
