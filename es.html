@@ -1,80 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>4. Equilibrium and MHD Stability workflow (EQSTABIL) &mdash; EUROfusion Integrated Modelling workflows 3.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="5. The EQRECONSTRUCT workflow" href="eqreconstr.html" />
     <link rel="prev" title="3. European Transport Simulator (ETS)" href="ets.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> EUROfusion Integrated Modelling workflows
-          
-
-          
-            
             <img src="_static/wpcd_banner_new.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 3.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction to the EUROfusion Project Code Development for integrated modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">2. Infrastructure</a></li>
@@ -129,77 +76,34 @@
 <li class="toctree-l1"><a class="reference internal" href="resources.html">10. Additional resources</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">EUROfusion Integrated Modelling workflows</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li><span class="section-number">4. </span>Equilibrium and MHD Stability workflow (EQSTABIL)</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/WPCD-Workflows/documentation/blob/master/source/es.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="equilibrium-and-mhd-stability-workflow-eqstabil">
-<span id="eqstabil"></span><h1><span class="section-number">4. </span>Equilibrium and MHD Stability workflow (EQSTABIL)<a class="headerlink" href="#equilibrium-and-mhd-stability-workflow-eqstabil" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="workflow-rationale">
-<h2><span class="section-number">4.1. </span>Workflow rationale<a class="headerlink" href="#workflow-rationale" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="equilibrium-and-mhd-stability-workflow-eqstabil">
+<span id="eqstabil"></span><h1><span class="section-number">4. </span>Equilibrium and MHD Stability workflow (EQSTABIL)<a class="headerlink" href="#equilibrium-and-mhd-stability-workflow-eqstabil" title="Permalink to this headline"></a></h1>
+<section id="workflow-rationale">
+<h2><span class="section-number">4.1. </span>Workflow rationale<a class="headerlink" href="#workflow-rationale" title="Permalink to this headline"></a></h2>
 <p>The EQSTABIL workflow is a Kepler workflow aimed at performing linear
 MHD stability analysis of tokamak plasma equilibria for a single or
 multiple toroidal mode numbers when executed. The high resolution
@@ -231,16 +135,16 @@ conceptual data bundling as used by the <a class="reference external" href="http
 and <a class="reference external" href="https://wpcd-workflows.github.io/eqreconstr.html">EQRECONSTRUCT</a> workflow.
 This deliberate choice greatly facilitates the interfacing to any of such workflows.</p></li>
 </ul>
-</div>
-<div class="section" id="workflow-organization-design">
-<h2><span class="section-number">4.2. </span>Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="workflow-organization-design">
+<h2><span class="section-number">4.2. </span>Workflow organization &amp; design<a class="headerlink" href="#workflow-organization-design" title="Permalink to this headline"></a></h2>
 <p>The top level layout of the workflow is shown below.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="_images/equstabil_1.png" src="_images/equstabil_1.png" />
-</div>
+</figure>
 <p>The workflow is organised in four sequential steps :</p>
-<div class="section" id="initialization">
-<h3><span class="section-number">4.2.1. </span>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h3>
+<section id="initialization">
+<h3><span class="section-number">4.2.1. </span>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline"></a></h3>
 <p>Composite actor used to initialize the workflow. It reads from the IMAS
 database that is specified by local variables (user, device, shot,
 run_in) and for the closest time sample to local variable <em>time</em> .
@@ -259,17 +163,17 @@ chosen MHD code.</p>
 <p>At the exit of the Composite actor, a Plasma_reference bundle (list of
 Kepler variables, mimicking the ETS bundle is returned. This
 facilitates the future coupling of the workflow to the ETS.</p>
-</div>
-<div class="section" id="fixedbndcode">
-<h3><span class="section-number">4.2.2. </span>FixedBndCode<a class="headerlink" href="#fixedbndcode" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="fixedbndcode">
+<h3><span class="section-number">4.2.2. </span>FixedBndCode<a class="headerlink" href="#fixedbndcode" title="Permalink to this headline"></a></h3>
 <p>Composite actor that prepares/calculates the equilibrium to be passed
 later to the MHD stability codes. This composite actor is composed of 3
 main steps:</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="_images/equstabil_2.png" src="_images/equstabil_2.png" />
-</div>
-<div class="section" id="redefining-the-plasma-boundary-cutoff">
-<h4><span class="section-number">4.2.2.1. </span>Redefining the plasma boundary (Cutoff)<a class="headerlink" href="#redefining-the-plasma-boundary-cutoff" title="Permalink to this headline">¶</a></h4>
+</figure>
+<section id="redefining-the-plasma-boundary-cutoff">
+<h4><span class="section-number">4.2.2.1. </span>Redefining the plasma boundary (Cutoff)<a class="headerlink" href="#redefining-the-plasma-boundary-cutoff" title="Permalink to this headline"></a></h4>
 <p>This is deemed necessary when the input equilibrium
 (reconstructed/predictive equilibrium) as a separatrix as plasma boundary
 since at this moment none of the flux coordinates based equilibrium codes
@@ -286,9 +190,9 @@ and occurrence=2 for the original equilibrium. If cut_off:no then both
 occurrences contain the original equilibrium.</p>
 <p>A plot of the original + cut_off equilibrium summary is shown. Closing the
 plot window leads to the second stage.</p>
-</div>
-<div class="section" id="calculation-of-equilibrium-fixbndequil">
-<h4><span class="section-number">4.2.2.2. </span>Calculation of Equilibrium (Fixbndequil)<a class="headerlink" href="#calculation-of-equilibrium-fixbndequil" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="calculation-of-equilibrium-fixbndequil">
+<h4><span class="section-number">4.2.2.2. </span>Calculation of Equilibrium (Fixbndequil)<a class="headerlink" href="#calculation-of-equilibrium-fixbndequil" title="Permalink to this headline"></a></h4>
 <p>Calculation of the high resolution equilibrium with 3 possible codes
 (CAXE, CHEASE, HELENA). The cut-off equilibrium (or original one) is
 passed to the equilibrium codes. The output HR equilibrium is added to
@@ -296,20 +200,20 @@ the equilibrium bundle such that in the end one has occurrence=0 for the
 HR, occurrence=1 for the cut-off input equilibrium (or the original if
 not cut_off is requested) and occurrence=2 for the original
 equilibrium.</p>
-</div>
-<div class="section" id="visualization-visual">
-<h4><span class="section-number">4.2.2.3. </span>Visualization (Visual)<a class="headerlink" href="#visualization-visual" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="visualization-visual">
+<h4><span class="section-number">4.2.2.3. </span>Visualization (Visual)<a class="headerlink" href="#visualization-visual" title="Permalink to this headline"></a></h4>
 <p>Visualization part. This part plots the (R,Z) flux map of the HR
 equilibrium and the most relevant profiles. The figures are saved
 automatically on closing the windows at the <em>path</em> indicated in the top
 level accordingly Kepler variable.</p>
-</div>
-</div>
-<div class="section" id="stabcode">
-<h3><span class="section-number">4.2.3. </span>StabCode<a class="headerlink" href="#stabcode" title="Permalink to this headline">¶</a></h3>
-<div class="figure align-center">
+</section>
+</section>
+<section id="stabcode">
+<h3><span class="section-number">4.2.3. </span>StabCode<a class="headerlink" href="#stabcode" title="Permalink to this headline"></a></h3>
+<figure class="align-center">
 <img alt="_images/equstabil_3.png" src="_images/equstabil_3.png" />
-</div>
+</figure>
 <p>Composite actor for the MHD stability calculation using 4 possible linear
 MHD stability codes (ILSA, KINX, MARS, MARS-F). After execution of the
 stability code is completed, plotting of the radial component of the
@@ -322,17 +226,17 @@ EPS format of each window is stored on the path defined by Kepler variable
 code execution i.e. if the output is valid and the result can be used or
 not. The plasma bundle, on exit, is updated with the MHD cpo from the
 stability code.</p>
-</div>
-<div class="section" id="finalize">
-<h3><span class="section-number">4.2.4. </span>Finalize<a class="headerlink" href="#finalize" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="finalize">
+<h3><span class="section-number">4.2.4. </span>Finalize<a class="headerlink" href="#finalize" title="Permalink to this headline"></a></h3>
 <p>Composite actor to wrap up the final plasma bundle, with the equilibrium
 IDS containing 3 occurrences and one occurrence of the MHD IDS.</p>
 <p>N.B. Only a single time slice of equilibrium and MHD IDSs is written, the
 remaining plasma bundle IDSs are written “as is” (whatever time slices).</p>
-</div>
-</div>
-<div class="section" id="actors-involved">
-<h2><span class="section-number">4.3. </span>Actors involved<a class="headerlink" href="#actors-involved" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="actors-involved">
+<h2><span class="section-number">4.3. </span>Actors involved<a class="headerlink" href="#actors-involved" title="Permalink to this headline"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 32%" />
@@ -553,11 +457,11 @@ Kepler variable <em>path</em></div>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="setting-up-workflow-and-actor-parameters">
-<h2><span class="section-number">4.4. </span>Setting up Workflow and Actor parameters<a class="headerlink" href="#setting-up-workflow-and-actor-parameters" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="setting-workflow-parameters">
-<h3><span class="section-number">4.4.1. </span>Setting workflow parameters<a class="headerlink" href="#setting-workflow-parameters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="setting-up-workflow-and-actor-parameters">
+<h2><span class="section-number">4.4. </span>Setting up Workflow and Actor parameters<a class="headerlink" href="#setting-up-workflow-and-actor-parameters" title="Permalink to this headline"></a></h2>
+<section id="setting-workflow-parameters">
+<h3><span class="section-number">4.4.1. </span>Setting workflow parameters<a class="headerlink" href="#setting-workflow-parameters" title="Permalink to this headline"></a></h3>
 <p>The workflow has basic settings in order to work.</p>
 <ul class="simple">
 <li><p><strong>shot</strong> : the shot number on the user database (or from another user)
@@ -594,9 +498,9 @@ flux that will define the poloidal flux of the new plasma boundary.</p></li>
 calculation of the high resolution equilibrium after the cut-off stage
 by Pressing the STOP button in Kepler GUI before closing the plot window
 with the summary of the equilibrium.</p>
-</div>
-<div class="section" id="setting-actor-parameters">
-<h3><span class="section-number">4.4.2. </span>Setting actor parameters<a class="headerlink" href="#setting-actor-parameters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="setting-actor-parameters">
+<h3><span class="section-number">4.4.2. </span>Setting actor parameters<a class="headerlink" href="#setting-actor-parameters" title="Permalink to this headline"></a></h3>
 <p>Actor parameters are set on the actors themselves (not passed by the
 workflow). To access the actors codeparam the easiest route is to :</p>
 <ol class="arabic simple">
@@ -607,60 +511,43 @@ workflow). To access the actors codeparam the easiest route is to :</p>
 <li><p>Edit the code parameters and Press “Save &amp; Exit”</p></li>
 <li><p>Press “Commit” and setting is completed</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="eqstabil-tutorial">
-<h2><span class="section-number">4.5. </span>EQSTABIL Tutorial<a class="headerlink" href="#eqstabil-tutorial" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="eqstabil-tutorial">
+<h2><span class="section-number">4.5. </span>EQSTABIL Tutorial<a class="headerlink" href="#eqstabil-tutorial" title="Permalink to this headline"></a></h2>
 <p>Tutorial on using EQSTABIL workflow is available in <a class="reference download internal" download="" href="_downloads/51ae0e772628ad59f5cf0096580bc626/EQSTABIL_tutorial_20151214.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF</span></code></a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="eqreconstr.html" class="btn btn-neutral float-right" title="5. The EQRECONSTRUCT workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="ets.html" class="btn btn-neutral float-left" title="3. European Transport Simulator (ETS)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="eqreconstr.html" class="btn btn-neutral float-right" title="5. The EQRECONSTRUCT workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019, WPCD.
-
-    </p>
+    <p>&#169; Copyright 2019, WPCD.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
