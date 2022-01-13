@@ -48,18 +48,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. Equilibrium and MHD Stability workflow (EQSTABIL)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#workflow-rationale">4.1. Workflow rationale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#workflow-organization-design">4.2. Workflow organization &amp; design</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#initialization">4.2.1. Initialization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fixedbndcode">4.2.2. FixedBndCode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#redefining-the-plasma-boundary-cutoff">4.2.2.1. Redefining the plasma boundary (Cutoff)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#calculation-of-equilibrium-fixbndequil">4.2.2.2. Calculation of Equilibrium (Fixbndequil)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#visualization-visual">4.2.2.3. Visualization (Visual)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start">4.2.1. START</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-data">4.2.2. CHECK_DATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mhd-eq-stability">4.2.3. MHD_EQ_STABILITY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save-slice">4.2.4. SAVE SLICE</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#stabcode">4.2.3. StabCode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#finalize">4.2.4. Finalize</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#actors-involved">4.3. Actors involved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-workflow">4.3. Installing the workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setting-up-workflow-and-actor-parameters">4.4. Setting up Workflow and Actor parameters</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#setting-workflow-parameters">4.4.1. Setting workflow parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setting-actor-parameters">4.4.2. Setting actor parameters</a></li>
@@ -145,368 +140,130 @@ This deliberate choice greatly facilitates the interfacing to any of such workfl
 </figure>
 <p>As shown in the workflow layout, the workflow execution typically follows the following steps (further detailed below):</p>
 <ul class="simple">
-<li><p>START (set up input imasdb database and requested simulation time instant)</p></li>
-<li><p>CHECK_DATA (verify data consistency)</p></li>
-<li><p>MHD_EQ_STABILITY (high resolution equilibrium and MHD stability calculation for a given time step)</p></li>
-<li><p>SAVE SLICE (save time slice on database)</p></li>
-<li><p>STOP THE RUN (end the simulation and stop)</p></li>
+<li><p><strong>START</strong> (set up input imasdb database and requested simulation time instant)</p></li>
+<li><p><strong>CHECK_DATA</strong> (verify data consistency)</p></li>
+<li><p><strong>MHD_EQ_STABILITY</strong> (high resolution equilibrium and MHD stability calculation for a given time step)</p></li>
+<li><p><strong>SAVE SLICE</strong> (save time slice on database)</p></li>
+<li><p><strong>STOP THE RUN</strong> (end the simulation and stop)</p></li>
 </ul>
-<p>The workflow is organised in four sequential steps :</p>
-<section id="initialization">
-<h3><span class="section-number">4.2.1. </span>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline"></a></h3>
-<p>Composite actor used to initialize the workflow. It reads from the IMAS
-database that is specified by local variables (user, device, shot,
-run_in) and for the closest time sample to local variable <em>time</em> .
-If the user reads the input data from some other user database, the
-output data will however be written on his/her own database with shot/run_out id.</p>
-<p>-&gt; The workflow local variable <em>device</em> <strong>must</strong> be the same as the
-environment variable TOKAMAKNAME. In case the two do not match the
-workflow stops execution. The user must close the workflow, set imasdb with
-the correct device name and run the workflow.</p>
-<p>-&gt; Validity checks (void/not void) are made on the input equilibrium and
-core_profile IDSs (MARSGW actor can use core_profile for density profile). If
-the equilibrium IDS is not considered valid the workflow stops. If the
-core_profile IDS is not considered valid, the workflow continues to run but
-the user can still have the option to stop it before executing the
-chosen MHD code.</p>
-<p>At the exit of the Composite actor, a Plasma_reference bundle (list of
-Kepler variables, mimicking the ETS bundle is returned. This
-facilitates the future coupling of the workflow to the ETS.</p>
-</section>
-<section id="fixedbndcode">
-<h3><span class="section-number">4.2.2. </span>FixedBndCode<a class="headerlink" href="#fixedbndcode" title="Permalink to this headline"></a></h3>
-<p>Composite actor that prepares/calculates the equilibrium to be passed
-later to the MHD stability codes. This composite actor is composed of 3
-main steps:</p>
+<section id="start">
+<h3><span class="section-number">4.2.1. </span>START<a class="headerlink" href="#start" title="Permalink to this headline"></a></h3>
+<p>Composite actor used to initialize the workflow. It reads experimental data from an ITM database and assembles the plasma bundle. The database details e.g. user, device, shot, run_in are configurable in the actor when double clicking on the actor (see Figure below). For the moment the “time_begin”, “time_end” and “time_dt” parameters are not in use as time cycle parameters. Only “time_begin” is in use as the selected time to perform the simulation.</p>
 <figure class="align-center">
-<img alt="_images/equstabil_2.png" src="_images/equstabil_2.png" />
+<img alt="_images/EQSTABIL_START.png" src="_images/EQSTABIL_START.png" />
 </figure>
-<section id="redefining-the-plasma-boundary-cutoff">
-<h4><span class="section-number">4.2.2.1. </span>Redefining the plasma boundary (Cutoff)<a class="headerlink" href="#redefining-the-plasma-boundary-cutoff" title="Permalink to this headline"></a></h4>
-<p>This is deemed necessary when the input equilibrium
-(reconstructed/predictive equilibrium) as a separatrix as plasma boundary
-since at this moment none of the flux coordinates based equilibrium codes
-handles/returns plasmas with a separatrix.</p>
-<p>If the input equilibrium does not contain a Psi(R,Z) equilibrium mapping
-the cut-off is not possible and thus the workflow execution will be
-stopped.</p>
-<p>Redefining the plasma boundary is done by setting cut_eq: yes and places
-the new plasma boundary at a flux surface corresponding to cut_off (in
-percentage) of the input boundary flux.</p>
-<p>The plasma profiles are also cut-off accordingly. An equilibrium bundle
-exits the actor containing occurrence=1 for the cut-off input equilibrium
-and occurrence=2 for the original equilibrium. If cut_off:no then both
-occurrences contain the original equilibrium.</p>
-<p>A plot of the original + cut_off equilibrium summary is shown. Closing the
-plot window leads to the second stage.</p>
 </section>
-<section id="calculation-of-equilibrium-fixbndequil">
-<h4><span class="section-number">4.2.2.2. </span>Calculation of Equilibrium (Fixbndequil)<a class="headerlink" href="#calculation-of-equilibrium-fixbndequil" title="Permalink to this headline"></a></h4>
-<p>Calculation of the high resolution equilibrium with 3 possible codes
-(CAXE, CHEASE, HELENA). The cut-off equilibrium (or original one) is
-passed to the equilibrium codes. The output HR equilibrium is added to
-the equilibrium bundle such that in the end one has occurrence=0 for the
-HR, occurrence=1 for the cut-off input equilibrium (or the original if
-not cut_off is requested) and occurrence=2 for the original
-equilibrium.</p>
-</section>
-<section id="visualization-visual">
-<h4><span class="section-number">4.2.2.3. </span>Visualization (Visual)<a class="headerlink" href="#visualization-visual" title="Permalink to this headline"></a></h4>
-<p>Visualization part. This part plots the (R,Z) flux map of the HR
-equilibrium and the most relevant profiles. The figures are saved
-automatically on closing the windows at the <em>path</em> indicated in the top
-level accordingly Kepler variable.</p>
-</section>
-</section>
-<section id="stabcode">
-<h3><span class="section-number">4.2.3. </span>StabCode<a class="headerlink" href="#stabcode" title="Permalink to this headline"></a></h3>
+<section id="check-data">
+<h3><span class="section-number">4.2.2. </span>CHECK_DATA<a class="headerlink" href="#check-data" title="Permalink to this headline"></a></h3>
+<p>In this composite actor a basic sanity check is performed on the input data and appropriate action is taken e.g. if there is no equilibrium data it is pointless for the workflow to proceed and execution is immediately stopped. If core_profiles IDS is not present then the workflow continues but flags a warning since some of the MHD codes might not work e.g. mass density will have to be set in some sort using the code parameters.</p>
 <figure class="align-center">
-<img alt="_images/equstabil_3.png" src="_images/equstabil_3.png" />
+<img alt="_images/EQSTABIL_CHECK_DATA.png" src="_images/EQSTABIL_CHECK_DATA.png" />
 </figure>
-<p>Composite actor for the MHD stability calculation using 4 possible linear
-MHD stability codes (ILSA, KINX, MARS, MARS-F). After execution of the
-stability code is completed, plotting of the radial component of the
-displacement vector eigenfunction in the plasma domain is shown (real and
-imaginary parts). In case multiple toroidal mode numbers are set (ILSA or
-KINX), one plot window per each toroidal eigenmode is returned. A Copy in
-EPS format of each window is stored on the path defined by Kepler variable
-<em>path</em></p>
-<p>The Multiple Tab display window will also display the output flag of the
-code execution i.e. if the output is valid and the result can be used or
-not. The plasma bundle, on exit, is updated with the MHD cpo from the
-stability code.</p>
 </section>
-<section id="finalize">
-<h3><span class="section-number">4.2.4. </span>Finalize<a class="headerlink" href="#finalize" title="Permalink to this headline"></a></h3>
-<p>Composite actor to wrap up the final plasma bundle, with the equilibrium
-IDS containing 3 occurrences and one occurrence of the MHD IDS.</p>
-<p>N.B. Only a single time slice of equilibrium and MHD IDSs is written, the
-remaining plasma bundle IDSs are written “as is” (whatever time slices).</p>
+<section id="mhd-eq-stability">
+<h3><span class="section-number">4.2.3. </span>MHD_EQ_STABILITY<a class="headerlink" href="#mhd-eq-stability" title="Permalink to this headline"></a></h3>
+<p>In this composite actor the actual calculation of the high resolution equilibrium and and MHD stability is performed. There are several options aviable for the user to set e.g. enable visualization during execution, perform only equilibrium or stability calculation. The user can easily gain access to several options for workflow execution by double clicking on the actor (see Figure below).</p>
+<figure class="align-center">
+<img alt="_images/EQSTABIL_MHD_EQ_STABILITY.png" src="_images/EQSTABIL_MHD_EQ_STABILITY.png" />
+</figure>
+<p>Among the several options the user can choose :
+-  To run plasma equilibrium code (Run_equilibrium = yes/no)
+-  To run plasma stability code (Run_stability = yes/no)
+-  Which code to use to perform the equilibrium calculation (HREcode)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>HELENA (tested)</p></li>
+<li><p>CHEASE (tested)</p></li>
+<li><p>CAXE (tested)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Which code to use for MHD stability (STABILITY_CODE_CHOICE)
+-  ILSA
+-  MARS
+-  KINX</p></li>
+<li><p>To visualise the high resolution results and MHD stability during workflow execution (Visualise_HRE, Visualise_MHD=yes/no)</p></li>
+<li><p>If cutting the equilibrium to be piped to the high resultuion calculation is necessary (cut_eq = yes/no) and if so at what percentage of the normalised separatrix flux (0&lt;cut_off&lt;1). When the user chooses to cut the boundary to perform the high resolution equilibrium calculations:
+-  A new plasma boundary is determined from the calculated 2D flux map
+-  The plasma profiles are also cut accordingly (the plasma is not artifically “scaled down” in volume)
+-  The total toroidal plasma current is not recalculated (equilibrium code should be set to use the boundary poloidal magnetic flux as boundary condition)
+-  A plot of the original + cut_off equilibrium summary is shown if Visualise_HRE=yes .</p></li>
+</ul>
+<p>When the user chooses to visualise any of the calculated equilibria or MHD eigenfunctions ( Visualise_HRE=yes or Visualise_MHD=yes):
+-  Three windows showing</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The 2D poloidal flux map and radial profiles of Pressure, Toroidal averaged current density and q-profile on the rcoord grid.</p></li>
+<li><p>The profiles of P, P’, F and FF’ on the rcoord grid.</p></li>
+<li><p>The rho_pol_norm “radial” grid in terms of grid index.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>The 1D profile of the eigenfunctions for the mode(s) selected in the code parameters of the MHD code.</p></li>
+<li><p>Corresponding image files are saved at the filesystem path indicated by the user selected path variable.</p></li>
+</ul>
+</section>
+<section id="save-slice">
+<h3><span class="section-number">4.2.4. </span>SAVE SLICE<a class="headerlink" href="#save-slice" title="Permalink to this headline"></a></h3>
+<p>In this composite actor the calculated equilibria and MHD data objects are saved for the requested time step. Depending on whether the Save_HRE_only parameter is set to “yes” or “no”, a different number of occurrences of the equilibrium IDS can be stored (see Figure below).</p>
+<figure class="align-center">
+<img alt="_images/EQSTABIL_SAVE_SLICE.png" src="_images/EQSTABIL_SAVE_SLICE.png" />
+</figure>
+<p>The purpose of saving several versions of the equilibrium is to grant extra flexibility. If the user decides to calculate the high resolution equilibrium associated to a reconstructed plasma equilibrium, it might be worth storing all 3 stages of the calculated equilibrium. This is managed by using multiple occurrences of the equilibrium IDS.</p>
+<p>High resolution equilibrium is stored as occurrence=0, the cut boundary “precursor equilibrium” as occurrence=1 and the original equilibrium (likely from a reconstruction of experimental equilibrium) as occurrence=2.</p>
 </section>
 </section>
-<section id="actors-involved">
-<h2><span class="section-number">4.3. </span>Actors involved<a class="headerlink" href="#actors-involved" title="Permalink to this headline"></a></h2>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 32%" />
-<col style="width: 35%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>Name</strong></p></td>
-<td><p><strong>Location</strong></p></td>
-<td><p><strong>Description</strong></p></td>
-</tr>
-<tr class="row-even"><td><p>Check_Device</p></td>
-<td><p>INITIALIZATION</p></td>
-<td><div class="line-block">
-<div class="line">Checks if the
-<em>device</em> Kepler</div>
-<div class="line">variable coincides
-with the environment</div>
-<div class="line">variable TOKAMAKNAME.
-If not the run stops.</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>SELECT_TIME_CORE/EQ</p></td>
-<td><p>INITIALIZATION</p></td>
-<td><div class="line-block">
-<div class="line">Selects time slice of
-IDSs matching/closest</div>
-<div class="line">to the requested time
-in <em>time</em> Kepler
-variable</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>Check Coreprof/Equil
-Time and Flag</p></td>
-<td><p>INITIALIZATION</p></td>
-<td><div class="line-block">
-<div class="line">Checks the
-output_flag of the</div>
-<div class="line">input IDSs to know if
-they are valid and</div>
-<div class="line">prints the actual
-time stamp retrived</div>
-<div class="line">from both IDSs (if
-time = -1 and</div>
-<div class="line">output_flag is
-negative then the IDS</div>
-<div class="line">is not valid). If the
-equilibrium is</div>
-<div class="line">considered invalid a
-message in displayed</div>
-<div class="line">on the Multi Tab
-Display window and</div>
-<div class="line">workflow execution is
-stopped. If the</div>
-<div class="line">core_profile is
-considered invalid a</div>
-<div class="line">message is displayed
-on the Multi Tab</div>
-<div class="line">Display window but
-the workflow will</div>
-<div class="line">continue since some
-of the MHD codes</div>
-<div class="line">handle plasma density
-internally as code</div>
-<div class="line">parameter and their
-execution is not
-affected.</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Cutoff</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">Performs the
-cut-off of the input</div>
-<div class="line">equilibrium if
-requested and</div>
-<div class="line">provided the input
-CPO has a poloidal</div>
-<div class="line">flux (Psi) mapping
-i.e. Psi(R,Z). If not</div>
-<div class="line">present then workflow
-execution stops and a</div>
-<div class="line">message is displayed
-on the Multi Tab</div>
-<div class="line">Display window. A
-plot with the</div>
-<div class="line">original (in blue)
-and cut equilibrium</div>
-<div class="line">(in green) is shown
-when cut_off: yes</div>
-<div class="line">A plot with
-just the original (in</div>
-<div class="line">blue) equilibrium is
-shown when
-cut_off : no</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>NOTE</strong>: A
-useful trick to STOP</div>
-<div class="line">the workflow
-execution*-&gt; when a</div>
-<div class="line">Python plot window is
-shown, Press the STOP</div>
-<div class="line">button on the Kepler
-GUI before closing</div>
-<div class="line">the plot window. This
-ensures workflow</div>
-<div class="line">execution is stopped
-since Kepler is</div>
-<div class="line">waiting for Python
-process to
-proceed.</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>Fixbndequil</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">Selects from a pool
-of 3 equilibrium</div>
-<div class="line">codes the one to
-launch according to</div>
-<div class="line">the value of the
-Kepler variable
-<em>eqcode</em></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Caxe</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">The CAXE code.</div>
-<div class="line">It can operate
-jointly with KINX
-only.</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>Chease</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">The CHEASE code.</div>
-<div class="line">It can operate
-jointly with ILSA,
-MARS</div>
-<div class="line">and MARS-F</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Helena</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">The HELENA code.</div>
-<div class="line">It can operate
-jointly with ILSA,
-MARS</div>
-<div class="line">and MARS-F</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>Visual</p></td>
-<td><p>FixedBndCode</p></td>
-<td><div class="line-block">
-<div class="line">Visualize the
-resulting equilibrium.</div>
-<div class="line">A Copy in EPS format
-is stored on the path</div>
-<div class="line">defined by Kepler
-variable %BLUE%path</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Ilsa</p></td>
-<td><p>StabCode</p></td>
-<td><div class="line-block">
-<div class="line">The ILSA code suite.</div>
-<div class="line">At the moment only
-the MISHKA1 kernel</div>
-<div class="line">(ideal incompressible
-MHD) is active</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>Kinx</p></td>
-<td><p>StabCode</p></td>
-<td><p>The KINX code.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Marsgw</p></td>
-<td><p>StabCode</p></td>
-<td><p>The MARS code</p></td>
-</tr>
-<tr class="row-even"><td><p>Marsf</p></td>
-<td><p>StabCode</p></td>
-<td><p>The MARS-F code</p></td>
-</tr>
-<tr class="row-odd"><td><p>PLOT_EIGENFUNCTION</p></td>
-<td><p>StabCode</p></td>
-<td><div class="line-block">
-<div class="line">Visualize the real
-and imaginary</div>
-<div class="line">eigenfunction
-components. In case</div>
-<div class="line">multiple toroidal
-mode numbers are set</div>
-<div class="line">(ILSA or KINX), one
-plot window per each</div>
-<div class="line">toroidal eigenmode is
-returned. A Copy in</div>
-<div class="line">EPS format of each
-window is stored on</div>
-<div class="line">the path defined by
-Kepler variable <em>path</em></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
+<section id="installing-the-workflow">
+<h2><span class="section-number">4.3. </span>Installing the workflow<a class="headerlink" href="#installing-the-workflow" title="Permalink to this headline"></a></h2>
+<p>To obtain the workflow and included actors a dressed release of KEPLER is recommended. To get such dressed releases please proceed as follows:
+-  Get the dressed KEPLER
+-  Get the Workflow</p>
+<p>WARNING: Don’t forget to set your imasdb device environment before running the workflow (run the “imasdb MACHINE_NAME” command !)</p>
 </section>
 <section id="setting-up-workflow-and-actor-parameters">
 <h2><span class="section-number">4.4. </span>Setting up Workflow and Actor parameters<a class="headerlink" href="#setting-up-workflow-and-actor-parameters" title="Permalink to this headline"></a></h2>
 <section id="setting-workflow-parameters">
 <h3><span class="section-number">4.4.1. </span>Setting workflow parameters<a class="headerlink" href="#setting-workflow-parameters" title="Permalink to this headline"></a></h3>
-<p>The workflow has basic settings in order to work.</p>
+<p>The workflow parameters in the <strong>START</strong> actor are as follows:</p>
 <ul class="simple">
-<li><p><strong>shot</strong> : the shot number on the user database (or from another user)
-where to read the reference equilibrium from (shot/run_in pair)</p></li>
-<li><p><strong>run_in</strong> : the run number where the reference equilibrium is
-(shot/run_in pair)</p></li>
-<li><p><strong>run_work</strong> : placeholder run for the temporary Kepler IDSs</p></li>
-<li><p><strong>run_out</strong> : run number where the final results of the run will be
-stored (user running the workflow/shot/run_out). Since the input
-equilibrium can be a reconstruction that goes beyond the separatrix, 3
-occurrences of the equilibrium are saved (original eq., cut equilibrium
-inside separatrix and corresponding high resolution equilibrium).</p></li>
-<li><p><strong>user</strong> : username. Reading from someone else database is possible but
-the run_out will naturally be written to personal database only.</p></li>
-<li><p><strong>device</strong> : device database where the input reference data is. MUST BE
-the same as env variable TOKAMAKNAME</p></li>
-<li><p><strong>time</strong> : time slice (in equilibrium IDS) to be analysed in case the
-input shot/run_in contains many time slices.</p></li>
-<li><p><strong>path</strong> : temporary folder where to dump the plots generated. Also used
-to store output files (used by HELENA/ILSA only)</p></li>
-<li><p><strong>cut_eq</strong> :</p>
-<ul>
-<li><p>yes : cut the input equilibrium (necessary if high resolution
-equilibrium code cannot handle separatrix plasma equilibria)</p></li>
-<li><p>no : input equilibrium is used “as is”.</p></li>
+<li><p><strong>shot</strong> : the shot number on the user database (or from another user) where to read the reference equilibrium from (shot/run_in pair)</p></li>
+<li><p><strong>run_in</strong> : the run number where the reference equilibrium is (shot/run_in pair)</p></li>
+<li><p><strong>run_work</strong> : placeholder run for to store (temporarily) the IDS exchanged by the actors in the Kepler workflow</p></li>
+<li><p><strong>run_out</strong> : run number where the final results of the run will be stored (user running the workflow/shot/run_out). Since the input equilibrium can be a reconstruction that goes beyond the separatrix, 3 occurrences of the equilibrium are saved (original eq., cut equilibrium inside separatrix and corresponding high resolution equilibrium).</p></li>
+<li><p><strong>user</strong> : username. Reading from someone else database is possible but the run_out will naturally be written to personal database only.</p></li>
+<li><p><strong>device</strong> : device database where the input reference data is. MUST BE the same as the device set once running “imasdb” command otherwise the run_out data will end on the wrong database path.</p></li>
+<li><p><strong>time_begin</strong> : selected time instant on input equilibrium to perform the run (in seconds ).</p></li>
+<li><p><strong>time_end</strong> : not in use.</p></li>
+<li><p><strong>time_dt</strong> : not in use.</p></li>
 </ul>
-</li>
-<li><p><strong>cut_off</strong> : float ]0,1], specifies the percentage of the separatrix
-flux that will define the poloidal flux of the new plasma boundary.</p></li>
-<li><p><strong>eqcode</strong> : chease/caxe/helena. The equilibrium code to be used</p></li>
-<li><p><strong>stabcode</strong> : ilsa/kinx/marsgw/marsf. The MHD stability code to be used</p></li>
+<p>The workflow parameters in the <strong>MHD_EQ_STABILITY</strong> actor are as follows:
+-  <strong>Run_equilibrium</strong> : Set to “yes”/”no” to perform plasma equilibrium calculation.
+-  <strong>Run_stability</strong> : Set to “yes”/”no” to perform plasma stability calculation.
+-  <strong>HREcode</strong> : Choice for equilibrium code to be used.
+-  <strong>Visualise_HRE</strong> : Set to “yes” to get a plot of the high resolution equilibrium.
+-  <strong>cut_eq</strong> :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>yes</strong> : cut the input equilibrium (necessary if high resolution equilibrium code cannot handle separatrix plasma equilibria)</p></li>
+<li><p><strong>no</strong> : input equilibrium is used “as is”.</p></li>
 </ul>
-<p>The user can always prevent the workflow from proceeding to the
-calculation of the high resolution equilibrium after the cut-off stage
-by Pressing the STOP button in Kepler GUI before closing the plot window
-with the summary of the equilibrium.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>cut_off</strong> : float ]0,1], specifies the percentage of the separatrix flux that will define the poloidal flux of the new plasma boundary.</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">**</span></a>rcoord: choose either “rho_pol_norm” or “rho_vol” as radial coordinate for the plots to be displayed.</p></li>
+<li><p><strong>STABILITY_CODE_CHOICE</strong>: Choice for MHD stability code to be used.</p></li>
+<li><p><strong>Visualise_MHD</strong> : Set to “yes” to get plots of the linear MHD eigenfunctions.</p></li>
+<li><p><strong>path</strong> : temporary folder where to dump the plots generated. Also used to store output files (used by HELENA)</p></li>
+</ul>
+<p>The workflow parameters in the <strong>SAVE SLICE</strong> actor are as follows:
+-  <strong>Save_HRE_only</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>yes</strong> : only occurrence=0 of equilibrium i.e. the output of the high resolution code is saved.</p></li>
+<li><p><a href="#id3"><span class="problematic" id="id4">**</span></a>no : occurrences = 0,1,2 are saved. High resolution equilibrium is stored as occurrence=0, the cut boundary “precursor equilibrium” as occurrence=1 and the equilibrium input (e.g. from equilibrium reconstruction) as occurrence=2. If “cut_eq”=””no” then occurrence=1 and occurrence=2 are copies of the input equilibrium.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>*The user can always stop the workflow by Pressing the STOP button in Kepler canvas.*</strong></p>
 </section>
 <section id="setting-actor-parameters">
 <h3><span class="section-number">4.4.2. </span>Setting actor parameters<a class="headerlink" href="#setting-actor-parameters" title="Permalink to this headline"></a></h3>
