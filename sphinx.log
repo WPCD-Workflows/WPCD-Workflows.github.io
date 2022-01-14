@@ -177,10 +177,9 @@ copying images... [ 98%] images/hesel_kepler_HESEL.png
 copying images... [ 99%] images/hesel_kepler_HESEL__edit.png
 copying images... [100%] images/hesel_kepler_HESEL__para.png
 
-copying downloadable files... [ 20%] static/EQSTABIL_tutorial_20151214.pdf
-copying downloadable files... [ 40%] static/EUROfusionIntegratedModellingworkflows.pdf
-copying downloadable files... [ 60%] static/hesel_input
-copying downloadable files... [ 80%] static/exp_profiles.dat
+copying downloadable files... [ 25%] static/EUROfusionIntegratedModellingworkflows.pdf
+copying downloadable files... [ 50%] static/hesel_input
+copying downloadable files... [ 75%] static/exp_profiles.dat
 copying downloadable files... [100%] static/myprobe.dat
 
 copying static files... done
