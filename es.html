@@ -220,10 +220,9 @@ This deliberate choice greatly facilitates the interfacing to any of such workfl
 <section id="installing-the-workflow">
 <h2><span class="section-number">4.3. </span>Installing the workflow<a class="headerlink" href="#installing-the-workflow" title="Permalink to this headline"></a></h2>
 <p>To obtain the workflow and included actors a dressed release of KEPLER is recommended. To get such dressed releases please proceed as follows:</p>
-<p>Establish the IMAS environment by typing</p>
+<p>Establish the IMAS environment (in the current workflow release 3.29.0) by typing</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module purge</span>
-<span class="go">module load cineca</span>
-<span class="go">module load imasenv</span>
+<span class="go">module load cineca imasenv/3.29.0</span>
 
 <span class="go">export KEPLER_DIR=$ITMWORK/imas_kepler</span>
 </pre></div>
@@ -233,15 +232,15 @@ This deliberate choice greatly facilitates the interfacing to any of such workfl
 </pre></div>
 </div>
 <p>(the one below is the one version of the dressed kepler containing all the actors for EQRECONSTRUCT, EQSTABIL and ETS-6, most recent versions will have a different module name)</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module switch kepler/2.5p5-3.1.1_dressed_3.29.0</span>
-<span class="go">kepler_install my_2.5p5-3.1.1_dressed_3.29.0</span>
-<span class="go">kepler_load my_2.5p5-3.1.1_dressed_3.29.0</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module switch kepler/2.5p5-3.1.1_ETS_6.4.1_3.29.0</span>
+<span class="go">kepler_install my_2.5p5-3.1.1_ETS_6.4.1_3.29.0</span>
+<span class="go">kepler_load my_2.5p5-3.1.1_ETS_6.4.1_3.29.0</span>
 </pre></div>
 </div>
 <p>Once you have installed kepler you do not need to repeat this operation and it will be enough to
 execute the kepler_load instruction.</p>
 <p>Now you need to check out the workflow by typing (only for first time users)</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn co --username g2rcoelh https://gforge-next.eufus.eu/svn/eqstabil/tags/imas_3.28.1_4.7.2/workflows eqstabil_workflow</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">svn co --username YOUR_GW_USERNAME https://gforge-next.eufus.eu/svn/keplerworkflows/tags/EQMHD_6.4.1_3.29.0 eqstabil_workflow</span>
 </pre></div>
 </div>
 <p><strong>WARNING: Don’t forget to set your imasdb device environment before running the workflow (run the “imasdb MACHINE_NAME” command !)</strong></p>
